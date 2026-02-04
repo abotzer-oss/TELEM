@@ -1,1 +1,364 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="1oB6JUju7uiK0NjqkGydkSNIR24SxMbsUqNgwrONlvM" />
+<title>נספח אצירת אשפה להיתר | חישוב נפחים ותכנון חדר אשפה | תלם</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- React & ReactDOM CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap');
+        body { font-family: 'Assistant', sans-serif; }
+        .animate-fade-in { animation: fadeIn 0.5s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        /* Smooth scrolling for anchor links */
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <div id="root"></div>
 
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        // Simple Lucide Icon Component for CDN version
+        const Icon = ({ name, size = 20, className = "" }) => {
+            useEffect(() => {
+                if (window.lucide) {
+                    window.lucide.createIcons();
+                }
+            }, [name]);
+            return <i data-lucide={name} style={{ width: size, height: size }} className={className}></i>;
+        };
+
+        const App = () => {
+const [currentPage, setCurrentPage] = useState('waste');
+            const [isMenuOpen, setIsMenuOpen] = useState(false);
+            const [formData, setFormData] = useState({ name: '', phone: '' });
+            const [formError, setFormError] = useState('');
+
+            const PHONE_NUMBER = "0506890650";
+            const WA_NUMBER = "972506890650";
+            const EMAIL = "aviram@telemenv.co.il";
+
+            const navigation = [
+                { name: 'דף הבית', id: 'home' },
+                { name: 'נספח אצירת אשפה', id: 'waste' },
+                { name: 'פרויקטים סולאריים ואגרו-וולטאי', id: 'solar' },
+                { name: 'נספח סביבתי להיתר/תב״ע', id: 'env' },
+                { name: 'סקר היסטורי', id: 'history' },
+            ];
+
+            const navigateTo = (id) => {
+                setCurrentPage(id);
+                setIsMenuOpen(false);
+                window.scrollTo(0, 0);
+            };
+
+            const scrollToContact = () => {
+                if (currentPage !== 'home') {
+                    setCurrentPage('home');
+                }
+                setIsMenuOpen(false);
+                setTimeout(() => {
+                    const element = document.getElementById('contact-form');
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 100);
+            };
+
+            const handleWhatsAppRedirect = (customMsg = "") => {
+                const msg = customMsg || "שלום, הגענו מהאתר ונשמח להתייעץ לגבי נספחים סביבתיים ופרויקטים סולאריים.";
+                window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+            };
+
+            const handleFormSubmit = (e) => {
+                e.preventDefault();
+                if (!formData.name || !formData.phone) {
+                    setFormError('נא למלא שם וטלפון תקינים');
+                    return;
+                }
+                setFormError('');
+                const msg = `שלום, שמי ${formData.name}. הטלפון שלי הוא ${formData.phone}. אנחנו פונים מהאתר לגבי ייעוץ סביבתי ופרויקטים סולאריים.`;
+                handleWhatsAppRedirect(msg);
+            };
+
+            // Components
+            const Header = () => (
+                <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+                    <div className="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
+                        <div className="flex items-center gap-2 text-2xl font-bold text-emerald-800 cursor-pointer" onClick={() => navigateTo('home')}>
+                            <Icon name="tree-pine" className="text-emerald-600" size={32} />
+                            <span>תלם <span className="text-gray-600 font-light">| ניהול סביבה</span></span>
+                        </div>
+                        
+                        <nav className="hidden lg:flex space-x-reverse space-x-6">
+                            {navigation.map(item => (
+                                <button key={item.id} onClick={() => navigateTo(item.id)} className={`text-sm font-semibold transition-colors ${currentPage === item.id ? 'text-emerald-700 border-b-2 border-emerald-700' : 'text-gray-600 hover:text-emerald-600'}`}>
+                                    {item.name}
+                                </button>
+                            ))}
+                        </nav>
+
+                        <div className="hidden md:flex items-center gap-3">
+                            <button onClick={() => handleWhatsAppRedirect()} className="p-2.5 bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors shadow-sm" title="WhatsApp">
+                                <Icon name="message-circle" />
+                            </button>
+                            <a href={`tel:${PHONE_NUMBER}`} className="bg-emerald-700 text-white px-5 py-2.5 rounded-lg font-bold hover:bg-emerald-800 transition-all">050-6890650</a>
+                        </div>
+
+                        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden text-gray-600">
+                            <Icon name={isMenuOpen ? "x" : "menu"} size={28} />
+                        </button>
+                    </div>
+                    {isMenuOpen && (
+                        <div className="lg:hidden bg-white border-t p-4 flex flex-col space-y-4 shadow-xl">
+                            {navigation.map(item => (
+                                <button key={item.id} onClick={() => navigateTo(item.id)} className="text-right text-lg font-bold py-2 border-b border-gray-50">{item.name}</button>
+                            ))}
+                            <div className="grid grid-cols-2 gap-2 pt-2">
+                                <button onClick={() => handleWhatsAppRedirect()} className="bg-green-500 text-white py-3 rounded-lg font-bold flex justify-center items-center gap-2"><Icon name="message-circle" /> WhatsApp</button>
+                                <a href={`tel:${PHONE_NUMBER}`} className="bg-emerald-700 text-white py-3 rounded-lg font-bold flex justify-center items-center gap-2"><Icon name="phone" /> התקשרו</a>
+                            </div>
+                        </div>
+                    )}
+                </header>
+            );
+
+            const Footer = () => (
+                <footer className="bg-gray-900 text-white py-12 px-4">
+                    <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-right">
+                        <div>
+                            <h3 className="text-xl font-bold mb-4 text-emerald-400">תלם – ניהול סביבה</h3>
+                            <p className="text-gray-400 leading-relaxed">אנחנו מומחים בהכנת נספחים סביבתיים להיתרי בנייה, פרויקטים סולאריים ואגרו-וולטאי. שירות מקצועי, מהיר וממוקד אישור רגולטורי מול הרשויות.</p>
+                        </div>
+                        <div>
+                            <h3 className="text-lg font-bold mb-4">שירותים מקצועיים</h3>
+                            <ul className="space-y-2 text-gray-400">
+                                <li className="hover:text-emerald-400 cursor-pointer" onClick={() => navigateTo('solar')}>פרויקטים סולאריים ואגרו-וולטאי</li>
+                                <li className="hover:text-emerald-400 cursor-pointer" onClick={() => navigateTo('waste')}>נספח אצירת אשפה להיתר</li>
+                                <li className="hover:text-emerald-400 cursor-pointer" onClick={() => navigateTo('env')}>נספח סביבתי להיתר</li>
+                                <li className="hover:text-emerald-400 cursor-pointer" onClick={() => navigateTo('history')}>סקר היסטורי</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 className="text-lg font-bold mb-4">צרו איתנו קשר</h3>
+                            <div className="space-y-3">
+                                <a href={`tel:${PHONE_NUMBER}`} className="flex items-center gap-3 text-gray-400 hover:text-white justify-end md:justify-start"><span>050-6890650</span> <Icon name="phone" className="text-emerald-500" /></a>
+                                <a href={`mailto:${EMAIL}`} className="flex items-center gap-3 text-gray-400 hover:text-white justify-end md:justify-start"><span>{EMAIL}</span> <Icon name="mail" className="text-emerald-500" /></a>
+                                <button onClick={() => handleWhatsAppRedirect()} className="flex items-center gap-3 text-gray-400 hover:text-white justify-end md:justify-start w-full text-right"><span>WhatsApp</span> <Icon name="message-circle" className="text-emerald-500" /></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">© {new Date().getFullYear()} תלם – ניהול סביבה | אבירם. כל הזכויות שמורות.</div>
+                </footer>
+            );
+
+            const FeatureItem = ({ title, description }) => (
+                <div className="flex items-start gap-3 text-right">
+                    <Icon name="check-circle" size={18} className="text-emerald-600 mt-1 flex-shrink-0" />
+                    <div>
+                        <h4 className="font-bold text-gray-900">{title}</h4>
+                        <p className="text-sm text-gray-600">{description}</p>
+                    </div>
+                </div>
+            );
+
+            const ServiceCard = ({ title, icon, description, onClick }) => (
+                <div onClick={onClick} className="bg-white p-8 rounded-2xl border border-gray-200 hover:shadow-xl hover:border-emerald-200 transition-all cursor-pointer flex flex-col h-full group text-right">
+                    <div className="mb-6 group-hover:scale-110 transition-transform text-emerald-600">
+                        <Icon name={icon} size={40} />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-4 leading-snug">{title}</h3>
+                    <p className="text-gray-600 mb-6 flex-grow leading-relaxed">{description}</p>
+                    <span className="text-emerald-700 font-bold flex items-center gap-2">קרא עוד <Icon name="arrow-left" size={16} /></span>
+                </div>
+            );
+
+            // Views
+            const HomePage = () => (
+                <div className="animate-fade-in">
+                    <section className="pt-32 pb-20 bg-gray-50 overflow-hidden relative">
+                        <div className="max-w-7xl mx-auto px-4 text-right relative z-10">
+                            <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-4 leading-tight">יועצי סביבה ופסולת | <span className="text-emerald-700">הופכים את הכאוס להיתר מאושר</span></h1>
+                            <p className="text-xl md:text-2xl text-emerald-800 font-bold mb-8 italic">פרויקטים סולאריים ואגרו-וולטאי • נספח אצירת אשפה להיתר • נספח סביבתי • סקר היסטורי</p>
+                            <p className="text-xl text-gray-600 mb-10 max-w-2xl leading-relaxed">אנחנו מעניקים ייעוץ סביבתי ממוקד ליזמים, אדריכלים ומפתחי אנרגיה. אנחנו דואגים להכנת הנספחים המקצועיים ביותר כדי לקדם את הפרויקט שלכם במהירות מול כל הרשויות.</p>
+                            <div className="flex flex-col sm:flex-row gap-4 justify-start">
+                                <button onClick={() => handleWhatsAppRedirect("היי, אנחנו רוצים לשלוח תכנית/גרמושקה לבדיקה של מה נדרש לרשות.")} className="bg-emerald-700 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-emerald-800 shadow-lg flex items-center justify-center gap-2 transition-all"><Icon name="message-circle" /> שלחו תכנית לבדיקה</button>
+                                <button onClick={scrollToContact} className="bg-white text-emerald-800 border-2 border-emerald-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-emerald-50 transition-all">הצעת מחיר מהירה</button>
+                            </div>
+                            <p className="text-sm text-gray-500 mt-4 italic font-medium">* בדיקה ראשונית ללא התחייבות</p>
+                        </div>
+                    </section>
+
+                    <section className="py-20 max-w-7xl mx-auto px-4">
+                        <div className="text-center mb-16">
+                            <h2 className="text-3xl font-bold italic">שירותי הייעוץ שלנו</h2>
+                            <div className="w-20 h-1 bg-emerald-600 mx-auto mt-4 rounded-full"></div>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <ServiceCard title="נספחי סביבה ושיקום קרקע לפרויקטים סולאריים ואגרו-וולטאי" icon="sun" description="נספחים סביבתיים לתכניות ולהיתרים, ליווי סביבתי לממתקני אגירה, ונספחי שימור קרקע והשבה לחקלאות." onClick={() => navigateTo('solar')} />
+                            <ServiceCard title="תכנון חדרי אשפה, חישוב נפחי אשפה, נספח אצירת אשפה להיתר בנייה" icon="trash-2" description="תכנון הנדסי של מערך האצירה, חישוב מדויק של ייצור אשפה ותכנון חדרי אשפה תקניים בהתאם לדרישות הרשות המקומית." onClick={() => navigateTo('waste')} />
+                            <ServiceCard title="נספח סביבתי להיתר בנייה" icon="file-text" description="טיפול במטרדי רעש, זיהום אוויר, חומרים מסוכנים ועמידה בתנאים סביבתיים להשלמת ההיתר." onClick={() => navigateTo('env')} />
+                            <ServiceCard title="נספח סביבה לתב״ע" icon="tree-pine" description="ליווי תכנוני מוקדם, חוות דעת סביבתיות וניהטי היבטי איכות סביבה מול הוועדות המחוזיות." onClick={() => navigateTo('env')} />
+                            <ServiceCard title="סקר היסטורי (קרקע / זיהומים)" icon="history" description="איתור שימושים קודמים ומקורות סיכון במגרש על בסיס מאגרי מידע ותצלומי אוויר." onClick={() => navigateTo('history')} />
+                        </div>
+                    </section>
+
+                    <section id="contact-form" className="py-20 bg-emerald-900 text-white text-right">
+                        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                            <div>
+                                <h2 className="text-4xl font-bold mb-4">צריכים הצעה מהירה?</h2>
+                                <p className="text-xl text-emerald-100 mb-8 italic">שלחו פרטים ונחזור אליכם עם מה שנדרש לרשות (ללא התחייבות)</p>
+                                <form onSubmit={handleFormSubmit} className="space-y-4 max-w-md">
+                                    <input type="text" placeholder="שם מלא" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className="w-full p-4 rounded-lg bg-emerald-800 border border-emerald-700 text-white placeholder:text-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400" />
+                                    <input type="tel" placeholder="טלפון" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} className="w-full p-4 rounded-lg bg-emerald-800 border border-emerald-700 text-white placeholder:text-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400" />
+                                    {formError && <p className="text-red-300 font-bold text-sm">{formError}</p>}
+                                    <button type="submit" className="w-full py-4 bg-emerald-500 text-emerald-950 font-extrabold rounded-lg hover:bg-emerald-400 text-xl flex items-center justify-center gap-2 shadow-lg transition-all"><Icon name="message-circle" /> שלחו פנייה ב-WhatsApp</button>
+                                </form>
+                            </div>
+                            <div className="space-y-8">
+                                <div className="flex gap-4"><Icon name="check-circle" className="text-emerald-400 mt-1 flex-shrink-0" /><div><h4 className="text-xl font-bold mb-1">מקצועיות וניסיון</h4><p className="text-emerald-100/80">אנחנו מביאים מומחיות רגולטורית מעמיקה מול כלל הרשויות ואיגודי הערים.</p></div></div>
+                                <div className="flex gap-4"><Icon name="check-circle" className="text-emerald-400 mt-1 flex-shrink-0" /><div><h4 className="text-xl font-bold mb-1">מהירות תגובה</h4><p className="text-emerald-100/80">אנחנו מבינים שזמן בהיתר בנייה הוא קריטי לרווחיות הפרויקט שלכם.</p></div></div>
+                                <div className="flex gap-4"><Icon name="check-circle" className="text-emerald-400 mt-1 flex-shrink-0" /><div><h4 className="text-xl font-bold mb-1">מענה ישיר</h4><p className="text-emerald-100/80">ייעוץ ישיר מולנו, ללא מתווכים, לאורך כל הליך התכנון והרישוי.</p></div></div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            );
+
+            const SolarPage = () => (
+                <div className="pt-32 pb-20 max-w-4xl mx-auto px-4 text-right animate-fade-in">
+                    <button onClick={() => navigateTo('home')} className="flex items-center gap-2 text-emerald-700 font-bold mb-8 hover:gap-3 transition-all"><Icon name="arrow-left" size={18} /> חזרה לדף הבית</button>
+                    <h1 className="text-4xl font-extrabold text-gray-900 mb-6 leading-tight">נספחי סביבה ושיקום קרקע לפרויקטים סולאריים ואגרו-וולטאי</h1>
+                    <p className="text-xl text-gray-600 mb-12 leading-relaxed">אנחנו מתמחים בליווי סביבתי מקיף למתקני אנרגיה מתחדשת ואגרו-וולטאי, תוך דגש על איזון בין פיתוח סולארי לשימור ערכי חקלאות וקרקע.</p>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                        <FeatureItem title="נספחים סביבתיים למתקנים סולאריים" description="הכנת כלל המסמכים הנדרשים לתכניות ולהיתרים להקמת שדות סולאריים." />
+                        <FeatureItem title="ליווי סביבתי למתקני אגירה" description="ליווי רגולטורי ותכנוני להקמת מערכות אגירת אנרגיה (BESS) במתח גבוה ונמוך." />
+                        <FeatureItem title="נספחי שימור קרקע" description="תכנון ממשק העבודה לשמירה על איכות הקרקע במהלך ההקמה והתפעול." />
+                        <FeatureItem title="תכניות השבה לחקלאות" description="תכנון מפורט להחזרת הקרקע למצבה המקורי ולשימוש חקלאי מלא בתום הפרויקט." />
+                    </div>
+
+                    <div className="bg-emerald-50 p-8 rounded-2xl border border-emerald-100">
+                        <h3 className="text-2xl font-bold mb-4 italic text-emerald-900">מובילים את התכנון הסביבתי לאנרגיה מתחדשת</h3>
+                        <p className="text-lg text-gray-700 mb-8 leading-relaxed">אנחנו דואגים שהפרויקט סולארי או מתקן האגירה שלכם יעמוד בכל הדרישות הסביבתיות המחמירות ביותר, תוך מקסום הפוטנציאל התכנוני.</p>
+                        <div className="flex flex-wrap gap-4">
+                            <button onClick={() => handleWhatsAppRedirect("היי, אנחנו מעוניינים בליווי סביבתי לפרויקט סולארי / מתקן אגירה.")} className="bg-emerald-700 text-white px-8 py-3 rounded-lg font-bold flex items-center gap-2 hover:bg-emerald-800 transition-all shadow-md"><Icon name="message-circle" /> התייעצו איתנו ב-WhatsApp</button>
+                            <a href={`tel:${PHONE_NUMBER}`} className="bg-white text-emerald-800 border border-emerald-700 px-8 py-3 rounded-lg font-bold">050-6890650</a>
+                        </div>
+                    </div>
+                </div>
+            );
+
+            const WastePage = () => (
+                <div className="pt-32 pb-20 max-w-4xl mx-auto px-4 text-right animate-fade-in">
+                    <button onClick={() => navigateTo('home')} className="flex items-center gap-2 text-emerald-700 font-bold mb-8 hover:gap-3 transition-all"><Icon name="arrow-left" size={18} /> חזרה לדף הבית</button>
+                    <h1 className="text-4xl font-extrabold text-gray-900 mb-6 leading-tight">תכנון חדרי אשפה, חישוב נפחי אשפה, נספח אצירת אשפה להיתר בנייה</h1>
+                    <p className="text-xl text-gray-600 mb-12 leading-relaxed">אנחנו מכינים נספחי אצירת אשפה ופסולת להיתר בנייה הכוללים חישובי נפחים מדויקים ותכנון הנדסי של חדרי אשפה בהתאם לדרישות התברואה של הרשות המקומית. זהו תנאי שכיח לקבלת היתר בנייה בפרויקטים של מגורים, מסחר ותעסוקה.</p>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                        <FeatureItem title="חישוב נפחי אשפה" description="חישוב מדויק של ייצור אשפה צפוי לפי שימושים ותקנים." />
+                        <FeatureItem title="תכנון חדרי אשפה" description="קביעת מיקום, גודל ואמצעי פינוי לפי הנחיות מחלקת תברואה." />
+                        <FeatureItem title="נספח אצירה להיתר בנייה" description="הכנת התשריט הגרפי והמסמך הטכני להגשה במערכת הרישוי." />
+                        <FeatureItem title="ייעוץ ותכנון כלי אצירה" description="התאמת סוגי הפחים (טמונים, מכולות) לצרכי המבנה." />
+                    </div>
+
+                    <div className="bg-emerald-50 p-8 rounded-2xl border border-emerald-100">
+                        <h3 className="text-2xl font-bold mb-4 italic text-emerald-900">אל תעכבו את ההיתר בשל תכנון אשפה לקוי</h3>
+                        <p className="text-lg text-gray-700 mb-8 leading-relaxed">אנחנו דואגים שנספח האצירה ותכנון חדרי האשפה יבוצעו נכון מהפעם הראשונה, תוך עמידה מלאה בדרישות הרשות (רדיוס סיבוב למשאית, ניקוז ואוורור).</p>
+                        <div className="flex flex-wrap gap-4">
+                            <button onClick={() => handleWhatsAppRedirect("היי, אנחנו מעוניינים בהצעה לנספח אצירת אשפה להיתר בנייה.")} className="bg-emerald-700 text-white px-8 py-3 rounded-lg font-bold flex items-center gap-2 hover:bg-emerald-800 transition-all shadow-md"><Icon name="message-circle" /> שלחו תכנית לבדיקה</button>
+                            <a href={`tel:${PHONE_NUMBER}`} className="bg-white text-emerald-800 border border-emerald-700 px-8 py-3 rounded-lg font-bold">050-6890650</a>
+                        </div>
+                    </div>
+                </div>
+            );
+
+            const EnvironmentalPage = () => (
+                <div className="pt-32 pb-20 max-w-4xl mx-auto px-4 text-right animate-fade-in">
+                    <button onClick={() => navigateTo('home')} className="flex items-center gap-2 text-emerald-700 font-bold mb-8 hover:gap-3 transition-all"><Icon name="arrow-left" size={18} /> חזרה לדף הבית</button>
+                    <h1 className="text-4xl font-extrabold text-gray-900 mb-6 leading-tight">נספח סביבתי להיתר בנייה ולתב״ע</h1>
+                    <p className="text-xl text-gray-600 mb-12 leading-relaxed">אנחנו מלווים יזמים ואדריכלים בניהול היבטים סביבתיים מורכבים. הניסיון שלנו מבטיח ראייה מערכתית שמחברת בין צרכי היזם לדרישות הרגולציה המחמירות.</p>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                        <div className="p-8 bg-white shadow-lg rounded-2xl border-t-4 border-emerald-700">
+                            <h2 className="text-2xl font-bold mb-4 italic">נספח סביבה לתב״ע</h2>
+                            <ul className="space-y-3 text-gray-700">
+                                <li>• בדיקת היתכנות סביבתית לפרויקט</li>
+                                <li>• חוות דעת מקצועיות בנושאי מטרדים</li>
+                                <li>• ליווי מול ועדות התכנון המחוזיות</li>
+                                <li>• פתרונות להפחתת השפעות סביבתיות</li>
+                            </ul>
+                        </div>
+                        <div className="p-8 bg-white shadow-lg rounded-2xl border-t-4 border-blue-700">
+                            <h2 className="text-2xl font-bold mb-4 italic">נספח סביבתי להיתר</h2>
+                            <ul className="space-y-3 text-gray-700">
+                                <li>• הכנת נספח סביבתי למגורים ומסחר</li>
+                                <li>• תכנון מיגון אקוסטי ומניעת מטרדים</li>
+                                <li>• מענה לתנאי סביבה בתיק המידע</li>
+                                <li>• ניהול היבטי חומרים מסוכנים</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div className="bg-gray-900 text-white rounded-2xl p-10 text-center">
+                        <h3 className="text-2xl font-bold mb-4 text-emerald-400 italic">יש לכם פרויקט מורכב על הפרק?</h3>
+                        <p className="text-gray-300 mb-8 max-w-xl mx-auto text-lg leading-relaxed">אנחנו מנוסים בפיצוח חסמים סביבתיים בפרויקטים מכל הסוגים. שלחו לנו תכנית ונחזור אליכם עם ניתוח של מה נדרש.</p>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <button onClick={() => handleWhatsAppRedirect("היי, רצינו להתייעץ לגבי נספח סביבתי לפרויקט שלנו.")} className="bg-emerald-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-emerald-500 flex items-center justify-center gap-2 shadow-lg"><Icon name="message-circle" /> שלחו תכנית/גרמושקה</button>
+                            <a href={`tel:${PHONE_NUMBER}`} className="bg-transparent border border-gray-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-gray-800">שיחה טלפונית</a>
+                        </div>
+                    </div>
+                </div>
+            );
+
+            const HistoryPage = () => (
+                <div className="pt-32 pb-20 max-w-4xl mx-auto px-4 text-right animate-fade-in">
+                    <button onClick={() => navigateTo('home')} className="flex items-center gap-2 text-emerald-700 font-bold mb-8 hover:gap-3 transition-all"><Icon name="arrow-left" size={18} /> חזרה לדף הבית</button>
+                    <h1 className="text-4xl font-extrabold text-gray-900 mb-6 leading-tight">סקר היסטורי סביבתי (קרקע וזיהומים)</h1>
+                    <p className="text-xl text-gray-600 mb-12 leading-relaxed">איתור שימושים קודמים ומקורות סיכון במגרש (תעשייה, מוסכים, דלקים וכו׳) על בסיס מאגרי מידע ותצלומים. אנחנו מספקים תוצר ברור שמסייע להתקדם ברישוי.</p>
+                    
+                    <div className="bg-white p-8 shadow-xl rounded-2xl border border-gray-100 mb-12 space-y-4">
+                        <FeatureItem title="פענוח תצלומי אוויר (תצ״א)" description="ניתוח היסטורי של שימושי הקרקע לאורך עשרות שנים." />
+                        <FeatureItem title="סקירת מאגרי מידע" description="בדיקה מול המשרד להגנת הסביבה והרשויות המקומיות." />
+                        <FeatureItem title="דוח סקר היסטורי בפורמט נדרש" description="עריכת הדוח בצורה ברורה להגשה לגורמים הרלוונטיים (רשות/ועדה/יועצים) לצורך התקדמות ברישוי." />
+                    </div>
+
+                    <div className="bg-emerald-900 text-white rounded-2xl p-10 text-center">
+                        <h3 className="text-2xl font-bold mb-4 text-emerald-300 italic">רוצים לבדוק היתכנות לסקר?</h3>
+                        <p className="text-emerald-100/80 mb-8 max-w-xl mx-auto text-lg leading-relaxed">שלחו לנו גוש וחלקה, ונבצע בדיקה ראשונית של מה נדרש לפרויקט שלכם מבחינת זיהומי קרקע ושימושים קודמים.</p>
+                        <button onClick={() => handleWhatsAppRedirect("היי, רצינו לשלוח גוש וחלקה לבדיקה לסקר היסטורי.")} className="bg-emerald-500 text-emerald-950 px-8 py-3 rounded-lg font-bold hover:bg-emerald-400 flex items-center justify-center gap-2 shadow-lg"><Icon name="message-circle" /> שלחו גוש/חלקה ב-WhatsApp</button>
+                    </div>
+                </div>
+            );
+
+            return (
+                <div className="min-h-screen bg-white">
+                    <Header />
+                    <main>
+                        {currentPage === 'home' && <HomePage />}
+                        {currentPage === 'waste' && <WastePage />}
+                        {currentPage === 'solar' && <SolarPage />}
+                        {currentPage === 'env' && <EnvironmentalPage />}
+                        {currentPage === 'history' && <HistoryPage />}
+                    </main>
+                    <Footer />
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
