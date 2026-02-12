@@ -1,138 +1,269 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>סקר היסטורי סביבתי (Phase I ESA) לקרקע וזיהומים | תלם</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סקר היסטורי סביבתי (Phase I ESA) לקרקע וזיהומים | תלם ניהול סביבה</title>
     <meta name="description" content="סקר היסטורי סביבתי (Phase I) לאיתור זיהומי קרקע ומי תהום. פענוח תצלומי אוויר, סקירת מאגרי מידע ובדיקת שימושי עבר במגרש לצורך התקדמות ברישוי ורכישת מקרקעין." />
     <link rel="canonical" href="https://telemenv.co.il/history/" />
+    
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        telem: {
+                            moss: '#78836a',
+                            forest: '#475d4b',
+                            dark: '#243e38',
+                            black: '#1d1d1b',
+                            cream: '#f8f4f1',
+                            khaki: '#94937f'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Google Sans"', 'Assistant', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap');
-        body { font-family: 'Assistant', sans-serif; }
+        @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap');
+        
+        body { 
+            font-family: "Google Sans", "Assistant", sans-serif; 
+            background-color: #f8f4f1; 
+            color: #1d1d1b; 
+            transition: background-color 0.3s, color 0.3s; 
+        }
+        
+        .animate-fade-in { animation: fadeIn 0.5s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        html { scroll-behavior: smooth; }
+
+        /* Accessibility Styles */
+        .accessible-grayscale { filter: grayscale(100%); }
+        .accessible-links a { text-decoration: underline !important; font-weight: bold !important; }
+        .accessible-font { font-family: Arial, sans-serif !important; }
+        .accessible-contrast { background-color: #000 !important; color: #fff !important; }
+        .accessible-contrast * { color: #fff !important; border-color: #fff !important; }
+        .accessible-contrast a { color: #ffff00 !important; }
     </style>
 </head>
-<body class="bg-white text-gray-900">
+<body>
+    <div id="root"></div>
 
-    <!-- Header -->
-    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
-        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
-            <a href="/" class="flex items-center gap-2 text-2xl font-bold text-emerald-800">
-                <span class="inline-flex w-9 h-9 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700 font-black">ת</span>
-                <span>תלם <span class="text-gray-600 font-light">| ניהול סביבה</span></span>
-            </a>
-            <nav class="hidden lg:flex gap-6 font-semibold text-gray-600">
-                <a href="/waste/" class="hover:text-emerald-600">נספח אצירת אשפה</a>
-                <a href="/solar/" class="hover:text-emerald-600">פרויקטים סולאריים</a>
-                <a href="/env/" class="hover:text-emerald-600">נספח סביבתי</a>
-                <a href="/history/" class="text-emerald-700 border-b-2 border-emerald-700 pb-1">סקר היסטורי</a>
-            </nav>
-            <div class="hidden md:flex items-center gap-3">
-                <a href="tel:0506890650" class="bg-emerald-700 text-white px-5 py-2.5 rounded-lg font-bold hover:bg-emerald-800 transition-all">
-                    050-6890650
-                </a>
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        const Icon = ({ name, size = 20, className = "" }) => {
+            useEffect(() => {
+                if (window.lucide) { window.lucide.createIcons(); }
+            }, [name]);
+            return <i data-lucide={name} style={{ width: size, height: size }} className={className}></i>;
+        };
+
+        const TelemLogo = ({ className = "" }) => (
+            <div className={`flex items-center min-w-[150px] ${className}`}>
+                <img 
+                    src="../logo.png" 
+                    alt="תלם - ניהול סביבה ופסולת" 
+                    className="h-16 md:h-20 w-auto object-contain block"
+                    onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = 'https://via.placeholder.com/200x80?text=%D7%AA%D7%9C%D7%9D+%D7%9C%D7%95%D7%92%D7%95';
+                    }}
+                />
             </div>
-        </div>
-    </header>
+        );
 
-    <!-- Main Content -->
-    <main class="pt-32 pb-20">
-        <section class="max-w-4xl mx-auto px-4 text-right">
-            <a href="/" class="inline-flex items-center gap-2 text-emerald-700 font-bold mb-8 hover:underline">
-                ← חזרה לדף הבית
-            </a>
-
-            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
-                סקר היסטורי סביבתי (קרקע וזיהומים) - Phase I ESA
-            </h1>
+        const AccessibilityMenu = () => {
+            const [isOpen, setIsOpen] = useState(false);
+            const [settings, setSettings] = useState({ grayscale: false, contrast: false, links: false, readableFont: false, fontSize: 100 });
+            const toggleSetting = (key) => setSettings(prev => ({ ...prev, [key]: !prev[key] }));
+            const changeFontSize = (delta) => setSettings(prev => ({ ...prev, fontSize: Math.max(100, Math.min(150, prev.fontSize + delta)) }));
+            const reset = () => setSettings({ grayscale: false, contrast: false, links: false, readableFont: false, fontSize: 100 });
             
-            <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
-                <p class="text-xl font-semibold text-emerald-800 italic">
-                    מתכננים לרכוש מגרש או להגיש בקשה לשינוי ייעוד? סקר היסטורי הוא הצעד הראשון והחשוב ביותר להבטחת ההשקעה שלכם.
-                </p>
+            useEffect(() => {
+                const body = document.body;
+                body.classList.toggle('accessible-grayscale', settings.grayscale);
+                body.classList.toggle('accessible-contrast', settings.contrast);
+                body.classList.toggle('accessible-links', settings.links);
+                body.classList.toggle('accessible-font', settings.readableFont);
+                body.style.fontSize = `${settings.fontSize}%`;
+            }, [settings]);
 
-                <h2 class="text-2xl font-bold text-gray-900 mt-10">מהו סקר היסטורי ולמה הוא קריטי ליזמים?</h2>
-                <p>
-                    סקר היסטורי סביבתי (הידוע גם כ-Phase I Environmental Site Assessment) הוא תהליך חקירתי שמטרתו לזהות פוטנציאל לזיהום קרקע או מי תהום במגרש. הסקר מתבצע ללא קידוחים או דיגומים בשלב זה, ומתמקד באיסוף מידע מקיף על שימושי העבר בשטח.
-                </p>
-                <p>
-                    חשיבותו של הסקר עבור יזמים היא כפולה: ראשית, מדובר בדרישה רגולטורית של המשרד להגנת הסביבה והוועדות המחוזיות בכל מקרה של שינוי ייעוד מקרקע תעשייתית/חקלאית למגורים. שנית, הוא מהווה "בדיקת נאותות" (Due Diligence) שמונעת מהיזם לרכוש קרקע "נגועה" שעלויות השיקום שלה עשויות להגיע למיליוני שקלים.
-                </p>
-
-                <div class="bg-gray-50 p-8 rounded-2xl border-r-4 border-emerald-600 my-10">
-                    <h2 class="text-2xl font-bold text-gray-900 mb-4 italic">מה כולל דוח סקר היסטורי מקצועי?</h2>
-                    <p>
-                        עריכת הסקר דורשת מיומנות גבוהה וגישה למאגרי מידע מורכבים. אנחנו ב"תלם" מבצעים בדיקה הכוללת:
-                    </p>
-                    <ul class="list-disc pr-6 space-y-2 mt-4">
-                        <li><strong>פענוח תצלומי אוויר (תצ"א):</strong> ניתוח היסטורי של רצף התצ"אות לאורך עשרות שנים לאיתור מבנים חשודים, מוסכים, מפעלי עבר או מוקדי שפיכה.</li>
-                        <li><strong>סקירת מאגרי מידע:</strong> בדיקת רישומי המשרד להגנת הסביבה, איגודי ערים, רשויות הכבאות ומאגרי מידע היסטוריים על אחסון חומרים מסוכנים ודלקים.</li>
-                        <li><strong>סיור בשטח:</strong> בדיקה ויזואלית לאיתור סימנים בשטח כגון כתמי שמן, ריחות חריגים, צינורות אוורור של מכלי דלק תת-קרקעיים וצמחייה פגועה.</li>
-                        <li><strong>מסקנות והמלצות:</strong> קביעה האם קיים חשש לזיהום ומתן המלצות להמשך (סגירת התיק או התקדמות לדיגום קרקע).</li>
-                    </ul>
+            return (
+                <div className="fixed bottom-6 left-6 z-[9999]">
+                    <button onClick={() => setIsOpen(!isOpen)} className="w-14 h-14 bg-telem-dark text-white rounded-full shadow-2xl flex items-center justify-center hover:bg-telem-forest transition-all border-2 border-white"><Icon name="accessibility" size={30} /></button>
+                    {isOpen && (
+                        <div className="absolute bottom-16 left-0 w-72 bg-white rounded-2xl shadow-2xl border border-gray-200 p-6 animate-fade-in text-right text-telem-black">
+                            <h3 className="text-xl font-bold mb-4 border-b pb-2 text-telem-dark font-black">תפריט נגישות</h3>
+                            <div className="space-y-3 text-sm">
+                                <button onClick={() => toggleSetting('contrast')} className={`w-full text-right p-3 rounded-xl transition-all flex items-center justify-between border ${settings.contrast ? 'bg-telem-dark text-white' : 'hover:bg-gray-50'}`}><span>ניגודיות גבוהה</span><Icon name="contrast" size={18} /></button>
+                                <button onClick={() => toggleSetting('grayscale')} className={`w-full text-right p-3 rounded-xl transition-all flex items-center justify-between border ${settings.grayscale ? 'bg-telem-dark text-white' : 'hover:bg-gray-50'}`}><span>גווני אפור</span><Icon name="image" size={18} /></button>
+                                <button onClick={() => toggleSetting('links')} className={`w-full text-right p-3 rounded-xl transition-all flex items-center justify-between border ${settings.links ? 'bg-telem-dark text-white' : 'hover:bg-gray-50'}`}><span>הדגשת קישורים</span><Icon name="external-link" size={18} /></button>
+                                <button onClick={() => toggleSetting('readableFont')} className={`w-full text-right p-3 rounded-xl transition-all flex items-center justify-between border ${settings.readableFont ? 'bg-telem-dark text-white' : 'hover:bg-gray-50'}`}><span>גופן קריא</span><Icon name="type" size={18} /></button>
+                                <div className="flex gap-2"><button onClick={() => changeFontSize(10)} className="flex-1 bg-gray-100 p-2 rounded-lg font-bold hover:bg-gray-200">A+</button><button onClick={() => changeFontSize(-10)} className="flex-1 bg-gray-100 p-2 rounded-lg font-bold hover:bg-gray-200">A-</button></div>
+                                <button onClick={reset} className="w-full text-center p-2 text-sm text-red-600 font-bold hover:underline mt-2">ביטול כל ההתאמות</button>
+                            </div>
+                        </div>
+                    )}
                 </div>
+            );
+        };
 
-                <h2 class="text-2xl font-bold text-gray-900 mt-10">מתי נדרש לבצע סקר היסטורי?</h2>
-                <p>
-                    הדרישה לסקר היסטורי עולה בדרך כלל באחד משלושת המקרים הבאים:
-                </p>
-                <ol class="list-decimal pr-6 space-y-2">
-                    <li><strong>שינוי ייעוד (תב"ע):</strong> כאשר מתכננים להפוך שטח ששימש לתעשייה, מלאכה, חקלאות או מחנה צבאי לשטח המיועד למגורים או לשימוש ציבורי רגיש.</li>
-                    <li><strong>תנאי להיתר בנייה:</strong> ברשויות רבות (כמו תל אביב, חיפה ורמת גן), כל פרויקט הממוקם באזור שהיה בעבר תעשייתי מחויב בסקר היסטורי כחלק מהתנאים בתיק המידע.</li>
-                    <li><strong>עסקאות נדל"ן:</strong> בנקים ומוסדות מימון דורשים לעיתים סקר Phase I כחלק מתנאי המימון לרכישת קרקע, כדי להבטיח שהנכס אינו מהווה חשיפה כלכלית.</li>
-                </ol>
-            </div>
-
-            <!-- FAQ Section -->
-            <div class="mt-16 bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
-                <div class="bg-emerald-700 text-white p-6 font-bold text-xl italic">
-                    שאלות ותשובות (FAQ) - סקר היסטורי
-                </div>
-                <div class="divide-y divide-gray-100">
-                    <div class="p-6">
-                        <h4 class="font-bold text-lg text-emerald-900 mb-2">מה קורה אם הסקר ההיסטורי מגלה שהיה מוסך בשטח לפני 40 שנה?</h4>
-                        <p class="text-gray-600 leading-relaxed">במקרה כזה, הסקר יוגדר כ"סקר עם ממצאים". המשרד להגנת הסביבה ידרוש בדרך כלל לעבור לשלב הבא (Phase II) – תכנית לדיגום קרקע וביצוע קידוחים ממוקדים כדי לוודא אם הקרקע אכן זוהמה בפועל.</p>
-                    </div>
-                    <div class="p-6">
-                        <h4 class="font-bold text-lg text-emerald-900 mb-2">כמה זמן הסקר תקף?</h4>
-                        <p class="text-gray-600 leading-relaxed">תוקף סקר היסטורי הוא לרוב ל-5 שנים, כל עוד לא בוצעה פעילות חדשה בשטח שעלולה הייתה לגרום לזיהום בתקופה זו. אם עבר זמן רב, הרשויות עשויות לדרוש "עדכון סקר".</p>
-                    </div>
-                    <div class="p-6">
-                        <h4 class="font-bold text-lg text-emerald-900 mb-2">האם ניתן לבצע את הסקר בלי סיור בשטח?</h4>
-                        <p class="text-gray-600 leading-relaxed">לא. על פי הנחיות המשרד להגנת הסביבה, סיור פיזי בשטח על ידי יועץ סביבה מוסמך הוא חלק בלתי נפרד מהסקר. התמונות מהסיור והתרשמות היועץ הן מרכיב חובה בדוח הסופי.</p>
-                    </div>
-                    <div class="p-6">
-                        <h4 class="font-bold text-lg text-emerald-900 mb-2">מה ההבדל בין סקר היסטורי לסקר קרקע?</h4>
-                        <p class="text-gray-600 leading-relaxed">סקר היסטורי הוא עבודה משרדית וסיור ויזואלי (בלי חפירות). סקר קרקע הוא השלב הבא, הכולל הבאת מכונת קידוח ודיגום דגימות אדמה למעבדה מוסמכת.</p>
+        const CookieBanner = () => {
+            const [show, setShow] = useState(false);
+            useEffect(() => { if (!localStorage.getItem('cookie-consent')) setShow(true); }, []);
+            const accept = () => { localStorage.setItem('cookie-consent', 'true'); setShow(false); };
+            if (!show) return null;
+            return (
+                <div className="fixed bottom-0 left-0 w-full bg-telem-black text-white p-6 z-[9998] backdrop-blur-md border-t border-telem-moss shadow-2xl animate-fade-in">
+                    <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-right">
+                        <div className="flex-1"><h4 className="text-xl font-black text-telem-khaki mb-2 italic">אוהבים עוגיות? גם אנחנו!</h4><p className="text-gray-300 text-sm md:text-base font-medium">האתר של תלם משתמש בעוגיות (Cookies) על מנת להבטיח לך את חווית הגלישה הטובה ביותר בהתאם לחוק הגנת הפרטיות.</p></div>
+                        <button onClick={accept} className="bg-telem-forest text-white px-10 py-3 rounded-xl font-black hover:bg-telem-moss transition-all">הבנתי, תודה!</button>
                     </div>
                 </div>
-            </div>
+            );
+        };
 
-            <div class="mt-16 bg-emerald-900 text-white rounded-3xl p-10 text-center shadow-xl">
-                <h3 class="text-3xl font-bold mb-6 italic text-emerald-300">בדיקה ראשונית של המגרש שלכם</h3>
-                <p class="text-emerald-100/90 mb-10 max-w-2xl mx-auto text-lg leading-relaxed">
-                    אנחנו ב"תלם" מבצעים בדיקות היתכנות ראשוניות לפי גוש וחלקה. פנו אלינו ונוכל לומר לכם במהירות האם המגרש שלכם "חשוד" ומה הדרך המהירה ביותר לקבל אישור רגולטורי.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="https://wa.me/972506890650?text=%D7%94%D7%99%D7%99%2C%20%D7%A8%D7%A6%D7%99%D7%AA%D7%99%20%D7%9C%D7%91%D7%93%D7%95%D7%A7%20%D7%90%D7%AA%20%D7%94%D7%9E%D7%92%D7%A8%D7%A9%20%D7%A9%D7%9C%D7%99%20%D7%9C%D7%A1%D7%A7%D7%A1%20%D7%94%D7%99%D7%A1%D7%98%D7%95%D7%A8%D7%99" target="_blank" class="bg-emerald-500 text-emerald-950 px-10 py-4 rounded-xl font-extrabold hover:bg-emerald-400 transition-all shadow-lg text-lg text-center">
-                        שלחו גוש וחלקה ב-WhatsApp
-                    </a>
-                    <a href="tel:0506890650" class="border-2 border-emerald-500 text-emerald-300 px-10 py-4 rounded-xl font-bold hover:bg-emerald-800 transition-all text-lg flex items-center justify-center">
-                        050-6890650
-                    </a>
+        const LegalModal = ({ type, onClose }) => {
+            if (!type) return null;
+            return (
+                <div className="fixed inset-0 bg-telem-black/80 z-[10000] flex items-center justify-center p-4 backdrop-blur-sm overflow-y-auto">
+                    <div className="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-8 md:p-12 relative text-right shadow-2xl border-4 border-telem-forest text-telem-black">
+                        <button onClick={onClose} className="absolute top-6 left-6 text-gray-400 hover:text-red-600"><Icon name="x" size={32} /></button>
+                        {type === 'accessibility' ? (
+                            <div className="animate-fade-in"><h2 className="text-3xl font-black text-telem-dark mb-8 border-b-4 border-telem-khaki pb-4 italic">הצהרת נגישות - תלם ניהול סביבה</h2><div className="space-y-6 leading-relaxed font-medium text-lg"><p>אנו בתלם ניהול סביבה רואים חשיבות עליונה בהנגשת האתר לכלל האוכלוסייה, כולל אנשים עם מוגבלויות. האתר עומד בדרישות תקנות שוויון זכויות לאנשים עם מוגבלות ומותאם לתקן הישראלי (ת"י 5568) ברמת AA.</p><h3 className="text-xl font-bold text-telem-dark italic underline">פרטי רכז נגישות</h3><p>רכז נגישות: אבירם בוצר | טלפון: 050-6890650 | אימייל: aviram@telemenv.co.il</p></div></div>
+                        ) : (
+                            <div className="animate-fade-in"><h2 className="text-3xl font-black text-telem-dark mb-8 border-b-4 border-telem-khaki pb-4 italic">מדיניות הגנת פרטיות</h2><div className="space-y-6 leading-relaxed font-medium text-lg"><p>משרד 'תלם ניהול סביבה' מכבד את פרטיות הגולשים ומתחייב לפעול בהתאם לחוק הגנת הפרטיות, התשמ"א-1981.</p><h3 className="text-xl font-bold text-telem-dark italic underline">איסוף מידע</h3><p>המידע שנאסף באתר נועד לשיפור חווית המשתמש בלבד. מידע שנשלח בטפסים משמש לצורך יצירת קשר עם הלקוח בלבד ולא יועבר לצד שלישי.</p></div></div>
+                        )}
+                    </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            );
+        };
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12 px-4 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto text-center text-gray-500">
-            <p class="mb-2">© <span id="year"></span> תלם | ניהול סביבה - אבירם בוצר</p>
-            <p class="text-sm">סקרים היסטוריים • נספחים סביבתיים • נספחי אצירת אשפה • פרויקטים סולאריים</p>
-        </div>
-        <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-    </footer>
+        const App = () => {
+            const [isMenuOpen, setIsMenuOpen] = useState(false);
+            const [legalModal, setLegalModal] = useState(null);
+            const PHONE_NUMBER = "0506890650";
+            const WA_NUMBER = "972506890650";
+            const LINKEDIN_URL = "https://gemini.google.com/share/09411eaf79fd";
 
+            const navigation = [
+                { name: 'דף הבית', href: '/' },
+                { name: 'נספח אצירת אשפה', href: '/waste/' },
+                { name: 'פרויקטים סולאריים', href: '/solar/' },
+                { name: 'נספח סביבתי', href: '/env/' },
+                { name: 'סקר היסטורי', href: '/history/' },
+            ];
+
+            return (
+                <div className="min-h-screen">
+                    <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 border-b border-telem-khaki/10">
+                        <div className="max-w-7xl mx-auto px-4 h-24 flex justify-between items-center">
+                            <a href="/" className="hover:opacity-80 transition-all flex items-center"><TelemLogo /></a>
+                            <nav className="hidden lg:flex gap-8">
+                                {navigation.map(item => (
+                                    <a key={item.name} href={item.href} className={`text-sm font-bold transition-colors ${item.href === '/history/' ? 'text-telem-dark border-b-2 border-telem-khaki' : 'text-telem-forest hover:text-telem-moss'}`}>
+                                        {item.name}
+                                    </a>
+                                ))}
+                            </nav>
+                            <div className="hidden md:flex items-center gap-4">
+                                <a href={LINKEDIN_URL} target="_blank" className="text-telem-dark hover:text-telem-moss transition-colors" title="LinkedIn"><Icon name="linkedin" size={24} /></a>
+                                <a href={`tel:${PHONE_NUMBER}`} className="bg-telem-dark text-white px-6 py-2.5 rounded-xl font-bold hover:bg-telem-forest transition-all shadow-md">{PHONE_NUMBER.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2$3')}</a>
+                            </div>
+                            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden text-telem-dark"><Icon name={isMenuOpen ? "x" : "menu"} size={28} /></button>
+                        </div>
+                    </header>
+
+                    <AccessibilityMenu />
+                    <CookieBanner />
+                    <LegalModal type={legalModal} onClose={() => setLegalModal(null)} />
+
+                    <main className="pt-40 pb-24 animate-fade-in max-w-4xl mx-auto px-4">
+                        <a href="/" className="inline-flex items-center gap-2 text-telem-forest font-bold mb-8 hover:text-telem-dark transition-colors">
+                            <Icon name="arrow-right" size={18} /> חזרה לדף הבית
+                        </a>
+
+                        <h1 className="text-4xl md:text-6xl font-black text-telem-black mb-8 leading-tight italic">
+                            סקר היסטורי סביבתי (Phase I ESA) לקרקע
+                        </h1>
+
+                        <div className="space-y-8 text-telem-black text-lg font-medium leading-relaxed">
+                            <p className="text-2xl text-telem-forest font-bold italic border-r-4 border-telem-khaki pr-6">
+                                מתכננים לרכוש מגרש או להגיש בקשה לשינוי ייעוד? סקר היסטורי הוא הצעד הראשון והחשוב ביותר להבטחת ההשקעה שלכם.
+                            </p>
+
+                            <section>
+                                <h2 className="text-2xl font-black text-telem-dark mb-4 italic">מהו סקר היסטורי ולמה הוא קריטי ליזמים?</h2>
+                                <p>סקר היסטורי סביבתי (Phase I ESA) הוא תהליך חקירתי שמטרתו לזהות פוטנציאל לזיהום קרקע או מי תהום במגרש. הסקר מתבצע ללא קידוחים או דיגומים בשלב זה, ומתמקד באיסוף מידע מקיף על שימושי העבר בשטח.</p>
+                                <p className="mt-4">חשיבותו של הסקר עבור יזמים היא כפולה: מדובר בדרישה רגולטורית של המשרד להגנת הסביבה והוועדות המחוזיות בכל מקרה של שינוי ייעוד, והוא מהווה "בדיקת נאותות" (Due Diligence) שמונעת רכישת קרקע נגועה ששיקומה יעלה מיליונים.</p>
+                            </section>
+
+                            <div className="bg-white p-8 rounded-[32px] border border-telem-khaki/20 shadow-lg my-12">
+                                <h2 className="text-2xl font-black text-telem-dark mb-4 italic underline decoration-telem-khaki">מה כולל דוח סקר היסטורי מקצועי?</h2>
+                                <p className="mb-4">עריכת הסקר דורשת מיומנות גבוהה וגישה למאגרי מידע מורכבים. אנחנו ב"תלם" מבצעים בדיקה הכוללת:</p>
+                                <ul className="space-y-4 pr-4">
+                                    <li className="flex items-start gap-3"><Icon name="search" className="text-telem-forest mt-1" size={20} /> <span><strong>פענוח תצלומי אוויר (תצ"א):</strong> ניתוח היסטורי לאורך עשרות שנים לאיתור מוקדים חשודים.</span></li>
+                                    <li className="flex items-start gap-3"><Icon name="database" className="text-telem-forest mt-1" size={20} /> <span><strong>סקירת מאגרי מידע:</strong> בדיקת רישומי המשרד להגנת הסביבה, כיבוי אש ואיגודי ערים.</span></li>
+                                    <li className="flex items-start gap-3"><Icon name="eye" className="text-telem-forest mt-1" size={20} /> <span><strong>סיור בשטח:</strong> בדיקה ויזואלית לאיתור סימנים כגון כתמי שמן, ריחות חריגים וצינורות אוורור.</span></li>
+                                </ul>
+                            </div>
+
+                            <section>
+                                <h2 className="text-2xl font-black text-telem-dark mb-4 italic">מתי נדרש לבצע סקר היסטורי?</h2>
+                                <p><strong>שינוי ייעוד (תב"ע):</strong> כאשר הופכים שטח תעשייתי או חקלאי למגורים או לשימוש ציבורי רגיש.</p>
+                                <p className="mt-2"><strong>תנאי להיתר בנייה:</strong> ברשויות רבות, כל פרויקט הממוקם באזור שהיה בעבר תעשייתי מחויב בסקר היסטורי.</p>
+                                <p className="mt-2"><strong>עסקאות נדל"ן:</strong> בנקים דורשים לעיתים סקר Phase I כחלק מתנאי המימון כדי להבטיח שהנכס אינו מהווה חשיפה כלכלית.</p>
+                            </section>
+                        </div>
+
+                        <div className="mt-20 bg-telem-dark text-white rounded-[40px] p-10 text-center shadow-2xl relative overflow-hidden text-telem-cream">
+                            <h3 className="text-3xl font-black mb-6 italic tracking-tight">בדיקה ראשונית של המגרש שלכם</h3>
+                            <p className="text-telem-cream/80 mb-10 text-xl font-medium max-w-2xl mx-auto italic">אנחנו ב"תלם" מבצעים בדיקות היתכנות ראשוניות לפי גוש וחלקה. פנו אלינו לבירור מהיר.</p>
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                <button onClick={() => window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("היי אבירם, רציתי לבדוק גוש וחלקה לסקר היסטורי.")}`, '_blank')} className="bg-telem-forest text-white px-10 py-4 rounded-2xl font-black text-xl hover:bg-telem-moss transition-all shadow-lg flex items-center justify-center gap-3 italic">
+                                    <Icon name="message-circle" /> שלחו גוש וחלקה ב-WhatsApp
+                                </button>
+                                <a href={`tel:${PHONE_NUMBER}`} className="border-2 border-telem-khaki text-white px-10 py-4 rounded-2xl font-black text-xl hover:bg-white/10 transition-all italic">050-6890650</a>
+                            </div>
+                        </div>
+                    </main>
+
+                    <footer className="bg-telem-dark text-white py-20 px-4 text-right border-t border-telem-forest/30">
+                        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-16">
+                            <div>
+                                <TelemLogo className="mb-8" />
+                                <p className="text-telem-cream/60 text-xl max-w-md font-medium italic">אבירם בוצר - מומחה לייעוץ סביבתי ותכנון אצירת אשפה.</p>
+                            </div>
+                            <div className="flex flex-col md:items-end gap-6 text-telem-cream font-bold text-lg">
+                                <div className="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20"><span>aviram@telemenv.co.il</span><Icon name="mail" size={24} className="text-telem-khaki" /></div>
+                                <div className="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20"><span>050-6890650</span><Icon name="phone" size={24} className="text-telem-khaki" /></div>
+                                <a href={LINKEDIN_URL} target="_blank" className="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20 hover:text-white transition-all"><span>פרופיל LinkedIn</span><Icon name="linkedin" size={24} className="text-telem-khaki" /></a>
+                                <div className="flex gap-4 mt-8 text-sm font-bold text-telem-khaki">
+                                    <button onClick={() => setLegalModal('accessibility')} className="hover:underline italic font-black">הצהרת נגישות</button>
+                                    <span className="opacity-30">|</span>
+                                    <button onClick={() => setLegalModal('privacy')} className="hover:underline italic font-black">מדיניות פרטיות</button>
+                                </div>
+                                <p className="mt-4 text-sm font-normal opacity-30 italic">© {new Date().getFullYear()} תלם - ניהול סביבה ופסולת. כל הזכויות שמורות.</p>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
 </body>
 </html>
