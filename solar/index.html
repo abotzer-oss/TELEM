@@ -1,131 +1,273 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ליווי סביבתי לפרויקטים סולאריים ואגרו-וולטאי | תלם</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ליווי סביבתי לפרויקטים סולאריים ואגרו-וולטאי | תלם ניהול סביבה</title>
     <meta name="description" content="ייעוץ וליווי סביבתי לפרויקטים סולאריים, אגרו-וולטאי ומתקני אגירת אנרגיה (BESS). הכנת נספחי שימור קרקע, השבה לחקלאות ומענה רגולטורי לקידום היתרים." />
     <link rel="canonical" href="https://telemenv.co.il/solar/" />
+    
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        telem: {
+                            moss: '#78836a',
+                            forest: '#475d4b',
+                            dark: '#243e38',
+                            black: '#1d1d1b',
+                            cream: '#f8f4f1',
+                            khaki: '#94937f'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Google Sans"', 'Assistant', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap');
-        body { font-family: 'Assistant', sans-serif; }
+        @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap');
+        
+        body { 
+            font-family: "Google Sans", "Assistant", sans-serif; 
+            background-color: #f8f4f1; 
+            color: #1d1d1b; 
+            transition: background-color 0.3s, color 0.3s; 
+        }
+        
+        .animate-fade-in { animation: fadeIn 0.5s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        html { scroll-behavior: smooth; }
+
+        /* Accessibility Styles */
+        .accessible-grayscale { filter: grayscale(100%); }
+        .accessible-links a { text-decoration: underline !important; font-weight: bold !important; }
+        .accessible-font { font-family: Arial, sans-serif !important; }
+        .accessible-contrast { background-color: #000 !important; color: #fff !important; }
+        .accessible-contrast * { color: #fff !important; border-color: #fff !important; }
+        .accessible-contrast a { color: #ffff00 !important; }
     </style>
 </head>
-<body class="bg-white text-gray-900">
+<body>
+    <div id="root"></div>
 
-    <!-- Header -->
-    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
-        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
-            <a href="/" class="flex items-center gap-2 text-2xl font-bold text-emerald-800">
-                <span class="inline-flex w-9 h-9 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700 font-black">ת</span>
-                <span>תלם <span class="text-gray-600 font-light">| ניהול סביבה</span></span>
-            </a>
-            <nav class="hidden lg:flex gap-6 font-semibold text-gray-600">
-                <a href="/waste/" class="hover:text-emerald-600">נספח אצירת אשפה</a>
-                <a href="/solar/" class="text-emerald-700 border-b-2 border-emerald-700 pb-1">פרויקטים סולאריים</a>
-                <a href="/env/" class="hover:text-emerald-600">נספח סביבתי</a>
-                <a href="/history/" class="hover:text-emerald-600">סקר היסטורי</a>
-            </nav>
-            <div class="hidden md:flex items-center gap-3">
-                <a href="tel:0506890650" class="bg-emerald-700 text-white px-5 py-2.5 rounded-lg font-bold hover:bg-emerald-800 transition-all">
-                    050-6890650
-                </a>
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        const Icon = ({ name, size = 20, className = "" }) => {
+            useEffect(() => {
+                if (window.lucide) { window.lucide.createIcons(); }
+            }, [name]);
+            return <i data-lucide={name} style={{ width: size, height: size }} className={className}></i>;
+        };
+
+        const TelemLogo = ({ className = "" }) => (
+            <div className={`flex items-center min-w-[150px] ${className}`}>
+                <img 
+                    src="../logo.png" 
+                    alt="תלם - ניהול סביבה ופסולת" 
+                    className="h-16 md:h-20 w-auto object-contain block"
+                    onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = 'https://via.placeholder.com/200x80?text=%D7%AA%D7%9C%D7%9D+%D7%9C%D7%95%D7%92%D7%95';
+                    }}
+                />
             </div>
-        </div>
-    </header>
+        );
 
-    <!-- Main Content -->
-    <main class="pt-32 pb-20">
-        <section class="max-w-4xl mx-auto px-4 text-right">
-            <a href="/" class="inline-flex items-center gap-2 text-emerald-700 font-bold mb-8 hover:underline">
-                ← חזרה לדף הבית
-            </a>
-
-            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
-                ליווי סביבתי לפרויקטים סולאריים ואגרו-וולטאי
-            </h1>
+        const AccessibilityMenu = () => {
+            const [isOpen, setIsOpen] = useState(false);
+            const [settings, setSettings] = useState({ grayscale: false, contrast: false, links: false, readableFont: false, fontSize: 100 });
+            const toggleSetting = (key) => setSettings(prev => ({ ...prev, [key]: !prev[key] }));
+            const changeFontSize = (delta) => setSettings(prev => ({ ...prev, fontSize: Math.max(100, Math.min(150, prev.fontSize + delta)) }));
+            const reset = () => setSettings({ grayscale: false, contrast: false, links: false, readableFont: false, fontSize: 100 });
             
-            <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
-                <p class="text-xl font-semibold text-emerald-800 italic">
-                    מקדמים מיזם אנרגיה מתחדשת בשטחים פתוחים או בנחלות חקלאיות? תכנון סביבתי נכון הוא המפתח למניעת התנגדויות וקיצור הליכי הרישוי.
-                </p>
+            useEffect(() => {
+                const body = document.body;
+                body.classList.toggle('accessible-grayscale', settings.grayscale);
+                body.classList.toggle('accessible-contrast', settings.contrast);
+                body.classList.toggle('accessible-links', settings.links);
+                body.classList.toggle('accessible-font', settings.readableFont);
+                body.style.fontSize = `${settings.fontSize}%`;
+            }, [settings]);
 
-                <h2 class="text-2xl font-bold text-gray-900 mt-10">תכנון סביבתי לפרויקטי אנרגיה מתחדשת</h2>
-                <p>
-                    הקמת מתקנים פוטו-וולטאיים (PV) על הקרקע או במבנים חקלאיים דורשת עמידה בסטנדרטים סביבתיים מחמירים של ועדות התכנון, משרד החקלאות והמשרד להגנת הסביבה. הליווי הסביבתי נועד להבטיח כי המתקן משתלב במרחב תוך שמירה על ערכי טבע, נוף וקרקע.
-                </p>
-                <p>
-                    אנחנו ב"תלם" מלווים יזמי אנרגיה וחברות EPC משלב התכנון הראשוני ועד קבלת ההיתר, תוך מתן דגש על פתרונות פרקטיים המאזנים בין הצרכים הטכנולוגיים של המתקן לבין הדרישות הרגולטוריות.
-                </p>
-
-                <div class="bg-gray-50 p-8 rounded-2xl border-r-4 border-emerald-600 my-10">
-                    <h2 class="text-2xl font-bold text-gray-900 mb-4 italic text-emerald-800 underline">חדשנות באגרו-וולטאי ושימור קרקע</h2>
-                    <p>
-                        תחום האגרו-וולטאי (Agrivoltaic) מאפשר שימוש כפול בקרקע – גידולים חקלאיים לצד ייצור חשמל נקי. מדובר באתגר תכנוני הדורש מומחיות ספציפית:
-                    </p>
-                    <ul class="list-disc pr-6 space-y-2 mt-4 font-medium">
-                        <li><strong>נספחי שימור קרקע:</strong> הגדרת שיטות עבודה למניעת הידוק קרקע, סחף ופגיעה במבנה האדמה במהלך ההקמה.</li>
-                        <li><strong>תכניות השבה לחקלאות:</strong> הכנת מפרט מפורט להחזרת השטח למצבו המקורי ולשימוש חקלאי מלא ביום שאחרי פירוק המתקן.</li>
-                        <li><strong>ליווי מתקני אגירה (BESS):</strong> מתן מענה להיבטי בטיחות וסביבה במערכות אגירת אנרגיה במכולות, כולל מרחקי הפרדה ומניעת זיהום.</li>
-                    </ul>
+            return (
+                <div className="fixed bottom-6 left-6 z-[9999]">
+                    <button onClick={() => setIsOpen(!isOpen)} className="w-14 h-14 bg-telem-dark text-white rounded-full shadow-2xl flex items-center justify-center hover:bg-telem-forest transition-all border-2 border-white"><Icon name="accessibility" size={30} /></button>
+                    {isOpen && (
+                        <div className="absolute bottom-16 left-0 w-72 bg-white rounded-2xl shadow-2xl border border-gray-200 p-6 animate-fade-in text-right text-telem-black">
+                            <h3 className="text-xl font-bold mb-4 border-b pb-2 text-telem-dark font-black">תפריט נגישות</h3>
+                            <div className="space-y-3 text-sm">
+                                <button onClick={() => toggleSetting('contrast')} className={`w-full text-right p-3 rounded-xl transition-all flex items-center justify-between border ${settings.contrast ? 'bg-telem-dark text-white' : 'hover:bg-gray-50'}`}><span>ניגודיות גבוהה</span><Icon name="contrast" size={18} /></button>
+                                <button onClick={() => toggleSetting('grayscale')} className={`w-full text-right p-3 rounded-xl transition-all flex items-center justify-between border ${settings.grayscale ? 'bg-telem-dark text-white' : 'hover:bg-gray-50'}`}><span>גווני אפור</span><Icon name="image" size={18} /></button>
+                                <button onClick={() => toggleSetting('links')} className={`w-full text-right p-3 rounded-xl transition-all flex items-center justify-between border ${settings.links ? 'bg-telem-dark text-white' : 'hover:bg-gray-50'}`}><span>הדגשת קישורים</span><Icon name="external-link" size={18} /></button>
+                                <button onClick={() => toggleSetting('readableFont')} className={`w-full text-right p-3 rounded-xl transition-all flex items-center justify-between border ${settings.readableFont ? 'bg-telem-dark text-white' : 'hover:bg-gray-50'}`}><span>גופן קריא</span><Icon name="type" size={18} /></button>
+                                <div className="flex gap-2"><button onClick={() => changeFontSize(10)} className="flex-1 bg-gray-100 p-2 rounded-lg font-bold hover:bg-gray-200">A+</button><button onClick={() => changeFontSize(-10)} className="flex-1 bg-gray-100 p-2 rounded-lg font-bold hover:bg-gray-200">A-</button></div>
+                                <button onClick={reset} className="w-full text-center p-2 text-sm text-red-600 font-bold hover:underline mt-2">ביטול כל ההתאמות</button>
+                            </div>
+                        </div>
+                    )}
                 </div>
+            );
+        };
 
-                <h2 class="text-2xl font-bold text-gray-900 mt-10 italic">השירותים שלנו בתחום הסולארי:</h2>
-                <ul class="list-disc pr-6 space-y-2">
-                    <li><strong>נספח סביבתי לתכניות מפורטות (תב"ע):</strong> בחינת השפעות נופיות, אקולוגיות והידרולוגיות.</li>
-                    <li><strong>נספח סביבה להיתר בנייה:</strong> מענה לתנאים בתיק המידע מול הוועדות המקומיות והמחוזיות.</li>
-                    <li><strong>תוכנית ניהול סביבתי לשלב הביצוע (CEMP):</strong> הנחיות לקבלנים לעבודה במינימום פגיעה בקרקע.</li>
-                    <li><strong>תיאום מול משרד החקלאות:</strong> הכנת מסמכי מדיניות לשילוב המתקן בשימוש החקלאי.</li>
-                </ul>
-            </div>
-
-            <!-- FAQ Section -->
-            <div class="mt-16 bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
-                <div class="bg-emerald-700 text-white p-6 font-bold text-xl italic">
-                    שאלות ותשובות (FAQ) - פרויקטים סולאריים
-                </div>
-                <div class="divide-y divide-gray-100">
-                    <div class="p-6">
-                        <h4 class="font-bold text-lg text-emerald-900 mb-2">למה צריך נספח שימור קרקע בפרויקט סולארי קרקעי?</h4>
-                        <p class="text-gray-600 leading-relaxed">גורמי התכנון רוצים לוודא שהקמת המתקן (הצבת הקונסטרוקציה, סלילת דרכי גישה) לא תהרוס את התשתית החקלאית של המגרש לטווח ארוך. הנספח מגדיר איך לעבוד נכון בלי לגרום לנזק בלתי הפיך לאדמה.</p>
-                    </div>
-                    <div class="p-6">
-                        <h4 class="font-bold text-lg text-emerald-900 mb-2">האם מתקני אגירה (BESS) דורשים היתר בנייה נפרד?</h4>
-                        <p class="text-gray-600 leading-relaxed">בדרך כלל הם חלק מהבקשה הכוללת למתקן הסולארי, אך הם דורשים התייחסות סביבתית ספציפית בגלל היבטי בטיחות אש, חומרים מסוכנים ורעש ממערכות הקירור.</p>
-                    </div>
-                    <div class="p-6">
-                        <h4 class="font-bold text-lg text-emerald-900 mb-2">מה זה "השבה לחקלאות"?</h4>
-                        <p class="text-gray-600 leading-relaxed">זוהי התחייבות תכנונית שבסיום חיי הפרויקט (בדרך כלל אחרי 25 שנה), היזם יפרק את המתקן ויחזיר את הקרקע למצב שבו ניתן לגדל עליה שוב. אנחנו מכינים את המפרט הטכני שמסביר איך לעשות זאת.</p>
+        const CookieBanner = () => {
+            const [show, setShow] = useState(false);
+            useEffect(() => { if (!localStorage.getItem('cookie-consent')) setShow(true); }, []);
+            const accept = () => { localStorage.setItem('cookie-consent', 'true'); setShow(false); };
+            if (!show) return null;
+            return (
+                <div className="fixed bottom-0 left-0 w-full bg-telem-black text-white p-6 z-[9998] backdrop-blur-md border-t border-telem-moss shadow-2xl animate-fade-in">
+                    <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-right font-serif italic">
+                        <div className="flex-1"><h4 className="text-xl font-black text-telem-khaki mb-2 italic">אוהבים עוגיות? גם אנחנו!</h4><p className="text-gray-300 text-sm md:text-base font-medium leading-relaxed">האתר של תלם משתמש בעוגיות (Cookies) על מנת להבטיח לך את חווית הגלישה הטובה ביותר בהתאם לחוק הגנת הפרטיות הישראלי.</p></div>
+                        <button onClick={accept} className="bg-telem-forest text-white px-10 py-3 rounded-xl font-black hover:bg-telem-moss transition-all">הבנתי, תודה!</button>
                     </div>
                 </div>
-            </div>
+            );
+        };
 
-            <div class="mt-16 bg-emerald-900 text-white rounded-3xl p-10 text-center shadow-xl">
-                <h3 class="text-3xl font-bold mb-6 italic text-emerald-300 underline">מקדמים אנרגיה נקייה בראש שקט</h3>
-                <p class="text-emerald-100/90 mb-10 max-w-2xl mx-auto text-lg leading-relaxed">
-                    אנחנו ב"תלם" מבינים את לוחות הזמנים הלחוצים של פרויקטי אנרגיה ואת המורכבות של עבודה בשטחים פתוחים. דברו איתנו כדי לסגור את הפינה הסביבתית של הפרויקט שלכם.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="https://wa.me/972506890650?text=%D7%94%D7%99%D7%99%2C%20%D7%A8%D7%A6%D7%99%D7%AA%D7%99%20%D7%9C%D7%94%D7%AA%D7%99%D7%99%D7%A2%D7%A5%20%D7%9C%D7%92%D7%91%D7%99%20%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98%20%D7%A1%D7%95%D7%9C%D7%90%D7%A8%D7%99%20%D7%90%D7%95%20%D7%90%D7%92%D7%A8%D7%95-%D7%95%D7%95%D7%9C%D7%98%D7%90%D7%99" target="_blank" class="bg-emerald-500 text-emerald-950 px-10 py-4 rounded-xl font-extrabold hover:bg-emerald-400 transition-all shadow-lg text-lg text-center">
-                        התייעצו איתנו ב-WhatsApp
-                    </a>
-                    <a href="tel:0506890650" class="border-2 border-emerald-500 text-emerald-300 px-10 py-4 rounded-xl font-bold hover:bg-emerald-800 transition-all text-lg flex items-center justify-center">
-                        050-6890650
-                    </a>
+        const LegalModal = ({ type, onClose }) => {
+            if (!type) return null;
+            return (
+                <div className="fixed inset-0 bg-telem-black/80 z-[10000] flex items-center justify-center p-4 backdrop-blur-sm overflow-y-auto">
+                    <div className="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-8 md:p-12 relative text-right shadow-2xl border-4 border-telem-forest text-telem-black">
+                        <button onClick={onClose} className="absolute top-6 left-6 text-gray-400 hover:text-red-600"><Icon name="x" size={32} /></button>
+                        {type === 'accessibility' ? (
+                            <div className="animate-fade-in"><h2 className="text-3xl font-black text-telem-dark mb-8 border-b-4 border-telem-khaki pb-4 italic">הצהרת נגישות - תלם ניהול סביבה</h2><div className="space-y-6 leading-relaxed font-medium text-lg"><p>אנו בתלם ניהול סביבה רואים חשיבות עליונה בהנגשת האתר לכלל האוכלוסייה, כולל אנשים עם מוגבלויות. האתר עומד בדרישות תקנות שוויון זכויות לאנשים עם מוגבלות ומותאם לתקן הישראלי (ת"י 5568) ברמת AA.</p><h3 className="text-xl font-bold text-telem-dark italic underline">פרטי רכז נגישות</h3><p>רכז נגישות: אבירם בוצר | טלפון: 050-6890650 | אימייל: aviram@telemenv.co.il</p></div></div>
+                        ) : (
+                            <div className="animate-fade-in"><h2 className="text-3xl font-black text-telem-dark mb-8 border-b-4 border-telem-khaki pb-4 italic">מדיניות הגנת פרטיות</h2><div className="space-y-6 leading-relaxed font-medium text-lg"><p>משרד 'תלם ניהול סביבה' מכבד את פרטיות הגולשים ומתחייב לפעול בהתאם לחוק הגנת הפרטיות, התשמ"א-1981.</p><h3 className="text-xl font-bold text-telem-dark italic underline font-serif">איסוף מידע</h3><p>המידע שנאסף באתר נועד לשיפור חווית המשתמש בלבד. מידע שנשלח בטפסים משמש לצורך יצירת קשר עם הלקוח בלבד ולא יועבר לצד שלישי.</p></div></div>
+                        )}
+                    </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            );
+        };
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12 px-4 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto text-center text-gray-500">
-            <p class="mb-2 italic">© <span id="year"></span> תלם | ניהול סביבה - אבירם בוצר</p>
-            <p class="text-sm">פרויקטים סולאריים • אגרו-וולטאי • נספחים סביבתיים • סקרים היסטוריים</p>
-        </div>
-        <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-    </footer>
+        const App = () => {
+            const [isMenuOpen, setIsMenuOpen] = useState(false);
+            const [legalModal, setLegalModal] = useState(null);
+            const PHONE_NUMBER = "0506890650";
+            const WA_NUMBER = "972506890650";
+            const LINKEDIN_URL = "https://gemini.google.com/share/09411eaf79fd";
 
+            const navigation = [
+                { name: 'דף הבית', href: '/' },
+                { name: 'נספח אצירת אשפה', href: '/waste/' },
+                { name: 'פרויקטים סולאריים', href: '/solar/' },
+                { name: 'נספח סביבתי', href: '/env/' },
+                { name: 'סקר היסטורי', href: '/history/' },
+            ];
+
+            return (
+                <div className="min-h-screen">
+                    <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 border-b border-telem-khaki/10">
+                        <div className="max-w-7xl mx-auto px-4 h-24 flex justify-between items-center">
+                            <a href="/" className="hover:opacity-80 transition-all flex items-center"><TelemLogo /></a>
+                            <nav className="hidden lg:flex gap-8">
+                                {navigation.map(item => (
+                                    <a key={item.name} href={item.href} className={`text-sm font-bold transition-colors ${item.href === '/solar/' ? 'text-telem-dark border-b-2 border-telem-khaki' : 'text-telem-forest hover:text-telem-moss'}`}>
+                                        {item.name}
+                                    </a>
+                                ))}
+                            </nav>
+                            <div className="hidden md:flex items-center gap-4">
+                                <a href={LINKEDIN_URL} target="_blank" className="text-telem-dark hover:text-telem-moss transition-colors" title="LinkedIn"><Icon name="linkedin" size={24} /></a>
+                                <a href={`tel:${PHONE_NUMBER}`} className="bg-telem-dark text-white px-6 py-2.5 rounded-xl font-bold hover:bg-telem-forest transition-all shadow-md">{PHONE_NUMBER.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2$3')}</a>
+                            </div>
+                            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden text-telem-dark"><Icon name={isMenuOpen ? "x" : "menu"} size={28} /></button>
+                        </div>
+                    </header>
+
+                    <AccessibilityMenu />
+                    <CookieBanner />
+                    <LegalModal type={legalModal} onClose={() => setLegalModal(null)} />
+
+                    <main className="pt-40 pb-24 animate-fade-in max-w-4xl mx-auto px-4 font-medium">
+                        <a href="/" className="inline-flex items-center gap-2 text-telem-forest font-bold mb-8 hover:text-telem-dark transition-colors">
+                            <Icon name="arrow-right" size={18} /> חזרה לדף הבית
+                        </a>
+
+                        <h1 className="text-4xl md:text-6xl font-black text-telem-black mb-8 leading-tight italic tracking-tight">
+                            ליווי סביבתי לפרויקטים סולאריים ואגרו-וולטאי
+                        </h1>
+
+                        <div className="space-y-8 text-telem-black text-lg leading-relaxed">
+                            <p className="text-2xl text-telem-forest font-bold italic border-r-4 border-telem-khaki pr-6">
+                                מקדמים מיזם אנרגיה מתחדשת בשטחים פתוחים או בנחלות חקלאיות? תכנון סביבתי נכון הוא המפתח למניעת התנגדויות וקיצור הליכי הרישוי.
+                            </p>
+
+                            <section>
+                                <h2 className="text-2xl font-black text-telem-dark mb-4 italic tracking-tight">תכנון סביבתי לפרויקטי אנרגיה מתחדשת</h2>
+                                <p>הקמת מתקנים פוטו-וולטאיים (PV) על הקרקע או במבנים חקלאיים דורשת עמידה בסטנדרטים סביבתיים מחמירים של ועדות התכנון, משרד החקלאות והמשרד להגנת הסביבה. הליווי הסביבתי נועד להבטיח כי המתקן משתלב במרחב תוך שמירה על ערכי טבע, נוף וקרקע.</p>
+                                <p className="mt-4">אנחנו ב"תלם" מלווים יזמי אנרגיה וחברות EPC משלב התכנון הראשוני ועד קבלת ההיתר, תוך מתן דגש על פתרונות פרקטיים המאזנים בין הצרכים הטכנולוגיים לבין הדרישות הרגולטוריות.</p>
+                            </section>
+
+                            <div className="bg-white p-8 rounded-[32px] border border-telem-khaki/20 shadow-lg my-12 relative overflow-hidden">
+                                <div className="absolute top-0 right-0 w-2 h-full bg-telem-forest"></div>
+                                <h2 className="text-2xl font-black text-telem-dark mb-4 italic underline decoration-telem-khaki">חדשנות באגרו-וולטאי ושימור קרקע</h2>
+                                <p className="mb-4">תחום האגרו-וולטאי (Agrivoltaic) מאפשר שימוש כפול בקרקע – גידולים חקלאיים לצד ייצור חשמל נקי. מדובר באתגר תכנוני הדורש מומחיות ספציפית:</p>
+                                <ul className="space-y-4 pr-4">
+                                    <li className="flex items-start gap-3"><Icon name="leaf" className="text-telem-forest mt-1" size={20} /> <span><strong>נספחי שימור קרקע:</strong> הגדרת שיטות עבודה למניעת הידוק קרקע, סחף ופגיעה במבנה האדמה.</span></li>
+                                    <li className="flex items-start gap-3"><Icon name="refresh-cw" className="text-telem-forest mt-1" size={20} /> <span><strong>תכניות השבה לחקלאות:</strong> הכנת מפרט מפורט להחזרת השטח לשימוש חקלאי מלא ביום שאחרי פירוק המתקן.</span></li>
+                                    <li className="flex items-start gap-3"><Icon name="battery-charging" className="text-telem-forest mt-1" size={20} /> <span><strong>ליווי מתקני אגירה (BESS):</strong> מתן מענה להיבטי בטיחות וסביבה במערכות אגירת אנרגיה במכולות.</span></li>
+                                </ul>
+                            </div>
+
+                            <section>
+                                <h2 className="text-2xl font-black text-telem-dark mb-4 italic tracking-tight">השירותים שלנו בתחום הסולארי:</h2>
+                                <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <li className="p-4 bg-telem-cream/50 rounded-xl border border-telem-khaki/10 font-bold italic">נספח סביבתי לתכניות מפורטות (תב"ע)</li>
+                                    <li className="p-4 bg-telem-cream/50 rounded-xl border border-telem-khaki/10 font-bold italic">נספח סביבה להיתר בנייה</li>
+                                    <li className="p-4 bg-telem-cream/50 rounded-xl border border-telem-khaki/10 font-bold italic">תוכנית ניהול סביבתי לביצוע (CEMP)</li>
+                                    <li className="p-4 bg-telem-cream/50 rounded-xl border border-telem-khaki/10 font-bold italic">תיאום מול משרד החקלאות</li>
+                                </ul>
+                            </section>
+                        </div>
+
+                        <div className="mt-20 bg-telem-dark text-white rounded-[40px] p-10 text-center shadow-2xl relative overflow-hidden text-telem-cream">
+                            <h3 className="text-3xl font-black mb-6 italic tracking-tight">מקדמים אנרגיה נקייה בראש שקט</h3>
+                            <p className="text-telem-cream/80 mb-10 text-xl font-medium max-w-2xl mx-auto italic">אנחנו ב"תלם" מבינים את לוחות הזמנים הלחוצים של פרויקטי אנרגיה. דברו איתנו לסגירת הפינה הסביבתית.</p>
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                <button onClick={() => window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("היי אבירם, רציתי להתייעץ לגבי פרויקט סולארי / אגרו-וולטאי.")}`, '_blank')} className="bg-telem-forest text-white px-10 py-4 rounded-2xl font-black text-xl hover:bg-telem-moss transition-all shadow-lg flex items-center justify-center gap-3 italic tracking-tight">
+                                    <Icon name="message-circle" /> התייעצות ב-WhatsApp
+                                </button>
+                                <a href={`tel:${PHONE_NUMBER}`} className="border-2 border-telem-khaki text-white px-10 py-4 rounded-2xl font-black text-xl hover:bg-white/10 transition-all italic tracking-tight font-sans">050-6890650</a>
+                            </div>
+                        </div>
+                    </main>
+
+                    <footer className="bg-telem-dark text-white py-20 px-4 text-right border-t border-telem-forest/30">
+                        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-16">
+                            <div className="text-right">
+                                <TelemLogo className="mb-8" />
+                                <p className="text-telem-cream/60 text-xl max-w-md font-medium italic font-serif">אבירם בוצר - מומחה לייעוץ סביבתי ותכנון אצירת אשפה.</p>
+                            </div>
+                            <div className="flex flex-col md:items-end gap-6 text-telem-cream font-bold text-lg not-italic">
+                                <div className="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20"><span>aviram@telemenv.co.il</span><Icon name="mail" size={24} className="text-telem-khaki" /></div>
+                                <div className="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20"><span>050-6890650</span><Icon name="phone" size={24} className="text-telem-khaki" /></div>
+                                <a href={LINKEDIN_URL} target="_blank" className="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20 hover:text-white transition-all"><span>פרופיל LinkedIn</span><Icon name="linkedin" size={24} className="text-telem-khaki" /></a>
+                                <div className="flex gap-4 mt-12 text-sm font-bold text-telem-khaki">
+                                    <button onClick={() => setLegalModal('accessibility')} className="hover:underline italic font-black uppercase tracking-tighter">הצהרת נגישות</button>
+                                    <span className="opacity-30">|</span>
+                                    <button onClick={() => setLegalModal('privacy')} className="hover:underline italic font-black uppercase tracking-tighter">מדיניות פרטיות</button>
+                                </div>
+                                <p className="mt-4 text-sm font-normal opacity-30 italic font-serif">© {new Date().getFullYear()} תלם - ניהול סביבה ופסולת. כל הזכויות שמורות.</p>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
 </body>
 </html>
