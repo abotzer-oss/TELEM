@@ -37,61 +37,68 @@
             "@type": "Answer",
             "text": "יועץ שמגיע מהמגזר הציבורי מכיר את 'שפת הבודק'. הניסיון בניהול מחלקות שפ״ע וסביבה מאפשר לנו להכין נספחים שצופים מראש את דרישות הרשות, מה שמונע סבבי תיקונים ארוכים ומקצר משמעותית את זמן קבלת ההיתר."
           }
-        },
-        {
-          "@type": "Question",
-          "name": "מתי נדרש סקר היסטורי סביבתי (Phase I) לקרקע?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "סקר היסטורי נדרש כאשר יש חשש לזיהומי קרקע עקב שימושי עבר (כמו מוסכים, מפעלי תעשייה או תחנות דלק) או כחלק מתנאי המשרד להגנת הסביבה לשינוי ייעוד קרקע מחקלאי למגורים."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "האם יש הבדל בדרישות הסביבתיות בין עיר למועצה אזורית?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "בהחלט. במרחב הכפרי יש דגש רב על שימור קרקע, מרחקי הפרדה מתשתיות חקלאיות ופתרונות אצירה שמותאמים למשאיות מנוף. המומחיות שלנו בסביבה הכפרית מבטיחה התאמה מלאה לדינמיקה הייחודית של המועצות."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "האם נספח סביבתי נדרש רק בגלל שינוי מהותי בתכנון?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "לא תמיד. במקרים רבים, הנספח הסביבתי הופך לדרישה סטנדרטית בתיק המידע פשוט בגלל מיקום הפרויקט או סוג השימוש, גם אם אין שינוי מהותי במבנה. הבנת הנהלים הפנימיים של הרשות מאפשרת לנו לספק את המענה המהיר ביותר לדרישות אלו."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "איך אישור נספח אצירת אשפה משפיע על קבלת טופס 4?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "ללא עמידה מלאה בנספח האצירה המאושר, מחלקת התברואה לא תיתן את האישור הסופי לאכלוס. תכנון לקוי בשלב ההיתר עלול להוביל לשינויים יקרים בשלב הבנייה רק כדי לעמוד בתנאי טופס 4."
-          }
         }
       ]
     }
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        telem: {
+                            moss: '#78836a',
+                            forest: '#475d4b',
+                            dark: '#243e38',
+                            black: '#1d1d1b',
+                            cream: '#f8f4f1',
+                            khaki: '#94937f'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Google Sans"', 'Assistant', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap');
-        body { font-family: 'Assistant', sans-serif; }
+        @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap');
+        
+        body { 
+            font-family: "Google Sans", "Assistant", sans-serif; 
+            background-color: #f8f4f1; 
+            color: #1d1d1b; 
+            transition: background-color 0.3s, color 0.3s; 
+        }
+        
         .animate-fade-in { animation: fadeIn 0.5s ease-in; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         html { scroll-behavior: smooth; }
+
+        /* Accessibility Styles */
+        .accessible-grayscale { filter: grayscale(100%); }
+        .accessible-links a { text-decoration: underline !important; font-weight: bold !important; }
+        .accessible-font { font-family: Arial, sans-serif !important; }
+        .accessible-contrast { background-color: #000 !important; color: #fff !important; }
+        .accessible-contrast * { color: #fff !important; border-color: #fff !important; }
+        .accessible-contrast a { color: #ffff00 !important; }
+        
+        .typing-indicator span { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0.2; } 50% { opacity: 1; } 100% { opacity: 0.2; } }
     </style>
 </head>
-<body class="bg-white text-gray-900">
+<body>
     <div id="root"></div>
 
     <script type="text/babel">
-        const { useState, useEffect } = React;
+        const { useState, useEffect, useRef } = React;
 
         const Icon = ({ name, size = 20, className = "" }) => {
             useEffect(() => {
@@ -100,25 +107,227 @@
             return <i data-lucide={name} style={{ width: size, height: size }} className={className}></i>;
         };
 
-        const FAQItem = ({ question, answer }) => {
-            const [isOpen, setIsOpen] = useState(false);
+        const TelemLogo = ({ className = "" }) => (
+            <div className={`flex items-center ${className}`}>
+                <img 
+                    src="logo.png" 
+                    alt="תלם - ניהול סביבה ופסולת" 
+                    className="h-16 md:h-20 w-auto object-contain"
+                    onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = 'https://via.placeholder.com/200x80?text=%D7%AA%D7%9C%D7%9D+%D7%9C%D7%95%D7%92%D7%95';
+                    }}
+                />
+            </div>
+        );
+
+        const GeminiConsultant = () => {
+            const [query, setQuery] = useState("");
+            const [response, setResponse] = useState("");
+            const [isLoading, setIsLoading] = useState(false);
+            const [error, setError] = useState("");
+            const apiKey = ""; 
+
+            const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+            const callGemini = async (userQuery, retries = 5) => {
+                const systemPrompt = "אתה יועץ סביבתי מומחה של משרד 'תלם ניהול סביבה'. המנהל המקצועי הוא אבירם בוצר. תפקידך לענות על שאלות בנושאי נספחי אצירת אשפה, נספחים סביבתיים, סקרים היסטוריים ופרויקטים סולאריים בישראל. השתמש בטרמינולוגיה המקצועית הישראלית. אם אינך יודע, הצע לפנות לאבירם בטלפון 050-6890650.";
+                
+                for (let i = 0; i < retries; i++) {
+                    try {
+                        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({
+                                contents: [{ parts: [{ text: userQuery }] }],
+                                systemInstruction: { parts: [{ text: systemPrompt }] },
+                                tools: [{ "google_search": {} }]
+                            })
+                        });
+                        if (!res.ok) throw new Error("API call failed");
+                        const data = await res.json();
+                        return data.candidates?.[0]?.content?.parts?.[0]?.text;
+                    } catch (err) {
+                        if (i === retries - 1) throw err;
+                        await sleep(Math.pow(2, i) * 1000);
+                    }
+                }
+            };
+
+            const handleSubmit = async (e) => {
+                e.preventDefault();
+                if (!query.trim()) return;
+                setIsLoading(true);
+                setError("");
+                setResponse("");
+                try {
+                    const result = await callGemini(query);
+                    setResponse(result);
+                } catch (err) {
+                    setError("משהו השתבש. ניתן לפנות אלינו ישירות בוואטסאפ.");
+                } finally {
+                    setIsLoading(false);
+                }
+            };
+
             return (
-                <div className="border-b border-gray-100 last:border-0">
-                    <button 
-                        onClick={() => setIsOpen(!isOpen)}
-                        className="w-full py-6 flex justify-between items-center text-right group focus:outline-none"
-                    >
-                        <span className={`text-lg font-bold transition-colors ${isOpen ? 'text-emerald-700' : 'text-gray-900 group-hover:text-emerald-600'}`}>
-                            {question}
-                        </span>
-                        <div className={`transition-transform duration-300 ${isOpen ? 'rotate-180 text-emerald-600' : 'text-gray-400'}`}>
-                            <Icon name="chevron-down" size={24} />
+                <div className="bg-white rounded-[40px] p-8 md:p-12 shadow-2xl border border-telem-khaki/20 max-w-4xl mx-auto my-16 overflow-hidden relative">
+                    <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-telem-khaki via-telem-moss to-telem-forest"></div>
+                    <div className="text-right mb-10">
+                        <h3 className="text-3xl font-black text-telem-dark mb-2">ייעוץ מקצועי חכם ✨</h3>
+                        <p className="text-telem-forest text-lg font-medium italic">יש לכם שאלה בנושא נספחי סביבה או אשפה? שאלו את היועץ שלנו.</p>
+                    </div>
+                    <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-4 mb-8">
+                        <input 
+                            type="text" 
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
+                            placeholder="למשל: מה נדרש לנספח אצירת אשפה בתל אביב?"
+                            className="flex-grow p-5 bg-telem-cream/50 border-2 border-transparent focus:border-telem-khaki rounded-2xl outline-none text-lg font-medium transition-all text-right"
+                        />
+                        <button type="submit" disabled={isLoading} className="bg-telem-dark text-white px-10 py-5 rounded-2xl font-black text-xl hover:bg-telem-forest transition-all shadow-lg flex items-center justify-center gap-3 disabled:opacity-50">
+                            {isLoading ? <div className="typing-indicator flex gap-1"><span>.</span><span>.</span><span>.</span></div> : <><span>שלח שאלה</span> <Icon name="sparkles" size={20} /></>}
+                        </button>
+                    </form>
+                    {error && <div className="p-5 bg-red-50 text-red-700 rounded-2xl text-right font-bold border border-red-100 animate-fade-in">{error}</div>}
+                    {response && (
+                        <div className="p-8 bg-telem-cream/30 rounded-3xl text-right border border-telem-khaki/10 animate-fade-in">
+                            <div className="text-telem-black text-lg leading-relaxed whitespace-pre-wrap font-medium">{response}</div>
+                            <div className="mt-6 pt-6 border-t border-telem-khaki/20 flex flex-col md:flex-row items-center justify-between gap-4">
+                                <span className="text-telem-moss text-sm">התשובה נוצרה באמצעות בינה מלאכותית של Google.</span>
+                                <button onClick={() => window.open(`https://wa.me/972506890650?text=${encodeURIComponent("היי אבירם, קיבלתי תשובה מהיועץ בנושא '" + query + "' ואשמח להעמיק איתך.")}`)} className="text-telem-dark font-black flex items-center gap-2 hover:text-telem-forest">המשך שיחה עם אבירם <Icon name="arrow-left" size={16} /></button>
+                            </div>
                         </div>
-                    </button>
-                    <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96 pb-6' : 'max-h-0'}`}>
-                        <p className="text-gray-600 leading-relaxed text-lg italic">
-                            {answer}
-                        </p>
+                    )}
+                </div>
+            );
+        };
+
+        const WasteCalculator = () => {
+            const [type, setType] = useState("residential");
+            const [amount, setAmount] = useState("");
+            const [result, setResult] = useState(null);
+
+            const calculate = () => {
+                const val = parseFloat(amount);
+                if (isNaN(val) || val <= 0) return;
+                let dailyLiters = 0;
+                if (type === "residential") dailyLiters = val * 25;
+                else if (type === "office") dailyLiters = (val / 10) * 8;
+                else dailyLiters = (val / 10) * 15;
+                const totalVolume = dailyLiters * 3;
+                const binCount = Math.ceil(totalVolume / 1100);
+                setResult({ volume: totalVolume.toFixed(0), bins: binCount });
+            };
+
+            return (
+                <div className="max-w-4xl mx-auto mb-24 px-4">
+                    <div className="bg-telem-black/5 rounded-[40px] p-1 shadow-sm mb-4 text-center overflow-hidden">
+                        <div className="bg-white/80 py-2 px-4 text-xs font-bold text-telem-moss uppercase tracking-widest animate-pulse">
+                            מחשבון כמות מיכלי אצירה לאשפה לפי גודל בניין על פי הנחיות עיריית תל אביב | חישוב נפחי פסולת למגורים ומסחר
+                        </div>
+                    </div>
+
+                    <div className="bg-white rounded-[40px] p-8 md:p-12 shadow-xl border border-telem-khaki/10 relative">
+                        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+                            <div className="text-right">
+                                <h3 className="text-3xl font-black text-telem-black flex items-center gap-3">
+                                    <Icon name="calculator" className="text-telem-forest" size={32} />
+                                    מחשבון נפח אצירת אשפה
+                                </h3>
+                                <p className="text-telem-moss font-bold">אומדן ראשוני בהתאם להנחיות עיריית תל אביב</p>
+                            </div>
+                            <a href="https://www.tel-aviv.gov.il/Residents/Construction/Documents/178.pdf" target="_blank" className="text-sm font-bold text-telem-forest underline flex items-center gap-1 hover:text-telem-dark transition-colors">
+                                <Icon name="file-text" size={16} /> למסמך ההנחיות המלא (PDF)
+                            </a>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                            <div className="text-right">
+                                <label className="block text-sm font-black mb-3 text-telem-dark">סוג המבנה / שימוש</label>
+                                <select value={type} onChange={(e) => setType(e.target.value)} className="w-full p-4 bg-telem-cream/50 border-2 border-transparent focus:border-telem-khaki rounded-2xl outline-none font-bold transition-all appearance-none text-right">
+                                    <option value="residential">מגורים (לפי מספר חדרים)</option>
+                                    <option value="office">משרדים (לפי מ"ר)</option>
+                                    <option value="retail">מסחר / חנויות (לפי מ"ר)</option>
+                                </select>
+                            </div>
+                            <div className="text-right">
+                                <label className="block text-sm font-black mb-3 text-telem-dark">
+                                    {type === "residential" ? "מספר חדרים כולל בבניין" : "שטח כולל במ\"ר"}
+                                </label>
+                                <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder={type === "residential" ? "למשל: 40" : "למשל: 500"} className="w-full p-4 bg-telem-cream/50 border-2 border-transparent focus:border-telem-khaki rounded-2xl outline-none font-bold transition-all text-right" />
+                            </div>
+                        </div>
+
+                        <button onClick={calculate} className="w-full py-5 bg-telem-forest text-white rounded-2xl font-black text-2xl hover:bg-telem-dark transition-all shadow-xl mb-10">חשב נפח נדרש</button>
+
+                        {result && (
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-fade-in">
+                                <div className="bg-telem-cream p-6 rounded-3xl border border-telem-khaki/20 text-center text-telem-black">
+                                    <div className="text-telem-moss font-bold text-sm mb-1 uppercase tracking-tighter">נפח אשפה משוער</div>
+                                    <div className="text-4xl font-black">{result.volume} <span className="text-lg font-bold text-telem-forest">ליטר</span></div>
+                                </div>
+                                <div className="bg-telem-dark p-6 rounded-3xl text-center text-white">
+                                    <div className="text-telem-khaki font-bold text-sm mb-1 uppercase tracking-tighter">מיכלי אצירה (1.1 קו"ב)</div>
+                                    <div className="text-4xl font-black">{result.bins} <span className="text-lg font-bold">מיכלים</span></div>
+                                </div>
+                            </div>
+                        )}
+
+                        <div className="mt-10 p-5 bg-amber-50 rounded-2xl border border-amber-100 text-right">
+                            <h4 className="font-black text-amber-800 text-sm mb-2 flex items-center gap-2"><Icon name="alert-triangle" size={16} /> שים לב: המלצה בלבד</h4>
+                            <p className="text-xs text-amber-700 leading-relaxed font-medium">תוצאות המחשבון מהוות אומדן ראשוני בלבד ואינן מחליפות ייעוץ מקצועי או נספח אצירה חתום. השימוש במחשבון הוא באחריות המשתמש בלבד.</p>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        const AccessibilityMenu = () => {
+            const [isOpen, setIsOpen] = useState(false);
+            const [settings, setSettings] = useState({ grayscale: false, contrast: false, links: false, readableFont: false, fontSize: 100 });
+            const toggleSetting = (key) => setSettings(prev => ({ ...prev, [key]: !prev[key] }));
+            const changeFontSize = (delta) => setSettings(prev => ({ ...prev, fontSize: Math.max(100, Math.min(150, prev.fontSize + delta)) }));
+            const reset = () => setSettings({ grayscale: false, contrast: false, links: false, readableFont: false, fontSize: 100 });
+            useEffect(() => {
+                const body = document.body;
+                body.classList.toggle('accessible-grayscale', settings.grayscale);
+                body.classList.toggle('accessible-contrast', settings.contrast);
+                body.classList.toggle('accessible-links', settings.links);
+                body.classList.toggle('accessible-font', settings.readableFont);
+                body.style.fontSize = `${settings.fontSize}%`;
+            }, [settings]);
+
+            return (
+                <div className="fixed bottom-6 left-6 z-[9999]">
+                    <button onClick={() => setIsOpen(!isOpen)} className="w-14 h-14 bg-telem-dark text-white rounded-full shadow-2xl flex items-center justify-center hover:bg-telem-forest transition-all border-2 border-white"><Icon name="accessibility" size={30} /></button>
+                    {isOpen && (
+                        <div className="absolute bottom-16 left-0 w-72 bg-white rounded-2xl shadow-2xl border border-gray-200 p-6 animate-fade-in text-right text-telem-black">
+                            <h3 className="text-xl font-bold mb-4 border-b pb-2 text-telem-dark">תפריט נגישות</h3>
+                            <div className="space-y-3 text-sm">
+                                <button onClick={() => toggleSetting('contrast')} className={`w-full text-right p-3 rounded-xl transition-all flex items-center justify-between border ${settings.contrast ? 'bg-telem-dark text-white' : 'hover:bg-gray-50'}`}><span>ניגודיות גבוהה</span><Icon name="contrast" size={18} /></button>
+                                <button onClick={() => toggleSetting('grayscale')} className={`w-full text-right p-3 rounded-xl transition-all flex items-center justify-between border ${settings.grayscale ? 'bg-telem-dark text-white' : 'hover:bg-gray-50'}`}><span>גווני אפור</span><Icon name="image" size={18} /></button>
+                                <button onClick={() => toggleSetting('links')} className={`w-full text-right p-3 rounded-xl transition-all flex items-center justify-between border ${settings.links ? 'bg-telem-dark text-white' : 'hover:bg-gray-50'}`}><span>הדגשת קישורים</span><Icon name="external-link" size={18} /></button>
+                                <button onClick={() => toggleSetting('readableFont')} className={`w-full text-right p-3 rounded-xl transition-all flex items-center justify-between border ${settings.readableFont ? 'bg-telem-dark text-white' : 'hover:bg-gray-50'}`}><span>גופן קריא</span><Icon name="type" size={18} /></button>
+                                <div className="flex gap-2"><button onClick={() => changeFontSize(10)} className="flex-1 bg-gray-100 p-2 rounded-lg font-bold hover:bg-gray-200">A+</button><button onClick={() => changeFontSize(-10)} className="flex-1 bg-gray-100 p-2 rounded-lg font-bold hover:bg-gray-200">A-</button></div>
+                                <button onClick={reset} className="w-full text-center p-2 text-sm text-red-600 font-bold hover:underline mt-2">ביטול כל ההתאמות</button>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            );
+        };
+
+        const CookieBanner = () => {
+            const [show, setShow] = useState(false);
+            useEffect(() => { if (!localStorage.getItem('cookie-consent')) setShow(true); }, []);
+            const accept = () => { localStorage.setItem('cookie-consent', 'true'); setShow(false); };
+            if (!show) return null;
+            return (
+                <div className="fixed bottom-0 left-0 w-full bg-telem-black text-white p-6 z-[9998] backdrop-blur-md border-t border-telem-moss shadow-2xl animate-fade-in">
+                    <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-right">
+                        <div className="flex-1"><h4 className="text-xl font-black text-telem-khaki mb-2">אוהבים עוגיות? גם אנחנו!</h4><p className="text-gray-300 leading-relaxed text-sm md:text-base font-medium">האתר של תלם משתמש בעוגיות (Cookies) על מנת להבטיח לך את חווית הגלישה הטובה ביותר, לנתח את ביצועי האתר ולספק תוכן מותאם אישית.</p></div>
+                        <button onClick={accept} className="bg-telem-forest text-white px-10 py-3 rounded-xl font-black hover:bg-telem-moss transition-all shadow-xl whitespace-nowrap">הבנתי, תודה!</button>
                     </div>
                 </div>
             );
@@ -126,254 +335,76 @@
 
         const App = () => {
             const [isMenuOpen, setIsMenuOpen] = useState(false);
+            const [legalModal, setLegalModal] = useState(null);
             const PHONE_NUMBER = "0506890650";
             const WA_NUMBER = "972506890650";
-
-            const navigation = [
-                { name: 'דף הבית', href: '/' },
-                { name: 'נספח אצירת אשפה', href: '/waste/' },
-                { name: 'נספח סביבתי', href: '/env/' },
-                { name: 'סקר היסטורי', href: '/history/' },
-                { name: 'סולארי ואגירה', href: '/solar/' },
-            ];
-
-            const handleWhatsAppRedirect = (msg = "שלום אבירם, אשמח להתייעץ לגבי נספח סביבתי / אצירת אשפה.") => {
-                window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
-            };
+            const LINKEDIN_URL = "https://gemini.google.com/share/09411eaf79fd";
+            const navigation = [{ name: 'דף הבית', href: '/' }, { name: 'נספח אצירת אשפה', href: '/waste/' }, { name: 'נספח סביבתי', href: '/env/' }, { name: 'סקר היסטורי', href: '/history/' }, { name: 'סולארי ואגירה', href: '/solar/' }];
+            const handleWhatsAppRedirect = () => window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("שלום אבירם, הגעתי מהאתר ואשמח להתייעץ.")}`, '_blank');
 
             const Header = () => (
-                <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
-                    <div className="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center text-right">
-                        <a href="/" className="flex items-center gap-2 text-2xl font-bold text-emerald-800">
-                            <Icon name="tree-pine" className="text-emerald-600" size={32} />
-                            <span>תלם <span className="text-gray-400 font-light">| ניהול סביבה</span></span>
-                        </a>
-                        <nav className="hidden lg:flex gap-6">
-                            {navigation.map(item => (
-                                <a key={item.name} href={item.href} className="text-sm font-bold text-gray-600 hover:text-emerald-600 transition-colors">
-                                    {item.name}
-                                </a>
-                            ))}
-                        </nav>
-                        <div className="hidden md:flex gap-3">
-                            <a href={`tel:${PHONE_NUMBER}`} className="bg-emerald-700 text-white px-5 py-2.5 rounded-xl font-bold hover:bg-emerald-800 transition-all shadow-md">
-                                050-6890650
-                            </a>
+                <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 border-b border-telem-khaki/10">
+                    <div className="max-w-7xl mx-auto px-4 h-24 flex justify-between items-center text-right">
+                        <a href="/" className="hover:opacity-80 transition-all"><TelemLogo /></a>
+                        <nav className="hidden lg:flex gap-8">{navigation.map(item => (<a key={item.name} href={item.href} className="text-sm font-bold text-telem-forest hover:text-telem-moss transition-colors uppercase tracking-tight">{item.name}</a>))}</nav>
+                        <div className="hidden md:flex items-center gap-4">
+                            <a href={LINKEDIN_URL} target="_blank" className="text-telem-dark hover:text-telem-moss transition-colors" title="LinkedIn"><Icon name="linkedin" size={24} /></a>
+                            <a href={`tel:${PHONE_NUMBER}`} className="bg-telem-dark text-white px-6 py-2.5 rounded-xl font-bold hover:bg-telem-forest transition-all shadow-md">050-6890650</a>
                         </div>
-                        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden text-gray-600">
-                            <Icon name={isMenuOpen ? "x" : "menu"} size={28} />
-                        </button>
+                        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden text-telem-dark"><Icon name={isMenuOpen ? "x" : "menu"} size={28} /></button>
                     </div>
                 </header>
             );
 
-            const USPItem = ({ icon, title, text }) => (
-                <div className="flex items-start gap-4 p-5 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="bg-emerald-100 p-3 rounded-xl text-emerald-700 shrink-0">
-                        <Icon name={icon} size={28} />
-                    </div>
-                    <div className="text-right">
-                        <h4 className="font-extrabold text-gray-900 mb-1">{title}</h4>
-                        <p className="text-sm text-gray-600 leading-snug">{text}</p>
-                    </div>
-                </div>
-            );
-
-            const ServiceCard = ({ title, icon, description, href, highlight = false }) => (
-                <a href={href} className={`p-8 rounded-2xl border transition-all flex flex-col h-full text-right group ${highlight ? 'border-emerald-500 bg-emerald-50/50 shadow-md scale-[1.02]' : 'bg-white border-gray-200 hover:shadow-xl hover:border-emerald-200'}`}>
-                    <div className={`mb-6 transition-transform group-hover:scale-110 ${highlight ? 'text-emerald-700' : 'text-emerald-600'}`}>
-                        <Icon name={icon} size={42} />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-4 text-gray-900">{title}</h3>
-                    <p className="text-gray-600 mb-8 flex-grow leading-relaxed">{description}</p>
-                    <div className="flex items-center gap-2 text-emerald-700 font-extrabold transition-all group-hover:gap-4">
-                        <span>למידע מקצועי</span>
-                        <Icon name="arrow-left" size={18} />
-                    </div>
-                </a>
-            );
-
             return (
-                <div className="min-h-screen bg-white">
+                <div className="min-h-screen">
                     <Header />
+                    <AccessibilityMenu />
+                    <CookieBanner />
                     
                     <main className="animate-fade-in">
-                        {/* Hero Section */}
-                        <section className="pt-40 pb-20 bg-gradient-to-b from-gray-50 to-white">
-                            <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center border-b border-gray-100 pb-20">
-                                <div className="lg:col-span-7 text-right">
-                                    <div className="inline-block px-4 py-1 bg-emerald-100 text-emerald-800 rounded-full text-sm font-bold mb-6">
-                                        ניסיון עתיר במגזר הציבורי והכפרי
-                                    </div>
-                                    <h1 className="text-4xl md:text-7xl font-black text-gray-900 mb-8 leading-[1.1]">
-                                        מקצרים לכם את הדרך ל<span className="text-emerald-700">אישור סביבתי</span>
-                                    </h1>
-                                    <p className="text-xl md:text-2xl text-gray-600 font-medium mb-10 max-w-2xl leading-relaxed">
-                                        מביאים את הניסיון של המגזר הציבורי למגרש הפרטי. קידום נספחי אצירת אשפה, נספחי סביבה וסקרים היסטוריים מתוך הבנה עמוקה של שיקולי הרשות.
-                                    </p>
-                                    <div className="flex flex-col sm:flex-row gap-5 justify-start">
-                                        <button 
-                                            onClick={() => handleWhatsAppRedirect()} 
-                                            className="bg-emerald-700 text-white px-10 py-5 rounded-2xl font-black text-xl hover:bg-emerald-800 shadow-xl flex items-center justify-center gap-3 transition-all"
-                                        >
-                                            <Icon name="message-circle" size={24} /> התייעצות מקצועית מהירה
-                                        </button>
-                                    </div>
+                        {/* Hero */}
+                        <section className="pt-48 pb-24 bg-telem-moss/5 relative">
+                            <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center border-b border-telem-khaki/10 pb-24 text-right">
+                                <div className="lg:col-span-7">
+                                    <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-telem-dark text-white rounded-full text-sm font-bold mb-8">ניסיון עתיר במגזר הציבורי והכפרי</div>
+                                    <h1 className="text-5xl md:text-8xl font-black text-telem-black mb-8 leading-[1]">מקצרים לכם את הדרך ל<span className="text-telem-forest italic underline decoration-telem-khaki decoration-8">אישור סביבתי</span></h1>
+                                    <p className="text-xl md:text-3xl text-telem-forest font-semibold mb-12 max-w-2xl leading-relaxed">מביאים את הניסיון של המגזר הציבורי למגרש הפרטי. קידום נספחי אצירת אשפה, נספחי סביבה וסקרים היסטוריים מתוך הבנה עמוקה של שיקולי הרשות.</p>
+                                    <button onClick={handleWhatsAppRedirect} className="bg-telem-forest text-white px-12 py-5 rounded-2xl font-black text-2xl hover:bg-telem-dark shadow-2xl transition-all">התייעצות מקצועית מהירה</button>
                                 </div>
-
-                                <div className="lg:col-span-5 grid grid-cols-1 gap-4">
-                                    <USPItem 
-                                        icon="landmark" 
-                                        title="היינו שם - בצד של הרשות" 
-                                        text="עשור במגזר הציבורי וניהול מחלקות שפ״ע וסביבה במועצה אזורית. אנחנו יודעים בדיוק מה הבודק מחפש."
-                                    />
-                                    <USPItem 
-                                        icon="map" 
-                                        title="מומחיות במרחב הכפרי" 
-                                        text="היכרות עמוקה עם מועצות אזוריות, מושבים וקיבוצים. מומחים לשימור קרקע ותשתיות חקלאיות."
-                                    />
-                                    <USPItem 
-                                        icon="users-2" 
-                                        title="עבודה מול אשכולות ואיגודים" 
-                                        text="ניסיון רחב בניהול ממשקים מורכבים מול אשכולות רשויות ואיגודי ערים לאיכות הסביבה."
-                                    />
+                                <div className="lg:col-span-5 flex flex-col gap-6">
+                                    <div className="bg-white p-6 rounded-2xl border border-telem-khaki/10 shadow-sm"><h4 className="font-extrabold text-telem-black text-lg">היינו שם - בצד של הרשות</h4><p className="text-sm text-telem-forest/80">ניהול מחלקות שפ״ע וסביבה במועצה אזורית. אנחנו יודעים מה הבודק מחפש.</p></div>
+                                    <div className="bg-white p-6 rounded-2xl border border-telem-khaki/10 shadow-sm"><h4 className="font-extrabold text-telem-black text-lg">מומחיות במרחב הכפרי</h4><p className="text-sm text-telem-forest/80">היכרות עמוקה עם מועצות אזוריות, מושבים וקיבוצים.</p></div>
                                 </div>
                             </div>
                         </section>
 
-                        {/* Services Section */}
+                        <section className="px-4">
+                            <GeminiConsultant />
+                            <WasteCalculator />
+                        </section>
+
+                        {/* Services Grid */}
                         <section className="py-24 max-w-7xl mx-auto px-4">
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                                <ServiceCard 
-                                    title="נספח אצירת אשפה ותברואה" 
-                                    icon="trash-2" 
-                                    description="תכנון הנדסי של מערכי אצירה וחישוב נפחי פסולת. אנחנו מוודאים שהתכנית תואמת בדיוק את דרישות מחלקת התברואה המקומית." 
-                                    href="/waste/"
-                                    highlight={true}
-                                />
-                                <ServiceCard 
-                                    title='נספח סביבתי (תמ"א 38)' 
-                                    icon="file-text" 
-                                    description='מענה מקצועי למטרדי רעש, איכות אוויר וחומ"ס. מומחיות ייחודית בליווי פרויקטים של התחדשות עירונית ובינוי צפוף.' 
-                                    href="/env/"
-                                />
-                                <ServiceCard 
-                                    title="סקר היסטורי (Phase I)" 
-                                    icon="history" 
-                                    description="בדיקת שימושי עבר וזיהומי קרקע. בדיקת נאותות סביבתית הכרחית לשינוי ייעוד ורכישת מקרקעין במגזר הכפרי והעירוני." 
-                                    href="/history/"
-                                />
-                            </div>
-                        </section>
-
-                        {/* FAQ Section */}
-                        <section className="py-20 bg-gray-50">
-                            <div className="max-w-4xl mx-auto px-4">
-                                <div className="text-right mb-12">
-                                    <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4 underline decoration-emerald-500 decoration-4 underline-offset-8">שאלות נפוצות ותשובות מקצועיות</h2>
-                                    <p className="text-gray-600 font-medium text-lg">כל מה שצריך לדעת על הליכי רישוי סביבתי ואצירת אשפה</p>
-                                </div>
-                                
-                                <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
-                                    <FAQItem 
-                                        question='מתי נדרש להגיש נספח אצירת אשפה להיתר בנייה?' 
-                                        answer='נספח אצירת אשפה נדרש כחלק מתנאי הסף לקבלת היתר בנייה ברוב הרשויות המקומיות בישראל. הדרישה מופיעה בתיק המידע ונועדה להבטיח כי נפחי הפסולת ושיטת הפינוי מותאמים לדרישות מחלקת התברואה המקומית.'
-                                    />
-                                    <FAQItem 
-                                        question='מתי חלה חובה להכין נספח סביבתי לפרויקט?' 
-                                        answer='מדובר בדרישה רגולטורית שקשורה במורכבות וגודל הפרויקט, סוג הפרויקט וההשפעות שלו על הסביבה הסמוכה.'
-                                    />
-                                    <FAQItem 
-                                        question='האם נספח סביבתי נדרש רק בגלל שינוי מהותי בתכנון?' 
-                                        answer='לא תמיד. במקרים רבים, הנספח הסביבתי הופך לדרישה סטנדרטית בתיק המידע פשוט בגלל מיקום הפרויקט או סוג השימוש, גם אם אין שינוי מהותי במבנה. היכרות עם הנהלים הפנימיים של הרשות עוזרת לנו לספק מענה מהיר לדרישות אלו.'
-                                    />
-                                    <FAQItem 
-                                        question='איך אישור נספח אצירת אשפה משפיע על קבלת טופס 4?' 
-                                        answer='ללא עמידה מלאה בנספח האצירה המאושר, מחלקת התברואה לא תיתן את האישור הסופי לאכלוס. תכנון לקוי בשלב ההיתר עלול להוביל לשינויים יקרים בשלב הבנייה רק כדי לעמוד בתנאי טופס 4.'
-                                    />
-                                    <FAQItem 
-                                        question='מה היתרון של יועץ סביבה שמגיע מהמגזר הציבורי?' 
-                                        answer='היתרון המרכזי הוא היכרות עם "שפת הבודק". הניסיון בניהול מחלקות שפ״ע וסביבה מאפשר לנו להכין נספחים שצופים מראש את דרישות הרשות, מה שמונע סבבי תיקונים ארוכים ומקצר משמעותית את זמן קבלת ההיתר.'
-                                    />
-                                    <FAQItem 
-                                        question='למה כדאי לבצע סקר היסטורי כחלק מתהליך בדיקת נאותות (Due Diligence)?' 
-                                        answer='ביצוע סקר היסטורי לפני רכישת מגרש מגן על היזם מפני רכישת קרקע "נגועה". עלויות שיקום קרקע מזוהמת יכולות להגיע למיליוני שקלים, והסקר מאפשר להעריך את הסיכון הכלכלי מראש.'
-                                    />
-                                    <FAQItem 
-                                        question='איך יועץ סביבה עוזר לקצר את זמן הטיפול מול איגוד ערים?' 
-                                        answer='היכרות עם הנחיות איגוד הערים והגשת נספח העומד בכל התקנים מונעת סבבי תיקונים מיותרים. יועץ מנוסה יודע להוביל את הדיאלוג המקצועי מול בודק התכניות בצורה יעילה.'
-                                    />
-                                    <FAQItem 
-                                        question='מתי נדרש לבצע סקר היסטורי (Phase I) לקרקע?' 
-                                        answer='סקר היסטורי נדרש כאשר יש חשש לזיהומי קרקע עקב שימושי עבר במגרש (מוסכים, תעשייה, חקלאות) או כחלק מדרישות המשרד להגנת הסביבה לשינוי ייעוד קרקע.'
-                                    />
-                                    <FAQItem 
-                                        question='האם יש דרישות שונות במועצה אזורית לעומת עירייה?' 
-                                        answer='בהחלט. במרחב הכפרי הדגש הוא על שימור קרקע, מרחקי הפרדה מתשתיות חקלאיות ופתרונות אצירה למשאיות מנוף. הניסיון שלנו במועצות אזוריות מבטיחה התאמה מלאה.'
-                                    />
-                                    <FAQItem 
-                                        question='מהם השלבים לאישור נספח אצירת אשפה?' 
-                                        answer='התהליך כולל חישוב נפחי פסולת, תכנון הנדסי של חדר האשפה, הכנת נספח אצירה חתום ותיאום מול בודק מחלקת תברואה ברשות.'
-                                    />
-                                    <FAQItem 
-                                        question='האם יועץ סביבה נדרש גם עבור פרויקטים של שימוש חורג?' 
-                                        answer='כן. בבקשות לשימוש חורג, הרשות דורשת לוודא שהשימוש החדש לא ייצור מטרדים סביבתיים ושהסביבה הקיימת מתאימה לשימוש המבוקש.'
-                                    />
-                                    <FAQItem 
-                                        question='איך תכנון נכון של מערך אצירה חוסך שטח בנייה יקר?' 
-                                        answer='תכנון אופטימלי, למשל שימוש בפחים טמונים במקום חדר אשפה פנימי, יכול לפנות עשרות מ"ר בתוך קונטור המבנה לטובת חניות או מסחר.'
-                                    />
-                                    <FAQItem 
-                                        question='מה ההבדל בין סקר היסטורי Phase I לדיגום קרקע Phase II?' 
-                                        answer='Phase I הוא מחקר היסטורי משרדי וסיור ויזואלי. Phase II כולל קידוחי קרקע ודיגום דגימות אדמה לבדיקת מעבדה.'
-                                    />
-                                    <FAQItem 
-                                        question='האם ניתן לקבל פטור מנספח סביבתי?' 
-                                        answer='כן. לעיתים ניתן להגיש בקשה מנומקת לפטור אם מוכיחים שהפרויקט אינו מייצר מטרדים או אינו ממוקם באזור רגיש.'
-                                    />
-                                    <FAQItem 
-                                        question='מה תוקף של סקר היסטורי?' 
-                                        answer='תוקף הסקר הוא בדרך כלל ל-5 שנים, כל עוד לא בוצעה פעילות חדשה בשטח שעלולה הייתה לגרום לזיהום.'
-                                    />
-                                </div>
-                            </div>
-                        </section>
-
-                        {/* Social Proof Section */}
-                        <section className="bg-emerald-900 py-24 text-white text-center px-4">
-                            <div className="max-w-4xl mx-auto">
-                                <h2 className="text-3xl md:text-5xl font-black mb-8 italic">הופכים את הרגולציה הסביבתית ליתרון תכנוני</h2>
-                                <p className="text-xl text-emerald-100 mb-12 font-medium leading-relaxed max-w-2xl mx-auto">
-                                    הניסיון שלנו משני צדי השולחן מאפשר לנו למנוע עיכובים מיותרים ולחסוך לכם זמן יקר בתהליך ההיתר.
-                                </p>
-                                <button onClick={() => handleWhatsAppRedirect()} className="bg-emerald-500 text-emerald-950 px-12 py-5 rounded-2xl font-black text-2xl hover:bg-emerald-400 transition-all shadow-2xl text-center">
-                                    בואו נדבר תכלס
-                                </button>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                                <a href="/waste/" className="p-8 rounded-[32px] border bg-white border-telem-forest shadow-lg text-right"><Icon name="trash-2" size={42} className="mb-6 text-telem-dark" /><h3 className="text-2xl font-black mb-4">אצירת אשפה ותברואה</h3><p className="text-telem-forest mb-8">תכנון הנדסי של מערכי אצירה וחישוב נפחי פסולת להיתר.</p><span className="font-black text-telem-forest">למידע נוסף ←</span></a>
+                                <a href="/env/" className="p-8 rounded-[32px] border bg-white border-telem-khaki/10 text-right"><Icon name="file-text" size={42} className="mb-6 text-telem-forest" /><h3 className="text-2xl font-black mb-4">נספח סביבתי</h3><p className="text-telem-forest mb-8">מענה למטרדי רעש, איכות אוויר וחומ"ס בפרויקטים של תמ"א 38.</p><span className="font-black text-telem-forest">למידע נוסף ←</span></a>
+                                <a href="/history/" className="p-8 rounded-[32px] border bg-white border-telem-khaki/10 text-right"><Icon name="history" size={42} className="mb-6 text-telem-forest" /><h3 className="text-2xl font-black mb-4">סקר היסטורי (Phase I)</h3><p className="text-telem-forest mb-8">בדיקת שימושי עבר וזיהומי קרקע בבדיקת נאותות סביבתית.</p><span className="font-black text-telem-forest">למידע נוסף ←</span></a>
                             </div>
                         </section>
                     </main>
 
-                    <footer className="bg-gray-900 text-white py-16 px-4 text-right border-t border-gray-800">
-                        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12 text-right">
-                            <div className="text-right">
-                                <div className="flex items-center gap-2 text-2xl font-bold text-emerald-400 mb-6 justify-start">
-                                    <Icon name="tree-pine" size={32} />
-                                    <span>תלם <span className="text-gray-500 font-light">| ניהול סביבה</span></span>
-                                </div>
-                                <p className="text-gray-400 text-lg max-w-md leading-relaxed">
-                                    אבירם בוצר - מומחה לייעוץ סביבתי, תכנון אצירת אשפה וליווי רשויות במגזר הציבורי והכפרי.
-                                </p>
+                    <footer className="bg-telem-dark text-white py-20 px-4 text-right border-t border-telem-forest/30">
+                        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-16">
+                            <div>
+                                <TelemLogo className="mb-8" />
+                                <p className="text-telem-cream/60 text-xl max-w-md font-medium">אבירם בוצר - מומחה לייעוץ סביבתי ותכנון אצירת אשפה.</p>
                             </div>
-                            <div className="flex flex-col md:items-end gap-3 text-gray-400 font-bold">
-                                <div className="flex items-center gap-3">
-                                    <span>aviram@telemenv.co.il</span>
-                                    <Icon name="mail" size={20} />
-                                </div>
-                                <div className="flex items-center gap-3">
-                                    <span>050-6890650</span>
-                                    <Icon name="phone" size={20} />
-                                </div>
-                                <p className="mt-8 text-sm font-normal italic">© {new Date().getFullYear()} תלם. כל הזכויות שמורות.</p>
+                            <div className="flex flex-col md:items-end gap-6 text-telem-cream font-bold text-lg">
+                                <div className="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20"><span>aviram@telemenv.co.il</span><Icon name="mail" size={24} className="text-telem-khaki" /></div>
+                                <div className="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20"><span>050-6890650</span><Icon name="phone" size={24} className="text-telem-khaki" /></div>
+                                <a href={LINKEDIN_URL} target="_blank" className="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20 hover:text-white transition-all"><span>פרופיל LinkedIn</span><Icon name="linkedin" size={24} className="text-telem-khaki" /></a>
+                                <p className="mt-8 text-sm opacity-30 italic">© {new Date().getFullYear()} תלם - ניהול סביבה ופסולת. כל הזכויות שמורות.</p>
                             </div>
                         </div>
                     </footer>
