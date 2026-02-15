@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ניהול סביבה ONSITE | ליווי ביצוע לתשתיות ורכבת קלה | תלם ניהול סביבה</title>
+    <meta name="description" content="ניהול סביבה ONSITE - ליווי ביצוע מקצועי לתשתיות לאומיות, נת"ע, ות"ל וחברות ממשלתיות. מציאת פתרונות המאזנים בין צרכי הקבלן לדרישות הרגולטור." />
+    <link rel="canonical" href="https://telemenv.co.il/environmental-management/" />
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        telem: {
+                            moss: '#78836a',
+                            forest: '#475d4b',
+                            dark: '#243e38',
+                            black: '#1d1d1b',
+                            cream: '#f8f4f1',
+                            khaki: '#94937f'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Google Sans"', 'Assistant', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap');
+        
+        body { 
+            font-family: "Google Sans", "Assistant", sans-serif; 
+            background-color: #f8f4f1; 
+            color: #1d1d1b; 
+        }
+        
+        .animate-fade-in { animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 2px 2px 12px rgba(0,0,0,0.3);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        const Icon = ({ name, size = 20, className = "" }) => {
+            useEffect(() => {
+                if (window.lucide) { window.lucide.createIcons(); }
+            }, [name]);
+            return <i data-lucide={name} style={{ width: size, height: size }} className={className}></i>;
+        };
+
+        const TelemLogo = ({ className = "" }) => (
+            <div className={`flex items-center min-w-[150px] ${className}`}>
+                <img 
+                    src="../logo.png" 
+                    alt="תלם - ניהול סביבה ופסולת" 
+                    className="h-16 md:h-20 w-auto object-contain block"
+                    onError={(e) => {
+                        e.target.style.display = 'none';
+                        const parent = e.target.parentElement;
+                        parent.innerHTML = '<span class="text-telem-forest font-black text-xl italic tracking-tighter">תלם | ניהול סביבה</span>';
+                    }}
+                />
+            </div>
+        );
+
+        const App = () => {
+            const PHONE_NUMBER = "0506890650";
+            const WA_NUMBER = "972506890650";
+            const LINKEDIN_URL = "https://www.linkedin.com/in/aviram-botzer-01782aa5/";
+
+            const navigation = [
+                { name: 'דף הבית', href: '/' },
+                { name: 'ניהול סביבה ONSITE', href: '/environmental-management/' },
+                { name: 'נספח אצירת אשפה', href: '/waste/' },
+                { name: 'נספח סביבתי', href: '/env/' },
+                { name: 'סקר היסטורי', href: '/history/' },
+            ];
+
+            return (
+                <div className="min-h-screen flex flex-col">
+                    <a href={`https://wa.me/${WA_NUMBER}`} className="whatsapp-float" target="_blank" title="דברו איתנו בוואטסאפ">
+                        <Icon name="message-circle" size={32} />
+                    </a>
+
+                    <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 border-b border-telem-khaki/10">
+                        <div className="max-w-7xl mx-auto px-4 h-24 flex justify-between items-center text-right">
+                            <a href="/" className="hover:opacity-80 transition-all flex items-center"><TelemLogo /></a>
+                            <nav className="hidden xl:flex gap-8">
+                                {navigation.map(item => (
+                                    <a key={item.name} href={item.href} className={`text-sm font-bold transition-colors ${item.href.includes('environmental-management') ? 'text-telem-dark border-b-2 border-telem-khaki' : 'text-telem-forest hover:text-telem-moss'} uppercase italic tracking-tight`}>
+                                        {item.name}
+                                    </a>
+                                ))}
+                            </nav>
+                            <div className="hidden md:flex items-center gap-4">
+                                <a href={LINKEDIN_URL} target="_blank" className="text-telem-dark hover:text-telem-moss transition-colors" title="LinkedIn"><Icon name="linkedin" size={24} /></a>
+                                <a href={`tel:${PHONE_NUMBER}`} className="bg-telem-dark text-white px-6 py-2.5 rounded-xl font-bold hover:bg-telem-forest transition-all shadow-md font-sans not-italic tracking-tighter uppercase">050-6890650</a>
+                            </div>
+                        </div>
+                    </header>
+
+                    <main className="pt-40 pb-24 animate-fade-in max-w-6xl mx-auto px-4 font-medium text-right flex-grow">
+                        <a href="/" className="inline-flex items-center gap-2 text-telem-forest font-bold mb-8 hover:text-telem-dark transition-all">
+                            <Icon name="arrow-right" size={18} /> חזרה לדף הבית
+                        </a>
+
+                        <section className="mb-24">
+                            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-telem-dark text-white rounded-full text-sm font-bold mb-8 italic tracking-tighter uppercase">ניהול וליווי ביצוע סביבתי ברמה הלאומית</div>
+                            <h1 className="text-4xl md:text-7xl font-black text-telem-black mb-10 leading-tight italic tracking-tighter uppercase">
+                                ניהול סביבה ONSITE: <span className="text-telem-forest underline decoration-telem-khaki decoration-8">הגשר שבין השטח לרגולטור</span>
+                            </h1>
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                                <div className="space-y-8 text-xl text-gray-800 leading-relaxed italic font-semibold">
+                                    <p>ניהול סביבה בפרויקטים רחבי היקף ותשתיות לאומיות הוא אמנות האיזון. אנחנו ב"תלם" מביאים ניסיון עשיר וייחודי בניהול הממשק המורכב שבין קבלני הביצוע לבין הגופים המנחים והרגולטוריים המחמירים ביותר בישראל.</p>
+                                    <p>המומחיות שלנו היא ה-**ONSITE**. אנחנו לא רק מכינים דוחות – אנחנו חיים את השטח. אנו יודעים למצוא את הפתרון המקצועי המדויק שמאפשר לקבלן להמשיך בביצוע מהיר ויעיל, מבלי להתפשר על דרישות איכות הסביבה וממבלי להסתכן בעיכובים בירוקרטיים או צווי הפסקת עבודה.</p>
+                                </div>
+                                <div className="bg-telem-dark text-white p-12 rounded-[56px] shadow-2xl relative">
+                                    <div className="absolute -top-4 -right-4 bg-telem-khaki text-telem-dark px-6 py-2 rounded-full font-black text-sm uppercase italic tracking-widest">ONSITE Expertise</div>
+                                    <h3 className="text-3xl font-black mb-10 italic tracking-tighter border-b border-telem-forest pb-4">ניסיון מול גופי המטה</h3>
+                                    <div className="space-y-8">
+                                        <div className="flex gap-4 items-start">
+                                            <Icon name="train" className="text-telem-khaki mt-1" size={28} />
+                                            <div>
+                                                <h4 className="font-black text-xl italic mb-1">נת"ע והרכבת הקלה</h4>
+                                                <p className="opacity-80 font-bold leading-relaxed">ליווי וניהול ביצוע סביבתי מסיבי בפרויקט הקו האדום והקווים הבאים, כולל ניהול עודפי עפר ומטרדים במרכז העיר.</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex gap-4 items-start">
+                                            <Icon name="landmark" className="text-telem-khaki mt-1" size={28} />
+                                            <div>
+                                                <h4 className="font-black text-xl italic mb-1">ות"ל ותשתיות לאומיות</h4>
+                                                <p className="opacity-80 font-bold leading-relaxed">עמידה בתנאים הסביבתיים המורכבים ביותר של תכניות התשתית הלאומיות מול גופי התכנון הארציים.</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex gap-4 items-start">
+                                            <Icon name="building-2" className="text-telem-khaki mt-1" size={28} />
+                                            <div>
+                                                <h4 className="font-black text-xl italic mb-1">חברות ממשלתיות ורשויות</h4>
+                                                <p className="opacity-80 font-bold leading-relaxed">היכרות עמוקה עם נהלי העבודה של נתיבי ישראל, מקורות ורשויות מקומיות ברחבי הארץ.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <div className="bg-white p-16 rounded-[64px] border-2 border-telem-forest shadow-xl mb-24 relative overflow-hidden">
+                            <Icon name="link" size={180} className="absolute -left-10 -bottom-10 opacity-5 text-telem-forest" />
+                            <h2 className="text-3xl md:text-5xl font-black text-telem-dark mb-12 italic tracking-tighter uppercase underline decoration-telem-khaki decoration-4">נפח הניסיון שלנו מדבר בעד עצמו</h2>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 text-gray-800 leading-relaxed italic font-bold text-lg">
+                                <div className="space-y-6">
+                                    <p>אנו דוברים את "שפת הקבלן" ואת "שפת הרגולטור" בו זמנית. ליווינו פרויקטים רחבי היקף שדרשו פתרונות יצירתיים לבעיות מורכבות של פינוי עודפי עפר בהיקפי ענק, ניהול מטרדי רעש ואבק במרחב האורבני הצפוף, ועמידה בתנאים סביבתיים קשיחים של משרד האנרגיה והגנת הסביבה.</p>
+                                </div>
+                                <div className="space-y-6">
+                                    <p>הערך המוסף שלנו הוא היכולת לצפות את החסמים עוד לפני שהם נוצרים. הניסיון שלנו מהצד הציבורי (ניהול מחלקות שפ"ע וסביבה) מעניק לנו יתרון קריטי בהבנת הציפיות של הבודקים ובהגשת תכניות עבודה שעוברות את האישורים במהירות המקסימלית.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+                            <div className="p-10 bg-telem-moss/5 rounded-[48px] border border-telem-khaki/20 text-right italic">
+                                <Icon name="construction" className="text-telem-forest mb-6" size={40} />
+                                <h4 className="text-2xl font-black text-telem-black mb-4 underline decoration-telem-khaki">ליווי ביצוע בבנייה</h4>
+                                <p className="text-gray-700 font-bold leading-relaxed text-sm md:text-base">ליווי תהליכי בנייה פשוטים ומורכבים (תמ"א 38, בנייה רוויה) משלב התארגנות האתר ועד לקבלת אישורי האכלוס הסופיים.</p>
+                            </div>
+                            <div className="p-10 bg-telem-moss/5 rounded-[48px] border border-telem-khaki/20 text-right italic">
+                                <Icon name="map-pin" className="text-telem-forest mb-6" size={40} />
+                                <h4 className="text-2xl font-black text-telem-black mb-4 underline decoration-telem-khaki">המרחב הכפרי והקיבוצי</h4>
+                                <p className="text-gray-700 font-bold leading-relaxed text-sm md:text-base">מומחיות ייחודית בליווי פרויקטים במועצות אזוריות, קיבוצים ומושבים תוך התחשבות בצרכים החקלאיים והקהילתיים.</p>
+                            </div>
+                            <div className="p-10 bg-telem-moss/5 rounded-[48px] border border-telem-khaki/20 text-right italic">
+                                <Icon name="alert-circle" className="text-telem-forest mb-6" size={40} />
+                                <h4 className="text-2xl font-black text-telem-black mb-4 underline decoration-telem-khaki">ניהול משברים סביבתיים</h4>
+                                <p className="text-gray-700 font-bold leading-relaxed text-sm md:text-base">מענה מהיר לאירועי זיהום או תלונות שכנים באתר, וייצוג מקצועי מול רכזי איכות סביבה ואיגודי ערים.</p>
+                            </div>
+                        </div>
+
+                        <div className="bg-telem-dark text-white rounded-[56px] p-16 text-center shadow-2xl relative overflow-hidden italic text-telem-cream tracking-tight">
+                            <h3 className="text-4xl md:text-5xl font-black mb-8 italic tracking-tighter uppercase">צריכים ליווי ONSITE מקצועי?</h3>
+                            <p className="text-telem-cream/80 mb-12 text-xl md:text-2xl font-medium max-w-4xl mx-auto">
+                                אל תתנו לבירוקרטיה הסביבתית לעצור לכם את הכלים. בואו נבנה יחד מערך ליווי שיגן על הפרויקט שלכם ויקדם את הביצוע.
+                            </p>
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                <button onClick={() => window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("היי אבירם, נשמח להתייעץ לגבי ניהול סביבה ONSITE לפרויקט שלנו.")}`, '_blank')} className="bg-telem-forest text-white px-12 py-5 rounded-2xl font-black text-2xl hover:bg-telem-moss transition-all shadow-lg flex items-center justify-center gap-3 font-sans not-italic">
+                                    <Icon name="message-circle" /> התייעצות ב-WhatsApp
+                                </button>
+                                <a href={`tel:${PHONE_NUMBER}`} className="border-2 border-telem-khaki text-white px-12 py-5 rounded-2xl font-black text-2xl hover:bg-white/10 transition-all font-sans not-italic tracking-tighter uppercase">050-6890650</a>
+                            </div>
+                        </div>
+                    </main>
+
+                    <footer className="bg-telem-dark text-white py-20 px-4 text-right border-t border-telem-forest/30 italic font-serif">
+                        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-16">
+                            <div className="text-right">
+                                <div className="text-telem-khaki font-black text-3xl mb-4 italic tracking-tighter">תלם | ניהול סביבה</div>
+                                <p className="text-telem-cream/60 text-xl max-w-md font-medium italic">אבירם בוצר - מומחה לניהול סביבה ONSITE ותשתיות לאומיות.</p>
+                            </div>
+                            <div className="flex flex-col md:items-end gap-6 text-telem-cream font-bold text-lg font-sans not-italic">
+                                <div className="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20 italic">
+                                    <span>aviram@telemenv.co.il</span><Icon name="mail" size={24} className="text-telem-khaki" />
+                                </div>
+                                <a href={`tel:${PHONE_NUMBER}`} className="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20 italic font-sans not-italic tracking-tighter hover:text-white transition-all">
+                                    <span>050-6890650</span><Icon name="phone" size={24} className="text-telem-khaki" />
+                                </a>
+                                <a href={LINKEDIN_URL} target="_blank" className="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20 hover:text-white transition-all italic underline text-sm md:text-base">
+                                    <span>פרופיל LinkedIn</span><Icon name="linkedin" size={24} className="text-telem-khaki" />
+                                </a>
+                                <p className="mt-8 text-sm font-normal opacity-30 italic font-serif tracking-widest uppercase">© {new Date().getFullYear()} תלם - ניהול סביבה ופסולת. כל הזכויות שמורות.</p>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
