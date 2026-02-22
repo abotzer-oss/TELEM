@@ -36,10 +36,18 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap');
-        body { font-family: "Google Sans", "Assistant", sans-serif; background-color: #f8f4f1; color: #1d1d1b; overflow-x: hidden; }
+        
+        body { 
+            font-family: "Google Sans", "Assistant", sans-serif; 
+            background-color: #f8f4f1; 
+            color: #1d1d1b; 
+            overflow-x: hidden;
+        }
+        
         .animate-fade-in { animation: fadeIn 0.5s ease-in; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         html { scroll-behavior: smooth; }
+
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -57,6 +65,9 @@
             transition: all 0.3s ease;
         }
         .whatsapp-float:hover { transform: scale(1.1); }
+
+        .guide-card { transition: all 0.3s ease; }
+        .guide-card:hover { transform: translateY(-5px); border-color: #78836a; box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
     </style>
 </head>
 <body>
@@ -79,52 +90,47 @@
                 { name: 'דף הבית', href: '/' }, 
                 { name: 'ניהול סביבה', href: '/environmental-management/' },
                 { name: 'נספח אצירת אשפה', href: '/waste/' }, 
-                { name: 'מרכז ידע', href: '/guides/' },
+                { name: 'מרכז ידע', href: '#guides' },
                 { name: 'סולארי ואגירה', href: '/solar/' },
                 { name: 'נספח סביבתי', href: '/env/' }, 
                 { name: 'סקר היסטורי', href: '/history/' }
             ];
 
             return (
-                <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-[100] border-b border-telem-khaki/10 h-24 flex items-center">
-                    <div className="max-w-7xl mx-auto px-4 w-full flex justify-between items-center flex-row-reverse">
-                        {/* Logo on the Right */}
-                        <a href="/" className="flex items-center">
-                            <img src="/logo.png" alt="תלם" className="h-16 md:h-20 w-auto" />
+                <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-[100] border-b border-telem-khaki/10 h-24 flex items-center">
+                    <div className="max-w-7xl mx-auto px-4 w-full flex justify-between items-center">
+                        <a href="/" className="flex items-center gap-3">
+                            <img src="/logo.png" alt="תלם ניהול סביבה" className="h-14 md:h-20 w-auto" />
                         </a>
 
-                        {/* Desktop Menu in Center */}
-                        <nav className="hidden xl:flex gap-6 items-center flex-row-reverse">
+                        <nav className="hidden xl:flex gap-6 items-center">
                             {navItems.map(item => (
-                                <a key={item.name} href={item.href} className="text-[15px] font-bold text-telem-forest hover:text-telem-moss transition-colors italic uppercase tracking-tighter">
+                                <a key={item.name} href={item.href} className="text-[15px] font-extrabold text-telem-forest hover:text-telem-moss transition-colors italic uppercase tracking-tighter">
                                     {item.name}
                                 </a>
                             ))}
                         </nav>
 
-                        {/* Contact on the Left */}
-                        <div className="hidden md:flex items-center gap-4 flex-row-reverse">
+                        <div className="hidden md:flex items-center gap-4">
                             <a href={LINKEDIN_URL} target="_blank" className="text-telem-dark hover:text-telem-moss transition-colors">
                                 <Icon name="linkedin" size={24} />
                             </a>
-                            <a href={`tel:${PHONE_NUMBER}`} className="bg-telem-dark text-white px-6 py-2.5 rounded-xl font-bold font-sans flex items-center gap-2 hover:bg-telem-forest transition-all shadow-md">
+                            <a href={`tel:${PHONE_NUMBER}`} className="bg-telem-dark text-white px-6 py-2.5 rounded-xl font-black font-sans flex items-center gap-2 hover:bg-telem-forest transition-all shadow-lg tracking-tighter uppercase">
                                 <Icon name="phone" size={18} />
                                 <span>050-6890650</span>
                             </a>
                         </div>
 
-                        {/* Mobile Toggle */}
                         <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="xl:hidden text-telem-dark p-2">
                             <Icon name={isMenuOpen ? "x" : "menu"} size={32} />
                         </button>
                     </div>
 
-                    {/* Mobile Menu */}
                     {isMenuOpen && (
-                        <div className="fixed top-24 w-full bg-white z-[90] shadow-2xl xl:hidden animate-fade-in text-right p-6 border-b-4 border-telem-khaki">
-                            <div className="flex flex-col gap-5">
+                        <div className="fixed top-24 w-full bg-white z-[90] shadow-2xl xl:hidden animate-fade-in text-right p-8 border-b-8 border-telem-dark">
+                            <div className="flex flex-col gap-6">
                                 {navItems.map(item => (
-                                    <a key={item.name} href={item.href} className="text-xl font-black text-telem-forest py-2 border-b border-gray-50 italic">
+                                    <a key={item.name} href={item.href} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-telem-forest border-b border-gray-50 pb-2 italic">
                                         {item.name}
                                     </a>
                                 ))}
@@ -137,42 +143,105 @@
 
         const App = () => {
             const WA_NUMBER = "972506890650";
+            const guides = [
+                { id: 'price', title: 'כמה עולה נספח סביבתי?', icon: 'banknote', category: 'עלויות' },
+                { id: 'history-when', title: 'מתי נדרש סקר היסטורי?', icon: 'history', category: 'סקרים' },
+                { id: 'waste-calculation', title: 'חישוב אצירת פסולת', icon: 'calculator', category: 'אצירה' },
+                { id: 'waste-quantities', title: 'חישוב כמויות פסולת בניין', icon: 'truck', category: 'פסולת' },
+                { id: 'soil-testing', title: 'בדיקות קרקע מזוהמת', icon: 'test-tube-2', category: 'סקרים' },
+                { id: 'timeline', title: 'לוחות זמנים לאישור', icon: 'clock', category: 'בירוקרטיה' },
+                { id: 'urban-renewal', title: 'נספח סביבתי בתמ"א 38', icon: 'building-2', category: 'התחדשות' },
+                { id: 'cities-waste', title: 'דרישות אצירה לפי עיר', icon: 'map', category: 'אצירה' },
+                { id: 'soil-survey-cost', title: 'כמה עולה סקר קרקע?', icon: 'coins', category: 'עלויות' },
+                { id: 'when-to-consult', title: 'מתי צריך יועץ סביבתי?', icon: 'users', category: 'כללי' }
+            ];
+
             return (
                 <div className="min-h-screen">
                     <Navigation />
                     
-                    <a href={`https://wa.me/${WA_NUMBER}`} className="whatsapp-float" target="_blank">
+                    <a href={`https://wa.me/${WA_NUMBER}`} className="whatsapp-float" target="_blank" title="דברו עם אבירם">
                         <Icon name="message-circle" size={32} />
                     </a>
 
-                    <main className="pt-48 animate-fade-in">
+                    <main className="pt-24 animate-fade-in">
                         {/* Hero Section */}
-                        <section className="pb-24 bg-telem-moss/5 relative">
-                            <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center text-right">
-                                <div className="lg:col-span-12 text-center md:text-right">
-                                    <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-telem-dark text-white rounded-full text-sm font-bold mb-8 italic tracking-tighter uppercase">מומחיות במגזר הציבורי, הכפרי והתשתיות</div>
-                                    <h1 className="text-5xl md:text-8xl font-black text-telem-black mb-8 leading-[1] italic tracking-tighter uppercase">מקצרים לכם את הדרך ל<span className="text-telem-forest italic underline decoration-telem-khaki decoration-8">אישור סביבתי</span></h1>
-                                    <p className="text-xl md:text-3xl text-telem-forest font-semibold mb-12 max-w-4xl leading-relaxed italic">
-                                        ליווי מקצועי הכולל ניהול ביצוע בתהליכי בנייה ותשתיות מורכבות. מומחיות ייחודית בנספחי אצירת אשפה וסביבה מתוך הבנה עמוקה של שיקולי הרשות המאשרת.
-                                    </p>
-                                    <button onClick={() => window.open(`https://wa.me/${WA_NUMBER}`, '_blank')} className="bg-telem-forest text-white px-12 py-5 rounded-2xl font-black text-2xl hover:bg-telem-dark shadow-2xl transition-all italic tracking-tight uppercase">התייעצות מקצועית מהירה</button>
+                        <section className="pt-32 pb-24 bg-telem-moss/5 relative text-right">
+                            <div className="max-w-7xl mx-auto px-4">
+                                <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-telem-dark text-white rounded-full text-sm font-bold mb-8 italic tracking-tighter uppercase">מומחיות במגזר הציבורי, הכפרי והתשתיות</div>
+                                <h1 className="text-5xl md:text-8xl font-black text-telem-black mb-8 leading-[1] italic tracking-tighter uppercase">הדרך המהירה והבטוחה ל<span className="text-telem-forest italic underline decoration-telem-khaki decoration-8">אישור סביבתי</span></h1>
+                                <p className="text-xl md:text-3xl text-telem-forest font-semibold mb-12 max-w-4xl leading-relaxed italic">
+                                    ליווי מקצועי הכולל ניהול ביצוע בתהליכי בנייה ותשתיות מורכבות. מומחיות בנספחי אצירת אשפה וסביבה מתוך הבנה עמוקה של שיקולי הרשות המאשרת.
+                                </p>
+                                <button onClick={() => window.open(`https://wa.me/${WA_NUMBER}`, '_blank')} className="bg-telem-forest text-white px-12 py-5 rounded-2xl font-black text-2xl hover:bg-telem-dark shadow-2xl transition-all italic tracking-tight uppercase">התייעצות מקצועית עכשיו</button>
+                            </div>
+                        </section>
+
+                        {/* Services Grid */}
+                        <section className="py-24 max-w-7xl mx-auto px-4 text-right">
+                            <h2 className="text-3xl font-black text-telem-dark mb-12 border-r-8 border-telem-khaki pr-4 italic">השירותים המקצועיים שלנו</h2>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                                <a href="/waste/" className="p-8 rounded-[40px] border bg-white border-telem-forest shadow-lg hover:-translate-y-1 transition-all group">
+                                    <Icon name="trash-2" size={42} className="mb-6 text-telem-dark group-hover:scale-110 transition-transform" />
+                                    <h3 className="text-2xl font-black mb-4 italic">אצירת אשפה</h3>
+                                    <p className="text-telem-forest mb-8 italic font-bold">תכנון הנדסי של מערכי אצירה וחישוב נפחי פסולת להיתר.</p>
+                                    <span className="font-black text-telem-forest underline text-sm italic">למידע נוסף ←</span>
+                                </a>
+                                <a href="/environmental-management/" className="p-8 rounded-[40px] border bg-white border-telem-dark shadow-lg hover:-translate-y-1 transition-all group">
+                                    <Icon name="settings" size={42} className="mb-6 text-telem-dark group-hover:scale-110 transition-transform" />
+                                    <h3 className="text-2xl font-black mb-4 italic">ניהול סביבה וביצוע</h3>
+                                    <p className="text-telem-forest mb-8 italic font-bold">ליווי וניהול ביצוע בפרויקטי בנייה ותשתיות לאומיות.</p>
+                                    <span className="font-black text-telem-forest underline text-sm italic">למידע נוסף ←</span>
+                                </a>
+                                <a href="/solar/" className="p-8 rounded-[40px] border bg-white border-telem-khaki shadow-sm hover:-translate-y-1 transition-all group">
+                                    <Icon name="sun" size={42} className="mb-6 text-telem-forest group-hover:scale-110 transition-transform" />
+                                    <h3 className="text-2xl font-black mb-4 italic">סולארי ואגירה</h3>
+                                    <p className="text-telem-forest mb-8 italic font-bold">ליווי סביבתי למערכות אגירת אנרגיה BESS ומתקני PV.</p>
+                                    <span className="font-black text-telem-forest underline text-sm italic">למידע נוסף ←</span>
+                                </a>
+                                <a href="/history/" className="p-8 rounded-[40px] border bg-white border-telem-khaki/20 shadow-sm hover:-translate-y-1 transition-all group">
+                                    <Icon name="history" size={42} className="mb-6 text-telem-forest group-hover:scale-110 transition-transform" />
+                                    <h3 className="text-2xl font-black mb-4 italic">סקר היסטורי</h3>
+                                    <p className="text-telem-forest mb-8 italic font-bold">בדיקת שימושי עבר וזיהומי קרקע בבדיקת נאותות סביבתית.</p>
+                                    <span className="font-black text-telem-forest underline text-sm italic">למידע נוסף ←</span>
+                                </a>
+                            </div>
+                        </section>
+
+                        {/* Knowledge Center */}
+                        <section id="guides" className="py-24 bg-telem-dark text-white text-right rounded-t-[80px]">
+                            <div className="max-w-7xl mx-auto px-4">
+                                <h2 className="text-4xl md:text-7xl font-black mb-12 italic tracking-tighter uppercase">מרכז הידע <span className="text-telem-khaki underline decoration-white decoration-8">והרגולציה</span></h2>
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                                    {guides.map(guide => (
+                                        <a key={guide.id} href={`/guides/${guide.id}.html`} className="guide-card group bg-white/5 p-8 rounded-[40px] border border-white/10 hover:bg-white/10 transition-all flex flex-col h-full shadow-2xl">
+                                            <div className="flex justify-between items-start mb-6">
+                                                <div className="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark group-hover:bg-white transition-colors">
+                                                    <Icon name={guide.icon} size={24} />
+                                                </div>
+                                                <span className="text-[10px] font-black text-telem-khaki border border-telem-khaki/30 px-3 py-1 rounded-full italic uppercase">{guide.category}</span>
+                                            </div>
+                                            <h3 className="text-xl font-black text-white mb-4 italic group-hover:text-telem-khaki transition-colors leading-tight">{guide.title}</h3>
+                                            <div className="mt-auto text-telem-khaki font-black italic underline decoration-2 underline-offset-4 flex items-center gap-2 text-sm"><span>למדריך המלא</span><Icon name="arrow-left" size={14} /></div>
+                                        </a>
+                                    ))}
                                 </div>
                             </div>
                         </section>
-                        
-                        {/* Placeholder for other sections to keep index short here */}
-                        <section className="py-20 text-center text-gray-400 italic font-bold">
-                            שאר תוכן דף הבית (שירותים, מרכז ידע) מופיע כאן...
-                        </section>
                     </main>
 
-                    <footer className="bg-telem-dark text-white py-20 px-4 text-right border-t border-telem-forest/30 font-serif italic">
-                        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+                    <footer className="bg-telem-black text-white py-24 px-4 text-right border-t border-white/5 font-serif italic">
+                        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-16">
                             <div>
-                                <div className="text-telem-khaki font-black text-3xl mb-2 italic tracking-tighter uppercase">תלם | ניהול סביבה</div>
-                                <p className="text-telem-cream/40 text-lg">אבירם בוצר - ניסיון מהצד של הרשות לקידום הפרויקט שלכם.</p>
+                                <img src="/logo.png" className="h-20 mb-8 opacity-80" alt="תלם" />
+                                <p className="text-telem-cream/40 text-2xl max-w-md font-medium italic leading-relaxed">אבירם בוצר - מביאים את הניסיון מהצד של הרשות לקידום הפרויקט שלכם.</p>
                             </div>
-                            <p className="text-xs opacity-30 tracking-widest uppercase">© {new Date().getFullYear()} תלם - כל הזכויות שמורות.</p>
+                            <div className="flex flex-col md:items-end gap-6 text-telem-khaki font-bold text-xl font-sans not-italic">
+                                <a href="mailto:aviram@telemenv.co.il" className="flex items-center gap-4 hover:text-white transition-all italic"><span>aviram@telemenv.co.il</span><Icon name="mail" /></a>
+                                <a href="tel:0506890650" className="flex items-center gap-4 hover:text-white transition-all font-sans not-italic tracking-tighter uppercase"><span>050-6890650</span><Icon name="phone" /></a>
+                                <a href="https://www.linkedin.com/in/aviram-botzer-01782aa5/" target="_blank" className="flex items-center gap-4 hover:text-white transition-all italic underline"><span>פרופיל LinkedIn</span><Icon name="linkedin" /></a>
+                                <p className="mt-12 text-sm opacity-20 italic font-serif tracking-widest uppercase italic">© {new Date().getFullYear()} תלם - ניהול סביבה ופסולת. כל הזכויות שמורות.</p>
+                            </div>
                         </div>
                     </footer>
                 </div>
