@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מתי נדרשות בדיקות קרקע מזוהמת (Phase II)? המדריך המקצועי | תלם</title>
+    <meta name="description" content="באילו מקרים מחויב יזם בביצוע דיגומי קרקע וקידוחים? גלו את דרישות המשרד להגנת הסביבה, שלבי הבדיקה ואיך להימנע מעלויות שיקום אדירות." />
+    <link rel="canonical" href="https://telemenv.co.il/guides/soil-testing.html" />
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        telem: { moss: '#78836a', forest: '#475d4b', dark: '#243e38', cream: '#f8f4f1', khaki: '#94937f' }
+                    },
+                    fontFamily: { sans: ['"Google Sans"', 'Assistant', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap');
+        body { font-family: "Google Sans", "Assistant", sans-serif; background-color: #f8f4f1; line-height: 1.8; }
+        .content-area h2 { font-size: 2.25rem; font-weight: 900; color: #243e38; margin-top: 3.5rem; margin-bottom: 1.5rem; border-right: 6px solid #94937f; padding-right: 1.5rem; font-style: italic; }
+        .content-area h3 { font-size: 1.75rem; font-weight: 800; color: #475d4b; margin-top: 2.5rem; margin-bottom: 1.25rem; }
+        .content-area p { font-size: 1.25rem; margin-bottom: 1.5rem; color: #374151; font-weight: 500; }
+        .content-area ul { list-style: none; padding-right: 0.5rem; margin-bottom: 2.5rem; }
+        .content-area li { position: relative; padding-right: 2rem; margin-bottom: 0.8rem; font-weight: 600; font-size: 1.15rem; color: #243e38; }
+        .content-area li::before { content: "←"; position: absolute; right: 0; color: #78836a; font-weight: bold; }
+        .red-flag { background-color: #fff1f2; border: 3px solid #be123c; padding: 2.5rem; border-radius: 2.5rem; margin: 3.5rem 0; position: relative; }
+        .table-container { overflow-x: auto; margin: 2rem 0; border-radius: 1.5rem; border: 2px solid #e5e7eb; }
+        table { width: 100%; border-collapse: collapse; background: white; text-align: right; }
+        th { background: #243e38; color: white; padding: 1.2rem; font-weight: 800; }
+        td { padding: 1.2rem; border-bottom: 1px solid #eee; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useEffect } = React;
+        const Icon = ({ name, size = 20, className = "" }) => {
+            useEffect(() => { if (window.lucide) { window.lucide.createIcons(); } }, [name]);
+            return <i data-lucide={name} style={{ width: size, height: size }} className={className}></i>;
+        };
+
+        const App = () => {
+            const WA_NUMBER = "972506890650";
+            const PHONE_NUMBER = "0506890650";
+
+            return (
+                <div className="min-h-screen pb-20">
+                    <header className="bg-white border-b h-24 flex items-center px-4 sticky top-0 z-50 shadow-sm text-right">
+                        <div className="max-w-6xl mx-auto w-full flex justify-between items-center">
+                            <a href="/" className="text-telem-forest font-black text-2xl italic tracking-tighter flex items-center gap-2">
+                                תלם <span className="text-gray-400 font-light">| ניהול סביבה</span>
+                            </a>
+                            <a href={`tel:${PHONE_NUMBER}`} className="bg-telem-dark text-white px-8 py-3 rounded-2xl font-black font-sans italic tracking-tighter uppercase shadow-md hover:bg-telem-forest transition-all">050-6890650</a>
+                        </div>
+                    </header>
+
+                    <main className="max-w-5xl mx-auto px-4 pt-16 text-right">
+                        <nav className="mb-8 text-telem-moss font-bold flex gap-3 text-sm italic">
+                            <a href="/" className="hover:underline">דף הבית</a> <span>/</span> 
+                            <a href="/guides/" className="hover:underline">מרכז ידע</a> <span>/</span>
+                            <span className="text-telem-dark underline decoration-telem-khaki">בדיקות קרקע מזוהמת</span>
+                        </nav>
+
+                        <article className="bg-white rounded-[60px] p-10 md:p-24 shadow-2xl border border-telem-khaki/10">
+                            <h1 className="text-4xl md:text-8xl font-black text-telem-black mb-16 leading-[1] italic tracking-tighter uppercase leading-[0.9]">
+                                מתי נדרשות בדיקות קרקע מזוהמת?
+                            </h1>
+
+                            <div className="content-area">
+                                <p>בעולם הנדל"ן והתשתיות הישראלי, המושג "קרקע מזוהמת" הוא אחד מחסמי התכנון המורכבים ביותר. בעוד שסקר היסטורי (Phase I) הוא עבודת בילוש ארכיונית, בדיקות קרקע (Phase II) הן השלב המעשי הכולל קידוחים ודיגומים בשטח.</p>
+                                
+                                <p>ההחלטה על ביצוע בדיקות אלו מתבססת על <a href="https://www.gov.il/he/departments/topics/contaminated_land" target="_blank" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">מדיניות המשרד להגנת הסביבה לטיפול בקרקעות מזוהמות</a>. יזם שלא יבין בזמן את הצורך בבדיקות אלו עלול למצוא את עצמו מול פרויקט תקוע ועלויות שיקום בלתי צפויות של מיליוני שקלים.</p>
+
+                                <h2>3 הנסיבות המרכזיות בהן הרשות תחייב אתכם בבדיקות</h2>
+                                <p>המשרד להגנת הסביבה והוועדות המקומיות דורשים בדיקות קרקע (Phase II) בשלושה מקרים עיקריים:</p>
+                                
+                                <ul>
+                                    <li><strong>1. ממצאים חשודים בסקר היסטורי:</strong> אם הסקר ההיסטורי העלה כי במגרש פעלו בעבר "פעילויות מזהמות פוטנציאליות" (כגון מוסכים, תחנות דלק, תעשייה כבדה או מחסני חומרי הדברה).</li>
+                                    <li><strong>2. שינוי ייעוד לשימושים רגישים:</strong> כאשר הופכים מגרש תעשייתי או חקלאי למגורים, גני ילדים או מוסדות ציבור.</li>
+                                    <li><strong>3. סמיכות למוקדי זיהום ידועים:</strong> זיהומים כימיים נוטים "לנדוד" במי התהום, והרשות תרצה לוודא שהמגרש שלכם לא נפגע מפעילות מזהמת סמוכה.</li>
+                                </ul>
+
+                                <div className="table-container shadow-lg">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>שלב הבדיקה</th>
+                                                <th>מה מבצעים בפועל?</th>
+                                                <th>המטרה</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Phase I (סקר היסטורי)</td>
+                                                <td>תצ"אות, ארכיונים, סיור ויזואלי</td>
+                                                <td>איתור חשד לזיהום</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Phase II (סקר קרקע)</td>
+                                                <td>קידוחים ודיגומים למעבדה</td>
+                                                <td>קביעת קיום וריכוז זיהום</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Phase III (סקר תיחום)</td>
+                                                <td>קידוחים בפריסה רחבה</td>
+                                                <td>הבנת עומק והיקף הזיהום</td>
+                                            </tr>
+                                            <tr>
+                                                <td>שיקום (Remediation)</td>
+                                                <td>חפירה ופינוי או טיפול באתר</td>
+                                                <td>הכשרת הקרקע לשימוש</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div className="red-flag">
+                                    <h4 className="text-red-800 font-black text-3xl mb-6 italic flex items-center gap-3">
+                                        <Icon name="skull" size={32} /> נורה אדומה ליזמים ומנהלי פרויקטים
+                                    </h4>
+                                    <p className="text-red-900 font-bold text-xl leading-relaxed mb-4 uppercase">
+                                        המלכודת הכלכלית של פינוי הקרקע:
+                                    </p>
+                                    <p className="text-red-950 font-medium text-lg leading-relaxed">
+                                        יזמים רבים מבצעים בדיקות קרקע רק כשהן נדרשות על ידי הוועדה. **זו שגיאה עסקית קשה**. גילוי של זיהום קרקע בשלב הביצוע יכול להוביל לעצירת פרויקט למשך חודשים. 
+                                        <br/><br/>
+                                        <strong>זכרו:</strong> עלויות פינוי קרקע מזוהמת לאתרים מורשים יקרות פי 10 עד פי 20 מפינוי עפר רגיל. אם תגלו את הזיהום רק כשכבר יש לכם קבלן חפירה ודיפון בשטח, תמצאו את עצמכם עם חריגה תקציבית שיכולה למוטט את כדאיות הפרויקט. בדיקת קרקע בשלב ה-Due Diligence היא תעודת הביטוח שלכם.
+                                    </p>
+                                </div>
+
+                                <h3>איך יועץ סביבה חוסך לכם כסף בבדיקות קרקע?</h3>
+                                <p>בדיקות קרקע הן הליך יקר הכולל צוותי קידוח ומעבדות. המשרד להגנת הסביבה פועל לפי הנחיות מחמירות, אך יועץ מנוסה כמו אבירם בוצר יודע לבנות **תכנית דיגום אופטימלית**.</p>
+                                <p>תכנית נכונה מתמקדת רק במוקדים החשודים באמת (Hotspots) ונמנעת מקידוחים מיותרים בפריסה רחבה שאינה נדרשת. אנו מנהלים את הדיאלוג מול בודקי המשרד להגנת הסביבה כדי להבטיח שהבדיקה תהיה יסודית מספיק לאישור, אך לא יקרה מדי ליזם.</p>
+                            </div>
+
+                            <div className="mt-24 bg-telem-dark text-white p-12 md:p-20 rounded-[60px] text-center italic shadow-2xl relative overflow-hidden">
+                                <Icon name="microscope" size={180} className="absolute -left-10 -bottom-10 opacity-5" />
+                                <h3 className="text-4xl md:text-5xl font-black mb-8 italic tracking-tighter uppercase leading-tight">חוששים מזיהום קרקע במגרש?</h3>
+                                <p className="mb-12 text-xl md:text-2xl font-medium opacity-80 max-w-3xl mx-auto leading-relaxed italic">אל תהמרו על הפרויקט שלכם. בדיקת קרקע מקצועית היא תעודת הביטוח שלכם מול הרשויות והבנקים.</p>
+                                <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                                    <button onClick={() => window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("היי אבירם, אשמח להתייעץ לגבי הצורך בבדיקות קרקע Phase II למגרש שלי.")}`, '_blank')} className="bg-telem-forest text-white px-12 py-5 rounded-2xl font-black text-2xl hover:bg-telem-moss transition-all shadow-lg flex items-center justify-center gap-3 font-sans not-italic italic uppercase tracking-tighter">
+                                        <Icon name="message-circle" /> בדיקת היתכנות ב-WhatsApp
+                                    </button>
+                                    <a href={`tel:${PHONE_NUMBER}`} className="border-2 border-telem-khaki text-white px-12 py-5 rounded-2xl font-black text-2xl hover:bg-white/10 transition-all font-sans not-italic uppercase tracking-tighter uppercase">050-6890650</a>
+                                </div>
+                            </div>
+                        </article>
+                    </main>
+
+                    <footer className="bg-telem-dark text-white py-16 px-4 text-center border-t border-telem-forest/30 font-serif italic mt-20">
+                        <p className="text-sm opacity-30 italic tracking-widest uppercase italic font-serif">© {new Date().getFullYear()} תלם - ניהול סביבה ופסולת. התוכן מבוסס על הנחיות המשרד להגנת הסביבה לטיפול בקרקעות מזוהמות.</p>
+                    </footer>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
