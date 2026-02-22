@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>כמה עולה נספח סביבתי? מחירון 2026 וטעויות יקרות | תלם</title>
+    <meta name="description" content="כמה באמת עולה נספח סביבתי להיתר בניה? גלו את מחירי השוק, ההבדלים בין הרשויות ולמה הצעה זולה מדי היא נורה אדומה לעיכוב הפרויקט." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { telem: { moss: '#78836a', forest: '#475d4b', dark: '#243e38', cream: '#f8f4f1', khaki: '#94937f' } }, fontFamily: { sans: ['"Google Sans"', 'Assistant', 'sans-serif'] } } } }
+    </script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap');
+        body { font-family: "Google Sans", "Assistant", sans-serif; background-color: #f8f4f1; }
+        .content h2 { font-size: 2rem; font-weight: 900; color: #243e38; margin-top: 3rem; margin-bottom: 1.5rem; border-right: 5px solid #94937f; padding-right: 1.5rem; font-style: italic; }
+        .content p { font-size: 1.25rem; line-height: 1.9; margin-bottom: 1.5rem; color: #374151; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useEffect } = React;
+        const Icon = ({ name, size = 20 }) => {
+            useEffect(() => { if (window.lucide) { window.lucide.createIcons(); } }, [name]);
+            return <i data-lucide={name} style={{ width: size, height: size }}></i>;
+        };
+        const App = () => (
+            <div className="min-h-screen pb-20 text-right">
+                <header className="bg-white border-b h-24 flex items-center px-4 sticky top-0 z-50 shadow-sm">
+                    <div className="max-w-5xl mx-auto w-full flex justify-between items-center">
+                        <a href="/" className="text-telem-forest font-black text-2xl italic tracking-tighter">תלם | ניהול סביבה</a>
+                        <a href="tel:0506890650" className="bg-telem-dark text-white px-6 py-2.5 rounded-xl font-bold font-sans italic tracking-tighter uppercase">050-6890650</a>
+                    </div>
+                </header>
+                <main className="max-w-4xl mx-auto px-4 pt-16">
+                    <article className="bg-white rounded-[60px] p-10 md:p-20 shadow-xl border border-telem-khaki/10">
+                        <h1 className="text-4xl md:text-6xl font-black text-telem-black mb-12 leading-tight italic tracking-tighter uppercase">כמה עולה נספח סביבתי להיתר בניה? מחירון 2026</h1>
+                        <div className="content">
+                            <p>אחת השאלות הנפוצות ביותר בקרב יזמים ואדריכלים היא "כמה זה עולה?". התשובה מורכבת ומושפעת מרמת הפירוט הנדרשת על ידי הרשות המקומית ומאיכות הצוות המקצועי המלווה את הפרויקט.</p>
+                            <h2>מחירי שוק ריאליים: ממה מורכבת ההצעה?</h2>
+                            <p>עבור נספח פשוט בבית מגורים במרחב כפרי, העלות מתחילה באיזור ה-<strong>15,000-20,000 ש"ח</strong>. בפרויקטים של שכונות שלמות או בנייה רוויה במרכז הארץ, המחירים יכולים להגיע למאות אלפי שקלים.</p>
+                            <div className="bg-red-50 border-r-8 border-red-600 p-8 rounded-2xl my-10 italic">
+                                <h4 className="text-red-800 font-black text-xl mb-4">🚨 נורה אדומה בוהקת</h4>
+                                <p className="text-red-900 font-bold">אם קיבלתם הצעה ב-7,000 ש"ח, צריכה להידלק לכם נורה אדומה. במחיר כזה היועץ כנראה לא מבצע תיאום אמיתי מול הרשות, מה שיגרור עיכובים של חודשים בהיתר.</p>
+                            </div>
+                            <h2>למה יש הבדל בין עיריות?</h2>
+                            <p>בתל אביב או ירושלים הדרישות מחמירות בהרבה מאשר במועצה אזורית קטנה. איגוד ערים דורש לרוב רמת פירוט גבוהה, מודלים אקוסטיים ובדיקות מעמיקות שמעלות את מחיר הנספח אך מבטיחות את קבלת האישור.</p>
+                        </div>
+                        <div className="mt-16 bg-telem-dark text-white p-12 rounded-[40px] text-center italic">
+                            <h3 className="text-3xl font-black mb-6">צריכים הצעה מדויקת?</h3>
+                            <button onClick={() => window.open('https://wa.me/972506890650')} className="bg-telem-forest text-white px-10 py-4 rounded-2xl font-black text-xl hover:bg-telem-moss transition-all shadow-lg flex items-center justify-center gap-3 mx-auto italic"><Icon name="message-circle" /> התייעצות ב-WhatsApp</button>
+                        </div>
+                    </article>
+                </main>
+            </div>
+        );
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
