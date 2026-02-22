@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>דרישות אצירת פסולת: ת"א, ירושלים ונתניה - השוואה מקצועית | תלם</title>
+    <meta name="description" content="המדריך המקצועי להבדלים בדרישות אצירת פסולת בין העיריות המובילות. איך לתכנן נכון נספח אצירה לתל אביב, ירושלים או נתניה מבלי להידחות במחלקת התברואה." />
+    <link rel="canonical" href="https://telemenv.co.il/guides/cities-waste.html" />
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        telem: { moss: '#78836a', forest: '#475d4b', dark: '#243e38', cream: '#f8f4f1', khaki: '#94937f' }
+                    },
+                    fontFamily: { sans: ['"Google Sans"', 'Assistant', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap');
+        body { font-family: "Google Sans", "Assistant", sans-serif; background-color: #f8f4f1; line-height: 1.8; }
+        .content-area h2 { font-size: 2.25rem; font-weight: 900; color: #243e38; margin-top: 3.5rem; margin-bottom: 1.5rem; border-right: 6px solid #94937f; padding-right: 1.5rem; font-style: italic; }
+        .content-area h3 { font-size: 1.75rem; font-weight: 800; color: #475d4b; margin-top: 2.5rem; margin-bottom: 1.25rem; }
+        .content-area p { font-size: 1.25rem; margin-bottom: 1.5rem; color: #374151; font-weight: 500; }
+        .content-area ul { list-style: none; padding-right: 0.5rem; margin-bottom: 2.5rem; }
+        .content-area li { position: relative; padding-right: 2rem; margin-bottom: 0.8rem; font-weight: 600; font-size: 1.15rem; color: #243e38; }
+        .content-area li::before { content: "←"; position: absolute; right: 0; color: #78836a; font-weight: bold; }
+        .red-flag { background-color: #fff1f2; border: 3px solid #be123c; padding: 2.5rem; border-radius: 2.5rem; margin: 3.5rem 0; position: relative; }
+        .city-box { background: white; border-radius: 2.5rem; padding: 2.5rem; border: 1px solid #e5e7eb; margin-bottom: 2rem; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useEffect } = React;
+        const Icon = ({ name, size = 20, className = "" }) => {
+            useEffect(() => { if (window.lucide) { window.lucide.createIcons(); } }, [name]);
+            return <i data-lucide={name} style={{ width: size, height: size }} className={className}></i>;
+        };
+
+        const App = () => {
+            const WA_NUMBER = "972506890650";
+            const PHONE_NUMBER = "0506890650";
+
+            return (
+                <div className="min-h-screen pb-20 text-right">
+                    <header className="bg-white border-b h-24 flex items-center px-4 sticky top-0 z-50 shadow-sm">
+                        <div className="max-w-7xl mx-auto w-full flex justify-between items-center">
+                            <a href="/" className="text-telem-forest font-black text-2xl italic tracking-tighter flex items-center gap-2">
+                                תלם <span className="text-gray-400 font-light">| ניהול סביבה</span>
+                            </a>
+                            <a href={`tel:${PHONE_NUMBER}`} className="bg-telem-dark text-white px-8 py-3 rounded-2xl font-black font-sans shadow-md">050-6890650</a>
+                        </div>
+                    </header>
+
+                    <main className="max-w-5xl mx-auto px-4 pt-16">
+                        <nav className="mb-8 text-telem-moss font-bold flex gap-3 text-sm italic">
+                            <a href="/" className="hover:underline">דף הבית</a> <span>/</span> 
+                            <a href="/guides/" className="hover:underline">מרכז ידע</a> <span>/</span>
+                            <span className="text-telem-dark underline decoration-telem-khaki">השוואת דרישות עירוניות</span>
+                        </nav>
+
+                        <article className="bg-white rounded-[60px] p-10 md:p-24 shadow-2xl border border-telem-khaki/10">
+                            <h1 className="text-4xl md:text-8xl font-black text-telem-black mb-16 leading-[1] italic tracking-tighter uppercase leading-[0.9]">
+                                דרישות אצירת פסולת: תל אביב, ירושלים ונתניה
+                            </h1>
+
+                            <div className="content-area">
+                                <p>אחת הטעויות הנפוצות של אדריכלים היא להניח שנספח אצירת אשפה שאושר בפרויקט בנתניה, יעבור באותה צורה גם בעיריית תל אביב. במציאות הישראלית, כל עירייה מנהלת "מדינת תברואה" משלה, עם הנחיות שונות לגבי סוג המיכלים, נפחי הייצור הנדרשים ודרכי הגישה של רכבי הפינוי.</p>
+                                
+                                <p>הבנת הניואנסים בין הרשויות השונות היא המפתח למניעת עיכובים בתיק המידע. הנה השוואה של הדגשים המרכזיים בערים הגדולות:</p>
+
+                                <div className="space-y-8 my-12">
+                                    <div className="city-box border-r-8 border-telem-forest">
+                                        <h3 className="text-2xl font-black text-telem-dark mb-4 italic">עיריית תל אביב-יפו: דגש על הפרדה וגובה חופשי</h3>
+                                        <p className="font-bold text-gray-700 italic">תל אביב מובילה את נושא ההפרדה במקור. הדרישות מתמקדות בהקצאת שטח משמעותי לזרם הכתום (אריזות) והכחול (נייר). בנוסף, העירייה מחמירה מאוד בנושא הגובה החופשי בתוך חדר האשפה ובנתיב הגישה (מינימום 4.5 מטר) כדי לאפשר פינוי בטוח של מיכלי 1.1 קו"ב.</p>
+                                    </div>
+
+                                    <div className="city-box border-r-8 border-telem-khaki">
+                                        <h3 className="text-2xl font-black text-telem-dark mb-4 italic">עיריית ירושלים: אתגרי טופוגרפיה ושיפועים</h3>
+                                        <p className="font-bold text-gray-700 italic">בירושלים, בגלל הטופוגרפיה המורכבת, מחלקת התברואה שמה דגש עצום על השיפועים בנתיב שינוע המיכלים מהחדר אל משאית האשפה. שיפוע שחורג מהמותר (בדרך כלל מעל 8%-10%) יגרור דרישה לפתרונות מיכון יקרים או לשינוי מיקום החדר כולו.</p>
+                                    </div>
+
+                                    <div className="city-box border-r-8 border-telem-moss">
+                                        <h3 className="text-2xl font-black text-telem-dark mb-4 italic">נתניה ורעננה: פתרונות טמוני קרקע ופנאומטיקה</h3>
+                                        <p className="font-bold text-gray-700 italic">בערים אלו קיימת העדפה ברורה לפתרונות של פחי אשפה טמוני קרקע או מערכות פינוי פנאומטיות בשכונות חדשות. הנספח חייב לכלול פרטים הנדסיים של היצרנים המאושרים על ידי העירייה ותיאום של שטחי ההצבה במרחב הציבורי.</p>
+                                    </div>
+                                </div>
+
+                                <div className="red-flag">
+                                    <h4 className="text-red-800 font-black text-3xl mb-6 italic flex items-center gap-3">
+                                        <Icon name="alert-circle" size={32} /> נורה אדומה לאדריכלים
+                                    </h4>
+                                    <p className="text-red-900 font-bold text-xl leading-relaxed mb-4 uppercase">
+                                        מלכודת ה"העתק-הדבק":
+                                    </p>
+                                    <p className="text-red-950 font-medium text-lg leading-relaxed italic">
+                                        שימוש בנוסחת חישוב של עירייה אחת עבור פרויקט בעירייה אחרת היא הדרך המהירה ביותר לדחיית הנספח. 
+                                        <br/><br/>
+                                        <strong>לדוגמה:</strong> עירייה מסוימת עשויה לדרוש חישוב לפי 25 ליטר אשפה לדירה, בעוד עירייה סמוכה תדרוש חישוב לפי מספר החדרים או לפי 35 ליטר. הפערים הללו משפיעים ישירות על גודל חדר האשפה הנדרש ועלולים לגזול שטחי בנייה יקרים או לגרום לחוסר מקום קריטי בשלב הביצוע.
+                                    </p>
+                                </div>
+
+                                <h2>איך "תלם" מייצרת ודאות תכנונית?</h2>
+                                <p>הניסיון המקצועי שלנו כולל עבודה מול עשרות מחלקות תברואה ושפ"ע ברחבי הארץ. אנו מחזיקים ב"בנק נתונים" מעודכן של דרישות הרשויות, מה שמאפשר לנו לתת לאדריכל הנחיות מדויקות כבר בשלב הסקיצה הראשונה.</p>
+                                <p>אנו מנהלים את התיאום מול הבודקים ברשות באופן אישי. כשהנספח מוגש כשהוא כבר "תפור" למידות של העירייה הספציפית, האישור בתיק המידע מתקבל במהירות וללא סבבי תיקונים מיותרים.</p>
+                            </div>
+
+                            <div className="mt-24 bg-telem-dark text-white p-12 md:p-20 rounded-[60px] text-center italic shadow-2xl relative overflow-hidden">
+                                <Icon name="map" size={180} className="absolute -left-10 -bottom-10 opacity-5" />
+                                <h3 className="text-4xl md:text-5xl font-black mb-8 italic tracking-tighter uppercase leading-tight">מתכננים פרויקט בעירייה חדשה?</h3>
+                                <p className="mb-12 text-xl md:text-2xl font-medium opacity-80 max-w-4xl mx-auto leading-relaxed italic">אל תהמרו על היתר הבנייה שלכם. אנחנו נבטיח שהנספח שלכם יעבור חלק במחלקת התברואה.</p>
+                                <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                                    <button onClick={() => window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("היי, נשמח להתייעץ לגבי דרישות אצירת פסולת לפרויקט שלנו ברשות המקומית.")}`, '_blank')} className="bg-telem-forest text-white px-12 py-5 rounded-2xl font-black text-2xl hover:bg-telem-moss transition-all shadow-lg flex items-center justify-center gap-3 font-sans not-italic italic uppercase tracking-tighter">
+                                        <Icon name="message-circle" /> בדיקת דרישות ב-WhatsApp
+                                    </button>
+                                    <a href={`tel:${PHONE_NUMBER}`} className="border-2 border-telem-khaki text-white px-12 py-5 rounded-2xl font-black text-2xl hover:bg-white/10 transition-all font-sans not-italic uppercase tracking-tighter uppercase">050-6890650</a>
+                                </div>
+                            </div>
+                        </article>
+                    </main>
+
+                    <footer className="bg-telem-dark text-white py-16 px-4 text-center border-t border-telem-forest/30 font-serif italic mt-20">
+                        <p className="text-sm opacity-30 italic tracking-widest uppercase italic font-serif">© {new Date().getFullYear()} תלם - ניהול סביבה ופסולת. התמחות בתיאום מול מחלקות תברואה ואיגודי ערים.</p>
+                    </footer>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
