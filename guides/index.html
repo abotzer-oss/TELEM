@@ -82,35 +82,35 @@
                 category: 'אצירת אשפה'
             },
             { 
-                id: 'env-vs-plan', 
-                title: 'ההבדל בין נספח סביבתי להיתר לבין נספח לתב״ע', 
-                excerpt: 'מתי עושים מה? רמות הפירוט השונות והמשמעות הכלכלית של כל שלב בתכנון.',
-                icon: 'layout',
-                category: 'רגולציה'
+                id: 'waste-quantities', 
+                title: 'חישוב כמויות פסולת בניין ועודפי עפר', 
+                excerpt: 'איך לחשב נכון את כמויות הפסולת הצפויות בפרויקט כדי לעמוד בדרישות הרישוי ופינוי עודפי העפר.',
+                icon: 'truck',
+                category: 'פסולת בניין'
             },
             { 
-                id: 'soil-contamination', 
+                id: 'soil-testing', 
                 title: 'מתי רשות מקומית דורשת בדיקות קרקע מזוהמת?', 
                 excerpt: 'סימנים מחשידים במגרש והנהלים של איגודי הערים לאישור תכניות בנייה.',
                 icon: 'test-tube-2',
                 category: 'סקרים וקרקע'
             },
             { 
-                id: 'approval-timeline', 
+                id: 'timeline', 
                 title: 'כמה זמן לוקח לקבל אישור נספח סביבתי?', 
                 excerpt: 'פירוט לוחות הזמנים הממוצעים ואיך ניתן לקצר את התהליך מול הבודקים ברשות.',
                 icon: 'clock',
                 category: 'בירוקרטיה'
             },
             { 
-                id: 'tama-38-env', 
+                id: 'urban-renewal', 
                 title: 'נספח סביבתי בפרויקט תמ״א 38 / פינוי בינוי', 
                 excerpt: 'הדגשים הספציפיים להתחדשות עירונית במרכזים צפופים: רעש, אבק וזיהום אוויר.',
                 icon: 'building-2',
                 category: 'התחדשות עירונית'
             },
             { 
-                id: 'cities-waste-comparison', 
+                id: 'cities-waste', 
                 title: 'דרישות אצירת פסולת: ת"א, ירושלים ונתניה', 
                 excerpt: 'השוואה בין מדיניות הרשויות השונות ואיך להתאים את התכנון לכל עיר.',
                 icon: 'map',
@@ -143,8 +143,8 @@
                         <Icon name="message-circle" size={32} />
                     </a>
 
-                    <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 border-b border-telem-khaki/10">
-                        <div className="max-w-7xl mx-auto px-4 h-24 flex justify-between items-center text-right">
+                    <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 border-b border-telem-khaki/10 text-right">
+                        <div className="max-w-7xl mx-auto px-4 h-24 flex justify-between items-center">
                             <a href="/" className="flex items-center gap-2">
                                 <span className="text-telem-forest font-black text-2xl italic tracking-tighter">תלם <span className="text-gray-400 font-light">| ניהול סביבה</span></span>
                             </a>
@@ -178,7 +178,7 @@
                                     <a 
                                         key={guide.id} 
                                         href={`/guides/${guide.id}.html`}
-                                        className="guide-card group bg-white p-8 rounded-[48px] border border-telem-khaki/10 shadow-sm hover:shadow-2xl flex flex-col h-full animate-fade-in"
+                                        className="guide-card group bg-white p-8 rounded-[48px] border border-telem-khaki/10 shadow-sm hover:shadow-2xl flex flex-col h-full animate-fade-in text-right"
                                         style={{ animationDelay: `${idx * 0.05}s` }}
                                     >
                                         <div className="flex justify-between items-start mb-6">
