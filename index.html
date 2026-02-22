@@ -97,6 +97,15 @@
             background-color: #128c7e;
         }
 
+        .guide-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .guide-card:hover {
+            transform: translateY(-8px);
+            border-color: #78836a;
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
         .typing-indicator span { animation: blink 1s infinite; }
         @keyframes blink { 0% { opacity: 0.2; } 50% { opacity: 1; } 100% { opacity: 0.2; } }
     </style>
@@ -221,9 +230,82 @@
                 { name: 'דף הבית', href: '/' }, 
                 { name: 'ניהול סביבה', href: '/environmental-management/' },
                 { name: 'נספח אצירת אשפה', href: '/waste/' }, 
+                { name: 'מרכז ידע', href: '#guides' },
                 { name: 'נספח סביבתי', href: '/env/' }, 
-                { name: 'סקר היסטורי', href: '/history/' }, 
-                { name: 'סולארי ואגירה', href: '/solar/' }
+                { name: 'סקר היסטורי', href: '/history/' }
+            ];
+
+            const guides = [
+                { 
+                    id: 'price', 
+                    title: 'כמה עולה נספח סביבתי להיתר בניה?', 
+                    excerpt: 'מחירון 2026 המעודכן, הבדלים בין רשויות ולמה הצעה זולה מדי היא נורה אדומה בוהקת.',
+                    icon: 'banknote',
+                    category: 'עלויות ותקציב'
+                },
+                { 
+                    id: 'history-when', 
+                    title: 'מתי נדרש סקר היסטורי (Phase I) בישראל?', 
+                    excerpt: 'באילו מקרים המשרד להגנת הסביבה מחייב אתכם בבדיקת שימושי עבר ואיך זה משפיע על העסקה.',
+                    icon: 'history',
+                    category: 'סקרים וקרקע'
+                },
+                { 
+                    id: 'waste-calculation', 
+                    title: 'חישוב נפח אצירת פסולת לבניין מגורים', 
+                    excerpt: 'המדריך המלא לחישוב נכון של מספר המיכלים וגודל חדר האשפה כדי לקבל אישור תברואה.',
+                    icon: 'calculator',
+                    category: 'אצירת אשפה'
+                },
+                { 
+                    id: 'waste-quantities', 
+                    title: 'חישוב כמויות פסולת בניין ועודפי עפר', 
+                    excerpt: 'איך לחשב נכון את כמויות הפסולת הצפויות בפרויקט כדי לעמוד בדרישות הרישוי ופינוי עודפי העפר.',
+                    icon: 'truck',
+                    category: 'פסולת בניין'
+                },
+                { 
+                    id: 'soil-testing', 
+                    title: 'מתי רשות מקומית דורשת בדיקות קרקע מזוהמת?', 
+                    excerpt: 'סימנים מחשידים במגרש והנהלים של איגודי הערים לאישור תכניות בנייה.',
+                    icon: 'test-tube-2',
+                    category: 'סקרים וקרקע'
+                },
+                { 
+                    id: 'timeline', 
+                    title: 'כמה זמן לוקח לקבל אישור נספח סביבתי?', 
+                    excerpt: 'פירוט לוחות הזמנים הממוצעים ואיך ניתן לקצר את התהליך מול הבודקים ברשות.',
+                    icon: 'clock',
+                    category: 'בירוקרטיה'
+                },
+                { 
+                    id: 'urban-renewal', 
+                    title: 'נספח סביבתי בפרויקט תמ״א 38 / פינוי בינוי', 
+                    excerpt: 'הדגשים הספציפיים להתחדשות עירונית במרכזים צפופים: רעש, אבק וזיהום אוויר.',
+                    icon: 'building-2',
+                    category: 'התחדשות עירונית'
+                },
+                { 
+                    id: 'cities-waste', 
+                    title: 'דרישות אצירת פסולת: ת"א, ירושלים ונתניה', 
+                    excerpt: 'השוואה בין מדיניות הרשויות השונות ואיך להתאים את התכנון לכל עיר.',
+                    icon: 'map',
+                    category: 'אצירת אשפה'
+                },
+                { 
+                    id: 'soil-survey-cost', 
+                    title: 'כמה עולה סקר קרקע מזוהמת והאם הוא חובה?', 
+                    excerpt: 'הערכת עלויות לקידוחים ודיגומים והמקרים בהם ניתן לקבל פטור.',
+                    icon: 'coins',
+                    category: 'עלויות ותקציב'
+                },
+                { 
+                    id: 'when-to-consult', 
+                    title: 'מתי צריך יועץ סביבתי בתהליך הרישוי?', 
+                    excerpt: 'באיזה שלב כדאי להכניס את היועץ לתמונה כדי למנוע טעויות תכנון יקרות.',
+                    icon: 'users',
+                    category: 'כללי'
+                }
             ];
             
             const handleWhatsAppRedirect = () => window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("שלום אבירם, הגעתי מהאתר ואשמח להתייעץ.")}`, '_blank');
@@ -297,6 +379,7 @@
                         </section>
 
                         <section className="py-24 max-w-7xl mx-auto px-4 italic font-medium">
+                            <h2 className="text-3xl font-black text-telem-dark mb-12 border-r-8 border-telem-khaki pr-4 italic">השירותים המקצועיים שלנו</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                                 <a href="/waste/" className="p-8 rounded-[32px] border bg-white border-telem-forest shadow-lg text-right italic hover:-translate-y-1 transition-all">
                                     <Icon name="trash-2" size={42} className="mb-6 text-telem-dark" />
@@ -322,6 +405,50 @@
                                     <p className="text-telem-forest mb-8 italic">בדיקת שימושי עבר וזיהומי קרקע בבדיקת נאותות סביבתית.</p>
                                     <span className="font-black text-telem-forest italic underline text-sm">למידע נוסף ←</span>
                                 </a>
+                            </div>
+                        </section>
+
+                        {/* --- Knowledge Center Section --- */}
+                        <section id="guides" className="py-24 bg-telem-cream/30">
+                            <div className="max-w-7xl mx-auto px-4">
+                                <div className="text-right mb-16">
+                                    <div className="inline-flex items-center gap-2 px-4 py-1 bg-telem-khaki/10 text-telem-forest rounded-full text-sm font-black mb-6 italic border border-telem-khaki/20 uppercase tracking-tighter">
+                                        המדריך השלם לרגולציה סביבתית בישראל
+                                    </div>
+                                    <h2 className="text-4xl md:text-6xl font-black text-telem-black mb-8 italic tracking-tighter uppercase leading-[0.9]">
+                                        מרכז הידע <span className="text-telem-forest underline decoration-telem-khaki decoration-8">והרגולציה</span>
+                                    </h2>
+                                    <p className="text-xl md:text-2xl text-telem-forest font-semibold max-w-4xl leading-relaxed italic">
+                                        כל התשובות המקצועיות שיחסכו לכם זמן יקר מול הרשויות ועיכובים מיותרים בקבלת היתר הבנייה.
+                                    </p>
+                                </div>
+
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                    {guides.map((guide, idx) => (
+                                        <a 
+                                            key={guide.id} 
+                                            href={`/guides/${guide.id}.html`}
+                                            className="guide-card group bg-white p-8 rounded-[40px] border border-telem-khaki/10 shadow-sm hover:shadow-2xl flex flex-col h-full text-right"
+                                        >
+                                            <div className="flex justify-between items-start mb-6">
+                                                <div className="w-14 h-14 bg-telem-cream rounded-2xl flex items-center justify-center text-telem-dark group-hover:bg-telem-forest group-hover:text-white transition-colors shadow-inner">
+                                                    <Icon name={guide.icon} size={28} />
+                                                </div>
+                                                <span className="text-xs font-black text-telem-moss uppercase tracking-widest bg-telem-cream px-3 py-1 rounded-full italic">{guide.category}</span>
+                                            </div>
+                                            <h3 className="text-2xl font-black text-telem-black mb-4 italic leading-tight group-hover:text-telem-forest transition-colors">
+                                                {guide.title}
+                                            </h3>
+                                            <p className="text-gray-600 font-bold text-base leading-relaxed mb-8 italic flex-grow">
+                                                {guide.excerpt}
+                                            </p>
+                                            <div className="flex items-center gap-2 text-telem-forest font-black italic underline decoration-2 underline-offset-4 group-hover:gap-4 transition-all">
+                                                <span>למדריך המלא</span>
+                                                <Icon name="arrow-left" size={16} />
+                                            </div>
+                                        </a>
+                                    ))}
+                                </div>
                             </div>
                         </section>
                     </main>
