@@ -34,7 +34,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap');
-        body { font-family: "Google Sans", "Assistant", sans-serif; background-color: #f8f4f1; color: #1d1d1b; }
+        body { font-family: "Google Sans", "Assistant", sans-serif; background-color: #f8f4f1; color: #1d1d1b; overflow-x: hidden; }
         
         .guide-card {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -46,17 +46,100 @@
         }
         .animate-fade-in { animation: fadeIn 0.6s ease-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 10000;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); }
     </style>
 </head>
 <body>
     <div id="root"></div>
 
     <script type="text/babel">
-        const { useEffect } = React;
+        const { useState, useEffect } = React;
 
         const Icon = ({ name, size = 20, className = "" }) => {
             useEffect(() => { if (window.lucide) { window.lucide.createIcons(); } }, [name]);
             return <i data-lucide={name} style={{ width: size, height: size }} className={className}></i>;
+        };
+
+        const Navigation = () => {
+            const [isMenuOpen, setIsMenuOpen] = useState(false);
+            const PHONE_NUMBER = "0506890650";
+            const LINKEDIN_URL = "https://www.linkedin.com/in/aviram-botzer-01782aa5/";
+            
+            const navItems = [
+                { name: 'דף הבית', href: '/' }, 
+                { name: 'ניהול סביבה', href: '/environmental-management/' },
+                { name: 'נספח אצירת אשפה', href: '/waste/' }, 
+                { name: 'מרכז ידע', href: '/guides/' },
+                { name: 'סולארי ואגירה', href: '/solar/' },
+                { name: 'נספח סביבתי', href: '/env/' }, 
+                { name: 'סקר היסטורי', href: '/history/' }
+            ];
+
+            return (
+                <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-[100] border-b border-telem-khaki/10 h-24 flex items-center">
+                    <div className="max-w-7xl mx-auto px-4 w-full flex justify-between items-center">
+                        {/* Logo on the Right for RTL */}
+                        <a href="/" className="flex items-center">
+                            <img src="/logo.png" alt="תלם" className="h-14 md:h-20 w-auto" />
+                        </a>
+
+                        {/* Desktop Menu - Center */}
+                        <nav className="hidden xl:flex gap-6 items-center">
+                            {navItems.map(item => (
+                                <a key={item.name} href={item.href} className="text-[15px] font-extrabold text-telem-forest hover:text-telem-moss transition-colors italic uppercase tracking-tighter">
+                                    {item.name}
+                                </a>
+                            ))}
+                        </nav>
+
+                        {/* Contact info - Left */}
+                        <div className="hidden md:flex items-center gap-4">
+                            <a href={LINKEDIN_URL} target="_blank" className="text-telem-dark hover:text-telem-moss transition-colors">
+                                <Icon name="linkedin" size={24} />
+                            </a>
+                            <a href={`tel:${PHONE_NUMBER}`} className="bg-telem-dark text-white px-6 py-2.5 rounded-xl font-black font-sans flex items-center gap-2 hover:bg-telem-forest transition-all shadow-lg tracking-tighter uppercase">
+                                <Icon name="phone" size={18} />
+                                <span>050-6890650</span>
+                            </a>
+                        </div>
+
+                        {/* Mobile Toggle */}
+                        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="xl:hidden text-telem-dark p-2">
+                            <Icon name={isMenuOpen ? "x" : "menu"} size={32} />
+                        </button>
+                    </div>
+
+                    {/* Mobile Menu Overlay */}
+                    {isMenuOpen && (
+                        <div className="fixed top-24 w-full bg-white z-[90] shadow-2xl xl:hidden animate-fade-in text-right p-8 border-b-8 border-telem-dark">
+                            <div className="flex flex-col gap-6">
+                                {navItems.map(item => (
+                                    <a key={item.name} href={item.href} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-telem-forest border-b border-gray-50 pb-2 italic">
+                                        {item.name}
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                </header>
+            );
         };
 
         const guides = [
@@ -138,30 +221,18 @@
 
             return (
                 <div className="min-h-screen flex flex-col">
+                    <Navigation />
+
                     {/* Floating WhatsApp */}
-                    <a href={`https://wa.me/${WA_NUMBER}`} className="fixed bottom-8 right-8 bg-[#25d366] text-white p-4 rounded-full shadow-2xl z-[100] hover:scale-110 transition-transform" target="_blank">
+                    <a href={`https://wa.me/${WA_NUMBER}`} className="whatsapp-float" target="_blank">
                         <Icon name="message-circle" size={32} />
                     </a>
-
-                    <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 border-b border-telem-khaki/10 text-right">
-                        <div className="max-w-7xl mx-auto px-4 h-24 flex justify-between items-center">
-                            <a href="/" className="flex items-center gap-2">
-                                <span className="text-telem-forest font-black text-2xl italic tracking-tighter">תלם <span className="text-gray-400 font-light">| ניהול סביבה</span></span>
-                            </a>
-                            <div className="hidden md:flex items-center gap-4 font-sans not-italic">
-                                <a href={`tel:${PHONE_NUMBER}`} className="bg-telem-dark text-white px-6 py-2.5 rounded-xl font-bold flex items-center gap-2 shadow-md hover:bg-telem-forest transition-all">
-                                    <Icon name="phone" size={18} />
-                                    <span>050-6890650</span>
-                                </a>
-                            </div>
-                        </div>
-                    </header>
 
                     <main className="pt-40 pb-24 flex-grow">
                         <div className="max-w-7xl mx-auto px-4">
                             {/* Hero Content */}
                             <div className="text-right mb-20 animate-fade-in">
-                                <div className="inline-flex items-center gap-2 px-4 py-1 bg-telem-khaki/10 text-telem-forest rounded-full text-sm font-black mb-6 italic border border-telem-khaki/20 uppercase tracking-tighter">
+                                <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-telem-dark text-white rounded-full text-sm font-bold mb-8 italic tracking-tighter uppercase">
                                     המדריך השלם לרגולציה סביבתית בישראל
                                 </div>
                                 <h1 className="text-5xl md:text-8xl font-black text-telem-black mb-8 italic tracking-tighter uppercase leading-[0.9]">
@@ -222,9 +293,9 @@
                         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
                             <div>
                                 <div className="text-telem-khaki font-black text-2xl mb-2 italic tracking-tighter uppercase">תלם | ניהול סביבה</div>
-                                <p className="text-telem-cream/40 text-sm font-medium">אבירם בוצר - מומחה לייעוץ סביבתי, תכנון אצירת אשפה וניהול ביצוע ONSITE.</p>
+                                <p className="text-telem-cream/40 text-sm font-medium italic">אבירם בוצר - מביאים את הניסיון מהצד של הרשות לקידום הפרויקט שלכם.</p>
                             </div>
-                            <p className="text-xs opacity-30 tracking-widest uppercase">© {new Date().getFullYear()} תלם - כל הזכויות שמורות.</p>
+                            <p className="text-xs opacity-30 tracking-widest uppercase font-serif italic">© {new Date().getFullYear()} תלם - כל הזכויות שמורות.</p>
                         </div>
                     </footer>
                 </div>
