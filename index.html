@@ -50,6 +50,7 @@
             background-color: #f8f4f1; 
             color: #1d1d1b; 
             overflow-x: hidden;
+            transition: background-color 0.3s, color 0.3s;
         }
         
         .animate-fade-in { animation: fadeIn 0.5s ease-in; }
@@ -76,6 +77,14 @@
 
         .guide-card { transition: all 0.3s ease; }
         .guide-card:hover { transform: translateY(-5px); border-color: #78836a; box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
+
+        /* Accessibility Helper Classes */
+        .accessible-grayscale { filter: grayscale(100%); }
+        .accessible-contrast { background-color: #000 !important; color: #fff !important; }
+        .accessible-contrast * { color: #fff !important; border-color: #fff !important; }
+        .accessible-contrast a { color: #ffff00 !important; }
+        .accessible-links a { text-decoration: underline !important; font-weight: bold !important; }
+        .accessible-font { font-family: Arial, sans-serif !important; }
     </style>
 </head>
 <body>
@@ -87,6 +96,114 @@
         const Icon = ({ name, size = 20, className = "" }) => {
             useEffect(() => { if (window.lucide) { window.lucide.createIcons(); } }, [name]);
             return <i data-lucide={name} style={{ width: size, height: size }} className={className}></i>;
+        };
+
+        // --- Accessibility Menu Component ---
+        const AccessibilityMenu = () => {
+            const [isOpen, setIsOpen] = useState(false);
+            const [settings, setSettings] = useState({ grayscale: false, contrast: false, links: false, readableFont: false, fontSize: 100 });
+            
+            const toggleSetting = (key) => setSettings(prev => ({ ...prev, [key]: !prev[key] }));
+            const changeFontSize = (delta) => setSettings(prev => ({ ...prev, fontSize: Math.max(100, Math.min(150, prev.fontSize + delta)) }));
+            const reset = () => setSettings({ grayscale: false, contrast: false, links: false, readableFont: false, fontSize: 100 });
+            
+            useEffect(() => {
+                const body = document.body;
+                body.classList.toggle('accessible-grayscale', settings.grayscale);
+                body.classList.toggle('accessible-contrast', settings.contrast);
+                body.classList.toggle('accessible-links', settings.links);
+                body.classList.toggle('accessible-font', settings.readableFont);
+                body.style.fontSize = `${settings.fontSize}%`;
+            }, [settings]);
+
+            return (
+                <div className="fixed bottom-6 left-6 z-[9999]">
+                    <button onClick={() => setIsOpen(!isOpen)} className="w-14 h-14 bg-telem-dark text-white rounded-full shadow-2xl flex items-center justify-center hover:bg-telem-forest transition-all border-2 border-white" title="תפריט נגישות">
+                        <Icon name="accessibility" size={30} />
+                    </button>
+                    {isOpen && (
+                        <div className="absolute bottom-16 left-0 w-72 bg-white rounded-2xl shadow-2xl border border-gray-200 p-6 animate-fade-in text-right text-telem-black">
+                            <h3 className="text-xl font-bold mb-4 border-b pb-2 text-telem-dark italic uppercase">תפריט נגישות</h3>
+                            <div className="space-y-3 text-sm">
+                                <button onClick={() => toggleSetting('contrast')} className={`w-full text-right p-3 rounded-xl transition-all flex items-center justify-between border ${settings.contrast ? 'bg-telem-dark text-white' : 'hover:bg-gray-50'}`}>
+                                    <span>ניגודיות גבוהה</span><Icon name="contrast" size={18} />
+                                </button>
+                                <button onClick={() => toggleSetting('grayscale')} className={`w-full text-right p-3 rounded-xl transition-all flex items-center justify-between border ${settings.grayscale ? 'bg-telem-dark text-white' : 'hover:bg-gray-50'}`}>
+                                    <span>גווני אפור</span><Icon name="image" size={18} />
+                                </button>
+                                <button onClick={() => toggleSetting('links')} className={`w-full text-right p-3 rounded-xl transition-all flex items-center justify-between border ${settings.links ? 'bg-telem-dark text-white' : 'hover:bg-gray-50'}`}>
+                                    <span>הדגשת קישורים</span><Icon name="external-link" size={18} />
+                                </button>
+                                <button onClick={() => toggleSetting('readableFont')} className={`w-full text-right p-3 rounded-xl transition-all flex items-center justify-between border ${settings.readableFont ? 'bg-telem-dark text-white' : 'hover:bg-gray-50'}`}>
+                                    <span>גופן קריא</span><Icon name="type" size={18} />
+                                </button>
+                                <div className="flex gap-2">
+                                    <button onClick={() => changeFontSize(10)} className="flex-1 bg-gray-100 p-2 rounded-lg font-bold hover:bg-gray-200">A+</button>
+                                    <button onClick={() => changeFontSize(-10)} className="flex-1 bg-gray-100 p-2 rounded-lg font-bold hover:bg-gray-200">A-</button>
+                                </div>
+                                <button onClick={reset} className="w-full text-center p-2 text-sm text-red-600 font-bold hover:underline mt-2">ביטול כל ההתאמות</button>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            );
+        };
+
+        // --- Cookie Banner Component (Updated Text) ---
+        const CookieBanner = () => {
+            const [show, setShow] = useState(false);
+            useEffect(() => { if (!localStorage.getItem('cookie-consent')) setShow(true); }, []);
+            const accept = () => { localStorage.setItem('cookie-consent', 'true'); setShow(false); };
+            if (!show) return null;
+            return (
+                <div className="fixed bottom-0 left-0 w-full bg-telem-black/95 text-white p-6 z-[9998] backdrop-blur-md border-t border-telem-moss shadow-2xl animate-fade-in">
+                    <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-right">
+                        <div className="flex-1">
+                            <h4 className="text-xl font-black text-telem-khaki mb-2 italic">משתמשים כאן בעוגיות</h4>
+                            <p className="text-gray-300 text-sm md:text-lg font-medium">לא 37% ולא אוריאו — כאלה שעושות חוויית שימוש מצוינת.</p>
+                        </div>
+                        <button onClick={accept} className="bg-telem-forest text-white px-10 py-4 rounded-xl font-black text-lg hover:bg-telem-moss transition-all shadow-lg italic">הבנתי, בוא נתקדם</button>
+                    </div>
+                </div>
+            );
+        };
+
+        // --- Legal Modals Component ---
+        const LegalModal = ({ type, onClose }) => {
+            if (!type) return null;
+            return (
+                <div className="fixed inset-0 bg-telem-black/80 z-[10000] flex items-center justify-center p-4 backdrop-blur-sm overflow-y-auto">
+                    <div className="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-8 md:p-12 relative text-right shadow-2xl border-4 border-telem-forest text-telem-black">
+                        <button onClick={onClose} className="absolute top-6 left-6 text-gray-400 hover:text-red-600 transition-colors">
+                            <Icon name="x" size={32} />
+                        </button>
+                        {type === 'accessibility' ? (
+                            <div className="animate-fade-in">
+                                <h2 className="text-3xl font-black text-telem-dark mb-8 border-b-4 border-telem-khaki pb-4 italic uppercase">הצהרת נגישות</h2>
+                                <div className="space-y-6 leading-relaxed font-medium text-lg italic">
+                                    <p>אנו בתלם ניהול סביבה פועלים להנגשת האתר לכלל האוכלוסייה, כולל אנשים עם מוגבלויות. האתר עומד בדרישות תקנות שוויון זכויות (ת"י 5568) ברמת AA.</p>
+                                    <h3 className="text-xl font-bold text-telem-dark italic underline">אפשרויות הנגשה</h3>
+                                    <ul className="list-disc pr-5 space-y-2">
+                                        <li>תפריט נגישות ייעודי (מצד שמאל למטה).</li>
+                                        <li>התאמה לקוראי מסך ולניווט מקלדת.</li>
+                                        <li>התאמת ניגודיות ושינוי גופנים.</li>
+                                    </ul>
+                                    <p>רכז נגישות: אבירם בוצר | 050-6890650 | aviram@telemenv.co.il</p>
+                                </div>
+                            </div>
+                        ) : (
+                            <div className="animate-fade-in">
+                                <h2 className="text-3xl font-black text-telem-dark mb-8 border-b-4 border-telem-khaki pb-4 italic uppercase">מדיניות פרטיות</h2>
+                                <div className="space-y-6 leading-relaxed font-medium text-lg italic">
+                                    <p>משרד תלם ניהול סביבה מכבד את פרטיות הגולשים באתר. המידע הנמסר בטפסים משמש ליצירת קשר בלבד ואינו מועבר לצדדים שלישיים.</p>
+                                    <h3 className="text-xl font-bold text-telem-dark italic underline">איסוף מידע</h3>
+                                    <p>האתר אוסף מידע אנונימי (Google Analytics) לצרכי ניתוח תעבורה ושיפור חווית המשתמש בלבד.</p>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            );
         };
 
         const Navigation = () => {
@@ -106,7 +223,7 @@
 
             return (
                 <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-[100] border-b border-telem-khaki/10 h-24 flex items-center">
-                    <div className="max-w-7xl mx-auto px-4 w-full flex justify-between items-center">
+                    <div className="max-w-7xl mx-auto px-4 w-full flex justify-between items-center text-right">
                         <a href="/" className="flex items-center gap-3">
                             <img src="/logo.png" alt="תלם ניהול סביבה" className="h-14 md:h-20 w-auto" />
                         </a>
@@ -151,6 +268,8 @@
 
         const App = () => {
             const WA_NUMBER = "972506890650";
+            const [legalModal, setLegalModal] = useState(null);
+
             const guides = [
                 { id: 'price', title: 'כמה עולה נספח סביבתי?', icon: 'banknote', category: 'עלויות' },
                 { id: 'history-when', title: 'מתי נדרש סקר היסטורי?', icon: 'history', category: 'סקרים' },
@@ -164,54 +283,84 @@
                 { id: 'when-to-consult', title: 'מתי צריך יועץ סביבתי?', icon: 'users', category: 'כללי' }
             ];
 
+            const handleLeadSubmit = (e) => {
+                e.preventDefault();
+                alert('הפרטים נשלחו בהצלחה! נחזור אליך בהקדם.');
+            };
+
             return (
                 <div className="min-h-screen">
                     <Navigation />
+                    <AccessibilityMenu />
+                    <CookieBanner />
+                    <LegalModal type={legalModal} onClose={() => setLegalModal(null)} />
                     
                     <a href={`https://wa.me/${WA_NUMBER}`} className="whatsapp-float" target="_blank" title="דברו עם אבירם">
                         <Icon name="message-circle" size={32} />
                     </a>
 
                     <main className="pt-24 animate-fade-in">
-                        {/* Hero Section */}
+                        {/* Hero Section with Lead Form */}
                         <section className="pt-32 pb-24 bg-telem-moss/5 relative text-right">
-                            <div className="max-w-7xl mx-auto px-4">
-                                <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-telem-dark text-white rounded-full text-sm font-bold mb-8 italic tracking-tighter uppercase">מומחיות במגזר הציבורי, הכפרי והתשתיות</div>
-                                <h1 className="text-5xl md:text-8xl font-black text-telem-black mb-8 leading-[1] italic tracking-tighter uppercase">הדרך המהירה והבטוחה ל<span className="text-telem-forest italic underline decoration-telem-khaki decoration-8">אישור סביבתי</span></h1>
-                                <p className="text-xl md:text-3xl text-telem-forest font-semibold mb-12 max-w-4xl leading-relaxed italic">
-                                    ליווי מקצועי הכולל ניהול ביצוע בתהליכי בנייה ותשתיות מורכבות. מומחיות בנספחי אצירת אשפה וסביבה מתוך הבנה עמוקה של שיקולי הרשות המאשרת.
-                                </p>
-                                <button onClick={() => window.open(`https://wa.me/${WA_NUMBER}`, '_blank')} className="bg-telem-forest text-white px-12 py-5 rounded-2xl font-black text-2xl hover:bg-telem-dark shadow-2xl transition-all italic tracking-tight uppercase">התייעצות מקצועית עכשיו</button>
+                            <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                                <div>
+                                    <div className="inline-block px-4 py-1.5 bg-telem-dark text-white rounded-full text-sm font-bold mb-8 italic tracking-tighter uppercase">מומחיות במגזר הציבורי, הכפרי והתשתיות</div>
+                                    <h1 className="text-5xl md:text-8xl font-black text-telem-black mb-8 leading-[1.1] italic tracking-tighter uppercase">
+                                        הדרך המהירה ל<span className="text-telem-forest italic underline decoration-telem-khaki decoration-8">אישור סביבתי</span>
+                                    </h1>
+                                    <p className="text-xl md:text-2xl text-telem-forest font-semibold mb-10 leading-relaxed italic max-w-xl">
+                                        ליווי מקצועי הכולל ניהול ביצוע בתהליכי בנייה ותשתיות מורכבות. מומחיות בנספחי אצירת אשפה וסביבה מתוך הבנה עמוקה של שיקולי הרשות.
+                                    </p>
+                                    <div className="flex flex-wrap gap-4">
+                                        <button onClick={() => window.open(`https://wa.me/${WA_NUMBER}`, '_blank')} className="bg-telem-forest text-white px-10 py-4 rounded-2xl font-black text-xl hover:bg-telem-dark shadow-xl transition-all italic tracking-tight uppercase">התייעצות מקצועית</button>
+                                        <a href="tel:0506890650" className="bg-white border-2 border-telem-dark text-telem-dark px-10 py-4 rounded-2xl font-black text-xl hover:bg-gray-50 transition-all italic tracking-tight flex items-center gap-2 uppercase font-sans">050-6890650</a>
+                                    </div>
+                                </div>
+                                
+                                {/* Lead Banner / Form */}
+                                <div className="bg-white p-10 rounded-[50px] shadow-2xl border border-telem-khaki/20 relative">
+                                    <div className="absolute -top-6 -right-6 bg-telem-forest text-white p-4 rounded-2xl hidden md:block rotate-3 shadow-lg">
+                                        <Icon name="check-circle" size={32} />
+                                    </div>
+                                    <h3 className="text-3xl font-black mb-6 text-telem-dark italic border-r-4 border-telem-khaki pr-4 uppercase tracking-tighter leading-none">השאירו פרטים ונחזור אליכם</h3>
+                                    <form className="flex flex-col gap-5" onSubmit={handleLeadSubmit}>
+                                        <input type="text" placeholder="שם מלא" className="p-4 bg-gray-50 rounded-xl outline-none focus:ring-2 ring-telem-khaki text-right text-lg border border-gray-100 font-bold italic" required />
+                                        <input type="tel" placeholder="מספר טלפון" className="p-4 bg-gray-50 rounded-xl outline-none focus:ring-2 ring-telem-khaki text-right text-lg border border-gray-100 font-bold italic" required />
+                                        <textarea placeholder="איך נוכל לעזור?" className="p-4 bg-gray-50 rounded-xl outline-none focus:ring-2 ring-telem-khaki text-right text-lg border border-gray-100 h-28 font-bold italic"></textarea>
+                                        <button className="bg-telem-dark text-white py-5 rounded-xl font-black text-2xl hover:bg-telem-forest transition-all shadow-xl italic uppercase tracking-widest">שלח פנייה</button>
+                                    </form>
+                                    <p className="mt-4 text-center text-xs text-gray-400 font-bold italic uppercase tracking-tighter">המידע שלכם מוגן ולא יועבר לצד שלישי.</p>
+                                </div>
                             </div>
                         </section>
 
                         {/* Services Grid */}
                         <section className="py-24 max-w-7xl mx-auto px-4 text-right">
-                            <h2 className="text-3xl font-black text-telem-dark mb-12 border-r-8 border-telem-khaki pr-4 italic">השירותים המקצועיים שלנו</h2>
+                            <h2 className="text-3xl font-black text-telem-dark mb-12 border-r-8 border-telem-khaki pr-4 italic uppercase tracking-tighter">השירותים המקצועיים שלנו</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                                 <a href="/waste/" className="p-8 rounded-[40px] border bg-white border-telem-forest shadow-lg hover:-translate-y-1 transition-all group">
                                     <Icon name="trash-2" size={42} className="mb-6 text-telem-dark group-hover:scale-110 transition-transform" />
-                                    <h3 className="text-2xl font-black mb-4 italic">אצירת אשפה</h3>
-                                    <p className="text-telem-forest mb-8 italic font-bold">תכנון הנדסי של מערכי אצירה וחישוב נפחי פסולת להיתר.</p>
-                                    <span className="font-black text-telem-forest underline text-sm italic">למידע נוסף ←</span>
+                                    <h3 className="text-2xl font-black mb-4 italic uppercase tracking-tighter">אצירת אשפה</h3>
+                                    <p className="text-telem-forest mb-8 italic font-bold leading-relaxed">תכנון הנדסי של מערכי אצירה וחישוב נפחי פסולת להיתר.</p>
+                                    <span className="font-black text-telem-forest underline text-sm italic uppercase tracking-widest">למידע נוסף ←</span>
                                 </a>
                                 <a href="/environmental-management/" className="p-8 rounded-[40px] border bg-white border-telem-dark shadow-lg hover:-translate-y-1 transition-all group">
                                     <Icon name="settings" size={42} className="mb-6 text-telem-dark group-hover:scale-110 transition-transform" />
-                                    <h3 className="text-2xl font-black mb-4 italic">ניהול סביבה וביצוע</h3>
-                                    <p className="text-telem-forest mb-8 italic font-bold">ליווי וניהול ביצוע בפרויקטי בנייה ותשתיות לאומיות.</p>
-                                    <span className="font-black text-telem-forest underline text-sm italic">למידע נוסף ←</span>
+                                    <h3 className="text-2xl font-black mb-4 italic uppercase tracking-tighter leading-none">ניהול סביבה וביצוע</h3>
+                                    <p className="text-telem-forest mb-8 italic font-bold leading-relaxed">ליווי וניהול ביצוע בפרויקטי בנייה ותשתיות לאומיות.</p>
+                                    <span className="font-black text-telem-forest underline text-sm italic uppercase tracking-widest">למידע נוסף ←</span>
                                 </a>
                                 <a href="/solar/" className="p-8 rounded-[40px] border bg-white border-telem-khaki shadow-sm hover:-translate-y-1 transition-all group">
                                     <Icon name="sun" size={42} className="mb-6 text-telem-forest group-hover:scale-110 transition-transform" />
-                                    <h3 className="text-2xl font-black mb-4 italic">סולארי ואגירה</h3>
-                                    <p className="text-telem-forest mb-8 italic font-bold">ליווי סביבתי למערכות אגירת אנרגיה BESS ומתקני PV.</p>
-                                    <span className="font-black text-telem-forest underline text-sm italic">למידע נוסף ←</span>
+                                    <h3 className="text-2xl font-black mb-4 italic uppercase tracking-tighter leading-none">סולארי ואגירה</h3>
+                                    <p className="text-telem-forest mb-8 italic font-bold leading-relaxed">ליווי סביבתי למערכות אגירת אנרגיה BESS ומתקני PV.</p>
+                                    <span className="font-black text-telem-forest underline text-sm italic uppercase tracking-widest">למידע נוסף ←</span>
                                 </a>
                                 <a href="/history/" className="p-8 rounded-[40px] border bg-white border-telem-khaki/20 shadow-sm hover:-translate-y-1 transition-all group">
                                     <Icon name="history" size={42} className="mb-6 text-telem-forest group-hover:scale-110 transition-transform" />
-                                    <h3 className="text-2xl font-black mb-4 italic">סקר היסטורי</h3>
-                                    <p className="text-telem-forest mb-8 italic font-bold">בדיקת שימושי עבר וזיהומי קרקע בבדיקת נאותות סביבתית.</p>
-                                    <span className="font-black text-telem-forest underline text-sm italic">למידע נוסף ←</span>
+                                    <h3 className="text-2xl font-black mb-4 italic uppercase tracking-tighter">סקר היסטורי</h3>
+                                    <p className="text-telem-forest mb-8 italic font-bold leading-relaxed">בדיקת שימושי עבר וזיהומי קרקע בבדיקת נאותות סביבתית.</p>
+                                    <span className="font-black text-telem-forest underline text-sm italic uppercase tracking-widest">למידע נוסף ←</span>
                                 </a>
                             </div>
                         </section>
@@ -230,7 +379,7 @@
                                                 <span className="text-[10px] font-black text-telem-khaki border border-telem-khaki/30 px-3 py-1 rounded-full italic uppercase">{guide.category}</span>
                                             </div>
                                             <h3 className="text-xl font-black text-white mb-4 italic group-hover:text-telem-khaki transition-colors leading-tight">{guide.title}</h3>
-                                            <div className="mt-auto text-telem-khaki font-black italic underline decoration-2 underline-offset-4 flex items-center gap-2 text-sm"><span>למדריך המלא</span><Icon name="arrow-left" size={14} /></div>
+                                            <div className="mt-auto text-telem-khaki font-black italic underline decoration-2 underline-offset-4 flex items-center gap-2 text-sm uppercase tracking-widest"><span>למדריך המלא</span><Icon name="arrow-left" size={14} /></div>
                                         </a>
                                     ))}
                                 </div>
@@ -248,7 +397,14 @@
                                 <a href="mailto:aviram@telemenv.co.il" className="flex items-center gap-4 hover:text-white transition-all italic"><span>aviram@telemenv.co.il</span><Icon name="mail" /></a>
                                 <a href="tel:0506890650" className="flex items-center gap-4 hover:text-white transition-all font-sans not-italic tracking-tighter uppercase"><span>050-6890650</span><Icon name="phone" /></a>
                                 <a href="https://www.linkedin.com/in/aviram-botzer-01782aa5/" target="_blank" className="flex items-center gap-4 hover:text-white transition-all italic underline"><span>פרופיל LinkedIn</span><Icon name="linkedin" /></a>
-                                <p className="mt-12 text-sm opacity-20 italic font-serif tracking-widest uppercase italic">© {new Date().getFullYear()} תלם - ניהול סביבה ופסולת. כל הזכויות שמורות.</p>
+                                
+                                <div className="flex gap-4 mt-8 text-sm font-bold text-telem-khaki underline italic uppercase tracking-widest">
+                                    <button onClick={() => setLegalModal('accessibility')} className="hover:text-white">הצהרת נגישות</button>
+                                    <span>|</span>
+                                    <button onClick={() => setLegalModal('privacy')} className="hover:text-white">מדיניות פרטיות</button>
+                                </div>
+                                
+                                <p className="mt-8 text-sm opacity-20 italic font-serif tracking-widest uppercase">© {new Date().getFullYear()} תלם - ניהול סביבה ופסולת. כל הזכויות שמורות.</p>
                             </div>
                         </div>
                     </footer>
