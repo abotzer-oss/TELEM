@@ -1,19 +1,11 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3F8H2J4D7F"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-3F8H2J4D7F');
-    </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="1oB6JUju7uiK0NjqkGydkSNIR24SxMbsUqNgwrONlvM" />
     <title>תלם | נספח אצירת אשפה וייעוץ סביבתי - המומחים למגזר הציבורי והכפרי</title>
-    <meta name="description" content="תלם ניהול סביבה בהנהלת אבירם בוצר: מומחיות בנספח אצירת אשפה, נספחים סביבתיים וסקרים היסטוריים. ניסיון בניהול ביצוע ותשתיות מורכבות כגון הרכבת הקלה." />
+    <meta name="description" content="תלם ניהול סביבה בהנהלת אבירם בוצר: מומחיות בנספח אצירת אשפה, נספחים סביבתיים וסקרים היסטוריים. ניסיון בניהול ביצוע ותשתיות מורכבות." />
     <link rel="canonical" href="https://telemenv.co.il/" />
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -38,10 +30,17 @@
             }
         }
     </script>
+    
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore-compat.js"></script>
+
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap');
         
@@ -50,6 +49,7 @@
             background-color: #f8f4f1; 
             color: #1d1d1b; 
             overflow-x: hidden;
+            transition: background-color 0.3s, color 0.3s;
         }
         
         .animate-fade-in { animation: fadeIn 0.5s ease-in; }
@@ -76,6 +76,16 @@
 
         .guide-card { transition: all 0.3s ease; }
         .guide-card:hover { transform: translateY(-5px); border-color: #78836a; box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
+        
+        input::placeholder { color: #94937f; opacity: 0.5; }
+
+        /* Accessibility Overrides */
+        .accessible-grayscale { filter: grayscale(100%); }
+        .accessible-links a { text-decoration: underline !important; font-weight: bold !important; }
+        .accessible-font { font-family: Arial, sans-serif !important; }
+        .accessible-contrast { background-color: #000 !important; color: #fff !important; }
+        .accessible-contrast * { color: #fff !important; border-color: #fff !important; }
+        .accessible-contrast a { color: #ffff00 !important; }
     </style>
 </head>
 <body>
@@ -84,9 +94,136 @@
     <script type="text/babel">
         const { useState, useEffect } = React;
 
+        // Firebase Configuration
+        const firebaseConfig = JSON.parse(__firebase_config);
+        const app = firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'telem-env';
+
         const Icon = ({ name, size = 20, className = "" }) => {
             useEffect(() => { if (window.lucide) { window.lucide.createIcons(); } }, [name]);
             return <i data-lucide={name} style={{ width: size, height: size }} className={className}></i>;
+        };
+
+        const AccessibilityMenu = () => {
+            const [isOpen, setIsOpen] = useState(false);
+            const [settings, setSettings] = useState({ 
+                grayscale: false, 
+                contrast: false, 
+                links: false, 
+                readableFont: false, 
+                fontSize: 100 
+            });
+
+            const toggleSetting = (key) => setSettings(prev => ({ ...prev, [key]: !prev[key] }));
+            const changeFontSize = (delta) => setSettings(prev => ({ ...prev, fontSize: Math.max(100, Math.min(150, prev.fontSize + delta)) }));
+            const reset = () => setSettings({ grayscale: false, contrast: false, links: false, readableFont: false, fontSize: 100 });
+            
+            useEffect(() => {
+                const body = document.body;
+                body.classList.toggle('accessible-grayscale', settings.grayscale);
+                body.classList.toggle('accessible-contrast', settings.contrast);
+                body.classList.toggle('accessible-links', settings.links);
+                body.classList.toggle('accessible-font', settings.readableFont);
+                body.style.fontSize = `${settings.fontSize}%`;
+            }, [settings]);
+
+            return (
+                <div className="fixed bottom-6 left-6 z-[9999]">
+                    <button 
+                        onClick={() => setIsOpen(!isOpen)} 
+                        className="w-14 h-14 bg-telem-dark text-white rounded-full shadow-2xl flex items-center justify-center hover:bg-telem-forest transition-all border-2 border-white"
+                        title="תפריט נגישות"
+                    >
+                        <Icon name="accessibility" size={30} />
+                    </button>
+                    {isOpen && (
+                        <div className="absolute bottom-16 left-0 w-72 bg-white rounded-3xl shadow-2xl border border-gray-200 p-6 animate-fade-in text-right text-telem-black">
+                            <h3 className="text-xl font-black mb-4 border-b pb-2 text-telem-dark italic">נגישות באתר</h3>
+                            <div className="space-y-3 text-sm font-bold">
+                                <button onClick={() => toggleSetting('contrast')} className={`w-full text-right p-3 rounded-xl transition-all flex items-center justify-between border ${settings.contrast ? 'bg-telem-dark text-white' : 'hover:bg-gray-50'}`}>
+                                    <span>ניגודיות גבוהה</span><Icon name="contrast" size={18} />
+                                </button>
+                                <button onClick={() => toggleSetting('grayscale')} className={`w-full text-right p-3 rounded-xl transition-all flex items-center justify-between border ${settings.grayscale ? 'bg-telem-dark text-white' : 'hover:bg-gray-50'}`}>
+                                    <span>גווני אפור</span><Icon name="image" size={18} />
+                                </button>
+                                <button onClick={() => toggleSetting('links')} className={`w-full text-right p-3 rounded-xl transition-all flex items-center justify-between border ${settings.links ? 'bg-telem-dark text-white' : 'hover:bg-gray-50'}`}>
+                                    <span>הדגשת קישורים</span><Icon name="external-link" size={18} />
+                                </button>
+                                <button onClick={() => toggleSetting('readableFont')} className={`w-full text-right p-3 rounded-xl transition-all flex items-center justify-between border ${settings.readableFont ? 'bg-telem-dark text-white' : 'hover:bg-gray-50'}`}>
+                                    <span>גופן קריא</span><Icon name="type" size={18} />
+                                </button>
+                                <div className="flex gap-2">
+                                    <button onClick={() => changeFontSize(10)} className="flex-1 bg-gray-100 p-2 rounded-lg font-bold hover:bg-gray-200 italic">A+</button>
+                                    <button onClick={() => changeFontSize(-10)} className="flex-1 bg-gray-100 p-2 rounded-lg font-bold hover:bg-gray-200 italic">A-</button>
+                                </div>
+                                <button onClick={reset} className="w-full text-center p-2 text-xs text-red-600 font-black hover:underline mt-2 italic tracking-tighter uppercase">ביטול כל ההתאמות</button>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            );
+        };
+
+        const CookieBanner = () => {
+            const [show, setShow] = useState(false);
+            useEffect(() => { if (!localStorage.getItem('telem-cookie-consent')) setShow(true); }, []);
+            const accept = () => { localStorage.setItem('telem-cookie-consent', 'true'); setShow(false); };
+            if (!show) return null;
+            return (
+                <div className="fixed bottom-0 left-0 w-full bg-telem-dark text-white p-6 z-[9998] border-t-4 border-telem-khaki shadow-2xl animate-fade-in">
+                    <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-right font-serif italic">
+                        <div className="flex items-center gap-6">
+                            <div className="text-4xl md:text-5xl">🍪</div>
+                            <div className="flex-1">
+                                <p className="text-telem-cream opacity-95 text-lg md:text-xl font-black leading-relaxed">
+                                    משתמשים כאן בעוגיות 🍪
+                                    <br />
+                                    <span className="text-sm md:text-base font-medium opacity-80">
+                                        לא 37% ולא אוריאו — כאלה שעושות חוויית שימוש מצוינת.
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <button onClick={accept} className="bg-telem-forest text-white px-10 py-3 rounded-xl font-black hover:bg-telem-moss transition-all shadow-lg whitespace-nowrap">
+                            הבנתי, בוא נתקדם
+                        </button>
+                    </div>
+                </div>
+            );
+        };
+
+        const LegalModal = ({ type, onClose }) => {
+            if (!type) return null;
+            return (
+                <div className="fixed inset-0 bg-telem-black/80 z-[10001] flex items-center justify-center p-4 backdrop-blur-sm overflow-y-auto">
+                    <div className="bg-white rounded-[40px] max-w-3xl w-full max-h-[90vh] overflow-y-auto p-8 md:p-12 relative text-right shadow-2xl border-4 border-telem-forest text-telem-black">
+                        <button onClick={onClose} className="absolute top-6 left-6 text-gray-400 hover:text-red-600 transition-colors">
+                            <Icon name="x" size={32} />
+                        </button>
+                        {type === 'accessibility' ? (
+                            <div className="animate-fade-in">
+                                <h2 className="text-3xl font-black text-telem-dark mb-8 border-b-4 border-telem-khaki pb-4 italic">הצהרת נגישות - תלם ניהול סביבה</h2>
+                                <div className="space-y-6 leading-relaxed font-medium text-lg text-right" dir="rtl">
+                                    <p>אנו בתלם ניהול סביבה רואים חשיבות עליונה בהנגשת האתר לכלל האוכלוסייה, כולל אנשים עם מוגבלויות. האתר עומד בדרישות תקנות שוויון זכויות לאנשים עם מוגבלות ומותאם לתקן הישראלי (ת"י 5568) ברמת AA.</p>
+                                    <h3 className="text-xl font-bold text-telem-dark italic underline decoration-telem-khaki">פרטי רכז נגישות</h3>
+                                    <p>רכז נגישות: אבירם בוצר | טלפון: 050-6890650 | אימייל: aviram@telemenv.co.il</p>
+                                </div>
+                            </div>
+                        ) : (
+                            <div className="animate-fade-in text-right" dir="rtl">
+                                <h2 className="text-3xl font-black text-telem-dark mb-8 border-b-4 border-telem-khaki pb-4 italic">מדיניות הגנת פרטיות</h2>
+                                <div className="space-y-6 leading-relaxed font-medium text-lg">
+                                    <p>משרד 'תלם ניהול סביבה' מכבד את פרטיות הגולשים ומתחייב לפעול בהתאם לחוק הגנת הפרטיות, התשמ"א-1981.</p>
+                                    <h3 className="text-xl font-bold text-telem-dark italic underline decoration-telem-khaki">איסוף מידע</h3>
+                                    <p>המידע שנאסף באתר נועד לשיפור חווית המשתמש בלבד. מידע שנשלח בטפסים משמש לצורך יצירת קשר עם הלקוח בלבד ולא יועבר לצד שלישי ללא הסכמה מפורשת.</p>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            );
         };
 
         const Navigation = () => {
@@ -138,7 +275,7 @@
                         <div className="fixed top-24 w-full bg-white z-[90] shadow-2xl xl:hidden animate-fade-in text-right p-8 border-b-8 border-telem-dark">
                             <div className="flex flex-col gap-6">
                                 {navItems.map(item => (
-                                    <a key={item.name} href={item.href} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-telem-forest border-b border-gray-50 pb-2 italic">
+                                    <a key={item.name} href={item.href} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-telem-forest border-b border-gray-50 pb-2 italic text-right">
                                         {item.name}
                                     </a>
                                 ))}
@@ -149,8 +286,91 @@
             );
         };
 
+        const LeadForm = () => {
+            const [formData, setFormData] = useState({ company: '', subject: '', phone: '' });
+            const [status, setStatus] = useState('idle');
+
+            const handleSubmit = async (e) => {
+                e.preventDefault();
+                if (!formData.phone || !formData.subject) return;
+                
+                setStatus('loading');
+                try {
+                    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                        await auth.signInWithCustomToken(__initial_auth_token);
+                    } else {
+                        await auth.signInAnonymously();
+                    }
+
+                    await db.collection('artifacts').doc(appId).collection('public').doc('data').collection('leads').add({
+                        ...formData,
+                        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                        source: 'Hero Form'
+                    });
+
+                    setStatus('success');
+                    setFormData({ company: '', subject: '', phone: '' });
+                    setTimeout(() => setStatus('idle'), 5000);
+                } catch (err) {
+                    console.error("Error saving lead:", err);
+                    setStatus('error');
+                }
+            };
+
+            return (
+                <div className="w-full max-w-xl bg-white p-8 rounded-[40px] border border-telem-khaki/20 shadow-2xl text-right relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-2 h-full bg-telem-dark"></div>
+                    <h3 className="text-2xl font-black text-telem-dark mb-6 italic tracking-tight">נחזור אליך עם פתרון מקצועי</h3>
+                    
+                    {status === 'success' ? (
+                        <div className="bg-telem-moss/10 text-telem-forest p-8 rounded-3xl border-2 border-telem-moss animate-fade-in text-center font-bold">
+                             תודה רבה! הפרטים התקבלו. אבירם יחזור אליכם בהקדם.
+                        </div>
+                    ) : (
+                        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <input 
+                                    type="text" 
+                                    placeholder="שם חברה / יזם" 
+                                    className="p-4 bg-telem-cream/50 rounded-2xl border-2 border-transparent focus:border-telem-khaki text-telem-black font-bold outline-none transition-all"
+                                    value={formData.company}
+                                    onChange={(e) => setFormData({...formData, company: e.target.value})}
+                                />
+                                <input 
+                                    type="tel" 
+                                    placeholder="טלפון לחזרה *" 
+                                    required
+                                    className="p-4 bg-telem-cream/50 rounded-2xl border-2 border-transparent focus:border-telem-khaki text-telem-black font-bold outline-none transition-all"
+                                    value={formData.phone}
+                                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                                />
+                            </div>
+                            <input 
+                                type="text" 
+                                placeholder="נושא הפנייה (למשל: נספח אצירת אשפה) *" 
+                                required
+                                className="p-4 bg-telem-cream/50 rounded-2xl border-2 border-transparent focus:border-telem-khaki text-telem-black font-bold outline-none transition-all"
+                                value={formData.subject}
+                                onChange={(e) => setFormData({...formData, subject: e.target.value})}
+                            />
+                            <button 
+                                type="submit" 
+                                disabled={status === 'loading'}
+                                className="w-full bg-telem-forest text-white py-5 rounded-2xl font-black text-xl hover:bg-telem-dark transition-all shadow-lg flex items-center justify-center gap-2 italic disabled:opacity-50 mt-2"
+                            >
+                                {status === 'loading' ? 'שולח...' : 'שלח בקשה להתייעצות'}
+                                <Icon name="send" size={20} />
+                            </button>
+                        </form>
+                    )}
+                </div>
+            );
+        };
+
         const App = () => {
+            const [legalModal, setLegalModal] = useState(null);
             const WA_NUMBER = "972506890650";
+            
             const guides = [
                 { id: 'price', title: 'כמה עולה נספח סביבתי?', icon: 'banknote', category: 'עלויות' },
                 { id: 'history-when', title: 'מתי נדרש סקר היסטורי?', icon: 'history', category: 'סקרים' },
@@ -167,6 +387,9 @@
             return (
                 <div className="min-h-screen">
                     <Navigation />
+                    <AccessibilityMenu />
+                    <CookieBanner />
+                    <LegalModal type={legalModal} onClose={() => setLegalModal(null)} />
                     
                     <a href={`https://wa.me/${WA_NUMBER}`} className="whatsapp-float" target="_blank" title="דברו עם אבירם">
                         <Icon name="message-circle" size={32} />
@@ -174,14 +397,18 @@
 
                     <main className="pt-24 animate-fade-in">
                         {/* Hero Section */}
-                        <section className="pt-32 pb-24 bg-telem-moss/5 relative text-right">
-                            <div className="max-w-7xl mx-auto px-4">
-                                <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-telem-dark text-white rounded-full text-sm font-bold mb-8 italic tracking-tighter uppercase">מומחיות במגזר הציבורי, הכפרי והתשתיות</div>
-                                <h1 className="text-5xl md:text-8xl font-black text-telem-black mb-8 leading-[1] italic tracking-tighter uppercase">הדרך המהירה והבטוחה ל<span className="text-telem-forest italic underline decoration-telem-khaki decoration-8">אישור סביבתי</span></h1>
-                                <p className="text-xl md:text-3xl text-telem-forest font-semibold mb-12 max-w-4xl leading-relaxed italic">
-                                    ליווי מקצועי הכולל ניהול ביצוע בתהליכי בנייה ותשתיות מורכבות. מומחיות בנספחי אצירת אשפה וסביבה מתוך הבנה עמוקה של שיקולי הרשות המאשרת.
-                                </p>
-                                <button onClick={() => window.open(`https://wa.me/${WA_NUMBER}`, '_blank')} className="bg-telem-forest text-white px-12 py-5 rounded-2xl font-black text-2xl hover:bg-telem-dark shadow-2xl transition-all italic tracking-tight uppercase">התייעצות מקצועית עכשיו</button>
+                        <section className="pt-20 pb-32 bg-telem-moss/5 relative text-right flex items-center min-h-[80vh]">
+                            <div className="max-w-7xl mx-auto px-4 w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                                <div className="lg:col-span-7">
+                                    <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-telem-dark text-white rounded-full text-sm font-black mb-8 italic tracking-tighter uppercase">מומחיות במגזר הציבורי, הכפרי והתשתיות</div>
+                                    <h1 className="text-5xl md:text-8xl font-black text-telem-black mb-8 leading-[1] italic tracking-tighter uppercase">הדרך המהירה והבטוחה ל<span className="text-telem-forest italic underline decoration-telem-khaki decoration-8">אישור סביבתי</span></h1>
+                                    <p className="text-xl md:text-3xl text-telem-forest font-semibold mb-12 max-w-4xl leading-relaxed italic">
+                                        ליווי מקצועי הכולל ניהול ביצוע בתהליכי בנייה ותשתיות מורכבות. מומחיות בנספחי אצירת אשפה וסביבה מתוך הבנה עמוקה של שיקולי הרשות המאשרת.
+                                    </p>
+                                </div>
+                                <div className="lg:col-span-5 flex justify-center lg:justify-end">
+                                    <LeadForm />
+                                </div>
                             </div>
                         </section>
 
@@ -192,25 +419,25 @@
                                 <a href="/waste/" className="p-8 rounded-[40px] border bg-white border-telem-forest shadow-lg hover:-translate-y-1 transition-all group">
                                     <Icon name="trash-2" size={42} className="mb-6 text-telem-dark group-hover:scale-110 transition-transform" />
                                     <h3 className="text-2xl font-black mb-4 italic">אצירת אשפה</h3>
-                                    <p className="text-telem-forest mb-8 italic font-bold">תכנון הנדסי של מערכי אצירה וחישוב נפחי פסולת להיתר.</p>
+                                    <p className="text-telem-forest mb-8 italic font-bold text-sm md:text-base">תכנון הנדסי של מערכי אצירה וחישוב נפחי פסולת להיתר.</p>
                                     <span className="font-black text-telem-forest underline text-sm italic">למידע נוסף ←</span>
                                 </a>
                                 <a href="/environmental-management/" className="p-8 rounded-[40px] border bg-white border-telem-dark shadow-lg hover:-translate-y-1 transition-all group">
                                     <Icon name="settings" size={42} className="mb-6 text-telem-dark group-hover:scale-110 transition-transform" />
                                     <h3 className="text-2xl font-black mb-4 italic">ניהול סביבה וביצוע</h3>
-                                    <p className="text-telem-forest mb-8 italic font-bold">ליווי וניהול ביצוע בפרויקטי בנייה ותשתיות לאומיות.</p>
+                                    <p className="text-telem-forest mb-8 italic font-bold text-sm md:text-base">ליווי וניהול ביצוע בפרויקטי בנייה ותשתיות לאומיות.</p>
                                     <span className="font-black text-telem-forest underline text-sm italic">למידע נוסף ←</span>
                                 </a>
                                 <a href="/solar/" className="p-8 rounded-[40px] border bg-white border-telem-khaki shadow-sm hover:-translate-y-1 transition-all group">
                                     <Icon name="sun" size={42} className="mb-6 text-telem-forest group-hover:scale-110 transition-transform" />
                                     <h3 className="text-2xl font-black mb-4 italic">סולארי ואגירה</h3>
-                                    <p className="text-telem-forest mb-8 italic font-bold">ליווי סביבתי למערכות אגירת אנרגיה BESS ומתקני PV.</p>
+                                    <p className="text-telem-forest mb-8 italic font-bold text-sm md:text-base">ליווי סביבתי למערכות אגירת אנרגיה BESS ומתקני PV.</p>
                                     <span className="font-black text-telem-forest underline text-sm italic">למידע נוסף ←</span>
                                 </a>
                                 <a href="/history/" className="p-8 rounded-[40px] border bg-white border-telem-khaki/20 shadow-sm hover:-translate-y-1 transition-all group">
                                     <Icon name="history" size={42} className="mb-6 text-telem-forest group-hover:scale-110 transition-transform" />
                                     <h3 className="text-2xl font-black mb-4 italic">סקר היסטורי</h3>
-                                    <p className="text-telem-forest mb-8 italic font-bold">בדיקת שימושי עבר וזיהומי קרקע בבדיקת נאותות סביבתית.</p>
+                                    <p className="text-telem-forest mb-8 italic font-bold text-sm md:text-base">בדיקת שימושי עבר וזיהומי קרקע בבדיקת נאותות סביבתית.</p>
                                     <span className="font-black text-telem-forest underline text-sm italic">למידע נוסף ←</span>
                                 </a>
                             </div>
@@ -245,9 +472,16 @@
                                 <p className="text-telem-cream/40 text-2xl max-w-md font-medium italic leading-relaxed">אבירם בוצר - מביאים את הניסיון מהצד של הרשות לקידום הפרויקט שלכם.</p>
                             </div>
                             <div className="flex flex-col md:items-end gap-6 text-telem-khaki font-bold text-xl font-sans not-italic">
-                                <a href="mailto:aviram@telemenv.co.il" className="flex items-center gap-4 hover:text-white transition-all italic"><span>aviram@telemenv.co.il</span><Icon name="mail" /></a>
-                                <a href="tel:0506890650" className="flex items-center gap-4 hover:text-white transition-all font-sans not-italic tracking-tighter uppercase"><span>050-6890650</span><Icon name="phone" /></a>
+                                <a href="mailto:aviram@telemenv.co.il" className="flex items-center gap-4 hover:text-white transition-all italic tracking-tight"><span>aviram@telemenv.co.il</span><Icon name="mail" /></a>
+                                <a href="tel:0506890650" className="flex items-center gap-4 hover:text-white transition-all font-sans not-italic tracking-tighter uppercase tracking-tight"><span>050-6890650</span><Icon name="phone" /></a>
                                 <a href="https://www.linkedin.com/in/aviram-botzer-01782aa5/" target="_blank" className="flex items-center gap-4 hover:text-white transition-all italic underline"><span>פרופיל LinkedIn</span><Icon name="linkedin" /></a>
+                                
+                                <div className="flex gap-4 mt-8 text-sm font-black italic tracking-tighter uppercase opacity-60">
+                                    <button onClick={() => setLegalModal('accessibility')} className="hover:text-white transition-colors">הצהרת נגישות</button>
+                                    <span className="opacity-20">|</span>
+                                    <button onClick={() => setLegalModal('privacy')} className="hover:text-white transition-colors">מדיניות פרטיות</button>
+                                </div>
+
                                 <p className="mt-12 text-sm opacity-20 italic font-serif tracking-widest uppercase italic">© {new Date().getFullYear()} תלם - ניהול סביבה ופסולת. כל הזכויות שמורות.</p>
                             </div>
                         </div>
