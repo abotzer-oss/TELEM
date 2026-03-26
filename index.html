@@ -26,6 +26,24 @@
     <meta property="og:image" content="/logo.png" />
     <meta property="og:url" content="https://telemenv.co.il/" />
 
+    <!-- Schema.org - Technical SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "תלם ניהול סביבה",
+      "image": "https://telemenv.co.il/logo.png",
+      "url": "https://telemenv.co.il/",
+      "telephone": "050-6890650",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "רחוב הנחושת",
+        "addressLocality": "תל אביב",
+        "addressCountry": "IL"
+      }
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -67,6 +85,9 @@
         .whatsapp-float:hover { transform: scale(1.1); }
         .guide-card { transition: all 0.3s ease; }
         .guide-card:hover { transform: translateY(-5px); border-color: #78836a; box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
+        
+        /* Fix for Lucide icons rendering */
+        svg.lucide { width: 1em; height: 1em; display: inline-block; }
     </style>
 </head>
 <body class="animate-fade-in">
@@ -88,15 +109,15 @@
             </nav>
             <div class="hidden md:flex items-center gap-4">
                 <a href="https://www.linkedin.com/in/aviram-botzer-01782aa5/" target="_blank" class="text-telem-dark hover:text-telem-moss" title="לינקדאין אבירם בוצר">
-                    <i data-lucide="linkedin" size="24"></i>
+                    <i data-lucide="linkedin" style="width: 24px; height: 24px;"></i>
                 </a>
                 <a href="tel:0506890650" class="bg-telem-dark text-white px-6 py-2.5 rounded-xl font-black flex items-center gap-2 hover:bg-telem-forest shadow-lg tracking-tighter uppercase font-sans">
-                    <i data-lucide="phone" size="18"></i>
+                    <i data-lucide="phone" style="width: 18px; height: 18px;"></i>
                     <span>050-6890650</span>
                 </a>
             </div>
             <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="xl:hidden text-telem-dark p-2">
-                <i data-lucide="menu" size="32"></i>
+                <i data-lucide="menu" style="width: 32px; height: 32px;"></i>
             </button>
         </div>
     </header>
@@ -109,6 +130,7 @@
             <a href="/waste/" class="text-2xl font-black text-telem-forest border-b pb-2 italic">נספח אצירת אשפה</a>
             <a href="#guides" class="text-2xl font-black text-telem-forest border-b pb-2 italic" onclick="document.getElementById('mobileMenu').classList.add('hidden')">מרכז ידע ורגולציה</a>
             <a href="/solar/" class="text-2xl font-black text-telem-forest border-b pb-2 italic">סולארי ואגירה</a>
+            <a href="/env/" class="text-2xl font-black text-telem-forest border-b pb-2 italic">נספח סביבתי</a>
             <a href="/history/" class="text-2xl font-black text-telem-forest border-b pb-2 italic">סקר היסטורי</a>
         </nav>
     </div>
@@ -134,7 +156,7 @@
                 <!-- Lead Form -->
                 <aside class="bg-white p-10 rounded-[50px] shadow-2xl border border-telem-khaki/20 relative">
                     <div class="absolute -top-6 -right-6 bg-telem-forest text-white p-4 rounded-2xl hidden md:block rotate-3 shadow-lg">
-                        <i data-lucide="check-circle" size="32"></i>
+                        <i data-lucide="check-circle" style="width: 32px; height: 32px;"></i>
                     </div>
                     <h2 class="text-3xl font-black mb-6 text-telem-dark italic border-r-4 border-telem-khaki pr-4 uppercase tracking-tighter leading-none">השאירו פרטים ונחזור אליכם</h2>
                     <form class="flex flex-col gap-5" onsubmit="event.preventDefault(); alert('הפרטים נשלחו בהצלחה! נחזור אליך בהקדם.');">
@@ -154,28 +176,28 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Service 1 -->
                 <article class="p-8 rounded-[40px] border bg-white border-telem-forest shadow-lg hover:-translate-y-1 transition-all group">
-                    <i data-lucide="trash-2" size="42" class="mb-6 text-telem-dark group-hover:scale-110 transition-transform"></i>
+                    <i data-lucide="trash-2" style="width: 42px; height: 42px;" class="mb-6 text-telem-dark group-hover:scale-110 transition-transform"></i>
                     <h3 class="text-2xl font-black mb-4 italic uppercase tracking-tighter">אצירת אשפה</h3>
                     <p class="text-telem-forest mb-8 italic font-bold leading-relaxed">תכנון הנדסי של מערכי אצירה וחישוב נפחי פסולת להיתר בנייה בהתאם לדרישות הרשות המקומית.</p>
                     <a href="/waste/" class="font-black text-telem-forest underline text-sm italic uppercase tracking-widest">למידע נוסף ←</a>
                 </article>
                 <!-- Service 2 -->
                 <article class="p-8 rounded-[40px] border bg-white border-telem-dark shadow-lg hover:-translate-y-1 transition-all group">
-                    <i data-lucide="settings" size="42" class="mb-6 text-telem-dark group-hover:scale-110 transition-transform"></i>
+                    <i data-lucide="settings" style="width: 42px; height: 42px;" class="mb-6 text-telem-dark group-hover:scale-110 transition-transform"></i>
                     <h3 class="text-2xl font-black mb-4 italic uppercase tracking-tighter leading-none">ניהול סביבה וביצוע</h3>
                     <p class="text-telem-forest mb-8 italic font-bold leading-relaxed">ליווי סביבתי שוטף וניהול ביצוע בפרויקטי בנייה ותשתיות לאומיות (כולל רכבת קלה).</p>
                     <a href="/environmental-management/" class="font-black text-telem-forest underline text-sm italic uppercase tracking-widest">למידע נוסף ←</a>
                 </article>
                 <!-- Service 3 -->
                 <article class="p-8 rounded-[40px] border bg-white border-telem-khaki shadow-sm hover:-translate-y-1 transition-all group">
-                    <i data-lucide="sun" size="42" class="mb-6 text-telem-forest group-hover:scale-110 transition-transform"></i>
+                    <i data-lucide="sun" style="width: 42px; height: 42px;" class="mb-6 text-telem-forest group-hover:scale-110 transition-transform"></i>
                     <h3 class="text-2xl font-black mb-4 italic uppercase tracking-tighter leading-none">סולארי ואגירה</h3>
                     <p class="text-telem-forest mb-8 italic font-bold leading-relaxed">ייעוץ וליווי סביבתי למערכות אגירת אנרגיה (BESS) ומתקנים פוטו-וולטאיים (PV).</p>
                     <a href="/solar/" class="font-black text-telem-forest underline text-sm italic uppercase tracking-widest">למידע נוסף ←</a>
                 </article>
                 <!-- Service 4 -->
                 <article class="p-8 rounded-[40px] border bg-white border-telem-khaki/20 shadow-sm hover:-translate-y-1 transition-all group">
-                    <i data-lucide="history" size="42" class="mb-6 text-telem-forest group-hover:scale-110 transition-transform"></i>
+                    <i data-lucide="history" style="width: 42px; height: 42px;" class="mb-6 text-telem-forest group-hover:scale-110 transition-transform"></i>
                     <h3 class="text-2xl font-black mb-4 italic uppercase tracking-tighter">סקר היסטורי</h3>
                     <p class="text-telem-forest mb-8 italic font-bold leading-relaxed">בדיקת שימושי עבר וזיהומי קרקע פוטנציאליים כחלק מתהליכי בדיקת נאותות סביבתית.</p>
                     <a href="/history/" class="font-black text-telem-forest underline text-sm italic uppercase tracking-widest">למידע נוסף ←</a>
@@ -195,7 +217,7 @@
                     <!-- Guide 1 -->
                     <a href="/guides/price.html" class="guide-card group bg-white/5 p-8 rounded-[40px] border border-white/10 hover:bg-white/10 transition-all flex flex-col h-full shadow-2xl">
                         <div class="flex justify-between items-start mb-6">
-                            <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark"><i data-lucide="banknote"></i></div>
+                            <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark"><i data-lucide="banknote" style="width: 24px; height: 24px;"></i></div>
                             <span class="text-[10px] font-black text-telem-khaki border border-telem-khaki/30 px-3 py-1 rounded-full italic uppercase">עלויות</span>
                         </div>
                         <h3 class="text-xl font-black text-white mb-4 italic group-hover:text-telem-khaki transition-colors leading-tight">כמה עולה נספח סביבתי?</h3>
@@ -206,7 +228,7 @@
                     <!-- Guide 2 -->
                     <a href="/guides/history-when.html" class="guide-card group bg-white/5 p-8 rounded-[40px] border border-white/10 hover:bg-white/10 transition-all flex flex-col h-full shadow-2xl">
                         <div class="flex justify-between items-start mb-6">
-                            <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark"><i data-lucide="history"></i></div>
+                            <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark"><i data-lucide="history" style="width: 24px; height: 24px;"></i></div>
                             <span class="text-[10px] font-black text-telem-khaki border border-telem-khaki/30 px-3 py-1 rounded-full italic uppercase">סקרים</span>
                         </div>
                         <h3 class="text-xl font-black text-white mb-4 italic group-hover:text-telem-khaki transition-colors leading-tight">מתי נדרש סקר היסטורי?</h3>
@@ -217,7 +239,7 @@
                     <!-- Guide 3 -->
                     <a href="/guides/waste-calculation.html" class="guide-card group bg-white/5 p-8 rounded-[40px] border border-white/10 hover:bg-white/10 transition-all flex flex-col h-full shadow-2xl">
                         <div class="flex justify-between items-start mb-6">
-                            <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark"><i data-lucide="calculator"></i></div>
+                            <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark"><i data-lucide="calculator" style="width: 24px; height: 24px;"></i></div>
                             <span class="text-[10px] font-black text-telem-khaki border border-telem-khaki/30 px-3 py-1 rounded-full italic uppercase">אצירה</span>
                         </div>
                         <h3 class="text-xl font-black text-white mb-4 italic group-hover:text-telem-khaki transition-colors leading-tight">חישוב אצירת פסולת</h3>
@@ -228,7 +250,7 @@
                     <!-- Guide 4 -->
                     <a href="/guides/waste-quantities.html" class="guide-card group bg-white/5 p-8 rounded-[40px] border border-white/10 hover:bg-white/10 transition-all flex flex-col h-full shadow-2xl">
                         <div class="flex justify-between items-start mb-6">
-                            <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark"><i data-lucide="truck"></i></div>
+                            <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark"><i data-lucide="truck" style="width: 24px; height: 24px;"></i></div>
                             <span class="text-[10px] font-black text-telem-khaki border border-telem-khaki/30 px-3 py-1 rounded-full italic uppercase">פסולת בניין</span>
                         </div>
                         <h3 class="text-xl font-black text-white mb-4 italic group-hover:text-telem-khaki transition-colors leading-tight">חישוב כמויות פסולת בניין</h3>
@@ -239,7 +261,7 @@
                     <!-- Guide 5 -->
                     <a href="/guides/soil-testing.html" class="guide-card group bg-white/5 p-8 rounded-[40px] border border-white/10 hover:bg-white/10 transition-all flex flex-col h-full shadow-2xl">
                         <div class="flex justify-between items-start mb-6">
-                            <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark"><i data-lucide="test-tube-2"></i></div>
+                            <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark"><i data-lucide="test-tube-2" style="width: 24px; height: 24px;"></i></div>
                             <span class="text-[10px] font-black text-telem-khaki border border-telem-khaki/30 px-3 py-1 rounded-full italic uppercase">סקרים</span>
                         </div>
                         <h3 class="text-xl font-black text-white mb-4 italic group-hover:text-telem-khaki transition-colors leading-tight">בדיקות קרקע מזוהמת</h3>
@@ -250,7 +272,7 @@
                     <!-- Guide 6 -->
                     <a href="/guides/timeline.html" class="guide-card group bg-white/5 p-8 rounded-[40px] border border-white/10 hover:bg-white/10 transition-all flex flex-col h-full shadow-2xl">
                         <div class="flex justify-between items-start mb-6">
-                            <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark"><i data-lucide="clock"></i></div>
+                            <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark"><i data-lucide="clock" style="width: 24px; height: 24px;"></i></div>
                             <span class="text-[10px] font-black text-telem-khaki border border-telem-khaki/30 px-3 py-1 rounded-full italic uppercase">לו"ז</span>
                         </div>
                         <h3 class="text-xl font-black text-white mb-4 italic group-hover:text-telem-khaki transition-colors leading-tight">לוחות זמנים לאישור</h3>
@@ -261,7 +283,7 @@
                     <!-- Guide 7 -->
                     <a href="/guides/urban-renewal.html" class="guide-card group bg-white/5 p-8 rounded-[40px] border border-white/10 hover:bg-white/10 transition-all flex flex-col h-full shadow-2xl">
                         <div class="flex justify-between items-start mb-6">
-                            <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark"><i data-lucide="building-2"></i></div>
+                            <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark"><i data-lucide="building-2" style="width: 24px; height: 24px;"></i></div>
                             <span class="text-[10px] font-black text-telem-khaki border border-telem-khaki/30 px-3 py-1 rounded-full italic uppercase">תמ"א</span>
                         </div>
                         <h3 class="text-xl font-black text-white mb-4 italic group-hover:text-telem-khaki transition-colors leading-tight">סביבה בתמ"א 38</h3>
@@ -272,7 +294,7 @@
                     <!-- Guide 8 -->
                     <a href="/guides/cities-waste.html" class="guide-card group bg-white/5 p-8 rounded-[40px] border border-white/10 hover:bg-white/10 transition-all flex flex-col h-full shadow-2xl">
                         <div class="flex justify-between items-start mb-6">
-                            <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark"><i data-lucide="map"></i></div>
+                            <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark"><i data-lucide="map" style="width: 24px; height: 24px;"></i></div>
                             <span class="text-[10px] font-black text-telem-khaki border border-telem-khaki/30 px-3 py-1 rounded-full italic uppercase">עיריות</span>
                         </div>
                         <h3 class="text-xl font-black text-white mb-4 italic group-hover:text-telem-khaki transition-colors leading-tight">דרישות לפי עיר</h3>
@@ -290,12 +312,12 @@
             <address class="not-italic">
                 <img src="/logo.png" class="h-20 mb-8 opacity-80" alt="לוגו תלם בלבן" />
                 <p class="text-telem-cream/40 text-2xl max-w-md font-medium italic leading-relaxed mb-4">אבירם בוצר - מביאים את הניסיון מהצד של הרשות לקידום הפרויקט שלכם.</p>
-                <p class="text-telem-khaki font-bold">כתובת המשרד: רחוב הנחושת, תל אביב</p>
+                <p class="text-telem-khaki font-bold italic">כתובת המשרד: רחוב הנחושת, תל אביב</p>
             </address>
             <div class="flex flex-col md:items-end gap-6 text-telem-khaki font-bold text-xl font-sans not-italic">
-                <a href="mailto:aviram@telemenv.co.il" class="flex items-center gap-4 hover:text-white transition-all italic underline"><span>aviram@telemenv.co.il</span><i data-lucide="mail"></i></a>
-                <a href="tel:0506890650" class="flex items-center gap-4 hover:text-white transition-all tracking-tighter uppercase"><span>050-6890650</span><i data-lucide="phone"></i></a>
-                <a href="https://www.linkedin.com/in/aviram-botzer-01782aa5/" target="_blank" class="flex items-center gap-4 hover:text-white transition-all italic underline"><span>פרופיל LinkedIn מקצועי</span><i data-lucide="linkedin"></i></a>
+                <a href="mailto:aviram@telemenv.co.il" class="flex items-center gap-4 hover:text-white transition-all italic underline"><span>aviram@telemenv.co.il</span><i data-lucide="mail" style="width: 24px; height: 24px;"></i></a>
+                <a href="tel:0506890650" class="flex items-center gap-4 hover:text-white transition-all tracking-tighter uppercase"><span>050-6890650</span><i data-lucide="phone" style="width: 24px; height: 24px;"></i></a>
+                <a href="https://www.linkedin.com/in/aviram-botzer-01782aa5/" target="_blank" class="flex items-center gap-4 hover:text-white transition-all italic underline"><span>פרופיל LinkedIn מקצועי</span><i data-lucide="linkedin" style="width: 24px; height: 24px;"></i></a>
                 
                 <div class="flex gap-4 mt-8 text-sm font-bold text-telem-khaki underline italic uppercase tracking-widest">
                     <button onclick="showLegal('accessibility')" class="hover:text-white">הצהרת נגישות</button>
@@ -309,21 +331,21 @@
 
     <!-- Floating Actions -->
     <a href="https://wa.me/972506890650" class="whatsapp-float" target="_blank" aria-label="שיחה בוואטסאפ עם אבירם">
-        <i data-lucide="message-circle" size="32"></i>
+        <i data-lucide="message-circle" style="width: 32px; height: 32px;"></i>
     </a>
 
     <!-- Accessibility Widget -->
     <div class="fixed bottom-6 left-6 z-[9999]">
         <button onclick="document.getElementById('accMenu').classList.toggle('hidden')" class="w-14 h-14 bg-telem-dark text-white rounded-full shadow-2xl flex items-center justify-center border-2 border-white" aria-label="תפריט נגישות">
-            <i data-lucide="accessibility" size="30"></i>
+            <i data-lucide="accessibility" style="width: 30px; height: 30px;"></i>
         </button>
         <div id="accMenu" class="absolute bottom-16 left-0 w-72 bg-white rounded-2xl shadow-2xl border p-6 hidden text-right text-telem-black animate-fade-in">
             <h3 class="text-xl font-bold mb-4 border-b pb-2 text-telem-dark italic uppercase">תפריט נגישות</h3>
             <div class="space-y-3">
-                <button onclick="toggleAcc('contrast')" class="w-full text-right p-3 rounded-xl border hover:bg-gray-50 flex justify-between items-center italic"><span>ניגודיות גבוהה</span><i data-lucide="contrast" size="18"></i></button>
-                <button onclick="toggleAcc('grayscale')" class="w-full text-right p-3 rounded-xl border hover:bg-gray-50 flex justify-between items-center italic"><span>גווני אפור</span><i data-lucide="image" size="18"></i></button>
-                <button onclick="toggleAcc('links')" class="w-full text-right p-3 rounded-xl border hover:bg-gray-50 flex justify-between items-center italic"><span>הדגשת קישורים</span><i data-lucide="external-link" size="18"></i></button>
-                <button onclick="toggleAcc('readable')" class="w-full text-right p-3 rounded-xl border hover:bg-gray-50 flex justify-between items-center italic"><span>גופן קריא</span><i data-lucide="type" size="18"></i></button>
+                <button onclick="toggleAcc('contrast')" class="w-full text-right p-3 rounded-xl border hover:bg-gray-50 flex justify-between items-center italic"><span>ניגודיות גבוהה</span><i data-lucide="contrast" style="width: 18px; height: 18px;"></i></button>
+                <button onclick="toggleAcc('grayscale')" class="w-full text-right p-3 rounded-xl border hover:bg-gray-50 flex justify-between items-center italic"><span>גווני אפור</span><i data-lucide="image" style="width: 18px; height: 18px;"></i></button>
+                <button onclick="toggleAcc('links')" class="w-full text-right p-3 rounded-xl border hover:bg-gray-50 flex justify-between items-center italic"><span>הדגשת קישורים</span><i data-lucide="external-link" style="width: 18px; height: 18px;"></i></button>
+                <button onclick="toggleAcc('readable')" class="w-full text-right p-3 rounded-xl border hover:bg-gray-50 flex justify-between items-center italic"><span>גופן קריא</span><i data-lucide="type" style="width: 18px; height: 18px;"></i></button>
                 <button onclick="location.reload()" class="w-full text-center p-2 text-red-600 font-bold mt-2 italic underline">איפוס</button>
             </div>
         </div>
@@ -334,7 +356,7 @@
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-right">
             <div>
                 <h4 class="text-xl font-black text-telem-khaki mb-2 italic">משתמשים כאן בעוגיות</h4>
-                <p class="text-gray-300 text-sm md:text-lg font-medium">לא 37% ולא אוריאו — כאלה שעושות חוויית שימוש מצוינת.</p>
+                <p class="text-gray-300 text-sm md:text-lg font-medium italic">לא 37% ולא אוריאו — כאלה שעושות חוויית שימוש מצוינת.</p>
             </div>
             <button onclick="acceptCookies()" class="bg-telem-forest text-white px-10 py-4 rounded-xl font-black text-lg hover:bg-telem-moss shadow-xl italic uppercase">הבנתי, בוא נתקדם</button>
         </div>
@@ -343,7 +365,7 @@
     <!-- Legal Modal -->
     <div id="legalModal" class="fixed inset-0 bg-telem-black/80 z-[10001] hidden flex items-center justify-center p-4 backdrop-blur-sm">
         <div class="bg-white rounded-3xl max-w-3xl w-full p-12 relative text-right shadow-2xl border-4 border-telem-forest">
-            <button onclick="document.getElementById('legalModal').classList.add('hidden')" class="absolute top-6 left-6 text-gray-400 hover:text-red-600"><i data-lucide="x" size="32"></i></button>
+            <button onclick="document.getElementById('legalModal').classList.add('hidden')" class="absolute top-6 left-6 text-gray-400 hover:text-red-600"><i data-lucide="x" style="width: 32px; height: 32px;"></i></button>
             <div id="legalContent"></div>
         </div>
     </div>
