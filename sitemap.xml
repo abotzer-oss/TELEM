@@ -1,59 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- עמודי שירות מרכזיים -->
+  <!-- עמוד הבית -->
   <url>
     <loc>https://telemenv.co.il/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
+  <!-- עמודי שירות מרכזיים -->
   <url>
     <loc>https://telemenv.co.il/waste/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://telemenv.co.il/environmental-management/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://telemenv.co.il/history/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://telemenv.co.il/solar/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://telemenv.co.il/env/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- מרכז הידע והרגולציה (Guides) -->
-  <url><loc>https://telemenv.co.il/guides/price.html</loc><lastmod>2026-03-25</lastmod><priority>0.7</priority></url>
-  <url><loc>https://telemenv.co.il/guides/history-phase1.html</loc><lastmod>2026-03-25</lastmod><priority>0.7</priority></url>
-  <url><loc>https://telemenv.co.il/guides/waste-calculation.html</loc><lastmod>2026-03-25</lastmod><priority>0.7</priority></url>
-  <url><loc>https://telemenv.co.il/guides/waste-quantities.html</loc><lastmod>2026-03-25</lastmod><priority>0.7</priority></url>
-  <url><loc>https://telemenv.co.il/guides/soil-testing.html</loc><lastmod>2026-03-25</lastmod><priority>0.7</priority></url>
-  <url><loc>https://telemenv.co.il/guides/timeline.html</loc><lastmod>2026-03-25</lastmod><priority>0.6</priority></url>
-  <url><loc>https://telemenv.co.il/guides/urban-renewal.html</loc><lastmod>2026-03-25</lastmod><priority>0.7</priority></url>
-  <url><loc>https://telemenv.co.il/guides/cities-waste.html</loc><lastmod>2026-03-25</lastmod><priority>0.7</priority></url>
-  <url><loc>https://telemenv.co.il/guides/soil-survey-cost.html</loc><lastmod>2026-03-25</lastmod><priority>0.7</priority></url>
-  <url><loc>https://telemenv.co.il/guides/when-to-consult.html</loc><lastmod>2026-03-25</lastmod><priority>0.7</priority></url>
+  <!-- מרכז הידע (Guides) -->
+  <url>
+    <loc>https://telemenv.co.il/guides/</loc>
+    <lastmod>2026-03-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://telemenv.co.il/guides/price.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://telemenv.co.il/guides/history-when.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://telemenv.co.il/guides/cities-waste.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://telemenv.co.il/guides/soil-survey-cost.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://telemenv.co.il/guides/soil-testing.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://telemenv.co.il/guides/timeline.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://telemenv.co.il/guides/urban-renewal.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://telemenv.co.il/guides/waste-calculation.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://telemenv.co.il/guides/waste-quantities.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://telemenv.co.il/guides/when-to-consult.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <priority>0.7</priority>
+  </url>
 
 </urlset>
