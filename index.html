@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl" class="scroll-smooth">
 <head>
-    <!-- Google Tag Manager -->
+    <!-- Google Tag Manager / Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3F8H2J4D7F"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -14,33 +14,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="1oB6JUju7uiK0NjqkGydkSNIR24SxMbsUqNgwrONlvM" />
     
-    <!-- SEO Meta Tags - קריטי להופעה בגוגל -->
-    <title>תלם | נספח אצירת אשפה וייעוץ סביבתי - המומחים למגזר הציבורי, הכפרי והתשתיות</title>
-    <meta name="description" content="תלם ניהול סביבה בהנהלת אבירם בוצר: מומחיות בנספח אצירת אשפה, נספחים סביבתיים, סקרים היסטוריים וליווי אגירת אנרגיה. ניסיון בניהול ביצוע ותשתיות מורכבות." />
-    <meta name="keywords" content="נספח אצירת אשפה, ייעוץ סביבתי, סקר היסטורי, אבירם בוצר, תלם ניהול סביבה, פסולת בניין, אגירת אנרגיה, נספח סביבתי" />
+    <!-- SEO Meta Tags -->
+    <title>תלם - נספח אצירת אשפה, נספח סביבתי וסקר היסטורי | אבירם בוצר</title>
+    <meta name="description" content="מקדמים את היתר הבנייה שלכם במהירות. מומחים להכנת נספח אצירת אשפה, סקר היסטורי Phase I וליווי סביבתי עם ניסיון עשיר מהמגזר הציבורי. התקשרו לייעוץ: 050-6890650." />
+    <meta name="keywords" content="נספח אצירת אשפה, ייעוץ סביבתי, סקר היסטורי, אבירם בוצר, תלם ניהול סביבה, פסולת בניין, אגירת אנרגיה, נספח סביבתי, אישור סביבתי להיתר" />
     <link rel="canonical" href="https://telemenv.co.il/" />
     
-    <!-- Social Media Meta -->
-    <meta property="og:title" content="תלם | נספח אצירת אשפה וייעוץ סביבתי" />
-    <meta property="og:description" content="הדרך המהירה לאישור סביבתי. ליווי מקצועי למגזר הציבורי והכפרי." />
-    <meta property="og:image" content="/logo.png" />
+    <!-- Social Media Meta (Open Graph) -->
+    <meta property="og:title" content="תלם - נספח אצירת אשפה, נספח סביבתי וסקר היסטורי | אבירם בוצר" />
+    <meta property="og:description" content="ליווי מקצועי להיתר בנייה: נספח אצירת אשפה, סקר היסטורי וייעוץ סביבתי. ניסיון עשיר מול ועדות התכנון." />
+    <meta property="og:image" content="https://telemenv.co.il/logo.png" />
     <meta property="og:url" content="https://telemenv.co.il/" />
+    <meta property="og:type" content="website" />
 
-    <!-- Schema.org - Technical SEO -->
+    <!-- Schema.org - Technical SEO Enhanced -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "name": "תלם ניהול סביבה",
+      "name": "תלם - ניהול סביבה ופסולת",
       "image": "https://telemenv.co.il/logo.png",
       "url": "https://telemenv.co.il/",
       "telephone": "050-6890650",
+      "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "רחוב הנחושת",
         "addressLocality": "תל אביב",
         "addressCountry": "IL"
-      }
+      },
+      "description": "מומחיות בנספחי אצירת אשפה, נספחים סביבתיים, סקרים היסטוריים וליווי אגירת אנרגיה. ניסיון בניהול ביצוע ותשתיות מורכבות.",
+      "openingHours": "Mo-Th 08:00-18:00, Fr 08:00-13:00"
     }
     </script>
 
@@ -68,7 +72,6 @@
         .animate-fade-in { animation: fadeIn 0.5s ease-in; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         
-        /* Accessibility States */
         .acc-grayscale { filter: grayscale(100%); }
         .acc-contrast { background-color: #000 !important; color: #fff !important; }
         .acc-contrast * { color: #fff !important; border-color: #fff !important; }
@@ -85,8 +88,6 @@
         .whatsapp-float:hover { transform: scale(1.1); }
         .guide-card { transition: all 0.3s ease; }
         .guide-card:hover { transform: translateY(-5px); border-color: #78836a; box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
-        
-        /* Fix for Lucide icons rendering */
         svg.lucide { width: 1em; height: 1em; display: inline-block; }
     </style>
 </head>
@@ -116,7 +117,7 @@
                     <span>050-6890650</span>
                 </a>
             </div>
-            <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="xl:hidden text-telem-dark p-2">
+            <button onclick="toggleElement('mobileMenu')" class="xl:hidden text-telem-dark p-2">
                 <i data-lucide="menu" style="width: 32px; height: 32px;"></i>
             </button>
         </div>
@@ -128,7 +129,7 @@
             <a href="/" class="text-2xl font-black text-telem-forest border-b pb-2 italic">דף הבית</a>
             <a href="/environmental-management/" class="text-2xl font-black text-telem-forest border-b pb-2 italic">ניהול סביבה</a>
             <a href="/waste/" class="text-2xl font-black text-telem-forest border-b pb-2 italic">נספח אצירת אשפה</a>
-            <a href="#guides" class="text-2xl font-black text-telem-forest border-b pb-2 italic" onclick="document.getElementById('mobileMenu').classList.add('hidden')">מרכז ידע ורגולציה</a>
+            <a href="#guides" class="text-2xl font-black text-telem-forest border-b pb-2 italic" onclick="closeElement('mobileMenu')">מרכז ידע ורגולציה</a>
             <a href="/solar/" class="text-2xl font-black text-telem-forest border-b pb-2 italic">סולארי ואגירה</a>
             <a href="/env/" class="text-2xl font-black text-telem-forest border-b pb-2 italic">נספח סביבתי</a>
             <a href="/history/" class="text-2xl font-black text-telem-forest border-b pb-2 italic">סקר היסטורי</a>
@@ -174,28 +175,24 @@
         <section class="py-24 max-w-7xl mx-auto px-4 text-right">
             <h2 class="text-3xl font-black text-telem-dark mb-12 border-r-8 border-telem-khaki pr-4 italic uppercase tracking-tighter">השירותים המקצועיים שלנו</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Service 1 -->
                 <article class="p-8 rounded-[40px] border bg-white border-telem-forest shadow-lg hover:-translate-y-1 transition-all group">
                     <i data-lucide="trash-2" style="width: 42px; height: 42px;" class="mb-6 text-telem-dark group-hover:scale-110 transition-transform"></i>
                     <h3 class="text-2xl font-black mb-4 italic uppercase tracking-tighter">אצירת אשפה</h3>
                     <p class="text-telem-forest mb-8 italic font-bold leading-relaxed">תכנון הנדסי של מערכי אצירה וחישוב נפחי פסולת להיתר בנייה בהתאם לדרישות הרשות המקומית.</p>
                     <a href="/waste/" class="font-black text-telem-forest underline text-sm italic uppercase tracking-widest">למידע נוסף ←</a>
                 </article>
-                <!-- Service 2 -->
                 <article class="p-8 rounded-[40px] border bg-white border-telem-dark shadow-lg hover:-translate-y-1 transition-all group">
                     <i data-lucide="settings" style="width: 42px; height: 42px;" class="mb-6 text-telem-dark group-hover:scale-110 transition-transform"></i>
                     <h3 class="text-2xl font-black mb-4 italic uppercase tracking-tighter leading-none">ניהול סביבה וביצוע</h3>
                     <p class="text-telem-forest mb-8 italic font-bold leading-relaxed">ליווי סביבתי שוטף וניהול ביצוע בפרויקטי בנייה ותשתיות לאומיות (כולל רכבת קלה).</p>
                     <a href="/environmental-management/" class="font-black text-telem-forest underline text-sm italic uppercase tracking-widest">למידע נוסף ←</a>
                 </article>
-                <!-- Service 3 -->
                 <article class="p-8 rounded-[40px] border bg-white border-telem-khaki shadow-sm hover:-translate-y-1 transition-all group">
                     <i data-lucide="sun" style="width: 42px; height: 42px;" class="mb-6 text-telem-forest group-hover:scale-110 transition-transform"></i>
                     <h3 class="text-2xl font-black mb-4 italic uppercase tracking-tighter leading-none">סולארי ואגירה</h3>
                     <p class="text-telem-forest mb-8 italic font-bold leading-relaxed">ייעוץ וליווי סביבתי למערכות אגירת אנרגיה (BESS) ומתקנים פוטו-וולטאיים (PV).</p>
                     <a href="/solar/" class="font-black text-telem-forest underline text-sm italic uppercase tracking-widest">למידע נוסף ←</a>
                 </article>
-                <!-- Service 4 -->
                 <article class="p-8 rounded-[40px] border bg-white border-telem-khaki/20 shadow-sm hover:-translate-y-1 transition-all group">
                     <i data-lucide="history" style="width: 42px; height: 42px;" class="mb-6 text-telem-forest group-hover:scale-110 transition-transform"></i>
                     <h3 class="text-2xl font-black mb-4 italic uppercase tracking-tighter">סקר היסטורי</h3>
@@ -205,7 +202,7 @@
             </div>
         </section>
 
-        <!-- Knowledge Center - MOST IMPORTANT FOR SEO -->
+        <!-- Knowledge Center -->
         <section id="guides" class="py-24 bg-telem-dark text-white text-right rounded-t-[80px]">
             <div class="max-w-7xl mx-auto px-4">
                 <header class="mb-16">
@@ -214,7 +211,6 @@
                 </header>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="guidesGrid">
-                    <!-- Guide 1 -->
                     <a href="/guides/price.html" class="guide-card group bg-white/5 p-8 rounded-[40px] border border-white/10 hover:bg-white/10 transition-all flex flex-col h-full shadow-2xl">
                         <div class="flex justify-between items-start mb-6">
                             <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark"><i data-lucide="banknote" style="width: 24px; height: 24px;"></i></div>
@@ -225,7 +221,6 @@
                         <div class="mt-auto text-telem-khaki font-black italic underline decoration-2 text-sm uppercase">למדריך המלא ←</div>
                     </a>
 
-                    <!-- Guide 2 -->
                     <a href="/guides/history-when.html" class="guide-card group bg-white/5 p-8 rounded-[40px] border border-white/10 hover:bg-white/10 transition-all flex flex-col h-full shadow-2xl">
                         <div class="flex justify-between items-start mb-6">
                             <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark"><i data-lucide="history" style="width: 24px; height: 24px;"></i></div>
@@ -236,7 +231,6 @@
                         <div class="mt-auto text-telem-khaki font-black italic underline decoration-2 text-sm uppercase">למדריך המלא ←</div>
                     </a>
 
-                    <!-- Guide 3 -->
                     <a href="/guides/waste-calculation.html" class="guide-card group bg-white/5 p-8 rounded-[40px] border border-white/10 hover:bg-white/10 transition-all flex flex-col h-full shadow-2xl">
                         <div class="flex justify-between items-start mb-6">
                             <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark"><i data-lucide="calculator" style="width: 24px; height: 24px;"></i></div>
@@ -247,7 +241,6 @@
                         <div class="mt-auto text-telem-khaki font-black italic underline decoration-2 text-sm uppercase">למדריך המלא ←</div>
                     </a>
 
-                    <!-- Guide 4 -->
                     <a href="/guides/waste-quantities.html" class="guide-card group bg-white/5 p-8 rounded-[40px] border border-white/10 hover:bg-white/10 transition-all flex flex-col h-full shadow-2xl">
                         <div class="flex justify-between items-start mb-6">
                             <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark"><i data-lucide="truck" style="width: 24px; height: 24px;"></i></div>
@@ -255,50 +248,6 @@
                         </div>
                         <h3 class="text-xl font-black text-white mb-4 italic group-hover:text-telem-khaki transition-colors leading-tight">חישוב כמויות פסולת בניין</h3>
                         <p class="text-sm text-gray-400 mb-6 italic">כלי עבודה ליזמים ואדריכלים בשלב היתר הבנייה.</p>
-                        <div class="mt-auto text-telem-khaki font-black italic underline decoration-2 text-sm uppercase">למדריך המלא ←</div>
-                    </a>
-
-                    <!-- Guide 5 -->
-                    <a href="/guides/soil-testing.html" class="guide-card group bg-white/5 p-8 rounded-[40px] border border-white/10 hover:bg-white/10 transition-all flex flex-col h-full shadow-2xl">
-                        <div class="flex justify-between items-start mb-6">
-                            <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark"><i data-lucide="test-tube-2" style="width: 24px; height: 24px;"></i></div>
-                            <span class="text-[10px] font-black text-telem-khaki border border-telem-khaki/30 px-3 py-1 rounded-full italic uppercase">סקרים</span>
-                        </div>
-                        <h3 class="text-xl font-black text-white mb-4 italic group-hover:text-telem-khaki transition-colors leading-tight">בדיקות קרקע מזוהמת</h3>
-                        <p class="text-sm text-gray-400 mb-6 italic">תהליך הדיגום והבדיקה המעבדתית של קרקעות.</p>
-                        <div class="mt-auto text-telem-khaki font-black italic underline decoration-2 text-sm uppercase">למדריך המלא ←</div>
-                    </a>
-
-                    <!-- Guide 6 -->
-                    <a href="/guides/timeline.html" class="guide-card group bg-white/5 p-8 rounded-[40px] border border-white/10 hover:bg-white/10 transition-all flex flex-col h-full shadow-2xl">
-                        <div class="flex justify-between items-start mb-6">
-                            <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark"><i data-lucide="clock" style="width: 24px; height: 24px;"></i></div>
-                            <span class="text-[10px] font-black text-telem-khaki border border-telem-khaki/30 px-3 py-1 rounded-full italic uppercase">לו"ז</span>
-                        </div>
-                        <h3 class="text-xl font-black text-white mb-4 italic group-hover:text-telem-khaki transition-colors leading-tight">לוחות זמנים לאישור</h3>
-                        <p class="text-sm text-gray-400 mb-6 italic">כמה זמן לוקח לאשר נספח אצירה בוועדה?</p>
-                        <div class="mt-auto text-telem-khaki font-black italic underline decoration-2 text-sm uppercase">למדריך המלא ←</div>
-                    </a>
-
-                    <!-- Guide 7 -->
-                    <a href="/guides/urban-renewal.html" class="guide-card group bg-white/5 p-8 rounded-[40px] border border-white/10 hover:bg-white/10 transition-all flex flex-col h-full shadow-2xl">
-                        <div class="flex justify-between items-start mb-6">
-                            <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark"><i data-lucide="building-2" style="width: 24px; height: 24px;"></i></div>
-                            <span class="text-[10px] font-black text-telem-khaki border border-telem-khaki/30 px-3 py-1 rounded-full italic uppercase">תמ"א</span>
-                        </div>
-                        <h3 class="text-xl font-black text-white mb-4 italic group-hover:text-telem-khaki transition-colors leading-tight">סביבה בתמ"א 38</h3>
-                        <p class="text-sm text-gray-400 mb-6 italic">דגשים סביבתיים מיוחדים לפרויקטי התחדשות עירונית.</p>
-                        <div class="mt-auto text-telem-khaki font-black italic underline decoration-2 text-sm uppercase">למדריך המלא ←</div>
-                    </a>
-
-                    <!-- Guide 8 -->
-                    <a href="/guides/cities-waste.html" class="guide-card group bg-white/5 p-8 rounded-[40px] border border-white/10 hover:bg-white/10 transition-all flex flex-col h-full shadow-2xl">
-                        <div class="flex justify-between items-start mb-6">
-                            <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark"><i data-lucide="map" style="width: 24px; height: 24px;"></i></div>
-                            <span class="text-[10px] font-black text-telem-khaki border border-telem-khaki/30 px-3 py-1 rounded-full italic uppercase">עיריות</span>
-                        </div>
-                        <h3 class="text-xl font-black text-white mb-4 italic group-hover:text-telem-khaki transition-colors leading-tight">דרישות לפי עיר</h3>
-                        <p class="text-sm text-gray-400 mb-6 italic">הבדלים בדרישות אצירת אשפה בין תל אביב, ירושלים וחיפה.</p>
                         <div class="mt-auto text-telem-khaki font-black italic underline decoration-2 text-sm uppercase">למדריך המלא ←</div>
                     </a>
                 </div>
@@ -336,7 +285,7 @@
 
     <!-- Accessibility Widget -->
     <div class="fixed bottom-6 left-6 z-[9999]">
-        <button onclick="document.getElementById('accMenu').classList.toggle('hidden')" class="w-14 h-14 bg-telem-dark text-white rounded-full shadow-2xl flex items-center justify-center border-2 border-white" aria-label="תפריט נגישות">
+        <button onclick="toggleElement('accMenu')" class="w-14 h-14 bg-telem-dark text-white rounded-full shadow-2xl flex items-center justify-center border-2 border-white" aria-label="תפריט נגישות">
             <i data-lucide="accessibility" style="width: 30px; height: 30px;"></i>
         </button>
         <div id="accMenu" class="absolute bottom-16 left-0 w-72 bg-white rounded-2xl shadow-2xl border p-6 hidden text-right text-telem-black animate-fade-in">
@@ -365,43 +314,68 @@
     <!-- Legal Modal -->
     <div id="legalModal" class="fixed inset-0 bg-telem-black/80 z-[10001] hidden flex items-center justify-center p-4 backdrop-blur-sm">
         <div class="bg-white rounded-3xl max-w-3xl w-full p-12 relative text-right shadow-2xl border-4 border-telem-forest">
-            <button onclick="document.getElementById('legalModal').classList.add('hidden')" class="absolute top-6 left-6 text-gray-400 hover:text-red-600"><i data-lucide="x" style="width: 32px; height: 32px;"></i></button>
+            <button onclick="closeElement('legalModal')" class="absolute top-6 left-6 text-gray-400 hover:text-red-600"><i data-lucide="x" style="width: 32px; height: 32px;"></i></button>
             <div id="legalContent"></div>
         </div>
     </div>
 
+    <!-- Scripts -->
     <script>
-        // Init Icons
-        lucide.createIcons();
-
-        // Cookie Logic
-        if (!localStorage.getItem('cookies-accepted')) {
-            document.getElementById('cookieBanner').classList.remove('hidden');
+        // Helper functions to prevent "classList of null" errors
+        function toggleElement(id) {
+            const el = document.getElementById(id);
+            if (el) el.classList.toggle('hidden');
         }
+
+        function closeElement(id) {
+            const el = document.getElementById(id);
+            if (el) el.classList.add('hidden');
+        }
+
+        function openElement(id) {
+            const el = document.getElementById(id);
+            if (el) el.classList.remove('hidden');
+        }
+
+        // Initialize functionality after DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Lucide Icons
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+
+            // Cookie Logic
+            const cookieBanner = document.getElementById('cookieBanner');
+            if (cookieBanner && !localStorage.getItem('cookies-accepted')) {
+                cookieBanner.classList.remove('hidden');
+            }
+        });
+
         function acceptCookies() {
             localStorage.setItem('cookies-accepted', 'true');
-            document.getElementById('cookieBanner').classList.add('hidden');
+            closeElement('cookieBanner');
         }
 
-        // Accessibility Logic
         function toggleAcc(mode) {
             const body = document.body;
+            if (!body) return;
+            
             if (mode === 'contrast') body.classList.toggle('acc-contrast');
             if (mode === 'grayscale') body.classList.toggle('acc-grayscale');
             if (mode === 'links') body.classList.toggle('acc-links');
             if (mode === 'readable') body.classList.toggle('acc-readable');
         }
 
-        // Modals
         function showLegal(type) {
-            const modal = document.getElementById('legalModal');
             const content = document.getElementById('legalContent');
-            modal.classList.remove('hidden');
+            if (!content) return;
+
             if (type === 'accessibility') {
                 content.innerHTML = `<h2 class="text-3xl font-black mb-8 italic border-b-4 border-telem-khaki pb-2 uppercase text-telem-dark">הצהרת נגישות</h2><div class="space-y-4 text-lg font-medium italic"><p>אתר תלם מונגש ברמת AA לפי תקן ת"י 5568. אנו משתמשים בתפריט נגישות המאפשר התאמת ניגודיות, גופן וסימון קישורים.</p><p>רכז נגישות: אבירם בוצר | 050-6890650</p></div>`;
             } else {
                 content.innerHTML = `<h2 class="text-3xl font-black mb-8 italic border-b-4 border-telem-khaki pb-2 uppercase text-telem-dark">מדיניות פרטיות</h2><div class="space-y-4 text-lg font-medium italic"><p>אנו מכבדים את פרטיותכם. הפרטים הנמסרים בטופס יצירת הקשר משמשים אותנו אך ורק לצורך מתן מענה מקצועי ואינם מועברים לצד שלישי ללא הסכמתכם.</p></div>`;
             }
+            openElement('legalModal');
         }
     </script>
 </body>
