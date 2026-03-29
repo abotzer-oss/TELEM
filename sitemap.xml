@@ -52,12 +52,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <url>
-    <loc>https://telemenv.co.il/guides/index.html</loc>
-    <lastmod>2026-03-26</lastmod>
-    <priority>0.7</priority>
-  </url>
 
   <url>
     <loc>https://telemenv.co.il/guides/price.html</loc>
