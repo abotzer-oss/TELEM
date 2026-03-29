@@ -11,7 +11,16 @@
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+
       gtag('js', new Date());
+
+      gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied'
+      });
+
       gtag('config', 'G-3F8H2J4D7F');
     </script>
 
@@ -57,9 +66,123 @@
         .guide-card { transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column; }
         .guide-card:hover { transform: translateY(-5px); border-color: #78836a; box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.3); }
         svg.lucide { width: 1.2em; height: 1.2em; display: inline-block; }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            right: 16px;
+            background: #243e38;
+            color: white;
+            padding: 10px 14px;
+            border-radius: 12px;
+            z-index: 10001;
+        }
+        .skip-link:focus {
+            top: 16px;
+        }
+
+        .accessibility-btn {
+            position: fixed;
+            left: 24px;
+            bottom: 30px;
+            z-index: 10000;
+            background: #243e38;
+            color: #fff;
+            border-radius: 50px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .accessibility-panel {
+            position: fixed;
+            left: 24px;
+            bottom: 102px;
+            width: 300px;
+            max-width: calc(100vw - 32px);
+            background: #fff;
+            border: 1px solid rgba(36,62,56,0.15);
+            border-radius: 24px;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.18);
+            z-index: 10000;
+            padding: 18px;
+        }
+
+        .cookie-banner {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(960px, calc(100vw - 24px));
+            background: #243e38;
+            color: #fff;
+            border-radius: 24px;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.22);
+            z-index: 10002;
+            padding: 18px 20px;
+        }
+
+        .high-contrast {
+            background: #000 !important;
+            color: #fff !important;
+        }
+        .high-contrast header,
+        .high-contrast section,
+        .high-contrast footer,
+        .high-contrast aside,
+        .high-contrast div,
+        .high-contrast nav {
+            background-color: #000 !important;
+            color: #fff !important;
+            border-color: #fff !important;
+        }
+        .high-contrast a,
+        .high-contrast h1,
+        .high-contrast h2,
+        .high-contrast h3,
+        .high-contrast p,
+        .high-contrast span,
+        .high-contrast button,
+        .high-contrast label,
+        .high-contrast input {
+            color: #fff !important;
+        }
+        .underline-links a {
+            text-decoration: underline !important;
+        }
     </style>
 </head>
 <body class="animate-fade-in">
+
+    <a href="#mainContent" class="skip-link">דלג לתוכן הראשי</a>
+
+    <!-- Accessibility Button -->
+    <button
+        type="button"
+        class="accessibility-btn"
+        onclick="toggleElement('accessibilityPanel')"
+        aria-label="פתח תפריט נגישות"
+        aria-controls="accessibilityPanel"
+        aria-expanded="false"
+        id="accessibilityToggle"
+    >
+        <i data-lucide="accessibility" aria-hidden="true" style="width: 30px; height: 30px;"></i>
+    </button>
+
+    <!-- Accessibility Panel -->
+    <div id="accessibilityPanel" class="accessibility-panel hidden text-right" role="dialog" aria-label="תפריט נגישות">
+        <h2 class="text-xl font-black text-telem-dark mb-4">תפריט נגישות</h2>
+        <div class="grid grid-cols-1 gap-3">
+            <button type="button" onclick="changeFontSize(1)" class="bg-telem-dark text-white py-3 px-4 rounded-xl font-bold">הגדלת טקסט</button>
+            <button type="button" onclick="changeFontSize(-1)" class="bg-telem-forest text-white py-3 px-4 rounded-xl font-bold">הקטנת טקסט</button>
+            <button type="button" onclick="toggleHighContrast()" class="bg-telem-moss text-white py-3 px-4 rounded-xl font-bold">ניגודיות גבוהה</button>
+            <button type="button" onclick="toggleUnderlineLinks()" class="bg-telem-khaki text-telem-dark py-3 px-4 rounded-xl font-bold">קו תחתון לקישורים</button>
+            <button type="button" onclick="resetAccessibility()" class="bg-gray-200 text-black py-3 px-4 rounded-xl font-bold">איפוס</button>
+        </div>
+    </div>
 
     <!-- Header Navigation -->
     <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-[100] border-b border-telem-khaki/10 h-24 flex items-center" role="banner">
@@ -101,7 +224,7 @@
         </nav>
     </div>
 
-    <main class="pt-24" role="main">
+    <main id="mainContent" class="pt-24" role="main">
         <!-- Hero Section -->
         <section class="pt-32 pb-24 bg-telem-moss/5 relative text-right overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -118,13 +241,19 @@
                     </div>
                 </article>
                 <aside class="bg-white p-10 rounded-[50px] shadow-2xl border border-telem-khaki/20">
-                    <h2 class="text-3xl font-black mb-6 text-telem-dark italic border-r-4 border-telem-khaki pr-4 uppercase tracking-tighter leading-none">צרו קשר לקידום ההיתר</h2>
-                    <form class="flex flex-col gap-5" onsubmit="event.preventDefault();">
-                        <label for="name" class="sr-only">שם מלא</label>
-                        <input id="name" type="text" placeholder="שם מלא" class="p-4 bg-gray-50 rounded-xl outline-none focus:ring-2 ring-telem-khaki text-right font-bold italic" required />
+                    <h2 class="text-3xl font-black mb-6 text-telem-dark italic border-r-4 border-telem-khaki pr-4 uppercase tracking-tighter leading-none">צרו קשר דרך האתר</h2>
+                    <form class="flex flex-col gap-5" action="mailto:aviram@telemenv.co.il" method="post" enctype="text/plain">
+                        <label for="name" class="font-bold text-telem-dark">שם</label>
+                        <input id="name" name="שם" type="text" placeholder="שם" class="p-4 bg-gray-50 rounded-xl outline-none focus:ring-2 ring-telem-khaki text-right font-bold italic" required />
                         
-                        <label for="phone" class="sr-only">מספר טלפון</label>
-                        <input id="phone" type="tel" placeholder="מספר טלפון" class="p-4 bg-gray-50 rounded-xl outline-none focus:ring-2 ring-telem-khaki text-right font-bold italic" required />
+                        <label for="reason" class="font-bold text-telem-dark">סיבת הפנייה</label>
+                        <input id="reason" name="סיבת הפנייה" type="text" placeholder="סיבת הפנייה" class="p-4 bg-gray-50 rounded-xl outline-none focus:ring-2 ring-telem-khaki text-right font-bold italic" required />
+
+                        <label for="email" class="font-bold text-telem-dark">מייל</label>
+                        <input id="email" name="מייל" type="email" placeholder="מייל" class="p-4 bg-gray-50 rounded-xl outline-none focus:ring-2 ring-telem-khaki text-right font-bold italic" required />
+
+                        <label for="phone" class="font-bold text-telem-dark">טלפון</label>
+                        <input id="phone" name="טלפון" type="tel" placeholder="טלפון" class="p-4 bg-gray-50 rounded-xl outline-none focus:ring-2 ring-telem-khaki text-right font-bold italic" required />
                         
                         <button type="submit" class="bg-telem-dark text-white py-5 rounded-xl font-black text-2xl hover:bg-telem-forest transition-all shadow-xl italic uppercase">שלח פנייה</button>
                     </form>
@@ -236,17 +365,127 @@
         <i data-lucide="message-circle" style="width: 32px; height: 32px;" aria-hidden="true"></i>
     </a>
 
+    <!-- Cookie Banner -->
+    <div id="cookieBanner" class="cookie-banner hidden" role="dialog" aria-label="הודעת עוגיות">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-right">
+            <div>
+                <p class="text-lg font-black">כאן נהנים מעוגיות, לא אוריאו ולא 37%</p>
+                <p class="text-sm opacity-80 mt-1">אפשר ללחוץ הבנתי או לא הבנתי.</p>
+            </div>
+            <div class="flex flex-wrap gap-3">
+                <button type="button" onclick="acceptCookies()" class="bg-white text-telem-dark px-5 py-3 rounded-xl font-black">הבנתי</button>
+                <button type="button" onclick="declineCookies()" class="bg-telem-khaki text-telem-dark px-5 py-3 rounded-xl font-black">לא הבנתי</button>
+            </div>
+        </div>
+    </div>
+
     <script>
+        let currentFontScale = 100;
+
         function toggleElement(id) {
             const el = document.getElementById(id);
             if (el) el.classList.toggle('hidden');
+
+            if (id === 'accessibilityPanel') {
+                const toggle = document.getElementById('accessibilityToggle');
+                const isExpanded = !document.getElementById('accessibilityPanel').classList.contains('hidden');
+                if (toggle) toggle.setAttribute('aria-expanded', String(isExpanded));
+            }
         }
+
         function closeElement(id) {
             const el = document.getElementById(id);
             if (el) el.classList.add('hidden');
+
+            if (id === 'accessibilityPanel') {
+                const toggle = document.getElementById('accessibilityToggle');
+                if (toggle) toggle.setAttribute('aria-expanded', 'false');
+            }
         }
+
+        function changeFontSize(direction) {
+            currentFontScale += direction * 10;
+            if (currentFontScale < 90) currentFontScale = 90;
+            if (currentFontScale > 140) currentFontScale = 140;
+            document.documentElement.style.fontSize = currentFontScale + '%';
+            localStorage.setItem('fontScale', currentFontScale);
+        }
+
+        function toggleHighContrast() {
+            document.body.classList.toggle('high-contrast');
+            localStorage.setItem('highContrast', document.body.classList.contains('high-contrast') ? 'on' : 'off');
+        }
+
+        function toggleUnderlineLinks() {
+            document.body.classList.toggle('underline-links');
+            localStorage.setItem('underlineLinks', document.body.classList.contains('underline-links') ? 'on' : 'off');
+        }
+
+        function resetAccessibility() {
+            currentFontScale = 100;
+            document.documentElement.style.fontSize = '100%';
+            document.body.classList.remove('high-contrast');
+            document.body.classList.remove('underline-links');
+            localStorage.removeItem('fontScale');
+            localStorage.removeItem('highContrast');
+            localStorage.removeItem('underlineLinks');
+        }
+
+        function showCookieBanner() {
+            const banner = document.getElementById('cookieBanner');
+            if (banner && !localStorage.getItem('cookieConsent')) {
+                banner.classList.remove('hidden');
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            gtag('consent', 'update', {
+                analytics_storage: 'granted',
+                ad_storage: 'granted',
+                ad_user_data: 'granted',
+                ad_personalization: 'granted'
+            });
+            closeElement('cookieBanner');
+        }
+
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            alert('בשמחה: האתר משתמש בעוגיות כדי לשפר חוויית שימוש, למדוד תנועה ולתמוך בתפקוד בסיסי של האתר.');
+            closeElement('cookieBanner');
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             if (window.lucide) lucide.createIcons();
+
+            const savedFontScale = localStorage.getItem('fontScale');
+            const highContrast = localStorage.getItem('highContrast');
+            const underlineLinks = localStorage.getItem('underlineLinks');
+            const cookieConsent = localStorage.getItem('cookieConsent');
+
+            if (savedFontScale) {
+                currentFontScale = parseInt(savedFontScale, 10);
+                document.documentElement.style.fontSize = currentFontScale + '%';
+            }
+
+            if (highContrast === 'on') {
+                document.body.classList.add('high-contrast');
+            }
+
+            if (underlineLinks === 'on') {
+                document.body.classList.add('underline-links');
+            }
+
+            if (cookieConsent === 'accepted') {
+                gtag('consent', 'update', {
+                    analytics_storage: 'granted',
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted'
+                });
+            } else {
+                showCookieBanner();
+            }
         });
     </script>
 </body>
