@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl" class="scroll-smooth">
 <head>
-    <!-- Favicon - Pointing to favicon.png as requested -->
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
 
-    <!-- Google Tag Manager / Analytics / Cookies -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3F8H2J4D7F"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -27,12 +25,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="1oB6JUju7uiK0NjqkGydkSNIR24SxMbsUqNgwrONlvM" />
-    
-    <!-- SEO Meta Tags -->
+
     <title>תלם - נספח אצירת אשפה, נספח סביבתי וסקר היסטורי | אבירם בוצר</title>
     <meta name="description" content="מקדמים את היתר הבנייה שלכם במהירות. מומחים להכנת נספח אצירת אשפה, סקר היסטורי Phase I וליווי סביבתי עם ניסיון עשיר מהמגזר הציבורי." />
     <link rel="canonical" href="https://telemenv.co.il/" />
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -56,7 +53,7 @@
         }
     </script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap');
 
@@ -75,7 +72,7 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
+
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -98,6 +95,7 @@
             height: 100%;
             display: flex;
             flex-direction: column;
+            min-height: 300px;
         }
 
         .guide-card:hover {
@@ -198,13 +196,16 @@
         .high-contrast input {
             color: #fff !important;
         }
+
+        .underline-links a {
+            text-decoration: underline !important;
+        }
     </style>
 </head>
 <body class="animate-fade-in">
 
     <a href="#mainContent" class="skip-link">דלג לתוכן הראשי</a>
 
-    <!-- Accessibility Button -->
     <button
         type="button"
         class="accessibility-btn"
@@ -217,7 +218,6 @@
         <i data-lucide="accessibility" aria-hidden="true" style="width: 30px; height: 30px;"></i>
     </button>
 
-    <!-- Accessibility Panel -->
     <div id="accessibilityPanel" class="accessibility-panel hidden text-right" role="dialog" aria-label="תפריט נגישות">
         <h2 class="text-xl font-black text-telem-dark mb-4">תפריט נגישות</h2>
         <div class="grid grid-cols-1 gap-3">
@@ -229,12 +229,12 @@
         </div>
     </div>
 
-    <!-- Header Navigation -->
     <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-[100] border-b border-telem-khaki/10 h-24 flex items-center" role="banner">
         <div class="max-w-7xl mx-auto px-4 w-full flex justify-between items-center text-right">
             <a href="/" title="תלם ניהול סביבה - דף הבית" class="flex items-center gap-3">
                 <img src="logo.png" alt="לוגו תלם ניהול סביבה" class="h-14 md:h-20 w-auto" />
             </a>
+
             <nav class="hidden xl:flex gap-6 items-center" role="navigation" aria-label="תפריט ראשי">
                 <a href="/" class="text-[14px] font-extrabold text-telem-forest hover:text-telem-moss transition-colors uppercase tracking-tighter">דף הבית</a>
                 <a href="/environmental-management/" class="text-[14px] font-extrabold text-telem-forest hover:text-telem-moss transition-colors uppercase tracking-tighter">ניהול סביבה</a>
@@ -244,19 +244,20 @@
                 <a href="/env/" class="text-[14px] font-extrabold text-telem-forest hover:text-telem-moss transition-colors uppercase tracking-tighter">נספח סביבתי</a>
                 <a href="/history/" class="text-[14px] font-extrabold text-telem-forest hover:text-telem-moss transition-colors uppercase tracking-tighter">סקר היסטורי</a>
             </nav>
+
             <div class="hidden md:flex items-center gap-4">
                 <a href="tel:0506890650" class="bg-telem-dark text-white px-6 py-2.5 rounded-xl font-black flex items-center gap-2 hover:bg-telem-forest shadow-lg tracking-tighter uppercase font-sans">
                     <i data-lucide="phone" aria-hidden="true"></i>
                     <span>050-6890650</span>
                 </a>
             </div>
+
             <button onclick="toggleElement('mobileMenu')" class="xl:hidden text-telem-dark p-2" aria-label="פתח תפריט נייד">
                 <i data-lucide="menu" style="width: 32px; height: 32px;"></i>
             </button>
         </div>
     </header>
 
-    <!-- Mobile Menu -->
     <div id="mobileMenu" class="fixed top-24 w-full bg-white z-[90] shadow-2xl hidden p-8 border-b-8 border-telem-dark text-right animate-fade-in">
         <nav class="flex flex-col gap-6 font-black uppercase">
             <a href="/" class="text-2xl border-b pb-2">דף הבית</a>
@@ -269,8 +270,7 @@
         </nav>
     </div>
 
-    <main id="mainContent" class="pt-24" role="main">
-        <!-- Hero Section -->
+    <main id="mainContent" class="pt-24">
         <section class="pt-32 pb-24 bg-telem-moss/5 relative text-right overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <article>
@@ -285,12 +285,13 @@
                         <button onclick="window.open('https://wa.me/972506890650')" class="bg-telem-forest text-white px-10 py-4 rounded-2xl font-black text-xl hover:bg-telem-dark shadow-xl transition-all tracking-tight uppercase">התייעצות מקצועית</button>
                     </div>
                 </article>
+
                 <aside class="bg-white p-10 rounded-[50px] shadow-2xl border border-telem-khaki/20">
                     <h2 class="text-3xl font-black mb-6 text-telem-dark border-r-4 border-telem-khaki pr-4 uppercase tracking-tighter leading-none">צרו קשר דרך האתר</h2>
                     <form class="flex flex-col gap-5" action="mailto:aviram@telemenv.co.il" method="post" enctype="text/plain">
                         <label for="name" class="font-bold text-telem-dark">שם</label>
                         <input id="name" name="שם" type="text" placeholder="שם" class="p-4 bg-gray-50 rounded-xl outline-none focus:ring-2 ring-telem-khaki text-right font-bold" required />
-                        
+
                         <label for="reason" class="font-bold text-telem-dark">סיבת הפנייה</label>
                         <input id="reason" name="סיבת הפנייה" type="text" placeholder="סיבת הפנייה" class="p-4 bg-gray-50 rounded-xl outline-none focus:ring-2 ring-telem-khaki text-right font-bold" required />
 
@@ -299,72 +300,117 @@
 
                         <label for="phone" class="font-bold text-telem-dark">טלפון</label>
                         <input id="phone" name="טלפון" type="tel" placeholder="טלפון" class="p-4 bg-gray-50 rounded-xl outline-none focus:ring-2 ring-telem-khaki text-right font-bold" required />
-                        
+
                         <button type="submit" class="bg-telem-dark text-white py-5 rounded-xl font-black text-2xl hover:bg-telem-forest transition-all shadow-xl uppercase">שלח פנייה</button>
                     </form>
                 </aside>
             </div>
         </section>
 
-        <!-- Knowledge Center -->
         <section id="guides" class="py-24 bg-telem-dark text-white text-right rounded-t-[80px]">
             <div class="max-w-7xl mx-auto px-4">
                 <header class="mb-16">
                     <h2 class="text-4xl md:text-7xl font-black mb-8 tracking-tighter uppercase">מרכז הידע <span class="text-telem-khaki">והרגולציה</span></h2>
-                    <p class="text-xl text-telem-khaki font-bold max-w-2xl">מדריכים מקצועיים, כלי עזר ודרישות מעודכנות המבוססים על ניסיון מעשי מול הרשויות ואיגודי הערים.</p>
+                    <p class="text-xl text-telem-khaki font-bold max-w-4xl mr-auto">
+                        מדריכים מקצועיים, כלי עזר ודרישות מעודכנות המבוססים על ניסיון מעשי מול הרשויות ואיגודי הערים.
+                    </p>
                 </header>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-                    <a href="/guides/history-when.html" class="guide-card group bg-white/5 p-6 rounded-[30px] border border-white/10 hover:bg-white/10" aria-label="מתי נדרש סקר היסטורי">
-                        <div class="w-10 h-10 bg-telem-khaki rounded-xl flex items-center justify-center text-telem-dark mb-4">
-                            <i data-lucide="history" aria-hidden="true"></i>
+                    <a href="/guides/when-to-consult.html" class="guide-card group bg-white/5 p-6 rounded-[30px] border border-white/10 hover:bg-white/10" aria-label="מתי לפנות ליועץ סביבתי">
+                        <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark mb-5">
+                            <i data-lucide="briefcase-business" aria-hidden="true"></i>
                         </div>
-                        <h3 class="text-lg font-black text-white mb-3 leading-tight uppercase">מתי נדרש סקר היסטורי?</h3>
-                        <p class="text-xs text-gray-400 mb-4">הבנת המצבים שבהם עולה דרישה לבדיקת היסטוריית שימושים וזיהום קרקע.</p>
-                        <div class="mt-auto text-telem-khaki font-black text-[10px] uppercase">למדריך המלא ←</div>
+                        <h3 class="text-2xl font-black text-white mb-4 leading-tight">מתי לפנות ליועץ סביבתי?</h3>
+                        <p class="text-base text-gray-300 mb-6 leading-relaxed">באילו שלבים נכון לערב ייעוץ סביבתי כדי לחסוך עיכובים, תיקונים ודרישות נוספות.</p>
+                        <div class="mt-auto text-telem-khaki font-black text-sm">למדריך המלא ←</div>
                     </a>
 
-                    <a href="/guides/cities-waste.html" class="guide-card group bg-white/5 p-6 rounded-[30px] border border-white/10 hover:bg-white/10" aria-label="דרישות רשויות בנושא פסולת">
-                        <div class="w-10 h-10 bg-telem-khaki rounded-xl flex items-center justify-center text-telem-dark mb-4">
-                            <i data-lucide="building-2" aria-hidden="true"></i>
+                    <a href="/guides/price.html" class="guide-card group bg-white/5 p-6 rounded-[30px] border border-white/10 hover:bg-white/10" aria-label="כמה עולה סקר קרקע">
+                        <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark mb-5">
+                            <i data-lucide="banknote" aria-hidden="true"></i>
                         </div>
-                        <h3 class="text-lg font-black text-white mb-3 leading-tight uppercase">דרישות רשויות בנושא פסולת</h3>
-                        <p class="text-xs text-gray-400 mb-4">סקירה ממוקדת של דרישות תפעול ותכנון מול רשויות מקומיות.</p>
-                        <div class="mt-auto text-telem-khaki font-black text-[10px] uppercase">למדריך המלא ←</div>
+                        <h3 class="text-2xl font-black text-white mb-4 leading-tight">כמה עולה סקר קרקע?</h3>
+                        <p class="text-base text-gray-300 mb-6 leading-relaxed">הסבר מקצועי על טווחי עלויות ושיקולים עיקריים שמשפיעים על המחיר.</p>
+                        <div class="mt-auto text-telem-khaki font-black text-sm">למדריך המלא ←</div>
                     </a>
 
                     <a href="/guides/soil-testing.html" class="guide-card group bg-white/5 p-6 rounded-[30px] border border-white/10 hover:bg-white/10" aria-label="בדיקות קרקע">
-                        <div class="w-10 h-10 bg-telem-khaki rounded-xl flex items-center justify-center text-telem-dark mb-4">
+                        <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark mb-5">
                             <i data-lucide="flask-conical" aria-hidden="true"></i>
                         </div>
-                        <h3 class="text-lg font-black text-white mb-3 leading-tight uppercase">בדיקות קרקע</h3>
-                        <p class="text-xs text-gray-400 mb-4">מידע על בדיקות קרקע, צורך רגולטורי ושיקולים מקצועיים לפני קידום פרויקט.</p>
-                        <div class="mt-auto text-telem-khaki font-black text-[10px] uppercase">למדריך המלא ←</div>
+                        <h3 class="text-2xl font-black text-white mb-4 leading-tight">בדיקות קרקע</h3>
+                        <p class="text-base text-gray-300 mb-6 leading-relaxed">מידע על בדיקות קרקע, צורך רגולטורי ושיקולים מקצועיים לפני קידום פרויקט.</p>
+                        <div class="mt-auto text-telem-khaki font-black text-sm">למדריך המלא ←</div>
+                    </a>
+
+                    <a href="/guides/cities-waste.html" class="guide-card group bg-white/5 p-6 rounded-[30px] border border-white/10 hover:bg-white/10" aria-label="דרישות רשויות בנושא פסולת">
+                        <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark mb-5">
+                            <i data-lucide="building-2" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-white mb-4 leading-tight">דרישות רשויות בנושא פסולת</h3>
+                        <p class="text-base text-gray-300 mb-6 leading-relaxed">סקירה ממוקדת של דרישות תפעול ותכנון מול רשויות מקומיות ואיגודי ערים.</p>
+                        <div class="mt-auto text-telem-khaki font-black text-sm">למדריך המלא ←</div>
+                    </a>
+
+                    <a href="/guides/history-when.html" class="guide-card group bg-white/5 p-6 rounded-[30px] border border-white/10 hover:bg-white/10" aria-label="מתי נדרש סקר היסטורי">
+                        <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark mb-5">
+                            <i data-lucide="history" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-white mb-4 leading-tight">מתי נדרש סקר היסטורי?</h3>
+                        <p class="text-base text-gray-300 mb-6 leading-relaxed">הבנת המצבים שבהם עולה דרישה לבדיקת היסטוריית שימושים ולבחינת חשש לזיהום.</p>
+                        <div class="mt-auto text-telem-khaki font-black text-sm">למדריך המלא ←</div>
                     </a>
 
                     <a href="/guides/soil-survey-cost.html" class="guide-card group bg-white/5 p-6 rounded-[30px] border border-white/10 hover:bg-white/10" aria-label="עלות סקר קרקע">
-                        <div class="w-10 h-10 bg-telem-khaki rounded-xl flex items-center justify-center text-telem-dark mb-4">
-                            <i data-lucide="banknote" aria-hidden="true"></i>
+                        <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark mb-5">
+                            <i data-lucide="coins" aria-hidden="true"></i>
                         </div>
-                        <h3 class="text-lg font-black text-white mb-3 leading-tight uppercase">כמה עולה סקר קרקע?</h3>
-                        <p class="text-xs text-gray-400 mb-4">הסבר תמציתי על טווחי עלויות ושיקולים שמשפיעים על המחיר.</p>
-                        <div class="mt-auto text-telem-khaki font-black text-[10px] uppercase">למדריך המלא ←</div>
+                        <h3 class="text-2xl font-black text-white mb-4 leading-tight">כמה עולה סקר קרקע?</h3>
+                        <p class="text-base text-gray-300 mb-6 leading-relaxed">פירוט גורמים שמשפיעים על עלות סקר קרקע, קידוחים, דיגומים ודוחות נלווים.</p>
+                        <div class="mt-auto text-telem-khaki font-black text-sm">למדריך המלא ←</div>
                     </a>
 
-                    <a href="/guides/when-to-consult.html" class="guide-card group bg-white/5 p-6 rounded-[30px] border border-white/10 hover:bg-white/10" aria-label="מתי לפנות ליועץ סביבתי">
-                        <div class="w-10 h-10 bg-telem-khaki rounded-xl flex items-center justify-center text-telem-dark mb-4">
-                            <i data-lucide="briefcase-business" aria-hidden="true"></i>
+                    <a href="/guides/timeline.html" class="guide-card group bg-white/5 p-6 rounded-[30px] border border-white/10 hover:bg-white/10" aria-label="לוחות זמנים סביבתיים">
+                        <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark mb-5">
+                            <i data-lucide="clock-3" aria-hidden="true"></i>
                         </div>
-                        <h3 class="text-lg font-black text-white mb-3 leading-tight uppercase">מתי לפנות ליועץ סביבתי?</h3>
-                        <p class="text-xs text-gray-400 mb-4">באילו שלבים נכון לערב ייעוץ סביבתי כדי לחסוך עיכובים, תיקונים ודרישות נוספות.</p>
-                        <div class="mt-auto text-telem-khaki font-black text-[10px] uppercase">למדריך המלא ←</div>
+                        <h3 class="text-2xl font-black text-white mb-4 leading-tight">כמה זמן זה לוקח?</h3>
+                        <p class="text-base text-gray-300 mb-6 leading-relaxed">לוחות זמנים טיפוסיים לנספחים, בדיקות, אישורים ותיאומים מול הרשויות.</p>
+                        <div class="mt-auto text-telem-khaki font-black text-sm">למדריך המלא ←</div>
+                    </a>
+
+                    <a href="/guides/urban-renewal.html" class="guide-card group bg-white/5 p-6 rounded-[30px] border border-white/10 hover:bg-white/10" aria-label="התחדשות עירונית וסביבה">
+                        <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark mb-5">
+                            <i data-lucide="building" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-white mb-4 leading-tight">התחדשות עירונית וסביבה</h3>
+                        <p class="text-base text-gray-300 mb-6 leading-relaxed">מה חשוב לדעת בפרויקטי פינוי בינוי ותמ״א בהיבטי פסולת, קרקע ורגולציה סביבתית.</p>
+                        <div class="mt-auto text-telem-khaki font-black text-sm">למדריך המלא ←</div>
+                    </a>
+
+                    <a href="/guides/waste-calculation.html" class="guide-card group bg-white/5 p-6 rounded-[30px] border border-white/10 hover:bg-white/10" aria-label="חישוב אצירת פסולת">
+                        <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark mb-5">
+                            <i data-lucide="calculator" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-white mb-4 leading-tight">חישוב אצירת פסולת</h3>
+                        <p class="text-base text-gray-300 mb-6 leading-relaxed">הנוסחה המדויקת לחישוב כלי אצירה, נפחים ושטחים נדרשים לפי סוג הפרויקט.</p>
+                        <div class="mt-auto text-telem-khaki font-black text-sm">למדריך המלא ←</div>
+                    </a>
+
+                    <a href="/guides/waste-quantities.html" class="guide-card group bg-white/5 p-6 rounded-[30px] border border-white/10 hover:bg-white/10" aria-label="חישוב כמויות פסולת">
+                        <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark mb-5">
+                            <i data-lucide="clipboard-list" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-white mb-4 leading-tight">חישוב כמויות פסולת</h3>
+                        <p class="text-base text-gray-300 mb-6 leading-relaxed">איך מחשבים כמויות פסולת בניין, עודפים ופינויים לצורך היתר ותפעול נכון.</p>
+                        <div class="mt-auto text-telem-khaki font-black text-sm">למדריך המלא ←</div>
                     </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-telem-black text-white py-24 px-4 text-right" role="contentinfo">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-16">
             <address class="not-italic">
@@ -372,6 +418,7 @@
                 <p class="text-telem-cream/40 text-2xl max-w-md font-medium mb-4">אבירם בוצר - מביאים את הניסיון מהצד של הרשות לקידום הפרויקט שלכם.</p>
                 <p class="text-telem-khaki font-bold"><a href="tel:0506890650" class="hover:text-white">050-6890650</a></p>
             </address>
+
             <div class="flex flex-col md:items-end gap-6 text-telem-khaki font-bold text-xl not-italic uppercase tracking-widest">
                 <a href="mailto:aviram@telemenv.co.il" class="hover:text-white transition-all">aviram@telemenv.co.il</a>
                 <p class="mt-8 text-sm opacity-20 font-sans">© 2025 תלם - ניהול סביבה ופסולת.</p>
@@ -379,12 +426,10 @@
         </div>
     </footer>
 
-    <!-- Floating Actions -->
     <a href="https://wa.me/972506890650" class="whatsapp-float" target="_blank" aria-label="צרו קשר ב-WhatsApp">
         <i data-lucide="message-circle" style="width: 32px; height: 32px;" aria-hidden="true"></i>
     </a>
 
-    <!-- Cookie Banner -->
     <div id="cookieBanner" class="cookie-banner hidden" role="dialog" aria-label="הודעת עוגיות">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-right">
             <div>
