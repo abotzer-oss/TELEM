@@ -5,8 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>מתי נדרש סקר היסטורי (Phase I) בישראל? המדריך המלא ליזמים | תלם</title>
     <meta name="description" content="באילו מקרים מחויב מגרש בביצוע סקר היסטורי סביבתי? גלו את הדרישות של המשרד להגנת הסביבה, רמ'י והוועדות המקומיות, ואיך להימנע מרכישת קרקע מזוהמת." />
-    <link rel="canonical" href="https://telemenv.co.il/guides/history-when.html" />
-    
+    <link rel="canonical" href="https://telemenv.co.il/history/" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="מתי נדרש סקר היסטורי (Phase I) בישראל? המדריך המלא ליזמים | תלם" />
+    <meta property="og:description" content="באילו מקרים מחויב מגרש בביצוע סקר היסטורי סביבתי? גלו את הדרישות של המשרד להגנת הסביבה, רמ'י והוועדות המקומיות, ואיך להימנע מרכישת קרקע מזוהמת." />
+    <meta property="og:url" content="https://telemenv.co.il/history/" />
+    <meta property="og:site_name" content="תלם" />
+    <meta property="og:locale" content="he_IL" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="מתי נדרש סקר היסטורי (Phase I) בישראל? המדריך המלא ליזמים | תלם" />
+    <meta name="twitter:description" content="באילו מקרים מחויב מגרש בביצוע סקר היסטורי סביבתי? גלו את הדרישות של המשרד להגנת הסביבה, רמ'י והוועדות המקומיות, ואיך להימנע מרכישת קרקע מזוהמת." />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -36,9 +47,21 @@
         .content-area li { position: relative; padding-right: 2rem; margin-bottom: 0.75rem; font-weight: 600; font-size: 1.15rem; }
         .content-area li::before { content: "←"; position: absolute; right: 0; color: #78836a; font-weight: bold; }
         .info-box { background-color: white; border-right: 8px solid #475d4b; padding: 2.5rem; border-radius: 0 2rem 2rem 0; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); margin: 3rem 0; }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 <body>
+    <h1 class="sr-only">מתי נדרש סקר היסטורי בישראל? סקר היסטורי סביבתי Phase I לקרקע, היתרים ובדיקת זיהומים</h1>
     <div id="root"></div>
 
     <script type="text/babel">
@@ -74,7 +97,11 @@
                             </h1>
 
                             <div className="content-area">
-                                <p>בעולם הנדל"ן, התעשייה והתשתיות הישראלי, המושג "סקר היסטורי סביבתי" (Phase I Environmental Site Assessment) הפך בשנים האחרונות לאחד מחסמי הרישוי המשמעותיים ביותר. מדובר בבדיקה יסודית שנועדה לענות על שאלה אחת גורלית: **האם הקרקע שאתם מתכננים לבנות עליה, לרכוש אותה או לשנות את ייעודה, מזוהמת?**</p>
+                                <p>
+                                    בעולם הנדל"ן, התעשייה והתשתיות הישראלי, המושג "סקר היסטורי סביבתי" (Phase I Environmental Site Assessment) הפך בשנים האחרונות לאחד מחסמי הרישוי המשמעותיים ביותר. מדובר בבדיקה יסודית שנועדה לענות על שאלה אחת גורלית: האם הקרקע שאתם מתכננים לבנות עליה, לרכוש אותה או לשנות את ייעודה, מזוהמת? במקרים רבים, הבדיקה הזו משתלבת גם בתהליכים רחבים יותר של{" "}
+                                    <a href="/env/" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">נספח סביבתי להיתר בנייה</a>
+                                    {" "}ובדיקות מקדימות נוספות שהוועדה או איגוד הערים עשויים לדרוש.
+                                </p>
                                 
                                 <p>המשמעות של קרקע מזוהמת עבור יזם היא הרסנית. היא יכולה להתבטא בעיכובים של שנים בקבלת היתר בנייה, דרישות לדיגומים יקרים בשטח, ועד לעלויות שיקום (Remediation) שיכולות להגיע למיליוני שקלים ולערער את הכדאיות הכלכלית של הפרויקט כולו.</p>
 
@@ -95,8 +122,12 @@
                                 </div>
 
                                 <h2>הסוד המקצועי: ההבדל בין סקר היסטורי לסקר קרקע</h2>
-                                <p>טעות נפוצה מאוד בקרב יזמים היא לחשוב שסקר היסטורי כולל הגעה של מקדחים לשטח. **חשוב להבהיר:** סקר היסטורי (Phase I) הוא סקר "יבש" לחלוטין. הוא לא כולל נגיעה פיזית בקרקע. הוא מבוסס על "עבודת בילוש" במאגרי מידע, פענוח תצלומי אוויר, סקירת ארכיונים וסיור ויזואלי בשטח.</p>
-                                <p>רק אם הסקר ההיסטורי מצביע על "חשד ממשי לזיהום", עוברים לשלב הבא (Phase II) הכולל קידוחים ודיגומי מעבדה. מטרת העל של יועץ סביבה מיומן כמו אבירם בוצר, היא להכין סקר היסטורי כל כך יסודי ומדויק, שיצליח להפריך את החשד לזיהום (באמצעות הוכחות היסטוריות) ולחסוך לכם את השלבים הבאים שיכולים לעלות עשרות אלפי שקלים ויותר.</p>
+                                <p>טעות נפוצה מאוד בקרב יזמים היא לחשוב שסקר היסטורי כולל הגעה של מקדחים לשטח. חשוב להבהיר: סקר היסטורי (Phase I) הוא סקר "יבש" לחלוטין. הוא לא כולל נגיעה פיזית בקרקע. הוא מבוסס על "עבודת בילוש" במאגרי מידע, פענוח תצלומי אוויר, סקירת ארכיונים וסיור ויזואלי בשטח.</p>
+                                <p>
+                                    רק אם הסקר ההיסטורי מצביע על "חשד ממשי לזיהום", עוברים לשלב הבא (Phase II) הכולל קידוחים ודיגומי מעבדה. מטרת העל של יועץ סביבה מיומן כמו אבירם בוצר, היא להכין סקר היסטורי כל כך יסודי ומדויק, שיצליח להפריך את החשד לזיהום (באמצעות הוכחות היסטוריות) ולחסוך לכם את השלבים הבאים שיכולים לעלות עשרות אלפי שקלים ויותר. אם עולה צורך בבדיקות פיזיות בשטח, נכון להבין גם את ההקשר של{" "}
+                                    <a href="/guides/soil-testing.html" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">בדיקות קרקע</a>
+                                    {" "}ואת העלויות והתזמון שהן יוצרות בפרויקט.
+                                </p>
 
                                 <h3>מה כולל תהליך העבודה בתלם?</h3>
                                 <p>אנחנו בתלם מבצעים חקירה היסטורית מעמיקה הכוללת:</p>
@@ -107,7 +138,39 @@
                                 </ul>
 
                                 <h2>למה כדאי לבצע את הסקר בשלב ה-Due Diligence?</h2>
-                                <p>יזם מנוסה לא מחכה שהוועדה תדרוש את הסקר כתנאי להיתר. הוא מבצע אותו **לפני** רכישת הקרקע או לפני חתימה על הסכם פינוי בינוי. גילוי של זיהום קרקע בשלב המשא ומתן הוא כלי אדיר להורדת מחיר הנכס או נסיגה בזמן מעסקה מסוכנת. כשהדרישה מגיעה מהוועדה, אתם כבר בתוך הפרויקט עם לוחות זמנים דוחקים, וכל יום של עיכוב עולה לכם הון עתק.</p>
+                                <p>יזם מנוסה לא מחכה שהוועדה תדרוש את הסקר כתנאי להיתר. הוא מבצע אותו לפני רכישת הקרקע או לפני חתימה על הסכם פינוי בינוי. גילוי של זיהום קרקע בשלב המשא ומתן הוא כלי אדיר להורדת מחיר הנכס או נסיגה בזמן מעסקה מסוכנת. כשהדרישה מגיעה מהוועדה, אתם כבר בתוך הפרויקט עם לוחות זמנים דוחקים, וכל יום של עיכוב עולה לכם הון עתק.</p>
+
+                                <h2>איך סקר היסטורי נכון חוסך כסף וזמן?</h2>
+                                <p>אחת הטעויות הנפוצות היא להתייחס לסקר היסטורי כאל עוד מסמך פורמלי. בפועל, זהו מסמך שיכול להשפיע על כל מסלול הפרויקט: על לוחות הזמנים, על דרישות הוועדה, על שווי הקרקע ועל רמת הסיכון שהיזם נוטל על עצמו. סקר מדויק מאפשר להבין מוקדם האם מדובר בחשד נמוך, האם יש צורך בהשלמות, והאם כדאי להיערך מראש לדרישות המשך.</p>
+                                <p>במקרים רבים, הכנה מקצועית של הסקר מקצרת סבבי הערות, מונעת דרישה מאוחרת להשלמות לא מתוכננות, ומסייעת ליזם להציג לרשות תמונה סדורה ואמינה. כשמדובר בקרקע עם שימושים קודמים רגישים, הדיוק הזה שווה כסף אמיתי. הוא יכול למנוע כניסה מיותרת להליכי המשך יקרים ולחזק את הוודאות כבר בשלבים הראשונים של התכנון.</p>
+
+                                <div className="info-box">
+                                    <h3 className="text-2xl font-black text-telem-dark mb-4 italic flex items-center gap-2">
+                                        <Icon name="files" className="text-telem-khaki" /> לקריאה נוספת ושירותים משלימים
+                                    </h3>
+                                    <ul className="mb-0">
+                                        <li>
+                                            <a href="/env/" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">
+                                                נספח סביבתי להיתר בנייה – מתי נדרש ומה חשוב לבדוק
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/guides/soil-testing.html" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">
+                                                בדיקות קרקע – מתי נדרש דיגום בשטח
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/guides/soil-survey-cost.html" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">
+                                                כמה עולה סקר קרקע – עלויות, שלבים והשלכות
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/guides/history-when.html" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">
+                                                מדריך נוסף: מתי נדרש סקר היסטורי Phase I
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
 
                             <div className="mt-20 bg-telem-dark text-white p-12 md:p-20 rounded-[50px] text-center italic shadow-2xl relative overflow-hidden">
@@ -118,7 +181,7 @@
                                     <button onClick={() => window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("היי אבירם, אשמח להתייעץ לגבי סקר היסטורי Phase I למגרש שלי.")}`, '_blank')} className="bg-telem-forest text-white px-12 py-5 rounded-2xl font-black text-2xl hover:bg-telem-moss transition-all shadow-lg flex items-center justify-center gap-3 italic tracking-tight font-sans not-italic tracking-tighter">
                                         <Icon name="message-circle" /> התייעצות ב-WhatsApp
                                     </button>
-                                    <a href="tel:0506890650" className="border-2 border-telem-khaki text-white px-12 py-5 rounded-2xl font-black text-2xl hover:bg-white/10 transition-all italic tracking-tight font-sans not-italic tracking-tighter uppercase">050-6890650</a>
+                                    <a href="tel:0506890650" className="border-2 border-telem-khaki text-white px-12 py-5 rounded-2xl font-black text-2xl hover:bg-white/10 transition-all italic tracking-tight font-sans not-italic tracking-tighters uppercase">050-6890650</a>
                                 </div>
                             </div>
                         </article>
