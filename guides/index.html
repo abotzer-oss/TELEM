@@ -5,7 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>מרכז הידע והרגולציה הסביבתית | מדריכים מקצועיים ליזמים | תלם</title>
     <meta name="description" content="כל המידע המקצועי על נספחים סביבתיים, אצירת אשפה, סקרים היסטוריים ורגולציה בישראל. מדריכים מפורטים לקיצור הליכי הרישוי וחיסכון בעלויות." />
-    
+    <link rel="canonical" href="https://telemenv.co.il/guides/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="מרכז הידע והרגולציה הסביבתית | מדריכים מקצועיים ליזמים | תלם" />
+    <meta property="og:description" content="כל המידע המקצועי על נספחים סביבתיים, אצירת אשפה, סקרים היסטוריים ורגולציה בישראל. מדריכים מפורטים לקיצור הליכי הרישוי וחיסכון בעלויות." />
+    <meta property="og:url" content="https://telemenv.co.il/guides/" />
+    <meta property="og:site_name" content="תלם - ניהול סביבה" />
+    <meta property="og:image" content="https://telemenv.co.il/logo.png" />
+    <meta property="og:locale" content="he_IL" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="מרכז הידע והרגולציה הסביבתית | תלם ניהול סביבה" />
+    <meta name="twitter:description" content="מדריכים מקצועיים על נספחים סביבתיים, אצירת אשפה, סקרי קרקע ורגולציה — ליזמים, אדריכלים ומנהלי פרויקטים." />
+    <meta name="twitter:image" content="https://telemenv.co.il/logo.png" />
+    <meta name="twitter:site" content="@telemenv" />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -67,6 +84,7 @@
     </style>
 </head>
 <body>
+    <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;">מרכז הידע והרגולציה הסביבתית — מדריכים מקצועיים על נספחים סביבתיים, אצירת אשפה, סקרי קרקע ורישוי בנייה בישראל</h1>
     <div id="root"></div>
 
     <script type="text/babel">
@@ -270,6 +288,40 @@
                                         </div>
                                     </a>
                                 ))}
+                            </div>
+
+                            {/* External Links Section */}
+                            <div className="mt-16 bg-white border-2 border-telem-khaki/30 rounded-[48px] p-10 md:p-14 shadow-sm text-right">
+                                <h2 className="text-2xl md:text-3xl font-black text-telem-dark mb-6 italic underline decoration-telem-khaki">קישורים רשמיים לרגולציה ורישוי סביבתי בישראל</h2>
+                                <p className="text-gray-600 font-bold text-lg leading-relaxed mb-8 italic">
+                                    הרגולציה הסביבתית בישראל מפוזרת בין מספר גופים ממשלתיים. להלן הקישורים הרשמיים המרכזיים שכל יזם, אדריכל או מנהל פרויקט צריך להכיר:
+                                </p>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <a href="https://www.gov.il/he/departments/ministry_of_environmental_protection" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 bg-telem-cream p-4 rounded-2xl font-black text-telem-forest hover:bg-telem-forest hover:text-white transition-all group">
+                                        <Icon name="leaf" size={20} className="shrink-0" />
+                                        <span>המשרד להגנת הסביבה</span>
+                                    </a>
+                                    <a href="https://www.gov.il/he/departments/ministry_of_interior" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 bg-telem-cream p-4 rounded-2xl font-black text-telem-forest hover:bg-telem-forest hover:text-white transition-all group">
+                                        <Icon name="building" size={20} className="shrink-0" />
+                                        <span>משרד הפנים — רישוי ותכנון</span>
+                                    </a>
+                                    <a href="https://mavat.iplan.gov.il" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 bg-telem-cream p-4 rounded-2xl font-black text-telem-forest hover:bg-telem-forest hover:text-white transition-all group">
+                                        <Icon name="map" size={20} className="shrink-0" />
+                                        <span>מבא"ת — מרכז המידע התכנוני הלאומי</span>
+                                    </a>
+                                    <a href="https://water.gov.il" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 bg-telem-cream p-4 rounded-2xl font-black text-telem-forest hover:bg-telem-forest hover:text-white transition-all group">
+                                        <Icon name="droplets" size={20} className="shrink-0" />
+                                        <span>רשות המים — תקנות ורישוי</span>
+                                    </a>
+                                    <a href="https://www.tel-aviv.gov.il/Residents/Environment/Pages/Garbage.aspx" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 bg-telem-cream p-4 rounded-2xl font-black text-telem-forest hover:bg-telem-forest hover:text-white transition-all group">
+                                        <Icon name="trash-2" size={20} className="shrink-0" />
+                                        <span>עיריית תל אביב — מחלקת הסביבה</span>
+                                    </a>
+                                    <a href="https://www.jerusalem.muni.il/he/residents/environment/waste/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 bg-telem-cream p-4 rounded-2xl font-black text-telem-forest hover:bg-telem-forest hover:text-white transition-all group">
+                                        <Icon name="trash-2" size={20} className="shrink-0" />
+                                        <span>עיריית ירושלים — מחלקת הפסולת</span>
+                                    </a>
+                                </div>
                             </div>
 
                             {/* Bottom CTA */}
