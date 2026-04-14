@@ -6,6 +6,19 @@
     <title>ניהול סביבה ONSITE | ליווי ביצוע לתשתיות ורכבת קלה | תלם ניהול סביבה</title>
     <meta name="description" content="ניהול סביבה ONSITE - ליווי ביצוע מקצועי לתשתיות לאומיות, נת"ע, ות"ל וחברות ממשלתיות. מציאת פתרונות המאזנים בין צרכי הקבלן לדרישות הרגולטור." />
     <link rel="canonical" href="https://telemenv.co.il/environmental-management/" />
+    <link rel="alternate" hreflang="he-IL" href="https://telemenv.co.il/environmental-management/" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "ניהול סביבה ONSITE",
+      "provider": {"@type": "LocalBusiness", "name": "תלם ניהול סביבה", "url": "https://telemenv.co.il/"},
+      "serviceType": "Environmental Consulting",
+      "description": "ניהול סביבה ONSITE - ליווי ביצוע מקצועי לתשתיות לאומיות, רכבת קלה וחברות ממשלתיות. מציאת פתרונות המאזנים בין צרכי הקבלן לדרישות הרגולטור.",
+      "areaServed": {"@type": "Country", "name": "Israel"},
+      "url": "https://telemenv.co.il/environmental-management/"
+    }
+    </script>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -124,7 +137,7 @@
 
             return (
                 <div className="min-h-screen flex flex-col">
-                    <a href={`https://wa.me/${WA_NUMBER}`} className="whatsapp-float" target="_blank" title="דברו איתנו בוואטסאפ">
+                    <a href={`https://wa.me/${WA_NUMBER}`} className="whatsapp-float" target="_blank" rel="noopener noreferrer" title="דברו איתנו בוואטסאפ">
                         <Icon name="message-circle" size={32} />
                     </a>
 
@@ -139,7 +152,7 @@
                                 ))}
                             </nav>
                             <div className="hidden md:flex items-center gap-4">
-                                <a href={LINKEDIN_URL} target="_blank" className="text-telem-dark hover:text-telem-moss transition-colors" title="LinkedIn"><Icon name="linkedin" size={24} /></a>
+                                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="text-telem-dark hover:text-telem-moss transition-colors" title="LinkedIn"><Icon name="linkedin" size={24} /></a>
                                 <a href={`tel:${PHONE_NUMBER}`} className="bg-telem-dark text-white px-6 py-2.5 rounded-xl font-bold hover:bg-telem-forest transition-all shadow-md font-sans not-italic tracking-tighter uppercase">050-6890650</a>
                             </div>
                         </div>
@@ -314,7 +327,7 @@
                                 <a href={`tel:${PHONE_NUMBER}`} className="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20 italic font-sans not-italic tracking-tighter hover:text-white transition-all">
                                     <span>050-6890650</span><Icon name="phone" size={24} className="text-telem-khaki" />
                                 </a>
-                                <a href={LINKEDIN_URL} target="_blank" className="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20 hover:text-white transition-all italic underline text-sm md:text-base">
+                                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20 hover:text-white transition-all italic underline text-sm md:text-base">
                                     <span>פרופיל LinkedIn</span><Icon name="linkedin" size={24} className="text-telem-khaki" />
                                 </a>
                                 <p className="mt-8 text-sm font-normal opacity-30 italic font-serif tracking-widest uppercase">© {new Date().getFullYear()} תלם - ניהול סביבה ופסולת. כל הזכויות שמורות.</p>

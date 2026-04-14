@@ -6,6 +6,19 @@
     <title>ליווי סביבתי לפרויקטים סולאריים ואגרו-וולטאי | תלם ניהול סביבה</title>
     <meta name="description" content="ייעוץ וליווי סביבתי לפרויקטים סולאריים, אגרו-וולטאי ומתקני אגירת אנרגיה (BESS). הכנת נספחי שימור קרקע, השבה לחקלאות ומענה רגולטורי לקידום היתרים." />
     <link rel="canonical" href="https://telemenv.co.il/solar/" />
+    <link rel="alternate" hreflang="he-IL" href="https://telemenv.co.il/solar/" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "ליווי סביבתי לפרויקטים סולאריים ואגרו-וולטאי",
+      "provider": {"@type": "LocalBusiness", "name": "תלם ניהול סביבה", "url": "https://telemenv.co.il/"},
+      "serviceType": "Environmental Consulting",
+      "description": "ייעוץ וליווי סביבתי לפרויקטים סולאריים, אגרו-וולטאי ומתקני אגירת אנרגיה (BESS). הכנת נספחי שימור קרקע, השבה לחקלאות ומענה רגולטורי.",
+      "areaServed": {"@type": "Country", "name": "Israel"},
+      "url": "https://telemenv.co.il/solar/"
+    }
+    </script>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -197,7 +210,7 @@
                                 ))}
                             </nav>
                             <div className="hidden md:flex items-center gap-4">
-                                <a href={LINKEDIN_URL} target="_blank" className="text-telem-dark hover:text-telem-moss transition-colors" title="LinkedIn"><Icon name="linkedin" size={24} /></a>
+                                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="text-telem-dark hover:text-telem-moss transition-colors" title="LinkedIn"><Icon name="linkedin" size={24} /></a>
                                 <a href={`tel:${PHONE_NUMBER}`} className="bg-telem-dark text-white px-6 py-2.5 rounded-xl font-bold hover:bg-telem-forest transition-all shadow-md">{PHONE_NUMBER.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2$3')}</a>
                             </div>
                             <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden text-telem-dark"><Icon name={isMenuOpen ? "x" : "menu"} size={28} /></button>
@@ -330,7 +343,7 @@
                             <div className="flex flex-col md:items-end gap-6 text-telem-cream font-bold text-lg not-italic">
                                 <div className="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20"><span>aviram@telemenv.co.il</span><Icon name="mail" size={24} className="text-telem-khaki" /></div>
                                 <div className="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20"><span>050-6890650</span><Icon name="phone" size={24} className="text-telem-khaki" /></div>
-                                <a href={LINKEDIN_URL} target="_blank" className="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20 hover:text-white transition-all"><span>פרופיל LinkedIn</span><Icon name="linkedin" size={24} className="text-telem-khaki" /></a>
+                                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20 hover:text-white transition-all"><span>פרופיל LinkedIn</span><Icon name="linkedin" size={24} className="text-telem-khaki" /></a>
                                 <div className="flex gap-4 mt-12 text-sm font-bold text-telem-khaki">
                                     <button onClick={() => setLegalModal('accessibility')} className="hover:underline italic font-black uppercase tracking-tighter">הצהרת נגישות</button>
                                     <span className="opacity-30">|</span>

@@ -6,6 +6,18 @@
     <title>מרכז הידע והרגולציה הסביבתית | מדריכים מקצועיים ליזמים | תלם</title>
     <meta name="description" content="כל המידע המקצועי על נספחים סביבתיים, אצירת אשפה, סקרים היסטוריים ורגולציה בישראל. מדריכים מפורטים לקיצור הליכי הרישוי וחיסכון בעלויות." />
     <link rel="canonical" href="https://telemenv.co.il/guides/" />
+    <link rel="alternate" hreflang="he-IL" href="https://telemenv.co.il/guides/" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "מרכז הידע והרגולציה הסביבתית",
+      "description": "כל המידע המקצועי על נספחים סביבתיים, אצירת אשפה, סקרים היסטוריים ורגולציה בישראל. מדריכים מפורטים לקיצור הליכי הרישוי וחיסכון בעלויות.",
+      "url": "https://telemenv.co.il/guides/",
+      "publisher": {"@type": "Organization", "name": "תלם ניהול סביבה", "url": "https://telemenv.co.il"},
+      "inLanguage": "he"
+    }
+    </script>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -129,7 +141,7 @@
 
                         {/* Contact info - Left */}
                         <div className="hidden md:flex items-center gap-4">
-                            <a href={LINKEDIN_URL} target="_blank" className="text-telem-dark hover:text-telem-moss transition-colors">
+                            <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="text-telem-dark hover:text-telem-moss transition-colors">
                                 <Icon name="linkedin" size={24} />
                             </a>
                             <a href={`tel:${PHONE_NUMBER}`} className="bg-telem-dark text-white px-6 py-2.5 rounded-xl font-black font-sans flex items-center gap-2 hover:bg-telem-forest transition-all shadow-lg tracking-tighter uppercase">
@@ -242,7 +254,7 @@
                     <Navigation />
 
                     {/* Floating WhatsApp */}
-                    <a href={`https://wa.me/${WA_NUMBER}`} className="whatsapp-float" target="_blank">
+                    <a href={`https://wa.me/${WA_NUMBER}`} className="whatsapp-float" target="_blank" rel="noopener noreferrer">
                         <Icon name="message-circle" size={32} />
                     </a>
 
