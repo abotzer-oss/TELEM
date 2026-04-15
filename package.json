@@ -1,0 +1,11 @@
+{
+  "name": "telem-site",
+  "version": "1.0.0",
+  "description": "Telem environmental consulting website",
+  "scripts": {
+    "prerender": "node prerender.js"
+  },
+  "dependencies": {
+    "puppeteer": "^24.41.0"
+  }
+}
