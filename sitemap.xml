@@ -9,6 +9,13 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- עמוד אודות -->
+  <url>
+    <loc>https://telemenv.co.il/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- עמודי שירות מרכזיים - מותאם למבנה התיקיות -->
   <url>
     <loc>https://telemenv.co.il/waste/</loc>
