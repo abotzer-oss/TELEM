@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)",
+      "Bash(git push:*)",
+      "Bash(git reset:*)",
+      "Bash(git commit:*)",
+      "Bash(npm install:*)",
+      "Bash(node prerender.js)",
+      "Bash(echo \"node_modules/\")",
+      "Bash(npm run:*)",
+      "Bash(xargs sed *)",
+      "Bash(grep -l \"analytics.ahrefs.com\" /c/Users/abotz/TELEM/**/*.html /c/Users/abotz/TELEM/index.html)",
+      "Bash(python3 *)",
+      "Bash(node *)"
+    ]
+  }
+}
