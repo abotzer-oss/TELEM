@@ -120,4 +120,10 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://telemenv.co.il/guides/solar-bess.html</loc>
+    <lastmod>2026-04-20</lastmod>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
