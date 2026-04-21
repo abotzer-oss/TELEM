@@ -1,0 +1,436 @@
+<!DOCTYPE html><html lang="he" dir="rtl"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חוקים ורגולציה סביבתית בישראל – המדריך המקצועי | תלם</title>
+    <meta name="description" content="סקירה מקיפה של חוקי הסביבה המרכזיים בישראל – אוויר, פסולת, מים, חומרים מסוכנים, תכנון ורישוי. עם קישורים לנוסח החוק המלא באתר נבו.">
+    <link rel="canonical" href="https://telemenv.co.il/guides/regulations.html">
+    <link rel="alternate" hreflang="he-IL" href="https://telemenv.co.il/guides/regulations.html">
+    <link rel="alternate" hreflang="x-default" href="https://telemenv.co.il/guides/regulations.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "חוקים ורגולציה סביבתית בישראל – המדריך המקצועי",
+      "description": "סקירה מקיפה של חוקי הסביבה המרכזיים בישראל לאנשי תכנון, בנייה ותשתיות",
+      "url": "https://telemenv.co.il/guides/regulations.html",
+      "author": {
+        "@type": "Person",
+        "name": "אבירם בוצר"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "תלם – ניהול סביבה ופסולת",
+        "url": "https://telemenv.co.il"
+      },
+      "datePublished": "2024-01-01",
+      "inLanguage": "he"
+    }
+    </script>
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="חוקים ורגולציה סביבתית בישראל – המדריך המקצועי | תלם">
+    <meta property="og:description" content="סקירה מקיפה של חוקי הסביבה המרכזיים בישראל – אוויר, פסולת, מים, חומרים מסוכנים, תכנון ורישוי. עם קישורים לנוסח החוק המלא באתר נבו.">
+    <meta property="og:url" content="https://telemenv.co.il/guides/regulations.html">
+    <meta property="og:site_name" content="תלם - ניהול סביבה">
+    <meta property="og:image" content="https://telemenv.co.il/logo.png">
+    <meta property="og:locale" content="he_IL">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="חוקים ורגולציה סביבתית בישראל – המדריך המקצועי | תלם">
+    <meta name="twitter:description" content="סקירה מקיפה של חוקי הסביבה המרכזיים בישראל – אוויר, פסולת, מים, חומרים מסוכנים, תכנון ורישוי. עם קישורים לנוסח החוק המלא באתר נבו.">
+    <meta name="twitter:image" content="https://telemenv.co.il/logo.png">
+    <meta name="twitter:site" content="@telemenv">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        telem: { moss: '#78836a', forest: '#475d4b', dark: '#243e38', cream: '#f8f4f1', khaki: '#94937f' }
+                    },
+                    fontFamily: { sans: ['"Google Sans"', 'Assistant', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap');
+        body { font-family: "Google Sans", "Assistant", sans-serif; background-color: #f8f4f1; line-height: 1.8; color: #1d1d1b; }
+
+        .content-area h2 { font-size: 2.25rem; font-weight: 900; color: #243e38; margin-top: 3.5rem; margin-bottom: 1.5rem; border-right: 6px solid #94937f; padding-right: 1.5rem; font-style: italic; }
+        .content-area h3 { font-size: 1.75rem; font-weight: 800; color: #475d4b; margin-top: 2.5rem; margin-bottom: 1.25rem; }
+        .content-area p { font-size: 1.25rem; margin-bottom: 1.5rem; color: #374151; font-weight: 500; }
+        .content-area ul { list-style: none; padding-right: 0.5rem; margin-bottom: 2.5rem; }
+        .content-area li { position: relative; padding-right: 2rem; margin-bottom: 0.8rem; font-weight: 600; font-size: 1.15rem; color: #243e38; }
+        .content-area li::before { content: "←"; position: absolute; right: 0; color: #78836a; font-weight: bold; }
+
+        .law-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 1.75rem 2rem;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            border-right: 8px solid #475d4b;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .law-card h3 {
+            font-size: 1.2rem !important;
+            font-weight: 800 !important;
+            color: #243e38 !important;
+            margin: 0 !important;
+        }
+        .law-card p {
+            font-size: 1rem !important;
+            margin: 0 !important;
+            color: #4b5563 !important;
+        }
+        .law-card a.law-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: #475d4b;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .law-card a.law-link:hover { color: #78836a; }
+
+        .truth-box { background: white; border-radius: 2.5rem; padding: 2.5rem; border: 1px solid #e5e7eb; margin: 2rem 0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border-right: 12px solid #475d4b; }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="sr-only">חוקים ורגולציה סביבתית בישראל – אוויר, פסולת, מים, חומרים מסוכנים, תכנון ורישוי</h1>
+    <section style="background:#f8f4f1;font-family:'Assistant',sans-serif;color:#243e38;padding:2rem;border-top:1px solid #94937f;direction:rtl;text-align:right;" aria-label="מקורות ומידע רשמי">
+      <div style="max-width:1200px;margin:0 auto;">
+        <h2 style="font-size:1rem;font-weight:800;margin-bottom:16px;color:#243e38;">מידע רשמי — חוקים ורגולציה סביבתית</h2>
+        <div style="display:flex;flex-wrap:wrap;gap:2rem;">
+          <div style="flex:1;min-width:260px;">
+            <h3 style="font-size:0.875rem;font-weight:700;color:#475d4b;margin-bottom:12px;">קישורים חיצוניים</h3>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
+              <li><a href="https://www.nevo.co.il" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">נבו – מאגר חקיקה ישראלי</a></li>
+              <li><a href="https://www.gov.il/he/departments/ministry_of_environmental_protection" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">המשרד להגנת הסביבה</a></li>
+              <li><a href="https://mavat.iplan.gov.il" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">מרכז מידע לתכנון (מרמ"ת)</a></li>
+            </ul>
+          </div>
+          <div style="flex:1;min-width:260px;">
+            <h3 style="font-size:0.875rem;font-weight:700;color:#475d4b;margin-bottom:12px;">דפים נוספים באתר</h3>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
+              <li><a href="/env/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">נספח סביבתי להיתר בנייה</a></li>
+              <li><a href="/history/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">סקר היסטורי סביבתי</a></li>
+              <li><a href="/guides/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">מרכז הידע</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useEffect } = React;
+        const Icon = ({ name, size = 20, className = "" }) => {
+            useEffect(() => { if (window.lucide) { window.lucide.createIcons(); } }, [name]);
+            return <i data-lucide={name} style={{ width: size, height: size }} className={className}></i>;
+        };
+
+        const LawCard = ({ title, description, href }) => (
+            <div className="law-card">
+                <h3>{title}</h3>
+                <p>{description}</p>
+                <a href={href} className="law-link" target="_blank" rel="noopener noreferrer">
+                    לנוסח המלא באתר נבו ←
+                </a>
+            </div>
+        );
+
+        const App = () => {
+            const WA_NUMBER = "972506890650";
+            const PHONE_NUMBER = "0506890650";
+
+            return (
+                <div className="min-h-screen pb-20 text-right">
+                    <header className="bg-white border-b h-24 flex items-center px-4 sticky top-0 z-50 shadow-sm">
+                        <div className="max-w-7xl mx-auto w-full flex justify-between items-center">
+                            <a href="/" className="text-telem-forest font-black text-2xl italic tracking-tighter flex items-center gap-2">
+                                תלם <span className="text-gray-400 font-light">| ניהול סביבה</span>
+                            </a>
+                            <a href={`tel:${PHONE_NUMBER}`} className="bg-telem-dark text-white px-8 py-3 rounded-2xl font-black font-sans shadow-md hover:bg-telem-forest transition-all">050-6890650</a>
+                        </div>
+                    </header>
+
+                    <main className="max-w-5xl mx-auto px-4 pt-16">
+                        <nav className="mb-8 text-telem-moss font-bold flex gap-3 text-sm italic">
+                            <a href="/" className="hover:underline">דף הבית</a> <span>/</span>
+                            <a href="/guides/" className="hover:underline">מרכז ידע</a> <span>/</span>
+                            <span className="text-telem-dark underline decoration-telem-khaki">חוקים ורגולציה</span>
+                        </nav>
+
+                        <article className="bg-white rounded-[60px] p-10 md:p-24 shadow-2xl border border-telem-khaki/10">
+                            <h2 className="text-4xl md:text-8xl font-black text-telem-black mb-16 leading-[1] italic tracking-tighter uppercase leading-[0.9]">
+                                חוקים ורגולציה סביבתית בישראל – המדריך המקצועי
+                            </h2>
+
+                            <div className="content-area">
+                                <p>
+                                    העוסקים בתחום הבנייה, התכנון, הנדסה ופיתוח נדרשים להכיר את מסגרת החוקים הסביבתית הישראלית. הרגולציה הסביבתית בישראל מפוזרת על פני עשרות חוקים ותקנות – הנה ריכוז המרכזיים שבהם, עם קישור לנוסח המלא. לצורך{" "}
+                                    <a href="/env/" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">נספח סביבתי להיתר בנייה</a>
+                                    ,{" "}
+                                    <a href="/history/" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">סקר היסטורי סביבתי</a>
+                                    {" "}או{" "}
+                                    <a href="/environmental-management/" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">ניהול סביבתי ONSITE</a>
+                                    {" "}– הכרת החוקים הרלוונטיים היא נקודת הפתיחה לכל תהליך.
+                                </p>
+
+                                <h2>אוויר, רעש ואסבסט</h2>
+                                <p>
+                                    תחום האוויר והרעש מוסדר בישראל דרך שורת חוקים ותקנות המחייבים פעילות תעשייתית ועסקית לעמוד בסטנדרטים סביבתיים מוגדרים.
+                                </p>
+
+                                <LawCard
+                                    title="חוק אוויר נקי, תשס&quot;ח-2008"
+                                    description="החוק המקיף ביותר להגנה על איכות האוויר. קובע ערכי איכות אוויר, מחייב היתרי פליטה למפעלים גדולים ומסדיר ניטור ארצי."
+                                    href="https://www.nevo.co.il/law_html/law00/4071.htm"
+                                />
+                                <LawCard
+                                    title="חוק למניעת מפגעים (אסבסט ואבק מזיק), התשע&quot;א-2011"
+                                    description="מסדיר טיפול באסבסט, אוסר שימוש חדש ומחייב הסרה הדרגתית של אסבסט פריך. קובע מי מוסמך לעבוד עם אסבסט."
+                                    href="https://www.nevo.co.il/law_html/law01/500_463.htm"
+                                />
+                                <LawCard
+                                    title="תקנות למניעת מפגעים (רעש בלתי סביר), תש&quot;ן-1990"
+                                    description="מגדירות בדציבלים מה נחשב לרעש חזק מדי ממקורות כמו מזגנים, מכונות ומפעלי תעשייה, בהתאם לאזור ולשעה."
+                                    href="https://www.nevo.co.il/law_html/law01/293_008.htm"
+                                />
+                                <LawCard
+                                    title='תקנות למניעת מפגעים (מניעת רעש), תשנ"ג-1992'
+                                    description='אוסרות על רעש בשעות המנוחה (14:00–16:00 ו-23:00–07:00), רעש משיפוצים, צופרים ושימוש בציוד גינון מרעיש.'
+                                    href="https://www.nevo.co.il/law_html/law01/293_013.htm"
+                                />
+                                <LawCard
+                                    title='חוק הקרינה הבלתי מייננת, תשס"ו-2006'
+                                    description="מסדיר הקמה והפעלה של מקורות קרינה כמו אנטנות סלולריות וקווי מתח גבוה להגנה מפני חשיפה ממושכת."
+                                    href="https://www.nevo.co.il/law_html/law01/500_003.htm"
+                                />
+
+                                <h2>פסולת ומחזור</h2>
+
+                                <LawCard
+                                    title='חוק שמירת הניקיון, תשמ"ד-1984'
+                                    description='אוסר השלכת פסולת ברשות הרבים ומסדיר את היטל ההטמנה לעידוד מחזור במקום קבורת פסולת.'
+                                    href="https://www.nevo.co.il/law_html/law01/291_004.htm"
+                                />
+                                <LawCard
+                                    title='חוק להסדרת הטיפול באריזות, תשע"א-2011'
+                                    description='מחייב יצרנים ויבואנים לאסוף ולמחזר אריזות מוצרים (מכאן הגיע "הפח הכתום").'
+                                    href="https://www.nevo.co.il/law_html/law01/500_453.htm"
+                                />
+                                <LawCard
+                                    title='חוק למחזור צמיגים, תשס"ז-2007'
+                                    description="מחייב יבואני צמיגים למחזר אחוז מסוים מהצמיגים שהם משווקים, למניעת ערמות דליקות ומזהמות."
+                                    href="https://www.nevo.co.il/law_html/law01/291_043.htm"
+                                />
+                                <LawCard
+                                    title='חוק הפיקדון על מכלי משקה, תשנ"ט-1999'
+                                    description="מטיל דמי פיקדון על בקבוקים ופחיות לעידוד החזרתם למחזור."
+                                    href="https://www.nevo.co.il/law_html/law01/291_031.htm"
+                                />
+                                <LawCard
+                                    title='תקנות החומרים המסוכנים (סילוק פסולת חומרים מסוכנים), תשנ"א-1990'
+                                    description="מחייבות פינוי פסולת רעילה רק לאתר המורשה (רמת חובב) או למתקני טיפול מאושרים."
+                                    href="https://www.nevo.co.il/law_html/law01/291_007.htm"
+                                />
+
+                                <h2>מים ושפכים</h2>
+
+                                <LawCard
+                                    title='חוק המים, תשי"ט-1959'
+                                    description="החוק היסודי הקובע שכל מקורות המים הם קניין הציבור ואוסר על זיהומם באופן מוחלט."
+                                    href="https://www.nevo.co.il/law_html/law01/054_001.htm"
+                                />
+                                <LawCard
+                                    title="כללי תאגידי מים וביוב (שפכי מפעלים המוזרמים למערכת הביוב)"
+                                    description="מסדירים אילו חומרים מותר למפעל להזרים לביוב העירוני ואילו חייבים טיפול מקדים."
+                                    href="https://www.nevo.co.il/law_html/law01/500_568.htm"
+                                />
+                                <LawCard
+                                    title='תקנות בריאות העם (איכותם התברואית של מי שתייה), תשע"ג-2013'
+                                    description="מגדירות אילו בדיקות חייבים לבצע במי השתייה לוידוא ניקיונם מחיידקים וכימיקלים."
+                                    href="https://www.nevo.co.il/law_html/law01/214_147.htm"
+                                />
+
+                                <h2>חומרים מסוכנים</h2>
+
+                                <LawCard
+                                    title='חוק החומרים המסוכנים, תשנ"ג-1993'
+                                    description='מחייב כל עסק המחזיק חומרים מסוכנים בכמות מסוימת לקבל "היתר רעלים" מהמשרד להגנת הסביבה.'
+                                    href="https://www.nevo.co.il/law_html/law00/86549.htm"
+                                />
+                                <LawCard
+                                    title='תקנות רישוי עסקים (אחסון חומרים מסוכנים), תשנ"א-1990'
+                                    description="קובעות כללים הנדסיים ובטיחותיים לאחסון נכון של רעלים למניעת דליפות ופיצוצים."
+                                    href="https://www.nevo.co.il/law_html/law01/294_041.htm"
+                                />
+
+                                <h2>תכנון ובנייה</h2>
+
+                                <LawCard
+                                    title='חוק התכנון והבנייה, תשכ"ה-1965'
+                                    description="הבסיס לכל תוכנית בנייה. כולל חובת תסקירי השפעה על הסביבה לפרויקטים גדולים."
+                                    href="https://www.nevo.co.il/law_html/law01/044_001.htm"
+                                />
+                                <LawCard
+                                    title='תמ"א 1 (תוכנית מתאר ארצית אחודה)'
+                                    description="מגדירה הגנות על שמורות טבע, נחלים, חופים ויערות ומאגדת עשרות תוכניות קודמות."
+                                    href="https://www.gov.il/he/departments/general/tamat_1"
+                                />
+
+                                <h2>קרקע, עסקים ורישוי</h2>
+
+                                <LawCard
+                                    title='חוק רישוי עסקים, תשכ"ח-1968'
+                                    description="מאפשר למשרד להגנת הסביבה להציב תנאים סביבתיים מחמירים ברישיון העסק של מפעלים."
+                                    href="https://www.nevo.co.il/law_html/law01/294_001.htm"
+                                />
+                                <LawCard
+                                    title="הנחיות לטיפול בקרקעות מזוהמות"
+                                    description="קובעות איך לבצע סקר קרקע, לזהות זיהום ולשקם קרקע לפני בנייה."
+                                    href="https://www.gov.il/he/departments/policies/contaminated_land_guidelines"
+                                />
+
+                                <div className="truth-box italic">
+                                    <h3 className="text-2xl font-black text-telem-dark mb-4 italic flex items-center gap-2">
+                                        <Icon name="files" className="text-telem-khaki" /> לקריאה נוספת ושירותים משלימים
+                                    </h3>
+                                    <ul className="mb-0">
+                                        <li>
+                                            <a href="/env/" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">
+                                                נספח סביבתי להיתר בנייה – מתי נדרש ואיך מתקדמים נכון
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/history/" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">
+                                                סקר היסטורי סביבתי – מתי הוא נדרש בפרויקט
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/environmental-management/" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">
+                                                ניהול סביבה ONSITE – ליווי ביצוע לפרויקטים מורכבים
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/guides/" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">
+                                                מרכז הידע – כל המדריכים המקצועיים
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <h2>צריכים ליווי רגולטורי מקצועי?</h2>
+                                <p>
+                                    הכרת החוקים היא הצעד הראשון – היישום הוא האתגר האמיתי. אנחנו בתלם מתמחים בתרגום הדרישות הרגולטוריות לפתרונות מעשיים שמקדמים את הפרויקט שלך.
+                                </p>
+                            </div>
+
+                            <div className="mt-12 bg-telem-cream border-2 border-telem-khaki rounded-[32px] p-8 md:p-10">
+                                <h3 className="text-2xl md:text-3xl font-black text-telem-dark mb-6 italic">קישורים רשמיים — חוקים ורגולציה סביבתית</h3>
+                                <ul className="space-y-3 mb-0">
+                                    <li>
+                                        <a href="https://www.nevo.co.il" target="_blank" rel="noopener noreferrer" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">
+                                            נבו – מאגר חקיקה ישראלי מלא
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.gov.il/he/departments/ministry_of_environmental_protection" target="_blank" rel="noopener noreferrer" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">
+                                            המשרד להגנת הסביבה — מדיניות ורגולציה
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.gov.il/he/departments/ministry_of_interior" target="_blank" rel="noopener noreferrer" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">
+                                            משרד הפנים — ועדות תכנון ורישוי בנייה
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://mavat.iplan.gov.il" target="_blank" rel="noopener noreferrer" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">
+                                            מרכז המידע התכנוני הלאומי — מבא"ת (iplan)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.gov.il/he/departments/iplan/govil-landing-page" target="_blank" rel="noopener noreferrer" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">
+                                            מינהל התכנון הארצי — מדיניות ועדות ורישוי בנייה
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.sii.org.il/" target="_blank" rel="noopener noreferrer" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">
+                                            מכון התקנים הישראלי — תקנים סביבתיים ובנייה
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/guides/price.html" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">
+                                            כמה עולה נספח סביבתי? — מחירון עדכני
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/guides/timeline.html" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">
+                                            כמה זמן לוקח תהליך הרישוי הסביבתי?
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <section className="mt-16 pt-8 border-t border-telem-khaki/20">
+                                <h2 className="text-2xl font-black text-telem-dark mb-6 italic tracking-tight">תחומי הרגולציה הסביבתית בישראל</h2>
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                                    <h3 className="text-lg font-bold text-telem-forest italic">אוויר, רעש ואסבסט</h3>
+                                    <h3 className="text-lg font-bold text-telem-forest italic">פסולת, מים וחומרים מסוכנים</h3>
+                                    <h3 className="text-lg font-bold text-telem-forest italic">תכנון, בנייה ורישוי עסקים</h3>
+                                </div>
+                            </section>
+
+                            <div className="mt-24 bg-telem-dark text-white p-12 md:p-20 rounded-[60px] text-center italic shadow-2xl relative overflow-hidden">
+                                <Icon name="shield-check" size={180} className="absolute -left-10 -bottom-10 opacity-5" />
+                                <h3 className="text-4xl md:text-5xl font-black mb-8 italic tracking-tighter uppercase leading-tight">צריכים ליווי רגולטורי מקצועי?</h3>
+                                <p className="mb-12 text-xl md:text-2xl font-medium opacity-80 max-w-4xl mx-auto leading-relaxed italic">הכרת החוקים היא הצעד הראשון – היישום הוא האתגר האמיתי. אנחנו בתלם מתמחים בתרגום הדרישות הרגולטוריות לפתרונות מעשיים שמקדמים את הפרויקט שלך.</p>
+                                <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                                    <a href="/#contact" className="bg-telem-forest text-white px-12 py-5 rounded-2xl font-black text-2xl hover:bg-telem-moss transition-all shadow-lg flex items-center justify-center gap-3 font-sans not-italic italic uppercase tracking-tighter">
+                                        <Icon name="message-circle" /> צרו קשר לייעוץ מקצועי
+                                    </a>
+                                    <a href={`tel:${PHONE_NUMBER}`} className="border-2 border-telem-khaki text-white px-12 py-5 rounded-2xl font-black text-2xl hover:bg-white/10 transition-all font-sans not-italic uppercase tracking-tighter">050-6890650</a>
+                                </div>
+                            </div>
+                        </article>
+                    </main>
+
+                    <footer className="bg-telem-dark text-white py-16 px-4 text-center border-t border-telem-forest/30 font-serif italic mt-20">
+                        <p className="text-sm opacity-30 italic tracking-widest uppercase italic font-serif">© {new Date().getFullYear()} תלם - ניהול סביבה ופסולת. ליווי מקצועי לניהול סיכונים וקיצור לוחות זמנים.</p>
+                    </footer>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+
+
+</body></html>
