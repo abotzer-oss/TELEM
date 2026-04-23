@@ -124,35 +124,23 @@
 </head>
 <body>
     <h1 class="sr-only">נספח סביבתי למתקן סולארי ומתקני אגירת אנרגיה – דרישות, גורמים מאשרים ולוחות זמנים</h1>
-    <section style="background:#f8f4f1;font-family:'Assistant',sans-serif;color:#243e38;padding:2rem;border-top:1px solid #94937f;direction:rtl;text-align:right;" aria-label="מקורות ומידע רשמי">
-      <div style="max-width:1200px;margin:0 auto;">
-        <h2 style="font-size:1rem;font-weight:800;margin-bottom:16px;color:#243e38;">מידע רשמי — נספח סביבתי לאנרגיה מתחדשת</h2>
-        <div style="display:flex;flex-wrap:wrap;gap:2rem;">
-          <div style="flex:1;min-width:260px;">
-            <h3 style="font-size:0.875rem;font-weight:700;color:#475d4b;margin-bottom:12px;">קישורים חיצוניים</h3>
-            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
-              <li><a href="https://www.gov.il/he/departments/ministry_of_environmental_protection" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">המשרד להגנת הסביבה</a></li>
-              <li><a href="https://www.gov.il/he/departments/ministry_of_energy" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">משרד האנרגיה</a></li>
-              <li><a href="https://www.land.gov.il" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">רשות מקרקעי ישראל</a></li>
-              <li><a href="https://mavat.iplan.gov.il" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">מרכז מידע לתכנון (מרמ"ת)</a></li>
-              <li><a href="https://www.sii.org.il/" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">מכון התקנים הישראלי</a></li>
-            </ul>
-          </div>
-          <div style="flex:1;min-width:260px;">
-            <h3 style="font-size:0.875rem;font-weight:700;color:#475d4b;margin-bottom:12px;">דפים נוספים באתר</h3>
-            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
-              <li><a href="/about.html" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">אודות תלם</a></li>
-              <li><a href="/waste/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">נספח אצירת אשפה</a></li>
-              <li><a href="/history/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">סקר היסטורי Phase I</a></li>
-              <li><a href="/env/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">נספח סביבתי</a></li>
-              <li><a href="/solar/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">סולארי ואגירה</a></li>
-              <li><a href="/environmental-management/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">ניהול סביבה ONSITE</a></li>
-              <li><a href="/guides/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">מרכז הידע</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+    <style id="quick-nav-styles">
+#site-quick-nav a{color:rgba(248,244,241,0.8);font-size:0.78rem;font-weight:700;text-decoration:none;padding:5px 10px;border-radius:6px;white-space:nowrap;transition:background .15s,color .15s;font-family:'Assistant',sans-serif;}
+#site-quick-nav a:hover,#site-quick-nav a.active{background:rgba(255,255,255,0.13);color:#f8f4f1;}
+@media(max-width:767px){#site-quick-nav{display:none;}}
+</style>
+<nav id="site-quick-nav" style="position:fixed;top:96px;left:0;right:0;z-index:60;background:#243e38;border-bottom:1px solid rgba(148,147,127,0.25);direction:rtl;" aria-label="quick nav">
+  <div style="max-width:1280px;margin:0 auto;padding:0 1rem;display:flex;flex-wrap:wrap;gap:0 2px;justify-content:center;align-items:center;min-height:40px;">
+    <a href="/">דף הבית</a>
+    <a href="/waste/">נספח אצירת אשפה</a>
+    <a href="/env/">נספח סביבתי</a>
+    <a href="/history/">סקר היסטורי</a>
+    <a href="/solar/">סולארי ואגירה</a>
+    <a href="/environmental-management/">ONSITE ניהול סביבה</a>
+    <a href="/guides/" class="active">מרכז הידע</a>
+    <a href="/about.html">אודות</a>
+  </div>
+</nav>
     <div id="root"></div>
 
     <script type="text/babel">
@@ -441,4 +429,33 @@
     </script>
 
 
+<section style="background:#f8f4f1;font-family:'Assistant',sans-serif;color:#243e38;padding:2rem;border-top:1px solid #94937f;direction:rtl;text-align:right;" aria-label="מקורות ומידע רשמי">
+      <div style="max-width:1200px;margin:0 auto;">
+        <h2 style="font-size:1rem;font-weight:800;margin-bottom:16px;color:#243e38;">מידע רשמי — נספח סביבתי לאנרגיה מתחדשת</h2>
+        <div style="display:flex;flex-wrap:wrap;gap:2rem;">
+          <div style="flex:1;min-width:260px;">
+            <h3 style="font-size:0.875rem;font-weight:700;color:#475d4b;margin-bottom:12px;">קישורים חיצוניים</h3>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
+              <li><a href="https://www.gov.il/he/departments/ministry_of_environmental_protection" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">המשרד להגנת הסביבה</a></li>
+              <li><a href="https://www.gov.il/he/departments/ministry_of_energy" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">משרד האנרגיה</a></li>
+              <li><a href="https://www.land.gov.il" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">רשות מקרקעי ישראל</a></li>
+              <li><a href="https://mavat.iplan.gov.il" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">מרכז מידע לתכנון (מרמ"ת)</a></li>
+              <li><a href="https://www.sii.org.il/" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">מכון התקנים הישראלי</a></li>
+            </ul>
+          </div>
+          <div style="flex:1;min-width:260px;">
+            <h3 style="font-size:0.875rem;font-weight:700;color:#475d4b;margin-bottom:12px;">דפים נוספים באתר</h3>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
+              <li><a href="/about.html" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">אודות תלם</a></li>
+              <li><a href="/waste/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">נספח אצירת אשפה</a></li>
+              <li><a href="/history/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">סקר היסטורי Phase I</a></li>
+              <li><a href="/env/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">נספח סביבתי</a></li>
+              <li><a href="/solar/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">סולארי ואגירה</a></li>
+              <li><a href="/environmental-management/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">ניהול סביבה ONSITE</a></li>
+              <li><a href="/guides/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">מרכז הידע</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 </body></html>
