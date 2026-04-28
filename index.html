@@ -586,6 +586,12 @@
     <script>
         let currentFontScale = 100;
 
+        // Hide banner immediately on script parse if consent already given
+        if (localStorage.getItem('cookieConsent') === 'true') {
+            const _cb = document.getElementById('cookieBanner');
+            if (_cb) _cb.classList.add('hidden');
+        }
+
         function toggleElement(id) {
             const el = document.getElementById(id);
             if (el) el.classList.toggle('hidden');
@@ -635,11 +641,16 @@
 
         function showCookieBanner() {
             const banner = document.getElementById('cookieBanner');
-            if (banner && !localStorage.getItem('cookieConsent')) banner.classList.remove('hidden');
+            if (!banner) return;
+            if (localStorage.getItem('cookieConsent') === 'true') {
+                banner.classList.add('hidden');
+                return;
+            }
+            banner.classList.remove('hidden');
         }
 
         function acceptCookies() {
-            localStorage.setItem('cookieConsent', 'accepted');
+            localStorage.setItem('cookieConsent', 'true');
             gtag('consent', 'update', {
                 analytics_storage: 'granted',
                 ad_storage: 'granted',
@@ -701,7 +712,7 @@
             if (highContrast === 'on') document.body.classList.add('high-contrast');
             if (underlineLinks === 'on') document.body.classList.add('underline-links');
 
-            if (cookieConsent === 'accepted') {
+            if (cookieConsent === 'true') {
                 gtag('consent', 'update', {
                     analytics_storage: 'granted',
                     ad_storage: 'granted',
