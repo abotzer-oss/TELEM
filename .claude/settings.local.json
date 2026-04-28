@@ -13,7 +13,10 @@
       "Bash(xargs sed *)",
       "Bash(grep -l \"analytics.ahrefs.com\" /c/Users/abotz/TELEM/**/*.html /c/Users/abotz/TELEM/index.html)",
       "Bash(python3 *)",
-      "Bash(node *)"
+      "Bash(node *)",
+      "Bash(grep -n \"מקורות ומידע רשמי\\\\|<\\\\/div><\\\\/div>$\\\\|</script>$\\\\|</body>\" /c/Users/abotz/TELEM/waste/index.html)",
+      "Bash(python *)",
+      "PowerShell(Get-Content *)"
     ]
   }
 }

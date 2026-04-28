@@ -94,6 +94,45 @@
         .accessible-contrast a { color: #ffff00 !important; }
     </style>
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="AGPV6qNv6Q1puoExE4AuIw" async></script>
+
+<style id="mobile-cta-styles">
+@media (max-width: 768px) {
+  .whatsapp-float { display: none !important; }
+}
+#mobile-cta-banner {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  width: 100%; height: 56px;
+  z-index: 9999;
+  background: #243e38;
+  border-top: 3px solid #78836a;
+  direction: rtl;
+}
+@media (max-width: 768px) {
+  #mobile-cta-banner { display: flex; align-items: stretch; }
+  body { padding-bottom: 56px !important; }
+}
+#mobile-cta-banner a {
+  display: flex; align-items: center; justify-content: center;
+  gap: 8px; width: 50%; height: 100%;
+  color: #f8f4f1;
+  font-family: 'Assistant', sans-serif;
+  font-weight: 800; font-size: 15px;
+  text-decoration: none;
+  background: #243e38;
+  transition: background 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+#mobile-cta-banner a:hover,
+#mobile-cta-banner a:active { background: #475d4b; }
+#mobile-cta-banner .mcta-divider {
+  width: 1px; height: 60%; align-self: center;
+  background: #475d4b; flex-shrink: 0;
+}
+#mobile-cta-banner svg { width: 20px; height: 20px; flex-shrink: 0; }
+#mobile-cta-banner span { white-space: nowrap; }
+</style>
 </head>
 <body style="font-size: 100%;">
     <h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">אודות תלם – ניהול סביבה ופסולת | אבירם בוצר יועץ סביבתי</h1>
@@ -378,5 +417,17 @@
         const root = ReactDOM.createRoot(document.getElementById('root'));
         root.render(<App />);
     </script>
+
+<div id="mobile-cta-banner" role="navigation" aria-label="צרו קשר מהיר">
+  <a href="https://wa.me/972506890650" target="_blank" rel="noopener noreferrer" aria-label="שלחו הודעה ב-WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+    <span>וואטסאפ</span>
+  </a>
+  <div class="mcta-divider" aria-hidden="true"></div>
+  <a href="tel:0506890650" aria-label="חייגו אלינו">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+    <span>חייגו אלינו</span>
+  </a>
+</div>
 </body>
 </html>
