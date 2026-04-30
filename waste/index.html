@@ -10,21 +10,28 @@
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "נספח אצירת אשפה להיתר בנייה",
-  "description": "הכנת נספח אצירת אשפה לצורך קבלת היתר בנייה. כולל חישוב כמויות, תכנון מיקום אצירה, ותיאום מול הרשות המקומית ואיגוד הערים.",
-  "provider": {
-    "@id": "https://telemenv.co.il/#business"
-  },
-  "serviceType": "Environmental Consulting",
-  "areaServed": {
-    "@type": "Country",
-    "name": "Israel"
-  },
-  "url": "https://telemenv.co.il/waste/",
-  "audience": {
-    "@type": "Audience",
-    "audienceType": "קבלנים, יזמים, אדריכלים ובעלי קרקע"
-  }
+  "name": "ייעוץ אשפה ונספח אצירה להיתר בנייה",
+  "description": "ייעוץ אשפה מקצועי לפרויקטי בנייה. תכנון מערכי אצירה, חישוב נפחי פסולת ואישור נספח מול הרשות המקומית — בהגשה ראשונה, ללא עיכובים.",
+  "provider": {"@type": "ProfessionalService", "name": "תלם ניהול סביבה", "url": "https://telemenv.co.il"},
+  "areaServed": "IL",
+  "mainEntityOfPage": "https://telemenv.co.il/waste/",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "מתי צריך יועץ אשפה בפרויקט בנייה?",
+      "acceptedAnswer": {"@type": "Answer", "text": "כבר בשלב התב\"ע או התכנון הראשוני — לא בשלב הגשת ההיתר. כניסה מאוחרת מאלצת שינויי תכנון יקרים ומעכבת את לוח הזמנים."}
+    },
+    {
+      "@type": "Question",
+      "name": "כמה זמן לוקח אישור נספח אשפה?",
+      "acceptedAnswer": {"@type": "Answer", "text": "נספח שמוגש נכון מאושר תוך 2–4 שבועות. נספח עם ליקויים יכול לעכב את ההיתר ב-2–3 חודשים נוספים."}
+    },
+    {
+      "@type": "Question",
+      "name": "האם כל עירייה דורשת נספח אשפה?",
+      "acceptedAnswer": {"@type": "Answer", "text": "כמעט כולן — כן. הדרישות משתנות בין רשויות, ופתרון שמאושר בנתניה עשוי להידחות בתל אביב."}
+    }
+  ]
 }
 </script>
 
