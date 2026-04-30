@@ -560,7 +560,7 @@
   #testimonials-section .ts-card { padding: 28px 20px 24px; }
 }
 
-/* Logo badge */
+/* Logo container */
 #testimonials-section .ts-logo {
   position: absolute;
   top: 24px;
@@ -568,15 +568,33 @@
   width: 48px;
   height: 48px;
   border-radius: 10px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+#testimonials-section .ts-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+#testimonials-section .ts-logo-fallback {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
   background: #475d4b;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 900;
   color: #ffffff;
   letter-spacing: 0;
-  flex-shrink: 0;
   user-select: none;
 }
 
@@ -734,7 +752,11 @@
 
         <!-- Card 1 -->
         <div class="ts-card" role="listitem" aria-label="המלצה 1 מתוך 4">
-          <div class="ts-logo" aria-hidden="true">גמ</div>
+          <div class="ts-logo" aria-hidden="true">
+            <img src="/assets/logo_galil.svg" alt="לוגו אשכול גליל מערבי"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ts-logo-fallback" style="display:none">גמ</div>
+          </div>
           <p class="ts-quote">"יכולת מרשימה בפרויקטים רב-תחומיים — במיוחד מול רשויות מקומיות וגופים ציבוריים"</p>
           <div class="ts-divider"></div>
           <p class="ts-name">ארז אליסאי</p>
@@ -744,7 +766,11 @@
 
         <!-- Card 2 -->
         <div class="ts-card" role="listitem" aria-label="המלצה 2 מתוך 4">
-          <div class="ts-logo" aria-hidden="true">רק</div>
+          <div class="ts-logo" aria-hidden="true">
+            <img src="/assets/LOGO_ACKERSTEIN.png" alt="לוגו הקו הירוק"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ts-logo-fallback" style="display:none">רק</div>
+          </div>
           <p class="ts-quote">"שליטה מלאה בדרישות הסביבתיות ופתרון מצבים מורכבים בזמן אמת"</p>
           <div class="ts-divider"></div>
           <p class="ts-name">דן יעקובי</p>
@@ -754,7 +780,11 @@
 
         <!-- Card 3 -->
         <div class="ts-card" role="listitem" aria-label="המלצה 3 מתוך 4">
-          <div class="ts-logo" aria-hidden="true">ב158</div>
+          <div class="ts-logo" aria-hidden="true">
+            <img src="/assets/LOGO_ESHKOL.jpg" alt="לוגו פרויקט ביאליק 158"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ts-logo-fallback" style="display:none">ב158</div>
+          </div>
           <p class="ts-quote">"קידם נושאים במהירות וביעילות גם תחת לוחות זמנים צפופים"</p>
           <div class="ts-divider"></div>
           <p class="ts-name">קרן בכר צבי</p>
@@ -764,7 +794,11 @@
 
         <!-- Card 4 -->
         <div class="ts-card" role="listitem" aria-label="המלצה 4 מתוך 4">
-          <div class="ts-logo" aria-hidden="true">כע</div>
+          <div class="ts-logo" aria-hidden="true">
+            <img src="/assets/logo_calcalithefer.png" alt="לוגו הכלכלית עמק חפר"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ts-logo-fallback" style="display:none">כע</div>
+          </div>
           <p class="ts-quote">"לקח אחריות, ניהל צוותים תחת לחץ אדיר — ושמר על מקצועיות לאורך כל הדרך"</p>
           <div class="ts-divider"></div>
           <p class="ts-name">שגיא בן-יואב</p>
