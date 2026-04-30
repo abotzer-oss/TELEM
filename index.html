@@ -493,6 +493,358 @@
             </div>
         </section>
 
+<!-- ============================================================
+     TESTIMONIALS SLIDER — self-contained, all styles scoped to #testimonials-section
+     ============================================================ -->
+<section id="testimonials-section" aria-label="המלצות לקוחות">
+<style>
+#testimonials-section {
+  background: #1d1d1b;
+  direction: rtl;
+  text-align: right;
+  font-family: 'Assistant', 'Google Sans', sans-serif;
+  padding: 80px 16px 72px;
+  overflow: hidden;
+}
+#testimonials-section .ts-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+#testimonials-section .ts-heading {
+  text-align: center;
+  margin-bottom: 48px;
+}
+#testimonials-section .ts-heading h2 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0;
+}
+#testimonials-section .ts-heading::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: #475d4b;
+  margin: 16px auto 0;
+  border-radius: 2px;
+}
+
+/* Slider track */
+#testimonials-section .ts-slider-wrap {
+  position: relative;
+}
+#testimonials-section .ts-track {
+  overflow: hidden;
+  border-radius: 20px;
+}
+#testimonials-section .ts-slides {
+  display: flex;
+  transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* Card */
+#testimonials-section .ts-card {
+  flex: 0 0 100%;
+  background: #262624;
+  border-radius: 20px;
+  padding: 36px 32px 32px;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid rgba(255,255,255,0.07);
+}
+@media (max-width: 480px) {
+  #testimonials-section .ts-card { padding: 28px 20px 24px; }
+}
+
+/* Logo badge */
+#testimonials-section .ts-logo {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: #475d4b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 0;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+/* Quote */
+#testimonials-section .ts-quote {
+  font-size: clamp(17px, 2.5vw, 21px);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.55;
+  margin: 0 0 22px;
+  padding-left: 64px; /* room for logo badge */
+}
+
+/* Divider */
+#testimonials-section .ts-divider {
+  width: 40px;
+  height: 2px;
+  background: #475d4b;
+  border-radius: 2px;
+  margin-bottom: 18px;
+}
+
+/* Attribution */
+#testimonials-section .ts-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0 0 4px;
+}
+#testimonials-section .ts-meta {
+  font-size: 13px;
+  color: rgba(255,255,255,0.60);
+  margin: 0 0 14px;
+  line-height: 1.5;
+}
+
+/* Context tag */
+#testimonials-section .ts-tag {
+  display: inline-block;
+  background: #475d4b;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.02em;
+}
+
+/* Arrow buttons */
+#testimonials-section .ts-arrows {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+#testimonials-section .ts-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.18);
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s, border-color 0.18s;
+  flex-shrink: 0;
+}
+#testimonials-section .ts-btn:hover {
+  background: #475d4b;
+  border-color: #475d4b;
+}
+#testimonials-section .ts-btn:focus-visible {
+  outline: 2px solid #475d4b;
+  outline-offset: 3px;
+}
+#testimonials-section .ts-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  display: block;
+}
+
+/* Dots */
+#testimonials-section .ts-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+#testimonials-section .ts-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.22);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+#testimonials-section .ts-dot.ts-active {
+  background: #475d4b;
+  transform: scale(1.35);
+}
+#testimonials-section .ts-dot:focus-visible {
+  outline: 2px solid #475d4b;
+  outline-offset: 3px;
+}
+
+/* CTA */
+#testimonials-section .ts-cta {
+  text-align: center;
+  margin-top: 56px;
+}
+#testimonials-section .ts-cta p {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.75);
+  margin: 0 0 18px;
+}
+#testimonials-section .ts-cta a {
+  display: inline-block;
+  background: #475d4b;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 900;
+  padding: 14px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  transition: background 0.18s;
+}
+#testimonials-section .ts-cta a:hover {
+  background: #243e38;
+}
+#testimonials-section .ts-cta a:focus-visible {
+  outline: 2px solid #475d4b;
+  outline-offset: 3px;
+}
+</style>
+
+<div class="ts-inner">
+  <div class="ts-heading">
+    <h2>עבדנו יחד – וזה מה שקרה</h2>
+  </div>
+
+  <div class="ts-slider-wrap">
+    <div class="ts-track" id="ts-track">
+      <div class="ts-slides" id="ts-slides" role="list">
+
+        <!-- Card 1 -->
+        <div class="ts-card" role="listitem" aria-label="המלצה 1 מתוך 4">
+          <div class="ts-logo" aria-hidden="true">גמ</div>
+          <p class="ts-quote">"יכולת מרשימה בפרויקטים רב-תחומיים — במיוחד מול רשויות מקומיות וגופים ציבוריים"</p>
+          <div class="ts-divider"></div>
+          <p class="ts-name">ארז אליסאי</p>
+          <p class="ts-meta">מנהל אגף איכות סביבה · אשכול רשויות גליל מערבי</p>
+          <span class="ts-tag">ניהול פסולת ורגולציה</span>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="ts-card" role="listitem" aria-label="המלצה 2 מתוך 4">
+          <div class="ts-logo" aria-hidden="true">רק</div>
+          <p class="ts-quote">"שליטה מלאה בדרישות הסביבתיות ופתרון מצבים מורכבים בזמן אמת"</p>
+          <div class="ts-divider"></div>
+          <p class="ts-name">דן יעקובי</p>
+          <p class="ts-meta">מנהל פרויקט · הקו הירוק – רכבת קלה</p>
+          <span class="ts-tag">פיקוח סביבתי בתשתיות</span>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="ts-card" role="listitem" aria-label="המלצה 3 מתוך 4">
+          <div class="ts-logo" aria-hidden="true">ב158</div>
+          <p class="ts-quote">"קידם נושאים במהירות וביעילות גם תחת לוחות זמנים צפופים"</p>
+          <div class="ts-divider"></div>
+          <p class="ts-name">קרן בכר צבי</p>
+          <p class="ts-meta">חברת אשכול · פרויקט ביאליק 158, חולון</p>
+          <span class="ts-tag">ייעוץ סביבתי בנדל"ן</span>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="ts-card" role="listitem" aria-label="המלצה 4 מתוך 4">
+          <div class="ts-logo" aria-hidden="true">כע</div>
+          <p class="ts-quote">"לקח אחריות, ניהל צוותים תחת לחץ אדיר — ושמר על מקצועיות לאורך כל הדרך"</p>
+          <div class="ts-divider"></div>
+          <p class="ts-name">שגיא בן-יואב</p>
+          <p class="ts-meta">מנכ"ל · הכלכלית עמק חפר</p>
+          <span class="ts-tag">ניהול אירוע סביבתי חריג</span>
+        </div>
+
+      </div><!-- /ts-slides -->
+    </div><!-- /ts-track -->
+
+    <!-- Arrows -->
+    <div class="ts-arrows" role="group" aria-label="ניווט המלצות">
+      <button class="ts-btn" id="ts-prev" aria-label="המלצה הבאה">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <button class="ts-btn" id="ts-next" aria-label="המלצה הקודמת">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+    </div>
+
+    <!-- Dots -->
+    <div class="ts-dots" role="tablist" aria-label="בחר המלצה">
+      <button class="ts-dot ts-active" role="tab" aria-selected="true"  aria-label="המלצה 1" data-idx="0"></button>
+      <button class="ts-dot"          role="tab" aria-selected="false" aria-label="המלצה 2" data-idx="1"></button>
+      <button class="ts-dot"          role="tab" aria-selected="false" aria-label="המלצה 3" data-idx="2"></button>
+      <button class="ts-dot"          role="tab" aria-selected="false" aria-label="המלצה 4" data-idx="3"></button>
+    </div>
+  </div><!-- /ts-slider-wrap -->
+
+  <!-- CTA -->
+  <div class="ts-cta">
+    <p>יש לכם פרויקט? בואו נדבר.</p>
+    <a href="#contactForm">יצירת קשר</a>
+  </div>
+</div><!-- /ts-inner -->
+
+<script>
+(function(){
+  var slides = document.getElementById('ts-slides');
+  var dots   = document.querySelectorAll('#testimonials-section .ts-dot');
+  var total  = dots.length;
+  var cur    = 0;
+
+  function goTo(n) {
+    cur = (n + total) % total;
+    slides.style.transform = 'translateX(' + (cur * 100) + '%)';
+    dots.forEach(function(d, i) {
+      d.classList.toggle('ts-active', i === cur);
+      d.setAttribute('aria-selected', i === cur ? 'true' : 'false');
+    });
+  }
+
+  document.getElementById('ts-prev').addEventListener('click', function(){ goTo(cur - 1); });
+  document.getElementById('ts-next').addEventListener('click', function(){ goTo(cur + 1); });
+
+  dots.forEach(function(d) {
+    d.addEventListener('click', function(){ goTo(parseInt(d.getAttribute('data-idx'), 10)); });
+  });
+
+  /* Keyboard */
+  document.getElementById('testimonials-section').addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight') goTo(cur - 1);
+    if (e.key === 'ArrowLeft')  goTo(cur + 1);
+  });
+
+  /* Touch swipe */
+  var touchStartX = null;
+  var track = document.getElementById('ts-track');
+  track.addEventListener('touchstart', function(e){ touchStartX = e.touches[0].clientX; }, {passive:true});
+  track.addEventListener('touchend', function(e){
+    if (touchStartX === null) return;
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 40) goTo(dx > 0 ? cur - 1 : cur + 1);
+    touchStartX = null;
+  }, {passive:true});
+})();
+</script>
+</section>
+<!-- ============================================================ -->
+
     <section style="background:#f8f4f1;font-family:'Assistant',sans-serif;color:#243e38;padding:2rem;border-top:1px solid #94937f;direction:rtl;text-align:right;" aria-label="מקורות ומידע רשמי">
       <div style="max-width:1200px;margin:0 auto;">
         <h2 style="font-size:1rem;font-weight:800;color:#475d4b;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #94937f;">מקורות ומידע רשמי</h2>
