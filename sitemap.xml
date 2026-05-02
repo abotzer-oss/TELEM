@@ -12,8 +12,16 @@
   <!-- עמוד אודות -->
   <url>
     <loc>https://telemenv.co.il/about.html</loc>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://telemenv.co.il/consulting/</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- עמודי שירות מרכזיים - מותאם למבנה התיקיות -->
