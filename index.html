@@ -348,6 +348,27 @@
     .home-section-desc { padding-inline: 16px; }
     .home-hero-desc  { padding-inline: 16px; }
 }
+
+/* ─ Service item links (SEO section) ─ */
+.service-link {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 4px 0;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: text-decoration-color 0.2s ease;
+}
+.service-link:hover,
+.service-link:focus {
+    text-decoration: underline;
+    text-decoration-color: #78836a;
+}
+.service-link:hover h3,
+.service-link:focus h3 {
+    color: #243e38 !important;
+}
 </style>
 </head>
 <body class="animate-fade-in">
@@ -974,10 +995,10 @@
         <h2 style="font-size:1.4rem;font-weight:800;color:#243e38;margin-bottom:1rem;">יועץ סביבתי לפרויקטי בנייה ותשתיות</h2>
         <h2 style="font-size:1.2rem;font-weight:700;color:#475d4b;margin-bottom:1.5rem;">שירותי ייעוץ סביבתי מקצועי</h2>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;">
-          <h3 style="font-size:1rem;font-weight:700;color:#475d4b;font-style:italic;">נספח אצירת אשפה להיתר בנייה</h3>
-          <h3 style="font-size:1rem;font-weight:700;color:#475d4b;font-style:italic;">נספח סביבתי לועדת תכנון</h3>
-          <h3 style="font-size:1rem;font-weight:700;color:#475d4b;font-style:italic;">סקר היסטורי Phase I לקרקע</h3>
-          <h3 style="font-size:1rem;font-weight:700;color:#475d4b;font-style:italic;">ניהול סביבתי לפרויקטים סולאריים</h3>
+          <a href="/waste/" class="service-link"><h3 style="font-size:1rem;font-weight:700;color:#475d4b;font-style:italic;">נספח אצירת אשפה להיתר בנייה</h3></a>
+          <a href="/env/" class="service-link"><h3 style="font-size:1rem;font-weight:700;color:#475d4b;font-style:italic;">נספח סביבתי לועדת תכנון</h3></a>
+          <a href="/history/" class="service-link"><h3 style="font-size:1rem;font-weight:700;color:#475d4b;font-style:italic;">סקר היסטורי Phase I לקרקע</h3></a>
+          <a href="/solar/" class="service-link"><h3 style="font-size:1rem;font-weight:700;color:#475d4b;font-style:italic;">ניהול סביבתי לפרויקטים סולאריים</h3></a>
         </div>
       </div>
     </section>
