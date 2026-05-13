@@ -467,7 +467,7 @@
                         <button type="submit" id="submitBtn" class="bg-telem-dark text-white py-5 rounded-xl font-black text-2xl hover:bg-telem-forest transition-all shadow-xl uppercase">שלח פנייה</button>
                     </form>
 
-                    <div id="successMessage" role="alert">
+                    <div id="successMessage" role="alert" aria-hidden="true">
                         <div class="text-5xl mb-4">✅</div>
                         <h3 class="text-2xl font-black text-telem-dark mb-2">פנייתך התקבלה!</h3>
                         <p class="text-telem-forest font-semibold text-lg">נחזור אליך בהקדם האפשרי.</p>
@@ -1148,7 +1148,9 @@
 
                 if (data.success) {
                     document.getElementById('contactForm').style.display = 'none';
-                    document.getElementById('successMessage').style.display = 'block';
+                    const successEl = document.getElementById('successMessage');
+                    successEl.style.display = 'block';
+                    successEl.removeAttribute('aria-hidden');
                 } else {
                     throw new Error('שגיאה');
                 }
