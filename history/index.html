@@ -157,6 +157,44 @@
 
 function _typeof(o) { "@babel/helpers - typeof"; reta-banner span { white-space: nowrap; }
 </style>
+<style id="mobile-cta-styles">
+@media (max-width: 768px) {
+  .whatsapp-float { display: none !important; }
+}
+#mobile-cta-banner {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  width: 100%; height: 56px;
+  z-index: 9999;
+  background: #243e38;
+  border-top: 3px solid #78836a;
+  direction: rtl;
+}
+@media (max-width: 768px) {
+  #mobile-cta-banner { display: flex; align-items: stretch; }
+  body { padding-bottom: 56px !important; }
+}
+#mobile-cta-banner a {
+  display: flex; align-items: center; justify-content: center;
+  gap: 8px; width: 50%; height: 100%;
+  color: #f8f4f1;
+  font-family: 'Assistant', sans-serif;
+  font-weight: 800; font-size: 15px;
+  text-decoration: none;
+  background: #243e38;
+  transition: background 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+#mobile-cta-banner a:hover,
+#mobile-cta-banner a:active { background: #475d4b; }
+#mobile-cta-banner .mcta-divider {
+  width: 1px; height: 60%; align-self: center;
+  background: #475d4b; flex-shrink: 0;
+}
+#mobile-cta-banner svg { width: 20px; height: 20px; flex-shrink: 0; }
+#mobile-cta-banner span { white-space: nowrap; }
+</style>
 </head>
 <body style="font-size: 100%;">
     <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;">סקר היסטורי סביבתי Phase I ESA לקרקע — איתור זיהומי קרקע ומי תהום, פענוח תצלומי אוויר וסיור בשטח</h1>
