@@ -296,6 +296,12 @@
             const WA_NUMBER = "972506890650";
             const LINKEDIN_URL = "https://www.linkedin.com/in/aviram-botzer-01782aa5/";
 
+            useEffect(() => {
+                const onPageShow = (e) => { if (e.persisted) setIsMenuOpen(false); };
+                window.addEventListener('pageshow', onPageShow);
+                return () => window.removeEventListener('pageshow', onPageShow);
+            }, []);
+
             const navigation = [
                 { name: 'דף הבית', href: '/' },
                 { name: 'נספח אצירת אשפה', href: '/waste/' },
@@ -323,6 +329,28 @@
                             </div>
                             <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden text-telem-dark"><Icon name={isMenuOpen ? "x" : "menu"} size={28} /></button>
                         </div>
+                        {isMenuOpen && (
+                            <nav className="lg:hidden bg-white border-t border-telem-khaki/20 px-4 py-4 flex flex-col gap-1 shadow-lg">
+                                {navigation.map(item => (
+                                    <a key={item.href} href={item.href}
+                                        className="text-right text-lg font-bold py-3 border-b border-telem-khaki/10 block text-telem-dark"
+                                        onClick={() => setIsMenuOpen(false)}>
+                                        {item.name}
+                                    </a>
+                                ))}
+                                <div className="grid grid-cols-2 gap-2 pt-3">
+                                    <button onClick={() => { setIsMenuOpen(false); window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("שלום, הגענו מהאתר ונשמח להתייעץ.")}`, '_blank'); }}
+                                        className="bg-telem-forest text-white py-3 rounded-lg font-bold flex justify-center items-center gap-2 text-sm">
+                                        <Icon name="message-circle" size={18} /> WhatsApp
+                                    </button>
+                                    <a href={`tel:${PHONE_NUMBER}`}
+                                        className="bg-telem-dark text-white py-3 rounded-lg font-bold flex justify-center items-center gap-2 text-sm"
+                                        onClick={() => setIsMenuOpen(false)}>
+                                        <Icon name="phone" size={18} /> התקשרו
+                                    </a>
+                                </div>
+                            </nav>
+                        )}
                     </header>
 
                     <AccessibilityMenu />
