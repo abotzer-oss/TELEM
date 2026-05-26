@@ -129,10 +129,24 @@
         .article-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
 
         .yt-facade { position: relative; cursor: pointer; border-radius: 16px; overflow: hidden; background: #000; }
-        .yt-facade img { width: 100%; display: block; opacity: 0.85; transition: opacity 0.2s; }
+        .yt-facade img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.85; transition: opacity 0.2s; }
         .yt-facade:hover img { opacity: 0.7; }
         .yt-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 68px; height: 48px; background: #ff0000; border-radius: 12px; display: flex; align-items: center; justify-content: center; transition: transform 0.2s; }
         .yt-facade:hover .yt-play { transform: translate(-50%,-50%) scale(1.1); }
+        .yt-carousel-outer { position: relative; }
+        .yt-carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; -ms-overflow-style: none; }
+        .yt-carousel::-webkit-scrollbar { display: none; }
+        .yt-slide { flex: 0 0 100%; scroll-snap-align: start; margin: 0; padding: 0; }
+        .yt-slide figcaption { padding: 14px 2px 0; }
+        .yt-slide figcaption h3 { font-size: 1rem; font-weight: 800; color: #243e38; line-height: 1.5; margin: 0; font-family: 'Assistant', sans-serif; }
+        .yt-btn { position: absolute; top: calc(50% - 22px); width: 40px; height: 40px; border-radius: 50%; background: #243e38; color: #fff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 2; transition: background 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.25); }
+        .yt-btn:hover { background: #475d4b; }
+        .yt-prev { right: -16px; }
+        .yt-next { left: -16px; }
+        .yt-dots { display: flex; justify-content: center; gap: 10px; padding-top: 18px; }
+        .yt-dot { width: 10px; height: 10px; border-radius: 50%; background: #d1cfc4; border: none; cursor: pointer; padding: 0; transition: background 0.2s; }
+        .yt-dot.active { background: #243e38; }
+        @media (max-width: 640px) { .yt-btn { display: none; } }
 
         @media (max-width: 768px) { .whatsapp-float { display: none !important; } }
         #mobile-cta-banner {
@@ -278,24 +292,45 @@
         </section>
 
         <!-- סרטונים -->
-        <section class="py-16 bg-white text-right">
+        <section class="py-16 bg-white text-right" aria-label="סרטונים">
             <div class="max-w-4xl mx-auto px-4">
                 <h2 class="text-3xl font-black text-telem-dark mb-2 uppercase tracking-tight">סרטונים</h2>
                 <p class="text-telem-khaki font-medium mb-10">הרצאות, ראיונות וסקירות וידאו מאבירם בוצר</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                    <!-- סרטון ראשי -->
-                    <div>
-                        <div class="yt-facade" data-id="WFvbelk3T60" style="aspect-ratio:16/9;">
-                            <img src="https://i.ytimg.com/vi/WFvbelk3T60/hqdefault.jpg" alt="סרטון: ניהול פסולת ברשויות מקומיות — אבירם בוצר" loading="lazy">
-                            <div class="yt-play" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg></div>
-                        </div>
+                <div class="yt-carousel-outer" style="padding:0 28px;" aria-label="קרוסלת סרטונים">
+                    <div class="yt-carousel" id="ytCarousel">
+
+                        <figure class="yt-slide">
+                            <div class="yt-facade" data-id="WFvbelk3T60" style="aspect-ratio:16/9;">
+                                <img src="https://i.ytimg.com/vi/WFvbelk3T60/hqdefault.jpg" alt="תכנון חדרי אשפה — חוויית משתמש ואיך זה נראה מהעניינים של אנשי המקצוע" loading="lazy">
+                                <div class="yt-play" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg></div>
+                            </div>
+                            <figcaption>
+                                <h3>תכנון חדרי אשפה — חוויית משתמש ואיך זה נראה מהעניינים של אנשי המקצוע</h3>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="yt-slide">
+                            <div style="display:flex;justify-content:center;">
+                                <div class="yt-facade" data-id="j_nMF6hcdR4" style="aspect-ratio:9/16;width:min(100%,260px);">
+                                    <img src="https://i.ytimg.com/vi/j_nMF6hcdR4/hqdefault.jpg" alt="תכנון שוט אשפה (פיר אשפה) לקוי — מה ההשלכות ואיך לטפל" loading="lazy">
+                                    <div class="yt-play" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg></div>
+                                </div>
+                            </div>
+                            <figcaption>
+                                <h3>תכנון שוט אשפה (פיר אשפה) לקוי — מה ההשלכות ואיך לטפל</h3>
+                            </figcaption>
+                        </figure>
+
                     </div>
-                    <!-- קליפ קצר -->
-                    <div class="flex justify-center md:justify-start">
-                        <div class="yt-facade" data-id="j_nMF6hcdR4" style="aspect-ratio:9/16; max-width:240px; width:100%;">
-                            <img src="https://i.ytimg.com/vi/j_nMF6hcdR4/hqdefault.jpg" alt="קליפ קצר: סביבה בכותרות — אבירם בוצר" loading="lazy" style="height:100%;object-fit:cover;">
-                            <div class="yt-play" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg></div>
-                        </div>
+                    <button class="yt-btn yt-prev" aria-label="סרטון קודם" onclick="ytNav(-1)">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
+                    <button class="yt-btn yt-next" aria-label="סרטון הבא" onclick="ytNav(1)">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+                    </button>
+                    <div class="yt-dots" role="tablist" aria-label="ניווט סרטונים">
+                        <button class="yt-dot active" role="tab" aria-selected="true" aria-label="סרטון 1" onclick="ytGo(0)"></button>
+                        <button class="yt-dot" role="tab" aria-selected="false" aria-label="סרטון 2" onclick="ytGo(1)"></button>
                     </div>
                 </div>
             </div>
@@ -445,6 +480,34 @@
                 this.appendChild(iframe);
             });
         });
+
+        var ytCarousel = document.getElementById('ytCarousel');
+        var ytCurrent = 0;
+        var ytSlides = ytCarousel ? ytCarousel.querySelectorAll('.yt-slide') : [];
+        var ytDots = document.querySelectorAll('.yt-dot');
+        function ytUpdateDots() {
+            ytDots.forEach(function(d, i) {
+                d.classList.toggle('active', i === ytCurrent);
+                d.setAttribute('aria-selected', i === ytCurrent ? 'true' : 'false');
+            });
+        }
+        function ytGo(idx) {
+            if (!ytCarousel) return;
+            ytCurrent = Math.max(0, Math.min(idx, ytSlides.length - 1));
+            ytCarousel.scrollTo({ left: ytCurrent * ytCarousel.offsetWidth, behavior: 'smooth' });
+            ytUpdateDots();
+        }
+        function ytNav(dir) { ytGo(ytCurrent + dir); }
+        if (ytCarousel) {
+            var ytScrollTimer;
+            ytCarousel.addEventListener('scroll', function() {
+                clearTimeout(ytScrollTimer);
+                ytScrollTimer = setTimeout(function() {
+                    ytCurrent = Math.round(ytCarousel.scrollLeft / ytCarousel.offsetWidth);
+                    ytUpdateDots();
+                }, 80);
+            });
+        }
 
         document.addEventListener('DOMContentLoaded', () => {
             if (window.lucide) lucide.createIcons();
