@@ -128,6 +128,12 @@
         .article-card { transition: all 0.3s ease; }
         .article-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
 
+        .yt-facade { position: relative; cursor: pointer; border-radius: 16px; overflow: hidden; background: #000; }
+        .yt-facade img { width: 100%; display: block; opacity: 0.85; transition: opacity 0.2s; }
+        .yt-facade:hover img { opacity: 0.7; }
+        .yt-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 68px; height: 48px; background: #ff0000; border-radius: 12px; display: flex; align-items: center; justify-content: center; transition: transform 0.2s; }
+        .yt-facade:hover .yt-play { transform: translate(-50%,-50%) scale(1.1); }
+
         @media (max-width: 768px) { .whatsapp-float { display: none !important; } }
         #mobile-cta-banner {
             display: none; position: fixed;
@@ -271,6 +277,30 @@
             </div>
         </section>
 
+        <!-- סרטונים -->
+        <section class="py-16 bg-white text-right">
+            <div class="max-w-4xl mx-auto px-4">
+                <h2 class="text-3xl font-black text-telem-dark mb-2 uppercase tracking-tight">סרטונים</h2>
+                <p class="text-telem-khaki font-medium mb-10">הרצאות, ראיונות וסקירות וידאו מאבירם בוצר</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                    <!-- סרטון ראשי -->
+                    <div>
+                        <div class="yt-facade" data-id="WFvbelk3T60" style="aspect-ratio:16/9;">
+                            <img src="https://i.ytimg.com/vi/WFvbelk3T60/hqdefault.jpg" alt="סרטון: ניהול פסולת ברשויות מקומיות — אבירם בוצר" loading="lazy">
+                            <div class="yt-play" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg></div>
+                        </div>
+                    </div>
+                    <!-- קליפ קצר -->
+                    <div class="flex justify-center md:justify-start">
+                        <div class="yt-facade" data-id="j_nMF6hcdR4" style="aspect-ratio:9/16; max-width:240px; width:100%;">
+                            <img src="https://i.ytimg.com/vi/j_nMF6hcdR4/hqdefault.jpg" alt="קליפ קצר: סביבה בכותרות — אבירם בוצר" loading="lazy" style="height:100%;object-fit:cover;">
+                            <div class="yt-play" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- CTA תחתון -->
         <section class="py-16 bg-telem-dark text-white text-center">
             <div class="max-w-4xl mx-auto px-4">
@@ -403,6 +433,19 @@
             alert('בשמחה: האתר משתמש בעוגיות כדי לשפר חוויית שימוש, למדוד תנועה ולתמוך בתפקוד בסיסי של האתר.');
             closeElement('cookieBanner');
         }
+        document.querySelectorAll('.yt-facade').forEach(function(facade) {
+            facade.addEventListener('click', function() {
+                var id = this.dataset.id;
+                var iframe = document.createElement('iframe');
+                iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0';
+                iframe.allow = 'autoplay; encrypted-media';
+                iframe.allowFullscreen = true;
+                iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:0;';
+                this.innerHTML = '';
+                this.appendChild(iframe);
+            });
+        });
+
         document.addEventListener('DOMContentLoaded', () => {
             if (window.lucide) lucide.createIcons();
             const savedFontScale = localStorage.getItem('fontScale');
