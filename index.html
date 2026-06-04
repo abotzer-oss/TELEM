@@ -226,6 +226,12 @@
             padding: 18px 20px;
         }
 
+        /* Lift the cookie banner above the 56px sticky mobile CTA bar so it
+           does not cover the WhatsApp/Call buttons (z-index 10002 > 9999). */
+        @media (max-width: 768px) {
+            .cookie-banner { bottom: calc(56px + 12px); }
+        }
+
         .high-contrast { background: #000 !important; color: #fff !important; }
         .high-contrast header, .high-contrast section, .high-contrast footer,
         .high-contrast aside, .high-contrast div, .high-contrast nav {
@@ -401,7 +407,7 @@
     </button>
 
     <div id="accessibilityPanel" class="accessibility-panel hidden text-right" role="dialog" aria-label="תפריט נגישות">
-        <h2 class="text-xl font-black text-telem-dark mb-4">תפריט נגישות</h2>
+        <div class="text-xl font-black text-telem-dark mb-4">תפריט נגישות</div>
         <div class="grid grid-cols-1 gap-3">
             <button type="button" onclick="changeFontSize(1)" class="bg-telem-dark text-white py-3 px-4 rounded-xl font-bold">הגדלת טקסט</button>
             <button type="button" onclick="changeFontSize(-1)" class="bg-telem-forest text-white py-3 px-4 rounded-xl font-bold">הקטנת טקסט</button>

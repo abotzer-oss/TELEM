@@ -68,6 +68,11 @@ CSS_BLOCK = """<style id="mobile-cta-styles">
 }
 #mobile-cta-banner svg { width: 20px; height: 20px; flex-shrink: 0; }
 #mobile-cta-banner span { white-space: nowrap; }
+/* Keep the cookie-consent banner above the 56px sticky CTA bar on mobile. */
+@media (max-width: 768px) {
+  .cookie-banner { bottom: calc(56px + 12px); }
+  .fixed.bottom-0.z-\\[9998\\] { bottom: 56px !important; }
+}
 </style>"""
 
 HTML_BLOCK = """<div id="mobile-cta-banner" role="navigation" aria-label="צרו קשר מהיר">

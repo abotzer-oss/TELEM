@@ -196,6 +196,11 @@
 }
 #mobile-cta-banner svg { width: 20px; height: 20px; flex-shrink: 0; }
 #mobile-cta-banner span { white-space: nowrap; }
+/* Lift the cookie-consent banner above the 56px sticky CTA bar on mobile
+   (banner z-index 9998 < CTA 9999, so they otherwise collide visually). */
+@media (max-width: 768px) {
+  .fixed.bottom-0.z-\[9998\] { bottom: 56px !important; }
+}
 </style>
 </head>
 <body style="font-size: 100%;">
