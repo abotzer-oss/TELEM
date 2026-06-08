@@ -139,9 +139,6 @@
             }
         }
     </script>
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap');
@@ -211,401 +208,18 @@
 </style>
 </head>
 <body style="font-size: 100%;">
-    <div id="root"><div class="min-h-screen"><header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 border-b border-telem-khaki/10"><div class="max-w-7xl mx-auto px-4 h-24 flex justify-between items-center"><a href="/" class="hover:opacity-80 transition-all flex items-center"><div class="flex items-center min-w-[150px] "><img src="../logo.png" alt="תלם - ניהול סביבה ופסולת" class="h-16 md:h-20 w-auto object-contain block"></div></a><nav class="hidden lg:flex gap-8"><a href="/" class="text-sm font-bold transition-colors text-telem-forest hover:text-telem-moss">דף הבית</a><a href="/waste/" class="text-sm font-bold transition-colors text-telem-forest hover:text-telem-moss">נספח אצירת אשפה</a><a href="/solar/" class="text-sm font-bold transition-colors text-telem-forest hover:text-telem-moss">פרויקטים סולאריים</a><a href="/env/" class="text-sm font-bold transition-colors text-telem-dark border-b-2 border-telem-khaki">נספח סביבתי</a><a href="/history/" class="text-sm font-bold transition-colors text-telem-forest hover:text-telem-moss">סקר היסטורי</a><a href="/about.html" class="text-sm font-bold transition-colors text-telem-forest hover:text-telem-moss">אודות</a></nav><div class="hidden md:flex items-center gap-4"><a href="https://www.linkedin.com/in/aviram-botzer-01782aa5/" target="_blank" rel="noopener noreferrer" class="text-telem-dark hover:text-telem-moss transition-colors" title="LinkedIn"><i data-lucide="linkedin" class="" style="width: 24px; height: 24px;"></i></a><a href="tel:0506890650" class="bg-telem-dark text-white px-6 py-2.5 rounded-xl font-bold hover:bg-telem-forest transition-all shadow-md">050-6890650</a></div><button class="lg:hidden text-telem-dark"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="menu" aria-hidden="true" class="lucide lucide-menu" style="width: 28px; height: 28px;"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></button></div></header><div class="fixed bottom-6 left-6 z-[9999]"><button class="w-14 h-14 bg-telem-dark text-white rounded-full shadow-2xl flex items-center justify-center hover:bg-telem-forest transition-all border-2 border-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="accessibility" aria-hidden="true" class="lucide lucide-accessibility" style="width: 30px; height: 30px;"><circle cx="16" cy="4" r="1"></circle><path d="m18 19 1-7-6 1"></path><path d="m5 8 3-3 5.5 3-2.36 3.5"></path><path d="M4.24 14.5a5 5 0 0 0 6.88 6"></path><path d="M13.76 17.5a5 5 0 0 0-6.88-6"></path></svg></button></div><div class="fixed bottom-0 left-0 w-full bg-telem-black text-white p-6 z-[9998] backdrop-blur-md border-t border-telem-moss shadow-2xl animate-fade-in"><div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-right"><div class="flex-1"><div class="text-xl font-black text-telem-khaki mb-2 italic">אוהבים עוגיות? גם אנחנו!</div><p class="text-gray-300 text-sm md:text-base font-medium">האתר של תלם משתמש בעוגיות (Cookies) על מנת להבטיח לך את חווית הגלישה הטובה ביותר בהתאם לחוק הגנת הפרטיות.</p></div><button class="bg-telem-forest text-white px-10 py-3 rounded-xl font-black hover:bg-telem-moss transition-all">הבנתי, תודה!</button></div></div><main class="pt-40 pb-24 animate-fade-in max-w-4xl mx-auto px-4"><a href="/" class="inline-flex items-center gap-2 text-telem-forest font-bold mb-8 hover:text-telem-dark transition-colors"> חזרה לדף הבית</a><h1 class="text-4xl md:text-6xl font-black text-telem-black mb-8 leading-tight italic">נספח סביבתי שמקדם את הפרויקט — לא תוקע אותו בוועדה</h1><div class="space-y-8 text-telem-black text-lg font-medium leading-relaxed"><p class="text-2xl text-telem-forest font-bold italic border-r-4 border-telem-khaki pr-6">נספח סביבתי הוא מסמך מקצועי שמלווה תכניות בנייה, אישורי תב"ע ופרויקטים מורכבים — והוא לעיתים קרובות ההבדל בין פרויקט שמתקדם בקצב לבין פרויקט שנתקע בוועדה.</p><p>הנספח מציג את ההיבטים הסביבתיים של הפרויקט, מזהה השפעות פוטנציאליות, ומציע פתרונות שעומדים בדרישות הרשויות. אצלנו בתלם, בליווי אבירם בוצר — יועץ סביבתי עם 15 שנות ניסיון, חלקן בתפקידי מפתח בתעשייה — אתם מקבלים נספח סביבתי שמדבר את השפה של הוועדה, מזהה מראש את הנקודות הרגישות, ועובר אישור בלי גרירת רגליים מיותרת.</p><a href="tel:0506890650" class="inline-flex items-center gap-3 bg-telem-dark text-white px-8 py-4 rounded-2xl font-black text-lg hover:bg-telem-forest transition-all shadow-lg italic">התקשרו לייעוץ ראשוני</a><section><h2 class="text-2xl font-black text-telem-dark mb-4 italic">מתי נדרש נספח סביבתי?</h2><p class="mb-6">לקוחות מגיעים אלינו בחמישה תרחישים מרכזיים — בכל אחד מהם, נספח סביבתי הוא דרישה רגולטורית או צעד מקצועי שחוסך זמן וכסף בהמשך הדרך.</p><div class="space-y-6"><div class="bg-white p-6 rounded-[32px] border border-telem-khaki/20 shadow"><h3 class="font-black text-telem-dark text-xl mb-3 italic">נספח סביבתי להיתר בנייה</h3><p>זה התרחיש הנפוץ ביותר. רשויות מקומיות וועדות תכנון דורשות נספח סביבתי כחלק מבקשת היתר בנייה — במיוחד בפרויקטים גדולים, מסחריים, תעשייתיים, או כאלה הסמוכים לאוכלוסייה. הנספח מציג איך הפרויקט משפיע על הסביבה — אוויר, רעש, פסולת, שפכים, ניקוז — ומה הצעדים שיינקטו כדי לצמצם השפעות.</p></div><div class="bg-white p-6 rounded-[32px] border border-telem-khaki/20 shadow"><h3 class="font-black text-telem-dark text-xl mb-3 italic">נספח סביבתי לתב"ע</h3><p>לתכניות מתאר ולתב"ע נדרש נספח סביבתי מורחב, שכולל ניתוח השפעות ארוכות-טווח. בתב"עות מורכבות, הנספח גם מתאם בין דרישות סטטוטוריות שונות — מינהל התכנון, המשרד להגנת הסביבה, רשות המים — וזה השלב שבו ניסיון מעשי מול הוועדות חוסך חודשי דיונים מיותרים.</p></div><div class="bg-white p-6 rounded-[32px] border border-telem-khaki/20 shadow"><h3 class="font-black text-telem-dark text-xl mb-3 italic">נספח נופי-סביבתי</h3><p>בפרויקטים באזורים בעלי רגישות נופית — שטחים פתוחים, סביבות חקלאיות, אזורים סמוכים לשמורות טבע, שטחי גנים לאומיים — נדרש נספח נופי-סביבתי. הוא משלב היבטים סביבתיים מסורתיים (אוויר, רעש, מים) עם היבטי נוף וחזות.</p></div><div class="bg-white p-6 rounded-[32px] border border-telem-khaki/20 shadow"><h3 class="font-black text-telem-dark text-xl mb-3 italic">נספח סביבתי לפרויקטים תעשייתיים ומסחריים</h3><p>מפעלים, מחסנים לוגיסטיים, תחנות דלק, מתחמי מסחר גדולים, בתי מלאכה — כולם דורשים נספח סביבתי מורחב. במקרים מורכבים, הנספח מתפתח לתסקיר השפעה על הסביבה (תש"ס) המלא.</p></div><div class="bg-white p-6 rounded-[32px] border border-telem-khaki/20 shadow"><h3 class="font-black text-telem-dark text-xl mb-3 italic">ליווי הליכי רגולציה והרחבה</h3><p>לקוחות שכבר עברו את שלב ההקמה מגיעים אלינו לעדכוני נספח לקראת רישוי עסק, הרחבת פעילות, או שינוי ייעוד. במקרים האלה, הנספח כולל גם דיווחי PRTR (מפל"ס), עדכוני פעילות, ולעיתים סקר שפכים תעשייתיים מול תאגיד המים.</p></div></div></section><section><h2 class="text-2xl font-black text-telem-dark mb-4 italic">התהליך — איך אנחנו מכינים נספח סביבתי</h2><p class="mb-6">תהליך הכנת הנספח אצלנו מובנה בחמישה שלבים, ואורך בממוצע 3 עד 6 שבועות:</p><ul class="space-y-4 pr-4"><li class="flex items-start gap-3"><span><strong>בחינת הפרויקט והגדרת הדרישות:</strong> מתחילים בפגישת אפיון. מבינים את הפרויקט ומזהים מי הרשות המאשרת ומה הדרישות הספציפיות שלה.</span></li><li class="flex items-start gap-3"><span><strong>איסוף נתונים סביבתיים:</strong> איסוף נתוני בסיס: סקרים קיימים, רישומי איכות אוויר, מפלסי מי תהום, סקרי רעש, נתוני תחבורה, ומידע אקולוגי.</span></li><li class="flex items-start gap-3"><span><strong>ניתוח השפעות והערכת סיכונים:</strong> ניתוח שיטתי של ההשפעות הצפויות בכל היבט: אוויר, רעש, מים, פסולת, קרקע, נוף, אקולוגיה, ותחבורה.</span></li><li class="flex items-start gap-3"><span><strong>ניסוח הנספח והגשתו:</strong> המסמך נכתב לפי הפורמט המדויק שדורשת הרשות הספציפית, עם בקרה כפולה לפני הגשה.</span></li><li class="flex items-start gap-3"><span><strong>ליווי בוועדה ועד אישור:</strong> אנחנו מטפלים בכל ההתכתבות ונוכחים בדיונים אם נדרש — עד שיש אישור בתיק.</span></li></ul></section><div class="bg-white p-8 rounded-[32px] border border-telem-khaki/20 shadow-lg my-4"><h2 class="text-2xl font-black text-telem-dark mb-6 italic underline decoration-telem-khaki">שאלות נפוצות</h2><div class="space-y-6"><div><h3 class="font-black text-telem-dark text-xl mb-2 italic">כמה זמן לוקח להכין נספח סביבתי?</h3><p>בהיתר בנייה רגיל — 3 עד 5 שבועות. בנספח לתב"ע — 6 עד 10 שבועות. תהליך האישור עצמו תלוי בקצב הוועדה ויכול להוסיף עוד 4 עד 8 שבועות.</p></div><div><h3 class="font-black text-telem-dark text-xl mb-2 italic">מה ההבדל בין נספח סביבתי לתסקיר השפעה על הסביבה?</h3><p>נספח סביבתי הוא מסמך תמציתי ונדרש ברוב היתרי הבנייה. תסקיר השפעה על הסביבה (תש"ס) הוא מסמך מקיף בהרבה, נדרש רק בפרויקטים בעלי השפעה גדולה לפי תקנות התכנון והבנייה, כולל דיון פומבי.</p></div><div><h3 class="font-black text-telem-dark text-xl mb-2 italic">האם צריך נספח סביבתי לכל היתר בנייה?</h3><p>לא לכל היתר. לבית פרטי קטן — בדרך כלל לא. לפרויקט מסחרי, תעשייתי, רב-קומתי, או באזור בעל רגישות סביבתית — כן. הוועדה המקומית קובעת.</p></div><div><h3 class="font-black text-telem-dark text-xl mb-2 italic">מה קורה אם הוועדה דורשת תיקונים בנספח?</h3><p>בעבודה שלנו זה כלול. אנחנו ממשיכים ללוות עד אישור בתיק, בלי תוספת תשלום על תיקונים שגרתיים.</p></div></div></div><section><h2 class="text-2xl font-black text-telem-dark mb-4 italic">קישורים ומשאבים רשמיים לנספח סביבתי</h2><ul class="space-y-4 pr-2"><li class="flex items-start gap-3"><span><a href="https://www.gov.il/he/departments/ministry_of_environmental_protection" target="_blank" rel="noopener noreferrer" class="text-telem-forest font-bold underline hover:text-telem-dark">המשרד להגנת הסביבה</a> — הגוף המוביל בקביעת מדיניות סביבתית ובאישורי נספחים סביבתיים בפרויקטים מורכבים.</span></li><li class="flex items-start gap-3"><span><a href="https://www.gov.il/he/departments/ministry_of_interior" target="_blank" rel="noopener noreferrer" class="text-telem-forest font-bold underline hover:text-telem-dark">מינהל התכנון — משרד הפנים</a> — הגוף המאסדר את הליכי התכנון, התב"ע והנפקת היתרי בנייה ברמה הארצית.</span></li><li class="flex items-start gap-3"><span><a href="https://mavat.iplan.gov.il/" target="_blank" rel="noopener noreferrer" class="text-telem-forest font-bold underline hover:text-telem-dark">מערכת מידע תכנוני iplan (mavat)</a> — בדיקת ייעוד קרקע, היסטוריית תכניות ותנאי הוועדה המחוזית לכל מגרש.</span></li><li class="flex items-start gap-3"><span><a href="https://www.water.gov.il/" target="_blank" rel="noopener noreferrer" class="text-telem-forest font-bold underline hover:text-telem-dark">רשות המים בישראל</a> — דרישות בנושא ניקוז, שפכים, ושימור משאבי מים בפרויקטים סביבתיים.</span></li><li class="flex items-start gap-3"><span><a href="https://www.parks.org.il" target="_blank" rel="noopener noreferrer" class="text-telem-forest font-bold underline hover:text-telem-dark">רשות הטבע והגנים</a> — גוף סטטוטורי הדורש התייחסות בנספחים סביבתיים בפרויקטים סמוכים לשמורות טבע.</span></li><li class="flex items-start gap-3"><span><a href="https://www.gov.il/he/departments/israel_land_authority" target="_blank" rel="noopener noreferrer" class="text-telem-forest font-bold underline hover:text-telem-dark">רשות מקרקעי ישראל (רמ"י)</a> — דורשת נספחים סביבתיים בהקצאות קרקע ובשינויי ייעוד.</span></li><li class="flex items-start gap-3"><span><a href="https://www.gov.il/he/departments/iplan/govil-landing-page" target="_blank" rel="noopener noreferrer" class="text-telem-forest font-bold underline hover:text-telem-dark">מינהל התכנון הארצי</a> — הגוף הממשלתי המסדיר מדיניות תכנון ואישורים לסקרים בהליכי רישוי.</span></li><li class="flex items-start gap-3"><span><a href="https://www.gov.il/he/pages/planning_env_impact" target="_blank" rel="noopener noreferrer" class="text-telem-forest font-bold underline hover:text-telem-dark">תקנות התכנון והבנייה — תסקירי השפעה על הסביבה</a> — התקנות הקובעות מתי נדרש תסקיר מלא לעומת נספח סביבתי.</span></li></ul></section><section><h2 class="text-2xl font-black text-telem-dark mb-4 italic">שירותים משלימים</h2><div class="grid grid-cols-1 md:grid-cols-3 gap-4"><a href="/history/" class="block bg-white p-6 rounded-2xl border border-telem-khaki/20 shadow hover:shadow-md hover:border-telem-forest transition-all group"><h3 class="font-black text-telem-dark text-lg mb-1 italic group-hover:text-telem-forest">סקר היסטורי לקרקע</h3><p class="text-sm text-telem-black/70">בדיקת זיהום קרקע היסטורית — לעיתים קרובות שלב מקדים לנספח סביבתי.</p></a><a href="/waste/" class="block bg-white p-6 rounded-2xl border border-telem-khaki/20 shadow hover:shadow-md hover:border-telem-forest transition-all group"><h3 class="font-black text-telem-dark text-lg mb-1 italic group-hover:text-telem-forest">נספח אצירת אשפה</h3><p class="text-sm text-telem-black/70">תכנון מערך אצירת פסולת — מרכיב חיוני בנספח להיתר בנייה.</p></a><a href="/guides/" class="block bg-white p-6 rounded-2xl border border-telem-khaki/20 shadow hover:shadow-md hover:border-telem-forest transition-all group"><h3 class="font-black text-telem-dark text-lg mb-1 italic group-hover:text-telem-forest">מרכז ידע ורגולציה</h3><p class="text-sm text-telem-black/70">מדריכים על נספחים, תסקירי השפעה, ותהליכי אישור.</p></a></div></section></div><section class="mt-16 pt-8 border-t border-telem-khaki/20"><h2 class="text-2xl font-black text-telem-dark mb-6 italic tracking-tight">נספח סביבתי להיתר בנייה ותב"ע בישראל</h2><div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4"><h3 class="text-lg font-bold text-telem-forest italic">דרישות המשרד להגנת הסביבה</h3><h3 class="text-lg font-bold text-telem-forest italic">נספח סביבתי לוועדה מקומית</h3><h3 class="text-lg font-bold text-telem-forest italic">אישור סביבתי לפרויקט בנייה</h3></div></section><div class="mt-20 bg-telem-dark text-white rounded-[40px] p-10 text-center shadow-2xl relative overflow-hidden text-telem-cream"><h3 class="text-3xl font-black mb-6 italic tracking-tight">צריכים נספח סביבתי לפרויקט שלכם?</h3><p class="text-telem-cream/80 mb-10 text-xl font-medium max-w-2xl mx-auto italic">אנחנו בתלם, עם הניסיון שצברנו במאות פרויקטים בתחום הסביבה — בליווי אישי של אבירם בוצר ובהבנה עמוקה של איך ועדות התכנון, המשרד להגנת הסביבה ומינהל התכנון רוצים לראות נספח — מכינים מסמכים שעוברים אישור ולא מתישים את הפרויקט. דברו איתנו לייעוץ ראשוני — בלי התחייבות.</p><div class="flex flex-col sm:flex-row gap-4 justify-center"><a href="tel:0506890650" class="bg-telem-forest text-white px-10 py-4 rounded-2xl font-black text-xl hover:bg-telem-moss transition-all shadow-lg flex items-center justify-center gap-3 italic">התקשרו: 050-6890650</a><a href="https://wa.me/972506890650" target="_blank" rel="noopener noreferrer" class="border-2 border-telem-khaki text-white px-10 py-4 rounded-2xl font-black text-xl hover:bg-white/10 transition-all italic flex items-center justify-center gap-3">WhatsApp</a><a href="/#contactForm" class="border-2 border-white/40 text-white px-10 py-4 rounded-2xl font-black text-xl hover:bg-white/10 transition-all italic">שלחו פנייה</a></div></div></main><footer class="bg-telem-dark text-white py-20 px-4 text-right border-t border-telem-forest/30"><div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-16"><div><div class="flex items-center min-w-[150px] mb-8"><img src="../logo.png" alt="תלם - ניהול סביבה ופסולת" class="h-16 md:h-20 w-auto object-contain block"></div><p class="text-telem-cream/60 text-xl max-w-md font-medium italic">אבירם בוצר - מומחה לייעוץ סביבתי ותכנון אצירת אשפה.</p></div><div class="flex flex-col md:items-end gap-6 text-telem-cream font-bold text-lg"><div class="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20"><span>aviram@telemenv.co.il</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="mail" aria-hidden="true" class="lucide lucide-mail text-telem-khaki" style="width: 24px; height: 24px;"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg></div><div class="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20"><span>050-6890650</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="phone" aria-hidden="true" class="lucide lucide-phone text-telem-khaki" style="width: 24px; height: 24px;"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg></div><a href="https://www.linkedin.com/in/aviram-botzer-01782aa5/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20 hover:text-white transition-all"><span>פרופיל LinkedIn</span><i data-lucide="linkedin" class="text-telem-khaki" style="width: 24px; height: 24px;"></i></a><div class="flex gap-4 mt-8 text-sm font-bold text-telem-khaki"><button class="hover:underline italic">הצהרת נגישות</button><span class="opacity-30">|</span><button class="hover:underline italic">מדיניות פרטיות</button></div><p class="mt-4 text-sm font-normal opacity-30 italic">© 2026 תלם - ניהול סביבה ופסולת. כל הזכויות שמורות.</p></div></div></footer></div></div>
+    <div id="root"><div class="min-h-screen"><header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 border-b border-telem-khaki/10"><div class="max-w-7xl mx-auto px-4 h-24 flex justify-between items-center"><a href="/" class="hover:opacity-80 transition-all flex items-center"><div class="flex items-center min-w-[150px] "><img src="../logo.png" alt="תלם - ניהול סביבה ופסולת" class="h-16 md:h-20 w-auto object-contain block"></div></a><nav class="hidden lg:flex gap-8"><a href="/" class="text-sm font-bold transition-colors text-telem-forest hover:text-telem-moss">דף הבית</a><a href="/waste/" class="text-sm font-bold transition-colors text-telem-forest hover:text-telem-moss">נספח אצירת אשפה</a><a href="/solar/" class="text-sm font-bold transition-colors text-telem-forest hover:text-telem-moss">פרויקטים סולאריים</a><a href="/env/" class="text-sm font-bold transition-colors text-telem-dark border-b-2 border-telem-khaki">נספח סביבתי</a><a href="/history/" class="text-sm font-bold transition-colors text-telem-forest hover:text-telem-moss">סקר היסטורי</a><a href="/about.html" class="text-sm font-bold transition-colors text-telem-forest hover:text-telem-moss">אודות</a></nav><div class="hidden md:flex items-center gap-4"><a href="https://www.linkedin.com/in/aviram-botzer-01782aa5/" target="_blank" rel="noopener noreferrer" class="text-telem-dark hover:text-telem-moss transition-colors" title="LinkedIn"><i data-lucide="linkedin" class="" style="width: 24px; height: 24px;"></i></a><a href="tel:0506890650" class="bg-telem-dark text-white px-6 py-2.5 rounded-xl font-bold hover:bg-telem-forest transition-all shadow-md">050-6890650</a></div><button id="histMenuBtn" aria-label="פתח תפריט" aria-expanded="false" aria-controls="histMobileMenu" class="lg:hidden text-telem-dark"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="menu" aria-hidden="true" class="lucide lucide-menu" style="width: 28px; height: 28px;"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></button></div></header><div id="histMobileMenu" class="lg:hidden bg-white shadow-2xl border-t border-telem-khaki/20 p-6" style="display:none;position:fixed;top:96px;left:0;right:0;z-index:95;"><nav class="flex flex-col gap-4 text-right"><a href="/" class="text-telem-dark font-bold hover:text-telem-forest">דף הבית</a><a href="/waste/" class="text-telem-dark font-bold hover:text-telem-forest">נספח אצירת אשפה</a><a href="/solar/" class="text-telem-dark font-bold hover:text-telem-forest">פרויקטים סולאריים</a><a href="/env/" class="text-telem-dark font-bold hover:text-telem-forest">נספח סביבתי</a><a href="/history/" class="text-telem-dark font-bold hover:text-telem-forest">סקר היסטורי</a><a href="/about.html" class="text-telem-dark font-bold hover:text-telem-forest">אודות</a></nav></div><div id="accessibilityPanel" class="hidden bg-white shadow-2xl rounded-2xl border border-telem-khaki/20 p-6 text-right" style="position:fixed;bottom:88px;left:24px;z-index:9999;width:240px;" role="dialog" aria-label="תפריט נגישות"><div class="text-xl font-black text-telem-dark mb-4">תפריט נגישות</div><div class="flex flex-col gap-3"><button type="button" onclick="changeFontSize(1)" class="bg-telem-dark text-white py-3 px-4 rounded-xl font-bold">הגדלת טקסט</button><button type="button" onclick="changeFontSize(-1)" class="bg-telem-forest text-white py-3 px-4 rounded-xl font-bold">הקטנת טקסט</button><button type="button" onclick="toggleHighContrast()" class="bg-telem-moss text-white py-3 px-4 rounded-xl font-bold">ניגודיות גבוהה</button><button type="button" onclick="toggleUnderlineLinks()" class="bg-telem-khaki text-telem-dark py-3 px-4 rounded-xl font-bold">קו תחתון לקישורים</button><button type="button" onclick="resetAccessibility()" class="border border-telem-khaki text-telem-dark py-3 px-4 rounded-xl font-bold">איפוס</button></div></div><div class="fixed bottom-6 left-6 z-[9999]"><button id="accessibilityToggle" onclick="toggleElement('accessibilityPanel')" aria-controls="accessibilityPanel" aria-expanded="false" aria-label="פתח תפריט נגישות" class="w-14 h-14 bg-telem-dark text-white rounded-full shadow-2xl flex items-center justify-center hover:bg-telem-forest transition-all border-2 border-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="accessibility" aria-hidden="true" class="lucide lucide-accessibility" style="width: 30px; height: 30px;"><circle cx="16" cy="4" r="1"></circle><path d="m18 19 1-7-6 1"></path><path d="m5 8 3-3 5.5 3-2.36 3.5"></path><path d="M4.24 14.5a5 5 0 0 0 6.88 6"></path><path d="M13.76 17.5a5 5 0 0 0-6.88-6"></path></svg></button></div><div id="cookieBanner" class="fixed bottom-0 left-0 w-full bg-telem-black text-white p-6 z-[9998] backdrop-blur-md border-t border-telem-moss shadow-2xl animate-fade-in"><div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-right"><div class="flex-1"><div class="text-xl font-black text-telem-khaki mb-2 italic">אוהבים עוגיות? גם אנחנו!</div><p class="text-gray-300 text-sm md:text-base font-medium">האתר של תלם משתמש בעוגיות (Cookies) על מנת להבטיח לך את חווית הגלישה הטובה ביותר בהתאם לחוק הגנת הפרטיות.</p></div><button class="bg-telem-forest text-white px-10 py-3 rounded-xl font-black hover:bg-telem-moss transition-all">הבנתי, תודה!</button></div></div><main class="pt-40 pb-24 animate-fade-in max-w-4xl mx-auto px-4"><a href="/" class="inline-flex items-center gap-2 text-telem-forest font-bold mb-8 hover:text-telem-dark transition-colors"> חזרה לדף הבית</a><h1 class="text-4xl md:text-6xl font-black text-telem-black mb-8 leading-tight italic">נספח סביבתי שמקדם את הפרויקט — לא תוקע אותו בוועדה</h1><div class="space-y-8 text-telem-black text-lg font-medium leading-relaxed"><p class="text-2xl text-telem-forest font-bold italic border-r-4 border-telem-khaki pr-6">נספח סביבתי הוא מסמך מקצועי שמלווה תכניות בנייה, אישורי תב"ע ופרויקטים מורכבים — והוא לעיתים קרובות ההבדל בין פרויקט שמתקדם בקצב לבין פרויקט שנתקע בוועדה.</p><p>הנספח מציג את ההיבטים הסביבתיים של הפרויקט, מזהה השפעות פוטנציאליות, ומציע פתרונות שעומדים בדרישות הרשויות. אצלנו בתלם, בליווי אבירם בוצר — יועץ סביבתי עם 15 שנות ניסיון, חלקן בתפקידי מפתח בתעשייה — אתם מקבלים נספח סביבתי שמדבר את השפה של הוועדה, מזהה מראש את הנקודות הרגישות, ועובר אישור בלי גרירת רגליים מיותרת.</p><section><h2 class="text-2xl font-black text-telem-dark mb-4 italic">מתי נדרש נספח סביבתי?</h2><p class="mb-6">לקוחות מגיעים אלינו בחמישה תרחישים מרכזיים — בכל אחד מהם, נספח סביבתי הוא דרישה רגולטורית או צעד מקצועי שחוסך זמן וכסף בהמשך הדרך.</p><div class="space-y-6"><div class="bg-white p-6 rounded-[32px] border border-telem-khaki/20 shadow"><h3 class="font-black text-telem-dark text-xl mb-3 italic">נספח סביבתי להיתר בנייה</h3><p>זה התרחיש הנפוץ ביותר. רשויות מקומיות וועדות תכנון דורשות נספח סביבתי כחלק מבקשת היתר בנייה — במיוחד בפרויקטים גדולים, מסחריים, תעשייתיים, או כאלה הסמוכים לאוכלוסייה. הנספח מציג איך הפרויקט משפיע על הסביבה — אוויר, רעש, פסולת, שפכים, ניקוז — ומה הצעדים שיינקטו כדי לצמצם השפעות.</p></div><div class="bg-white p-6 rounded-[32px] border border-telem-khaki/20 shadow"><h3 class="font-black text-telem-dark text-xl mb-3 italic">נספח סביבתי לתב"ע</h3><p>לתכניות מתאר ולתב"ע נדרש נספח סביבתי מורחב, שכולל ניתוח השפעות ארוכות-טווח. בתב"עות מורכבות, הנספח גם מתאם בין דרישות סטטוטוריות שונות — מינהל התכנון, המשרד להגנת הסביבה, רשות המים — וזה השלב שבו ניסיון מעשי מול הוועדות חוסך חודשי דיונים מיותרים.</p></div><div class="bg-white p-6 rounded-[32px] border border-telem-khaki/20 shadow"><h3 class="font-black text-telem-dark text-xl mb-3 italic">נספח נופי-סביבתי</h3><p>בפרויקטים באזורים בעלי רגישות נופית — שטחים פתוחים, סביבות חקלאיות, אזורים סמוכים לשמורות טבע, שטחי גנים לאומיים — נדרש נספח נופי-סביבתי. הוא משלב היבטים סביבתיים מסורתיים (אוויר, רעש, מים) עם היבטי נוף וחזות.</p></div><div class="bg-white p-6 rounded-[32px] border border-telem-khaki/20 shadow"><h3 class="font-black text-telem-dark text-xl mb-3 italic">נספח סביבתי לפרויקטים תעשייתיים ומסחריים</h3><p>מפעלים, מחסנים לוגיסטיים, תחנות דלק, מתחמי מסחר גדולים, בתי מלאכה — כולם דורשים נספח סביבתי מורחב. במקרים מורכבים, הנספח מתפתח לתסקיר השפעה על הסביבה (תש"ס) המלא.</p></div><div class="bg-white p-6 rounded-[32px] border border-telem-khaki/20 shadow"><h3 class="font-black text-telem-dark text-xl mb-3 italic">ליווי הליכי רגולציה והרחבה</h3><p>לקוחות שכבר עברו את שלב ההקמה מגיעים אלינו לעדכוני נספח לקראת רישוי עסק, הרחבת פעילות, או שינוי ייעוד. במקרים האלה, הנספח כולל גם דיווחי PRTR (מפל"ס), עדכוני פעילות, ולעיתים סקר שפכים תעשייתיים מול תאגיד המים.</p></div></div></section><section><h2 class="text-2xl font-black text-telem-dark mb-4 italic">התהליך — איך אנחנו מכינים נספח סביבתי</h2><p class="mb-6">תהליך הכנת הנספח אצלנו מובנה בחמישה שלבים, ואורך בממוצע 3 עד 6 שבועות:</p><ul class="space-y-4 pr-4"><li class="flex items-start gap-3"><span><strong>בחינת הפרויקט והגדרת הדרישות:</strong> מתחילים בפגישת אפיון. מבינים את הפרויקט ומזהים מי הרשות המאשרת ומה הדרישות הספציפיות שלה.</span></li><li class="flex items-start gap-3"><span><strong>איסוף נתונים סביבתיים:</strong> איסוף נתוני בסיס: סקרים קיימים, רישומי איכות אוויר, מפלסי מי תהום, סקרי רעש, נתוני תחבורה, ומידע אקולוגי.</span></li><li class="flex items-start gap-3"><span><strong>ניתוח השפעות והערכת סיכונים:</strong> ניתוח שיטתי של ההשפעות הצפויות בכל היבט: אוויר, רעש, מים, פסולת, קרקע, נוף, אקולוגיה, ותחבורה.</span></li><li class="flex items-start gap-3"><span><strong>ניסוח הנספח והגשתו:</strong> המסמך נכתב לפי הפורמט המדויק שדורשת הרשות הספציפית, עם בקרה כפולה לפני הגשה.</span></li><li class="flex items-start gap-3"><span><strong>ליווי בוועדה ועד אישור:</strong> אנחנו מטפלים בכל ההתכתבות ונוכחים בדיונים אם נדרש — עד שיש אישור בתיק.</span></li></ul></section><div class="bg-white p-8 rounded-[32px] border border-telem-khaki/20 shadow-lg my-4"><h2 class="text-2xl font-black text-telem-dark mb-6 italic underline decoration-telem-khaki">שאלות נפוצות</h2><div class="space-y-6"><div><h3 class="font-black text-telem-dark text-xl mb-2 italic">כמה זמן לוקח להכין נספח סביבתי?</h3><p>בהיתר בנייה רגיל — 3 עד 5 שבועות. בנספח לתב"ע — 6 עד 10 שבועות. תהליך האישור עצמו תלוי בקצב הוועדה ויכול להוסיף עוד 4 עד 8 שבועות.</p></div><div><h3 class="font-black text-telem-dark text-xl mb-2 italic">מה ההבדל בין נספח סביבתי לתסקיר השפעה על הסביבה?</h3><p>נספח סביבתי הוא מסמך תמציתי ונדרש ברוב היתרי הבנייה. תסקיר השפעה על הסביבה (תש"ס) הוא מסמך מקיף בהרבה, נדרש רק בפרויקטים בעלי השפעה גדולה לפי תקנות התכנון והבנייה, כולל דיון פומבי.</p></div><div><h3 class="font-black text-telem-dark text-xl mb-2 italic">האם צריך נספח סביבתי לכל היתר בנייה?</h3><p>לא לכל היתר. לבית פרטי קטן — בדרך כלל לא. לפרויקט מסחרי, תעשייתי, רב-קומתי, או באזור בעל רגישות סביבתית — כן. הוועדה המקומית קובעת.</p></div><div><h3 class="font-black text-telem-dark text-xl mb-2 italic">מה קורה אם הוועדה דורשת תיקונים בנספח?</h3><p>בעבודה שלנו זה כלול. אנחנו ממשיכים ללוות עד אישור בתיק, בלי תוספת תשלום על תיקונים שגרתיים.</p></div></div></div><section><h2 class="text-2xl font-black text-telem-dark mb-4 italic">קישורים ומשאבים רשמיים לנספח סביבתי</h2><ul class="space-y-4 pr-2"><li class="flex items-start gap-3"><span><a href="https://www.gov.il/he/departments/ministry_of_environmental_protection" target="_blank" rel="noopener noreferrer" class="text-telem-forest font-bold underline hover:text-telem-dark">המשרד להגנת הסביבה</a> — הגוף המוביל בקביעת מדיניות סביבתית ובאישורי נספחים סביבתיים בפרויקטים מורכבים.</span></li><li class="flex items-start gap-3"><span><a href="https://www.gov.il/he/departments/ministry_of_interior" target="_blank" rel="noopener noreferrer" class="text-telem-forest font-bold underline hover:text-telem-dark">מינהל התכנון — משרד הפנים</a> — הגוף המאסדר את הליכי התכנון, התב"ע והנפקת היתרי בנייה ברמה הארצית.</span></li><li class="flex items-start gap-3"><span><a href="https://mavat.iplan.gov.il/" target="_blank" rel="noopener noreferrer" class="text-telem-forest font-bold underline hover:text-telem-dark">מערכת מידע תכנוני iplan (mavat)</a> — בדיקת ייעוד קרקע, היסטוריית תכניות ותנאי הוועדה המחוזית לכל מגרש.</span></li><li class="flex items-start gap-3"><span><a href="https://www.water.gov.il/" target="_blank" rel="noopener noreferrer" class="text-telem-forest font-bold underline hover:text-telem-dark">רשות המים בישראל</a> — דרישות בנושא ניקוז, שפכים, ושימור משאבי מים בפרויקטים סביבתיים.</span></li><li class="flex items-start gap-3"><span><a href="https://www.parks.org.il" target="_blank" rel="noopener noreferrer" class="text-telem-forest font-bold underline hover:text-telem-dark">רשות הטבע והגנים</a> — גוף סטטוטורי הדורש התייחסות בנספחים סביבתיים בפרויקטים סמוכים לשמורות טבע.</span></li><li class="flex items-start gap-3"><span><a href="https://www.gov.il/he/departments/israel_land_authority" target="_blank" rel="noopener noreferrer" class="text-telem-forest font-bold underline hover:text-telem-dark">רשות מקרקעי ישראל (רמ"י)</a> — דורשת נספחים סביבתיים בהקצאות קרקע ובשינויי ייעוד.</span></li><li class="flex items-start gap-3"><span><a href="https://www.gov.il/he/departments/iplan/govil-landing-page" target="_blank" rel="noopener noreferrer" class="text-telem-forest font-bold underline hover:text-telem-dark">מינהל התכנון הארצי</a> — הגוף הממשלתי המסדיר מדיניות תכנון ואישורים לסקרים בהליכי רישוי.</span></li><li class="flex items-start gap-3"><span><a href="https://www.gov.il/he/pages/planning_env_impact" target="_blank" rel="noopener noreferrer" class="text-telem-forest font-bold underline hover:text-telem-dark">תקנות התכנון והבנייה — תסקירי השפעה על הסביבה</a> — התקנות הקובעות מתי נדרש תסקיר מלא לעומת נספח סביבתי.</span></li></ul></section><section><h2 class="text-2xl font-black text-telem-dark mb-4 italic">שירותים משלימים</h2><div class="grid grid-cols-1 md:grid-cols-3 gap-4"><a href="/history/" class="block bg-white p-6 rounded-2xl border border-telem-khaki/20 shadow hover:shadow-md hover:border-telem-forest transition-all group"><h3 class="font-black text-telem-dark text-lg mb-1 italic group-hover:text-telem-forest">סקר היסטורי לקרקע</h3><p class="text-sm text-telem-black/70">בדיקת זיהום קרקע היסטורית — לעיתים קרובות שלב מקדים לנספח סביבתי.</p></a><a href="/waste/" class="block bg-white p-6 rounded-2xl border border-telem-khaki/20 shadow hover:shadow-md hover:border-telem-forest transition-all group"><h3 class="font-black text-telem-dark text-lg mb-1 italic group-hover:text-telem-forest">נספח אצירת אשפה</h3><p class="text-sm text-telem-black/70">תכנון מערך אצירת פסולת — מרכיב חיוני בנספח להיתר בנייה.</p></a><a href="/guides/" class="block bg-white p-6 rounded-2xl border border-telem-khaki/20 shadow hover:shadow-md hover:border-telem-forest transition-all group"><h3 class="font-black text-telem-dark text-lg mb-1 italic group-hover:text-telem-forest">מרכז ידע ורגולציה</h3><p class="text-sm text-telem-black/70">מדריכים על נספחים, תסקירי השפעה, ותהליכי אישור.</p></a></div></section></div><section class="mt-16 pt-8 border-t border-telem-khaki/20"><h2 class="text-2xl font-black text-telem-dark mb-6 italic tracking-tight">נספח סביבתי להיתר בנייה ותב"ע בישראל</h2><div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4"><h3 class="text-lg font-bold text-telem-forest italic">דרישות המשרד להגנת הסביבה</h3><h3 class="text-lg font-bold text-telem-forest italic">נספח סביבתי לוועדה מקומית</h3><h3 class="text-lg font-bold text-telem-forest italic">אישור סביבתי לפרויקט בנייה</h3></div></section><section><h2 class="text-2xl font-black text-telem-dark mb-6 italic">עבדנו יחד — וזה מה שאמרו</h2><div class="grid grid-cols-1 md:grid-cols-3 gap-4"><div class="bg-white p-6 rounded-2xl border border-telem-khaki/20 shadow"><div class="flex items-center gap-3 mb-3"><img src="/assets/logo_galil.svg" alt="לוגו אשכול גליל מערבי" class="w-auto object-contain" style="height:36px" onerror="this.style.display='none'"><span class="text-sm font-bold text-telem-forest">אשכול רשויות גליל מערבי</span></div><p class="text-telem-black font-medium italic mb-3">"יכולת מרשימה בפרויקטים רב-תחומיים — במיוחד מול רשויות מקומיות וגופים ציבוריים"</p><p class="font-black text-telem-dark">ארז אליסאי</p><p class="text-sm text-telem-black/70">מנהל אגף איכות סביבה · אשכול רשויות גליל מערבי</p></div><div class="bg-white p-6 rounded-2xl border border-telem-khaki/20 shadow"><div class="flex items-center gap-3 mb-3"><img src="/assets/LOGO_ACKERSTEIN.png" alt="לוגו הקו הירוק" class="w-auto object-contain" style="height:36px" onerror="this.style.display='none'"><span class="text-sm font-bold text-telem-forest">הקו הירוק – רכבת קלה</span></div><p class="text-telem-black font-medium italic mb-3">"שליטה מלאה בדרישות הסביבתיות ופתרון מצבים מורכבים בזמן אמת"</p><p class="font-black text-telem-dark">דן יעקובי</p><p class="text-sm text-telem-black/70">מנהל פרויקט · הקו הירוק – רכבת קלה</p></div><div class="bg-white p-6 rounded-2xl border border-telem-khaki/20 shadow"><div class="flex items-center gap-3 mb-3"><img src="/assets/LOGO_ESHKOL.jpg" alt="לוגו פרויקט ביאליק 158" class="w-auto object-contain" style="height:36px" onerror="this.style.display='none'"><span class="text-sm font-bold text-telem-forest">חברת אשכול · ביאליק 158</span></div><p class="text-telem-black font-medium italic mb-3">"קידם נושאים במהירות וביעילות גם תחת לוחות זמנים צפופים"</p><p class="font-black text-telem-dark">קרן בכר צבי</p><p class="text-sm text-telem-black/70">חברת אשכול · פרויקט ביאליק 158, חולון</p></div><div class="bg-white p-6 rounded-2xl border border-telem-khaki/20 shadow"><div class="flex items-center gap-3 mb-3"><img src="/assets/logo_calcalithefer.png" alt="לוגו הכלכלית עמק חפר" class="w-auto object-contain" style="height:36px" onerror="this.style.display='none'"><span class="text-sm font-bold text-telem-forest">הכלכלית עמק חפר</span></div><p class="text-telem-black font-medium italic mb-3">"לקח אחריות, ניהל צוותים תחת לחץ אדיר — ושמר על מקצועיות לאורך כל הדרך"</p><p class="font-black text-telem-dark">שגיא בן-יואב</p><p class="text-sm text-telem-black/70">מנכ"ל · הכלכלית עמק חפר</p></div></div><div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-4"><div class="flex items-center justify-center text-center px-4 py-2.5 rounded-xl bg-telem-forest/10 border border-telem-forest/20 text-telem-dark font-bold text-sm">15 שנות ניסיון</div><div class="flex items-center justify-center text-center px-4 py-2.5 rounded-xl bg-telem-forest/10 border border-telem-forest/20 text-telem-dark font-bold text-sm">ניסיון מצד הרשות — מנהל איכות סביבה לשעבר</div><div class="flex items-center justify-center text-center px-4 py-2.5 rounded-xl bg-telem-forest/10 border border-telem-forest/20 text-telem-dark font-bold text-sm">זוכה ארבעה פרסי נשיא לרשות המקומית</div></div></section><div class="mt-20 bg-telem-dark text-white rounded-[40px] p-10 text-center shadow-2xl relative overflow-hidden text-telem-cream"><h3 class="text-3xl font-black mb-6 italic tracking-tight">צריכים נספח סביבתי לפרויקט שלכם?</h3><p class="text-telem-cream/80 mb-10 text-xl font-medium max-w-2xl mx-auto italic">אנחנו בתלם, עם הניסיון שצברנו במאות פרויקטים בתחום הסביבה — בליווי אישי של אבירם בוצר ובהבנה עמוקה של איך ועדות התכנון, המשרד להגנת הסביבה ומינהל התכנון רוצים לראות נספח — מכינים מסמכים שעוברים אישור ולא מתישים את הפרויקט. דברו איתנו לייעוץ ראשוני — בלי התחייבות.</p><div class="flex flex-col sm:flex-row gap-4 justify-center"><a href="tel:0506890650" class="bg-telem-forest text-white px-10 py-4 rounded-2xl font-black text-xl hover:bg-telem-moss transition-all shadow-lg flex items-center justify-center gap-3 italic">התקשרו: 050-6890650</a><a href="https://wa.me/972506890650" target="_blank" rel="noopener noreferrer" class="border-2 border-telem-khaki text-white px-10 py-4 rounded-2xl font-black text-xl hover:bg-white/10 transition-all italic flex items-center justify-center gap-3">WhatsApp</a><a href="/#contactForm" class="border-2 border-white/40 text-white px-10 py-4 rounded-2xl font-black text-xl hover:bg-white/10 transition-all italic">שלחו פנייה</a></div></div></main><footer class="bg-telem-dark text-white py-20 px-4 text-right border-t border-telem-forest/30"><div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-16"><div><div class="flex items-center min-w-[150px] mb-8"><img src="../logo.png" alt="תלם - ניהול סביבה ופסולת" class="h-16 md:h-20 w-auto object-contain block"></div><p class="text-telem-cream/60 text-xl max-w-md font-medium italic">אבירם בוצר - מומחה לייעוץ סביבתי ותכנון אצירת אשפה.</p></div><div class="flex flex-col md:items-end gap-6 text-telem-cream font-bold text-lg"><div class="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20"><span>aviram@telemenv.co.il</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="mail" aria-hidden="true" class="lucide lucide-mail text-telem-khaki" style="width: 24px; height: 24px;"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg></div><div class="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20"><span>050-6890650</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="phone" aria-hidden="true" class="lucide lucide-phone text-telem-khaki" style="width: 24px; height: 24px;"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg></div><a href="https://www.linkedin.com/in/aviram-botzer-01782aa5/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20 hover:text-white transition-all"><span>פרופיל LinkedIn</span><i data-lucide="linkedin" class="text-telem-khaki" style="width: 24px; height: 24px;"></i></a><div class="flex gap-4 mt-8 text-sm font-bold text-telem-khaki"><button class="hover:underline italic">הצהרת נגישות</button><span class="opacity-30">|</span><button class="hover:underline italic">מדיניות פרטיות</button></div><p class="mt-4 text-sm font-normal opacity-30 italic">© 2026 תלם - ניהול סביבה ופסולת. כל הזכויות שמורות.</p></div></div></footer></div></div>
 
-    <script type="text/babel">
-        const { useState, useEffect } = React;
-
-        const Icon = ({ name, size = 20, className = "" }) => {
-            useEffect(() => {
-                if (window.lucide) { window.lucide.createIcons(); }
-            }, [name]);
-            return <i data-lucide={name} style={{ width: size, height: size }} className={className}></i>;
-        };
-
-        const TelemLogo = ({ className = "" }) => (
-            <div className={`flex items-center min-w-[150px] ${className}`}>
-                <img 
-                    src="../logo.png" 
-                    alt="תלם - ניהול סביבה ופסולת" 
-                    className="h-16 md:h-20 w-auto object-contain block"
-                    onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = 'https://via.placeholder.com/200x80?text=%D7%AA%D7%9C%D7%9D+%D7%9C%D7%95%D7%92%D7%95';
-                    }}
-                />
-            </div>
-        );
-
-        const AccessibilityMenu = () => {
-            const [isOpen, setIsOpen] = useState(false);
-            const [settings, setSettings] = useState({ grayscale: false, contrast: false, links: false, readableFont: false, fontSize: 100 });
-            const toggleSetting = (key) => setSettings(prev => ({ ...prev, [key]: !prev[key] }));
-            const changeFontSize = (delta) => setSettings(prev => ({ ...prev, fontSize: Math.max(100, Math.min(150, prev.fontSize + delta)) }));
-            const reset = () => setSettings({ grayscale: false, contrast: false, links: false, readableFont: false, fontSize: 100 });
-            
-            useEffect(() => {
-                const body = document.body;
-                body.classList.toggle('accessible-grayscale', settings.grayscale);
-                body.classList.toggle('accessible-contrast', settings.contrast);
-                body.classList.toggle('accessible-links', settings.links);
-                body.classList.toggle('accessible-font', settings.readableFont);
-                body.style.fontSize = `${settings.fontSize}%`;
-            }, [settings]);
-
-            return (
-                <div className="fixed bottom-6 left-6 z-[9999]">
-                    <button onClick={() => setIsOpen(!isOpen)} className="w-14 h-14 bg-telem-dark text-white rounded-full shadow-2xl flex items-center justify-center hover:bg-telem-forest transition-all border-2 border-white"><Icon name="accessibility" size={30} /></button>
-                    {isOpen && (
-                        <div className="absolute bottom-16 left-0 w-72 bg-white rounded-2xl shadow-2xl border border-gray-200 p-6 animate-fade-in text-right text-telem-black">
-                            <h3 className="text-xl font-bold mb-4 border-b pb-2 text-telem-dark">תפריט נגישות</h3>
-                            <div className="space-y-3 text-sm">
-                                <button onClick={() => toggleSetting('contrast')} className={`w-full text-right p-3 rounded-xl transition-all flex items-center justify-between border ${settings.contrast ? 'bg-telem-dark text-white' : 'hover:bg-gray-50'}`}><span>ניגודיות גבוהה</span><Icon name="contrast" size={18} /></button>
-                                <button onClick={() => toggleSetting('grayscale')} className={`w-full text-right p-3 rounded-xl transition-all flex items-center justify-between border ${settings.grayscale ? 'bg-telem-dark text-white' : 'hover:bg-gray-50'}`}><span>גווני אפור</span><Icon name="image" size={18} /></button>
-                                <button onClick={() => toggleSetting('links')} className={`w-full text-right p-3 rounded-xl transition-all flex items-center justify-between border ${settings.links ? 'bg-telem-dark text-white' : 'hover:bg-gray-50'}`}><span>הדגשת קישורים</span><Icon name="external-link" size={18} /></button>
-                                <button onClick={() => toggleSetting('readableFont')} className={`w-full text-right p-3 rounded-xl transition-all flex items-center justify-between border ${settings.readableFont ? 'bg-telem-dark text-white' : 'hover:bg-gray-50'}`}><span>גופן קריא</span><Icon name="type" size={18} /></button>
-                                <div className="flex gap-2"><button onClick={() => changeFontSize(10)} className="flex-1 bg-gray-100 p-2 rounded-lg font-bold hover:bg-gray-200">A+</button><button onClick={() => changeFontSize(-10)} className="flex-1 bg-gray-100 p-2 rounded-lg font-bold hover:bg-gray-200">A-</button></div>
-                                <button onClick={reset} className="w-full text-center p-2 text-sm text-red-600 font-bold hover:underline mt-2">ביטול כל ההתאמות</button>
-                            </div>
-                        </div>
-                    )}
-                </div>
-            );
-        };
-
-        const CookieBanner = () => {
-            const [show, setShow] = useState(false);
-            useEffect(() => { if (!localStorage.getItem('cookie-consent')) setShow(true); }, []);
-            const accept = () => { localStorage.setItem('cookie-consent', 'true'); setShow(false); };
-            if (!show) return null;
-            return (
-                <div className="fixed bottom-0 left-0 w-full bg-telem-black text-white p-6 z-[9998] backdrop-blur-md border-t border-telem-moss shadow-2xl animate-fade-in">
-                    <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-right">
-                        <div className="flex-1"><div className="text-xl font-black text-telem-khaki mb-2 italic">אוהבים עוגיות? גם אנחנו!</div><p className="text-gray-300 text-sm md:text-base font-medium">האתר של תלם משתמש בעוגיות (Cookies) על מנת להבטיח לך את חווית הגלישה הטובה ביותר בהתאם לחוק הגנת הפרטיות.</p></div>
-                        <button onClick={accept} className="bg-telem-forest text-white px-10 py-3 rounded-xl font-black hover:bg-telem-moss transition-all">הבנתי, תודה!</button>
-                    </div>
-                </div>
-            );
-        };
-
-        const LegalModal = ({ type, onClose }) => {
-            if (!type) return null;
-            return (
-                <div className="fixed inset-0 bg-telem-black/80 z-[10000] flex items-center justify-center p-4 backdrop-blur-sm overflow-y-auto">
-                    <div className="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-8 md:p-12 relative text-right shadow-2xl border-4 border-telem-forest text-telem-black">
-                        <button onClick={onClose} className="absolute top-6 left-6 text-gray-400 hover:text-red-600"><Icon name="x" size={32} /></button>
-                        {type === 'accessibility' ? (
-                            <div className="animate-fade-in"><h2 className="text-3xl font-black text-telem-dark mb-8 border-b-4 border-telem-khaki pb-4 italic">הצהרת נגישות - תלם ניהול סביבה</h2><div className="space-y-6 leading-relaxed font-medium text-lg"><p>אנו בתלם ניהול סביבה רואים חשיבות עליונה בהנגשת האתר לכלל האוכלוסייה, כולל אנשים עם מוגבלויות. האתר עומד בדרישות תקנות שוויון זכויות לאנשים עם מוגבלות ומותאם לתקן הישראלי (ת"י 5568) ברמת AA.</p><h3 className="text-xl font-bold text-telem-dark italic underline">פרטי רכז נגישות</h3><p>רכז נגישות: אבירם בוצר | טלפון: 050-6890650 | אימייל: aviram@telemenv.co.il</p></div></div>
-                        ) : (
-                            <div className="animate-fade-in"><h2 className="text-3xl font-black text-telem-dark mb-8 border-b-4 border-telem-khaki pb-4 italic">מדיניות הגנת פרטיות</h2><div className="space-y-6 leading-relaxed font-medium text-lg"><p>משרד 'תלם ניהול סביבה' מכבד את פרטיות הגולשים ומתחייב לפעול בהתאם לחוק הגנת הפרטיות, התשמ"א-1981.</p><h3 className="text-xl font-bold text-telem-dark italic underline">איסוף מידע</h3><p>המידע שנאסף באתר נועד לשיפור חווית המשתמש בלבד. מידע שנשלח בטפסים משמש לצורך יצירת קשר עם הלקוח בלבד ולא יועבר לצד שלישי.</p></div></div>
-                        )}
-                    </div>
-                </div>
-            );
-        };
-
-        const App = () => {
-            const [isMenuOpen, setIsMenuOpen] = useState(false);
-            const [legalModal, setLegalModal] = useState(null);
-            const PHONE_NUMBER = "0506890650";
-            const WA_NUMBER = "972506890650";
-            const LINKEDIN_URL = "https://www.linkedin.com/in/aviram-botzer-01782aa5/";
-
-            useEffect(() => {
-                const onPageShow = (e) => { if (e.persisted) setIsMenuOpen(false); };
-                window.addEventListener('pageshow', onPageShow);
-                return () => window.removeEventListener('pageshow', onPageShow);
-            }, []);
-
-            const navigation = [
-                { name: 'דף הבית', href: '/' },
-                { name: 'נספח אצירת אשפה', href: '/waste/' },
-                { name: 'פרויקטים סולאריים', href: '/solar/' },
-                { name: 'נספח סביבתי', href: '/env/' },
-                { name: 'סקר היסטורי', href: '/history/' },
-                { name: 'סביבה בכותרות', href: '/in-the-news/' },
-                { name: 'אודות', href: '/about.html' },
-            ];
-
-            return (
-                <div className="min-h-screen">
-                    <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 border-b border-telem-khaki/10">
-                        <div className="max-w-7xl mx-auto px-4 h-24 flex justify-between items-center">
-                            <a href="/" className="hover:opacity-80 transition-all flex items-center"><TelemLogo /></a>
-                            <nav className="hidden lg:flex gap-8">
-                                {navigation.map(item => (
-                                    <a key={item.name} href={item.href} className={`text-sm font-bold transition-colors ${item.href === '/env/' ? 'text-telem-dark border-b-2 border-telem-khaki' : 'text-telem-forest hover:text-telem-moss'}`}>
-                                        {item.name}
-                                    </a>
-                                ))}
-                            </nav>
-                            <div className="hidden md:flex items-center gap-4">
-                                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="text-telem-dark hover:text-telem-moss transition-colors" title="LinkedIn"><Icon name="linkedin" size={24} /></a>
-                                <a href={`tel:${PHONE_NUMBER}`} className="bg-telem-dark text-white px-6 py-2.5 rounded-xl font-bold hover:bg-telem-forest transition-all shadow-md">{PHONE_NUMBER.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2$3')}</a>
-                            </div>
-                            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden text-telem-dark"><Icon name={isMenuOpen ? "x" : "menu"} size={28} /></button>
-                        </div>
-                        {isMenuOpen && (
-                            <nav className="lg:hidden bg-white border-t border-telem-khaki/20 px-4 py-4 flex flex-col gap-1 shadow-lg">
-                                {navigation.map(item => (
-                                    <a key={item.href} href={item.href}
-                                        className="text-right text-lg font-bold py-3 border-b border-telem-khaki/10 block text-telem-dark"
-                                        onClick={() => setIsMenuOpen(false)}>
-                                        {item.name}
-                                    </a>
-                                ))}
-                                <div className="grid grid-cols-2 gap-2 pt-3">
-                                    <button onClick={() => { setIsMenuOpen(false); window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("שלום, הגענו מהאתר ונשמח להתייעץ.")}`, '_blank'); }}
-                                        className="bg-telem-forest text-white py-3 rounded-lg font-bold flex justify-center items-center gap-2 text-sm">
-                                        <Icon name="message-circle" size={18} /> WhatsApp
-                                    </button>
-                                    <a href={`tel:${PHONE_NUMBER}`}
-                                        className="bg-telem-dark text-white py-3 rounded-lg font-bold flex justify-center items-center gap-2 text-sm"
-                                        onClick={() => setIsMenuOpen(false)}>
-                                        <Icon name="phone" size={18} /> התקשרו
-                                    </a>
-                                </div>
-                            </nav>
-                        )}
-                    </header>
-
-                    <AccessibilityMenu />
-                    <CookieBanner />
-                    <LegalModal type={legalModal} onClose={() => setLegalModal(null)} />
-
-                    <main className="pt-40 pb-24 animate-fade-in max-w-4xl mx-auto px-4">
-                        <a href="/" className="inline-flex items-center gap-2 text-telem-forest font-bold mb-8 hover:text-telem-dark transition-colors">
-                            <Icon name="arrow-right" size={18} /> חזרה לדף הבית
-                        </a>
-
-                        <h1 className="text-4xl md:text-6xl font-black text-telem-black mb-8 leading-tight italic">
-                            נספח סביבתי שמקדם את הפרויקט — לא תוקע אותו בוועדה
-                        </h1>
-
-                        <div className="space-y-8 text-telem-black text-lg font-medium leading-relaxed">
-                            <p className="text-2xl text-telem-forest font-bold italic border-r-4 border-telem-khaki pr-6">
-                                נספח סביבתי הוא מסמך מקצועי שמלווה תכניות בנייה, אישורי תב"ע ופרויקטים מורכבים — והוא לעיתים קרובות ההבדל בין פרויקט שמתקדם בקצב לבין פרויקט שנתקע בוועדה.
-                            </p>
-                            <p>
-                                הנספח מציג את ההיבטים הסביבתיים של הפרויקט, מזהה השפעות פוטנציאליות, ומציע פתרונות שעומדים בדרישות הרשויות. אצלנו בתלם, בליווי אבירם בוצר — יועץ סביבתי עם 15 שנות ניסיון, חלקן בתפקידי מפתח בתעשייה — אתם מקבלים נספח סביבתי שמדבר את השפה של הוועדה, מזהה מראש את הנקודות הרגישות, ועובר אישור בלי גרירת רגליים מיותרת.
-                            </p>
-
-                            <a href={`tel:${PHONE_NUMBER}`} className="inline-flex items-center gap-3 bg-telem-dark text-white px-8 py-4 rounded-2xl font-black text-lg hover:bg-telem-forest transition-all shadow-lg italic">
-                                <Icon name="phone" size={20} /> התקשרו לייעוץ ראשוני
-                            </a>
-
-                            <section>
-                                <h2 className="text-2xl font-black text-telem-dark mb-4 italic">מתי נדרש נספח סביבתי?</h2>
-                                <p className="mb-6">לקוחות מגיעים אלינו בחמישה תרחישים מרכזיים — בכל אחד מהם, נספח סביבתי הוא דרישה רגולטורית או צעד מקצועי שחוסך זמן וכסף בהמשך הדרך.</p>
-
-                                <div className="space-y-6">
-                                    <div className="bg-white p-6 rounded-[32px] border border-telem-khaki/20 shadow">
-                                        <h3 className="font-black text-telem-dark text-xl mb-3 italic">נספח סביבתי להיתר בנייה</h3>
-                                        <p>זה התרחיש הנפוץ ביותר. רשויות מקומיות וועדות תכנון דורשות נספח סביבתי כחלק מבקשת היתר בנייה — במיוחד בפרויקטים גדולים, מסחריים, תעשייתיים, או כאלה הסמוכים לאוכלוסייה. הנספח מציג איך הפרויקט משפיע על הסביבה — אוויר, רעש, פסולת, שפכים, ניקוז — ומה הצעדים שיינקטו כדי לצמצם השפעות. נספח טוב מקצר את ההליך משבועות לימים.</p>
-                                    </div>
-                                    <div className="bg-white p-6 rounded-[32px] border border-telem-khaki/20 shadow">
-                                        <h3 className="font-black text-telem-dark text-xl mb-3 italic">נספח סביבתי לתב"ע</h3>
-                                        <p>לתכניות מתאר ולתב"ע נדרש נספח סביבתי מורחב, שכולל ניתוח השפעות ארוכות-טווח. בתב"עות מורכבות, הנספח גם מתאם בין דרישות סטטוטוריות שונות — מינהל התכנון, המשרד להגנת הסביבה, רשות המים — וזה השלב שבו ניסיון מעשי מול הוועדות חוסך חודשי דיונים מיותרים.</p>
-                                    </div>
-                                    <div className="bg-white p-6 rounded-[32px] border border-telem-khaki/20 shadow">
-                                        <h3 className="font-black text-telem-dark text-xl mb-3 italic">נספח נופי-סביבתי</h3>
-                                        <p>בפרויקטים באזורים בעלי רגישות נופית — שטחים פתוחים, סביבות חקלאיות, אזורים סמוכים לשמורות טבע, שטחי גנים לאומיים — נדרש נספח נופי-סביבתי. הוא משלב היבטים סביבתיים מסורתיים (אוויר, רעש, מים) עם היבטי נוף וחזות, ומציג איך הפרויקט משתלב בסביבה הקיימת מבלי לפגוע באופי המקום.</p>
-                                    </div>
-                                    <div className="bg-white p-6 rounded-[32px] border border-telem-khaki/20 shadow">
-                                        <h3 className="font-black text-telem-dark text-xl mb-3 italic">נספח סביבתי לפרויקטים תעשייתיים ומסחריים</h3>
-                                        <p>מפעלים, מחסנים לוגיסטיים, תחנות דלק, מתחמי מסחר גדולים, בתי מלאכה — כולם דורשים נספח סביבתי מורחב. במקרים מורכבים, הנספח מתפתח לתסקיר השפעה על הסביבה (תש"ס) המלא, ולעיתים נדרשים גם מסמכים נלווים: פרשה טכנית לרישוי עסקים, היתר רעלים, סקר מרחקי הפרדה, ותיק מפעל. אנחנו מתאמים את כל המסמכים יחד כדי שהפרויקט יתקדם במקביל ולא במקטעים.</p>
-                                    </div>
-                                    <div className="bg-white p-6 rounded-[32px] border border-telem-khaki/20 shadow">
-                                        <h3 className="font-black text-telem-dark text-xl mb-3 italic">ליווי הליכי רגולציה והרחבה</h3>
-                                        <p>לקוחות שכבר עברו את שלב ההקמה מגיעים אלינו לעדכוני נספח לקראת רישוי עסק, הרחבת פעילות, או שינוי ייעוד. במקרים האלה, הנספח כולל גם דיווחי PRTR (מפל"ס), עדכוני פעילות, ולעיתים סקר שפכים תעשייתיים מול תאגיד המים.</p>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <section>
-                                <h2 className="text-2xl font-black text-telem-dark mb-4 italic">התהליך — איך אנחנו מכינים נספח סביבתי</h2>
-                                <p className="mb-6">תהליך הכנת הנספח אצלנו מובנה בחמישה שלבים, ואורך בממוצע 3 עד 6 שבועות, בהתאם למורכבות הפרויקט וזמינות החומרים:</p>
-                                <ul className="space-y-4 pr-4">
-                                    <li className="flex items-start gap-3">
-                                        <Icon name="search" className="text-telem-forest mt-1 flex-shrink-0" size={20} />
-                                        <span><strong>בחינת הפרויקט והגדרת הדרישות:</strong> מתחילים בפגישת אפיון. מבינים את הפרויקט — סוג, גודל, מיקום, סביבה — ומזהים מי הרשות המאשרת ומה הדרישות הספציפיות שלה. כבר בשלב הזה ניתן לזהות נקודות שעלולות להפיל את הנספח, ולתכנן פתרונות מראש במקום להתמודד איתן בדיון.</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <Icon name="database" className="text-telem-forest mt-1 flex-shrink-0" size={20} />
-                                        <span><strong>איסוף נתונים סביבתיים:</strong> איסוף נתוני בסיס: סקרים קיימים, רישומי איכות אוויר באזור, מפלסי מי תהום, סקרי רעש, נתוני תחבורה, ומידע אקולוגי. אם נדרש, מבצעים מדידות שטח. כאן הניסיון בתעשייה משתלם — אנחנו יודעים איזה נתונים הוועדה תבקש לראות, ומה אפשר להציג מתוך מאגרים קיימים בלי להזמין סקרים מיותרים.</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <Icon name="bar-chart-2" className="text-telem-forest mt-1 flex-shrink-0" size={20} />
-                                        <span><strong>ניתוח השפעות והערכת סיכונים:</strong> ניתוח שיטתי של ההשפעות הצפויות בכל היבט: אוויר, רעש, מים (ניקוז ושפכים), פסולת (אצירה ופינוי), קרקע, נוף, אקולוגיה, ותחבורה. כל השפעה מנוקדת ברמת סיכון, ולכל סיכון מוצעת אסטרטגיית התמודדות קונקרטית.</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <Icon name="file-text" className="text-telem-forest mt-1 flex-shrink-0" size={20} />
-                                        <span><strong>ניסוח הנספח והגשתו:</strong> המסמך נכתב לפי הפורמט המדויק שדורשת הרשות הספציפית — ועדה מקומית, מחוזית, או המשרד להגנת הסביבה. הוא כולל מסקנות, תכנית פעולה סביבתית, ומפרט מערכות נדרשות (אצירת פסולת, ניקוז). אם נדרש נספח אקוסטי — נספח אקוסטי הוא מסמך נפרד המוכן על ידי יועץ אקוסטי, ואנחנו מתאמים מולו את ההיבטים שמשיקים לנספח הסביבתי. דו"ח לא יוצא בלי בקרה כפולה.</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <Icon name="check-circle" className="text-telem-forest mt-1 flex-shrink-0" size={20} />
-                                        <span><strong>ליווי בוועדה ועד אישור:</strong> זה החלק שיועצים רבים מפסיקים בו — ואנחנו ממשיכים. אם הוועדה דורשת תיקונים, הבהרות, או מסמכים נוספים — אנחנו מטפלים בכל ההתכתבות, נוכחים בדיונים אם נדרש, ועד שיש אישור בתיק. אצלנו "סגירת פרויקט" משמעותה אישור בכתב, לא הגשת מסמך.</span>
-                                    </li>
-                                </ul>
-                            </section>
-
-                            <div className="bg-white p-8 rounded-[32px] border border-telem-khaki/20 shadow-lg my-4">
-                                <h2 className="text-2xl font-black text-telem-dark mb-6 italic underline decoration-telem-khaki">שאלות נפוצות</h2>
-                                <div className="space-y-6">
-                                    <div>
-                                        <h3 className="font-black text-telem-dark text-xl mb-2 italic">כמה זמן לוקח להכין נספח סביבתי?</h3>
-                                        <p>בהיתר בנייה רגיל — 3 עד 5 שבועות מרגע איסוף החומרים. בנספח לתב"ע או פרויקט מורכב — 6 עד 10 שבועות. תהליך האישור עצמו תלוי בקצב הוועדה ויכול להוסיף עוד 4 עד 8 שבועות. אם הפרויקט דחוף, אנחנו עובדים במקביל לשאר המסלולים שלכם — דברו איתנו ונבחן.</p>
-                                    </div>
-                                    <div>
-                                        <h3 className="font-black text-telem-dark text-xl mb-2 italic">מה ההבדל בין נספח סביבתי לתסקיר השפעה על הסביבה?</h3>
-                                        <p>נספח סביבתי הוא מסמך תמציתי המציג היבטים סביבתיים מרכזיים של פרויקט, ונדרש ברוב היתרי הבנייה ובחלק מהתב"עות. תסקיר השפעה על הסביבה (תש"ס) הוא מסמך מקיף בהרבה, נדרש רק בפרויקטים בעלי השפעה גדולה לפי תקנות התכנון והבנייה, כולל דיון פומבי, ולוקח חודשים. בייעוץ ראשוני אנחנו אומרים בכנות איזה מסמך נדרש בפרויקט שלכם.</p>
-                                    </div>
-                                    <div>
-                                        <h3 className="font-black text-telem-dark text-xl mb-2 italic">האם צריך נספח סביבתי לכל היתר בנייה?</h3>
-                                        <p>לא לכל היתר. לבית פרטי קטן באזור מגורים, בדרך כלל לא נדרש. לפרויקט מסחרי, תעשייתי, רב-קומתי, או באזור בעל רגישות סביבתית — כן. בכל מקרה, הוועדה המקומית קובעת — אנחנו ממליצים לפנות אלינו לבחינה ראשונית של 15 דקות לפני שמשקיעים בהכנת מסמך שאולי לא נדרש כלל.</p>
-                                    </div>
-                                    <div>
-                                        <h3 className="font-black text-telem-dark text-xl mb-2 italic">מה קורה אם הוועדה דורשת תיקונים בנספח?</h3>
-                                        <p>בעבודה שלנו זה כלול. הוועדה לא תמיד מאשרת בפעם הראשונה — לפעמים יש שאלות, לפעמים בקשה למידע נוסף. אנחנו ממשיכים ללוות עד אישור בתיק, בלי תוספת תשלום על תיקונים שגרתיים. תיקונים שנובעים משינוי בפרויקט עצמו — מתומחרים בנפרד, אבל בשקיפות מלאה.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <section>
-                                <h2 className="text-2xl font-black text-telem-dark mb-4 italic">קישורים ומשאבים רשמיים לנספח סביבתי</h2>
-                                <ul className="space-y-4 pr-2">
-                                    <li className="flex items-start gap-3">
-                                        <Icon name="external-link" className="text-telem-forest mt-1 flex-shrink-0" size={18} />
-                                        <span><a href="https://www.gov.il/he/departments/ministry_of_environmental_protection" target="_blank" rel="noopener noreferrer" className="text-telem-forest font-bold underline hover:text-telem-dark">המשרד להגנת הסביבה</a> — הגוף המוביל בקביעת מדיניות סביבתית ובאישורי נספחים סביבתיים בפרויקטים מורכבים.</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <Icon name="external-link" className="text-telem-forest mt-1 flex-shrink-0" size={18} />
-                                        <span><a href="https://www.gov.il/he/departments/ministry_of_interior" target="_blank" rel="noopener noreferrer" className="text-telem-forest font-bold underline hover:text-telem-dark">מינהל התכנון — משרד הפנים</a> — הגוף המאסדר את הליכי התכנון, התב"ע והנפקת היתרי בנייה ברמה הארצית.</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <Icon name="external-link" className="text-telem-forest mt-1 flex-shrink-0" size={18} />
-                                        <span><a href="https://mavat.iplan.gov.il/" target="_blank" rel="noopener noreferrer" className="text-telem-forest font-bold underline hover:text-telem-dark">מערכת מידע תכנוני iplan (mavat)</a> — בדיקת ייעוד קרקע, היסטוריית תכניות ותנאי הוועדה המחוזית לכל מגרש.</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <Icon name="external-link" className="text-telem-forest mt-1 flex-shrink-0" size={18} />
-                                        <span><a href="https://www.water.gov.il/" target="_blank" rel="noopener noreferrer" className="text-telem-forest font-bold underline hover:text-telem-dark">רשות המים בישראל</a> — דרישות בנושא ניקוז, שפכים, ושימור משאבי מים בפרויקטים סביבתיים.</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <Icon name="external-link" className="text-telem-forest mt-1 flex-shrink-0" size={18} />
-                                        <span><a href="https://www.gov.il/he/departments/topics/planning_committees" target="_blank" rel="noopener noreferrer" className="text-telem-forest font-bold underline hover:text-telem-dark">ועדות תכנון ובנייה מחוזיות</a> — רשימת הוועדות המחוזיות הדנות בנספחים סביבתיים בתב"עות ופרויקטים גדולים.</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <Icon name="external-link" className="text-telem-forest mt-1 flex-shrink-0" size={18} />
-                                        <span><a href="https://www.parks.org.il" target="_blank" rel="noopener noreferrer" className="text-telem-forest font-bold underline hover:text-telem-dark">רשות הטבע והגנים</a> — גוף סטטוטורי הדורש התייחסות בנספחים סביבתיים בפרויקטים סמוכים לשמורות טבע ולשטחים פתוחים.</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <Icon name="external-link" className="text-telem-forest mt-1 flex-shrink-0" size={18} />
-                                        <span><a href="https://www.gov.il/he/departments/israel_land_authority" target="_blank" rel="noopener noreferrer" className="text-telem-forest font-bold underline hover:text-telem-dark">רשות מקרקעי ישראל (רמ"י)</a> — דורשת נספחים סביבתיים בהקצאות קרקע ובשינויי ייעוד.</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <Icon name="external-link" className="text-telem-forest mt-1 flex-shrink-0" size={18} />
-                                        <span><a href="https://www.gov.il/he/pages/planning_env_impact" target="_blank" rel="noopener noreferrer" className="text-telem-forest font-bold underline hover:text-telem-dark">תקנות התכנון והבנייה — תסקירי השפעה על הסביבה</a> — התקנות הקובעות מתי נדרש תסקיר מלא לעומת נספח סביבתי.</span>
-                                    </li>
-                                </ul>
-                            </section>
-
-                            <section>
-                                <h2 className="text-2xl font-black text-telem-dark mb-4 italic">שירותים משלימים</h2>
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                    <a href="/history/" className="block bg-white p-6 rounded-2xl border border-telem-khaki/20 shadow hover:shadow-md hover:border-telem-forest transition-all group">
-                                        <Icon name="search" className="text-telem-forest mb-3" size={28} />
-                                        <h3 className="font-black text-telem-dark text-lg mb-1 italic group-hover:text-telem-forest">סקר היסטורי לקרקע</h3>
-                                        <p className="text-sm text-telem-black/70">בדיקת זיהום קרקע היסטורית — לעיתים קרובות שלב מקדים לנספח סביבתי.</p>
-                                    </a>
-                                    <a href="/waste/" className="block bg-white p-6 rounded-2xl border border-telem-khaki/20 shadow hover:shadow-md hover:border-telem-forest transition-all group">
-                                        <Icon name="trash-2" className="text-telem-forest mb-3" size={28} />
-                                        <h3 className="font-black text-telem-dark text-lg mb-1 italic group-hover:text-telem-forest">נספח אצירת אשפה</h3>
-                                        <p className="text-sm text-telem-black/70">תכנון מערך אצירת פסולת — מרכיב חיוני בנספח להיתר בנייה.</p>
-                                    </a>
-                                    <a href="/guides/" className="block bg-white p-6 rounded-2xl border border-telem-khaki/20 shadow hover:shadow-md hover:border-telem-forest transition-all group">
-                                        <Icon name="book-open" className="text-telem-forest mb-3" size={28} />
-                                        <h3 className="font-black text-telem-dark text-lg mb-1 italic group-hover:text-telem-forest">מרכז ידע ורגולציה</h3>
-                                        <p className="text-sm text-telem-black/70">מדריכים על נספחים, תסקירי השפעה, ותהליכי אישור.</p>
-                                    </a>
-                                </div>
-                            </section>
-                        </div>
-
-                        <section className="mt-16 pt-8 border-t border-telem-khaki/20">
-                            <h2 className="text-2xl font-black text-telem-dark mb-6 italic tracking-tight">נספח סביבתי להיתר בנייה ותב"ע בישראל</h2>
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
-                                <h3 className="text-lg font-bold text-telem-forest italic">דרישות המשרד להגנת הסביבה</h3>
-                                <h3 className="text-lg font-bold text-telem-forest italic">נספח סביבתי לוועדה מקומית</h3>
-                                <h3 className="text-lg font-bold text-telem-forest italic">אישור סביבתי לפרויקט בנייה</h3>
-                            </div>
-                        </section>
-
-                        <div className="mt-20 bg-telem-dark text-white rounded-[40px] p-10 text-center shadow-2xl relative overflow-hidden text-telem-cream">
-                            <h3 className="text-3xl font-black mb-6 italic tracking-tight">צריכים נספח סביבתי לפרויקט שלכם?</h3>
-                            <p className="text-telem-cream/80 mb-10 text-xl font-medium max-w-2xl mx-auto italic">אנחנו בתלם, עם הניסיון שצברנו במאות פרויקטים בתחום הסביבה — בליווי אישי של אבירם בוצר ובהבנה עמוקה של איך ועדות התכנון, המשרד להגנת הסביבה ומינהל התכנון רוצים לראות נספח — מכינים מסמכים שעוברים אישור ולא מתישים את הפרויקט. דברו איתנו לייעוץ ראשוני — בלי התחייבות.</p>
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                <a href={`tel:${PHONE_NUMBER}`} className="bg-telem-forest text-white px-10 py-4 rounded-2xl font-black text-xl hover:bg-telem-moss transition-all shadow-lg flex items-center justify-center gap-3 italic">
-                                    <Icon name="phone" size={20} /> התקשרו: 050-6890650
-                                </a>
-                                <button onClick={() => window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("היי אבירם, רציתי לשאול לגבי נספח סביבתי.")}`, '_blank')} className="border-2 border-telem-khaki text-white px-10 py-4 rounded-2xl font-black text-xl hover:bg-white/10 transition-all italic flex items-center justify-center gap-3">
-                                    <Icon name="message-circle" size={20} /> WhatsApp
-                                </button>
-                                <a href="/#contactForm" className="border-2 border-white/40 text-white px-10 py-4 rounded-2xl font-black text-xl hover:bg-white/10 transition-all italic">
-                                    שלחו פנייה
-                                </a>
-                            </div>
-                        </div>
-                        <div className="py-6 border-t border-telem-khaki/20 bg-telem-moss/5">
-                            <div className="max-w-7xl mx-auto px-4 text-center">
-                                <p className="text-telem-forest font-semibold">מעוניינים לעקוב אחר עדכונים רגולטוריים? <a href="/in-the-news/" className="font-black text-telem-dark hover:text-telem-forest underline decoration-telem-khaki underline-offset-2">סביבה בכותרות — סקירה ופרשנות מקצועית ←</a></p>
-                            </div>
-                        </div>
-                    </main>
-
-                    <footer className="bg-telem-dark text-white py-20 px-4 text-right border-t border-telem-forest/30">
-                        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-16">
-                            <div>
-                                <TelemLogo className="mb-8" />
-                                <p className="text-telem-cream/60 text-xl max-w-md font-medium italic">אבירם בוצר - מומחה לייעוץ סביבתי ותכנון אצירת אשפה.</p>
-                            </div>
-                            <div className="flex flex-col md:items-end gap-6 text-telem-cream font-bold text-lg">
-                                <div className="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20"><span>aviram@telemenv.co.il</span><Icon name="mail" size={24} className="text-telem-khaki" /></div>
-                                <div className="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20"><span>050-6890650</span><Icon name="phone" size={24} className="text-telem-khaki" /></div>
-                                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20 hover:text-white transition-all"><span>פרופיל LinkedIn</span><Icon name="linkedin" size={24} className="text-telem-khaki" /></a>
-                                <div className="flex gap-4 mt-8 text-sm font-bold text-telem-khaki">
-                                    <button onClick={() => setLegalModal('accessibility')} className="hover:underline italic">הצהרת נגישות</button>
-                                    <span className="opacity-30">|</span>
-                                    <button onClick={() => setLegalModal('privacy')} className="hover:underline italic">מדיניות פרטיות</button>
-                                </div>
-                                <p className="mt-4 text-sm font-normal opacity-30 italic">© {new Date().getFullYear()} תלם - ניהול סביבה ופסולת. כל הזכויות שמורות.</p>
-                            </div>
-                        </div>
-                    </footer>
-                </div>
-            );
-        };
-
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<App />);
-    </script>
+    
 
 
-<section style="background:#f8f4f1;font-family:'Assistant',sans-serif;color:#243e38;padding:2rem;border-top:1px solid #94937f;direction:rtl;text-align:right;" aria-label="מקורות ומידע רשמי">
+<section style="background:#f8f4f1;font-family:'Assistant',sans-serif;color:#243e38;padding:2rem;border-top:1px solid #94937f;direction:rtl;text-align:right;" aria-label="דפים נוספים באתר">
       <div style="max-width:1200px;margin:0 auto;">
-        <h2 style="font-size:1rem;font-weight:800;color:#475d4b;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #94937f;">מקורות ומידע רשמי</h2>
+        <h2 style="font-size:1rem;font-weight:800;color:#475d4b;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #94937f;">דפים נוספים באתר</h2>
         <div style="display:flex;flex-wrap:wrap;gap:40px;">
+          
           <div style="flex:1;min-width:260px;">
-            <h3 style="font-size:0.875rem;font-weight:700;color:#475d4b;margin-bottom:12px;">קישורים חיצוניים</h3>
-            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
-              <li><a href="https://www.gov.il/he/departments/ministry_of_environmental_protection" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">המשרד להגנת הסביבה</a></li>
-              <li><a href="https://www.gov.il/he/departments/topics/noise_nuisances" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">הנחיות לבדיקת רעש וסביבה</a></li>
-              <li><a href="https://www.gov.il/he/departments/topics/air_quality" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">מדיניות איכות האוויר</a></li>
-              <li><a href="https://www.gov.il/he/departments/topics/hazardous_materials" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">חומרים מסוכנים וסביבה</a></li>
-              <li><a href="https://mavat.iplan.gov.il" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">מרכז מידע לתכנון (מרמ"ת)</a></li>
-            </ul>
-          </div>
-          <div style="flex:1;min-width:260px;">
-            <h3 style="font-size:0.875rem;font-weight:700;color:#475d4b;margin-bottom:12px;">דפים נוספים באתר</h3>
+            
             <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
               <li><a href="/about.html" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">אודות תלם</a></li>
               <li><a href="/waste/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">נספח אצירת אשפה</a></li>
@@ -631,4 +245,27 @@
     <span>חייגו אלינו</span>
   </a>
 </div>
+<script>
+(function(){
+function ready(fn){if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",fn);}else{fn();}}
+// high-contrast / underline CSS (accessibility mode only; injected once)
+if(!document.getElementById("a11y-css")){var st=document.createElement("style");st.id="a11y-css";st.textContent=".high-contrast{background:#000!important;color:#fff!important}.high-contrast header,.high-contrast section,.high-contrast footer,.high-contrast div,.high-contrast nav{background-color:#000!important;color:#fff!important;border-color:#fff!important}.high-contrast a,.high-contrast h1,.high-contrast h2,.high-contrast h3,.high-contrast p,.high-contrast span,.high-contrast button{color:#fff!important}.underline-links a{text-decoration:underline!important}";document.head.appendChild(st);}
+var fontScale=100;
+window.toggleElement=function(id){var el=document.getElementById(id);if(el)el.classList.toggle("hidden");if(id==="accessibilityPanel"){var t=document.getElementById("accessibilityToggle");if(t)t.setAttribute("aria-expanded",String(!el.classList.contains("hidden")));}};
+window.closeElement=function(id){var el=document.getElementById(id);if(el)el.classList.add("hidden");};
+window.changeFontSize=function(d){fontScale+=d*10;if(fontScale<90)fontScale=90;if(fontScale>140)fontScale=140;document.documentElement.style.fontSize=fontScale+"%";try{localStorage.setItem("fontScale",fontScale);}catch(e){}};
+window.toggleHighContrast=function(){document.body.classList.toggle("high-contrast");try{localStorage.setItem("highContrast",document.body.classList.contains("high-contrast")?"on":"off");}catch(e){}};
+window.toggleUnderlineLinks=function(){document.body.classList.toggle("underline-links");try{localStorage.setItem("underlineLinks",document.body.classList.contains("underline-links")?"on":"off");}catch(e){}};
+window.resetAccessibility=function(){fontScale=100;document.documentElement.style.fontSize="100%";document.body.classList.remove("high-contrast");document.body.classList.remove("underline-links");try{localStorage.removeItem("fontScale");localStorage.removeItem("highContrast");localStorage.removeItem("underlineLinks");}catch(e){}};
+ready(function(){
+try{var f=localStorage.getItem("fontScale");if(f){fontScale=parseInt(f,10)||100;document.documentElement.style.fontSize=fontScale+"%";}if(localStorage.getItem("highContrast")==="on")document.body.classList.add("high-contrast");if(localStorage.getItem("underlineLinks")==="on")document.body.classList.add("underline-links");}catch(e){}
+// cookie consent
+var K="cookieConsent",cb=document.getElementById("cookieBanner");
+if(cb){try{if(localStorage.getItem(K)==="true"){cb.style.display="none";}else{var bt=cb.querySelector("button");if(bt)bt.addEventListener("click",function(){try{localStorage.setItem(K,"true");}catch(e){}cb.style.display="none";});}}catch(e){}}
+// hamburger mobile menu
+var mb=document.getElementById("histMenuBtn"),mm=document.getElementById("histMobileMenu");
+if(mb&&mm){var mclose=function(){mm.style.display="none";mb.setAttribute("aria-expanded","false");};mb.addEventListener("click",function(e){e.stopPropagation();if(mm.style.display==="block"){mclose();}else{mm.style.display="block";mb.setAttribute("aria-expanded","true");}});Array.prototype.forEach.call(mm.querySelectorAll("a"),function(a){a.addEventListener("click",mclose);});document.addEventListener("click",function(e){if(mm.style.display==="block"&&!mm.contains(e.target)&&!mb.contains(e.target))mclose();});}
+});
+})();
+</script>
 </body></html>
