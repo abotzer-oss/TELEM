@@ -7,14 +7,23 @@
   <title>תודה — פנייתכם התקבלה | תלם ניהול סביבה</title>
   <link rel="icon" type="image/png" href="/favicon.png">
 
-  <!-- Google Ads conversion -->
-  <!-- TODO: replace with real Google Ads conversion ID + label from Aviram -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID"></script>
+  <!-- Analytics: GA4 (real, site-wide stream). Loaded before lp.js. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3F8H2J4D7F"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    gtag('config', 'G-3F8H2J4D7F');
+
+    // Google Ads conversion — fires on thank-you page load.
+    // TODO: replace AW-CONVERSION_ID/CONVERSION_LABEL with real Google Ads ID + label from Aviram
     gtag('event','conversion',{'send_to':'AW-CONVERSION_ID/CONVERSION_LABEL'});
+
+    // GA4 intent attribution: which landing page produced the lead (?from=page_id)
+    (function(){
+      var from = new URLSearchParams(location.search).get('from') || '(unknown)';
+      gtag('event','lead_thankyou',{ from: from });
+    })();
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
 Disallow: /lp/
+
+User-agent: AdsBot-Google
+Allow: /lp/
+
+User-agent: AdsBot-Google-Mobile
+Allow: /lp/
+
 Sitemap: https://telemenv.co.il/sitemap.xml

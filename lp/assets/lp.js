@@ -70,7 +70,7 @@
           .then(function (json) {
             if (json && json.success) {
               track('generate_lead', { page_id: pageId(), currency: 'ILS' });
-              window.location.href = '../toda/';
+              window.location.href = '../toda/?from=' + encodeURIComponent(pageId());
             } else {
               throw new Error((json && json.message) || 'submit failed');
             }
