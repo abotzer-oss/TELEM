@@ -1,355 +1,165 @@
-<!DOCTYPE html><html lang="he" dir="rtl"><head>
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>חישוב פסולת בניין ועודפי עפר — מדריך מלא | תלם</title>
-    <meta name="description" content="המדריך המקצועי לחישוב כמויות פסולת בניין ועודפי עפר בהתאם למדיניות המשרד להגנת הסביבה. גלו את טבלת המקדמים הרשמית ומנעו עיכובים בטופס 4.">
+    <title>מחשבון פסולת בניין ועודפי עפר — חישוב מהיר | תלם</title>
+    <meta name="description" content="מחשבון פסולת בניין ועודפי עפר: הזינו שטח בנייה או הריסה וקבלו הערכת כמויות בטון בשניות, לפי מקדמי המשרד להגנת הסביבה. לדיווח רשמי — למדריך המלא.">
     <link rel="canonical" href="https://telemenv.co.il/guides/waste-calculation.html">
     <link rel="alternate" hreflang="he-IL" href="https://telemenv.co.il/guides/waste-calculation.html">
     <link rel="alternate" hreflang="x-default" href="https://telemenv.co.il/guides/waste-calculation.html">
+    <link rel="icon" type="image/png" href="/favicon.png">
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "חישוב פסולת בניין ועודפי עפר — מדריך מלא",
-      "description": "המדריך המקצועי לחישוב כמויות פסולת בניין ועודפי עפר בהתאם למדיניות המשרד להגנת הסביבה. גלו את טבלת המקדמים הרשמית ומנעו עיכובים בטופס 4.",
-      "author": {"@type": "Person", "name": "אבירם בוצר"},
-      "publisher": {"@type": "Organization", "name": "תלם ניהול סביבה", "url": "https://telemenv.co.il"},
+      "@type": "WebApplication",
+      "name": "מחשבון פסולת בניין ועודפי עפר",
+      "description": "כלי להערכה מהירה של כמויות פסולת בניין ועודפי עפר בטון, לפי סוג הפעילות ושטח, על בסיס מקדמי המשרד להגנת הסביבה.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All",
       "url": "https://telemenv.co.il/guides/waste-calculation.html",
-      "datePublished": "2024-01-01",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "ILS"},
+      "publisher": {"@type": "Organization", "name": "תלם ניהול סביבה", "url": "https://telemenv.co.il"},
       "inLanguage": "he"
     }
     </script>
 
     <!-- Open Graph -->
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="חישוב פסולת בניין ועודפי עפר — מדריך מלא | תלם">
-    <meta property="og:description" content="המדריך המקצועי לחישוב כמויות פסולת בניין ועודפי עפר בהתאם למדיניות המשרד להגנת הסביבה. גלו את טבלת המקדמים הרשמית ומנעו עיכובים בטופס 4.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="מחשבון פסולת בניין ועודפי עפר — חישוב מהיר | תלם">
+    <meta property="og:description" content="הזינו שטח בנייה או הריסה וקבלו הערכת כמויות פסולת בניין בטון בשניות, לפי מקדמי המשרד להגנת הסביבה.">
     <meta property="og:url" content="https://telemenv.co.il/guides/waste-calculation.html">
     <meta property="og:site_name" content="תלם - ניהול סביבה">
     <meta property="og:image" content="https://telemenv.co.il/logo.png">
-    <meta property="og:image:secure_url" content="https://telemenv.co.il/logo.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1586">
-    <meta property="og:image:height" content="659">
-    <meta property="og:image:alt" content="תלם - ניהול סביבה ופסולת">
     <meta property="og:locale" content="he_IL">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="חישוב פסולת בניין ועודפי עפר — מדריך מלא | תלם">
-    <meta name="twitter:description" content="טבלת מקדמים רשמית, חישוב עודפי עפר ומניעת עיכובים בטופס 4 — המדריך המקצועי לנספח כמויות פסולת בניין.">
+    <meta name="twitter:title" content="מחשבון פסולת בניין ועודפי עפר | תלם">
+    <meta name="twitter:description" content="הערכה מהירה של כמויות פסולת בניין ועודפי עפר בטון, לפי מקדמי המשרד להגנת הסביבה.">
     <meta name="twitter:image" content="https://telemenv.co.il/logo.png">
     <meta name="twitter:site" content="@telemenv">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        telem: { moss: '#78836a', forest: '#475d4b', dark: '#243e38', cream: '#f8f4f1', khaki: '#94937f' }
-                    },
-                    fontFamily: { sans: ['"Google Sans"', 'Assistant', 'sans-serif'] }
-                }
-            }
-        }
-    </script>
-    
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap');
-        body { font-family: "Google Sans", "Assistant", sans-serif; background-color: #f8f4f1; line-height: 1.8; }
-        .content-area h2 { font-size: 2.25rem; font-weight: 900; color: #243e38; margin-top: 3.5rem; margin-bottom: 1.5rem; border-right: 6px solid #94937f; padding-right: 1.5rem; font-style: italic; }
-        .content-area h3 { font-size: 1.75rem; font-weight: 800; color: #475d4b; margin-top: 2.5rem; margin-bottom: 1.25rem; }
-        .content-area p { font-size: 1.25rem; margin-bottom: 1.5rem; color: #374151; font-weight: 500; }
-        .content-area ul { list-style: none; padding-right: 0.5rem; margin-bottom: 2.5rem; }
-        .content-area li { position: relative; padding-right: 2rem; margin-bottom: 0.8rem; font-weight: 600; font-size: 1.15rem; color: #243e38; }
-        .content-area li::before { content: "←"; position: absolute; right: 0; color: #78836a; font-weight: bold; }
-        .calculation-box { background-color: white; border: 3px solid #94937f; padding: 2.5rem; border-radius: 2.5rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); margin: 3rem 0; }
-        .red-flag { background-color: #fff1f2; border: 3px solid #be123c; padding: 2.5rem; border-radius: 2.5rem; margin: 3.5rem 0; position: relative; }
-        .table-container { overflow-x: auto; margin: 2rem 0; border-radius: 1.5rem; border: 2px solid #e5e7eb; }
-        table { width: 100%; border-collapse: collapse; background: white; text-align: right; }
-        th { background: #475d4b; color: white; padding: 1rem; font-weight: 800; }
-        td { padding: 1rem; border-bottom: 1px solid #eee; font-weight: 600; }
-        tr:nth-child(even) { background: #f9fafb; }
+        @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&display=swap');
+        :root { --moss:#78836a; --forest:#475d4b; --dark:#243e38; --cream:#f8f4f1; --khaki:#94937f; }
+        * { box-sizing: border-box; }
+        body { font-family: 'Assistant', Arial, sans-serif; background:var(--cream); color:#1d1d1b; line-height:1.8; margin:0; }
+        a { color: var(--forest); }
+        .wrap { max-width: 820px; margin: 0 auto; padding: 0 20px; }
+        header.site { background:#fff; border-bottom:1px solid rgba(148,147,127,.2); }
+        header.site .wrap { max-width:1100px; height:80px; display:flex; align-items:center; justify-content:space-between; }
+        .brand { color:var(--forest); font-weight:800; font-size:1.4rem; letter-spacing:-.02em; text-decoration:none; }
+        .brand span { color:#9ca3af; font-weight:400; }
+        .callbtn { background:var(--dark); color:#fff; padding:10px 22px; border-radius:14px; font-weight:800; text-decoration:none; }
+        nav.bc { font-size:.85rem; color:var(--moss); font-weight:700; margin:24px 0 8px; }
+        nav.bc a { text-decoration:none; }
+        h1 { font-size:2.1rem; font-weight:800; color:var(--dark); margin:.4em 0; line-height:1.25; }
+        h2 { font-size:1.6rem; font-weight:800; color:var(--dark); margin-top:2.2rem; }
+        p { font-size:1.1rem; color:#374151; }
+        .calc { background:#fff; border:3px solid var(--khaki); border-radius:24px; padding:28px; margin:28px 0; box-shadow:0 10px 15px -3px rgba(0,0,0,.05); }
+        .calc label { display:block; font-weight:700; color:var(--dark); margin:14px 0 6px; }
+        .calc input, .calc select { width:100%; padding:12px 14px; border:2px solid #e5e7eb; border-radius:12px; font-size:1.05rem; font-family:inherit; }
+        .calc button { margin-top:18px; width:100%; background:var(--forest); color:#fff; border:0; padding:14px; border-radius:14px; font-size:1.15rem; font-weight:800; cursor:pointer; font-family:inherit; }
+        .calc button:hover { background:var(--moss); }
+        #result { margin-top:18px; padding:18px; background:var(--cream); border-radius:14px; border-right:6px solid var(--forest); display:none; }
+        #result strong { color:var(--dark); font-size:1.25rem; }
+        .note { font-size:.95rem; color:#6b7280; }
+        table { width:100%; border-collapse:collapse; background:#fff; margin:1.5rem 0; border-radius:14px; overflow:hidden; }
+        th, td { padding:12px 14px; text-align:right; border-bottom:1px solid #eee; font-size:1rem; }
+        th { background:var(--dark); color:#fff; font-weight:700; }
+        .cta { background:var(--dark); color:#fff; border-radius:28px; padding:32px; text-align:center; margin:40px 0; }
+        .cta h3 { font-size:1.6rem; font-weight:800; margin:0 0 12px; }
+        .cta p { color:rgba(248,244,241,.85); }
+        .cta a.button { display:inline-block; background:var(--forest); color:#fff; padding:14px 32px; border-radius:16px; font-weight:800; text-decoration:none; margin-top:10px; }
+        footer.site { background:var(--dark); color:#fff; text-align:center; padding:40px 20px; margin-top:48px; }
+        footer.site a { color:var(--khaki); }
     </style>
-<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:"Google Sans", Assistant, sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.-bottom-10{bottom:-2.5rem}.-left-10{left:-2.5rem}.top-0{top:0px}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-0{margin-bottom:0px}.mb-12{margin-bottom:3rem}.mb-16{margin-bottom:4rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mt-16{margin-top:4rem}.mt-20{margin-top:5rem}.mt-24{margin-top:6rem}.flex{display:flex}.h-24{height:6rem}.min-h-screen{min-height:100vh}.w-full{width:100%}.max-w-3xl{max-width:48rem}.max-w-5xl{max-width:64rem}.max-w-6xl{max-width:72rem}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-6{gap:1.5rem}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.rounded-2xl{border-radius:1rem}.rounded-\[32px\]{border-radius:32px}.rounded-\[60px\]{border-radius:60px}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-telem-forest\/30{border-color:rgb(71 93 75 / 0.3)}.border-telem-khaki{--tw-border-opacity:1;border-color:rgb(148 147 127 / var(--tw-border-opacity, 1))}.border-telem-khaki\/10{border-color:rgb(148 147 127 / 0.1)}.bg-telem-cream{--tw-bg-opacity:1;background-color:rgb(248 244 241 / var(--tw-bg-opacity, 1))}.bg-telem-dark{--tw-bg-opacity:1;background-color:rgb(36 62 56 / var(--tw-bg-opacity, 1))}.bg-telem-forest{--tw-bg-opacity:1;background-color:rgb(71 93 75 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.p-10{padding:2.5rem}.p-12{padding:3rem}.p-8{padding:2rem}.px-12{padding-left:3rem;padding-right:3rem}.px-4{padding-left:1rem;padding-right:1rem}.px-8{padding-left:2rem;padding-right:2rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.pb-20{padding-bottom:5rem}.pt-16{padding-top:4rem}.text-center{text-align:center}.text-right{text-align:right}.font-sans{font-family:"Google Sans", Assistant, sans-serif}.font-serif{font-family:ui-serif, Georgia, Cambria, "Times New Roman", Times, serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-light{font-weight:300}.font-medium{font-weight:500}.uppercase{text-transform:uppercase}.italic{font-style:italic}.not-italic{font-style:normal}.leading-\[0\.9\]{line-height:0.9}.leading-\[1\]{line-height:1}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-tighter{letter-spacing:-0.05em}.tracking-widest{letter-spacing:0.1em}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-red-800{--tw-text-opacity:1;color:rgb(153 27 27 / var(--tw-text-opacity, 1))}.text-red-900{--tw-text-opacity:1;color:rgb(127 29 29 / var(--tw-text-opacity, 1))}.text-red-950{--tw-text-opacity:1;color:rgb(69 10 10 / var(--tw-text-opacity, 1))}.text-telem-dark{--tw-text-opacity:1;color:rgb(36 62 56 / var(--tw-text-opacity, 1))}.text-telem-forest{--tw-text-opacity:1;color:rgb(71 93 75 / var(--tw-text-opacity, 1))}.text-telem-moss{--tw-text-opacity:1;color:rgb(120 131 106 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.decoration-telem-khaki{-webkit-text-decoration-color:#94937f;text-decoration-color:#94937f}.opacity-30{opacity:0.3}.opacity-5{opacity:0.05}.opacity-80{opacity:0.8}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:bg-telem-moss:hover{--tw-bg-opacity:1;background-color:rgb(120 131 106 / var(--tw-bg-opacity, 1))}.hover\:bg-white\/10:hover{background-color:rgb(255 255 255 / 0.1)}.hover\:text-telem-moss:hover{--tw-text-opacity:1;color:rgb(120 131 106 / var(--tw-text-opacity, 1))}.hover\:underline:hover{-webkit-text-decoration-line:underline;text-decoration-line:underline}@media (min-width: 640px){.sm\:flex-row{flex-direction:row}}@media (min-width: 768px){.md\:p-10{padding:2.5rem}.md\:p-20{padding:5rem}.md\:p-24{padding:6rem}.md\:text-2xl{font-size:1.5rem;line-height:2rem}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}.md\:text-5xl{font-size:3rem;line-height:1}.md\:text-8xl{font-size:6rem;line-height:1}}</style>
-<style id="mobile-cta-styles">
-@media (max-width: 768px) {
-  .whatsapp-float { display: none !important; }
-}
-#mobile-cta-banner {
-  display: none;
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  width: 100%; height: 56px;
-  z-index: 9999;
-  background: #243e38;
-  border-top: 3px solid #78836a;
-  direction: rtl;
-}
-@media (max-width: 768px) {
-  #mobile-cta-banner { display: flex; align-items: stretch; }
-  body { padding-bottom: 56px !important; }
-}
-#mobile-cta-banner a {
-  display: flex; align-items: center; justify-content: center;
-  gap: 8px; width: 50%; height: 100%;
-  color: #f8f4f1;
-  font-family: 'Assistant', sans-serif;
-  font-weight: 800; font-size: 15px;
-  text-decoration: none;
-  background: #243e38;
-  transition: background 0.15s;
-  -webkit-tap-highlight-color: transparent;
-}
-#mobile-cta-banner a:hover,
-#mobile-cta-banner a:active { background: #475d4b; }
-#mobile-cta-banner .mcta-divider {
-  width: 1px; height: 60%; align-self: center;
-  background: #475d4b; flex-shrink: 0;
-}
-#mobile-cta-banner svg { width: 20px; height: 20px; flex-shrink: 0; }
-#mobile-cta-banner span { white-space: nowrap; }
-</style>
 </head>
 <body>
-    
-
-    <div id="root"><div class="min-h-screen pb-20"><header class="bg-white border-b h-24 flex items-center px-4 sticky top-0 z-50 shadow-sm text-right"><div class="max-w-6xl mx-auto w-full flex justify-between items-center"><a href="/" class="text-telem-forest font-black text-2xl italic tracking-tighter flex items-center gap-2">תלם <span class="text-gray-400 font-light">| ניהול סביבה</span></a><a href="tel:0506890650" class="bg-telem-dark text-white px-8 py-3 rounded-2xl font-black font-sans italic tracking-tighter uppercase shadow-md">050-6890650</a></div></header><main class="max-w-5xl mx-auto px-4 pt-16 text-right"><nav class="mb-8 text-telem-moss font-bold flex gap-3 text-sm italic"><a href="/" class="hover:underline">דף הבית</a> <span>/</span><a href="/guides/" class="hover:underline">מרכז ידע</a> <span>/</span><span class="text-telem-dark underline decoration-telem-khaki">חישוב כמויות פסולת</span></nav><article class="bg-white rounded-[60px] p-10 md:p-24 shadow-2xl border border-telem-khaki/10"><h1 class="text-4xl md:text-8xl font-black text-telem-black mb-16 leading-[1] italic tracking-tighter uppercase leading-[0.9]">חישוב אצירת פסולת — מדריך מלא</h1><div class="content-area"><p>הכנת נספח לחישוב כמויות פסולת בניין ועודפי עפר אינה רק דרישה טכנית בתיק המידע – היא לב ליבה של האחריות הסביבתית והכלכלית של היזם. הנספח מבוסס על מסמך המדיניות הרשמי של המשרד להגנת הסביבה: <a href="https://www.gov.il/BlobFolder/policy/removal-building-waste/he/removal_building_waste.pdf" target="_blank" rel="noopener noreferrer" class="text-telem-forest font-black underline hover:text-telem-moss transition-colors">מדיניות הטיפול בפסולת בניין (PDF)</a>.</p><p>חישוב פסולת בנייה הוא חלק מהותי מנספח ניהול הפסולת הנדרש בתהליך הרישוי. מסמך המדיניות של המשרד להגנת הסביבה מגדיר מקדמי חישוב לכל שלב בנייה — עידוד, הריסה, גמר — ובהתאם להם נקבע כמה פסולת ייווצר ולאן יפונה. הגשת חישוב מדויק מזרזת את אישור הנספח ומייעלת את ניהול האתר.</p><p>עבור יזם או מנהל פרויקט, חוסר התאמה בין הכמויות המוצהרות בנספח לבין הכמויות המפונות בפועל יוביל לעיכובים קשים בקבלת טופס 4, דרישה לתצהירים משפטיים וחשיפה לקנסות כבדים בגין השלכה לא חוקית.</p><h2>טבלת מקדמי החישוב הרשמית (מדיניות המשרד)</h2><p>לצורך הכנת הנספח, המשרד להגנת הסביבה הגדיר מקדמים סטטיסטיים המאפשרים לחזות את כמות הפסולת שתיווצר באתר. להלן הערכים המרכזיים המשמשים אותנו בתהליך התכנון:</p><div class="table-container shadow-lg"><table><thead><tr><th>סוג הפעילות / המבנה</th><th>יחידת מידה</th><th>מקדם (טון ליחידה)</th></tr></thead><tbody><tr><td>בנייה חדשה למגורים</td><td>מ"ר בנוי</td><td>0.15 - 0.20</td></tr><tr><td>הריסת מבנה קיים (בטון/בלוקים)</td><td>מ"ר בנוי</td><td>1.0 - 1.2</td></tr><tr><td>בנייה למסחר ומשרדים</td><td>מ"ר בנוי</td><td>0.10 - 0.15</td></tr><tr><td>עודפי עפר (חפירה)</td><td>מ"ק חפור</td><td>1.3 - 1.5 (כולל תפיחה)</td></tr><tr><td>שיפוץ מקיף בבניין קיים</td><td>מ"ר משופץ</td><td>0.05 - 0.10</td></tr></tbody></table></div><div class="red-flag"><h4 class="text-red-800 font-black text-3xl mb-6 italic flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="skull" aria-hidden="true" class="lucide lucide-skull" style="width: 32px; height: 32px;"><path d="m12.5 17-.5-1-.5 1h1z"></path><path d="M15 22a1 1 0 0 0 1-1v-1a2 2 0 0 0 1.56-3.25 8 8 0 1 0-11.12 0A2 2 0 0 0 8 20v1a1 1 0 0 0 1 1z"></path><circle cx="15" cy="12" r="1"></circle><circle cx="9" cy="12" r="1"></circle></svg> נורה אדומה ליזמים ומנהלי פרויקטים</h4><p class="text-red-900 font-bold text-xl leading-relaxed mb-4 uppercase">מלכודת הדיווח הכוזב ועיכוב טופס 4:</p><p class="text-red-950 font-medium text-lg leading-relaxed">היום, כל משאית שיוצאת מהאתר שלכם מדווחת **בזמן אמת** במערכת הממוחשבת של המשרד להגנת הסביבה. המלכודת הגדולה מתרחשת ביום הגשת הבקשה לתעודת גמר (טופס 4): הוועדה המקומית מבצעת הצלבה אוטומטית בין הכמות שפונית לבין הכמות שהצהרתם עליה בנספח המקורי.<br><br><strong>סטייה של מעל 10%-15% כלפי מעלה?</strong> המערכת נחסמת אוטומטית. תדרשו להוכיח בחוות דעת משפטית וסביבתית מדוע נוצרו עודפי פסולת שלא דווחו, ולעיתים אף תדרשו לבצע סקרי קרקע כדי להוכיח שלא "קברתם" פסולת בשטח. אנו בתלם דואגים לבצע חישוב שמרני ומדויק הכולל מקדמי בטיחות, כדי להבטיח מעבר חלק בטופס 4.</p></div><h2>עודפי עפר - האתגר הכלכלי הגדול</h2><p>בפרויקטים הכוללים חפירה משמעותית (מרתפים, תשתיות), עודפי העפר מהווים את מרכיב העלות הגבוה ביותר. חישוב שגוי של מקדם התפיחה של הקרקע (הנפח שהעפר תופס ברגע שהוא נחפר) מוביל למחסור בתקציב ולבעיות רגולטוריות מול אתרי הקליטה.</p><ul><li><strong>קרקע חולית:</strong> מקדם תפיחה נמוך יחסית (כ-1.1).</li><li><strong>קרקע חרסיתית/סלעית:</strong> מקדם תפיחה גבוה (יכול להגיע ל-1.5).</li><li><strong>חשוב לזכור:</strong> כל טון עפר מחויב בתשלום אגרת פינוי ודמי קליטה. חישוב נכון חוסך כסף אמיתי בביצוע.</li></ul><h3>למה הניסיון של "תלם" קריטי כאן?</h3><p>כמי שניהל מחלקות סביבה ושפ"ע במגזר הציבורי, אבירם בוצר מכיר את אלגוריתם הבדיקה של הרשויות. אנו יודעים לבנות נספח שמאזן בין החיסכון הכלכלי לבין הביטחון הרגולטורי. אנו מוודאים שחישוב עודפי העפר כולל את כל רכיבי הדיפון והקידוחים, כך שלא תופתעו מכמויות ענק בשטח שאין להן מענה בנספח המאושר.</p><div class="mt-16 bg-telem-cream border-2 border-telem-khaki rounded-[32px] p-8 md:p-10"><h3 class="text-2xl md:text-3xl font-black text-telem-dark mb-6 italic">קישורים רשמיים — רגולציה ופסולת בניין</h3><ul class="space-y-3 mb-0"><li><a href="https://www.gov.il/he/departments/ministry_of_environmental_protection" target="_blank" rel="noopener noreferrer" class="text-telem-forest font-black underline hover:text-telem-moss transition-colors"><div class="author-note" style="margin-top:2rem;padding:1rem 1.25rem;background:#f4f9f6;border-right:3px solid #1B6B3A;border-radius:0 8px 8px 0;font-size:14px;color:#444;line-height:1.7;direction:rtl;">מדריך זה נכתב על ידי <a href="https://telemenv.co.il/about.html" style="color:#1B6B3A;font-weight:500;text-decoration:none;">אבירם בוצר</a> — מנהל מחלקת איכות סביבה לשעבר במועצה האזורית עמק חפר, יועץ מלווה לתוכנית חוף נקי של המשרד להגנת הסביבה, ומייסד תלם ניהול סביבה. המדריך מבוסס על ניסיון ישיר בעבודה מול רשויות ורגולטורים בישראל.</div>המשרד להגנת הסביבה — מדיניות פסולת ורגולציה</a></li><li><a href="https://www.gov.il/BlobFolder/policy/removal-building-waste/he/removal_building_waste.pdf" target="_blank" rel="noopener noreferrer" class="text-telem-forest font-black underline hover:text-telem-moss transition-colors">מסמך מדיניות הטיפול בפסולת בניין (PDF) — המשרד להגנת הסביבה</a></li><li><a href="https://www.tel-aviv.gov.il/Residents/Environment/Pages/Environment.aspx" target="_blank" rel="noopener noreferrer" class="text-telem-forest font-black underline hover:text-telem-moss transition-colors">מחלקת הסביבה — עיריית תל אביב-יפו</a></li><li><a href="https://www.gov.il/he/departments/ministry_of_interior" target="_blank" rel="noopener noreferrer" class="text-telem-forest font-black underline hover:text-telem-moss transition-colors">משרד הפנים — ועדות תכנון ורישוי בנייה</a></li><li><a href="https://mavat.iplan.gov.il" target="_blank" rel="noopener noreferrer" class="text-telem-forest font-black underline hover:text-telem-moss transition-colors">מרכז המידע התכנוני הלאומי — מבא"ת (iplan)</a></li><li><a href="/waste/" class="text-telem-forest font-black underline hover:text-telem-moss transition-colors">נספח אצירת אשפה — שירות מלא מתלם</a></li><li><a href="/guides/waste-quantities.html" class="text-telem-forest font-black underline hover:text-telem-moss transition-colors">נספח כמויות פסולת בניין — מדריך מורחב עם טבלת מקדמים</a></li><li><a href="/env/" class="text-telem-forest font-black underline hover:text-telem-moss transition-colors">נספח סביבתי להיתר בנייה — מתי נדרש ואיך מתקדמים</a></li></ul></div></div><section class="mt-16 pt-8 border-t border-telem-khaki/20"><h2 class="text-2xl font-black text-telem-dark mb-6 italic tracking-tight">חישוב נפח אצירת פסולת לפי תקן ישראלי</h2><div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4"><h3 class="text-lg font-bold text-telem-forest italic">נוסחת חישוב מיכלי אשפה</h3><h3 class="text-lg font-bold text-telem-forest italic">דרישות שטח חדר אשפה</h3><h3 class="text-lg font-bold text-telem-forest italic">חישוב לפי מספר יחידות דיור</h3></div></section><div class="mt-24 bg-telem-dark text-white p-12 md:p-20 rounded-[60px] text-center italic shadow-2xl relative overflow-hidden"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="bar-chart-3" aria-hidden="true" class="lucide lucide-bar-chart-3 absolute -left-10 -bottom-10 opacity-5" style="width: 180px; height: 180px;"><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg><h3 class="text-4xl md:text-5xl font-black mb-8 italic tracking-tighter uppercase leading-tight">אל תיתנו לחישוב שגוי לעצור לכם את הפרויקט</h3><p class="mb-12 text-xl md:text-2xl font-medium opacity-80 max-w-3xl mx-auto leading-relaxed italic">הבטחת התאמה מלאה למדיניות המשרד להגנת הסביבה משלב ההיתר ועד טופס 4.</p><div class="flex flex-col sm:flex-row gap-6 justify-center items-center"><button class="bg-telem-forest text-white px-12 py-5 rounded-2xl font-black text-2xl hover:bg-telem-moss transition-all shadow-lg flex items-center justify-center gap-3 font-sans not-italic italic uppercase tracking-tighter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="message-circle" aria-hidden="true" class="lucide lucide-message-circle" style="width: 20px; height: 20px;"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"></path></svg> התייעצות ב-WhatsApp</button><a href="tel:0506890650" class="border-2 border-telem-khaki text-white px-12 py-5 rounded-2xl font-black text-2xl hover:bg-white/10 transition-all font-sans not-italic uppercase tracking-tighter uppercase">050-6890650</a></div></div></article></main><footer class="bg-telem-dark text-white py-16 px-4 text-center border-t border-telem-forest/30 font-serif italic mt-20"><p class="text-sm opacity-30 italic tracking-widest uppercase italic font-serif">© 2026 תלם - ניהול סביבה ופסולת. התוכן מבוסס על מדיניות המשרד להגנת הסביבה לטיפול בפסולת בניין.</p></footer></div></div>
-
-    <script type="text/babel">
-        const { useEffect } = React;
-        const Icon = ({ name, size = 20, className = "" }) => {
-            useEffect(() => { if (window.lucide) { window.lucide.createIcons(); } }, [name]);
-            return <i data-lucide={name} style={{ width: size, height: size }} className={className}></i>;
-        };
-
-        const App = () => {
-            const WA_NUMBER = "972506890650";
-            const PHONE_NUMBER = "0506890650";
-
-            return (
-                <div className="min-h-screen pb-20">
-                    <header className="bg-white border-b h-24 flex items-center px-4 sticky top-0 z-50 shadow-sm text-right">
-                        <div className="max-w-6xl mx-auto w-full flex justify-between items-center">
-                            <a href="/" className="text-telem-forest font-black text-2xl italic tracking-tighter flex items-center gap-2">
-                                תלם <span className="text-gray-400 font-light">| ניהול סביבה</span>
-                            </a>
-                            <a href={`tel:${PHONE_NUMBER}`} className="bg-telem-dark text-white px-8 py-3 rounded-2xl font-black font-sans italic tracking-tighter uppercase shadow-md">050-6890650</a>
-                        </div>
-                    </header>
-
-                    <main className="max-w-5xl mx-auto px-4 pt-16 text-right">
-                        <nav className="mb-8 text-telem-moss font-bold flex gap-3 text-sm italic">
-                            <a href="/" className="hover:underline">דף הבית</a> <span>/</span> 
-                            <a href="/guides/" className="hover:underline">מרכז ידע</a> <span>/</span>
-                            <span className="text-telem-dark underline decoration-telem-khaki">חישוב כמויות פסולת</span>
-                        </nav>
-
-                        <article className="bg-white rounded-[60px] p-10 md:p-24 shadow-2xl border border-telem-khaki/10">
-                            <h1 className="text-4xl md:text-8xl font-black text-telem-black mb-16 leading-[1] italic tracking-tighter uppercase leading-[0.9]">
-                                חישוב אצירת פסולת — מדריך מלא
-                            </h1>
-
-                            <div className="content-area">
-                                <p>הכנת נספח לחישוב כמויות פסולת בניין ועודפי עפר אינה רק דרישה טכנית בתיק המידע – היא לב ליבה של האחריות הסביבתית והכלכלית של היזם. הנספח מבוסס על מסמך המדיניות הרשמי של המשרד להגנת הסביבה: <a href="https://www.gov.il/BlobFolder/policy/removal-building-waste/he/removal_building_waste.pdf" target="_blank" rel="noopener noreferrer" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">מדיניות הטיפול בפסולת בניין (PDF)</a>.</p>
-                                <p>חישוב פסולת בנייה הוא חלק מהותי מנספח ניהול הפסולת הנדרש בתהליך הרישוי. מסמך המדיניות של המשרד להגנת הסביבה מגדיר מקדמי חישוב לכל שלב בנייה — עידוד, הריסה, גמר — ובהתאם להם נקבע כמה פסולת ייווצר ולאן יפונה. הגשת חישוב מדויק מזרזת את אישור הנספח ומייעלת את ניהול האתר.</p>
-                                
-                                <p>עבור יזם או מנהל פרויקט, חוסר התאמה בין הכמויות המוצהרות בנספח לבין הכמויות המפונות בפועל יוביל לעיכובים קשים בקבלת טופס 4, דרישה לתצהירים משפטיים וחשיפה לקנסות כבדים בגין השלכה לא חוקית.</p>
-
-                                <h2>טבלת מקדמי החישוב הרשמית (מדיניות המשרד)</h2>
-                                <p>לצורך הכנת הנספח, המשרד להגנת הסביבה הגדיר מקדמים סטטיסטיים המאפשרים לחזות את כמות הפסולת שתיווצר באתר. להלן הערכים המרכזיים המשמשים אותנו בתהליך התכנון:</p>
-                                
-                                <div className="table-container shadow-lg">
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th>סוג הפעילות / המבנה</th>
-                                                <th>יחידת מידה</th>
-                                                <th>מקדם (טון ליחידה)</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>בנייה חדשה למגורים</td>
-                                                <td>מ"ר בנוי</td>
-                                                <td>0.15 - 0.20</td>
-                                            </tr>
-                                            <tr>
-                                                <td>הריסת מבנה קיים (בטון/בלוקים)</td>
-                                                <td>מ"ר בנוי</td>
-                                                <td>1.0 - 1.2</td>
-                                            </tr>
-                                            <tr>
-                                                <td>בנייה למסחר ומשרדים</td>
-                                                <td>מ"ר בנוי</td>
-                                                <td>0.10 - 0.15</td>
-                                            </tr>
-                                            <tr>
-                                                <td>עודפי עפר (חפירה)</td>
-                                                <td>מ"ק חפור</td>
-                                                <td>1.3 - 1.5 (כולל תפיחה)</td>
-                                            </tr>
-                                            <tr>
-                                                <td>שיפוץ מקיף בבניין קיים</td>
-                                                <td>מ"ר משופץ</td>
-                                                <td>0.05 - 0.10</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-
-                                <div className="red-flag">
-                                    <h4 className="text-red-800 font-black text-3xl mb-6 italic flex items-center gap-3">
-                                        <Icon name="skull" size={32} /> נורה אדומה ליזמים ומנהלי פרויקטים
-                                    </h4>
-                                    <p className="text-red-900 font-bold text-xl leading-relaxed mb-4 uppercase">
-                                        מלכודת הדיווח הכוזב ועיכוב טופס 4:
-                                    </p>
-                                    <p className="text-red-950 font-medium text-lg leading-relaxed">
-                                        היום, כל משאית שיוצאת מהאתר שלכם מדווחת **בזמן אמת** במערכת הממוחשבת של המשרד להגנת הסביבה. המלכודת הגדולה מתרחשת ביום הגשת הבקשה לתעודת גמר (טופס 4): הוועדה המקומית מבצעת הצלבה אוטומטית בין הכמות שפונית לבין הכמות שהצהרתם עליה בנספח המקורי. 
-                                        <br/><br/>
-                                        <strong>סטייה של מעל 10%-15% כלפי מעלה?</strong> המערכת נחסמת אוטומטית. תדרשו להוכיח בחוות דעת משפטית וסביבתית מדוע נוצרו עודפי פסולת שלא דווחו, ולעיתים אף תדרשו לבצע סקרי קרקע כדי להוכיח שלא "קברתם" פסולת בשטח. אנו בתלם דואגים לבצע חישוב שמרני ומדויק הכולל מקדמי בטיחות, כדי להבטיח מעבר חלק בטופס 4.
-                                    </p>
-                                </div>
-
-                                <h2>עודפי עפר - האתגר הכלכלי הגדול</h2>
-                                <p>בפרויקטים הכוללים חפירה משמעותית (מרתפים, תשתיות), עודפי העפר מהווים את מרכיב העלות הגבוה ביותר. חישוב שגוי של מקדם התפיחה של הקרקע (הנפח שהעפר תופס ברגע שהוא נחפר) מוביל למחסור בתקציב ולבעיות רגולטוריות מול אתרי הקליטה.</p>
-                                <ul>
-                                    <li><strong>קרקע חולית:</strong> מקדם תפיחה נמוך יחסית (כ-1.1).</li>
-                                    <li><strong>קרקע חרסיתית/סלעית:</strong> מקדם תפיחה גבוה (יכול להגיע ל-1.5).</li>
-                                    <li><strong>חשוב לזכור:</strong> כל טון עפר מחויב בתשלום אגרת פינוי ודמי קליטה. חישוב נכון חוסך כסף אמיתי בביצוע.</li>
-                                </ul>
-
-                                <h3>למה הניסיון של "תלם" קריטי כאן?</h3>
-                                <p>כמי שניהל מחלקות סביבה ושפ"ע במגזר הציבורי, אבירם בוצר מכיר את אלגוריתם הבדיקה של הרשויות. אנו יודעים לבנות נספח שמאזן בין החיסכון הכלכלי לבין הביטחון הרגולטורי. אנו מוודאים שחישוב עודפי העפר כולל את כל רכיבי הדיפון והקידוחים, כך שלא תופתעו מכמויות ענק בשטח שאין להן מענה בנספח המאושר.</p>
-
-                                <div className="mt-16 bg-telem-cream border-2 border-telem-khaki rounded-[32px] p-8 md:p-10">
-                                    <h3 className="text-2xl md:text-3xl font-black text-telem-dark mb-6 italic">קישורים רשמיים — רגולציה ופסולת בניין</h3>
-                                    <ul className="space-y-3 mb-0">
-                                        <li>
-                                            <a href="https://www.gov.il/he/departments/ministry_of_environmental_protection" target="_blank" rel="noopener noreferrer" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">
-                                                המשרד להגנת הסביבה — מדיניות פסולת ורגולציה
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.gov.il/BlobFolder/policy/removal-building-waste/he/removal_building_waste.pdf" target="_blank" rel="noopener noreferrer" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">
-                                                מסמך מדיניות הטיפול בפסולת בניין (PDF) — המשרד להגנת הסביבה
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.tel-aviv.gov.il/Residents/Environment/Pages/Environment.aspx" target="_blank" rel="noopener noreferrer" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">
-                                                מחלקת הסביבה — עיריית תל אביב-יפו
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.gov.il/he/departments/ministry_of_interior" target="_blank" rel="noopener noreferrer" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">
-                                                משרד הפנים — ועדות תכנון ורישוי בנייה
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://mavat.iplan.gov.il" target="_blank" rel="noopener noreferrer" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">
-                                                מרכז המידע התכנוני הלאומי — מבא"ת (iplan)
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/waste/" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">
-                                                נספח אצירת אשפה — שירות מלא מתלם
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/guides/waste-quantities.html" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">
-                                                נספח כמויות פסולת בניין — מדריך מורחב עם טבלת מקדמים
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/env/" className="text-telem-forest font-black underline hover:text-telem-moss transition-colors">
-                                                נספח סביבתי להיתר בנייה — מתי נדרש ואיך מתקדמים
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <section className="mt-16 pt-8 border-t border-telem-khaki/20">
-                                <h2 className="text-2xl font-black text-telem-dark mb-6 italic tracking-tight">חישוב נפח אצירת פסולת לפי תקן ישראלי</h2>
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
-                                    <h3 className="text-lg font-bold text-telem-forest italic">נוסחת חישוב מיכלי אשפה</h3>
-                                    <h3 className="text-lg font-bold text-telem-forest italic">דרישות שטח חדר אשפה</h3>
-                                    <h3 className="text-lg font-bold text-telem-forest italic">חישוב לפי מספר יחידות דיור</h3>
-                                </div>
-                            </section>
-
-                            <div className="mt-24 bg-telem-dark text-white p-12 md:p-20 rounded-[60px] text-center italic shadow-2xl relative overflow-hidden">
-                                <Icon name="bar-chart-3" size={180} className="absolute -left-10 -bottom-10 opacity-5" />
-                                <h3 className="text-4xl md:text-5xl font-black mb-8 italic tracking-tighter uppercase leading-tight">אל תיתנו לחישוב שגוי לעצור לכם את הפרויקט</h3>
-                                <p className="mb-12 text-xl md:text-2xl font-medium opacity-80 max-w-3xl mx-auto leading-relaxed italic">הבטחת התאמה מלאה למדיניות המשרד להגנת הסביבה משלב ההיתר ועד טופס 4.</p>
-                                <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                                    <button onClick={() => window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("היי אבירם, אשמח להתייעץ לגבי נספח כמויות פסולת בניין לפרויקט שלי בהתאם למדיניות המשרד.")}`, '_blank')} className="bg-telem-forest text-white px-12 py-5 rounded-2xl font-black text-2xl hover:bg-telem-moss transition-all shadow-lg flex items-center justify-center gap-3 font-sans not-italic italic uppercase tracking-tighter">
-                                        <Icon name="message-circle" /> התייעצות ב-WhatsApp
-                                    </button>
-                                    <a href={`tel:${PHONE_NUMBER}`} className="border-2 border-telem-khaki text-white px-12 py-5 rounded-2xl font-black text-2xl hover:bg-white/10 transition-all font-sans not-italic uppercase tracking-tighter uppercase">050-6890650</a>
-                                </div>
-                            </div>
-                        </article>
-                    </main>
-
-                    <footer className="bg-telem-dark text-white py-16 px-4 text-center border-t border-telem-forest/30 font-serif italic mt-20">
-                        <p className="text-sm opacity-30 italic tracking-widest uppercase italic font-serif">© {new Date().getFullYear()} תלם - ניהול סביבה ופסולת. התוכן מבוסס על מדיניות המשרד להגנת הסביבה לטיפול בפסולת בניין.</p>
-                    </footer>
-                </div>
-            );
-        };
-
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<App />);
-    </script>
-
-
-<section style="background:#f8f4f1;font-family:'Assistant',sans-serif;color:#243e38;padding:2rem;border-top:1px solid #94937f;direction:rtl;text-align:right;" aria-label="מקורות ומידע רשמי">
-      <div style="max-width:1200px;margin:0 auto;">
-        <h2 style="font-size:1rem;font-weight:800;color:#475d4b;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #94937f;">מקורות ומידע רשמי</h2>
-        <div style="display:flex;flex-wrap:wrap;gap:40px;">
-          <div style="flex:1;min-width:260px;">
-            <h3 style="font-size:0.875rem;font-weight:700;color:#475d4b;margin-bottom:12px;">קישורים חיצוניים</h3>
-            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
-              <li><a href="https://www.gov.il/BlobFolder/policy/removal-building-waste/he/removal_building_waste.pdf" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">מסמך מדיניות פסולת בנייה (PDF)</a></li>
-              <li><a href="https://www.gov.il/he/departments/topics/solid_waste" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">המשרד להגנת הסביבה – ניהול פסולת</a></li>
-              <li><a href="https://www.tel-aviv.gov.il/Residents/Environment/Pages/Environment.aspx" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">עיריית תל אביב – פינוי פסולת</a></li>
-              <li><a href="https://www.sii.org.il/he/" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">מכון התקנים הישראלי</a></li>
-              <li><a href="https://mavat.iplan.gov.il" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">מרכז מידע לתכנון (מרמ"ת)</a></li>
-            </ul>
-          </div>
-          <div style="flex:1;min-width:260px;">
-            <h3 style="font-size:0.875rem;font-weight:700;color:#475d4b;margin-bottom:12px;">דפים נוספים באתר</h3>
-            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
-              <li><a href="/about.html" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">אודות תלם</a></li>
-              <li><a href="/waste/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">נספח אצירת אשפה</a></li>
-              <li><a href="/guides/history-when.html" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">סקר היסטורי Phase I</a></li>
-              <li><a href="/env/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">נספח סביבתי</a></li>
-              <li><a href="/solar/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">סולארי ואגירה</a></li>
-              <li><a href="/environmental-management/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">ניהול סביבה ONSITE</a></li>
-              <li><a href="/guides/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">מרכז הידע</a></li>
-            </ul>
-          </div>
+    <header class="site">
+        <div class="wrap">
+            <a href="/" class="brand">תלם <span>| ניהול סביבה</span></a>
+            <a href="tel:0506890650" class="callbtn">050-6890650</a>
         </div>
-      </div>
-    </section>
+    </header>
 
-<div id="mobile-cta-banner" role="navigation" aria-label="צרו קשר מהיר">
-  <a href="https://wa.me/972506890650" target="_blank" rel="noopener noreferrer" aria-label="שלחו הודעה ב-WhatsApp">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
-    <span>וואטסאפ</span>
-  </a>
-  <div class="mcta-divider" aria-hidden="true"></div>
-  <a href="tel:0506890650" aria-label="חייגו אלינו">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
-    <span>חייגו אלינו</span>
-  </a>
-</div>
-</body></html>
+    <main class="wrap">
+        <nav class="bc"><a href="/">דף הבית</a> / <a href="/guides/">מרכז ידע</a> / מחשבון פסולת בניין</nav>
+
+        <h1>מחשבון פסולת בניין ועודפי עפר — קל ומהיר</h1>
+
+        <p>כמה פסולת בניין ועודפי עפר ייווצרו בפרויקט שלכם? קשה לאמוד את זה בעין. הערכה שגויה מובילה לדיווח לא מדויק, להפתעות בעלויות הפינוי, ולעיתים לעיכוב בהיתר. הכלי הפשוט הזה נותן לכם הערכה ראשונית בשניות.</p>
+
+        <p>הזינו את היקף הפעילות (שטח בנייה, הריסה או נפח חפירה) ובחרו את סוג הפעילות — והמחשבון יחזיר טווח כמויות מוערך בטון, לפי <strong>מקדמי המשרד להגנת הסביבה</strong>. זו הערכה לתכנון ראשוני בלבד; לדיווח רשמי ולנספח כמויות נדרש חישוב מלא.</p>
+
+        <div class="calc">
+            <h2 style="margin-top:0;">מחשבון כמויות מהיר</h2>
+            <label for="qty">היקף (לפי יחידת המידה של סוג הפעילות):</label>
+            <input type="number" id="qty" min="0" step="1" placeholder="לדוגמה: 100">
+            <label for="type">סוג הפעילות:</label>
+            <select id="type">
+                <option value="res">בנייה חדשה למגורים — מ"ר בנוי</option>
+                <option value="com">בנייה למסחר ומשרדים — מ"ר בנוי</option>
+                <option value="demo">הריסת מבנה קיים (בטון/בלוקים) — מ"ר בנוי</option>
+                <option value="renov">שיפוץ מקיף בבניין קיים — מ"ר משופץ</option>
+                <option value="earth">עודפי עפר (חפירה) — מ"ק חפור</option>
+            </select>
+            <button type="button" onclick="calcWaste()">חשב כמויות ←</button>
+            <div id="result"></div>
+            <p class="note" style="margin-bottom:0;">המקדמים מבוססים על טבלת המקדמים שמשמשת בתכנון מול המשרד להגנת הסביבה. התוצאה היא טווח הערכה.</p>
+        </div>
+
+        <h2>טבלת המקדמים שבבסיס המחשבון</h2>
+        <table>
+            <thead><tr><th>סוג הפעילות / המבנה</th><th>יחידת מידה</th><th>מקדם (טון ליחידה)</th></tr></thead>
+            <tbody>
+                <tr><td>בנייה חדשה למגורים</td><td>מ"ר בנוי</td><td>0.15 – 0.20</td></tr>
+                <tr><td>בנייה למסחר ומשרדים</td><td>מ"ר בנוי</td><td>0.10 – 0.15</td></tr>
+                <tr><td>הריסת מבנה קיים (בטון/בלוקים)</td><td>מ"ר בנוי</td><td>1.0 – 1.2</td></tr>
+                <tr><td>שיפוץ מקיף בבניין קיים</td><td>מ"ר משופץ</td><td>0.05 – 0.10</td></tr>
+                <tr><td>עודפי עפר (חפירה)</td><td>מ"ק חפור</td><td>1.3 – 1.5 (כולל תפיחה)</td></tr>
+            </tbody>
+        </table>
+
+        <div class="cta">
+            <h3>צריכים דוח רשמי, לא רק הערכה?</h3>
+            <p>המחשבון נותן טווח ראשוני. לנספח כמויות פסולת לטופס 4 ולהיתר נדרש חישוב מלא לפי הנחיות המשרד — כולל פירוט סוגי הפסולת והמקדמים הרשמיים.</p>
+            <a class="button" href="/guides/waste-quantities.html">למדריך המלא + טבלת המקדמים הרשמית ←</a>
+            <p style="margin-top:18px;">מתכננים נספח אצירת אשפה להיתר? <a href="/waste/" style="color:#fff;font-weight:800;text-decoration:underline;">לשירות נספח אצירת אשפה של תלם ←</a></p>
+        </div>
+    </main>
+
+    <footer class="site">
+        <div style="font-weight:800;font-size:1.2rem;margin-bottom:8px;">תלם | ניהול סביבה</div>
+        <p style="opacity:.7;margin:0;">אבירם בוצר — ייעוץ סביבתי, נספחי אצירת אשפה וחישוב כמויות פסולת בניין. <a href="tel:0506890650">050-6890650</a></p>
+    </footer>
+
+    <script>
+    function calcWaste() {
+      var COEF = {
+        res:   {lo:0.15, hi:0.20, unit:'מ"ר בנוי'},
+        com:   {lo:0.10, hi:0.15, unit:'מ"ר בנוי'},
+        demo:  {lo:1.0,  hi:1.2,  unit:'מ"ר בנוי'},
+        renov: {lo:0.05, hi:0.10, unit:'מ"ר משופץ'},
+        earth: {lo:1.3,  hi:1.5,  unit:'מ"ק חפור'}
+      };
+      var qty = parseFloat(document.getElementById('qty').value);
+      var t = document.getElementById('type').value;
+      var box = document.getElementById('result');
+      if (!qty || qty <= 0) {
+        box.style.display = 'block';
+        box.innerHTML = '<p style="margin:0;">הזינו היקף חיובי כדי לחשב.</p>';
+        return;
+      }
+      var c = COEF[t];
+      var lo = (qty * c.lo).toFixed(1);
+      var hi = (qty * c.hi).toFixed(1);
+      box.style.display = 'block';
+      box.innerHTML = '<p style="margin:0 0 6px;"><strong>הערכת כמויות: ' + lo + ' – ' + hi + ' טון</strong></p>' +
+                      '<p class="note" style="margin:0;">עבור ' + qty + ' ' + c.unit + '. זו הערכה לתכנון ראשוני בלבד — לדיווח רשמי נדרש חישוב מלא.</p>';
+    }
+    </script>
+</body>
+</html>
