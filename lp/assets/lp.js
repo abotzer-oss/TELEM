@@ -104,7 +104,8 @@
         var iframe = document.createElement('iframe');
         iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) +
                      '?autoplay=1&rel=0&playsinline=1';
-        iframe.title = 'סרטון: נספח אצירת אשפה';
+        iframe.title = btn.getAttribute('data-video-title') ||
+                       btn.getAttribute('aria-label') || 'סרטון';
         iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
         iframe.setAttribute('allowfullscreen', '');
         iframe.setAttribute('loading', 'lazy');
