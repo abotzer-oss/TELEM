@@ -88,10 +88,41 @@
     });
   }
 
+  /* ---------- video facade → iframe ---------- */
+  function bindVideoFacade() {
+    var buttons = document.querySelectorAll('.video-play');
+    if (!buttons.length) { return; }           // no-op שקט בדפים בלי סרטון
+    buttons.forEach(function (btn) {
+      var fired = false;
+      btn.addEventListener('click', function () {
+        if (fired) { return; }                 // guard: פעם אחת בלבד
+        var id = btn.getAttribute('data-video-id');
+        var frame = btn.parentNode;
+        if (!id || !frame) { return; }
+        fired = true;
+
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) +
+                     '?autoplay=1&rel=0&playsinline=1';
+        iframe.title = 'סרטון: נספח אצירת אשפה';
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.setAttribute('loading', 'lazy');
+        iframe.setAttribute('width', '100%');
+        iframe.setAttribute('height', '100%');
+        iframe.style.border = '0';
+
+        frame.replaceChild(iframe, btn);
+        track('video_play', { page_id: pageId(), video_id: id });
+      });
+    });
+  }
+
   function init() {
     captureUtm();
     bindClickTracking();
     bindForms();
+    bindVideoFacade();
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
