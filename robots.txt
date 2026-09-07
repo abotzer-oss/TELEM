@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /lp/
 
 User-agent: AdsBot-Google
 Allow: /lp/

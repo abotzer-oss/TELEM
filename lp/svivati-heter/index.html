@@ -42,9 +42,8 @@
     .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
     .form-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;box-shadow:var(--shadow-card)}
     .hp{display:none}
-    @media(min-width:768px){body{padding-bottom:0}.hero-grid{grid-template-columns:1.05fr .95fr;align-items:start;gap:48px}.hero{padding-block:62px 70px}}
+    @media(min-width:768px){body{padding-bottom:0}.hero-grid{grid-template-columns:1.05fr .95fr;align-items:start;column-gap:48px;row-gap:0}.hero-grid>.hero-col{grid-column:1;grid-row:1}.hero-grid>.lp-video{grid-column:1;grid-row:2;margin-top:30px}.hero-grid>.form-card{grid-column:2;grid-row:1/span 2}.hero{padding-block:62px 70px}}
     /* video facade — critical, מונע layout shift כי הבלוק בתוך ההירו */
-    .lp-video{margin-top:30px}
     .lp-video-title{font-size:19px;font-weight:700;line-height:1.3;margin:0 0 12px}
     .video-frame{aspect-ratio:9/16;max-width:340px;margin-inline:auto;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--ink)}
     .video-play{width:100%;height:100%;padding:0;border:0;background:none;display:block;position:relative;cursor:pointer}
@@ -70,7 +69,7 @@
 <!-- ============ HERO ============ -->
 <header class="hero">
   <div class="wrap hero-grid">
-    <div>
+    <div class="hero-col">
       <span class="eyebrow">נספח סביבתי · היתר ותב״ע</span>
       <h1>נספח סביבתי <span class="accent">להיתר בנייה</span></h1>
       <p class="hero-qualifier" style="font-size:15.5px;color:var(--sage-deep);font-weight:600;margin:-8px 0 18px">מתאים גם לתב״ע, שינוי ייעוד, מסחר ותעשייה</p>
@@ -86,20 +85,6 @@
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> עבודה מול ועדות ורשויות</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> פרויקטים מורכבים</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> ליווי עד אישור</span>
-      </div>
-
-      <!-- ============ VIDEO (in hero column) ============ -->
-      <div class="lp-video">
-        <!-- TODO: אבירם יעדכן כותרת לפי תוכן הסרטון -->
-        <h2 class="lp-video-title">רגע אחד על הנספח הסביבתי</h2>
-        <div class="video-frame" style="--poster:url('/lp/assets/img/video-svivati-poster.webp')">
-          <button type="button" class="video-play" aria-label="נגן סרטון"
-                  data-video-id="BBxd5r7vvjE" data-video-title="סרטון: נספח סביבתי להיתר בנייה">
-            <img src="/lp/assets/img/video-svivati-poster.webp" alt=""
-                 width="340" height="604" loading="lazy" decoding="async">
-            <span class="video-play-icon" aria-hidden="true"></span>
-          </button>
-        </div>
       </div>
     </div>
 
@@ -147,6 +132,20 @@
         <p class="form-error" hidden style="color:#b4452f;font-size:14px;margin-top:10px;text-align:center">אירעה תקלה. אפשר לפנות בוואטסאפ או בטלפון למטה.</p>
         <p class="form-foot">יש לכם מסמך דרישה מהוועדה? <a href="https://wa.me/972506890650" target="_blank" rel="noopener noreferrer" data-track="whatsapp" style="color:var(--sage-deep);font-weight:600">שלחו אותו אלינו בוואטסאפ ונבדוק מה נדרש ←</a></p>
       </form>
+    </div>
+
+    <!-- ============ VIDEO (hero grid, row 2) ============ -->
+    <div class="lp-video">
+      <!-- TODO: אבירם יעדכן כותרת לפי תוכן הסרטון -->
+      <h2 class="lp-video-title">רגע אחד על הנספח הסביבתי</h2>
+      <div class="video-frame" style="--poster:url('/lp/assets/img/video-svivati-poster.webp')">
+        <button type="button" class="video-play" aria-label="נגן סרטון"
+                data-video-id="BBxd5r7vvjE" data-video-title="סרטון: נספח סביבתי להיתר בנייה">
+          <img src="/lp/assets/img/video-svivati-poster.webp" alt=""
+               width="340" height="604" loading="lazy" decoding="async">
+          <span class="video-play-icon" aria-hidden="true"></span>
+        </button>
+      </div>
     </div>
   </div>
 </header>
