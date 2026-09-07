@@ -282,7 +282,12 @@ body{padding-bottom:74px}
   section{padding-block:70px}
   .wrap{padding-inline:32px}
   .hero{padding-block:62px 70px}
-  .hero-grid{grid-template-columns:1.05fr .95fr;align-items:start;gap:48px}
+  /* דסקטופ: טור ההירו (שורה 1) + הסרטון (שורה 2) בעמודה אחת, הטופס פרוס על שתיהן.
+     row-gap:0 כדי שהמרווח בין הטקסט לסרטון יישאר ה-30px של .lp-video בלבד. */
+  .hero-grid{grid-template-columns:1.05fr .95fr;align-items:start;column-gap:48px;row-gap:0}
+  .hero-grid > .hero-col{grid-column:1;grid-row:1}
+  .hero-grid > .lp-video{grid-column:1;grid-row:2;margin-top:30px}
+  .hero-grid > .form-card{grid-column:2;grid-row:1 / span 2}
   .grid-2{grid-template-columns:1fr 1fr}
   .grid-3{grid-template-columns:repeat(3,1fr)}
   .checks.cols{grid-template-columns:1fr 1fr;gap:11px 28px}
@@ -345,8 +350,7 @@ body{padding-bottom:74px}
 .video-play:focus-visible{outline:none;box-shadow:var(--ring)}
 .video-frame iframe{width:100%;height:100%;border:0;display:block}
 
-/* ---------- video block inside the hero column ---------- */
-.lp-video{margin-top:30px}
+/* ---------- video block inside the hero grid ---------- */
 .lp-video-title{font-size:19px;font-weight:700;line-height:1.3;margin:0 0 12px;color:var(--ink)}
 
 /* דסקטופ: מסגרת ריבועית 1:1 עם הנגן האנכי 9:16 ממורכז,
