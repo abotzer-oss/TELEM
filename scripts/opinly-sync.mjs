@@ -276,6 +276,12 @@ async function main() {
   const written = [];
 
   for (const post of posts) {
+    // רשת ביטחון: ה-API אמור להחזיר רק פוסטים שפורסמו, אבל אין להסתמך על כך.
+    if (post.status !== 'published') {
+      warn(`מדלג על "${post.title}" — סטטוס ${post.status || 'לא ידוע'} ואינו published`);
+      continue;
+    }
+
     const slug = safeSlug(post.slug, post.title);
     if (!slug) continue;
 
