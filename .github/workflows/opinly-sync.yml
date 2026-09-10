@@ -1,0 +1,75 @@
+name: Opinly sync
+
+# מושך פוסטים שפורסמו מאופנלי ובונה מהם דפי HTML בעיצוב של האתר.
+#
+# לפני ההרצה הראשונה:
+#   1. Settings → Secrets and variables → Actions → New repository secret
+#      Name:   OPINLY_API_KEY
+#      Secret: המפתח מסוג sk- מתוך הדשבורד של אופנלי
+#   2. Settings → Actions → General → Workflow permissions
+#      → Read and write permissions
+
+on:
+  schedule:
+    - cron: '0 5 * * *'      # כל יום ב-08:00 שעון ישראל (05:00 UTC)
+  workflow_dispatch:          # אפשר גם להריץ ידנית מלשונית Actions
+    inputs:
+      dry_run:
+        description: 'הרצה יבשה — בודק בלי לכתוב קבצים'
+        type: boolean
+        default: false
+
+concurrency:
+  group: opinly-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: התקנת תלויות
+        run: npm install marked --no-save --silent
+
+      - name: משיכה מאופנלי ובניית הדפים
+        env:
+          OPINLY_API_KEY: ${{ secrets.OPINLY_API_KEY }}
+        run: |
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            node scripts/opinly-sync.mjs --dry-run
+          else
+            node scripts/opinly-sync.mjs
+          fi
+
+      - name: בדיקת תקינות הדפים שנוצרו
+        if: ${{ inputs.dry_run != true }}
+        run: |
+          fail=0
+          for f in $(git diff --name-only -- 'guides/*.html'); do
+            [ -f "$f" ] || continue
+            grep -q '<html lang="he" dir="rtl">' "$f" || { echo "::error file=$f::חסר dir=rtl"; fail=1; }
+            grep -q '<link rel="canonical"' "$f"      || { echo "::error file=$f::חסר canonical"; fail=1; }
+            grep -q '"@type": "Article"' "$f"          || { echo "::error file=$f::חסר Article schema"; fail=1; }
+          done
+          exit $fail
+
+      - name: שמירת השינויים
+        if: ${{ inputs.dry_run != true }}
+        run: |
+          git config user.name  "opinly-sync[bot]"
+          git config user.email "opinly-sync@users.noreply.github.com"
+          git add guides/ sitemap.xml
+          if git diff --staged --quiet; then
+            echo "אין שינויים — אין מה לשמור"
+          else
+            git commit -m "sync: פוסטים מאופנלי"
+            git push
+          fi
