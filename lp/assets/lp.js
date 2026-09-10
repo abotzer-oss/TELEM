@@ -17,18 +17,23 @@
   }
 
   /* ---------- UTM capture ---------- */
+  /* attribution-capture.js רץ לפנינו וממלא מ-sessionStorage (ייחוס מגע ראשון).
+     לכן ממלאים כאן רק שדות שנשארו ריקים — אחרת נדרוס ייחוס שנקלט בדף קודם בסשן. */
   var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+  function fillIfEmpty(name, val) {
+    if (!val) return;
+    document.querySelectorAll('input[name="' + name + '"]').forEach(function (input) {
+      if (!input.value) input.value = val;
+    });
+  }
   function captureUtm() {
     var qs = new URLSearchParams(window.location.search);
     UTM_KEYS.forEach(function (k) {
-      var val = qs.get(k) || '';
-      document.querySelectorAll('input[name="' + k + '"]').forEach(function (input) {
-        input.value = val;
-      });
+      fillIfEmpty(k, qs.get(k) || '');
     });
     // referrer + landing url לעזרה במעקב
-    document.querySelectorAll('input[name="referrer"]').forEach(function (i) { i.value = document.referrer || ''; });
-    document.querySelectorAll('input[name="landing_url"]').forEach(function (i) { i.value = window.location.href; });
+    fillIfEmpty('referrer', document.referrer || '');
+    fillIfEmpty('landing_url', window.location.href);
   }
 
   /* ---------- click tracking (whatsapp / call) ---------- */
