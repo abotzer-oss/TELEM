@@ -1,2 +1,12 @@
 node_modules/
 seo-audit/
+
+# פלטי QA וכלי בדיקה — לא חלק מהאתר
+.lp-qa-shots/
+.playwright-mcp/
+audit/
+qa-*.png
+*-desktop-full.png
+*-mobile-full.png
+live_after.html
+*.optimized-version
