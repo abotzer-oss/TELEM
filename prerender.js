@@ -18,7 +18,6 @@ const PAGES = [
   { url: '/guides/soil-testing.html',      file: 'guides/soil-testing.html' },
   { url: '/guides/timeline.html',          file: 'guides/timeline.html' },
   { url: '/guides/urban-renewal.html',     file: 'guides/urban-renewal.html' },
-  { url: '/guides/waste-calculation.html', file: 'guides/waste-calculation.html' },
   { url: '/guides/waste-quantities.html',  file: 'guides/waste-quantities.html' },
   { url: '/guides/when-to-consult.html',   file: 'guides/when-to-consult.html' },
   { url: '/history/',                      file: 'history/index.html' },
