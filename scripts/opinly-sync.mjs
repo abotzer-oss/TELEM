@@ -13,6 +13,7 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import os from 'node:os';
 import { marked } from 'marked';
 
 // ----------------------------------------------------------------------------
@@ -40,6 +41,9 @@ const CONFIG = {
 
 const DRY_RUN = process.argv.includes('--dry-run');
 const FORCE = process.argv.includes('--force');
+
+// סיכום הריצה לצריכת ה-workflow. נכתב מחוץ למאגר — בתיקייה הזמנית של הריצה.
+const SUMMARY_FILE = path.join(process.env.RUNNER_TEMP || os.tmpdir(), 'opinly-summary.json');
 
 // ----------------------------------------------------------------------------
 // עזרים
@@ -274,16 +278,24 @@ async function main() {
   log(`התקבלו ${posts.length} פוסטים שפורסמו`);
 
   const written = [];
+  const created = [];
+  const skipped = [];
 
   for (const post of posts) {
     // רשת ביטחון: ה-API אמור להחזיר רק פוסטים שפורסמו, אבל אין להסתמך על כך.
     if (post.status !== 'published') {
-      warn(`מדלג על "${post.title}" — סטטוס ${post.status || 'לא ידוע'} ואינו published`);
+      const reason = `סטטוס ${post.status || 'לא ידוע'} ואינו published`;
+      warn(`מדלג על "${post.title}" — ${reason}`);
+      skipped.push({ title: post.title || post.slug || post.id, reason });
       continue;
     }
 
     const slug = safeSlug(post.slug, post.title);
-    if (!slug) continue;
+    if (!slug) {
+      warn(`מדלג על "${post.title}" — slug פגום`);
+      skipped.push({ title: post.title || post.id, reason: 'slug פגום' });
+      continue;
+    }
 
     const file = path.join(CONFIG.outDir, `${slug}.html`);
     const isOurs = Object.prototype.hasOwnProperty.call(manifest, slug);
@@ -293,6 +305,7 @@ async function main() {
     try { await fs.access(file); } catch { exists = false; }
     if (exists && !isOurs && !FORCE) {
       warn(`${file} קיים ואינו מנוהל על ידי הסקריפט — מדלג. (--force כדי לדרוס)`);
+      skipped.push({ title: post.title || slug, reason: `התנגשות עם דף קיים (${file})` });
       continue;
     }
 
@@ -304,8 +317,10 @@ async function main() {
       title: post.title,
       syncedAt: new Date().toISOString(),
     };
+    const url = `${CONFIG.siteUrl}/${CONFIG.outDir}/${slug}.html`;
+    created.push({ title: post.title || slug, url });
     written.push({
-      loc: `${CONFIG.siteUrl}/${CONFIG.outDir}/${slug}.html`,
+      loc: url,
       lastmod: (post.updatedAt || post.publishedAt || new Date().toISOString()).slice(0, 10),
     });
     log(`✓ ${file}`);
@@ -315,6 +330,13 @@ async function main() {
     await fs.writeFile(CONFIG.manifestFile, JSON.stringify(manifest, null, 2), 'utf8');
   }
   await updateSitemap(written);
+
+  // סיכום לריצה ב-CI. בהרצה יבשה לא כותבים כלום.
+  if (!DRY_RUN) {
+    const summary = { runAt: new Date().toISOString(), created, skipped };
+    await fs.writeFile(SUMMARY_FILE, JSON.stringify(summary, null, 2), 'utf8');
+    log(`סיכום נכתב ל-${SUMMARY_FILE} — ${created.length} נוצרו, ${skipped.length} דולגו`);
+  }
 
   log(DRY_RUN ? `סיום (הרצה יבשה) — ${written.length} דפים היו נכתבים` : `סיום — ${written.length} דפים`);
 }

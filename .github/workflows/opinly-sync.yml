@@ -28,6 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      issues: write
 
     steps:
       - uses: actions/checkout@v4
@@ -73,3 +74,22 @@ jobs:
             git commit -m "sync: פוסטים מאופנלי"
             git push
           fi
+
+      - name: פתיחת Issue עם סיכום הריצה
+        if: ${{ inputs.dry_run != true }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SUMMARY: ${{ runner.temp }}/opinly-summary.json
+          BODY: ${{ runner.temp }}/issue-body.md
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          title=$(node scripts/opinly-issue-body.mjs "$SUMMARY" "$BODY")
+
+          if [ -z "$title" ]; then
+            echo "אין דפים חדשים ואין דילוגים — לא נפתח Issue"
+            exit 0
+          fi
+
+          gh label create opinly-sync --color 0E8A16 --description "סנכרון פוסטים מאופנלי" 2>/dev/null || true
+
+          gh issue create --title "$title" --body-file "$BODY" --assignee abotzer-oss --label opinly-sync
