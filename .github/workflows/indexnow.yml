@@ -1,0 +1,52 @@
+name: IndexNow
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+      - 'sitemap.xml'
+  workflow_dispatch:
+    inputs:
+      submit_all:
+        description: 'Submit every URL in sitemap.xml instead of only the changed pages'
+        type: boolean
+        default: false
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Wait for GitHub Pages to publish
+        run: sleep 90
+
+      - name: Submit every sitemap URL
+        if: github.event_name == 'workflow_dispatch' && inputs.submit_all
+        run: python3 tools/indexnow.py --all
+
+      - name: Submit changed pages
+        if: github.event_name != 'workflow_dispatch' || !inputs.submit_all
+        run: |
+          if [ "${{ github.event_name }}" = "push" ] && [ "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]; then
+            git diff --name-only --diff-filter=AM \
+              "${{ github.event.before }}" "${{ github.sha }}" -- '*.html' > changed.txt || : > changed.txt
+          else
+            : > changed.txt
+          fi
+
+          if [ ! -s changed.txt ]; then
+            echo "No changed HTML pages — nothing to submit."
+            exit 0
+          fi
+
+          echo "Changed pages:"
+          cat changed.txt
+          xargs -r -a changed.txt python3 tools/indexnow.py
