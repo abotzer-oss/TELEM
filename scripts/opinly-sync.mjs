@@ -157,9 +157,16 @@ async function fetchFullPost(apiKey, slug) {
 /** משווה שמות צמתים בלי תלות ב-camelCase / snake_case. */
 const norm = (t) => String(t || '').toLowerCase().replace(/[_-]/g, '');
 
-function imageSrc(attrs = {}) {
-  const raw = attrs.src || attrs.url || attrs.fileKey || attrs.file_key || '';
-  if (!raw) return '';
+/**
+ * מחזיר כתובת תמונה. מקבל מחרוזת, אובייקט attrs של צומת, או אובייקט תמונה
+ * של אופנלי ({ fileKey, altText, ... }) — לכל אחד מהם יש צורה אחרת.
+ */
+function imageSrc(input) {
+  let raw = input;
+  for (let depth = 0; raw && typeof raw === 'object' && depth < 3; depth += 1) {
+    raw = raw.src ?? raw.url ?? raw.fileKey ?? raw.file_key ?? raw.key ?? raw.image ?? '';
+  }
+  if (typeof raw !== 'string' || !raw) return '';
   if (/^(https?:)?\/\//.test(raw) || raw.startsWith('/')) return raw;
   if (CONFIG.imagesPrefix) return CONFIG.imagesPrefix.replace(/\/$/, '') + '/' + raw;
   warn(`תמונה עם fileKey "${raw}" ואין OPINLY_IMAGES_PREFIX — התמונה מדולגת.`);
@@ -330,7 +337,7 @@ function buildJsonLd(post, url) {
     url,
     datePublished: publishedDate(post),
     dateModified: modifiedDate(post),
-    image: imageSrc({ src: post.image }) || CONFIG.publisher.logo,
+    image: imageSrc(post.image ?? post.titleImage ?? post.images?.[0]) || CONFIG.publisher.logo,
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
     inLanguage: 'he-IL',
   };
@@ -476,7 +483,14 @@ async function main() {
       continue;
     }
 
-    const html = renderPage(template, post, slug);
+    let html;
+    try {
+      html = renderPage(template, post, slug);
+    } catch (err) {
+      warn(`בניית הדף של "${post.title}" נכשלה — ${err.message}`);
+      skipped.push({ title: post.title || slug, reason: `בניית הדף נכשלה (${err.message})` });
+      continue;
+    }
 
     // בדיקת שפיות: דף בלי גוף מאמר לא נשמר
     const bodyLen = (html.match(/<div class="content">([\s\S]*?)<\/div><div class="author-note"/i)?.[1] || '')
