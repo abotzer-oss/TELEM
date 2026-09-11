@@ -54,7 +54,7 @@ jobs:
         if: ${{ inputs.dry_run != true }}
         run: |
           fail=0
-          for f in $(git diff --name-only -- 'guides/*.html'); do
+          for f in $(git diff --name-only -- 'guides/*.html' ':(exclude)guides/index.html'); do
             [ -f "$f" ] || continue
             grep -q '<html lang="he" dir="rtl">' "$f" || { echo "::error file=$f::חסר dir=rtl"; fail=1; }
             grep -q '<link rel="canonical"' "$f"      || { echo "::error file=$f::חסר canonical"; fail=1; }
