@@ -9,22 +9,32 @@
  * דגלים:
  *   --dry-run     מריץ הכל בלי לכתוב קבצים
  *   --force       מרשה דריסה של קובץ שאינו במניפסט (השתמש בזהירות)
+ *
+ * מבנה ה-API (לפי מפרט ה-OpenAPI הרשמי של אופנלי):
+ *   GET /v1/content/posts        -> { data: Post[], has_more, next_cursor }
+ *                                   Post = כרטיס בלבד: slug, title, description,
+ *                                   firstPublishedAt, lastPublishedAt, image,
+ *                                   category, author, tags.  אין שדה status —
+ *                                   הנקודה הזו מחזירה ממילא רק פוסטים שפורסמו.
+ *   GET /v1/content/post?slug=   -> FullPost, ובו content כעץ צמתים (לא מארקדאון).
  */
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { marked } from 'marked';
+import os from 'node:os';
 
 // ----------------------------------------------------------------------------
 // הגדרות
 // ----------------------------------------------------------------------------
 
 const CONFIG = {
-  apiBase: 'https://sdk.opinly.ai/v1',
+  apiBase: process.env.OPINLY_API_BASE || 'https://sdk.opinly.ai/v1',
   siteUrl: 'https://telemenv.co.il',
   outDir: 'guides',                        // הפוסטים נוחתים כאן
   templateFile: 'guides/price.html',       // הדף שממנו נלקחת השפה העיצובית
   manifestFile: 'guides/.opinly-manifest.json',
+  indexFile: 'guides/index.html',          // רשימת מרכז הידע — הקישורים לדפים
+  imagesPrefix: process.env.OPINLY_IMAGES_PREFIX || '',  // בסיס לתמונות לפי fileKey
   breadcrumbParent: { name: 'מרכז ידע', url: '/guides/' },
   author: {
     name: 'אבירם בוצר',
@@ -40,6 +50,9 @@ const CONFIG = {
 
 const DRY_RUN = process.argv.includes('--dry-run');
 const FORCE = process.argv.includes('--force');
+
+// סיכום הריצה לצריכת ה-workflow. נכתב מחוץ למאגר — בתיקייה הזמנית של הריצה.
+const SUMMARY_FILE = path.join(process.env.RUNNER_TEMP || os.tmpdir(), 'opinly-summary.json');
 
 // ----------------------------------------------------------------------------
 // עזרים
@@ -65,19 +78,19 @@ function isolateLatin(html) {
   // רצף לטיני: אותיות/ספרות לועזיות עם רווחים, נקודות, מקפים וסלאשים בפנים
   const LATIN = /([A-Za-z][A-Za-z0-9]*(?:[ .\-/&][A-Za-z0-9]+)*)/g;
 
+  // ההחלטה היא ברמת המסמך ולא ברמת קטע הטקסט: ב"Phase II" שיושב בתוך <strong>
+  // אין אות עברית משלו, אבל הוא בהחלט בתוך פסקה עברית וצריך בידוד.
+  if (!/[\u0590-\u05FF]/.test(html)) return html;
+
   return html
     .split(PROTECT)
-    .map((chunk, i) => {
-      if (i % 2 === 1) return chunk;              // תגית — לא נוגעים
-      if (!/[\u0590-\u05FF]/.test(chunk)) return chunk; // אין עברית — אין בעיית כיווניות
-      return chunk.replace(LATIN, '<bdi>$1</bdi>');
-    })
+    .map((chunk, i) => (i % 2 === 1 ? chunk : chunk.replace(LATIN, '<bdi>$1</bdi>')))
     .join('');
 }
 
 /** מנקה ומאחד מונחי Phase לצורה אחת (ספרות רומיות). */
-function normalizeTerms(md) {
-  return md
+function normalizeTerms(html) {
+  return html
     .replace(/\bPhase\s*1\b/g, 'Phase I')
     .replace(/\bPhase\s*2\b/g, 'Phase II')
     .replace(/\bPhase\s*3\b/g, 'Phase III');
@@ -98,30 +111,187 @@ function safeSlug(slug, title) {
 // שליפה מאופנלי
 // ----------------------------------------------------------------------------
 
+async function apiGet(apiKey, pathname, params = {}) {
+  const url = new URL(`${CONFIG.apiBase}${pathname}`);
+  for (const [k, v] of Object.entries(params)) {
+    if (v != null) url.searchParams.set(k, String(v));
+  }
+
+  const res = await fetch(url, {
+    headers: { Authorization: `Bearer ${apiKey}`, Accept: 'application/json' },
+  });
+
+  if (!res.ok) {
+    throw new Error(`Opinly API ${res.status} ${res.statusText} על ${pathname} — ${await res.text()}`);
+  }
+  return res.json();
+}
+
+/**
+ * רשימת הפוסטים שפורסמו. מחזירה "כרטיסים" בלבד — בלי גוף המאמר.
+ * אין צורך לסנן לפי סטטוס: הנקודה הזו מחזירה רק פוסטים שפורסמו.
+ */
 async function fetchPublishedPosts(apiKey) {
   const posts = [];
   let cursor = null;
 
   do {
-    const url = new URL(`${CONFIG.apiBase}/content/posts`);
-    url.searchParams.set('limit', '50');
-    if (cursor) url.searchParams.set('cursor', cursor);
-
-    const res = await fetch(url, {
-      headers: { Authorization: `Bearer ${apiKey}`, Accept: 'application/json' },
-    });
-
-    if (!res.ok) {
-      throw new Error(`Opinly API ${res.status} ${res.statusText} — ${await res.text()}`);
-    }
-
-    const data = await res.json();
-    const batch = data.posts ?? data.data ?? data.items ?? [];
+    const data = await apiGet(apiKey, '/content/posts', { limit: 50, cursor });
+    const batch = data.data ?? data.posts ?? data.items ?? [];
     posts.push(...batch);
     cursor = data.next_cursor ?? data.nextCursor ?? null;
   } while (cursor);
 
   return posts;
+}
+
+/** הפוסט המלא לפי slug — כאן נמצא גוף המאמר. */
+async function fetchFullPost(apiKey, slug) {
+  const data = await apiGet(apiKey, '/content/post', { slug });
+  return data.data ?? data.post ?? data;
+}
+
+// ----------------------------------------------------------------------------
+// המרת עץ התוכן של אופנלי ל-HTML
+// ----------------------------------------------------------------------------
+
+/** משווה שמות צמתים בלי תלות ב-camelCase / snake_case. */
+const norm = (t) => String(t || '').toLowerCase().replace(/[_-]/g, '');
+
+/**
+ * מחזיר כתובת תמונה. מקבל מחרוזת, אובייקט attrs של צומת, או אובייקט תמונה
+ * של אופנלי ({ fileKey, altText, ... }) — לכל אחד מהם יש צורה אחרת.
+ */
+function imageSrc(input) {
+  let raw = input;
+  for (let depth = 0; raw && typeof raw === 'object' && depth < 3; depth += 1) {
+    raw = raw.src ?? raw.url ?? raw.fileKey ?? raw.file_key ?? raw.key ?? raw.image ?? '';
+  }
+  if (typeof raw !== 'string' || !raw) return '';
+  if (/^(https?:)?\/\//.test(raw) || raw.startsWith('/')) return raw;
+  if (CONFIG.imagesPrefix) return CONFIG.imagesPrefix.replace(/\/$/, '') + '/' + raw;
+  warn(`תמונה עם fileKey "${raw}" ואין OPINLY_IMAGES_PREFIX — התמונה מדולגת.`);
+  return '';
+}
+
+/** עוטף טקסט בסימוני עיצוב (bold / italic / link / code ...). */
+function applyMarks(text, marks = []) {
+  let out = text;
+  for (const mark of marks) {
+    const attrs = mark.attrs || {};
+    switch (norm(mark.type)) {
+      case 'bold': case 'strong':
+        out = `<strong>${out}</strong>`; break;
+      case 'italic': case 'em':
+        out = `<em>${out}</em>`; break;
+      case 'underline':
+        out = `<u>${out}</u>`; break;
+      case 'strike': case 'strikethrough':
+        out = `<s>${out}</s>`; break;
+      case 'code':
+        out = `<code>${out}</code>`; break;
+      case 'link': {
+        const href = escapeHtml(attrs.href || attrs.url || '#');
+        const ext = /^https?:\/\//.test(href) && !href.includes('telemenv.co.il');
+        const rel = ext ? ' rel="noopener" target="_blank"' : '';
+        out = `<a href="${href}"${rel}>${out}</a>`; break;
+      }
+      default: break; // textStyle וכיוצא בו — מתעלמים, העיצוב מגיע מהאתר
+    }
+  }
+  return out;
+}
+
+function renderNodes(nodes = []) {
+  return nodes.map(renderNode).join('');
+}
+
+/** פסקה יחידה בתוך <li> או תא טבלה — בלי <p> מיותר סביבה. */
+function unwrapSingleParagraph(kids = []) {
+  if (kids.length === 1 && norm(kids[0].type) === 'paragraph') {
+    return renderNodes(kids[0].content || []);
+  }
+  return renderNodes(kids);
+}
+
+function renderNode(node) {
+  if (!node || typeof node !== 'object') return '';
+  const kids = node.content || [];
+
+  switch (norm(node.type)) {
+    case 'doc':
+      return renderNodes(kids);
+
+    case 'text':
+      return applyMarks(escapeHtml(node.text || ''), node.marks);
+
+    case 'hardbreak':
+      return '<br>';
+
+    case 'paragraph': {
+      const inner = renderNodes(kids);
+      return inner.trim() ? `<p>${inner}</p>\n` : '';
+    }
+
+    case 'heading': {
+      const lvl = Math.min(Math.max(Number(node.attrs?.level) || 2, 2), 4); // H1 שמור לכותרת הדף
+      return `<h${lvl}>${renderNodes(kids)}</h${lvl}>\n`;
+    }
+
+    case 'bulletlist':
+      return `<ul>\n${renderNodes(kids)}</ul>\n`;
+
+    case 'orderedlist': {
+      const start = Number(node.attrs?.start);
+      const attr = start && start !== 1 ? ` start="${start}"` : '';
+      return `<ol${attr}>\n${renderNodes(kids)}</ol>\n`;
+    }
+
+    case 'listitem':
+      return `<li>${unwrapSingleParagraph(kids)}</li>\n`;
+
+    case 'blockquote':
+      return `<blockquote>\n${renderNodes(kids)}</blockquote>\n`;
+
+    case 'codeblock':
+      return `<pre><code>${escapeHtml(kids.map((k) => k.text || '').join(''))}</code></pre>\n`;
+
+    case 'horizontalrule':
+      return '<hr>\n';
+
+    case 'image': {
+      const src = imageSrc(node.attrs || {});
+      if (!src) return '';
+      const alt = escapeHtml(node.attrs?.alt || node.attrs?.altText || '');
+      const cap = node.attrs?.caption ? `<figcaption>${escapeHtml(node.attrs.caption)}</figcaption>` : '';
+      const img = `<img src="${escapeHtml(src)}" alt="${alt}" loading="lazy">`;
+      return cap ? `<figure>${img}${cap}</figure>\n` : `${img}\n`;
+    }
+
+    case 'table':
+      return `<table>\n${renderNodes(kids)}</table>\n`;
+    case 'tablerow':
+      return `<tr>${renderNodes(kids)}</tr>\n`;
+    case 'tableheader':
+      return `<th>${unwrapSingleParagraph(kids)}</th>`;
+    case 'tablecell':
+      return `<td>${unwrapSingleParagraph(kids)}</td>`;
+
+    default:
+      // צומת שלא מוכר לנו — לא מאבדים את התוכן שבתוכו
+      if (kids.length) return renderNodes(kids);
+      if (node.text) return escapeHtml(node.text);
+      warn(`צומת מסוג "${node.type}" לא נתמך — דולג.`);
+      return '';
+  }
+}
+
+/** עץ התוכן -> HTML. מקבל עץ, מערך צמתים, או מחרוזת HTML מוכנה. */
+function contentToHtml(content) {
+  if (!content) return '';
+  if (typeof content === 'string') return content;
+  if (Array.isArray(content)) return renderNodes(content);
+  return renderNode(content);
 }
 
 // ----------------------------------------------------------------------------
@@ -143,8 +313,15 @@ const EXTRA_CSS = `
 .content table { width:100%; border-collapse:collapse; margin-bottom:1.5rem; font-size:1.05rem; direction:rtl; }
 .content th, .content td { border:1px solid #e5e1d8; padding:.75rem 1rem; text-align:right; }
 .content th { background:#f4f9f6; color:#243e38; font-weight:800; }
+.content figure { margin:0 0 1.5rem 0; }
+.content figure img { width:100%; border-radius:8px; }
+.content figcaption { font-size:.95rem; color:#6b7280; margin-top:.5rem; }
 .content bdi { unicode-bidi:isolate; }
 </style>`;
+
+/** תאריכים: אופנלי מחזיר firstPublishedAt / lastPublishedAt / modifiedAt. */
+const publishedDate = (p) => (p.firstPublishedAt || p.lastPublishedAt || '').slice(0, 10);
+const modifiedDate = (p) => (p.modifiedAt || p.lastPublishedAt || p.firstPublishedAt || '').slice(0, 10);
 
 function buildJsonLd(post, url) {
   return {
@@ -159,9 +336,9 @@ function buildJsonLd(post, url) {
       logo: { '@type': 'ImageObject', url: CONFIG.publisher.logo },
     },
     url,
-    datePublished: (post.publishedAt || '').slice(0, 10),
-    dateModified: (post.updatedAt || post.publishedAt || '').slice(0, 10),
-    image: post.titleImageUrl || CONFIG.publisher.logo,
+    datePublished: publishedDate(post),
+    dateModified: modifiedDate(post),
+    image: imageSrc(post.image ?? post.titleImage ?? post.images?.[0]) || CONFIG.publisher.logo,
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
     inLanguage: 'he-IL',
   };
@@ -184,11 +361,11 @@ function renderPage(template, post, slug) {
   const title = post.metaTitle || `${post.title} | תלם`;
   const desc = post.metaDescription || post.description || '';
 
-  // גוף המאמר: מארקדאון -> HTML -> איחוד מונחים -> בידוד לטיני
-  let body = marked.parse(normalizeTerms(post.content || ''), { mangle: false, headerIds: false });
-  body = isolateLatin(body);
+  // גוף המאמר: עץ צמתים -> HTML -> איחוד מונחים -> בידוד לטיני
+  let body = contentToHtml(post.content);
+  body = isolateLatin(normalizeTerms(body));
 
-  // ה-H1 מגיע מהכותרת, ולא מהמארקדאון — מסירים h1 כפול אם קיים
+  // ה-H1 מגיע מהכותרת, ולא מהתוכן — מסירים h1 כפול אם קיים
   body = body.replace(/<h1[^>]*>[\s\S]*?<\/h1>/i, '');
 
   const h1 = isolateLatin(escapeHtml(post.title));
@@ -235,6 +412,61 @@ function renderPage(template, post, slug) {
 }
 
 // ----------------------------------------------------------------------------
+// עמוד מרכז ידע — כרטיס לכל מאמר חדש
+// ----------------------------------------------------------------------------
+
+const CARD_ICON = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M8 13h8"/><path d="M8 17h5"/></svg>';
+
+const clip = (s, n) => {
+  const t = String(s || '').replace(/\s+/g, ' ').trim();
+  return t.length <= n ? t : `${t.slice(0, n - 1).replace(/[\s,;:-]+$/, '')}…`;
+};
+
+function guideCard(post, slug) {
+  const cardTitle = clip(post.metaTitle || post.title, 70);
+  const desc = clip(post.metaDescription || post.description || '', 150);
+  return [
+    `<a href="/${CONFIG.outDir}/${slug}.html" class="guide-card group bg-white/5 p-6 rounded-[30px] border border-white/10 hover:bg-white/10" aria-label="${escapeHtml(cardTitle)}">`,
+    '                        <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark mb-5">' + CARD_ICON + '</div>',
+    `                        <h3 class="text-2xl font-black text-white mb-4 leading-tight">${isolateLatin(escapeHtml(cardTitle))}</h3>`,
+    `                        <p class="text-base text-gray-300 mb-6 leading-relaxed">${isolateLatin(escapeHtml(desc))}</p>`,
+    '                        <div class="mt-auto text-telem-khaki font-black text-sm">למדריך המלא ←</div>',
+    '                    </a>',
+  ].join('\n');
+}
+
+/** מוסיף כרטיסים לעמוד מרכז ידע. מדלג על מה שכבר מקושר. */
+async function updateGuidesIndex(cards) {
+  if (!cards.length) return;
+
+  let html;
+  try { html = await fs.readFile(CONFIG.indexFile, 'utf8'); }
+  catch { warn(`אין ${CONFIG.indexFile} — מדלג על עדכון מרכז ידע`); return; }
+
+  const CARD_START = /<a href="\/[a-z-]+\/[a-z0-9-]+\.html" class="guide-card/g;
+  let added = 0;
+
+  for (const { post, slug } of cards) {
+    const href = `href="/${CONFIG.outDir}/${slug}.html"`;
+    if (html.includes(href)) continue;
+
+    const starts = [...html.matchAll(CARD_START)].map((m) => m.index);
+    if (!starts.length) { warn('לא נמצאו כרטיסים בעמוד מרכז ידע — מדלג'); return; }
+
+    const lastStart = starts[starts.length - 1];
+    const closeIdx = html.indexOf('</a>', html.indexOf('למדריך המלא', lastStart));
+    if (closeIdx < 0) { warn('מבנה הכרטיסים בעמוד מרכז ידע לא מוכר — מדלג'); return; }
+
+    const at = closeIdx + '</a>'.length;
+    html = `${html.slice(0, at)}\n\n                    ${guideCard(post, slug)}${html.slice(at)}`;
+    added += 1;
+  }
+
+  if (added && !DRY_RUN) await fs.writeFile(CONFIG.indexFile, html, 'utf8');
+  log(`מרכז ידע: נוספו ${added} כרטיסים`);
+}
+
+// ----------------------------------------------------------------------------
 // sitemap
 // ----------------------------------------------------------------------------
 
@@ -270,45 +502,98 @@ async function main() {
   let manifest = {};
   try { manifest = JSON.parse(await fs.readFile(CONFIG.manifestFile, 'utf8')); } catch { /* ריק בפעם הראשונה */ }
 
-  const posts = await fetchPublishedPosts(apiKey);
-  log(`התקבלו ${posts.length} פוסטים שפורסמו`);
+  const cards = await fetchPublishedPosts(apiKey);
+  log(`התקבלו ${cards.length} פוסטים שפורסמו`);
 
   const written = [];
+  const created = [];
+  const skipped = [];
+  const indexCards = [];   // כל הפוסטים החיים — כדי לוודא שכולם מקושרים ממרכז ידע
 
-  for (const post of posts) {
-    const slug = safeSlug(post.slug, post.title);
-    if (!slug) continue;
+  for (const card of cards) {
+    const slug = safeSlug(card.slug, card.title);
+    if (!slug) {
+      skipped.push({ title: card.title || card.slug || '(ללא כותרת)', reason: 'slug פגום' });
+      continue;
+    }
 
     const file = path.join(CONFIG.outDir, `${slug}.html`);
     const isOurs = Object.prototype.hasOwnProperty.call(manifest, slug);
 
     // הגנה: לא דורסים דף שנכתב ביד
-    let exists = true;
-    try { await fs.access(file); } catch { exists = false; }
+    let current = null;
+    try { current = await fs.readFile(file, 'utf8'); } catch { /* לא קיים */ }
+    const exists = current !== null;
     if (exists && !isOurs && !FORCE) {
       warn(`${file} קיים ואינו מנוהל על ידי הסקריפט — מדלג. (--force כדי לדרוס)`);
+      skipped.push({ title: card.title || slug, reason: `התנגשות עם דף קיים (${file})` });
       continue;
     }
 
-    const html = renderPage(template, post, slug);
+    // גוף המאמר מגיע רק מהקריאה הבודדת
+    let post;
+    try {
+      post = { ...card, ...(await fetchFullPost(apiKey, card.slug)) };
+    } catch (err) {
+      warn(`שליפת "${card.title}" נכשלה — ${err.message}`);
+      skipped.push({ title: card.title || slug, reason: `שליפת התוכן נכשלה (${err.message})` });
+      continue;
+    }
+
+    let html;
+    try {
+      html = renderPage(template, post, slug);
+    } catch (err) {
+      warn(`בניית הדף של "${post.title}" נכשלה — ${err.message}`);
+      skipped.push({ title: post.title || slug, reason: `בניית הדף נכשלה (${err.message})` });
+      continue;
+    }
+
+    // בדיקת שפיות: דף בלי גוף מאמר לא נשמר
+    const bodyLen = (html.match(/<div class="content">([\s\S]*?)<\/div><div class="author-note"/i)?.[1] || '')
+      .replace(/<[^>]+>/g, '').trim().length;
+    if (bodyLen < 200) {
+      warn(`"${post.title}" — גוף המאמר ריק או קצר מדי (${bodyLen} תווים). מדלג.`);
+      skipped.push({ title: post.title || slug, reason: `גוף המאמר ריק או קצר מדי (${bodyLen} תווים)` });
+      continue;
+    }
+
+    const url = `${CONFIG.siteUrl}/${CONFIG.outDir}/${slug}.html`;
+    indexCards.push({ post, slug });
+    written.push({
+      loc: url,
+      lastmod: modifiedDate(post) || new Date().toISOString().slice(0, 10),
+    });
+
+    // אין שינוי בתוכן — לא נוגעים בקובץ, לא מדווחים, ולא יוצרים commit ריק
+    if (current === html) {
+      log(`= ${file} — ללא שינוי`);
+      continue;
+    }
+
     if (!DRY_RUN) await fs.writeFile(file, html, 'utf8');
 
     manifest[slug] = {
-      postId: post.id,
+      slug,
       title: post.title,
       syncedAt: new Date().toISOString(),
     };
-    written.push({
-      loc: `${CONFIG.siteUrl}/${CONFIG.outDir}/${slug}.html`,
-      lastmod: (post.updatedAt || post.publishedAt || new Date().toISOString()).slice(0, 10),
-    });
-    log(`✓ ${file}`);
+    created.push({ title: post.title || slug, url });
+    log(`✓ ${file} (${bodyLen} תווים)${exists ? ' — עודכן' : ''}`);
   }
 
   if (!DRY_RUN) {
     await fs.writeFile(CONFIG.manifestFile, JSON.stringify(manifest, null, 2), 'utf8');
   }
+  await updateGuidesIndex(indexCards);
   await updateSitemap(written);
+
+  // סיכום לריצה ב-CI. בהרצה יבשה לא כותבים כלום.
+  if (!DRY_RUN) {
+    const summary = { runAt: new Date().toISOString(), created, skipped };
+    await fs.writeFile(SUMMARY_FILE, JSON.stringify(summary, null, 2), 'utf8');
+    log(`סיכום נכתב ל-${SUMMARY_FILE} — ${created.length} נוצרו, ${skipped.length} דולגו`);
+  }
 
   log(DRY_RUN ? `סיום (הרצה יבשה) — ${written.length} דפים היו נכתבים` : `סיום — ${written.length} דפים`);
 }
