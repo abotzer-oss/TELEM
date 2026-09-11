@@ -10,3 +10,4 @@ qa-*.png
 *-mobile-full.png
 live_after.html
 *.optimized-version
+Claude outputs/
