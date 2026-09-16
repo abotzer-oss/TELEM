@@ -2,16 +2,21 @@
   "soil-survey-after-findings": {
     "slug": "soil-survey-after-findings",
     "title": "מה קורה אחרי הסקר ההיסטורי? המסלול המלא מממצא לאישור המשרד להגנת הסביבה",
-    "syncedAt": "2026-09-11T12:26:34.923Z"
+    "syncedAt": "2026-09-16T09:39:21.457Z"
   },
   "building-permit-environmental-annex-process": {
     "slug": "building-permit-environmental-annex-process",
     "title": "התהליך המלא להוצאת היתר בנייה עם נספח סביבתי: לוחות זמנים, ועדות וצמתי ההחלטה",
-    "syncedAt": "2026-09-11T12:26:35.293Z"
+    "syncedAt": "2026-09-16T09:39:21.698Z"
   },
   "bess": {
     "slug": "bess",
     "title": "דרישות סביבתיות למתקני BESS בישראל: מה נדרש לפני אישור הפרויקט",
-    "syncedAt": "2026-09-15T09:45:32.394Z"
+    "syncedAt": "2026-09-16T09:39:21.220Z"
+  },
+  "environmental-annex-urban-renewal-projects": {
+    "slug": "environmental-annex-urban-renewal-projects",
+    "title": "נספח סביבתי בהתחדשות עירונית: מה שונה ואיך מתכוננים נכון",
+    "syncedAt": "2026-09-16T09:39:20.977Z"
   }
 }
