@@ -18,6 +18,23 @@
     // TODO: add Google Ads — gtag('config','AW-XXXXXXXXXX') when Ads ID provided by Aviram
   </script>
 
+  <!-- OpenAI Ads pixel (oaiq) — ההמרה מדווחת מ-lp.js אחרי שליחה מוצלחת -->
+  <script>
+    (function (w, d, s, u) {
+      if (w.oaiq) return;
+      var q = function () { q.q.push(arguments); };
+      q.q = [];
+      w.oaiq = q;
+      var js = d.createElement(s);
+      js.async = true;
+      js.src = u;
+      var f = d.getElementsByTagName(s)[0];
+      f.parentNode.insertBefore(js, f);
+    })(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
+
+    oaiq("init", { pixelId: "48v8aBSZQ979GGDx243wsc" });
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap" rel="stylesheet">

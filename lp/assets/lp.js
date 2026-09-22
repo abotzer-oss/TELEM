@@ -2,7 +2,7 @@
    תלם — דפי נחיתה ממומנים · לוגיקה משותפת
    - לכידת UTM → שדות נסתרים
    - שליחת טופס ל-Web3Forms + redirect ל-../toda/
-   - מדידה: generate_lead / click_whatsapp / click_call
+   - מדידה: generate_lead / lead_created (OpenAI Ads) / click_whatsapp / click_call
    ========================================================================== */
 (function () {
   'use strict';
@@ -75,6 +75,10 @@
           .then(function (json) {
             if (json && json.success) {
               track('generate_lead', { page_id: pageId(), currency: 'ILS' });
+              // OpenAI Ads — ההמרה מדווחת כאן בלבד: אחרי success, פעם אחת לכל שליחה.
+              if (window.oaiq) {
+                oaiq("measure", "lead_created", { type: "customer_action" });
+              }
               window.location.href = '../toda/?from=' + encodeURIComponent(pageId());
             } else {
               throw new Error((json && json.message) || 'submit failed');
