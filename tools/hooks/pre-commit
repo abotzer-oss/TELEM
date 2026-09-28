@@ -1,0 +1,29 @@
+#!/bin/sh
+# ==========================================================================
+# pre-commit — שומר שאף ליד ריק לא יוכל להישלח מהאתר.
+#
+# core.hooksPath מצביע ל-tools/hooks, ולכן ה-hook הזה רץ אוטומטית לפני
+# כל commit. הוא בודק שכל טופס שמוליך ל-web3forms עדיין נושא required,
+# בלי novalidate, עם honeypot, ושהעמוד טוען את assets/lead-guard.js.
+#
+# הסיכון האמיתי שהוא חוסם: `npm run prerender` דורס index.html ו-
+# guides/index.html מה-DOM המרונדר ועלול להשמיט תגיות script.
+#
+# לדלג פעם אחת במקרה חריג:  git commit --no-verify
+# ==========================================================================
+
+if command -v python >/dev/null 2>&1; then
+  PY=python
+elif command -v python3 >/dev/null 2>&1; then
+  PY=python3
+else
+  echo "pre-commit: לא נמצא python — בדיקת טפסי הלידים לא רצה." >&2
+  exit 0
+fi
+
+"$PY" "$(git rev-parse --show-toplevel)/tools/check_lead_guard.py" || {
+  echo "" >&2
+  echo "ה-commit נעצר: טופס לידים באתר אינו מוגן." >&2
+  echo "תקן את מה שמופיע למעלה, או הרץ git commit --no-verify אם אתה בטוח." >&2
+  exit 1
+}
