@@ -50,7 +50,7 @@
 
   function fill() {
     var data = collect();
-    var forms = document.querySelectorAll('form[data-lp-form]');
+    var forms = document.querySelectorAll('form[data-lp-form], form[data-attr-capture]');
     Array.prototype.forEach.call(forms, function (form) {
       Object.keys(data).forEach(function (key) {
         setField(form, key, data[key]);
