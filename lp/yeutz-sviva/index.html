@@ -18,6 +18,23 @@
     // TODO: add Google Ads — gtag('config','AW-XXXXXXXXXX') when Ads ID provided by Aviram
   </script>
 
+  <!-- OpenAI Ads pixel (oaiq) — ההמרה מדווחת מ-lp.js אחרי שליחה מוצלחת -->
+  <script>
+    (function (w, d, s, u) {
+      if (w.oaiq) return;
+      var q = function () { q.q.push(arguments); };
+      q.q = [];
+      w.oaiq = q;
+      var js = d.createElement(s);
+      js.async = true;
+      js.src = u;
+      var f = d.getElementsByTagName(s)[0];
+      f.parentNode.insertBefore(js, f);
+    })(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
+
+    oaiq("init", { pixelId: "48v8aBSZQ979GGDx243wsc" });
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap" rel="stylesheet">
@@ -114,10 +131,6 @@
           <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required pattern="[0-9+() -]{9,20}" title="מספר טלפון ישראלי, לדוגמה 050-1234567">
         </div>
         <div class="field">
-          <label for="f-city">עיר / רשות</label>
-          <input id="f-city" name="city" type="text" autocomplete="address-level2">
-        </div>
-        <div class="field">
           <label for="f-type">במה מדובר?</label>
           <select id="f-type" name="project_type">
             <option value="">בחרו מהרשימה…</option>
@@ -129,20 +142,6 @@
             <option>רעש, אוויר או שפכים</option>
             <option>אחר</option>
           </select>
-        </div>
-        <div class="field">
-          <label for="f-req">מה מצב הדרישה?</label>
-          <select id="f-req" name="has_requirement">
-            <option value="">בחרו…</option>
-            <option>קיבלתי דרישה כתובה מהרשות</option>
-            <option>יש תנאים ברישיון העסק</option>
-            <option>עדיין בשלב התכנון</option>
-            <option>לא בטוח/ה — צריך בדיקה</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="f-note">הערה</label>
-          <textarea id="f-note" name="message" placeholder="תחום הפעילות, מיקום או כל פרט שיעזור לנו"></textarea>
         </div>
         <!-- TODO: file upload field when on paid plan -->
         <button type="submit" class="btn btn-primary btn-block">שליחה לבדיקה</button>
@@ -292,15 +291,10 @@
         <div class="grid grid-2" style="gap:0 16px">
           <div class="field"><label for="s-name">שם מלא <span class="req">*</span></label><input id="s-name" name="name" type="text" autocomplete="name" required></div>
           <div class="field"><label for="s-phone">טלפון <span class="req">*</span></label><input id="s-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required pattern="[0-9+() -]{9,20}" title="מספר טלפון ישראלי, לדוגמה 050-1234567"></div>
-          <div class="field"><label for="s-city">עיר / רשות</label><input id="s-city" name="city" type="text"></div>
           <div class="field"><label for="s-type">במה מדובר?</label>
             <select id="s-type" name="project_type"><option value="">בחרו…</option><option>רישיון עסק / תנאים סביבתיים</option><option>היתר רעלים — בקשה או חידוש</option><option>נספח סביבתי / היתר בנייה</option><option>סקר קרקע / זיהום קרקע</option><option>פסולת, מיחזור ומערך אצירה</option><option>רעש, אוויר או שפכים</option><option>אחר</option></select>
           </div>
         </div>
-        <div class="field"><label for="s-req">מה מצב הדרישה?</label>
-          <select id="s-req" name="has_requirement"><option value="">בחרו…</option><option>קיבלתי דרישה כתובה מהרשות</option><option>יש תנאים ברישיון העסק</option><option>עדיין בשלב התכנון</option><option>לא בטוח/ה — צריך בדיקה</option></select>
-        </div>
-        <div class="field"><label for="s-note">הערה</label><textarea id="s-note" name="message"></textarea></div>
         <!-- TODO: file upload field when on paid plan -->
         <button type="submit" class="btn btn-primary btn-block">שליחה לבדיקה</button>
         <p class="form-error" hidden style="color:#b4452f;font-size:14px;margin-top:10px;text-align:center">אירעה תקלה. אפשר לפנות בוואטסאפ או בטלפון.</p>

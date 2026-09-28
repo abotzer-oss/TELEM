@@ -120,7 +120,6 @@
 
         <div class="field"><label for="f-name">שם מלא <span class="req">*</span></label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
         <div class="field"><label for="f-phone">טלפון <span class="req">*</span></label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required pattern="[0-9+() -]{9,20}" title="מספר טלפון ישראלי, לדוגמה 050-1234567"></div>
-        <div class="field"><label for="f-city">עיר / רשות</label><input id="f-city" name="city" type="text" autocomplete="address-level2"></div>
         <div class="field"><label for="f-type">סוג הפרויקט</label>
           <select id="f-type" name="project_type">
             <option value="">בחרו מהרשימה…</option>
@@ -132,16 +131,6 @@
             <option>אחר</option>
           </select>
         </div>
-        <div class="field"><label for="f-req">יש דרישה מהוועדה / תיק מידע?</label>
-          <select id="f-req" name="has_requirement">
-            <option value="">בחרו…</option>
-            <option>כן — קיבלתי דרישה כתובה</option>
-            <option>יש תיק מידע ואני בודק</option>
-            <option>לא בטוח/ה — צריך בדיקה</option>
-            <option>לא</option>
-          </select>
-        </div>
-        <div class="field"><label for="f-note">הערה</label><textarea id="f-note" name="message" placeholder="מספר יח״ד / מ״ר, מיקום או כל פרט שיעזור לנו"></textarea></div>
         <!-- TODO: file upload field when on paid plan -->
         <button type="submit" class="btn btn-primary btn-block">שליחה לבדיקה</button>
         <p class="form-error" hidden style="color:#b4452f;font-size:14px;margin-top:10px;text-align:center">אירעה תקלה. אפשר לפנות בוואטסאפ או בטלפון למטה.</p>
@@ -285,15 +274,10 @@
         <div class="grid grid-2" style="gap:0 16px">
           <div class="field"><label for="s-name">שם מלא <span class="req">*</span></label><input id="s-name" name="name" type="text" autocomplete="name" required></div>
           <div class="field"><label for="s-phone">טלפון <span class="req">*</span></label><input id="s-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required pattern="[0-9+() -]{9,20}" title="מספר טלפון ישראלי, לדוגמה 050-1234567"></div>
-          <div class="field"><label for="s-city">עיר / רשות</label><input id="s-city" name="city" type="text"></div>
           <div class="field"><label for="s-type">סוג הפרויקט</label>
             <select id="s-type" name="project_type"><option value="">בחרו…</option><option>מגורים</option><option>מסחר / משרדים</option><option>תעשייה / לוגיסטיקה</option><option>רישוי עסקים</option><option>מבנה ציבור</option><option>אחר</option></select>
           </div>
         </div>
-        <div class="field"><label for="s-req">יש דרישה מהוועדה / תיק מידע?</label>
-          <select id="s-req" name="has_requirement"><option value="">בחרו…</option><option>כן — קיבלתי דרישה כתובה</option><option>יש תיק מידע ואני בודק</option><option>לא בטוח/ה — צריך בדיקה</option><option>לא</option></select>
-        </div>
-        <div class="field"><label for="s-note">הערה</label><textarea id="s-note" name="message"></textarea></div>
         <!-- TODO: file upload field when on paid plan -->
         <button type="submit" class="btn btn-primary btn-block">שליחה לבדיקה</button>
         <p class="form-error" hidden style="color:#b4452f;font-size:14px;margin-top:10px;text-align:center">אירעה תקלה. אפשר לפנות בוואטסאפ או בטלפון.</p>

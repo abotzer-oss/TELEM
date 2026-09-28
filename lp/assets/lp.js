@@ -39,11 +39,17 @@
   /* ---------- click tracking (whatsapp / call) ---------- */
   function bindClickTracking() {
     document.querySelectorAll('[data-track="whatsapp"]').forEach(function (el) {
-      el.addEventListener('click', function () { track('click_whatsapp', { page_id: pageId() }); });
+      el.addEventListener('click', function () { track('click_whatsapp', { page_id: pageId() }); oaiqContact('whatsapp'); });
     });
     document.querySelectorAll('[data-track="call"]').forEach(function (el) {
-      el.addEventListener('click', function () { track('click_call', { page_id: pageId() }); });
+      el.addEventListener('click', function () { track('click_call', { page_id: pageId() }); oaiqContact('call'); });
     });
+  }
+  // OpenAI Ads — פנייה ישירה (וואטסאפ / טלפון) נספרת כהמרה נפרדת: contact_click
+  function oaiqContact(channel) {
+    try {
+      if (window.oaiq) { oaiq("measure", "contact_click", { type: "customer_action", channel: channel }); }
+    } catch (e) {}
   }
   function pageId() {
     var f = document.querySelector('input[name="page_id"]');
@@ -81,7 +87,10 @@
               if (window.oaiq) {
                 oaiq("measure", "lead_created", { type: "customer_action" });
               }
-              window.location.href = '../toda/?from=' + encodeURIComponent(pageId());
+              // השהיה קצרה כדי שהפיקסלים יספיקו לשלוח את ההמרה לפני המעבר לדף התודה
+              setTimeout(function () {
+                window.location.href = '../toda/?from=' + encodeURIComponent(pageId());
+              }, 600);
             } else {
               throw new Error((json && json.message) || 'submit failed');
             }
