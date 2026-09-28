@@ -51,19 +51,21 @@
   }
 
   /* ---------- form submit ---------- */
+  /* כל הוולידציה ב-/assets/lead-guard.js — שכבה משותפת לכל טופס באתר.
+     אם הקובץ לא נטען, לא נשלח כלום (fail-closed): עדיף ליד חסר מליד ריק. */
   function bindForms() {
     document.querySelectorAll('form[data-lp-form]').forEach(function (form) {
       form.addEventListener('submit', function (ev) {
         ev.preventDefault();
 
-        // honeypot — אם סומן ע"י בוט, מתעלמים בשקט (checkbox → בודקים checked, לא value)
-        var bot = form.querySelector('input[name="botcheck"]');
-        if (bot && bot.checked) { return; }
+        var guard = window.TelemLeadGuard;
+        if (!guard) { return; }              // fail-closed
+        if (!guard.allowSubmit(form)) { return; }
 
         var btn = form.querySelector('[type="submit"]');
-        var btnText = btn ? btn.textContent : '';
-        if (btn) { btn.disabled = true; btn.textContent = 'שולח…'; }
+        guard.lock(form, btn);
 
+        // הנתונים נבנים מהטופס שנשלח בלבד, ברגע השליחה.
         var data = new FormData(form);
 
         fetch('https://api.web3forms.com/submit', {
@@ -85,13 +87,8 @@
             }
           })
           .catch(function () {
-            if (btn) { btn.disabled = false; btn.textContent = btnText; }
-            var err = form.querySelector('.form-error');
-            if (err) {
-              err.hidden = false;
-            } else {
-              alert('אירעה תקלה בשליחה. אפשר לפנות אלינו ישירות בוואטסאפ או בטלפון.');
-            }
+            guard.unlock(form, btn);
+            guard.formMessage(form, 'אירעה תקלה בשליחה. אפשר לפנות אלינו ישירות בוואטסאפ או בטלפון.');
           });
       });
     });

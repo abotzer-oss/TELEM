@@ -707,41 +707,8 @@
             closeElement('cookieBanner');
         }
 
-        // טופס יצירת קשר — Web3Forms
-        const _contactForm = document.getElementById('contactForm');
-        if (_contactForm) {
-            _contactForm.addEventListener('submit', async function(e) {
-                e.preventDefault();
-
-                const btn = document.getElementById('submitBtn');
-                btn.textContent = 'שולח...';
-                btn.disabled = true;
-
-                const formData = new FormData(this);
-
-                try {
-                    const response = await fetch('https://api.web3forms.com/submit', {
-                        method: 'POST',
-                        body: formData
-                    });
-
-                    const data = await response.json();
-
-                    if (data.success) {
-                        document.getElementById('contactForm').style.display = 'none';
-                        const successEl = document.getElementById('successMessage');
-                        successEl.style.display = 'block';
-                        successEl.removeAttribute('aria-hidden');
-                    } else {
-                        throw new Error('שגיאה');
-                    }
-                } catch (err) {
-                    btn.textContent = 'שלח פנייה';
-                    btn.disabled = false;
-                    alert('אירעה שגיאה בשליחה. אנא נסו שוב או צרו קשר ישירות.');
-                }
-            });
-        }
+        // אין טופס בדף הזה — ה-handler הישן הוסר.
+        // כל טופס חדש חייב לעבור דרך /assets/lead-guard.js.
 
         document.addEventListener('DOMContentLoaded', () => {
             if (window.lucide) lucide.createIcons();

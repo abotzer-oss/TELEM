@@ -91,7 +91,7 @@
     <div class="form-card" id="lead">
       <h2>בדיקת הדרישה — ללא עלות</h2>
       <p class="form-note">השאירו פרטים ונחזור עם מה בדיוק נדרש, לוחות זמנים וצעדים הבאים.</p>
-      <form data-lp-form action="https://api.web3forms.com/submit" method="POST" novalidate>
+      <form data-lp-form action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="37580c60-8dcb-458b-9ab2-95b78a450c31">
         <input type="hidden" name="subject" value="ליד חדש — דף נחיתה ייעוץ סביבה">
         <input type="hidden" name="from_name" value="תלם · LP ייעוץ סביבה">
@@ -111,7 +111,7 @@
         </div>
         <div class="field">
           <label for="f-phone">טלפון <span class="req">*</span></label>
-          <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
+          <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required pattern="[0-9+() -]{9,20}" title="מספר טלפון ישראלי, לדוגמה 050-1234567">
         </div>
         <div class="field">
           <label for="f-city">עיר / רשות</label>
@@ -280,7 +280,7 @@
       <p>השאירו פרטים — נחזור אליכם עם הצעדים הבאים והערכת לוחות זמנים.</p>
     </div>
     <div class="form-card">
-      <form data-lp-form action="https://api.web3forms.com/submit" method="POST" novalidate>
+      <form data-lp-form action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="37580c60-8dcb-458b-9ab2-95b78a450c31">
         <input type="hidden" name="subject" value="ליד חדש — דף נחיתה ייעוץ סביבה (טופס משני)">
         <input type="hidden" name="from_name" value="תלם · LP ייעוץ סביבה">
@@ -291,7 +291,7 @@
         <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="grid grid-2" style="gap:0 16px">
           <div class="field"><label for="s-name">שם מלא <span class="req">*</span></label><input id="s-name" name="name" type="text" autocomplete="name" required></div>
-          <div class="field"><label for="s-phone">טלפון <span class="req">*</span></label><input id="s-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required></div>
+          <div class="field"><label for="s-phone">טלפון <span class="req">*</span></label><input id="s-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required pattern="[0-9+() -]{9,20}" title="מספר טלפון ישראלי, לדוגמה 050-1234567"></div>
           <div class="field"><label for="s-city">עיר / רשות</label><input id="s-city" name="city" type="text"></div>
           <div class="field"><label for="s-type">במה מדובר?</label>
             <select id="s-type" name="project_type"><option value="">בחרו…</option><option>רישיון עסק / תנאים סביבתיים</option><option>היתר רעלים — בקשה או חידוש</option><option>נספח סביבתי / היתר בנייה</option><option>סקר קרקע / זיהום קרקע</option><option>פסולת, מיחזור ומערך אצירה</option><option>רעש, אוויר או שפכים</option><option>אחר</option></select>
@@ -342,6 +342,7 @@
   <a class="btn btn-primary" href="tel:0506890650" data-track="call">חיוג</a>
 </nav>
 
+<script src="/assets/lead-guard.js"></script>
 <script src="/lp/assets/lp.js"></script>
 <script src="/assets/attribution-capture.js" defer></script>
 </body>
