@@ -6,22 +6,33 @@
 # כל commit. הוא בודק שכל טופס שמוליך ל-web3forms עדיין נושא required,
 # בלי novalidate, עם honeypot, ושהעמוד טוען את assets/lead-guard.js.
 #
-# הסיכון האמיתי שהוא חוסם: `npm run prerender` דורס index.html ו-
+# הסיכון האמיתי שהוא חוסם: `npm run prerender` דורס את index.html ו-
 # guides/index.html מה-DOM המרונדר ועלול להשמיט תגיות script.
 #
 # לדלג פעם אחת במקרה חריג:  git commit --no-verify
 # ==========================================================================
 
-if command -v python >/dev/null 2>&1; then
-  PY=python
-elif command -v python3 >/dev/null 2>&1; then
-  PY=python3
-else
-  echo "pre-commit: לא נמצא python — בדיקת טפסי הלידים לא רצה." >&2
+ROOT=$(git rev-parse --show-toplevel) || exit 0
+CHECK="$ROOT/tools/check_lead_guard.py"
+
+[ -f "$CHECK" ] || exit 0          # הבדיקה לא קיימת בענף הזה — לא חוסמים
+
+# בוחרים מפרש ע"י *הרצה* ולא ע"י command -v: ב-Windows הפקודה python3
+# מוצאת stub של Microsoft Store שנמצא ב-PATH אבל נכשל בהרצה בפועל.
+PY=""
+for candidate in python python3 py; do
+  if "$candidate" -c "import sys" >/dev/null 2>&1; then
+    PY="$candidate"
+    break
+  fi
+done
+
+if [ -z "$PY" ]; then
+  echo "pre-commit: לא נמצא מפרש python שרץ בפועל — בדיקת טפסי הלידים לא רצה." >&2
   exit 0
 fi
 
-"$PY" "$(git rev-parse --show-toplevel)/tools/check_lead_guard.py" || {
+"$PY" "$CHECK" || {
   echo "" >&2
   echo "ה-commit נעצר: טופס לידים באתר אינו מוגן." >&2
   echo "תקן את מה שמופיע למעלה, או הרץ git commit --no-verify אם אתה בטוח." >&2
