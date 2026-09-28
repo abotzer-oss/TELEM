@@ -1,40 +1,57 @@
 #!/bin/sh
 # ==========================================================================
-# pre-commit — שומר שאף ליד ריק לא יוכל להישלח מהאתר.
+# telemenv.co.il — pre-commit
 #
-# core.hooksPath מצביע ל-tools/hooks, ולכן ה-hook הזה רץ אוטומטית לפני
-# כל commit. הוא בודק שכל טופס שמוליך ל-web3forms עדיין נושא required,
-# בלי novalidate, עם honeypot, ושהעמוד טוען את assets/lead-guard.js.
+# שתי משימות, ושתיהן נובעות מתקלות אמיתיות שקרו באתר:
 #
-# הסיכון האמיתי שהוא חוסם: `npm run prerender` דורס את index.html ו-
-# guides/index.html מה-DOM המרונדר ועלול להשמיט תגיות script.
+#   1. חסימת לידים ריקים. ב-26.9.2026 הגיע ליד עם כל שדות המעקב מלאים
+#      וכל שדות הגולש ריקים, כי הטפסים נשאו novalidate וה-JS לא קרא
+#      ל-checkValidity(). הבדיקה חוסמת קומיט ששובר טופס.
 #
-# לדלג פעם אחת במקרה חריג:  git commit --no-verify
+#   2. sitemap.xml מסונכרן. עד 28.9.2026 כל 29 הערכים בסייטמאפ נשאו
+#      lastmod ישן — 14 מהם טענו למרץ אף שהעמודים עודכנו בספטמבר.
+#      הסייטמאפ נגזר מה-canonical של כל עמוד ונבנה מחדש אוטומטית.
+#
+# התקנה (פעם אחת):  git config core.hooksPath tools/hooks
+# דילוג חד-פעמי:     git commit --no-verify
 # ==========================================================================
 
 ROOT=$(git rev-parse --show-toplevel) || exit 0
-CHECK="$ROOT/tools/check_lead_guard.py"
-
-[ -f "$CHECK" ] || exit 0          # הבדיקה לא קיימת בענף הזה — לא חוסמים
+cd "$ROOT" || exit 0
 
 # בוחרים מפרש ע"י *הרצה* ולא ע"י command -v: ב-Windows הפקודה python3
 # מוצאת stub של Microsoft Store שנמצא ב-PATH אבל נכשל בהרצה בפועל.
 PY=""
-for candidate in python python3 py; do
-  if "$candidate" -c "import sys" >/dev/null 2>&1; then
-    PY="$candidate"
+for c in python python3 py; do
+  if "$c" -c "import sys" >/dev/null 2>&1; then
+    PY="$c"
     break
   fi
 done
 
 if [ -z "$PY" ]; then
-  echo "pre-commit: לא נמצא מפרש python שרץ בפועל — בדיקת טפסי הלידים לא רצה." >&2
+  echo "pre-commit: לא נמצא מפרש python שרץ בפועל — הבדיקות לא רצו." >&2
   exit 0
 fi
 
-"$PY" "$CHECK" || {
-  echo "" >&2
-  echo "ה-commit נעצר: טופס לידים באתר אינו מוגן." >&2
-  echo "תקן את מה שמופיע למעלה, או הרץ git commit --no-verify אם אתה בטוח." >&2
-  exit 1
-}
+# --- 1. טפסי לידים (חוסם) ---
+if [ -f tools/check_lead_guard.py ]; then
+  "$PY" tools/check_lead_guard.py || {
+    echo "" >&2
+    echo "ה-commit נעצר: טופס לידים באתר אינו מוגן." >&2
+    echo "תקן את מה שמופיע למעלה, או הרץ git commit --no-verify אם אתה בטוח." >&2
+    exit 1
+  }
+fi
+
+# --- 2. sitemap.xml (בונה מחדש ומוסיף לקומיט) ---
+if [ -f tools/build_sitemap.py ] &&
+   git diff --cached --name-only --diff-filter=ACMRD | grep -qE '\.html$'; then
+  "$PY" tools/build_sitemap.py >/dev/null || {
+    echo "pre-commit: בניית sitemap.xml נכשלה." >&2
+    exit 1
+  }
+  git add sitemap.xml
+fi
+
+exit 0

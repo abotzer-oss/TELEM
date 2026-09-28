@@ -1,0 +1,1214 @@
+﻿page,check_id,status,date,by,note,next_due
+(site),A2,pass,2026-09-28,code,אין חסימה גורפת,2026-12-27
+(site),D1,fail,2026-09-28,code,"חסרות קבוצות מפורשות: Bingbot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Claude-SearchBot, Google-Extended, Googlebot",2026-10-05
+(site),A7,pass,2026-09-28,code,"30 כתובות, כולן אינדקסביליות, lastmod פר-קובץ",2026-12-27
+(site),D2,fail,2026-09-28,code,חסר משפט הפוזיציה המדויק; ארוך מדי (87 שורות; מומלץ עד ~50),2026-10-05
+(site),C5,pass,2026-09-28,code,"כל ה-slugs בלטינית מתועתקת, מקפים בלבד",2026-12-27
+(site),C9,pass,2026-09-28,code,אתר חד-לשוני (he-IL בלבד) — hreflang אינו נדרש,2026-12-27
+(site),A5,unknown,2026-09-28,code,דורש --live,2026-10-28
+(site),E4,unknown,2026-09-28,code,דורש --live,2026-10-28
+(site),A8,unknown,2026-09-28,code,זיהוי קניבליזציה דורש נתוני שאילתות מ-Search Console,2026-10-28
+(site),D10,unknown,2026-09-28,code,אזכורים חיצוניים דורשים בדיקת backlinks/מדריכים ידנית,2026-10-28
+(site),E1,unknown,2026-09-28,code,CWV דורש CrUX/PageSpeed — לא נמדד מהקוד,2026-10-28
+(site),E5,unknown,2026-09-28,code,אין גישה ללוגי שרת; GitHub Pages אינו חושף אותם,2026-10-28
+(site),F1,unknown,2026-09-28,code,"Google Business Profile — מחוץ ל-repo, דורש גישת בעלים",2026-10-28
+(site),F2,unknown,2026-09-28,code,"פרופיל קישורים נכנסים — מחוץ ל-repo, דורש גישת בעלים",2026-10-28
+(site),F3,unknown,2026-09-28,code,"אזכורי מותג בתוצאות הקטגוריה — מחוץ ל-repo, דורש גישת בעלים",2026-10-28
+(site),F4,unknown,2026-09-28,code,"חיבור GSC/GA4 והגדרת ערוץ AI — מחוץ ל-repo, דורש גישת בעלים",2026-10-28
+(site),F5,unknown,2026-09-28,code,"סט פרומפטים לבדיקת נראות ב-AI — מחוץ ל-repo, דורש גישת בעלים",2026-10-28
+about.html,A1,pass,2026-09-28,code,501 מילים ב-HTML גולמי,2026-12-27
+about.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+about.html,A4,pass,2026-09-28,code,https://telemenv.co.il/about.html,2026-12-27
+about.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+about.html,B1,pass,2026-09-28,code,"""אבירם בוצר — יועץ פסולת וסביבה | תלם ניהול סביבה""",2026-12-27
+about.html,B2,pass,2026-09-28,code,136 תווים,2026-12-27
+about.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+about.html,B4,pass,2026-09-28,code,"11 כותרות, 1 כשאלה",2026-12-27
+about.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 258 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+about.html,B6,pass,2026-09-28,code,501 מילים,2026-12-27
+about.html,B7,fail,2026-09-28,code,2 ללא width/height; 2 ללא loading,2026-10-05
+about.html,B8,fail,2026-09-28,code,4 קישורים עצמיים,2026-10-05
+about.html,B9,pass,2026-09-28,code,"EducationalOccupationalCredential, Organization, Person, PostalAddress",2026-12-27
+about.html,B10,pass,2026-09-28,code,אינו עמוד עריכתי,2026-12-27
+about.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+about.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+about.html,C2,fail,2026-09-28,code,4 רצפי לטינית ללא bdi (למשל: ONSITE),2026-10-05
+about.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+about.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+about.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+about.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+about.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+about.html,C10,fail,2026-09-28,code,חסר inLanguage he-IL,2026-10-05
+about.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+about.html,D4,pass,2026-09-28,code,19 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+about.html,D5,unknown,2026-09-28,code,אין מקטע שאלות נפוצות בעמוד — האם צריך?,2026-10-28
+about.html,D6,unknown,2026-09-28,code,אין טבלה/תהליך ממוספר (2 רשימות תבליט) — האם התוכן מתאים לכך?,2026-10-28
+about.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+about.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+about.html,D9,pass,2026-09-28,code,10 קישורים לגופים רשמיים,2026-12-27
+about.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+about.html,E3,pass,2026-09-28,code,סקריפטים חוסמים ב-head: 0; font-display swap: True,2026-12-27
+consulting/index.html,A1,pass,2026-09-28,code,515 מילים ב-HTML גולמי,2026-12-27
+consulting/index.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+consulting/index.html,A4,pass,2026-09-28,code,https://telemenv.co.il/consulting/,2026-12-27
+consulting/index.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+consulting/index.html,B1,pass,2026-09-28,code,"""ייעוץ סביבתי לעסקים | רישוי, רעלים ופסולת | תלם ניהול סביבה""",2026-12-27
+consulting/index.html,B2,pass,2026-09-28,code,123 תווים,2026-12-27
+consulting/index.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+consulting/index.html,B4,pass,2026-09-28,code,"32 כותרות, 12 כשאלה",2026-12-27
+consulting/index.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 268 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+consulting/index.html,B6,pass,2026-09-28,code,515 מילים,2026-12-27
+consulting/index.html,B7,fail,2026-09-28,code,3 ללא width/height; 3 ללא loading,2026-10-05
+consulting/index.html,B8,fail,2026-09-28,code,1 קישורים עצמיים,2026-10-05
+consulting/index.html,B9,pass,2026-09-28,code,"ProfessionalService, Service",2026-12-27
+consulting/index.html,B10,pass,2026-09-28,code,אינו עמוד עריכתי,2026-12-27
+consulting/index.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+consulting/index.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+consulting/index.html,C2,fail,2026-09-28,code,1 רצפי לטינית ללא bdi (למשל: LinkedIn),2026-10-05
+consulting/index.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+consulting/index.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+consulting/index.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+consulting/index.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+consulting/index.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+consulting/index.html,C10,fail,2026-09-28,code,חסר inLanguage he-IL,2026-10-05
+consulting/index.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+consulting/index.html,D4,pass,2026-09-28,code,9 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+consulting/index.html,D5,fail,2026-09-28,code,מקטע שאלות נפוצות גלוי ללא FAQPage,2026-10-05
+consulting/index.html,D6,unknown,2026-09-28,code,אין טבלה/תהליך ממוספר (2 רשימות תבליט) — האם התוכן מתאים לכך?,2026-10-28
+consulting/index.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+consulting/index.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+consulting/index.html,D9,fail,2026-09-28,code,0 קישורים לגופים רשמיים,2026-10-05
+consulting/index.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+consulting/index.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 5; font-display swap: True,2026-10-05
+env/index.html,A1,pass,2026-09-28,code,1185 מילים ב-HTML גולמי,2026-12-27
+env/index.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+env/index.html,A4,pass,2026-09-28,code,https://telemenv.co.il/env/,2026-12-27
+env/index.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+env/index.html,B1,pass,2026-09-28,code,"""נספח סביבתי להיתר בנייה שמקדם את הפרויקט | תלם""",2026-12-27
+env/index.html,B2,pass,2026-09-28,code,127 תווים,2026-12-27
+env/index.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+env/index.html,B4,pass,2026-09-28,code,"27 כותרות, 6 כשאלה",2026-12-27
+env/index.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 468 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+env/index.html,B6,pass,2026-09-28,code,1185 מילים,2026-12-27
+env/index.html,B7,fail,2026-09-28,code,6 ללא width/height; 6 ללא loading,2026-10-05
+env/index.html,B8,fail,2026-09-28,code,3 קישורים עצמיים,2026-10-05
+env/index.html,B9,pass,2026-09-28,code,"Answer, BreadcrumbList, Country, FAQPage, ListItem, Organization",2026-12-27
+env/index.html,B10,pass,2026-09-28,code,אינו עמוד עריכתי,2026-12-27
+env/index.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+env/index.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+env/index.html,C2,fail,2026-09-28,code,"2 רצפי לטינית ללא bdi (למשל: LinkedIn, ONSITE)",2026-10-05
+env/index.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+env/index.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+env/index.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+env/index.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+env/index.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+env/index.html,C10,fail,2026-09-28,code,חסר inLanguage he-IL,2026-10-05
+env/index.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+env/index.html,D4,pass,2026-09-28,code,24 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+env/index.html,D5,pass,2026-09-28,code,FAQ גלוי + FAQPage,2026-12-27
+env/index.html,D6,unknown,2026-09-28,code,אין טבלה/תהליך ממוספר (5 רשימות תבליט) — האם התוכן מתאים לכך?,2026-10-28
+env/index.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+env/index.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+env/index.html,D9,pass,2026-09-28,code,8 קישורים לגופים רשמיים,2026-12-27
+env/index.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+env/index.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
+environmental-management/index.html,A1,pass,2026-09-28,code,796 מילים ב-HTML גולמי,2026-12-27
+environmental-management/index.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+environmental-management/index.html,A4,pass,2026-09-28,code,https://telemenv.co.il/environmental-management/,2026-12-27
+environmental-management/index.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+environmental-management/index.html,B1,pass,2026-09-28,code,"""ניהול ופיקוח סביבתי ONSITE לתשתיות ובנייה | תלם""",2026-12-27
+environmental-management/index.html,B2,pass,2026-09-28,code,141 תווים,2026-12-27
+environmental-management/index.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+environmental-management/index.html,B4,fail,2026-09-28,code,דילוג רמת כותרת,2026-10-05
+environmental-management/index.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 600 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+environmental-management/index.html,B6,pass,2026-09-28,code,796 מילים,2026-12-27
+environmental-management/index.html,B7,fail,2026-09-28,code,5 ללא width/height; 5 ללא loading,2026-10-05
+environmental-management/index.html,B8,fail,2026-09-28,code,2 קישורים עצמיים,2026-10-05
+environmental-management/index.html,B9,pass,2026-09-28,code,"Country, LocalBusiness, PostalAddress, Service",2026-12-27
+environmental-management/index.html,B10,pass,2026-09-28,code,אינו עמוד עריכתי,2026-12-27
+environmental-management/index.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+environmental-management/index.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+environmental-management/index.html,C2,fail,2026-09-28,code,6 רצפי לטינית ללא bdi (למשל: ONSITE),2026-10-05
+environmental-management/index.html,C3,unknown,2026-09-28,code,title מכיל לטינית; רינדור RTL בפועל ב-SERP לא נבדק,2026-10-28
+environmental-management/index.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+environmental-management/index.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+environmental-management/index.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+environmental-management/index.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+environmental-management/index.html,C10,fail,2026-09-28,code,חסר inLanguage he-IL,2026-10-05
+environmental-management/index.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+environmental-management/index.html,D4,pass,2026-09-28,code,16 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+environmental-management/index.html,D5,unknown,2026-09-28,code,אין מקטע שאלות נפוצות בעמוד — האם צריך?,2026-10-28
+environmental-management/index.html,D6,unknown,2026-09-28,code,אין טבלה/תהליך ממוספר (4 רשימות תבליט) — האם התוכן מתאים לכך?,2026-10-28
+environmental-management/index.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+environmental-management/index.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+environmental-management/index.html,D9,pass,2026-09-28,code,6 קישורים לגופים רשמיים,2026-12-27
+environmental-management/index.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+environmental-management/index.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
+environmental-management/index.html,E4,fail,2026-09-28,code,דומיינים מתים: https://www.netivei-israel.co.il,2026-10-05
+guides/bess.html,A1,pass,2026-09-28,code,1975 מילים ב-HTML גולמי,2026-12-27
+guides/bess.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+guides/bess.html,A4,pass,2026-09-28,code,https://telemenv.co.il/guides/bess.html,2026-12-27
+guides/bess.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+guides/bess.html,B1,pass,2026-09-28,code,"""דרישות סביבתיות למתקני BESS בישראל""",2026-12-27
+guides/bess.html,B2,pass,2026-09-28,code,108 תווים,2026-12-27
+guides/bess.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+guides/bess.html,B4,pass,2026-09-28,code,"15 כותרות, 1 כשאלה",2026-12-27
+guides/bess.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 600 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+guides/bess.html,B6,pass,2026-09-28,code,1975 מילים,2026-12-27
+guides/bess.html,B7,pass,2026-09-28,code,אין תמונות בעמוד,2026-12-27
+guides/bess.html,B8,pass,2026-09-28,code,"11 פנימיים, 14 חיצוניים",2026-12-27
+guides/bess.html,B9,pass,2026-09-28,code,"Answer, Article, BreadcrumbList, FAQPage, ImageObject, ListItem",2026-12-27
+guides/bess.html,B10,fail,2026-09-28,code,אין תאריך עדכון גלוי,2026-10-05
+guides/bess.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+guides/bess.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+guides/bess.html,C2,pass,2026-09-28,code,"17 רצפים, 20 bdi",2026-12-27
+guides/bess.html,C3,unknown,2026-09-28,code,title מכיל לטינית; רינדור RTL בפועל ב-SERP לא נבדק,2026-10-28
+guides/bess.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+guides/bess.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+guides/bess.html,C7,pass,2026-09-28,code,2 צמדי מונח עברי (Latin) עבור ['BESS'],2026-12-27
+guides/bess.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+guides/bess.html,C10,pass,2026-09-28,code,"inLanguage he-IL, UTF-8 תקין",2026-12-27
+guides/bess.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+guides/bess.html,D4,pass,2026-09-28,code,27 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+guides/bess.html,D5,unknown,2026-09-28,code,אין מקטע שאלות נפוצות בעמוד — האם צריך?,2026-10-28
+guides/bess.html,D6,pass,2026-09-28,code,"0 טבלאות, 1 רשימות ממוספרות",2026-12-27
+guides/bess.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+guides/bess.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+guides/bess.html,D9,pass,2026-09-28,code,10 קישורים לגופים רשמיים,2026-12-27
+guides/bess.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+guides/bess.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
+guides/bess.html,E4,fail,2026-09-28,code,"דומיינים מתים: https://www.icea.co.il, https://www.shama.co.il",2026-10-05
+guides/building-permit-environmental-annex-process.html,A1,pass,2026-09-28,code,3262 מילים ב-HTML גולמי,2026-12-27
+guides/building-permit-environmental-annex-process.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+guides/building-permit-environmental-annex-process.html,A4,pass,2026-09-28,code,https://telemenv.co.il/guides/building-permit-environmental-annex-process.html,2026-12-27
+guides/building-permit-environmental-annex-process.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+guides/building-permit-environmental-annex-process.html,B1,pass,2026-09-28,code,"""היתר בנייה עם נספח סביבתי: לוחות זמנים וצמתים""",2026-12-27
+guides/building-permit-environmental-annex-process.html,B2,pass,2026-09-28,code,101 תווים,2026-12-27
+guides/building-permit-environmental-annex-process.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+guides/building-permit-environmental-annex-process.html,B4,pass,2026-09-28,code,"18 כותרות, 1 כשאלה",2026-12-27
+guides/building-permit-environmental-annex-process.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 600 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+guides/building-permit-environmental-annex-process.html,B6,pass,2026-09-28,code,3262 מילים,2026-12-27
+guides/building-permit-environmental-annex-process.html,B7,pass,2026-09-28,code,אין תמונות בעמוד,2026-12-27
+guides/building-permit-environmental-annex-process.html,B8,pass,2026-09-28,code,"11 פנימיים, 15 חיצוניים",2026-12-27
+guides/building-permit-environmental-annex-process.html,B9,pass,2026-09-28,code,"Answer, Article, BreadcrumbList, FAQPage, ImageObject, ListItem",2026-12-27
+guides/building-permit-environmental-annex-process.html,B10,pass,2026-09-28,code,מחבר + תאריך גלוי + dateModified=2026-09-10,2026-12-27
+guides/building-permit-environmental-annex-process.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+guides/building-permit-environmental-annex-process.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+guides/building-permit-environmental-annex-process.html,C2,pass,2026-09-28,code,"2 רצפים, 4 bdi",2026-12-27
+guides/building-permit-environmental-annex-process.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+guides/building-permit-environmental-annex-process.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+guides/building-permit-environmental-annex-process.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+guides/building-permit-environmental-annex-process.html,C7,pass,2026-09-28,code,2 צמדי מונח עברי (Latin) עבור ['BESS'],2026-12-27
+guides/building-permit-environmental-annex-process.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+guides/building-permit-environmental-annex-process.html,C10,pass,2026-09-28,code,"inLanguage he-IL, UTF-8 תקין",2026-12-27
+guides/building-permit-environmental-annex-process.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+guides/building-permit-environmental-annex-process.html,D4,pass,2026-09-28,code,25 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+guides/building-permit-environmental-annex-process.html,D5,pass,2026-09-28,code,FAQ גלוי + FAQPage,2026-12-27
+guides/building-permit-environmental-annex-process.html,D6,unknown,2026-09-28,code,אין טבלה/תהליך ממוספר (3 רשימות תבליט) — האם התוכן מתאים לכך?,2026-10-28
+guides/building-permit-environmental-annex-process.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+guides/building-permit-environmental-annex-process.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+guides/building-permit-environmental-annex-process.html,D9,pass,2026-09-28,code,11 קישורים לגופים רשמיים,2026-12-27
+guides/building-permit-environmental-annex-process.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+guides/building-permit-environmental-annex-process.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
+guides/building-permit-environmental-annex-process.html,E4,fail,2026-09-28,code,"דומיינים מתים: https://www.icea.co.il, https://www.shama.co.il",2026-10-05
+guides/cities-waste.html,A1,pass,2026-09-28,code,857 מילים ב-HTML גולמי,2026-12-27
+guides/cities-waste.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+guides/cities-waste.html,A4,pass,2026-09-28,code,https://telemenv.co.il/guides/cities-waste.html,2026-12-27
+guides/cities-waste.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+guides/cities-waste.html,B1,pass,2026-09-28,code,"""דרישות אצירת פסולת: ת""א, ירושלים ונתניה | תלם""",2026-12-27
+guides/cities-waste.html,B2,pass,2026-09-28,code,146 תווים,2026-12-27
+guides/cities-waste.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+guides/cities-waste.html,B4,fail,2026-09-28,code,דילוג רמת כותרת; 1 בלוק כותרות ריק,2026-10-05
+guides/cities-waste.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 600 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+guides/cities-waste.html,B6,pass,2026-09-28,code,857 מילים,2026-12-27
+guides/cities-waste.html,B7,pass,2026-09-28,code,אין תמונות בעמוד,2026-12-27
+guides/cities-waste.html,B8,pass,2026-09-28,code,"18 פנימיים, 18 חיצוניים",2026-12-27
+guides/cities-waste.html,B9,pass,2026-09-28,code,"Answer, Article, BreadcrumbList, FAQPage, ImageObject, ListItem",2026-12-27
+guides/cities-waste.html,B10,pass,2026-09-28,code,מחבר + תאריך גלוי + dateModified=2026-07-21,2026-12-27
+guides/cities-waste.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+guides/cities-waste.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+guides/cities-waste.html,C2,fail,2026-09-28,code,1 רצפי לטינית ללא bdi (למשל: ONSITE),2026-10-05
+guides/cities-waste.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+guides/cities-waste.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+guides/cities-waste.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+guides/cities-waste.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+guides/cities-waste.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+guides/cities-waste.html,C10,pass,2026-09-28,code,"inLanguage he-IL, UTF-8 תקין",2026-12-27
+guides/cities-waste.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+guides/cities-waste.html,D4,pass,2026-09-28,code,19 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+guides/cities-waste.html,D5,pass,2026-09-28,code,FAQ גלוי + FAQPage,2026-12-27
+guides/cities-waste.html,D6,unknown,2026-09-28,code,אין טבלה/תהליך ממוספר (3 רשימות תבליט) — האם התוכן מתאים לכך?,2026-10-28
+guides/cities-waste.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+guides/cities-waste.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+guides/cities-waste.html,D9,pass,2026-09-28,code,8 קישורים לגופים רשמיים,2026-12-27
+guides/cities-waste.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+guides/cities-waste.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
+guides/election-waste-environmental-impact.html,A1,pass,2026-09-28,code,2047 מילים ב-HTML גולמי,2026-12-27
+guides/election-waste-environmental-impact.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+guides/election-waste-environmental-impact.html,A4,pass,2026-09-28,code,https://telemenv.co.il/guides/election-waste-environmental-impact.html,2026-12-27
+guides/election-waste-environmental-impact.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+guides/election-waste-environmental-impact.html,B1,pass,2026-09-28,code,"""פסולת בחירות: השלכות סביבתיות ותכנון מראש""",2026-12-27
+guides/election-waste-environmental-impact.html,B2,pass,2026-09-28,code,105 תווים,2026-12-27
+guides/election-waste-environmental-impact.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+guides/election-waste-environmental-impact.html,B4,pass,2026-09-28,code,"17 כותרות, 2 כשאלה",2026-12-27
+guides/election-waste-environmental-impact.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 600 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+guides/election-waste-environmental-impact.html,B6,pass,2026-09-28,code,2047 מילים,2026-12-27
+guides/election-waste-environmental-impact.html,B7,pass,2026-09-28,code,אין תמונות בעמוד,2026-12-27
+guides/election-waste-environmental-impact.html,B8,pass,2026-09-28,code,"11 פנימיים, 16 חיצוניים",2026-12-27
+guides/election-waste-environmental-impact.html,B9,pass,2026-09-28,code,"Answer, Article, BreadcrumbList, FAQPage, ImageObject, ListItem",2026-12-27
+guides/election-waste-environmental-impact.html,B10,fail,2026-09-28,code,אין תאריך עדכון גלוי,2026-10-05
+guides/election-waste-environmental-impact.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+guides/election-waste-environmental-impact.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+guides/election-waste-environmental-impact.html,C2,pass,2026-09-28,code,"3 רצפים, 12 bdi",2026-12-27
+guides/election-waste-environmental-impact.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+guides/election-waste-environmental-impact.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+guides/election-waste-environmental-impact.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+guides/election-waste-environmental-impact.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+guides/election-waste-environmental-impact.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+guides/election-waste-environmental-impact.html,C10,pass,2026-09-28,code,"inLanguage he-IL, UTF-8 תקין",2026-12-27
+guides/election-waste-environmental-impact.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+guides/election-waste-environmental-impact.html,D4,pass,2026-09-28,code,24 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+guides/election-waste-environmental-impact.html,D5,unknown,2026-09-28,code,אין מקטע שאלות נפוצות בעמוד — האם צריך?,2026-10-28
+guides/election-waste-environmental-impact.html,D6,pass,2026-09-28,code,"0 טבלאות, 1 רשימות ממוספרות",2026-12-27
+guides/election-waste-environmental-impact.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+guides/election-waste-environmental-impact.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+guides/election-waste-environmental-impact.html,D9,pass,2026-09-28,code,11 קישורים לגופים רשמיים,2026-12-27
+guides/election-waste-environmental-impact.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+guides/election-waste-environmental-impact.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
+guides/election-waste-environmental-impact.html,E4,fail,2026-09-28,code,"דומיינים מתים: https://www.icea.co.il, https://www.shama.co.il",2026-10-05
+guides/environmental-annex-urban-renewal-projects.html,A1,pass,2026-09-28,code,2011 מילים ב-HTML גולמי,2026-12-27
+guides/environmental-annex-urban-renewal-projects.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+guides/environmental-annex-urban-renewal-projects.html,A4,pass,2026-09-28,code,https://telemenv.co.il/guides/environmental-annex-urban-renewal-projects.html,2026-12-27
+guides/environmental-annex-urban-renewal-projects.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+guides/environmental-annex-urban-renewal-projects.html,B1,pass,2026-09-28,code,"""נספח סביבתי להתחדשות עירונית: מדריך מעשי""",2026-12-27
+guides/environmental-annex-urban-renewal-projects.html,B2,pass,2026-09-28,code,113 תווים,2026-12-27
+guides/environmental-annex-urban-renewal-projects.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+guides/environmental-annex-urban-renewal-projects.html,B4,pass,2026-09-28,code,"14 כותרות, 1 כשאלה",2026-12-27
+guides/environmental-annex-urban-renewal-projects.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 600 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+guides/environmental-annex-urban-renewal-projects.html,B6,pass,2026-09-28,code,2011 מילים,2026-12-27
+guides/environmental-annex-urban-renewal-projects.html,B7,pass,2026-09-28,code,אין תמונות בעמוד,2026-12-27
+guides/environmental-annex-urban-renewal-projects.html,B8,pass,2026-09-28,code,"11 פנימיים, 16 חיצוניים",2026-12-27
+guides/environmental-annex-urban-renewal-projects.html,B9,pass,2026-09-28,code,"Answer, Article, BreadcrumbList, FAQPage, ImageObject, ListItem",2026-12-27
+guides/environmental-annex-urban-renewal-projects.html,B10,pass,2026-09-28,code,מחבר + תאריך גלוי + dateModified=2026-09-15,2026-12-27
+guides/environmental-annex-urban-renewal-projects.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+guides/environmental-annex-urban-renewal-projects.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+guides/environmental-annex-urban-renewal-projects.html,C2,pass,2026-09-28,code,"1 רצפים, 1 bdi",2026-12-27
+guides/environmental-annex-urban-renewal-projects.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+guides/environmental-annex-urban-renewal-projects.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+guides/environmental-annex-urban-renewal-projects.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+guides/environmental-annex-urban-renewal-projects.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+guides/environmental-annex-urban-renewal-projects.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+guides/environmental-annex-urban-renewal-projects.html,C10,pass,2026-09-28,code,"inLanguage he-IL, UTF-8 תקין",2026-12-27
+guides/environmental-annex-urban-renewal-projects.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+guides/environmental-annex-urban-renewal-projects.html,D4,pass,2026-09-28,code,13 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+guides/environmental-annex-urban-renewal-projects.html,D5,unknown,2026-09-28,code,אין מקטע שאלות נפוצות בעמוד — האם צריך?,2026-10-28
+guides/environmental-annex-urban-renewal-projects.html,D6,unknown,2026-09-28,code,אין טבלה/תהליך ממוספר (3 רשימות תבליט) — האם התוכן מתאים לכך?,2026-10-28
+guides/environmental-annex-urban-renewal-projects.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+guides/environmental-annex-urban-renewal-projects.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+guides/environmental-annex-urban-renewal-projects.html,D9,pass,2026-09-28,code,11 קישורים לגופים רשמיים,2026-12-27
+guides/environmental-annex-urban-renewal-projects.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+guides/environmental-annex-urban-renewal-projects.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
+guides/environmental-annex-urban-renewal-projects.html,E4,fail,2026-09-28,code,"דומיינים מתים: https://www.icea.co.il, https://www.shama.co.il",2026-10-05
+guides/history-when.html,A1,pass,2026-09-28,code,1218 מילים ב-HTML גולמי,2026-12-27
+guides/history-when.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+guides/history-when.html,A4,pass,2026-09-28,code,https://telemenv.co.il/guides/history-when.html,2026-12-27
+guides/history-when.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+guides/history-when.html,B1,pass,2026-09-28,code,"""מתי נדרש סקר היסטורי (Phase I)? מדריך ליזמים | תלם""",2026-12-27
+guides/history-when.html,B2,pass,2026-09-28,code,125 תווים,2026-12-27
+guides/history-when.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+guides/history-when.html,B4,fail,2026-09-28,code,1 בלוק כותרות ריק,2026-10-05
+guides/history-when.html,B5,fail,2026-09-28,code,פסקה ראשונה אחרי h1: 70 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-10-05
+guides/history-when.html,B6,pass,2026-09-28,code,1218 מילים,2026-12-27
+guides/history-when.html,B7,pass,2026-09-28,code,אין תמונות בעמוד,2026-12-27
+guides/history-when.html,B8,fail,2026-09-28,code,3 קישורים עצמיים,2026-10-05
+guides/history-when.html,B9,pass,2026-09-28,code,"Answer, Article, BreadcrumbList, FAQPage, ImageObject, ListItem",2026-12-27
+guides/history-when.html,B10,fail,2026-09-28,code,אין תאריך עדכון גלוי,2026-10-05
+guides/history-when.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+guides/history-when.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+guides/history-when.html,C2,fail,2026-09-28,code,1 רצפי לטינית ללא bdi (למשל: ONSITE),2026-10-05
+guides/history-when.html,C3,unknown,2026-09-28,code,title מכיל לטינית; רינדור RTL בפועל ב-SERP לא נבדק,2026-10-28
+guides/history-when.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+guides/history-when.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+guides/history-when.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+guides/history-when.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+guides/history-when.html,C10,pass,2026-09-28,code,"inLanguage he-IL, UTF-8 תקין",2026-12-27
+guides/history-when.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+guides/history-when.html,D4,pass,2026-09-28,code,9 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+guides/history-when.html,D5,pass,2026-09-28,code,FAQ גלוי + FAQPage,2026-12-27
+guides/history-when.html,D6,unknown,2026-09-28,code,אין טבלה/תהליך ממוספר (7 רשימות תבליט) — האם התוכן מתאים לכך?,2026-10-28
+guides/history-when.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+guides/history-when.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+guides/history-when.html,D9,pass,2026-09-28,code,10 קישורים לגופים רשמיים,2026-12-27
+guides/history-when.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+guides/history-when.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
+guides/index.html,A1,pass,2026-09-28,code,605 מילים ב-HTML גולמי,2026-12-27
+guides/index.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+guides/index.html,A4,pass,2026-09-28,code,https://telemenv.co.il/guides/,2026-12-27
+guides/index.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+guides/index.html,B1,pass,2026-09-28,code,"""מרכז הידע והרגולציה הסביבתית | מדריכים מקצועיים ליזמים | תלם""",2026-12-27
+guides/index.html,B2,pass,2026-09-28,code,134 תווים,2026-12-27
+guides/index.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+guides/index.html,B4,fail,2026-09-28,code,דילוג רמת כותרת,2026-10-05
+guides/index.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 600 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+guides/index.html,B6,pass,2026-09-28,code,605 מילים,2026-12-27
+guides/index.html,B7,fail,2026-09-28,code,2 ללא width/height; 2 ללא loading,2026-10-05
+guides/index.html,B8,fail,2026-09-28,code,3 קישורים עצמיים,2026-10-05
+guides/index.html,B9,pass,2026-09-28,code,"CollectionPage, Organization",2026-12-27
+guides/index.html,B10,pass,2026-09-28,code,אינו עמוד עריכתי,2026-12-27
+guides/index.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+guides/index.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+guides/index.html,C2,fail,2026-09-28,code,"3 רצפי לטינית ללא bdi (למשל: BESS, LinkedIn, ONSITE)",2026-10-05
+guides/index.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+guides/index.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+guides/index.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+guides/index.html,C7,fail,2026-09-28,code,0 צמדי מונח עברי (Latin) עבור ['BESS'],2026-10-05
+guides/index.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+guides/index.html,C10,fail,2026-09-28,code,חסר inLanguage he-IL,2026-10-05
+guides/index.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+guides/index.html,D4,pass,2026-09-28,code,9 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+guides/index.html,D5,unknown,2026-09-28,code,אין מקטע שאלות נפוצות בעמוד — האם צריך?,2026-10-28
+guides/index.html,D6,unknown,2026-09-28,code,אין טבלה/תהליך ממוספר (2 רשימות תבליט) — האם התוכן מתאים לכך?,2026-10-28
+guides/index.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+guides/index.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+guides/index.html,D9,pass,2026-09-28,code,5 קישורים לגופים רשמיים,2026-12-27
+guides/index.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+guides/index.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
+guides/price.html,A1,pass,2026-09-28,code,953 מילים ב-HTML גולמי,2026-12-27
+guides/price.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+guides/price.html,A4,pass,2026-09-28,code,https://telemenv.co.il/guides/price.html,2026-12-27
+guides/price.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+guides/price.html,B1,pass,2026-09-28,code,"""כמה עולה נספח סביבתי? מחירון 2026 וטעויות יקרות | תלם""",2026-12-27
+guides/price.html,B2,pass,2026-09-28,code,126 תווים,2026-12-27
+guides/price.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+guides/price.html,B4,fail,2026-09-28,code,דילוג רמת כותרת,2026-10-05
+guides/price.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 550 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+guides/price.html,B6,pass,2026-09-28,code,953 מילים,2026-12-27
+guides/price.html,B7,pass,2026-09-28,code,אין תמונות בעמוד,2026-12-27
+guides/price.html,B8,pass,2026-09-28,code,"18 פנימיים, 15 חיצוניים",2026-12-27
+guides/price.html,B9,pass,2026-09-28,code,"Answer, Article, BreadcrumbList, FAQPage, ImageObject, ListItem",2026-12-27
+guides/price.html,B10,fail,2026-09-28,code,אין תאריך עדכון גלוי,2026-10-05
+guides/price.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+guides/price.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+guides/price.html,C2,pass,2026-09-28,code,"1 רצפים, 2 bdi",2026-12-27
+guides/price.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+guides/price.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+guides/price.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+guides/price.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+guides/price.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+guides/price.html,C10,pass,2026-09-28,code,"inLanguage he-IL, UTF-8 תקין",2026-12-27
+guides/price.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+guides/price.html,D4,pass,2026-09-28,code,14 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+guides/price.html,D5,pass,2026-09-28,code,FAQ גלוי + FAQPage,2026-12-27
+guides/price.html,D6,unknown,2026-09-28,code,אין טבלה/תהליך ממוספר (3 רשימות תבליט) — האם התוכן מתאים לכך?,2026-10-28
+guides/price.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+guides/price.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+guides/price.html,D9,pass,2026-09-28,code,11 קישורים לגופים רשמיים,2026-12-27
+guides/price.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+guides/price.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
+guides/price.html,E4,fail,2026-09-28,code,"דומיינים מתים: https://www.icea.co.il, https://www.shama.co.il",2026-10-05
+guides/regulations.html,A1,pass,2026-09-28,code,1074 מילים ב-HTML גולמי,2026-12-27
+guides/regulations.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+guides/regulations.html,A4,pass,2026-09-28,code,https://telemenv.co.il/guides/regulations.html,2026-12-27
+guides/regulations.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+guides/regulations.html,B1,pass,2026-09-28,code,"""חוקים ורגולציה סביבתית בישראל – המדריך המקצועי | תלם""",2026-12-27
+guides/regulations.html,B2,pass,2026-09-28,code,130 תווים,2026-12-27
+guides/regulations.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+guides/regulations.html,B4,fail,2026-09-28,code,1 בלוק כותרות ריק,2026-10-05
+guides/regulations.html,B5,fail,2026-09-28,code,פסקה ראשונה אחרי h1: 65 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-10-05
+guides/regulations.html,B6,pass,2026-09-28,code,1074 מילים,2026-12-27
+guides/regulations.html,B7,pass,2026-09-28,code,אין תמונות בעמוד,2026-12-27
+guides/regulations.html,B8,pass,2026-09-28,code,"22 פנימיים, 29 חיצוניים",2026-12-27
+guides/regulations.html,B9,pass,2026-09-28,code,"Answer, Article, BreadcrumbList, FAQPage, ImageObject, ListItem",2026-12-27
+guides/regulations.html,B10,fail,2026-09-28,code,אין תאריך עדכון גלוי,2026-10-05
+guides/regulations.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+guides/regulations.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+guides/regulations.html,C2,pass,2026-09-28,code,"1 רצפים, 7 bdi",2026-12-27
+guides/regulations.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+guides/regulations.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+guides/regulations.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+guides/regulations.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+guides/regulations.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+guides/regulations.html,C10,pass,2026-09-28,code,"inLanguage he-IL, UTF-8 תקין",2026-12-27
+guides/regulations.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+guides/regulations.html,D4,pass,2026-09-28,code,69 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+guides/regulations.html,D5,pass,2026-09-28,code,FAQ גלוי + FAQPage,2026-12-27
+guides/regulations.html,D6,unknown,2026-09-28,code,אין טבלה/תהליך ממוספר (4 רשימות תבליט) — האם התוכן מתאים לכך?,2026-10-28
+guides/regulations.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+guides/regulations.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+guides/regulations.html,D9,pass,2026-09-28,code,9 קישורים לגופים רשמיים,2026-12-27
+guides/regulations.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+guides/regulations.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
+guides/soil-contamination-sources-israel.html,A1,pass,2026-09-28,code,2176 מילים ב-HTML גולמי,2026-12-27
+guides/soil-contamination-sources-israel.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+guides/soil-contamination-sources-israel.html,A4,pass,2026-09-28,code,https://telemenv.co.il/guides/soil-contamination-sources-israel.html,2026-12-27
+guides/soil-contamination-sources-israel.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+guides/soil-contamination-sources-israel.html,B1,pass,2026-09-28,code,"""זיהום קרקע בישראל: מקורות והשפעה על פרויקטים""",2026-12-27
+guides/soil-contamination-sources-israel.html,B2,pass,2026-09-28,code,90 תווים,2026-12-27
+guides/soil-contamination-sources-israel.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+guides/soil-contamination-sources-israel.html,B4,pass,2026-09-28,code,"15 כותרות, 1 כשאלה",2026-12-27
+guides/soil-contamination-sources-israel.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 600 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+guides/soil-contamination-sources-israel.html,B6,pass,2026-09-28,code,2176 מילים,2026-12-27
+guides/soil-contamination-sources-israel.html,B7,pass,2026-09-28,code,אין תמונות בעמוד,2026-12-27
+guides/soil-contamination-sources-israel.html,B8,pass,2026-09-28,code,"11 פנימיים, 14 חיצוניים",2026-12-27
+guides/soil-contamination-sources-israel.html,B9,pass,2026-09-28,code,"Answer, Article, BreadcrumbList, FAQPage, ImageObject, ListItem",2026-12-27
+guides/soil-contamination-sources-israel.html,B10,fail,2026-09-28,code,אין תאריך עדכון גלוי,2026-10-05
+guides/soil-contamination-sources-israel.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+guides/soil-contamination-sources-israel.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+guides/soil-contamination-sources-israel.html,C2,pass,2026-09-28,code,"1 רצפים, 5 bdi",2026-12-27
+guides/soil-contamination-sources-israel.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+guides/soil-contamination-sources-israel.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+guides/soil-contamination-sources-israel.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+guides/soil-contamination-sources-israel.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+guides/soil-contamination-sources-israel.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+guides/soil-contamination-sources-israel.html,C10,pass,2026-09-28,code,"inLanguage he-IL, UTF-8 תקין",2026-12-27
+guides/soil-contamination-sources-israel.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+guides/soil-contamination-sources-israel.html,D4,pass,2026-09-28,code,16 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+guides/soil-contamination-sources-israel.html,D5,unknown,2026-09-28,code,אין מקטע שאלות נפוצות בעמוד — האם צריך?,2026-10-28
+guides/soil-contamination-sources-israel.html,D6,unknown,2026-09-28,code,אין טבלה/תהליך ממוספר (3 רשימות תבליט) — האם התוכן מתאים לכך?,2026-10-28
+guides/soil-contamination-sources-israel.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+guides/soil-contamination-sources-israel.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+guides/soil-contamination-sources-israel.html,D9,pass,2026-09-28,code,10 קישורים לגופים רשמיים,2026-12-27
+guides/soil-contamination-sources-israel.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+guides/soil-contamination-sources-israel.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
+guides/soil-contamination-sources-israel.html,E4,fail,2026-09-28,code,"דומיינים מתים: https://www.icea.co.il, https://www.shama.co.il",2026-10-05
+guides/soil-survey-after-findings.html,A1,pass,2026-09-28,code,1932 מילים ב-HTML גולמי,2026-12-27
+guides/soil-survey-after-findings.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+guides/soil-survey-after-findings.html,A4,pass,2026-09-28,code,https://telemenv.co.il/guides/soil-survey-after-findings.html,2026-12-27
+guides/soil-survey-after-findings.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+guides/soil-survey-after-findings.html,B1,pass,2026-09-28,code,"""אחרי הסקר ההיסטורי: המסלול לאישור המשרד""",2026-12-27
+guides/soil-survey-after-findings.html,B2,pass,2026-09-28,code,113 תווים,2026-12-27
+guides/soil-survey-after-findings.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+guides/soil-survey-after-findings.html,B4,pass,2026-09-28,code,"14 כותרות, 3 כשאלה",2026-12-27
+guides/soil-survey-after-findings.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 600 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+guides/soil-survey-after-findings.html,B6,pass,2026-09-28,code,1932 מילים,2026-12-27
+guides/soil-survey-after-findings.html,B7,pass,2026-09-28,code,אין תמונות בעמוד,2026-12-27
+guides/soil-survey-after-findings.html,B8,pass,2026-09-28,code,"11 פנימיים, 14 חיצוניים",2026-12-27
+guides/soil-survey-after-findings.html,B9,pass,2026-09-28,code,"Answer, Article, BreadcrumbList, FAQPage, ImageObject, ListItem",2026-12-27
+guides/soil-survey-after-findings.html,B10,pass,2026-09-28,code,מחבר + תאריך גלוי + dateModified=2026-09-11,2026-12-27
+guides/soil-survey-after-findings.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+guides/soil-survey-after-findings.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+guides/soil-survey-after-findings.html,C2,pass,2026-09-28,code,"2 רצפים, 10 bdi",2026-12-27
+guides/soil-survey-after-findings.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+guides/soil-survey-after-findings.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+guides/soil-survey-after-findings.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+guides/soil-survey-after-findings.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+guides/soil-survey-after-findings.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+guides/soil-survey-after-findings.html,C10,pass,2026-09-28,code,"inLanguage he-IL, UTF-8 תקין",2026-12-27
+guides/soil-survey-after-findings.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+guides/soil-survey-after-findings.html,D4,pass,2026-09-28,code,13 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+guides/soil-survey-after-findings.html,D5,unknown,2026-09-28,code,אין מקטע שאלות נפוצות בעמוד — האם צריך?,2026-10-28
+guides/soil-survey-after-findings.html,D6,unknown,2026-09-28,code,אין טבלה/תהליך ממוספר (3 רשימות תבליט) — האם התוכן מתאים לכך?,2026-10-28
+guides/soil-survey-after-findings.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+guides/soil-survey-after-findings.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+guides/soil-survey-after-findings.html,D9,pass,2026-09-28,code,10 קישורים לגופים רשמיים,2026-12-27
+guides/soil-survey-after-findings.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+guides/soil-survey-after-findings.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
+guides/soil-survey-after-findings.html,E4,fail,2026-09-28,code,"דומיינים מתים: https://www.icea.co.il, https://www.shama.co.il",2026-10-05
+guides/soil-survey-cost.html,A1,pass,2026-09-28,code,936 מילים ב-HTML גולמי,2026-12-27
+guides/soil-survey-cost.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+guides/soil-survey-cost.html,A4,pass,2026-09-28,code,https://telemenv.co.il/guides/soil-survey-cost.html,2026-12-27
+guides/soil-survey-cost.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+guides/soil-survey-cost.html,B1,pass,2026-09-28,code,"""כמה עולה סקר קרקע מזוהמת? מחירון 2026 | תלם""",2026-12-27
+guides/soil-survey-cost.html,B2,pass,2026-09-28,code,135 תווים,2026-12-27
+guides/soil-survey-cost.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+guides/soil-survey-cost.html,B4,fail,2026-09-28,code,דילוג רמת כותרת; 1 בלוק כותרות ריק,2026-10-05
+guides/soil-survey-cost.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 600 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+guides/soil-survey-cost.html,B6,pass,2026-09-28,code,936 מילים,2026-12-27
+guides/soil-survey-cost.html,B7,pass,2026-09-28,code,אין תמונות בעמוד,2026-12-27
+guides/soil-survey-cost.html,B8,pass,2026-09-28,code,"15 פנימיים, 13 חיצוניים",2026-12-27
+guides/soil-survey-cost.html,B9,pass,2026-09-28,code,"Answer, Article, BreadcrumbList, FAQPage, ImageObject, ListItem",2026-12-27
+guides/soil-survey-cost.html,B10,fail,2026-09-28,code,אין תאריך עדכון גלוי,2026-10-05
+guides/soil-survey-cost.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+guides/soil-survey-cost.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+guides/soil-survey-cost.html,C2,pass,2026-09-28,code,"1 רצפים, 9 bdi",2026-12-27
+guides/soil-survey-cost.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+guides/soil-survey-cost.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+guides/soil-survey-cost.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+guides/soil-survey-cost.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+guides/soil-survey-cost.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+guides/soil-survey-cost.html,C10,pass,2026-09-28,code,"inLanguage he-IL, UTF-8 תקין",2026-12-27
+guides/soil-survey-cost.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+guides/soil-survey-cost.html,D4,pass,2026-09-28,code,34 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+guides/soil-survey-cost.html,D5,pass,2026-09-28,code,FAQ גלוי + FAQPage,2026-12-27
+guides/soil-survey-cost.html,D6,unknown,2026-09-28,code,אין טבלה/תהליך ממוספר (4 רשימות תבליט) — האם התוכן מתאים לכך?,2026-10-28
+guides/soil-survey-cost.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+guides/soil-survey-cost.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+guides/soil-survey-cost.html,D9,pass,2026-09-28,code,11 קישורים לגופים רשמיים,2026-12-27
+guides/soil-survey-cost.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+guides/soil-survey-cost.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
+guides/soil-survey-cost.html,E4,fail,2026-09-28,code,"דומיינים מתים: https://www.geologists.org.il, https://www.shama.co.il",2026-10-05
+guides/soil-testing.html,A1,pass,2026-09-28,code,1247 מילים ב-HTML גולמי,2026-12-27
+guides/soil-testing.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+guides/soil-testing.html,A4,pass,2026-09-28,code,https://telemenv.co.il/guides/soil-testing.html,2026-12-27
+guides/soil-testing.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+guides/soil-testing.html,B1,pass,2026-09-28,code,"""מתי נדרשות בדיקות קרקע מזוהמת (Phase II)? | תלם""",2026-12-27
+guides/soil-testing.html,B2,pass,2026-09-28,code,136 תווים,2026-12-27
+guides/soil-testing.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+guides/soil-testing.html,B4,fail,2026-09-28,code,דילוג רמת כותרת; 1 בלוק כותרות ריק,2026-10-05
+guides/soil-testing.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 600 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+guides/soil-testing.html,B6,pass,2026-09-28,code,1247 מילים,2026-12-27
+guides/soil-testing.html,B7,pass,2026-09-28,code,אין תמונות בעמוד,2026-12-27
+guides/soil-testing.html,B8,pass,2026-09-28,code,"19 פנימיים, 17 חיצוניים",2026-12-27
+guides/soil-testing.html,B9,pass,2026-09-28,code,"Answer, Article, BreadcrumbList, FAQPage, ImageObject, ListItem",2026-12-27
+guides/soil-testing.html,B10,fail,2026-09-28,code,אין תאריך עדכון גלוי,2026-10-05
+guides/soil-testing.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+guides/soil-testing.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+guides/soil-testing.html,C2,pass,2026-09-28,code,"1 רצפים, 10 bdi",2026-12-27
+guides/soil-testing.html,C3,unknown,2026-09-28,code,title מכיל לטינית; רינדור RTL בפועל ב-SERP לא נבדק,2026-10-28
+guides/soil-testing.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+guides/soil-testing.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+guides/soil-testing.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+guides/soil-testing.html,C8,fail,2026-09-28,code,"0/1 טבלאות עם dir=""rtl""",2026-10-05
+guides/soil-testing.html,C10,pass,2026-09-28,code,"inLanguage he-IL, UTF-8 תקין",2026-12-27
+guides/soil-testing.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+guides/soil-testing.html,D4,pass,2026-09-28,code,23 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+guides/soil-testing.html,D5,pass,2026-09-28,code,FAQ גלוי + FAQPage,2026-12-27
+guides/soil-testing.html,D6,pass,2026-09-28,code,"1 טבלאות, 0 רשימות ממוספרות",2026-12-27
+guides/soil-testing.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+guides/soil-testing.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+guides/soil-testing.html,D9,pass,2026-09-28,code,14 קישורים לגופים רשמיים,2026-12-27
+guides/soil-testing.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+guides/soil-testing.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
+guides/soil-testing.html,E4,fail,2026-09-28,code,דומיינים מתים: https://www.geologists.org.il,2026-10-05
+guides/solar-bess.html,A1,pass,2026-09-28,code,1408 מילים ב-HTML גולמי,2026-12-27
+guides/solar-bess.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+guides/solar-bess.html,A4,pass,2026-09-28,code,https://telemenv.co.il/guides/solar-bess.html,2026-12-27
+guides/solar-bess.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+guides/solar-bess.html,B1,pass,2026-09-28,code,"""נספח סביבתי למתקן סולארי ומתקני אגירת אנרגיה (BESS) | תלם""",2026-12-27
+guides/solar-bess.html,B2,pass,2026-09-28,code,136 תווים,2026-12-27
+guides/solar-bess.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+guides/solar-bess.html,B4,fail,2026-09-28,code,דילוג רמת כותרת; 1 בלוק כותרות ריק,2026-10-05
+guides/solar-bess.html,B5,fail,2026-09-28,code,פסקה ראשונה אחרי h1: 76 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-10-05
+guides/solar-bess.html,B6,pass,2026-09-28,code,1408 מילים,2026-12-27
+guides/solar-bess.html,B7,pass,2026-09-28,code,אין תמונות בעמוד,2026-12-27
+guides/solar-bess.html,B8,pass,2026-09-28,code,"25 פנימיים, 13 חיצוניים",2026-12-27
+guides/solar-bess.html,B9,pass,2026-09-28,code,"Answer, Article, BreadcrumbList, FAQPage, ImageObject, ListItem",2026-12-27
+guides/solar-bess.html,B10,pass,2026-09-28,code,מחבר + תאריך גלוי + dateModified=2026-07-21,2026-12-27
+guides/solar-bess.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+guides/solar-bess.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+guides/solar-bess.html,C2,pass,2026-09-28,code,"7 רצפים, 11 bdi",2026-12-27
+guides/solar-bess.html,C3,unknown,2026-09-28,code,title מכיל לטינית; רינדור RTL בפועל ב-SERP לא נבדק,2026-10-28
+guides/solar-bess.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+guides/solar-bess.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+guides/solar-bess.html,C7,pass,2026-09-28,code,5 צמדי מונח עברי (Latin) עבור ['BESS'],2026-12-27
+guides/solar-bess.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+guides/solar-bess.html,C10,pass,2026-09-28,code,"inLanguage he-IL, UTF-8 תקין",2026-12-27
+guides/solar-bess.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+guides/solar-bess.html,D4,pass,2026-09-28,code,54 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+guides/solar-bess.html,D5,pass,2026-09-28,code,FAQ גלוי + FAQPage,2026-12-27
+guides/solar-bess.html,D6,unknown,2026-09-28,code,אין טבלה/תהליך ממוספר (9 רשימות תבליט) — האם התוכן מתאים לכך?,2026-10-28
+guides/solar-bess.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+guides/solar-bess.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+guides/solar-bess.html,D9,pass,2026-09-28,code,11 קישורים לגופים רשמיים,2026-12-27
+guides/solar-bess.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+guides/solar-bess.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
+guides/timeline.html,A1,pass,2026-09-28,code,888 מילים ב-HTML גולמי,2026-12-27
+guides/timeline.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+guides/timeline.html,A4,pass,2026-09-28,code,https://telemenv.co.il/guides/timeline.html,2026-12-27
+guides/timeline.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+guides/timeline.html,B1,pass,2026-09-28,code,"""כמה זמן לוקח לקבל אישור נספח סביבתי? לוחות זמנים 2026 | תלם""",2026-12-27
+guides/timeline.html,B2,pass,2026-09-28,code,121 תווים,2026-12-27
+guides/timeline.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+guides/timeline.html,B4,fail,2026-09-28,code,דילוג רמת כותרת; 1 בלוק כותרות ריק,2026-10-05
+guides/timeline.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 600 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+guides/timeline.html,B6,pass,2026-09-28,code,888 מילים,2026-12-27
+guides/timeline.html,B7,pass,2026-09-28,code,אין תמונות בעמוד,2026-12-27
+guides/timeline.html,B8,pass,2026-09-28,code,"14 פנימיים, 16 חיצוניים",2026-12-27
+guides/timeline.html,B9,pass,2026-09-28,code,"Answer, Article, BreadcrumbList, FAQPage, ImageObject, ListItem",2026-12-27
+guides/timeline.html,B10,fail,2026-09-28,code,אין תאריך עדכון גלוי,2026-10-05
+guides/timeline.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+guides/timeline.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+guides/timeline.html,C2,pass,2026-09-28,code,"1 רצפים, 6 bdi",2026-12-27
+guides/timeline.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+guides/timeline.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+guides/timeline.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+guides/timeline.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+guides/timeline.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+guides/timeline.html,C10,pass,2026-09-28,code,"inLanguage he-IL, UTF-8 תקין",2026-12-27
+guides/timeline.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+guides/timeline.html,D4,pass,2026-09-28,code,30 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+guides/timeline.html,D5,pass,2026-09-28,code,FAQ גלוי + FAQPage,2026-12-27
+guides/timeline.html,D6,unknown,2026-09-28,code,אין טבלה/תהליך ממוספר (4 רשימות תבליט) — האם התוכן מתאים לכך?,2026-10-28
+guides/timeline.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+guides/timeline.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+guides/timeline.html,D9,pass,2026-09-28,code,14 קישורים לגופים רשמיים,2026-12-27
+guides/timeline.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+guides/timeline.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
+guides/urban-renewal.html,A1,pass,2026-09-28,code,918 מילים ב-HTML גולמי,2026-12-27
+guides/urban-renewal.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+guides/urban-renewal.html,A4,pass,2026-09-28,code,https://telemenv.co.il/guides/urban-renewal.html,2026-12-27
+guides/urban-renewal.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+guides/urban-renewal.html,B1,pass,2026-09-28,code,"""נספח סביבתי לתמ""א 38 ופינוי בינוי — מדריך | תלם""",2026-12-27
+guides/urban-renewal.html,B2,pass,2026-09-28,code,131 תווים,2026-12-27
+guides/urban-renewal.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+guides/urban-renewal.html,B4,fail,2026-09-28,code,1 בלוק כותרות ריק,2026-10-05
+guides/urban-renewal.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 600 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+guides/urban-renewal.html,B6,pass,2026-09-28,code,918 מילים,2026-12-27
+guides/urban-renewal.html,B7,pass,2026-09-28,code,אין תמונות בעמוד,2026-12-27
+guides/urban-renewal.html,B8,pass,2026-09-28,code,"15 פנימיים, 16 חיצוניים",2026-12-27
+guides/urban-renewal.html,B9,pass,2026-09-28,code,"Answer, Article, BreadcrumbList, FAQPage, ImageObject, ListItem",2026-12-27
+guides/urban-renewal.html,B10,fail,2026-09-28,code,אין תאריך עדכון גלוי,2026-10-05
+guides/urban-renewal.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+guides/urban-renewal.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+guides/urban-renewal.html,C2,pass,2026-09-28,code,"1 רצפים, 1 bdi",2026-12-27
+guides/urban-renewal.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+guides/urban-renewal.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+guides/urban-renewal.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+guides/urban-renewal.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+guides/urban-renewal.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+guides/urban-renewal.html,C10,pass,2026-09-28,code,"inLanguage he-IL, UTF-8 תקין",2026-12-27
+guides/urban-renewal.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+guides/urban-renewal.html,D4,pass,2026-09-28,code,23 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+guides/urban-renewal.html,D5,pass,2026-09-28,code,FAQ גלוי + FAQPage,2026-12-27
+guides/urban-renewal.html,D6,unknown,2026-09-28,code,אין טבלה/תהליך ממוספר (4 רשימות תבליט) — האם התוכן מתאים לכך?,2026-10-28
+guides/urban-renewal.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+guides/urban-renewal.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+guides/urban-renewal.html,D9,pass,2026-09-28,code,13 קישורים לגופים רשמיים,2026-12-27
+guides/urban-renewal.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+guides/urban-renewal.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
+guides/waste-calculation.html,A1,fail,2026-09-28,code,46 מילים ב-HTML גולמי,2026-10-05
+guides/waste-calculation.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+guides/waste-calculation.html,A4,fail,2026-09-28,code,canonical מצביע ל-https://telemenv.co.il/guides/waste-quantities.html,2026-10-05
+guides/waste-calculation.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+guides/waste-calculation.html,B1,pass,2026-09-28,code,"""חישוב כמויות פסולת בניין — העמוד עבר | תלם""",2026-12-27
+guides/waste-calculation.html,B2,pass,2026-09-28,code,104 תווים,2026-12-27
+guides/waste-calculation.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+guides/waste-calculation.html,B4,pass,2026-09-28,code,"1 כותרות, 0 כשאלה",2026-12-27
+guides/waste-calculation.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 183 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+guides/waste-calculation.html,B6,fail,2026-09-28,code,46 מילים,2026-10-05
+guides/waste-calculation.html,B7,pass,2026-09-28,code,אין תמונות בעמוד,2026-12-27
+guides/waste-calculation.html,B8,fail,2026-09-28,code,פחות מ-3 קישורים פנימיים,2026-10-05
+guides/waste-calculation.html,B9,fail,2026-09-28,code,אין JSON-LD,2026-10-05
+guides/waste-calculation.html,B10,fail,2026-09-28,code,אין מחבר גלוי; אין תאריך עדכון גלוי; אין dateModified בסכמה,2026-10-05
+guides/waste-calculation.html,B11,fail,2026-09-28,code,אין CTA,2026-10-05
+guides/waste-calculation.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+guides/waste-calculation.html,C2,pass,2026-09-28,code,אין רצפי לטינית בתוך עברית,2026-12-27
+guides/waste-calculation.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+guides/waste-calculation.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+guides/waste-calculation.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+guides/waste-calculation.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+guides/waste-calculation.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+guides/waste-calculation.html,C10,fail,2026-09-28,code,חסר inLanguage he-IL,2026-10-05
+guides/waste-calculation.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+guides/waste-calculation.html,D4,fail,2026-09-28,code,0 עוגני עובדה (מספרים/שנים/תקנים),2026-10-05
+guides/waste-calculation.html,D5,unknown,2026-09-28,code,אין מקטע שאלות נפוצות בעמוד — האם צריך?,2026-10-28
+guides/waste-calculation.html,D6,unknown,2026-09-28,code,אין טבלה/תהליך ממוספר (0 רשימות תבליט) — האם התוכן מתאים לכך?,2026-10-28
+guides/waste-calculation.html,D7,fail,2026-09-28,code,טלפון חסר/שונה,2026-10-05
+guides/waste-calculation.html,D8,fail,2026-09-28,code,אין מחבר בעל שם,2026-10-05
+guides/waste-calculation.html,D9,fail,2026-09-28,code,0 קישורים לגופים רשמיים,2026-10-05
+guides/waste-calculation.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+guides/waste-calculation.html,E3,pass,2026-09-28,code,סקריפטים חוסמים ב-head: 0; font-display swap: True,2026-12-27
+guides/waste-quantities.html,A1,pass,2026-09-28,code,1714 מילים ב-HTML גולמי,2026-12-27
+guides/waste-quantities.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+guides/waste-quantities.html,A4,pass,2026-09-28,code,https://telemenv.co.il/guides/waste-quantities.html,2026-12-27
+guides/waste-quantities.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+guides/waste-quantities.html,B1,pass,2026-09-28,code,"""חישוב כמויות פסולת בניין — מחשבון וטבלת מקדמים | תלם""",2026-12-27
+guides/waste-quantities.html,B2,pass,2026-09-28,code,141 תווים,2026-12-27
+guides/waste-quantities.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+guides/waste-quantities.html,B4,fail,2026-09-28,code,1 בלוק כותרות ריק,2026-10-05
+guides/waste-quantities.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 470 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+guides/waste-quantities.html,B6,pass,2026-09-28,code,1714 מילים,2026-12-27
+guides/waste-quantities.html,B7,pass,2026-09-28,code,אין תמונות בעמוד,2026-12-27
+guides/waste-quantities.html,B8,pass,2026-09-28,code,"20 פנימיים, 16 חיצוניים",2026-12-27
+guides/waste-quantities.html,B9,pass,2026-09-28,code,"Answer, Article, BreadcrumbList, FAQPage, HowTo, HowToStep",2026-12-27
+guides/waste-quantities.html,B10,pass,2026-09-28,code,מחבר + תאריך גלוי + dateModified=2026-09-08,2026-12-27
+guides/waste-quantities.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+guides/waste-quantities.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+guides/waste-quantities.html,C2,pass,2026-09-28,code,"1 רצפים, 102 bdi",2026-12-27
+guides/waste-quantities.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+guides/waste-quantities.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+guides/waste-quantities.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+guides/waste-quantities.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+guides/waste-quantities.html,C8,fail,2026-09-28,code,"0/1 טבלאות עם dir=""rtl""",2026-10-05
+guides/waste-quantities.html,C10,pass,2026-09-28,code,"inLanguage he-IL, UTF-8 תקין",2026-12-27
+guides/waste-quantities.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+guides/waste-quantities.html,D4,pass,2026-09-28,code,120 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+guides/waste-quantities.html,D5,pass,2026-09-28,code,FAQ גלוי + FAQPage,2026-12-27
+guides/waste-quantities.html,D6,pass,2026-09-28,code,"1 טבלאות, 1 רשימות ממוספרות",2026-12-27
+guides/waste-quantities.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+guides/waste-quantities.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+guides/waste-quantities.html,D9,pass,2026-09-28,code,14 קישורים לגופים רשמיים,2026-12-27
+guides/waste-quantities.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+guides/waste-quantities.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
+guides/waste-storage-annex-residential-projects.html,A1,pass,2026-09-28,code,2150 מילים ב-HTML גולמי,2026-12-27
+guides/waste-storage-annex-residential-projects.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+guides/waste-storage-annex-residential-projects.html,A4,pass,2026-09-28,code,https://telemenv.co.il/guides/waste-storage-annex-residential-projects.html,2026-12-27
+guides/waste-storage-annex-residential-projects.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+guides/waste-storage-annex-residential-projects.html,B1,pass,2026-09-28,code,"""נספח אצירת אשפה למגורים: דרישות ומניעת דחייה""",2026-12-27
+guides/waste-storage-annex-residential-projects.html,B2,pass,2026-09-28,code,97 תווים,2026-12-27
+guides/waste-storage-annex-residential-projects.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+guides/waste-storage-annex-residential-projects.html,B4,pass,2026-09-28,code,"15 כותרות, 1 כשאלה",2026-12-27
+guides/waste-storage-annex-residential-projects.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 600 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+guides/waste-storage-annex-residential-projects.html,B6,pass,2026-09-28,code,2150 מילים,2026-12-27
+guides/waste-storage-annex-residential-projects.html,B7,pass,2026-09-28,code,אין תמונות בעמוד,2026-12-27
+guides/waste-storage-annex-residential-projects.html,B8,pass,2026-09-28,code,"11 פנימיים, 15 חיצוניים",2026-12-27
+guides/waste-storage-annex-residential-projects.html,B9,pass,2026-09-28,code,"Answer, Article, BreadcrumbList, FAQPage, ImageObject, ListItem",2026-12-27
+guides/waste-storage-annex-residential-projects.html,B10,fail,2026-09-28,code,אין תאריך עדכון גלוי,2026-10-05
+guides/waste-storage-annex-residential-projects.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+guides/waste-storage-annex-residential-projects.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+guides/waste-storage-annex-residential-projects.html,C2,fail,2026-09-28,code,1 רצפי לטינית ללא bdi (למשל: ONSITE),2026-10-05
+guides/waste-storage-annex-residential-projects.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+guides/waste-storage-annex-residential-projects.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+guides/waste-storage-annex-residential-projects.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+guides/waste-storage-annex-residential-projects.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+guides/waste-storage-annex-residential-projects.html,C8,fail,2026-09-28,code,"0/1 טבלאות עם dir=""rtl""",2026-10-05
+guides/waste-storage-annex-residential-projects.html,C10,pass,2026-09-28,code,"inLanguage he-IL, UTF-8 תקין",2026-12-27
+guides/waste-storage-annex-residential-projects.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+guides/waste-storage-annex-residential-projects.html,D4,pass,2026-09-28,code,44 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+guides/waste-storage-annex-residential-projects.html,D5,pass,2026-09-28,code,FAQ גלוי + FAQPage,2026-12-27
+guides/waste-storage-annex-residential-projects.html,D6,pass,2026-09-28,code,"1 טבלאות, 0 רשימות ממוספרות",2026-12-27
+guides/waste-storage-annex-residential-projects.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+guides/waste-storage-annex-residential-projects.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+guides/waste-storage-annex-residential-projects.html,D9,pass,2026-09-28,code,10 קישורים לגופים רשמיים,2026-12-27
+guides/waste-storage-annex-residential-projects.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+guides/waste-storage-annex-residential-projects.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
+guides/waste-storage-annex-residential-projects.html,E4,fail,2026-09-28,code,"דומיינים מתים: https://www.icea.co.il, https://www.shama.co.il",2026-10-05
+guides/when-to-consult.html,A1,pass,2026-09-28,code,1093 מילים ב-HTML גולמי,2026-12-27
+guides/when-to-consult.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+guides/when-to-consult.html,A4,pass,2026-09-28,code,https://telemenv.co.il/guides/when-to-consult.html,2026-12-27
+guides/when-to-consult.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+guides/when-to-consult.html,B1,pass,2026-09-28,code,"""מתי צריך יועץ סביבתי בתהליך הרישוי? המדריך המלא | תלם""",2026-12-27
+guides/when-to-consult.html,B2,pass,2026-09-28,code,137 תווים,2026-12-27
+guides/when-to-consult.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+guides/when-to-consult.html,B4,fail,2026-09-28,code,דילוג רמת כותרת; 1 בלוק כותרות ריק,2026-10-05
+guides/when-to-consult.html,B5,fail,2026-09-28,code,פסקה ראשונה אחרי h1: 65 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-10-05
+guides/when-to-consult.html,B6,pass,2026-09-28,code,1093 מילים,2026-12-27
+guides/when-to-consult.html,B7,pass,2026-09-28,code,אין תמונות בעמוד,2026-12-27
+guides/when-to-consult.html,B8,pass,2026-09-28,code,"22 פנימיים, 15 חיצוניים",2026-12-27
+guides/when-to-consult.html,B9,pass,2026-09-28,code,"Answer, Article, BreadcrumbList, FAQPage, ImageObject, ListItem",2026-12-27
+guides/when-to-consult.html,B10,fail,2026-09-28,code,אין תאריך עדכון גלוי,2026-10-05
+guides/when-to-consult.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+guides/when-to-consult.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+guides/when-to-consult.html,C2,fail,2026-09-28,code,1 רצפי לטינית ללא bdi (למשל: ONSITE),2026-10-05
+guides/when-to-consult.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+guides/when-to-consult.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+guides/when-to-consult.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+guides/when-to-consult.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+guides/when-to-consult.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+guides/when-to-consult.html,C10,pass,2026-09-28,code,"inLanguage he-IL, UTF-8 תקין",2026-12-27
+guides/when-to-consult.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+guides/when-to-consult.html,D4,pass,2026-09-28,code,10 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+guides/when-to-consult.html,D5,pass,2026-09-28,code,FAQ גלוי + FAQPage,2026-12-27
+guides/when-to-consult.html,D6,unknown,2026-09-28,code,אין טבלה/תהליך ממוספר (6 רשימות תבליט) — האם התוכן מתאים לכך?,2026-10-28
+guides/when-to-consult.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+guides/when-to-consult.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+guides/when-to-consult.html,D9,pass,2026-09-28,code,13 קישורים לגופים רשמיים,2026-12-27
+guides/when-to-consult.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+guides/when-to-consult.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
+guides/when-to-consult.html,E4,fail,2026-09-28,code,דומיינים מתים: https://www.geologists.org.il,2026-10-05
+history/index.html,A1,pass,2026-09-28,code,עמוד הפניה — בדיקת תוכן אינה חלה,2026-12-27
+history/index.html,B4,pass,2026-09-28,code,עמוד הפניה — בדיקת תוכן אינה חלה,2026-12-27
+history/index.html,B5,pass,2026-09-28,code,עמוד הפניה — בדיקת תוכן אינה חלה,2026-12-27
+history/index.html,B6,pass,2026-09-28,code,עמוד הפניה — בדיקת תוכן אינה חלה,2026-12-27
+history/index.html,B7,pass,2026-09-28,code,עמוד הפניה — בדיקת תוכן אינה חלה,2026-12-27
+history/index.html,B8,pass,2026-09-28,code,עמוד הפניה — בדיקת תוכן אינה חלה,2026-12-27
+history/index.html,B9,pass,2026-09-28,code,עמוד הפניה — בדיקת תוכן אינה חלה,2026-12-27
+history/index.html,B10,pass,2026-09-28,code,עמוד הפניה — בדיקת תוכן אינה חלה,2026-12-27
+history/index.html,B11,pass,2026-09-28,code,עמוד הפניה — בדיקת תוכן אינה חלה,2026-12-27
+history/index.html,C2,pass,2026-09-28,code,עמוד הפניה — בדיקת תוכן אינה חלה,2026-12-27
+history/index.html,C7,pass,2026-09-28,code,עמוד הפניה — בדיקת תוכן אינה חלה,2026-12-27
+history/index.html,C8,pass,2026-09-28,code,עמוד הפניה — בדיקת תוכן אינה חלה,2026-12-27
+history/index.html,D3,pass,2026-09-28,code,עמוד הפניה — בדיקת תוכן אינה חלה,2026-12-27
+history/index.html,D4,pass,2026-09-28,code,עמוד הפניה — בדיקת תוכן אינה חלה,2026-12-27
+history/index.html,D5,pass,2026-09-28,code,עמוד הפניה — בדיקת תוכן אינה חלה,2026-12-27
+history/index.html,D6,pass,2026-09-28,code,עמוד הפניה — בדיקת תוכן אינה חלה,2026-12-27
+history/index.html,D7,pass,2026-09-28,code,עמוד הפניה — בדיקת תוכן אינה חלה,2026-12-27
+history/index.html,D8,pass,2026-09-28,code,עמוד הפניה — בדיקת תוכן אינה חלה,2026-12-27
+history/index.html,D9,pass,2026-09-28,code,עמוד הפניה — בדיקת תוכן אינה חלה,2026-12-27
+history/index.html,A3,pass,2026-09-28,code,"robots=""-""",2026-12-27
+history/index.html,A4,pass,2026-09-28,code,https://telemenv.co.il/guides/history-when.html,2026-12-27
+history/index.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+history/index.html,B1,pass,2026-09-28,code,"""סקר היסטורי לקרקע — עבר לעמוד המדריך | תלם""",2026-12-27
+history/index.html,B2,pass,2026-09-28,code,91 תווים,2026-12-27
+history/index.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+history/index.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+history/index.html,C3,pass,2026-09-28,code,-,2026-12-27
+history/index.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+history/index.html,C6,unknown,2026-09-28,code,לא רלוונטי לעמוד שירות,2026-10-28
+history/index.html,C10,pass,2026-09-28,code,עמוד הפניה — סכמה לא נדרשת,2026-12-27
+history/index.html,E2,pass,2026-09-28,code,meta viewport,2026-12-27
+history/index.html,E3,pass,2026-09-28,code,סקריפטים חוסמים ב-head: 0,2026-12-27
+in-the-news/construction-waste-law.html,A1,pass,2026-09-28,code,1557 מילים ב-HTML גולמי,2026-12-27
+in-the-news/construction-waste-law.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+in-the-news/construction-waste-law.html,A4,pass,2026-09-28,code,https://telemenv.co.il/in-the-news/construction-waste-law.html,2026-12-27
+in-the-news/construction-waste-law.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+in-the-news/construction-waste-law.html,B1,pass,2026-09-28,code,"""חוק פסולת בניין: מה משתנה ליזמים, קבלנים ורשויות | תלם""",2026-12-27
+in-the-news/construction-waste-law.html,B2,pass,2026-09-28,code,174 תווים,2026-12-27
+in-the-news/construction-waste-law.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+in-the-news/construction-waste-law.html,B4,pass,2026-09-28,code,"20 כותרות, 6 כשאלה",2026-12-27
+in-the-news/construction-waste-law.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 600 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+in-the-news/construction-waste-law.html,B6,pass,2026-09-28,code,1557 מילים,2026-12-27
+in-the-news/construction-waste-law.html,B7,fail,2026-09-28,code,2 ללא width/height; 2 ללא loading,2026-10-05
+in-the-news/construction-waste-law.html,B8,pass,2026-09-28,code,"38 פנימיים, 4 חיצוניים",2026-12-27
+in-the-news/construction-waste-law.html,B9,pass,2026-09-28,code,"Answer, Article, BreadcrumbList, FAQPage, ImageObject, ListItem",2026-12-27
+in-the-news/construction-waste-law.html,B10,fail,2026-09-28,code,אין תאריך עדכון גלוי,2026-10-05
+in-the-news/construction-waste-law.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+in-the-news/construction-waste-law.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+in-the-news/construction-waste-law.html,C2,pass,2026-09-28,code,"1 רצפים, 14 bdi",2026-12-27
+in-the-news/construction-waste-law.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+in-the-news/construction-waste-law.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+in-the-news/construction-waste-law.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+in-the-news/construction-waste-law.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+in-the-news/construction-waste-law.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+in-the-news/construction-waste-law.html,C10,pass,2026-09-28,code,"inLanguage he-IL, UTF-8 תקין",2026-12-27
+in-the-news/construction-waste-law.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+in-the-news/construction-waste-law.html,D4,pass,2026-09-28,code,45 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+in-the-news/construction-waste-law.html,D5,pass,2026-09-28,code,FAQ גלוי + FAQPage,2026-12-27
+in-the-news/construction-waste-law.html,D6,pass,2026-09-28,code,"0 טבלאות, 1 רשימות ממוספרות",2026-12-27
+in-the-news/construction-waste-law.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+in-the-news/construction-waste-law.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+in-the-news/construction-waste-law.html,D9,pass,2026-09-28,code,2 קישורים לגופים רשמיים,2026-12-27
+in-the-news/construction-waste-law.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+in-the-news/construction-waste-law.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
+in-the-news/index.html,A1,pass,2026-09-28,code,465 מילים ב-HTML גולמי,2026-12-27
+in-the-news/index.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+in-the-news/index.html,A4,pass,2026-09-28,code,https://telemenv.co.il/in-the-news/,2026-12-27
+in-the-news/index.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+in-the-news/index.html,B1,pass,2026-09-28,code,"""סביבה בכותרות — סקירה ופרשנות סביבתית מקצועית | תלם""",2026-12-27
+in-the-news/index.html,B2,pass,2026-09-28,code,150 תווים,2026-12-27
+in-the-news/index.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+in-the-news/index.html,B4,fail,2026-09-28,code,אין כותרות מנוסחות כשאלה,2026-10-05
+in-the-news/index.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 280 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+in-the-news/index.html,B6,pass,2026-09-28,code,465 מילים,2026-12-27
+in-the-news/index.html,B7,fail,2026-09-28,code,4 ללא width/height; 2 ללא loading,2026-10-05
+in-the-news/index.html,B8,fail,2026-09-28,code,3 קישורים עצמיים,2026-10-05
+in-the-news/index.html,B9,pass,2026-09-28,code,"ItemList, ListItem, Organization, Person, VideoObject",2026-12-27
+in-the-news/index.html,B10,fail,2026-09-28,code,אין תאריך עדכון גלוי; אין dateModified בסכמה,2026-10-05
+in-the-news/index.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+in-the-news/index.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+in-the-news/index.html,C2,pass,2026-09-28,code,אין רצפי לטינית בתוך עברית,2026-12-27
+in-the-news/index.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+in-the-news/index.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+in-the-news/index.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+in-the-news/index.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+in-the-news/index.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+in-the-news/index.html,C10,fail,2026-09-28,code,חסר inLanguage he-IL,2026-10-05
+in-the-news/index.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+in-the-news/index.html,D4,pass,2026-09-28,code,19 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+in-the-news/index.html,D5,unknown,2026-09-28,code,אין מקטע שאלות נפוצות בעמוד — האם צריך?,2026-10-28
+in-the-news/index.html,D6,unknown,2026-09-28,code,אין טבלה/תהליך ממוספר (0 רשימות תבליט) — האם התוכן מתאים לכך?,2026-10-28
+in-the-news/index.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+in-the-news/index.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+in-the-news/index.html,D9,fail,2026-09-28,code,0 קישורים לגופים רשמיים,2026-10-05
+in-the-news/index.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+in-the-news/index.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
+in-the-news/muezzin-noise-law-2026.html,A1,pass,2026-09-28,code,1272 מילים ב-HTML גולמי,2026-12-27
+in-the-news/muezzin-noise-law-2026.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+in-the-news/muezzin-noise-law-2026.html,A4,pass,2026-09-28,code,https://telemenv.co.il/in-the-news/muezzin-noise-law-2026.html,2026-12-27
+in-the-news/muezzin-noise-law-2026.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+in-the-news/muezzin-noise-law-2026.html,B1,pass,2026-09-28,code,"""חוק המואזין 2026: מהפכת אכיפת הרעש הסביבתי | תלם""",2026-12-27
+in-the-news/muezzin-noise-law-2026.html,B2,pass,2026-09-28,code,146 תווים,2026-12-27
+in-the-news/muezzin-noise-law-2026.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+in-the-news/muezzin-noise-law-2026.html,B4,pass,2026-09-28,code,"14 כותרות, 4 כשאלה",2026-12-27
+in-the-news/muezzin-noise-law-2026.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 393 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+in-the-news/muezzin-noise-law-2026.html,B6,pass,2026-09-28,code,1272 מילים,2026-12-27
+in-the-news/muezzin-noise-law-2026.html,B7,fail,2026-09-28,code,2 ללא width/height; 2 ללא loading,2026-10-05
+in-the-news/muezzin-noise-law-2026.html,B8,pass,2026-09-28,code,"33 פנימיים, 3 חיצוניים",2026-12-27
+in-the-news/muezzin-noise-law-2026.html,B9,pass,2026-09-28,code,"Answer, Article, BreadcrumbList, FAQPage, ImageObject, ListItem",2026-12-27
+in-the-news/muezzin-noise-law-2026.html,B10,fail,2026-09-28,code,אין תאריך עדכון גלוי,2026-10-05
+in-the-news/muezzin-noise-law-2026.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+in-the-news/muezzin-noise-law-2026.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+in-the-news/muezzin-noise-law-2026.html,C2,pass,2026-09-28,code,אין רצפי לטינית בתוך עברית,2026-12-27
+in-the-news/muezzin-noise-law-2026.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+in-the-news/muezzin-noise-law-2026.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+in-the-news/muezzin-noise-law-2026.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+in-the-news/muezzin-noise-law-2026.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+in-the-news/muezzin-noise-law-2026.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+in-the-news/muezzin-noise-law-2026.html,C10,pass,2026-09-28,code,"inLanguage he-IL, UTF-8 תקין",2026-12-27
+in-the-news/muezzin-noise-law-2026.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+in-the-news/muezzin-noise-law-2026.html,D4,pass,2026-09-28,code,51 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+in-the-news/muezzin-noise-law-2026.html,D5,pass,2026-09-28,code,FAQ גלוי + FAQPage,2026-12-27
+in-the-news/muezzin-noise-law-2026.html,D6,pass,2026-09-28,code,"0 טבלאות, 1 רשימות ממוספרות",2026-12-27
+in-the-news/muezzin-noise-law-2026.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+in-the-news/muezzin-noise-law-2026.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+in-the-news/muezzin-noise-law-2026.html,D9,fail,2026-09-28,code,0 קישורים לגופים רשמיים,2026-10-05
+in-the-news/muezzin-noise-law-2026.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+in-the-news/muezzin-noise-law-2026.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
+in-the-news/recycling-award-2021.html,A1,pass,2026-09-28,code,600 מילים ב-HTML גולמי,2026-12-27
+in-the-news/recycling-award-2021.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+in-the-news/recycling-award-2021.html,A4,pass,2026-09-28,code,https://telemenv.co.il/in-the-news/recycling-award-2021.html,2026-12-27
+in-the-news/recycling-award-2021.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+in-the-news/recycling-award-2021.html,B1,pass,2026-09-28,code,"""אות הרשות הממחזרת 2021 — ניתוח ביצועי הזוכות | סביבה בכותרות | תלם""",2026-12-27
+in-the-news/recycling-award-2021.html,B2,pass,2026-09-28,code,145 תווים,2026-12-27
+in-the-news/recycling-award-2021.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+in-the-news/recycling-award-2021.html,B4,fail,2026-09-28,code,דילוג רמת כותרת; אין כותרות מנוסחות כשאלה,2026-10-05
+in-the-news/recycling-award-2021.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 446 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+in-the-news/recycling-award-2021.html,B6,pass,2026-09-28,code,600 מילים,2026-12-27
+in-the-news/recycling-award-2021.html,B7,fail,2026-09-28,code,2 ללא width/height; 2 ללא loading,2026-10-05
+in-the-news/recycling-award-2021.html,B8,pass,2026-09-28,code,"33 פנימיים, 3 חיצוניים",2026-12-27
+in-the-news/recycling-award-2021.html,B9,pass,2026-09-28,code,"Article, BreadcrumbList, ImageObject, ListItem, Organization, Person",2026-12-27
+in-the-news/recycling-award-2021.html,B10,fail,2026-09-28,code,אין תאריך עדכון גלוי,2026-10-05
+in-the-news/recycling-award-2021.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+in-the-news/recycling-award-2021.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+in-the-news/recycling-award-2021.html,C2,pass,2026-09-28,code,אין רצפי לטינית בתוך עברית,2026-12-27
+in-the-news/recycling-award-2021.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+in-the-news/recycling-award-2021.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+in-the-news/recycling-award-2021.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+in-the-news/recycling-award-2021.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+in-the-news/recycling-award-2021.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+in-the-news/recycling-award-2021.html,C10,pass,2026-09-28,code,"inLanguage he-IL, UTF-8 תקין",2026-12-27
+in-the-news/recycling-award-2021.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+in-the-news/recycling-award-2021.html,D4,pass,2026-09-28,code,18 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+in-the-news/recycling-award-2021.html,D5,unknown,2026-09-28,code,אין מקטע שאלות נפוצות בעמוד — האם צריך?,2026-10-28
+in-the-news/recycling-award-2021.html,D6,pass,2026-09-28,code,"0 טבלאות, 1 רשימות ממוספרות",2026-12-27
+in-the-news/recycling-award-2021.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+in-the-news/recycling-award-2021.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+in-the-news/recycling-award-2021.html,D9,fail,2026-09-28,code,0 קישורים לגופים רשמיים,2026-10-05
+in-the-news/recycling-award-2021.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+in-the-news/recycling-award-2021.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
+index.html,A1,pass,2026-09-28,code,632 מילים ב-HTML גולמי,2026-12-27
+index.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+index.html,A4,pass,2026-09-28,code,https://telemenv.co.il/,2026-12-27
+index.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+index.html,B1,pass,2026-09-28,code,"""תלם - נספח אצירת אשפה, נספח סביבתי וסקר היסטורי | אבירם בוצר""",2026-12-27
+index.html,B2,pass,2026-09-28,code,130 תווים,2026-12-27
+index.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+index.html,B4,fail,2026-09-28,code,1 בלוק כותרות ריק,2026-10-05
+index.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 151 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+index.html,B6,pass,2026-09-28,code,632 מילים,2026-12-27
+index.html,B7,fail,2026-09-28,code,6 ללא width/height; 6 ללא loading,2026-10-05
+index.html,B8,fail,2026-09-28,code,2 קישורים עצמיים,2026-10-05
+index.html,B9,pass,2026-09-28,code,"Offer, OfferCatalog, Person, PostalAddress, ProfessionalService, Service",2026-12-27
+index.html,B10,pass,2026-09-28,code,אינו עמוד עריכתי,2026-12-27
+index.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+index.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+index.html,C2,fail,2026-09-28,code,"2 רצפי לטינית ללא bdi (למשל: LinkedIn, ONSITE)",2026-10-05
+index.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+index.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+index.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+index.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+index.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+index.html,C10,fail,2026-09-28,code,חסר inLanguage he-IL,2026-10-05
+index.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+index.html,D4,pass,2026-09-28,code,10 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+index.html,D5,unknown,2026-09-28,code,אין מקטע שאלות נפוצות בעמוד — האם צריך?,2026-10-28
+index.html,D6,unknown,2026-09-28,code,אין טבלה/תהליך ממוספר (2 רשימות תבליט) — האם התוכן מתאים לכך?,2026-10-28
+index.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+index.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+index.html,D9,pass,2026-09-28,code,5 קישורים לגופים רשמיים,2026-12-27
+index.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+index.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
+lp/aspha-heter/index.html,A1,pass,2026-09-28,code,789 מילים ב-HTML גולמי,2026-12-27
+lp/aspha-heter/index.html,A3,pass,2026-09-28,code,"robots=""noindex,follow""",2026-12-27
+lp/aspha-heter/index.html,A4,pass,2026-09-28,code,עמוד נחיתה noindex — canonical לא נדרש,2026-12-27
+lp/aspha-heter/index.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+lp/aspha-heter/index.html,B1,pass,2026-09-28,code,"""נספח אצירת אשפה להיתר בנייה — הכנה והגשה לרשות | תלם ניהול סביבה""",2026-12-27
+lp/aspha-heter/index.html,B2,pass,2026-09-28,code,149 תווים,2026-12-27
+lp/aspha-heter/index.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+lp/aspha-heter/index.html,B4,fail,2026-09-28,code,אין כותרות מנוסחות כשאלה,2026-10-05
+lp/aspha-heter/index.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 282 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+lp/aspha-heter/index.html,B6,pass,2026-09-28,code,789 מילים,2026-12-27
+lp/aspha-heter/index.html,B7,fail,2026-09-28,code,1 ללא alt,2026-10-05
+lp/aspha-heter/index.html,B8,fail,2026-09-28,code,פחות מ-3 קישורים פנימיים,2026-10-05
+lp/aspha-heter/index.html,B9,pass,2026-09-28,code,עמוד נחיתה noindex — סכמה לא נדרשת,2026-12-27
+lp/aspha-heter/index.html,B10,pass,2026-09-28,code,אינו עמוד עריכתי,2026-12-27
+lp/aspha-heter/index.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+lp/aspha-heter/index.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+lp/aspha-heter/index.html,C2,pass,2026-09-28,code,אין רצפי לטינית בתוך עברית,2026-12-27
+lp/aspha-heter/index.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+lp/aspha-heter/index.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+lp/aspha-heter/index.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+lp/aspha-heter/index.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+lp/aspha-heter/index.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+lp/aspha-heter/index.html,C10,pass,2026-09-28,code,עמוד נחיתה — סכמה לא נדרשת,2026-12-27
+lp/aspha-heter/index.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+lp/aspha-heter/index.html,D4,fail,2026-09-28,code,7 עוגני עובדה (מספרים/שנים/תקנים),2026-10-05
+lp/aspha-heter/index.html,D5,pass,2026-09-28,code,עמוד נחיתה noindex — סכמה לא נדרשת,2026-12-27
+lp/aspha-heter/index.html,D6,unknown,2026-09-28,code,אין טבלה/תהליך ממוספר (2 רשימות תבליט) — האם התוכן מתאים לכך?,2026-10-28
+lp/aspha-heter/index.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+lp/aspha-heter/index.html,D8,pass,2026-09-28,code,עמוד נחיתה — לא עריכתי,2026-12-27
+lp/aspha-heter/index.html,D9,fail,2026-09-28,code,0 קישורים לגופים רשמיים,2026-10-05
+lp/aspha-heter/index.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+lp/aspha-heter/index.html,E3,pass,2026-09-28,code,סקריפטים חוסמים ב-head: 0; font-display swap: True,2026-12-27
+lp/seker-histori/index.html,A1,pass,2026-09-28,code,805 מילים ב-HTML גולמי,2026-12-27
+lp/seker-histori/index.html,A3,pass,2026-09-28,code,"robots=""noindex,follow""",2026-12-27
+lp/seker-histori/index.html,A4,pass,2026-09-28,code,עמוד נחיתה noindex — canonical לא נדרש,2026-12-27
+lp/seker-histori/index.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+lp/seker-histori/index.html,B1,pass,2026-09-28,code,"""סקר היסטורי לקרקע — ליווי עד אישור הרשויות | תלם ניהול סביבה""",2026-12-27
+lp/seker-histori/index.html,B2,pass,2026-09-28,code,124 תווים,2026-12-27
+lp/seker-histori/index.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+lp/seker-histori/index.html,B4,fail,2026-09-28,code,אין כותרות מנוסחות כשאלה,2026-10-05
+lp/seker-histori/index.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 191 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+lp/seker-histori/index.html,B6,pass,2026-09-28,code,805 מילים,2026-12-27
+lp/seker-histori/index.html,B7,fail,2026-09-28,code,1 ללא alt,2026-10-05
+lp/seker-histori/index.html,B8,fail,2026-09-28,code,פחות מ-3 קישורים פנימיים,2026-10-05
+lp/seker-histori/index.html,B9,pass,2026-09-28,code,עמוד נחיתה noindex — סכמה לא נדרשת,2026-12-27
+lp/seker-histori/index.html,B10,pass,2026-09-28,code,אינו עמוד עריכתי,2026-12-27
+lp/seker-histori/index.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+lp/seker-histori/index.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+lp/seker-histori/index.html,C2,pass,2026-09-28,code,אין רצפי לטינית בתוך עברית,2026-12-27
+lp/seker-histori/index.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+lp/seker-histori/index.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+lp/seker-histori/index.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+lp/seker-histori/index.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+lp/seker-histori/index.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+lp/seker-histori/index.html,C10,pass,2026-09-28,code,עמוד נחיתה — סכמה לא נדרשת,2026-12-27
+lp/seker-histori/index.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+lp/seker-histori/index.html,D4,pass,2026-09-28,code,10 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+lp/seker-histori/index.html,D5,pass,2026-09-28,code,עמוד נחיתה noindex — סכמה לא נדרשת,2026-12-27
+lp/seker-histori/index.html,D6,unknown,2026-09-28,code,אין טבלה/תהליך ממוספר (2 רשימות תבליט) — האם התוכן מתאים לכך?,2026-10-28
+lp/seker-histori/index.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+lp/seker-histori/index.html,D8,pass,2026-09-28,code,עמוד נחיתה — לא עריכתי,2026-12-27
+lp/seker-histori/index.html,D9,fail,2026-09-28,code,0 קישורים לגופים רשמיים,2026-10-05
+lp/seker-histori/index.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+lp/seker-histori/index.html,E3,pass,2026-09-28,code,סקריפטים חוסמים ב-head: 0; font-display swap: True,2026-12-27
+lp/svivati-heter/index.html,A1,pass,2026-09-28,code,907 מילים ב-HTML גולמי,2026-12-27
+lp/svivati-heter/index.html,A3,pass,2026-09-28,code,"robots=""noindex,follow""",2026-12-27
+lp/svivati-heter/index.html,A4,pass,2026-09-28,code,עמוד נחיתה noindex — canonical לא נדרש,2026-12-27
+lp/svivati-heter/index.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+lp/svivati-heter/index.html,B1,pass,2026-09-28,code,"""נספח סביבתי להיתר בנייה | תלם ייעוץ סביבתי""",2026-12-27
+lp/svivati-heter/index.html,B2,pass,2026-09-28,code,190 תווים,2026-12-27
+lp/svivati-heter/index.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+lp/svivati-heter/index.html,B4,pass,2026-09-28,code,"23 כותרות, 2 כשאלה",2026-12-27
+lp/svivati-heter/index.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 337 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+lp/svivati-heter/index.html,B6,pass,2026-09-28,code,907 מילים,2026-12-27
+lp/svivati-heter/index.html,B7,fail,2026-09-28,code,1 ללא alt,2026-10-05
+lp/svivati-heter/index.html,B8,fail,2026-09-28,code,פחות מ-3 קישורים פנימיים,2026-10-05
+lp/svivati-heter/index.html,B9,pass,2026-09-28,code,עמוד נחיתה noindex — סכמה לא נדרשת,2026-12-27
+lp/svivati-heter/index.html,B10,pass,2026-09-28,code,אינו עמוד עריכתי,2026-12-27
+lp/svivati-heter/index.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+lp/svivati-heter/index.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+lp/svivati-heter/index.html,C2,pass,2026-09-28,code,אין רצפי לטינית בתוך עברית,2026-12-27
+lp/svivati-heter/index.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+lp/svivati-heter/index.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+lp/svivati-heter/index.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+lp/svivati-heter/index.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+lp/svivati-heter/index.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+lp/svivati-heter/index.html,C10,pass,2026-09-28,code,עמוד נחיתה — סכמה לא נדרשת,2026-12-27
+lp/svivati-heter/index.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+lp/svivati-heter/index.html,D4,fail,2026-09-28,code,5 עוגני עובדה (מספרים/שנים/תקנים),2026-10-05
+lp/svivati-heter/index.html,D5,pass,2026-09-28,code,עמוד נחיתה noindex — סכמה לא נדרשת,2026-12-27
+lp/svivati-heter/index.html,D6,unknown,2026-09-28,code,אין טבלה/תהליך ממוספר (2 רשימות תבליט) — האם התוכן מתאים לכך?,2026-10-28
+lp/svivati-heter/index.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+lp/svivati-heter/index.html,D8,pass,2026-09-28,code,עמוד נחיתה — לא עריכתי,2026-12-27
+lp/svivati-heter/index.html,D9,fail,2026-09-28,code,0 קישורים לגופים רשמיים,2026-10-05
+lp/svivati-heter/index.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+lp/svivati-heter/index.html,E3,pass,2026-09-28,code,סקריפטים חוסמים ב-head: 0; font-display swap: True,2026-12-27
+lp/toda/index.html,A1,pass,2026-09-28,code,עמוד תודה — בדיקת תוכן אינה חלה,2026-12-27
+lp/toda/index.html,B4,pass,2026-09-28,code,עמוד תודה — בדיקת תוכן אינה חלה,2026-12-27
+lp/toda/index.html,B5,pass,2026-09-28,code,עמוד תודה — בדיקת תוכן אינה חלה,2026-12-27
+lp/toda/index.html,B6,pass,2026-09-28,code,עמוד תודה — בדיקת תוכן אינה חלה,2026-12-27
+lp/toda/index.html,B7,pass,2026-09-28,code,עמוד תודה — בדיקת תוכן אינה חלה,2026-12-27
+lp/toda/index.html,B8,pass,2026-09-28,code,עמוד תודה — בדיקת תוכן אינה חלה,2026-12-27
+lp/toda/index.html,B9,pass,2026-09-28,code,עמוד תודה — בדיקת תוכן אינה חלה,2026-12-27
+lp/toda/index.html,B10,pass,2026-09-28,code,עמוד תודה — בדיקת תוכן אינה חלה,2026-12-27
+lp/toda/index.html,B11,pass,2026-09-28,code,עמוד תודה — בדיקת תוכן אינה חלה,2026-12-27
+lp/toda/index.html,C2,pass,2026-09-28,code,עמוד תודה — בדיקת תוכן אינה חלה,2026-12-27
+lp/toda/index.html,C7,pass,2026-09-28,code,עמוד תודה — בדיקת תוכן אינה חלה,2026-12-27
+lp/toda/index.html,C8,pass,2026-09-28,code,עמוד תודה — בדיקת תוכן אינה חלה,2026-12-27
+lp/toda/index.html,D3,pass,2026-09-28,code,עמוד תודה — בדיקת תוכן אינה חלה,2026-12-27
+lp/toda/index.html,D4,pass,2026-09-28,code,עמוד תודה — בדיקת תוכן אינה חלה,2026-12-27
+lp/toda/index.html,D5,pass,2026-09-28,code,עמוד תודה — בדיקת תוכן אינה חלה,2026-12-27
+lp/toda/index.html,D6,pass,2026-09-28,code,עמוד תודה — בדיקת תוכן אינה חלה,2026-12-27
+lp/toda/index.html,D7,pass,2026-09-28,code,עמוד תודה — בדיקת תוכן אינה חלה,2026-12-27
+lp/toda/index.html,D8,pass,2026-09-28,code,עמוד תודה — בדיקת תוכן אינה חלה,2026-12-27
+lp/toda/index.html,D9,pass,2026-09-28,code,עמוד תודה — בדיקת תוכן אינה חלה,2026-12-27
+lp/toda/index.html,A3,pass,2026-09-28,code,"robots=""noindex,follow""",2026-12-27
+lp/toda/index.html,A4,pass,2026-09-28,code,עמוד תודה — canonical לא נדרש,2026-12-27
+lp/toda/index.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+lp/toda/index.html,B1,pass,2026-09-28,code,"""תודה — פנייתכם התקבלה | תלם ניהול סביבה""",2026-12-27
+lp/toda/index.html,B2,pass,2026-09-28,code,עמוד תודה noindex — description אינו נדרש,2026-12-27
+lp/toda/index.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+lp/toda/index.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+lp/toda/index.html,C3,pass,2026-09-28,code,-,2026-12-27
+lp/toda/index.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+lp/toda/index.html,C6,unknown,2026-09-28,code,לא רלוונטי לעמוד שירות,2026-10-28
+lp/toda/index.html,C10,pass,2026-09-28,code,עמוד תודה — סכמה לא נדרשת,2026-12-27
+lp/toda/index.html,E2,pass,2026-09-28,code,meta viewport,2026-12-27
+lp/toda/index.html,E3,pass,2026-09-28,code,סקריפטים חוסמים ב-head: 0,2026-12-27
+lp/yeutz-sviva/index.html,A1,pass,2026-09-28,code,905 מילים ב-HTML גולמי,2026-12-27
+lp/yeutz-sviva/index.html,A3,pass,2026-09-28,code,"robots=""noindex,follow""",2026-12-27
+lp/yeutz-sviva/index.html,A4,pass,2026-09-28,code,עמוד נחיתה noindex — canonical לא נדרש,2026-12-27
+lp/yeutz-sviva/index.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+lp/yeutz-sviva/index.html,B1,pass,2026-09-28,code,"""ייעוץ סביבה לעסקים ולפרויקטים — ליווי עד אישור | תלם ניהול סביבה""",2026-12-27
+lp/yeutz-sviva/index.html,B2,pass,2026-09-28,code,139 תווים,2026-12-27
+lp/yeutz-sviva/index.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+lp/yeutz-sviva/index.html,B4,fail,2026-09-28,code,אין כותרות מנוסחות כשאלה,2026-10-05
+lp/yeutz-sviva/index.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 253 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+lp/yeutz-sviva/index.html,B6,pass,2026-09-28,code,905 מילים,2026-12-27
+lp/yeutz-sviva/index.html,B7,fail,2026-09-28,code,1 ללא alt,2026-10-05
+lp/yeutz-sviva/index.html,B8,fail,2026-09-28,code,פחות מ-3 קישורים פנימיים,2026-10-05
+lp/yeutz-sviva/index.html,B9,pass,2026-09-28,code,עמוד נחיתה noindex — סכמה לא נדרשת,2026-12-27
+lp/yeutz-sviva/index.html,B10,pass,2026-09-28,code,אינו עמוד עריכתי,2026-12-27
+lp/yeutz-sviva/index.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+lp/yeutz-sviva/index.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+lp/yeutz-sviva/index.html,C2,pass,2026-09-28,code,אין רצפי לטינית בתוך עברית,2026-12-27
+lp/yeutz-sviva/index.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+lp/yeutz-sviva/index.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+lp/yeutz-sviva/index.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+lp/yeutz-sviva/index.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+lp/yeutz-sviva/index.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+lp/yeutz-sviva/index.html,C10,pass,2026-09-28,code,עמוד נחיתה — סכמה לא נדרשת,2026-12-27
+lp/yeutz-sviva/index.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+lp/yeutz-sviva/index.html,D4,fail,2026-09-28,code,6 עוגני עובדה (מספרים/שנים/תקנים),2026-10-05
+lp/yeutz-sviva/index.html,D5,pass,2026-09-28,code,עמוד נחיתה noindex — סכמה לא נדרשת,2026-12-27
+lp/yeutz-sviva/index.html,D6,unknown,2026-09-28,code,אין טבלה/תהליך ממוספר (2 רשימות תבליט) — האם התוכן מתאים לכך?,2026-10-28
+lp/yeutz-sviva/index.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+lp/yeutz-sviva/index.html,D8,pass,2026-09-28,code,עמוד נחיתה — לא עריכתי,2026-12-27
+lp/yeutz-sviva/index.html,D9,fail,2026-09-28,code,0 קישורים לגופים רשמיים,2026-10-05
+lp/yeutz-sviva/index.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+lp/yeutz-sviva/index.html,E3,pass,2026-09-28,code,סקריפטים חוסמים ב-head: 0; font-display swap: True,2026-12-27
+solar/index.html,A1,pass,2026-09-28,code,1002 מילים ב-HTML גולמי,2026-12-27
+solar/index.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+solar/index.html,A4,pass,2026-09-28,code,https://telemenv.co.il/solar/,2026-12-27
+solar/index.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+solar/index.html,B1,pass,2026-09-28,code,"""ליווי סביבתי לפרויקטים סולאריים ואגרו-וולטאי | תלם""",2026-12-27
+solar/index.html,B2,pass,2026-09-28,code,145 תווים,2026-12-27
+solar/index.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+solar/index.html,B4,pass,2026-09-28,code,"17 כותרות, 1 כשאלה",2026-12-27
+solar/index.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 421 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+solar/index.html,B6,pass,2026-09-28,code,1002 מילים,2026-12-27
+solar/index.html,B7,fail,2026-09-28,code,6 ללא width/height; 6 ללא loading,2026-10-05
+solar/index.html,B8,fail,2026-09-28,code,3 קישורים עצמיים,2026-10-05
+solar/index.html,B9,pass,2026-09-28,code,"Country, LocalBusiness, PostalAddress, Service",2026-12-27
+solar/index.html,B10,pass,2026-09-28,code,אינו עמוד עריכתי,2026-12-27
+solar/index.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+solar/index.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+solar/index.html,C2,fail,2026-09-28,code,"3 רצפי לטינית ללא bdi (למשל: EPC, LinkedIn, ONSITE)",2026-10-05
+solar/index.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+solar/index.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+solar/index.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+solar/index.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+solar/index.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+solar/index.html,C10,fail,2026-09-28,code,חסר inLanguage he-IL,2026-10-05
+solar/index.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+solar/index.html,D4,pass,2026-09-28,code,19 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+solar/index.html,D5,unknown,2026-09-28,code,אין מקטע שאלות נפוצות בעמוד — האם צריך?,2026-10-28
+solar/index.html,D6,unknown,2026-09-28,code,אין טבלה/תהליך ממוספר (6 רשימות תבליט) — האם התוכן מתאים לכך?,2026-10-28
+solar/index.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+solar/index.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+solar/index.html,D9,pass,2026-09-28,code,10 קישורים לגופים רשמיים,2026-12-27
+solar/index.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+solar/index.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
+waste/index.html,A1,pass,2026-09-28,code,1533 מילים ב-HTML גולמי,2026-12-27
+waste/index.html,A3,pass,2026-09-28,code,אין noindex,2026-12-27
+waste/index.html,A4,pass,2026-09-28,code,https://telemenv.co.il/waste/,2026-12-27
+waste/index.html,A6,pass,2026-09-28,code,אין נכסים ב-http,2026-12-27
+waste/index.html,B1,pass,2026-09-28,code,"""יועץ אשפה — נספח אצירת אשפה שעובר אישור | תלם""",2026-12-27
+waste/index.html,B2,pass,2026-09-28,code,134 תווים,2026-12-27
+waste/index.html,B3,pass,2026-09-28,code,1 h1,2026-12-27
+waste/index.html,B4,fail,2026-09-28,code,דילוג רמת כותרת,2026-10-05
+waste/index.html,B5,pass,2026-09-28,code,פסקה ראשונה אחרי h1: 424 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-12-27
+waste/index.html,B6,pass,2026-09-28,code,1533 מילים,2026-12-27
+waste/index.html,B7,fail,2026-09-28,code,6 ללא width/height; 6 ללא loading,2026-10-05
+waste/index.html,B8,fail,2026-09-28,code,3 קישורים עצמיים,2026-10-05
+waste/index.html,B9,pass,2026-09-28,code,"Answer, BreadcrumbList, Country, FAQPage, ListItem, Organization",2026-12-27
+waste/index.html,B10,pass,2026-09-28,code,אינו עמוד עריכתי,2026-12-27
+waste/index.html,B11,pass,2026-09-28,code,טלפון/וואטסאפ בעמוד,2026-12-27
+waste/index.html,C1,pass,2026-09-28,code,"lang=""he"" dir=""rtl""",2026-12-27
+waste/index.html,C2,fail,2026-09-28,code,"2 רצפי לטינית ללא bdi (למשל: LinkedIn, ONSITE)",2026-10-05
+waste/index.html,C3,pass,2026-09-28,code,אין לטינית ב-title — אין סיכון bidi,2026-12-27
+waste/index.html,C4,pass,2026-09-28,code,אין ניקוד,2026-12-27
+waste/index.html,C6,unknown,2026-09-28,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-10-28
+waste/index.html,C7,pass,2026-09-28,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2026-12-27
+waste/index.html,C8,pass,2026-09-28,code,אין טבלאות,2026-12-27
+waste/index.html,C10,fail,2026-09-28,code,חסר inLanguage he-IL,2026-10-05
+waste/index.html,D3,unknown,2026-09-28,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-10-28
+waste/index.html,D4,pass,2026-09-28,code,37 עוגני עובדה (מספרים/שנים/תקנים),2026-12-27
+waste/index.html,D5,pass,2026-09-28,code,FAQ גלוי + FAQPage,2026-12-27
+waste/index.html,D6,unknown,2026-09-28,code,אין טבלה/תהליך ממוספר (5 רשימות תבליט) — האם התוכן מתאים לכך?,2026-10-28
+waste/index.html,D7,pass,2026-09-28,code,טלפון אחיד 050-6890650,2026-12-27
+waste/index.html,D8,pass,2026-09-28,code,אבירם בוצר מוזכר בשמו,2026-12-27
+waste/index.html,D9,pass,2026-09-28,code,8 קישורים לגופים רשמיים,2026-12-27
+waste/index.html,E2,pass,2026-09-28,code,meta viewport קיים (tap targets לא נמדדו),2026-12-27
+waste/index.html,E3,fail,2026-09-28,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-10-05
