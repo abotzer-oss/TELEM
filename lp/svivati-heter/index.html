@@ -59,7 +59,7 @@
     .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
     .form-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;box-shadow:var(--shadow-card)}
     .hp{display:none}
-    @media(min-width:768px){body{padding-bottom:0}.hero-grid{grid-template-columns:1.05fr .95fr;align-items:start;column-gap:48px;row-gap:0}.hero-grid>.hero-col{grid-column:1;grid-row:1}.hero-grid>.lp-video{grid-column:1;grid-row:2;margin-top:30px}.hero-grid>.form-card{grid-column:2;grid-row:1/span 2}.hero{padding-block:62px 70px}}
+    @media(min-width:768px){body{padding-bottom:0}.hero-grid{grid-template-columns:1.05fr .95fr;align-items:start;column-gap:48px;row-gap:0}.hero-grid>.hero-col{grid-column:1;grid-row:1}.hero-grid>.form-card{grid-column:2;grid-row:1}.hero{padding-block:62px 70px}}
     /* video facade — critical, מונע layout shift כי הבלוק בתוך ההירו */
     .lp-video-title{font-size:19px;font-weight:700;line-height:1.3;margin:0 0 12px}
     .video-frame{aspect-ratio:9/16;max-width:340px;margin-inline:auto;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--ink)}
@@ -139,59 +139,45 @@
         <p class="form-foot">יש לכם מסמך דרישה מהוועדה? <a href="https://wa.me/972506890650" target="_blank" rel="noopener noreferrer" data-track="whatsapp" style="color:var(--sage-deep);font-weight:600">שלחו אותו אלינו בוואטסאפ ונבדוק מה נדרש ←</a></p>
       </form>
     </div>
-
-    <!-- ============ VIDEO (hero grid, row 2) ============ -->
-    <div class="lp-video">
-      <!-- TODO: אבירם יעדכן כותרת לפי תוכן הסרטון -->
-      <h2 class="lp-video-title">רגע אחד על הנספח הסביבתי</h2>
-      <div class="video-frame" style="--poster:url('/lp/assets/img/video-svivati-poster.webp')">
-        <button type="button" class="video-play" aria-label="נגן סרטון"
-                data-video-id="BBxd5r7vvjE" data-video-title="סרטון: נספח סביבתי להיתר בנייה">
-          <img src="/lp/assets/img/video-svivati-poster.webp" alt=""
-               width="340" height="604" loading="lazy" decoding="async">
-          <span class="video-play-icon" aria-hidden="true"></span>
-        </button>
-      </div>
-    </div>
   </div>
 </header>
 
-<!-- ============ DIFFERENTIATOR (not sure what was required) ============ -->
-<section>
+<!-- ============ TRUST BAR ============ -->
+<section class="trust-bar" aria-label="ניסיון ולקוחות">
   <div class="wrap">
-    <div class="cta-dark" style="background:linear-gradient(135deg,#5f6e54,#3c4f4a)">
-      <span class="eyebrow" style="background:rgba(244,243,237,.14);border-color:rgba(244,243,237,.3);color:var(--paper)">לא בטוחים מה דרשו מכם?</span>
-      <h2>נספח סביבתי, סקר או תסקיר — מה בדיוק נדרש?</h2>
-      <p>לא בטוחים אם דרשו מכם נספח סביבתי, סקר או תסקיר? שלחו את תיק המידע ונבדוק מה נדרש — בלי התחייבות.</p>
-      <div class="hero-cta" style="margin-top:20px">
-        <a class="btn btn-wa" href="https://wa.me/972506890650" data-track="whatsapp">שלחו את תיק המידע בוואטסאפ</a>
-        <a class="btn btn-ghost" href="#lead">לטופס הבדיקה</a>
+    <ul class="trust-facts">
+      <li><strong><bdi>15</bdi> שנות ניסיון</strong><span>בייעוץ סביבתי ורישוי</span></li>
+      <li><strong>מהצד של הרשות</strong><span>ניהול איכות סביבה ברשות מקומית</span></li>
+      <li><strong>4 פרסי נשיא</strong><span>לרשות המקומית</span></li>
+    </ul>
+    <div class="trust-logos">
+      <p>עבדנו עם</p>
+      <div class="logos-row">
+        <img src="/assets/logo_galil.svg" alt="אשכול גליל מערבי" width="77" height="36" loading="lazy" decoding="async">
+        <img src="/assets/LOGO_ACKERSTEIN.png" alt="הקו הירוק" width="108" height="36" loading="lazy" decoding="async">
+        <img src="/assets/logo_calcalithefer.png" alt="הכלכלית עמק חפר" width="75" height="36" loading="lazy" decoding="async">
+        <img src="/assets/LOGO_ESHKOL.jpg" alt="פרויקט ביאליק 158" width="36" height="36" loading="lazy" decoding="async">
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PAIN / WHEN ============ -->
-<section class="pain">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">מתי פונים אלינו</span>
-      <h2>הרגעים שבהם נדרש נספח סביבתי</h2>
-      <p>נספח סביבתי עולה במגוון הליכים — אנחנו יודעים בדיוק מה הרשות מצפה לראות בכל אחד מהם.</p>
-    </div>
-    <div class="grid grid-2">
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15h6"/></svg></div><h3>היתר בנייה</h3><p>הוועדה מתנה את ההיתר בנספח סביבתי שמתמודד עם השפעות הפרויקט.</p></div>
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M7 14l4-4 3 3 5-6"/></svg></div><h3>תב״ע / תכנית</h3><p>קידום תכנית מחייב מענה סביבתי כתנאי להפקדה ולאישור.</p></div>
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9M21 3l-9 9-3-3"/></svg></div><h3>שינוי ייעוד</h3><p>שינוי שימוש בקרקע דורש בחינה של ההשלכות הסביבתיות החדשות.</p></div>
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V8l6-3v15M14 20V11l6-3v12"/></svg></div><h3>מסחר, תעשייה וגופים ציבוריים</h3><p>פרויקטים מורכבים עם השפעות מצרפיות — תחום המומחיות שלנו.</p></div>
     </div>
   </div>
 </section>
 
 <!-- ============ WHO FOR ============ -->
-<section>
+<section class="who-for">
   <div class="wrap">
-    <div class="section-head"><span class="eyebrow">למי זה מתאים</span><h2>אנחנו עובדים בדיוק מולכם</h2></div>
+    <div class="section-head"><span class="eyebrow">זה בשבילכם אם</span><h2>למי השירות מתאים</h2><p>אם אחד המצבים האלה מוכר לכם — הנספח הסביבתי בדיוק בשבילכם.</p></div>
+    <ul class="checks cols who-list">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> יזם שקיבל דרישה לנספח סביבתי כתנאי להיתר בנייה</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> אדריכל שנדרש להגיש נספח סביבתי לוועדה</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> פרויקט שנדרש לנספח סביבתי במסגרת תב״ע</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> יזם שקיבל דרישות סביבתיות מהוועדה המקומית</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> פרויקט תעשייה שנדרש להגיש חוות דעת סביבתית</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> פרויקט תשתית שנדרש להגיש נספח סביבתי</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> פרויקט אנרגיה שנדרש להגיש מסמך סביבתי</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> אדריכל שקיבל הערות סביבתיות וצריך לעדכן את המסמכים</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> יזם שצריך ליווי סביבתי עד להגשת מסמכי הרישוי</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> פרויקט שנדרש לנספח נופי-סביבתי במסגרת הליך תכנון</li>
+    </ul>
     <div class="grid grid-3">
       <div class="card"><h3>יזמים ומתכננים</h3><p>שצריכים נספח סביבתי שעומד בדרישות הוועדה ולא מעכב את התכנית.</p></div>
       <div class="card"><h3>תעשייה ומסחר</h3><p>פרויקטים מורכבים עם השפעות סביבתיות שדורשות מומחיות וניסיון.</p></div>
@@ -200,8 +186,50 @@
   </div>
 </section>
 
-<!-- ============ HOW IT WORKS ============ -->
+<!-- ============ WHAT TO SEND ============ -->
+<section>
+  <div class="wrap">
+    <div class="cta-dark">
+      <span class="eyebrow" style="background:rgba(244,243,237,.12);border-color:rgba(244,243,237,.25);color:var(--paper)">כדי להתחיל</span>
+      <h2>מה צריך לשלוח לנו</h2>
+      <p>ככל שיהיה לנו יותר מידע, כך נחזור עם תשובה מדויקת ומהירה יותר.</p>
+      <ul class="send-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> דרישת הרשות / תיק המידע אם יש</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> תיאור הפרויקט וסוג ההליך (היתר / תב״ע)</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> מיקום ושלב הפרויקט</li>
+      </ul>
+      <div class="hero-cta" style="margin-top:24px">
+        <a class="btn btn-wa" href="https://wa.me/972506890650" data-track="whatsapp">צרפו את הדרישה בוואטסאפ</a>
+        <a class="btn btn-ghost" href="tel:0506890650" data-track="call">התקשרו: <bdi>050-6890650</bdi></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT'S INCLUDED ============ -->
 <section style="background:#fff;border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">מה כולל הנספח</span>
+      <h2>מה כולל הנספח הסביבתי</h2>
+      <p>מה תקבלו מאיתנו בפועל?</p>
+    </div>
+    <div class="card" style="padding:28px 24px">
+      <ul class="checks cols" style="margin:0">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> בדיקת דרישת הרשות / תיק המידע</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> אפיון ההיבטים הסביבתיים הרלוונטיים</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> נספח סביבתי מוכן להגשה</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> התייחסות לרעש, אוויר, קרקע, מים, פסולת, שפכים ונוף — לפי הצורך</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> התאמה לשפת הוועדה והרשות</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> מענה להערות לאחר הגשה</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> ליווי עד אישור</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section>
   <div class="wrap">
     <div class="section-head"><span class="eyebrow">איך זה עובד</span><h2>תהליך ברור, בלי פקקים מיותרים</h2></div>
     <div class="steps">
@@ -223,24 +251,20 @@
   </div>
 </section>
 
-<!-- ============ WHAT YOU GET (deliverables) ============ -->
-<section style="background:#fff;border-block:1px solid var(--line)">
+<!-- ============ VIDEO ============ -->
+<section class="lp-video-section">
   <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">מה מקבלים בפועל</span>
-      <h2>מה תקבלו מאיתנו בפועל?</h2>
+    <div class="section-head" style="text-align:center;margin-inline:auto"><span class="eyebrow">בסרטון</span><h2>רגע אחד על הנספח הסביבתי</h2></div>
+  <div class="lp-video">
+    <div class="video-frame" style="--poster:url('/lp/assets/img/video-svivati-poster.webp')">
+      <button type="button" class="video-play" aria-label="נגן סרטון"
+              data-video-id="BBxd5r7vvjE" data-video-title="סרטון: נספח סביבתי להיתר בנייה">
+        <img src="/lp/assets/img/video-svivati-poster.webp" alt=""
+             width="340" height="604" loading="lazy" decoding="async">
+        <span class="video-play-icon" aria-hidden="true"></span>
+      </button>
     </div>
-    <div class="card" style="padding:28px 24px">
-      <ul class="checks cols" style="margin:0">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> בדיקת דרישת הרשות / תיק המידע</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> אפיון ההיבטים הסביבתיים הרלוונטיים</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> נספח סביבתי מוכן להגשה</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> התייחסות לרעש, אוויר, קרקע, מים, פסולת, שפכים ונוף — לפי הצורך</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> התאמה לשפת הוועדה והרשות</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> מענה להערות לאחר הגשה</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> ליווי עד אישור</li>
-      </ul>
-    </div>
+  </div>
   </div>
 </section>
 
@@ -262,32 +286,30 @@
   </div>
 </section>
 
-<!-- ============ WHAT TO SEND ============ -->
+<!-- ============ FAQ ============ -->
 <section>
-  <div class="wrap">
-    <div class="cta-dark">
-      <span class="eyebrow" style="background:rgba(244,243,237,.12);border-color:rgba(244,243,237,.25);color:var(--paper)">כדי להתחיל</span>
-      <h2>מה כדאי לשלוח לנו</h2>
-      <p>ככל שיהיה לנו יותר מידע, כך נחזור עם תשובה מדויקת ומהירה יותר.</p>
-      <ul class="send-list">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> דרישת הרשות / תיק המידע אם יש</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> תיאור הפרויקט וסוג ההליך (היתר / תב״ע)</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> מיקום ושלב הפרויקט</li>
-      </ul>
-      <div class="hero-cta" style="margin-top:24px">
-        <a class="btn btn-wa" href="https://wa.me/972506890650" data-track="whatsapp">צרפו את הדרישה בוואטסאפ</a>
-        <a class="btn btn-ghost" href="tel:0506890650" data-track="call">התקשרו: <bdi>050-6890650</bdi></a>
-      </div>
+  <div class="wrap" style="max-width:820px">
+    <div class="section-head"><span class="eyebrow">שאלות נפוצות</span><h2>נספח סביבתי — מה שחשוב לדעת</h2></div>
+    <div class="faq">
+      <details><summary>מתי נדרש נספח סביבתי?</summary><p>בדרך כלל כתנאי להיתר בנייה, להפקדת תב״ע או לשינוי ייעוד, כשהוועדה או הרשות דורשות בחינה של ההשפעות הסביבתיות. אם קיבלתם דרישה או תיק מידע — שלחו לנו ונבדוק בדיוק מה נדרש.</p></details>
+      <details><summary>כמה זמן לוקח להכין נספח סביבתי?</summary><p>נספח רגיל נמשך מספר שבועות, בהתאם לבשלות החומרים — והקצב שלנו לא יעכב אתכם. נספח מורכב עשוי לקחת עד מספר חודשים, בעיקר בגלל עבודה טכנית נלווית (כמו עדכון דוחות מסוימים), בהתאם למורכבות ולבשלות הפרויקט.</p></details>
+      <details><summary>מה ההבדל בין נספח סביבתי, סקר ותסקיר?</summary><p>אלה רמות שונות של בחינה סביבתית, בהיקף ובעומק משתנים. לא תמיד ברור מה בדיוק דרשו. שלחו לנו את תיק המידע ונגיד לכם מה נדרש ומה ההיקף המתאים.</p></details>
+      <details><summary>אתם מטפלים בפרויקטים מורכבים?</summary><p>כן. יש לנו ניסיון בפרויקטי תעשייה, מסחר וגופים ציבוריים עם השפעות מצרפיות ודרישות מרובות — בדיוק המקרים שבהם מומחיות עושה את ההבדל.</p></details>
+      <details><summary>הדרישה מהרשות אצלי כקובץ — איך שולחים?</summary><p>בשלב הזה הכי נוח לצרף את הקובץ בוואטסאפ. לחצו על כפתור הוואטסאפ, שלחו את הדרישה או תיק המידע ונחזור אליכם עם הערכה.</p></details>
     </div>
   </div>
 </section>
 
-<!-- ============ SECONDARY FORM ============ -->
-<section id="lead2" style="background:#fff;border-top:1px solid var(--line)">
+<!-- ============ FINAL CTA ============ -->
+<section id="lead2" class="final-cta">
   <div class="wrap" style="max-width:680px">
     <div class="section-head" style="text-align:center;margin-inline:auto">
       <h2>נשמח לבדוק את המקרה שלכם</h2>
       <p>השאירו פרטים — נחזור אליכם עם הערכת היקף, לוחות זמנים וצעדים הבאים.</p>
+      <div class="hero-cta" style="justify-content:center;margin:18px 0 0">
+        <a class="btn btn-wa" href="https://wa.me/972506890650" data-track="whatsapp">שלחו בוואטסאפ</a>
+        <a class="btn btn-ghost" href="tel:0506890650" data-track="call">התקשרו: <bdi>050-6890650</bdi></a>
+      </div>
     </div>
     <div class="form-card">
       <form data-lp-form action="https://api.web3forms.com/submit" method="POST">
@@ -312,20 +334,6 @@
         <p class="form-error" hidden style="color:#b4452f;font-size:14px;margin-top:10px;text-align:center">אירעה תקלה. אפשר לפנות בוואטסאפ או בטלפון.</p>
         <p class="form-foot">יש לכם מסמך דרישה מהוועדה? <a href="https://wa.me/972506890650" target="_blank" rel="noopener noreferrer" data-track="whatsapp" style="color:var(--sage-deep);font-weight:600">שלחו אותו אלינו בוואטסאפ ונבדוק מה נדרש ←</a></p>
       </form>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FAQ ============ -->
-<section>
-  <div class="wrap" style="max-width:820px">
-    <div class="section-head"><span class="eyebrow">שאלות נפוצות</span><h2>נספח סביבתי — מה שחשוב לדעת</h2></div>
-    <div class="faq">
-      <details><summary>מתי נדרש נספח סביבתי?</summary><p>בדרך כלל כתנאי להיתר בנייה, להפקדת תב״ע או לשינוי ייעוד, כשהוועדה או הרשות דורשות בחינה של ההשפעות הסביבתיות. אם קיבלתם דרישה או תיק מידע — שלחו לנו ונבדוק בדיוק מה נדרש.</p></details>
-      <details><summary>כמה זמן לוקח להכין נספח סביבתי?</summary><p>נספח רגיל נמשך מספר שבועות, בהתאם לבשלות החומרים — והקצב שלנו לא יעכב אתכם. נספח מורכב עשוי לקחת עד מספר חודשים, בעיקר בגלל עבודה טכנית נלווית (כמו עדכון דוחות מסוימים), בהתאם למורכבות ולבשלות הפרויקט.</p></details>
-      <details><summary>מה ההבדל בין נספח סביבתי, סקר ותסקיר?</summary><p>אלה רמות שונות של בחינה סביבתית, בהיקף ובעומק משתנים. לא תמיד ברור מה בדיוק דרשו. שלחו לנו את תיק המידע ונגיד לכם מה נדרש ומה ההיקף המתאים.</p></details>
-      <details><summary>אתם מטפלים בפרויקטים מורכבים?</summary><p>כן. יש לנו ניסיון בפרויקטי תעשייה, מסחר וגופים ציבוריים עם השפעות מצרפיות ודרישות מרובות — בדיוק המקרים שבהם מומחיות עושה את ההבדל.</p></details>
-      <details><summary>הדרישה מהרשות אצלי כקובץ — איך שולחים?</summary><p>בשלב הזה הכי נוח לצרף את הקובץ בוואטסאפ. לחצו על כפתור הוואטסאפ, שלחו את הדרישה או תיק המידע ונחזור אליכם עם הערכה.</p></details>
     </div>
   </div>
 </section>

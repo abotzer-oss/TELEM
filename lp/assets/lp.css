@@ -185,7 +185,7 @@ h3{font-size:20px;font-weight:700}
 .steps{display:grid;gap:14px;counter-reset:step}
 .step{
   background:var(--card);border:1px solid var(--line);border-radius:var(--r);
-  padding:20px 20px 20px 56px;position:relative;box-shadow:var(--shadow-soft);
+  padding:20px;padding-inline-start:60px;position:relative;box-shadow:var(--shadow-soft);
 }
 .step::before{
   counter-increment:step;content:counter(step);
@@ -282,12 +282,10 @@ body{padding-bottom:74px}
   section{padding-block:70px}
   .wrap{padding-inline:32px}
   .hero{padding-block:62px 70px}
-  /* דסקטופ: טור ההירו (שורה 1) + הסרטון (שורה 2) בעמודה אחת, הטופס פרוס על שתיהן.
-     row-gap:0 כדי שהמרווח בין הטקסט לסרטון יישאר ה-30px של .lp-video בלבד. */
+  /* דסקטופ: טקסט ההירו מימין, הטופס משמאל (הסרטון עבר לסקשן נפרד — מבנה v2) */
   .hero-grid{grid-template-columns:1.05fr .95fr;align-items:start;column-gap:48px;row-gap:0}
   .hero-grid > .hero-col{grid-column:1;grid-row:1}
-  .hero-grid > .lp-video{grid-column:1;grid-row:2;margin-top:30px}
-  .hero-grid > .form-card{grid-column:2;grid-row:1 / span 2}
+  .hero-grid > .form-card{grid-column:2;grid-row:1}
   .grid-2{grid-template-columns:1fr 1fr}
   .grid-3{grid-template-columns:repeat(3,1fr)}
   .checks.cols{grid-template-columns:1fr 1fr;gap:11px 28px}
@@ -350,7 +348,7 @@ body{padding-bottom:74px}
 .video-play:focus-visible{outline:none;box-shadow:var(--ring)}
 .video-frame iframe{width:100%;height:100%;border:0;display:block}
 
-/* ---------- video block inside the hero grid ---------- */
+/* ---------- video section (מבנה v2: סקשן נפרד אחרי "איך התהליך עובד") ---------- */
 .lp-video-title{font-size:19px;font-weight:700;line-height:1.3;margin:0 0 12px;color:var(--ink)}
 
 /* פריסה דו-טורית (>=768px): מסגרת ריבועית 1:1 עם הנגן האנכי 9:16 ממורכז,
@@ -389,4 +387,41 @@ body{padding-bottom:74px}
     border-radius:12px;
     overflow:hidden;
   }
+}
+
+/* ==========================================================================
+   מבנה דף נחיתה v2 (נעם, 05.10.26)
+   Hero → Trust Bar → למי מתאים → מה לשלוח → מה כולל → תהליך → וידאו → הוכחות → FAQ → CTA סופי
+   ========================================================================== */
+
+/* ---------- trust bar ---------- */
+.trust-bar{background:#fff;border-bottom:1px solid var(--line);padding-block:26px}
+.trust-bar .wrap{display:grid;gap:22px}
+.trust-facts{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.trust-facts li{display:flex;flex-direction:column;gap:2px;padding-inline-start:10px;border-inline-start:3px solid var(--gold)}
+.trust-facts strong{font-size:15px;font-weight:700;color:var(--ink);line-height:1.25}
+.trust-facts span{font-size:12.5px;color:var(--muted);line-height:1.35}
+.trust-logos{display:flex;flex-direction:column;align-items:center;gap:12px}
+.trust-logos p{margin:0;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--muted)}
+.trust-logos .logos-row{gap:12px 22px}
+.trust-logos .logos-row img{height:30px;width:auto;opacity:.85;filter:grayscale(.2)}
+
+/* ---------- who for ---------- */
+.who-list{margin-bottom:26px}
+.who-list li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:15.5px}
+
+/* ---------- video section ---------- */
+.lp-video-section .section-head{margin-bottom:20px}
+
+/* ---------- final CTA ---------- */
+.final-cta{background:#fff;border-top:1px solid var(--line)}
+
+@media (min-width:768px){
+  .trust-bar .wrap{grid-template-columns:1.3fr 1fr;align-items:center}
+  .trust-facts{gap:14px}
+  .trust-facts li{padding-inline-start:14px}
+  .trust-facts strong{font-size:17px}
+  .trust-facts span{font-size:14px}
+  .trust-logos .logos-row img{height:36px}
+  .trust-logos{align-items:flex-end}
 }

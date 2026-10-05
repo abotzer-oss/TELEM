@@ -59,7 +59,7 @@
     .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
     .form-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;box-shadow:var(--shadow-card)}
     .hp{display:none}
-    @media(min-width:768px){body{padding-bottom:0}.hero-grid{grid-template-columns:1.05fr .95fr;align-items:start;column-gap:48px;row-gap:0}.hero-grid>.hero-col{grid-column:1;grid-row:1}.hero-grid>.lp-video{grid-column:1;grid-row:2;margin-top:30px}.hero-grid>.form-card{grid-column:2;grid-row:1/span 2}.hero{padding-block:62px 70px}}
+    @media(min-width:768px){body{padding-bottom:0}.hero-grid{grid-template-columns:1.05fr .95fr;align-items:start;column-gap:48px;row-gap:0}.hero-grid>.hero-col{grid-column:1;grid-row:1}.hero-grid>.form-card{grid-column:2;grid-row:1}.hero{padding-block:62px 70px}}
     /* video facade — critical, מונע layout shift כי הבלוק בתוך ההירו */
     .lp-video-title{font-size:19px;font-weight:700;line-height:1.3;margin:0 0 12px}
     .video-frame{aspect-ratio:9/16;max-width:340px;margin-inline:auto;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--ink)}
@@ -149,36 +149,69 @@
         <p class="form-foot">יש לכם מסמך דרישה מהוועדה? <a href="https://wa.me/972506890650" target="_blank" rel="noopener noreferrer" data-track="whatsapp" style="color:var(--sage-deep);font-weight:600">שלחו אותו אלינו בוואטסאפ ונבדוק מה נדרש ←</a></p>
       </form>
     </div>
-
-    <!-- ============ VIDEO (hero grid, row 2) ============ -->
-    <div class="lp-video">
-      <!-- TODO: אבירם יעדכן כותרת לפי תוכן הסרטון -->
-      <h2 class="lp-video-title">רגע אחד על סקר היסטורי לקרקע</h2>
-      <div class="video-frame" style="--poster:url('/lp/assets/img/video-seker-poster.webp')">
-        <button type="button" class="video-play" aria-label="נגן סרטון"
-                data-video-id="DqJpxXyVCgA" data-video-title="סרטון: סקר היסטורי לקרקע">
-          <img src="/lp/assets/img/video-seker-poster.webp" alt=""
-               width="340" height="604" loading="lazy" decoding="async">
-          <span class="video-play-icon" aria-hidden="true"></span>
-        </button>
-      </div>
-    </div>
   </div>
 </header>
 
-<!-- ============ PAIN / WHEN ============ -->
-<section class="pain">
+<!-- ============ TRUST BAR ============ -->
+<section class="trust-bar" aria-label="ניסיון ולקוחות">
   <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">מתי פונים אלינו</span>
-      <h2>הרגעים שבהם סקר היסטורי הופך לקריטי</h2>
-      <p>אם אתם נמצאים באחד מהמצבים האלה — כדאי שנדבר עוד לפני שתגיע דרישה רשמית.</p>
+    <ul class="trust-facts">
+      <li><strong><bdi>15</bdi> שנות ניסיון</strong><span>בייעוץ סביבתי ורישוי</span></li>
+      <li><strong>מהצד של הרשות</strong><span>ניהול איכות סביבה ברשות מקומית</span></li>
+      <li><strong>4 פרסי נשיא</strong><span>לרשות המקומית</span></li>
+    </ul>
+    <div class="trust-logos">
+      <p>עבדנו עם</p>
+      <div class="logos-row">
+        <img src="/assets/logo_galil.svg" alt="אשכול גליל מערבי" width="77" height="36" loading="lazy" decoding="async">
+        <img src="/assets/LOGO_ACKERSTEIN.png" alt="הקו הירוק" width="108" height="36" loading="lazy" decoding="async">
+        <img src="/assets/logo_calcalithefer.png" alt="הכלכלית עמק חפר" width="75" height="36" loading="lazy" decoding="async">
+        <img src="/assets/LOGO_ESHKOL.jpg" alt="פרויקט ביאליק 158" width="36" height="36" loading="lazy" decoding="async">
+      </div>
     </div>
-    <div class="grid grid-2">
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-3"/></svg></div><h3>לפני רכישת קרקע</h3><p>בודקים את עברה הסביבתי של הקרקע כדי לא לקנות התחייבות לזיהום ולעיכובים יקרים.</p></div>
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15h6"/></svg></div><h3>אישור תב״ע</h3><p>מוסדות התכנון דורשים בחינת היסטוריית שימושים כתנאי לקידום התוכנית.</p></div>
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></div><h3>דרישת רשות המים</h3><p>מקבלים דרישה לבחינת חשש לזיהום קרקע ומי תהום — ונדרשים למענה מסודר.</p></div>
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M6 18V9l6-4 6 4v9"/><path d="M10 18v-4h4v4"/></svg></div><h3>דרישת רמ״י</h3><p>במסגרת עסקאות והקצאות קרקע נדרש סקר היסטורי כחלק מתנאי הרשות.</p></div>
+  </div>
+</section>
+
+<!-- ============ WHO FOR ============ -->
+<section class="who-for">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow">זה בשבילכם אם</span><h2>למי השירות מתאים</h2><p>אם אחד המצבים האלה מוכר לכם — הסקר ההיסטורי בדיוק בשבילכם.</p></div>
+    <ul class="checks cols who-list">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> יזם שנדרש לבצע סקר היסטורי לפני היתר בנייה</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> יזם שנדרש לסקר היסטורי לפני שינוי ייעוד הקרקע</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> מגרש עם שימוש קודם של מוסך, תחנת דלק או תעשייה</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> קרקע עם חשד לזיהום לפני קידום פרויקט</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> יזם שקיבל דרישה לסקר היסטורי מהמשרד להגנת הסביבה</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> בעל קרקע שצריך לבדוק שימושים מזהמים שהיו במגרש בעבר</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> רוכש קרקע שרוצה לבדוק סיכון לזיהום לפני עסקה</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> פרויקט שנדרש לסקר <bdi>Phase I</bdi> לפני החלטה על דיגום</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> שינוי ייעוד מקרקע תעשייתית למגורים</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> מגרש עם היסטוריה תעשייתית שנדרש לבדיקת זיהום קרקע</li>
+    </ul>
+    <div class="grid grid-3">
+      <div class="card"><h3>יזמים ובעלי קרקע</h3><p>שרוצים ודאות לפני רכישה או קידום פרויקט, בלי הפתעות סביבתיות.</p></div>
+      <div class="card"><h3>אדריכלים ומתכננים</h3><p>שצריכים נספח שעומד בדרישות הוועדה ולא חוזר עם הערות.</p></div>
+      <div class="card"><h3>עורכי דין ומתווכי נדל״ן</h3><p>שמלווים עסקה וזקוקים לבדיקת נאותות סביבתית מהירה ואמינה.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT TO SEND ============ -->
+<section>
+  <div class="wrap">
+    <div class="cta-dark">
+      <span class="eyebrow" style="background:rgba(244,243,237,.12);border-color:rgba(244,243,237,.25);color:var(--paper)">כדי להתחיל</span>
+      <h2>מה צריך לשלוח לנו</h2>
+      <p>ככל שיהיה לנו יותר מידע, כך נחזור עם תשובה מדויקת ומהירה יותר.</p>
+      <ul class="send-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> פרטי הנכס — גוש/חלקה או כתובת</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> דרישת הרשות / תיק המידע אם יש</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> שלב הפרויקט והדדליין הקרוב</li>
+      </ul>
+      <div class="hero-cta" style="margin-top:24px">
+        <a class="btn btn-wa" href="https://wa.me/972506890650" data-track="whatsapp">צרפו את הדרישה בוואטסאפ</a>
+        <a class="btn btn-ghost" href="tel:0506890650" data-track="call">התקשרו: <bdi>050-6890650</bdi></a>
+      </div>
     </div>
   </div>
 </section>
@@ -187,8 +220,9 @@
 <section style="background:#fff;border-block:1px solid var(--line)">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">מה כולל הליווי</span>
-      <h2>סקר היסטורי שעומד בדרישות — ומתקבל אצל הרשות</h2>
+      <span class="eyebrow">מה כולל הסקר</span>
+      <h2>מה כולל הסקר ההיסטורי</h2>
+      <p>סקר היסטורי שעומד בדרישות — ומתקבל אצל הרשות</p>
     </div>
     <ul class="checks cols">
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> איסוף וניתוח היסטוריית שימושים בקרקע</li>
@@ -201,23 +235,8 @@
   </div>
 </section>
 
-<!-- ============ WHO FOR ============ -->
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">למי זה מתאים</span>
-      <h2>אנחנו עובדים בדיוק מולכם</h2>
-    </div>
-    <div class="grid grid-3">
-      <div class="card"><h3>יזמים ובעלי קרקע</h3><p>שרוצים ודאות לפני רכישה או קידום פרויקט, בלי הפתעות סביבתיות.</p></div>
-      <div class="card"><h3>אדריכלים ומתכננים</h3><p>שצריכים נספח שעומד בדרישות הוועדה ולא חוזר עם הערות.</p></div>
-      <div class="card"><h3>עורכי דין ומתווכי נדל״ן</h3><p>שמלווים עסקה וזקוקים לבדיקת נאותות סביבתית מהירה ואמינה.</p></div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ HOW IT WORKS ============ -->
-<section style="background:#fff;border-block:1px solid var(--line)">
+<section>
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">איך זה עובד</span>
@@ -230,6 +249,23 @@
       <div class="step"><h3>הגשה וליווי עד אישור</h3><p>מגישים לרשות, עונים להערות ומלווים אתכם עד האישור הסופי.</p></div>
     </div>
     <div class="timeline-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> זמן הכנה ממוצע: <bdi>10–21</bdi> ימי עבודה</div>
+  </div>
+</section>
+
+<!-- ============ VIDEO ============ -->
+<section class="lp-video-section">
+  <div class="wrap">
+    <div class="section-head" style="text-align:center;margin-inline:auto"><span class="eyebrow">בסרטון</span><h2>רגע אחד על סקר היסטורי לקרקע</h2></div>
+  <div class="lp-video">
+    <div class="video-frame" style="--poster:url('/lp/assets/img/video-seker-poster.webp')">
+      <button type="button" class="video-play" aria-label="נגן סרטון"
+              data-video-id="DqJpxXyVCgA" data-video-title="סרטון: סקר היסטורי לקרקע">
+        <img src="/lp/assets/img/video-seker-poster.webp" alt=""
+             width="340" height="604" loading="lazy" decoding="async">
+        <span class="video-play-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
   </div>
 </section>
 
@@ -251,32 +287,29 @@
   </div>
 </section>
 
-<!-- ============ WHAT TO SEND ============ -->
+<!-- ============ FAQ ============ -->
 <section>
-  <div class="wrap">
-    <div class="cta-dark">
-      <span class="eyebrow" style="background:rgba(244,243,237,.12);border-color:rgba(244,243,237,.25);color:var(--paper)">כדי להתחיל</span>
-      <h2>מה כדאי לשלוח לנו</h2>
-      <p>ככל שיהיה לנו יותר מידע, כך נחזור עם תשובה מדויקת ומהירה יותר.</p>
-      <ul class="send-list">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> פרטי הנכס — גוש/חלקה או כתובת</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> דרישת הרשות / תיק המידע אם יש</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> שלב הפרויקט והדדליין הקרוב</li>
-      </ul>
-      <div class="hero-cta" style="margin-top:24px">
-        <a class="btn btn-wa" href="https://wa.me/972506890650" data-track="whatsapp">צרפו את הדרישה בוואטסאפ</a>
-        <a class="btn btn-ghost" href="tel:0506890650" data-track="call">התקשרו: <bdi>050-6890650</bdi></a>
-      </div>
+  <div class="wrap" style="max-width:820px">
+    <div class="section-head"><span class="eyebrow">שאלות נפוצות</span><h2>סקר היסטורי — מה שחשוב לדעת</h2></div>
+    <div class="faq">
+      <details><summary>מתי בכלל נדרש סקר היסטורי?</summary><p>בדרך כלל כשמוסד תכנון, רשות המים או רמ״י מבקשים לבחון חשש לזיהום קרקע — בשלב תב״ע, היתר בנייה או עסקת קרקע. אם קיבלתם דרישה או תיק מידע, שלחו לנו ונבדוק בדיוק מה נדרש.</p></details>
+      <details><summary>כמה זמן לוקח להכין סקר?</summary><p>הכנה ממוצעת היא <bdi>10–21</bdi> ימי עבודה, בהתאם למורכבות הקרקע ולזמינות מקורות המידע. במקרים דחופים אפשר לתאם לוח זמנים מזורז.</p></details>
+      <details><summary>מה ההבדל בין סקר היסטורי לסקר קרקע או תסקיר?</summary><p>הסקר ההיסטורי (<bdi>Phase I</bdi>) בוחן את עבר השימושים והחשש לזיהום על בסיס מידע קיים, בלי קידוחים. אם עולה חשש ממשי — ממליצים על המשך בדיקות. נשמח להסביר מה מתאים למקרה שלכם.</p></details>
+      <details><summary>הדרישה מהרשות אצלי כקובץ — איך שולחים?</summary><p>בשלב הזה הכי נוח לצרף את הקובץ בוואטסאפ. לחצו על כפתור הוואטסאפ, שלחו את הדרישה ונחזור אליכם עם הערכה.</p></details>
     </div>
   </div>
 </section>
 
-<!-- ============ SECONDARY FORM ============ -->
-<section id="lead2" style="background:#fff;border-top:1px solid var(--line)">
+<!-- ============ FINAL CTA ============ -->
+<section id="lead2" class="final-cta">
   <div class="wrap" style="max-width:680px">
     <div class="section-head" style="text-align:center;margin-inline:auto">
       <h2>נשמח לבדוק את המקרה שלכם</h2>
       <p>השאירו פרטים — נחזור אליכם עם הצעדים הבאים והערכת לוחות זמנים.</p>
+      <div class="hero-cta" style="justify-content:center;margin:18px 0 0">
+        <a class="btn btn-wa" href="https://wa.me/972506890650" data-track="whatsapp">שלחו בוואטסאפ</a>
+        <a class="btn btn-ghost" href="tel:0506890650" data-track="call">התקשרו: <bdi>050-6890650</bdi></a>
+      </div>
     </div>
     <div class="form-card">
       <form data-lp-form action="https://api.web3forms.com/submit" method="POST">
@@ -301,19 +334,6 @@
         <p class="form-error" hidden style="color:#b4452f;font-size:14px;margin-top:10px;text-align:center">אירעה תקלה. אפשר לפנות בוואטסאפ או בטלפון.</p>
         <p class="form-foot">יש לכם מסמך דרישה מהוועדה? <a href="https://wa.me/972506890650" target="_blank" rel="noopener noreferrer" data-track="whatsapp" style="color:var(--sage-deep);font-weight:600">שלחו אותו אלינו בוואטסאפ ונבדוק מה נדרש ←</a></p>
       </form>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FAQ ============ -->
-<section>
-  <div class="wrap" style="max-width:820px">
-    <div class="section-head"><span class="eyebrow">שאלות נפוצות</span><h2>סקר היסטורי — מה שחשוב לדעת</h2></div>
-    <div class="faq">
-      <details><summary>מתי בכלל נדרש סקר היסטורי?</summary><p>בדרך כלל כשמוסד תכנון, רשות המים או רמ״י מבקשים לבחון חשש לזיהום קרקע — בשלב תב״ע, היתר בנייה או עסקת קרקע. אם קיבלתם דרישה או תיק מידע, שלחו לנו ונבדוק בדיוק מה נדרש.</p></details>
-      <details><summary>כמה זמן לוקח להכין סקר?</summary><p>הכנה ממוצעת היא <bdi>10–21</bdi> ימי עבודה, בהתאם למורכבות הקרקע ולזמינות מקורות המידע. במקרים דחופים אפשר לתאם לוח זמנים מזורז.</p></details>
-      <details><summary>מה ההבדל בין סקר היסטורי לסקר קרקע או תסקיר?</summary><p>הסקר ההיסטורי (<bdi>Phase I</bdi>) בוחן את עבר השימושים והחשש לזיהום על בסיס מידע קיים, בלי קידוחים. אם עולה חשש ממשי — ממליצים על המשך בדיקות. נשמח להסביר מה מתאים למקרה שלכם.</p></details>
-      <details><summary>הדרישה מהרשות אצלי כקובץ — איך שולחים?</summary><p>בשלב הזה הכי נוח לצרף את הקובץ בוואטסאפ. לחצו על כפתור הוואטסאפ, שלחו את הדרישה ונחזור אליכם עם הערכה.</p></details>
     </div>
   </div>
 </section>
