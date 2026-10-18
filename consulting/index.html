@@ -14,7 +14,20 @@
   "@type": "Service",
   "name": "ייעוץ סביבתי לעסקים ותעשייה",
   "description": "ייעוץ סביבתי לעסקים, מפעלים ורשויות מקומיות. תנאים סביבתיים ברישיון עסק, היתר רעלים, תכנון פסולת, אקוסטיקה וסקרי קרקע.",
-  "provider": {"@type": "ProfessionalService", "name": "תלם ניהול סביבה", "url": "https://telemenv.co.il"},
+  "provider": {
+    "@type": "ProfessionalService",
+    "@id": "https://telemenv.co.il/#business",
+    "name": "תלם ניהול סביבה",
+    "url": "https://telemenv.co.il",
+    "telephone": "+972-50-6890650",
+    "email": "aviram@telemenv.co.il",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "קיבוץ העוגן",
+      "addressRegion": "עמק חפר",
+      "addressCountry": "IL"
+    }
+  },
   "areaServed": "IL",
   "mainEntityOfPage": "https://telemenv.co.il/consulting/"
 }
@@ -41,7 +54,7 @@
     <meta name="twitter:image" content="https://telemenv.co.il/logo.png">
     <meta name="twitter:site" content="@telemenv">
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
     <script>
         tailwind.config = {
             theme: {
