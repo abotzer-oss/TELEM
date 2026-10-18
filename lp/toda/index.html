@@ -16,8 +16,10 @@
     gtag('config', 'G-3F8H2J4D7F');
 
     // Google Ads conversion — fires on thank-you page load.
-    // TODO: replace AW-CONVERSION_ID/CONVERSION_LABEL with real Google Ads ID + label from Aviram
-    gtag('event','conversion',{'send_to':'AW-CONVERSION_ID/CONVERSION_LABEL'});
+    // TODO: set to 'AW-18033946221/<label>' once Aviram supplies the conversion label.
+    // Empty = skip, so no hit goes to a placeholder ID.
+    var ADS_SEND_TO = '';
+    if (ADS_SEND_TO) gtag('event','conversion',{'send_to':ADS_SEND_TO});
 
     // GA4 intent attribution: which landing page produced the lead (?from=page_id)
     (function(){
