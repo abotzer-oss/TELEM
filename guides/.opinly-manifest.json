@@ -2,7 +2,7 @@
   "soil-survey-after-findings": {
     "slug": "soil-survey-after-findings",
     "title": "מה קורה אחרי הסקר ההיסטורי? המסלול המלא מממצא לאישור המשרד להגנת הסביבה",
-    "syncedAt": "2026-10-12T12:42:25.605Z"
+    "syncedAt": "2026-10-24T09:16:36.189Z"
   },
   "building-permit-environmental-annex-process": {
     "slug": "building-permit-environmental-annex-process",
@@ -12,12 +12,12 @@
   "bess": {
     "slug": "bess",
     "title": "דרישות סביבתיות למתקני BESS בישראל: מה נדרש לפני אישור הפרויקט",
-    "syncedAt": "2026-10-12T12:42:25.054Z"
+    "syncedAt": "2026-10-24T09:16:35.747Z"
   },
   "environmental-annex-urban-renewal-projects": {
     "slug": "environmental-annex-urban-renewal-projects",
     "title": "נספח סביבתי בהתחדשות עירונית: מה שונה ואיך מתכוננים נכון",
-    "syncedAt": "2026-10-12T12:42:24.846Z"
+    "syncedAt": "2026-10-24T09:16:35.531Z"
   },
   "election-waste-environmental-impact": {
     "slug": "election-waste-environmental-impact",
@@ -27,22 +27,22 @@
   "soil-contamination-sources-israel": {
     "slug": "soil-contamination-sources-israel",
     "title": "זיהום קרקע בישראל: מקורות נפוצים והשפעתם על הפרויקט שלך",
-    "syncedAt": "2026-10-12T12:42:24.640Z"
+    "syncedAt": "2026-10-24T09:16:35.330Z"
   },
   "waste-storage-annex-residential-projects": {
     "slug": "waste-storage-annex-residential-projects",
     "title": "נספח אצירת אשפה לפרויקטי מגורים: דרישות הרשויות, שטחי האצירה הנדרשים ואיך נמנעים מדחייה",
-    "syncedAt": "2026-10-12T12:42:24.389Z"
+    "syncedAt": "2026-10-24T09:16:35.070Z"
   },
   "pre-construction-soil-testing-guide": {
     "slug": "pre-construction-soil-testing-guide",
     "title": "בדיקות קרקע לפני בנייה: אילו בדיקות נדרשות, מי מבצע אותן ומה הן עולות",
-    "syncedAt": "2026-10-12T12:42:24.173Z"
+    "syncedAt": "2026-10-24T09:16:34.853Z"
   },
   "construction-waste-management-legal-guide": {
     "slug": "construction-waste-management-legal-guide",
     "title": "ניהול פסולת בנייה בשטח: מה מחייב החוק, מה קורה כשלא עומדים בו ואיך מתכננים נכון",
-    "syncedAt": "2026-10-12T12:42:23.949Z"
+    "syncedAt": "2026-10-24T09:16:34.618Z"
   },
   "environmental-impact-assessment-when-required": {
     "slug": "environmental-impact-assessment-when-required",
@@ -57,6 +57,6 @@
   "waste-annex-permit-application-guide": {
     "slug": "waste-annex-permit-application-guide",
     "title": "נספח פסולת לבקשת היתר בנייה: מה הוועדה דורשת ומה טועים",
-    "syncedAt": "2026-10-23T09:43:30.115Z"
+    "syncedAt": "2026-10-24T09:16:33.958Z"
   }
 }
