@@ -176,5 +176,37 @@
       "anchor": "במאמר הייעודי בנושא",
       "href": "/in-the-news/construction-waste-law.html"
     }
+  ],
+  "post": [
+    {
+      "context": "יועץ אשפה הוא איש המקצוע",
+      "anchor": "יועץ אשפה",
+      "href": "/waste/"
+    },
+    {
+      "context": "פסולת הריסה: נספח פסולת שמותאם לפרויקט",
+      "anchor": "נספח פסולת שמותאם לפרויקט",
+      "href": "/construction-waste/"
+    },
+    {
+      "context": "ולכן איך מתכננים ניהול פסולת נכון כבר משלב היתר הבנייה",
+      "anchor": "איך מתכננים ניהול פסולת נכון כבר משלב היתר הבנייה",
+      "href": "/guides/construction-waste-management-legal-guide.html"
+    },
+    {
+      "context": "ראו שאלות נפוצות על אצירת פסולת בערים",
+      "anchor": "שאלות נפוצות על אצירת פסולת בערים",
+      "href": "/guides/cities-waste.html"
+    },
+    {
+      "context": "כמה פסולת מייצרת מערכת בחירות?",
+      "anchor": "כמה פסולת מייצרת מערכת בחירות?",
+      "href": "/guides/election-waste-environmental-impact.html"
+    },
+    {
+      "context": "צמתי ההחלטה שכל יזם חייב להכיר",
+      "anchor": "צמתי ההחלטה שכל יזם חייב להכיר",
+      "href": "/guides/building-permit-environmental-annex-process.html"
+    }
   ]
 }
