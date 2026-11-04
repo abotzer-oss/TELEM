@@ -177,7 +177,7 @@ environmental-management/index.html,D9,pass,2026-11-04,code,6 קישורים ל�
 environmental-management/index.html,E2,pass,2026-11-04,code,meta viewport קיים (tap targets לא נמדדו),2027-02-02
 environmental-management/index.html,E3,fail,2026-11-04,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-11-11
 environmental-management/index.html,E4,fail,2026-11-04,code,דומיינים מתים: https://www.netivei-israel.co.il,2026-11-11
-guides/bess.html,A1,pass,2026-11-04,code,1982 מילים ב-HTML גולמי,2027-02-02
+guides/bess.html,A1,pass,2026-11-04,code,1994 מילים ב-HTML גולמי,2027-02-02
 guides/bess.html,A3,pass,2026-11-04,code,אין noindex,2027-02-02
 guides/bess.html,A4,pass,2026-11-04,code,https://telemenv.co.il/guides/bess.html,2027-02-02
 guides/bess.html,A6,pass,2026-11-04,code,אין נכסים ב-http,2027-02-02
@@ -186,9 +186,9 @@ guides/bess.html,B2,pass,2026-11-04,code,108 תווים,2027-02-02
 guides/bess.html,B3,pass,2026-11-04,code,1 h1,2027-02-02
 guides/bess.html,B4,pass,2026-11-04,code,"15 כותרות, 1 כשאלה",2027-02-02
 guides/bess.html,B5,pass,2026-11-04,code,פסקה ראשונה אחרי h1: 600 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2027-02-02
-guides/bess.html,B6,pass,2026-11-04,code,1982 מילים,2027-02-02
+guides/bess.html,B6,pass,2026-11-04,code,1994 מילים,2027-02-02
 guides/bess.html,B7,pass,2026-11-04,code,אין תמונות בעמוד,2027-02-02
-guides/bess.html,B8,pass,2026-11-04,code,"22 פנימיים, 12 חיצוניים",2027-02-02
+guides/bess.html,B8,pass,2026-11-04,code,"23 פנימיים, 12 חיצוניים",2027-02-02
 guides/bess.html,B9,pass,2026-11-04,code,"Answer, Article, BreadcrumbList, FAQPage, ImageObject, ListItem",2027-02-02
 guides/bess.html,B10,fail,2026-11-04,code,אין תאריך עדכון גלוי,2026-11-11
 guides/bess.html,B11,pass,2026-11-04,code,טלפון/וואטסאפ בעמוד,2027-02-02
@@ -341,7 +341,7 @@ guides/eia-objections-after-deposit-committee-decision.html,D9,pass,2026-11-04,c
 guides/eia-objections-after-deposit-committee-decision.html,E2,pass,2026-11-04,code,meta viewport קיים (tap targets לא נמדדו),2027-02-02
 guides/eia-objections-after-deposit-committee-decision.html,E3,fail,2026-11-04,code,סקריפטים חוסמים ב-head: 1; font-display swap: True,2026-11-11
 guides/eia-objections-after-deposit-committee-decision.html,E4,fail,2026-11-04,code,דומיינים מתים: https://www.icea.co.il,2026-11-11
-guides/election-waste-environmental-impact.html,A1,pass,2026-11-04,code,2065 מילים ב-HTML גולמי,2027-02-02
+guides/election-waste-environmental-impact.html,A1,pass,2026-11-04,code,2073 מילים ב-HTML גולמי,2027-02-02
 guides/election-waste-environmental-impact.html,A3,pass,2026-11-04,code,אין noindex,2027-02-02
 guides/election-waste-environmental-impact.html,A4,pass,2026-11-04,code,https://telemenv.co.il/guides/election-waste-environmental-impact.html,2027-02-02
 guides/election-waste-environmental-impact.html,A6,pass,2026-11-04,code,אין נכסים ב-http,2027-02-02
@@ -350,9 +350,9 @@ guides/election-waste-environmental-impact.html,B2,pass,2026-11-04,code,105 תו
 guides/election-waste-environmental-impact.html,B3,pass,2026-11-04,code,1 h1,2027-02-02
 guides/election-waste-environmental-impact.html,B4,pass,2026-11-04,code,"17 כותרות, 2 כשאלה",2027-02-02
 guides/election-waste-environmental-impact.html,B5,pass,2026-11-04,code,פסקה ראשונה אחרי h1: 600 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2027-02-02
-guides/election-waste-environmental-impact.html,B6,pass,2026-11-04,code,2065 מילים,2027-02-02
+guides/election-waste-environmental-impact.html,B6,pass,2026-11-04,code,2073 מילים,2027-02-02
 guides/election-waste-environmental-impact.html,B7,pass,2026-11-04,code,אין תמונות בעמוד,2027-02-02
-guides/election-waste-environmental-impact.html,B8,pass,2026-11-04,code,"22 פנימיים, 14 חיצוניים",2027-02-02
+guides/election-waste-environmental-impact.html,B8,pass,2026-11-04,code,"23 פנימיים, 14 חיצוניים",2027-02-02
 guides/election-waste-environmental-impact.html,B9,pass,2026-11-04,code,"Answer, Article, BreadcrumbList, FAQPage, ImageObject, ListItem",2027-02-02
 guides/election-waste-environmental-impact.html,B10,fail,2026-11-04,code,אין תאריך עדכון גלוי,2026-11-11
 guides/election-waste-environmental-impact.html,B11,pass,2026-11-04,code,טלפון/וואטסאפ בעמוד,2027-02-02
@@ -536,7 +536,7 @@ guides/post-2.html,D8,fail,2026-11-04,code,אין מחבר בעל שם,2026-11-1
 guides/post-2.html,D9,fail,2026-11-04,code,0 קישורים לגופים רשמיים,2026-11-11
 guides/post-2.html,E2,pass,2026-11-04,code,meta viewport קיים (tap targets לא נמדדו),2027-02-02
 guides/post-2.html,E3,pass,2026-11-04,code,סקריפטים חוסמים ב-head: 0; font-display swap: True,2027-02-02
-guides/post-3.html,A1,pass,2026-11-04,code,3768 מילים ב-HTML גולמי,2027-02-02
+guides/post-3.html,A1,pass,2026-11-04,code,3778 מילים ב-HTML גולמי,2027-02-02
 guides/post-3.html,A3,pass,2026-11-04,code,אין noindex,2027-02-02
 guides/post-3.html,A4,pass,2026-11-04,code,https://telemenv.co.il/guides/post-3.html,2027-02-02
 guides/post-3.html,A6,pass,2026-11-04,code,אין נכסים ב-http,2027-02-02
@@ -545,9 +545,9 @@ guides/post-3.html,B2,pass,2026-11-04,code,135 תווים,2027-02-02
 guides/post-3.html,B3,pass,2026-11-04,code,1 h1,2027-02-02
 guides/post-3.html,B4,pass,2026-11-04,code,"47 כותרות, 9 כשאלה",2027-02-02
 guides/post-3.html,B5,pass,2026-11-04,code,פסקה ראשונה אחרי h1: 600 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2027-02-02
-guides/post-3.html,B6,pass,2026-11-04,code,3768 מילים,2027-02-02
+guides/post-3.html,B6,pass,2026-11-04,code,3778 מילים,2027-02-02
 guides/post-3.html,B7,pass,2026-11-04,code,אין תמונות בעמוד,2027-02-02
-guides/post-3.html,B8,pass,2026-11-04,code,"24 פנימיים, 18 חיצוניים",2027-02-02
+guides/post-3.html,B8,pass,2026-11-04,code,"25 פנימיים, 18 חיצוניים",2027-02-02
 guides/post-3.html,B9,pass,2026-11-04,code,"Answer, Article, BreadcrumbList, FAQPage, ImageObject, ListItem",2027-02-02
 guides/post-3.html,B10,pass,2026-11-04,code,מחבר + תאריך גלוי + dateModified=2026-11-04,2027-02-02
 guides/post-3.html,B11,pass,2026-11-04,code,טלפון/וואטסאפ בעמוד,2027-02-02
@@ -667,7 +667,7 @@ guides/price.html,D9,pass,2026-11-04,code,10 קישורים לגופים רשמ�
 guides/price.html,E2,pass,2026-11-04,code,meta viewport קיים (tap targets לא נמדדו),2027-02-02
 guides/price.html,E3,fail,2026-11-04,code,סקריפטים חוסמים ב-head: 1; font-display swap: True,2026-11-11
 guides/price.html,E4,fail,2026-11-04,code,דומיינים מתים: https://www.icea.co.il,2026-11-11
-guides/regulations.html,A1,pass,2026-11-04,code,1104 מילים ב-HTML גולמי,2027-02-02
+guides/regulations.html,A1,pass,2026-11-04,code,1114 מילים ב-HTML גולמי,2027-02-02
 guides/regulations.html,A3,pass,2026-11-04,code,אין noindex,2027-02-02
 guides/regulations.html,A4,pass,2026-11-04,code,https://telemenv.co.il/guides/regulations.html,2027-02-02
 guides/regulations.html,A6,pass,2026-11-04,code,אין נכסים ב-http,2027-02-02
@@ -676,9 +676,9 @@ guides/regulations.html,B2,pass,2026-11-04,code,130 תווים,2027-02-02
 guides/regulations.html,B3,pass,2026-11-04,code,1 h1,2027-02-02
 guides/regulations.html,B4,fail,2026-11-04,code,1 בלוק כותרות ריק,2026-11-11
 guides/regulations.html,B5,fail,2026-11-04,code,פסקה ראשונה אחרי h1: 65 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2026-11-11
-guides/regulations.html,B6,pass,2026-11-04,code,1104 מילים,2027-02-02
+guides/regulations.html,B6,pass,2026-11-04,code,1114 מילים,2027-02-02
 guides/regulations.html,B7,pass,2026-11-04,code,אין תמונות בעמוד,2027-02-02
-guides/regulations.html,B8,pass,2026-11-04,code,"35 פנימיים, 28 חיצוניים",2027-02-02
+guides/regulations.html,B8,pass,2026-11-04,code,"36 פנימיים, 28 חיצוניים",2027-02-02
 guides/regulations.html,B9,pass,2026-11-04,code,"Answer, Article, BreadcrumbList, FAQPage, ImageObject, ListItem",2027-02-02
 guides/regulations.html,B10,fail,2026-11-04,code,אין תאריך עדכון גלוי,2026-11-11
 guides/regulations.html,B11,pass,2026-11-04,code,טלפון/וואטסאפ בעמוד,2027-02-02
@@ -691,7 +691,7 @@ guides/regulations.html,C7,pass,2026-11-04,code,אין מונחים מקצועי
 guides/regulations.html,C8,pass,2026-11-04,code,אין טבלאות,2027-02-02
 guides/regulations.html,C10,pass,2026-11-04,code,"inLanguage he-IL, UTF-8 תקין",2027-02-02
 guides/regulations.html,D3,unknown,2026-11-04,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-12-04
-guides/regulations.html,D4,pass,2026-11-04,code,70 עוגני עובדה (מספרים/שנים/תקנים),2027-02-02
+guides/regulations.html,D4,pass,2026-11-04,code,71 עוגני עובדה (מספרים/שנים/תקנים),2027-02-02
 guides/regulations.html,D5,pass,2026-11-04,code,FAQ גלוי + FAQPage,2027-02-02
 guides/regulations.html,D6,unknown,2026-11-04,code,אין טבלה/תהליך ממוספר (4 רשימות תבליט) — האם התוכן מתאים לכך?,2026-12-04
 guides/regulations.html,D7,pass,2026-11-04,code,טלפון אחיד 050-6890650,2027-02-02
@@ -699,7 +699,7 @@ guides/regulations.html,D8,pass,2026-11-04,code,אבירם בוצר מוזכר �
 guides/regulations.html,D9,pass,2026-11-04,code,9 קישורים לגופים רשמיים,2027-02-02
 guides/regulations.html,E2,pass,2026-11-04,code,meta viewport קיים (tap targets לא נמדדו),2027-02-02
 guides/regulations.html,E3,fail,2026-11-04,code,סקריפטים חוסמים ב-head: 1; font-display swap: True,2026-11-11
-guides/soil-contamination-sources-israel.html,A1,pass,2026-11-04,code,2184 מילים ב-HTML גולמי,2027-02-02
+guides/soil-contamination-sources-israel.html,A1,pass,2026-11-04,code,2194 מילים ב-HTML גולמי,2027-02-02
 guides/soil-contamination-sources-israel.html,A3,pass,2026-11-04,code,אין noindex,2027-02-02
 guides/soil-contamination-sources-israel.html,A4,pass,2026-11-04,code,https://telemenv.co.il/guides/soil-contamination-sources-israel.html,2027-02-02
 guides/soil-contamination-sources-israel.html,A6,pass,2026-11-04,code,אין נכסים ב-http,2027-02-02
@@ -708,14 +708,14 @@ guides/soil-contamination-sources-israel.html,B2,pass,2026-11-04,code,90 תוו�
 guides/soil-contamination-sources-israel.html,B3,pass,2026-11-04,code,1 h1,2027-02-02
 guides/soil-contamination-sources-israel.html,B4,pass,2026-11-04,code,"15 כותרות, 1 כשאלה",2027-02-02
 guides/soil-contamination-sources-israel.html,B5,pass,2026-11-04,code,פסקה ראשונה אחרי h1: 600 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2027-02-02
-guides/soil-contamination-sources-israel.html,B6,pass,2026-11-04,code,2184 מילים,2027-02-02
+guides/soil-contamination-sources-israel.html,B6,pass,2026-11-04,code,2194 מילים,2027-02-02
 guides/soil-contamination-sources-israel.html,B7,pass,2026-11-04,code,אין תמונות בעמוד,2027-02-02
-guides/soil-contamination-sources-israel.html,B8,pass,2026-11-04,code,"22 פנימיים, 12 חיצוניים",2027-02-02
+guides/soil-contamination-sources-israel.html,B8,pass,2026-11-04,code,"23 פנימיים, 12 חיצוניים",2027-02-02
 guides/soil-contamination-sources-israel.html,B9,pass,2026-11-04,code,"Answer, Article, BreadcrumbList, FAQPage, ImageObject, ListItem",2027-02-02
 guides/soil-contamination-sources-israel.html,B10,fail,2026-11-04,code,אין תאריך עדכון גלוי,2026-11-11
 guides/soil-contamination-sources-israel.html,B11,pass,2026-11-04,code,טלפון/וואטסאפ בעמוד,2027-02-02
 guides/soil-contamination-sources-israel.html,C1,pass,2026-11-04,code,"lang=""he"" dir=""rtl""",2027-02-02
-guides/soil-contamination-sources-israel.html,C2,pass,2026-11-04,code,"1 רצפים, 7 bdi",2027-02-02
+guides/soil-contamination-sources-israel.html,C2,pass,2026-11-04,code,"2 רצפים, 8 bdi",2027-02-02
 guides/soil-contamination-sources-israel.html,C3,pass,2026-11-04,code,אין לטינית ב-title — אין סיכון bidi,2027-02-02
 guides/soil-contamination-sources-israel.html,C4,pass,2026-11-04,code,אין ניקוד,2027-02-02
 guides/soil-contamination-sources-israel.html,C6,unknown,2026-11-04,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-12-04
@@ -732,7 +732,7 @@ guides/soil-contamination-sources-israel.html,D9,pass,2026-11-04,code,9 קישו
 guides/soil-contamination-sources-israel.html,E2,pass,2026-11-04,code,meta viewport קיים (tap targets לא נמדדו),2027-02-02
 guides/soil-contamination-sources-israel.html,E3,fail,2026-11-04,code,סקריפטים חוסמים ב-head: 1; font-display swap: True,2026-11-11
 guides/soil-contamination-sources-israel.html,E4,fail,2026-11-04,code,דומיינים מתים: https://www.icea.co.il,2026-11-11
-guides/soil-survey-after-findings.html,A1,pass,2026-11-04,code,1940 מילים ב-HTML גולמי,2027-02-02
+guides/soil-survey-after-findings.html,A1,pass,2026-11-04,code,1951 מילים ב-HTML גולמי,2027-02-02
 guides/soil-survey-after-findings.html,A3,pass,2026-11-04,code,אין noindex,2027-02-02
 guides/soil-survey-after-findings.html,A4,pass,2026-11-04,code,https://telemenv.co.il/guides/soil-survey-after-findings.html,2027-02-02
 guides/soil-survey-after-findings.html,A6,pass,2026-11-04,code,אין נכסים ב-http,2027-02-02
@@ -741,9 +741,9 @@ guides/soil-survey-after-findings.html,B2,pass,2026-11-04,code,113 תווים,20
 guides/soil-survey-after-findings.html,B3,pass,2026-11-04,code,1 h1,2027-02-02
 guides/soil-survey-after-findings.html,B4,pass,2026-11-04,code,"14 כותרות, 3 כשאלה",2027-02-02
 guides/soil-survey-after-findings.html,B5,pass,2026-11-04,code,פסקה ראשונה אחרי h1: 600 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2027-02-02
-guides/soil-survey-after-findings.html,B6,pass,2026-11-04,code,1940 מילים,2027-02-02
+guides/soil-survey-after-findings.html,B6,pass,2026-11-04,code,1951 מילים,2027-02-02
 guides/soil-survey-after-findings.html,B7,pass,2026-11-04,code,אין תמונות בעמוד,2027-02-02
-guides/soil-survey-after-findings.html,B8,pass,2026-11-04,code,"23 פנימיים, 12 חיצוניים",2027-02-02
+guides/soil-survey-after-findings.html,B8,pass,2026-11-04,code,"24 פנימיים, 12 חיצוניים",2027-02-02
 guides/soil-survey-after-findings.html,B9,pass,2026-11-04,code,"Answer, Article, BreadcrumbList, FAQPage, ImageObject, ListItem",2027-02-02
 guides/soil-survey-after-findings.html,B10,pass,2026-11-04,code,מחבר + תאריך גלוי + dateModified=2026-09-11,2027-02-02
 guides/soil-survey-after-findings.html,B11,pass,2026-11-04,code,טלפון/וואטסאפ בעמוד,2027-02-02
@@ -831,7 +831,7 @@ guides/soil-testing.html,D9,pass,2026-11-04,code,14 קישורים לגופים 
 guides/soil-testing.html,E2,pass,2026-11-04,code,meta viewport קיים (tap targets לא נמדדו),2027-02-02
 guides/soil-testing.html,E3,fail,2026-11-04,code,סקריפטים חוסמים ב-head: 1; font-display swap: True,2026-11-11
 guides/soil-testing.html,E4,fail,2026-11-04,code,דומיינים מתים: https://www.geologists.org.il,2026-11-11
-guides/solar-bess.html,A1,pass,2026-11-04,code,1407 מילים ב-HTML גולמי,2027-02-02
+guides/solar-bess.html,A1,pass,2026-11-04,code,1418 מילים ב-HTML גולמי,2027-02-02
 guides/solar-bess.html,A3,pass,2026-11-04,code,אין noindex,2027-02-02
 guides/solar-bess.html,A4,pass,2026-11-04,code,https://telemenv.co.il/guides/solar-bess.html,2027-02-02
 guides/solar-bess.html,A6,pass,2026-11-04,code,אין נכסים ב-http,2027-02-02
@@ -840,9 +840,9 @@ guides/solar-bess.html,B2,pass,2026-11-04,code,132 תווים,2027-02-02
 guides/solar-bess.html,B3,pass,2026-11-04,code,1 h1,2027-02-02
 guides/solar-bess.html,B4,fail,2026-11-04,code,דילוג רמת כותרת; 1 בלוק כותרות ריק,2026-11-11
 guides/solar-bess.html,B5,pass,2026-11-04,code,פסקה ראשונה אחרי h1: 565 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2027-02-02
-guides/solar-bess.html,B6,pass,2026-11-04,code,1407 מילים,2027-02-02
+guides/solar-bess.html,B6,pass,2026-11-04,code,1418 מילים,2027-02-02
 guides/solar-bess.html,B7,pass,2026-11-04,code,אין תמונות בעמוד,2027-02-02
-guides/solar-bess.html,B8,pass,2026-11-04,code,"36 פנימיים, 13 חיצוניים",2027-02-02
+guides/solar-bess.html,B8,pass,2026-11-04,code,"37 פנימיים, 13 חיצוניים",2027-02-02
 guides/solar-bess.html,B9,pass,2026-11-04,code,"Answer, Article, BreadcrumbList, FAQPage, ImageObject, ListItem",2027-02-02
 guides/solar-bess.html,B10,pass,2026-11-04,code,מחבר + תאריך גלוי + dateModified=2026-10-23,2027-02-02
 guides/solar-bess.html,B11,pass,2026-11-04,code,טלפון/וואטסאפ בעמוד,2027-02-02
@@ -1282,16 +1282,16 @@ index.html,D8,pass,2026-11-04,code,אבירם בוצר מוזכר בשמו,2027-
 index.html,D9,pass,2026-11-04,code,5 קישורים לגופים רשמיים,2027-02-02
 index.html,E2,pass,2026-11-04,code,meta viewport קיים (tap targets לא נמדדו),2027-02-02
 index.html,E3,fail,2026-11-04,code,סקריפטים חוסמים ב-head: 2; font-display swap: True,2026-11-11
-landscape-appendix/index.html,A1,pass,2026-11-04,code,1442 מילים ב-HTML גולמי,2027-02-02
+landscape-appendix/index.html,A1,pass,2026-11-04,code,1517 מילים ב-HTML גולמי,2027-02-02
 landscape-appendix/index.html,A3,pass,2026-11-04,code,אין noindex,2027-02-02
 landscape-appendix/index.html,A4,pass,2026-11-04,code,https://telemenv.co.il/landscape-appendix/,2027-02-02
 landscape-appendix/index.html,A6,pass,2026-11-04,code,אין נכסים ב-http,2027-02-02
 landscape-appendix/index.html,B1,pass,2026-11-04,code,"""נספח נופי-סביבתי לתכנית ולהיתר | תלם ניהול סביבה""",2027-02-02
 landscape-appendix/index.html,B2,pass,2026-11-04,code,146 תווים,2027-02-02
 landscape-appendix/index.html,B3,pass,2026-11-04,code,1 h1,2027-02-02
-landscape-appendix/index.html,B4,pass,2026-11-04,code,"28 כותרות, 11 כשאלה",2027-02-02
+landscape-appendix/index.html,B4,pass,2026-11-04,code,"29 כותרות, 11 כשאלה",2027-02-02
 landscape-appendix/index.html,B5,pass,2026-11-04,code,פסקה ראשונה אחרי h1: 600 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2027-02-02
-landscape-appendix/index.html,B6,pass,2026-11-04,code,1442 מילים,2027-02-02
+landscape-appendix/index.html,B6,pass,2026-11-04,code,1517 מילים,2027-02-02
 landscape-appendix/index.html,B7,fail,2026-11-04,code,6 ללא width/height; 6 ללא loading,2026-11-11
 landscape-appendix/index.html,B8,fail,2026-11-04,code,1 קישורים עצמיים,2026-11-11
 landscape-appendix/index.html,B9,pass,2026-11-04,code,"Answer, BreadcrumbList, Country, FAQPage, ListItem, Organization",2027-02-02
@@ -1314,7 +1314,7 @@ landscape-appendix/index.html,D8,pass,2026-11-04,code,אבירם בוצר מוז
 landscape-appendix/index.html,D9,pass,2026-11-04,code,4 קישורים לגופים רשמיים,2027-02-02
 landscape-appendix/index.html,E2,pass,2026-11-04,code,meta viewport קיים (tap targets לא נמדדו),2027-02-02
 landscape-appendix/index.html,E3,fail,2026-11-04,code,סקריפטים חוסמים ב-head: 1; font-display swap: True,2026-11-11
-lectures/index.html,A1,pass,2026-11-04,code,1105 מילים ב-HTML גולמי,2027-02-02
+lectures/index.html,A1,pass,2026-11-04,code,1137 מילים ב-HTML גולמי,2027-02-02
 lectures/index.html,A3,pass,2026-11-04,code,אין noindex,2027-02-02
 lectures/index.html,A4,pass,2026-11-04,code,https://telemenv.co.il/lectures/,2027-02-02
 lectures/index.html,A6,pass,2026-11-04,code,אין נכסים ב-http,2027-02-02
@@ -1322,19 +1322,19 @@ lectures/index.html,B1,pass,2026-11-04,code,"""הרצאות וסדנאות בנ�
 lectures/index.html,B2,pass,2026-11-04,code,100 תווים,2027-02-02
 lectures/index.html,B3,pass,2026-11-04,code,1 h1,2027-02-02
 lectures/index.html,B4,pass,2026-11-04,code,"21 כותרות, 4 כשאלה",2027-02-02
-lectures/index.html,B5,pass,2026-11-04,code,פסקה ראשונה אחרי h1: 318 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2027-02-02
-lectures/index.html,B6,pass,2026-11-04,code,1105 מילים,2027-02-02
+lectures/index.html,B5,pass,2026-11-04,code,פסקה ראשונה אחרי h1: 317 תווים (פרוקסי; מיקום ויזואלי לא נמדד),2027-02-02
+lectures/index.html,B6,pass,2026-11-04,code,1137 מילים,2027-02-02
 lectures/index.html,B7,fail,2026-11-04,code,2 ללא width/height; 2 ללא loading,2026-11-11
 lectures/index.html,B8,fail,2026-11-04,code,3 קישורים עצמיים,2026-11-11
 lectures/index.html,B9,pass,2026-11-04,code,"Answer, Audience, BreadcrumbList, Country, FAQPage, ListItem",2027-02-02
 lectures/index.html,B10,pass,2026-11-04,code,אינו עמוד עריכתי,2027-02-02
 lectures/index.html,B11,pass,2026-11-04,code,טלפון/וואטסאפ בעמוד,2027-02-02
 lectures/index.html,C1,pass,2026-11-04,code,"lang=""he-IL"" dir=""rtl""",2027-02-02
-lectures/index.html,C2,pass,2026-11-04,code,"6 רצפים, 41 bdi",2027-02-02
+lectures/index.html,C2,pass,2026-11-04,code,"7 רצפים, 42 bdi",2027-02-02
 lectures/index.html,C3,pass,2026-11-04,code,אין לטינית ב-title — אין סיכון bidi,2027-02-02
 lectures/index.html,C4,pass,2026-11-04,code,אין ניקוד,2027-02-02
 lectures/index.html,C6,unknown,2026-11-04,code,כיסוי וריאנטים מורפולוגיים דורש נתוני נפח חיפוש,2026-12-04
-lectures/index.html,C7,pass,2026-11-04,code,אין מונחים מקצועיים לטיניים הדורשים הגדרה,2027-02-02
+lectures/index.html,C7,pass,2026-11-04,code,1 צמדי מונח עברי (Latin) עבור ['BESS'],2027-02-02
 lectures/index.html,C8,pass,2026-11-04,code,אין טבלאות,2027-02-02
 lectures/index.html,C10,pass,2026-11-04,code,"inLanguage he-IL, UTF-8 תקין",2027-02-02
 lectures/index.html,D3,unknown,2026-11-04,code,מבחן חילוץ 40 מילים דורש שיפוט אנושי לכל מקטע,2026-12-04
