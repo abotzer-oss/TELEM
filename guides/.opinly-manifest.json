@@ -47,7 +47,7 @@
   "environmental-impact-assessment-when-required": {
     "slug": "environmental-impact-assessment-when-required",
     "title": "תסקיר השפעה על הסביבה: מתי הוא חובה, מי מגיש ואיך הוא שונה מנספח סביבתי רגיל",
-    "syncedAt": "2026-10-12T12:42:23.746Z"
+    "syncedAt": "2026-11-04T12:28:48.524Z"
   },
   "waste-annex-permit-application-guide": {
     "slug": "waste-annex-permit-application-guide",
@@ -57,6 +57,11 @@
   "post-3": {
     "slug": "post-3",
     "title": "מה עושה יועץ סביבתי ומתי חייבים אותו בפרויקט בנייה?",
-    "syncedAt": "2026-10-27T10:11:08.358Z"
+    "syncedAt": "2026-11-04T12:28:48.080Z"
+  },
+  "eia-objections-after-deposit-committee-decision": {
+    "slug": "eia-objections-after-deposit-committee-decision",
+    "title": "התנגדויות לתסקיר סביבתי: מה קורה אחרי ההפקדה בוועדה",
+    "syncedAt": "2026-11-04T12:28:47.824Z"
   }
 }
