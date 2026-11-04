@@ -44,6 +44,17 @@ if [ -f tools/check_lead_guard.py ]; then
   }
 fi
 
+# --- 1ב. רשימת "דפים נוספים באתר" (חוסם) ---
+# מקור אחד: tools/footer_links.json. שינוי ביד בקובץ HTML בודד יחזור אחורה.
+if [ -f tools/footer_links.py ] &&
+   git diff --cached --name-only --diff-filter=ACMR | grep -qE '\.html$|footer_links\.json$'; then
+  "$PY" tools/footer_links.py --check || {
+    echo "" >&2
+    echo "ה-commit נעצר: רשימת הקישורים בפוטר לא מסונכרנת." >&2
+    exit 1
+  }
+fi
+
 # --- 2. sitemap.xml (בונה מחדש ומוסיף לקומיט) ---
 if [ -f tools/build_sitemap.py ] &&
    git diff --cached --name-only --diff-filter=ACMRD | grep -qE '\.html$'; then
