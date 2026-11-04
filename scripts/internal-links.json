@@ -1,0 +1,204 @@
+{
+  "bess": [
+    {
+      "context": "כולל מה כולל הליווי ומה אתם מקבלים בפרויקטי אנרגיה",
+      "anchor": "מה כולל הליווי ומה אתם מקבלים בפרויקטי אנרגיה",
+      "href": "/solar/"
+    },
+    {
+      "context": "ראו מתי נדרש נספח סביבתי לפרויקט <bdi>BESS</bdi>?",
+      "anchor": "מתי נדרש נספח סביבתי לפרויקט <bdi>BESS</bdi>?",
+      "href": "/guides/solar-bess.html"
+    }
+  ],
+  "building-permit-environmental-annex-process": [
+    {
+      "context": "לעומק יחד עם יועץ סביבתי, עוד",
+      "anchor": "יועץ סביבתי",
+      "href": "/env/"
+    },
+    {
+      "context": "ריאליים כדאי לעיין במדריך המפורט",
+      "anchor": "במדריך המפורט",
+      "href": "/guides/timeline.html"
+    },
+    {
+      "context": "המדריך הכנה למתי באמת צריך יועץ סביבתי",
+      "anchor": "המדריך הכנה למתי באמת צריך יועץ סביבתי",
+      "href": "/guides/when-to-consult.html"
+    }
+  ],
+  "construction-waste-management-legal-guide": [
+    {
+      "context": "מתמחה בהכנת נספחי פסולת",
+      "anchor": "הכנת נספחי פסולת",
+      "href": "/construction-waste/"
+    },
+    {
+      "context": "בטבלת מקדמי החישוב הרשמית",
+      "anchor": "טבלת מקדמי החישוב הרשמית",
+      "href": "/guides/waste-quantities.html"
+    },
+    {
+      "context": "הגשת נספח פסולת כחלק מתיק ההיתר",
+      "anchor": "נספח פסולת כחלק מתיק ההיתר",
+      "href": "/guides/waste-annex-permit-application-guide.html"
+    }
+  ],
+  "election-waste-environmental-impact": [
+    {
+      "context": "הצמתים שבהם יועץ סביבה הוא הכרחי",
+      "anchor": "הצמתים שבהם יועץ סביבה הוא הכרחי",
+      "href": "/guides/when-to-consult.html"
+    },
+    {
+      "find": "מוזמנים לפנות לצוות טלם לייעוץ מקצועי ומהיר.</p>",
+      "replace": "מוזמנים לפנות לצוות טלם לייעוץ מקצועי ומהיר. לתכנון הפרדה במקור ומיחזור בעסק וברשות ראו <a href=\"/recycling/\" class=\"text-telem-forest font-bold hover:underline\">ייעוץ מיחזור פסולת</a>.</p>"
+    }
+  ],
+  "environmental-annex-urban-renewal-projects": [
+    {
+      "context": "אם אתם מתכננים פרויקט התחדשות עירונית",
+      "anchor": "פרויקט התחדשות עירונית",
+      "href": "/urban-renewal/"
+    },
+    {
+      "context": "נפחי פסולת הריסה גבוהים",
+      "anchor": "נפחי פסולת הריסה גבוהים",
+      "href": "/guides/construction-waste-management-legal-guide.html"
+    },
+    {
+      "context": "קרקע שייתכן שלא נבדקה מעולם לעומק",
+      "anchor": "קרקע שייתכן שלא נבדקה מעולם לעומק",
+      "href": "/guides/history-when.html"
+    }
+  ],
+  "environmental-impact-assessment-when-required": [
+    {
+      "context": "נספח סביבתי להיתר בנייה ותב&quot;ע בישראל",
+      "anchor": "נספח סביבתי להיתר בנייה ותב&quot;ע בישראל",
+      "href": "/env/"
+    },
+    {
+      "context": "הסף הרגולטורי שמחייב תסקיר",
+      "anchor": "הסף הרגולטורי שמחייב תסקיר",
+      "href": "/guides/post-4.html"
+    },
+    {
+      "context": "בהקשר של מתקנים סולאריים ומערכות <bdi>BESS</bdi>",
+      "anchor": "מתקנים סולאריים ומערכות <bdi>BESS</bdi>",
+      "href": "/guides/solar-bess.html"
+    }
+  ],
+  "post-2": [
+    {
+      "context": "הרי שרישיון עסק עם תנאים סביבתיים",
+      "anchor": "רישיון עסק עם תנאים סביבתיים",
+      "href": "/consulting/"
+    },
+    {
+      "context": "היתר רעלים מאת הממונה",
+      "anchor": "היתר רעלים",
+      "href": "/toxins-permit/"
+    },
+    {
+      "context": "במדריך הייעודי שלנו",
+      "anchor": "במדריך הייעודי שלנו",
+      "href": "/guides/post-3.html"
+    }
+  ],
+  "post-3": [
+    {
+      "context": "נספח סביבתי להיתר בנייה ותב&quot;ע בישראל",
+      "anchor": "נספח סביבתי להיתר בנייה ותב&quot;ע בישראל",
+      "href": "/env/"
+    },
+    {
+      "context": "איך מתכננים ניהול פסולת נכון כבר משלב היתר הבנייה",
+      "anchor": "איך מתכננים ניהול פסולת נכון כבר משלב היתר הבנייה",
+      "href": "/guides/construction-waste-management-legal-guide.html"
+    }
+  ],
+  "post-4": [
+    {
+      "context": "נספח סביבתי להיתר בנייה ותב&quot;ע בישראל",
+      "anchor": "נספח סביבתי להיתר בנייה ותב&quot;ע בישראל",
+      "href": "/env/"
+    },
+    {
+      "context": "למה הנספח הסביבתי כאן שונה מבנייה חדשה על קרקע פנויה",
+      "anchor": "למה הנספח הסביבתי כאן שונה מבנייה חדשה על קרקע פנויה",
+      "href": "/guides/environmental-annex-urban-renewal-projects.html"
+    }
+  ],
+  "pre-construction-soil-testing-guide": [
+    {
+      "context": "סקר היסטורי (<bdi>Phase I</bdi>) מבוצע",
+      "anchor": "סקר היסטורי (<bdi>Phase I</bdi>)",
+      "href": "/history/"
+    },
+    {
+      "context": "במדריך לסקרי קרקע ורגולציה",
+      "anchor": "במדריך לסקרי קרקע ורגולציה",
+      "href": "/guides/soil-survey-cost.html"
+    }
+  ],
+  "soil-contamination-sources-israel": [
+    {
+      "context": "לכן, סקר היסטורי מוקדם",
+      "anchor": "סקר היסטורי מוקדם",
+      "href": "/history/"
+    },
+    {
+      "context": "בדיקות קרקע פרואקטיביות",
+      "anchor": "בדיקות קרקע פרואקטיביות",
+      "href": "/guides/pre-construction-soil-testing-guide.html"
+    }
+  ],
+  "soil-survey-after-findings": [
+    {
+      "context": "מה כולל הסקר ומה אתם מקבלים",
+      "anchor": "מה כולל הסקר ומה אתם מקבלים",
+      "href": "/history/"
+    },
+    {
+      "context": "במדריך <bdi>Phase II</bdi> במסלול קבלת ההיתר",
+      "anchor": "במדריך <bdi>Phase II</bdi> במסלול קבלת ההיתר",
+      "href": "/guides/soil-testing.html"
+    },
+    {
+      "context": "הערכת עלויות ריאלית ל-2026",
+      "anchor": "הערכת עלויות ריאלית ל-2026",
+      "href": "/guides/soil-survey-cost.html"
+    }
+  ],
+  "waste-annex-permit-application-guide": [
+    {
+      "context": "לנספח פסולת מגובש",
+      "anchor": "נספח פסולת מגובש",
+      "href": "/construction-waste/"
+    },
+    {
+      "context": "במדריך לניהול פסולת כבר משלב היתר הבנייה",
+      "anchor": "במדריך לניהול פסולת כבר משלב היתר הבנייה",
+      "href": "/guides/construction-waste-management-legal-guide.html"
+    },
+    {
+      "context": "במדריך לתהליך נספח סביבתי",
+      "anchor": "במדריך לתהליך נספח סביבתי",
+      "href": "/guides/building-permit-environmental-annex-process.html"
+    }
+  ],
+  "waste-storage-annex-residential-projects": [
+    {
+      "context": "נספחי ניהול פסולת לפרויקטי מגורים",
+      "anchor": "נספחי ניהול פסולת לפרויקטי מגורים",
+      "href": "/waste/"
+    },
+    {
+      "context": "ניתן לעיין במאמר הייעודי בנושא",
+      "anchor": "במאמר הייעודי בנושא",
+      "href": "/in-the-news/construction-waste-law.html"
+    }
+  ]
+}

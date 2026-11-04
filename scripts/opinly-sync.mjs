@@ -22,6 +22,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import os from 'node:os';
+import { loadRules, applyInternalLinks } from './internal-links.mjs';
 
 // ----------------------------------------------------------------------------
 // הגדרות
@@ -48,6 +49,7 @@ const CONFIG = {
   },
 };
 
+const INTERNAL_LINKS = loadRules();
 const DRY_RUN = process.argv.includes('--dry-run');
 const FORCE = process.argv.includes('--force');
 
@@ -364,6 +366,8 @@ function renderPage(template, post, slug) {
   // גוף המאמר: עץ צמתים -> HTML -> איחוד מונחים -> בידוד לטיני
   let body = contentToHtml(post.content);
   body = isolateLatin(normalizeTerms(body));
+  // קישורים פנימיים שהוגדרו בריפו (scripts/internal-links.json) — אחרת נמחקים בכל סנכרון
+  body = applyInternalLinks(body, slug, INTERNAL_LINKS, warn);
 
   // ה-H1 מגיע מהכותרת, ולא מהתוכן — מסירים h1 כפול אם קיים
   body = body.replace(/<h1[^>]*>[\s\S]*?<\/h1>/i, '');
