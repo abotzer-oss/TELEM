@@ -9,6 +9,10 @@
       "context": "ראו מתי נדרש נספח סביבתי לפרויקט <bdi>BESS</bdi>?",
       "anchor": "מתי נדרש נספח סביבתי לפרויקט <bdi>BESS</bdi>?",
       "href": "/guides/solar-bess.html"
+    },
+    {
+      "find": "זה לא סיכון תיאורטי, אלא אתגר שהבחינה הסביבתית חייבת לטפל בו ביסודיות.",
+      "replace": "זה לא סיכון תיאורטי, אלא אתגר שהבחינה הסביבתית חייבת לטפל בו ביסודיות. לוועדי יישובים ולמועצות יש גם <a href=\"/lectures/#lecture-3\" class=\"text-telem-forest font-bold hover:underline\">הרצאה על מתקני אגירה ליד הבית</a>."
     }
   ],
   "building-permit-environmental-annex-process": [
@@ -54,6 +58,10 @@
     {
       "find": "מוזמנים לפנות לצוות טלם לייעוץ מקצועי ומהיר.</p>",
       "replace": "מוזמנים לפנות לצוות טלם לייעוץ מקצועי ומהיר. לתכנון הפרדה במקור ומיחזור בעסק וברשות ראו <a href=\"/recycling/\" class=\"text-telem-forest font-bold hover:underline\">ייעוץ מיחזור פסולת</a>.</p>"
+    },
+    {
+      "find": "ופסולת בחירות לא מנוהלת מוסיפה עומס על מערכת שכבר פועלת בקצה יכולתה.",
+      "replace": "ופסולת בחירות לא מנוהלת מוסיפה עומס על מערכת שכבר פועלת בקצה יכולתה. לרשויות יש גם <a href=\"/lectures/#lecture-2\" class=\"text-telem-forest font-bold hover:underline\">הרצאה על משבר ההטמנה</a>."
     }
   ],
   "environmental-annex-urban-renewal-projects": [
@@ -110,6 +118,10 @@
       "context": "איך מתכננים ניהול פסולת נכון כבר משלב היתר הבנייה",
       "anchor": "איך מתכננים ניהול פסולת נכון כבר משלב היתר הבנייה",
       "href": "/guides/construction-waste-management-legal-guide.html"
+    },
+    {
+      "find": "נכנסים אחרי האכלוס למסלול רישוי תפעולי, וגם בו נדרש לרוב ליווי סביבתי.",
+      "replace": "נכנסים אחרי האכלוס למסלול רישוי תפעולי, וגם בו נדרש לרוב ליווי סביבתי. לעסקים יש גם <a href=\"/lectures/#lecture-6\" class=\"text-telem-forest font-bold hover:underline\">הרצאה על בינה מלאכותית ורגולציה סביבתית</a>."
     }
   ],
   "pre-construction-soil-testing-guide": [
@@ -134,6 +146,10 @@
       "context": "בדיקות קרקע פרואקטיביות",
       "anchor": "בדיקות קרקע פרואקטיביות",
       "href": "/guides/pre-construction-soil-testing-guide.html"
+    },
+    {
+      "find": "אם אתם עוסקים בפיתוח, רכישה או תכנון של קרקע עם היסטוריה לא ברורה, המידע הזה רלוונטי לפרויקט שלכם.",
+      "replace": "אם אתם עוסקים בפיתוח, רכישה או תכנון של קרקע עם היסטוריה לא ברורה, המידע הזה רלוונטי לפרויקט שלכם. לצוותי תכנון יש גם <a href=\"/lectures/#lecture-4\" class=\"text-telem-forest font-bold hover:underline\">הרצאה על <bdi>PFAS</bdi> בקרקע ובמים</a>."
     }
   ],
   "soil-survey-after-findings": [
@@ -151,6 +167,10 @@
       "context": "הערכת עלויות ריאלית ל-2026",
       "anchor": "הערכת עלויות ריאלית ל-2026",
       "href": "/guides/soil-survey-cost.html"
+    },
+    {
+      "find": "מי שמכיר את המסלול הזה מראש חוסך חודשים יקרים של עיכובים מיותרים.",
+      "replace": "מי שמכיר את המסלול הזה מראש חוסך חודשים יקרים של עיכובים מיותרים. ליזמים ולאדריכלים יש גם <a href=\"/lectures/#lecture-5\" class=\"text-telem-forest font-bold hover:underline\">הרצאה על קרקע מזוהמת והיתרי בנייה</a>."
     }
   ],
   "waste-annex-permit-application-guide": [
