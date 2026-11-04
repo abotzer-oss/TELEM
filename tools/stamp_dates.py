@@ -6,7 +6,7 @@ stamp_dates.py — שומר על תאריכי העדכון נכונים, בסכ�
 מודלים מנמיכים משקל לתוכן שנראה לא מתוארך, ו-Google דורש dateModified אמיתי
 כדי לא להתעלם ממנו. לכן התאריך חייב להתעדכן אוטומטית ולא בזיכרון של מישהו.
 
-לכל עמוד עריכתי (guides/, in-the-news/) הסקריפט מוודא:
+לכל עמוד עריכתי (guides/, in-the-news/, lectures/) הסקריפט מוודא:
   * שורת בייליין גלויה מתחת ל-h1:  מאת אבירם בוצר · עודכן: <חודש> <שנה>
     עם <time datetime="YYYY-MM-DD"> כדי שהתאריך יהיה קריא גם למכונה.
   * "dateModified" בסכמת ה-JSON-LD — זהה לתאריך שבבייליין.
@@ -56,7 +56,7 @@ def git(*a):
 
 
 def is_editorial(rel):
-    return rel.startswith(("guides/", "in-the-news/"))
+    return rel.startswith(("guides/", "in-the-news/", "lectures/"))
 
 
 def last_commit(rel):
