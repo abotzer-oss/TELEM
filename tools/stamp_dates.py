@@ -73,7 +73,8 @@ BYLINE_RE = re.compile(r'<p class="page-updated".*?</p>', re.S)
 
 
 # עמודי רכזת וכלי — תאריך עדכון כן, קרדיט מחבר לא: אין להם מחבר יחיד.
-HUBS = {"guides/index.html", "in-the-news/index.html", "guides/waste-calculation.html"}
+HUBS = {"guides/index.html", "in-the-news/index.html", "guides/waste-calculation.html",
+        "lectures/index.html"}
 
 
 def byline(d, rel):
