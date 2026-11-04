@@ -80,11 +80,6 @@
       "href": "/env/"
     },
     {
-      "context": "הסף הרגולטורי שמחייב תסקיר",
-      "anchor": "הסף הרגולטורי שמחייב תסקיר",
-      "href": "/guides/post-4.html"
-    },
-    {
       "context": "בהקשר של מתקנים סולאריים ומערכות <bdi>BESS</bdi>",
       "anchor": "מתקנים סולאריים ומערכות <bdi>BESS</bdi>",
       "href": "/guides/solar-bess.html"
@@ -95,7 +90,7 @@
       "href": "/guides/eia-objections-after-deposit-committee-decision.html"
     }
   ],
-  "post-2": [
+  "post-3": [
     {
       "context": "הרי שרישיון עסק עם תנאים סביבתיים",
       "anchor": "רישיון עסק עם תנאים סביבתיים",
@@ -107,13 +102,6 @@
       "href": "/toxins-permit/"
     },
     {
-      "context": "במדריך הייעודי שלנו",
-      "anchor": "במדריך הייעודי שלנו",
-      "href": "/guides/post-3.html"
-    }
-  ],
-  "post-3": [
-    {
       "context": "נספח סביבתי להיתר בנייה ותב&quot;ע בישראל",
       "anchor": "נספח סביבתי להיתר בנייה ותב&quot;ע בישראל",
       "href": "/env/"
@@ -122,18 +110,6 @@
       "context": "איך מתכננים ניהול פסולת נכון כבר משלב היתר הבנייה",
       "anchor": "איך מתכננים ניהול פסולת נכון כבר משלב היתר הבנייה",
       "href": "/guides/construction-waste-management-legal-guide.html"
-    }
-  ],
-  "post-4": [
-    {
-      "context": "נספח סביבתי להיתר בנייה ותב&quot;ע בישראל",
-      "anchor": "נספח סביבתי להיתר בנייה ותב&quot;ע בישראל",
-      "href": "/env/"
-    },
-    {
-      "context": "למה הנספח הסביבתי כאן שונה מבנייה חדשה על קרקע פנויה",
-      "anchor": "למה הנספח הסביבתי כאן שונה מבנייה חדשה על קרקע פנויה",
-      "href": "/guides/environmental-annex-urban-renewal-projects.html"
     }
   ],
   "pre-construction-soil-testing-guide": [

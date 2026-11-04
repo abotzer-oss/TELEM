@@ -20,6 +20,7 @@
  */
 
 import fs from 'node:fs/promises';
+import fsSync from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
 import { loadRules, applyInternalLinks } from './internal-links.mjs';
@@ -50,6 +51,12 @@ const CONFIG = {
 };
 
 const INTERNAL_LINKS = loadRules();
+// פוסטים שאוחדו לעמוד אחר: לא כותבים אותם, לא מוסיפים כרטיס במרכז הידע ולא
+// מכניסים לסייטמאפ. דף ההפניה שלהם נשמר ביד ב-guides/<slug>.html.
+const RETIRED = (() => {
+  try { return JSON.parse(fsSync.readFileSync(new URL('./retired-slugs.json', import.meta.url), 'utf8')); }
+  catch { return {}; }
+})();
 const DRY_RUN = process.argv.includes('--dry-run');
 const FORCE = process.argv.includes('--force');
 
@@ -518,6 +525,11 @@ async function main() {
     const slug = safeSlug(card.slug, card.title);
     if (!slug) {
       skipped.push({ title: card.title || card.slug || '(ללא כותרת)', reason: 'slug פגום' });
+      continue;
+    }
+
+    if (Object.prototype.hasOwnProperty.call(RETIRED, slug)) {
+      log(`↪ ${slug} אוחד ל-${RETIRED[slug]} — מדלג (דף הפניה)`);
       continue;
     }
 
