@@ -58,9 +58,17 @@ def rebuild(chunk):
 
 
 def files():
+    # רק קבצים שב-git (כולל staged): קבצי גיבוי ופלט מקומי שלא נכנסו למאגר
+    # לא מתפרסמים, ואסור להם לחסום קומיט.
+    import subprocess
+    out = subprocess.run(["git", "-C", REPO, "ls-files", "*.html"],
+                         capture_output=True, text=True, encoding="utf-8").stdout
+    tracked = set(out.split("\n")) if out else None
     for f in sorted(glob.glob(os.path.join(REPO, "**", "*.html"), recursive=True)):
         rel = os.path.relpath(f, REPO).replace(os.sep, "/")
         if rel.startswith(("lp/", "node_modules/", "audit/")):
+            continue
+        if tracked is not None and rel not in tracked:
             continue
         yield rel, f
 
