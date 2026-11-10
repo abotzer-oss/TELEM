@@ -39,13 +39,14 @@
   /* ---------- click tracking (whatsapp / call) ---------- */
   function bindClickTracking() {
     document.querySelectorAll('[data-track="whatsapp"]').forEach(function (el) {
-      el.addEventListener('click', function () { track('click_whatsapp', { page_id: pageId() }); oaiqContact(); });
+      el.addEventListener('click', function () { track('click_whatsapp', { page_id: pageId() }); });
     });
     document.querySelectorAll('[data-track="call"]').forEach(function (el) {
       el.addEventListener('click', function () { track('click_call', { page_id: pageId() }); oaiqContact(); });
     });
   }
-  // OpenAI Ads — פנייה ישירה (וואטסאפ / טלפון) נספרת כהמרה נפרדת: contact_click.
+  // OpenAI Ads — רק חיוג נספר כהמרה (contact_click). לחיצה על וואטסאפ נמדדת ב-GA4 בלבד:
+  // היא הביאה בעיקר שאלות חינם, ולא רוצים שהקמפיין ילמד לחפש את הקהל הזה (2026-11-10).
   // contact_click אינו אירוע סטנדרטי — חייב לעבור כ-"custom" בדיוק לפי הקוד ב-Ads Manager,
   // אחרת הפיקסל דוחה אותו ("Unsupported event name"). הערוץ נמדד ב-GA4 (click_whatsapp / click_call).
   function oaiqContact() {
