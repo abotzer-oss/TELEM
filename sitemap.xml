@@ -15,7 +15,7 @@
   </url>
   <url>
     <loc>https://telemenv.co.il/env/</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-12</lastmod>
   </url>
   <url>
     <loc>https://telemenv.co.il/environmental-management/</loc>
@@ -36,6 +36,10 @@
   <url>
     <loc>https://telemenv.co.il/guides/cities-waste.html</loc>
     <lastmod>2026-11-05</lastmod>
+  </url>
+  <url>
+    <loc>https://telemenv.co.il/guides/construction-environmental-budget-allocation.html</loc>
+    <lastmod>2026-11-10</lastmod>
   </url>
   <url>
     <loc>https://telemenv.co.il/guides/construction-waste-management-legal-guide.html</loc>
@@ -63,11 +67,15 @@
   </url>
   <url>
     <loc>https://telemenv.co.il/guides/</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-12</lastmod>
   </url>
   <url>
     <loc>https://telemenv.co.il/guides/industrial-land-historical-survey-before-signing.html</loc>
     <lastmod>2026-11-07</lastmod>
+  </url>
+  <url>
+    <loc>https://telemenv.co.il/guides/mapals-prtr-reporting.html</loc>
+    <lastmod>2026-11-12</lastmod>
   </url>
   <url>
     <loc>https://telemenv.co.il/guides/post-3.html</loc>
@@ -116,6 +124,10 @@
   <url>
     <loc>https://telemenv.co.il/guides/waste-quantities.html</loc>
     <lastmod>2026-11-05</lastmod>
+  </url>
+  <url>
+    <loc>https://telemenv.co.il/guides/waste-room-planning-new-residential-building.html</loc>
+    <lastmod>2026-11-11</lastmod>
   </url>
   <url>
     <loc>https://telemenv.co.il/guides/waste-storage-annex-residential-projects.html</loc>
@@ -187,14 +199,6 @@
   </url>
   <url>
     <loc>https://telemenv.co.il/waste/</loc>
-    <lastmod>2026-11-05</lastmod>
-  </url>
-  <url>
-    <loc>https://telemenv.co.il/guides/construction-environmental-budget-allocation.html</loc>
-    <lastmod>2026-11-09</lastmod>
-  </url>
-  <url>
-    <loc>https://telemenv.co.il/guides/waste-room-planning-new-residential-building.html</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-12</lastmod>
   </url>
 </urlset>
