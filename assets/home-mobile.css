@@ -1,0 +1,45 @@
+/* Telem home page - mobile header + green hero (under 768px only).
+   Everything below the hero is left exactly as in home-v2.css / telem-v2.css.
+   The logo image and the footer are not touched here. */
+@media (max-width: 767px){
+  /* ---- header bar: accessibility button sits inside it, far left ---- */
+  body.tv2.home-v2{--hdr:60px}
+  body.tv2.home-v2 .tv2-head-in{padding-left:62px;gap:10px}
+  body.tv2.home-v2 .tv2-acts{gap:4px}
+  body.tv2.home-v2 .tv2-tel{padding:0 12px;font-size:14.5px}
+  body.tv2.home-v2 .tv2-menu-btn{width:44px}
+  body.tv2.home-v2 #accessibilityToggle{top:10px!important;bottom:auto!important;left:12px!important;width:40px!important;height:40px!important;padding:0!important;box-shadow:none!important;border:1px solid rgba(255,255,255,.3)!important;z-index:10001}
+  body.tv2.home-v2 #accessibilityPanel{top:68px!important;bottom:auto!important;left:12px!important;right:12px!important;width:auto!important;max-height:calc(100svh - 140px);overflow:auto}
+
+  /* ---- cookie notice: one bottom drawer that covers the call bar while open ---- */
+  body.tv2.home-v2 #cookieBanner{bottom:0!important;left:0!important;right:0!important;border-radius:18px 18px 0 0!important;padding:14px 16px calc(14px + env(safe-area-inset-bottom))!important;z-index:10003!important}
+
+  /* ---- hero: headline + two buttons side by side, furrows as a small mark ---- */
+  .home-v2 .hero-body{padding:22px 0 18px}
+  .home-v2 .hero-body .wrap{position:relative;gap:0}
+  .home-v2 .furrows{position:absolute;top:2px;left:20px;order:0;width:58px;height:40px;gap:4px}
+  .home-v2 .hero h1{font-size:40px;line-height:1.04;margin-bottom:12px}
+  .home-v2 .hero h1 .kicker{font-size:13px;margin-bottom:12px;padding-left:70px}
+  .home-v2 .hero .desc{font-size:16px;line-height:1.5}
+  .home-v2 .hero .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+  .home-v2 .hero .actions .btn{min-height:54px;padding:0 10px;font-size:15.5px;border-radius:16px;gap:7px;text-align:center}
+
+  /* entity paragraph: three lines + "עוד על תלם" (full text stays in the DOM) */
+  .home-v2 .hero .entity{order:3;font-size:14px;line-height:1.55;margin-top:18px;padding-top:14px}
+  .home-v2 .hero .entity.m-collapsible:not(.is-open){display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
+  .home-v2 .hero .m-more:not([hidden]){order:4;display:inline-flex;align-items:center;gap:8px;align-self:flex-start;min-height:44px;margin-top:6px;padding:0;border:0;background:transparent;color:#d3d6cb;font:700 14px/1.2 "Assistant",system-ui,sans-serif;cursor:pointer}
+  .home-v2 .hero .m-more::after{content:"";width:7px;height:7px;border:solid currentColor;border-width:0 2px 2px 0;transform:rotate(45deg) translateY(-2px);transition:transform .2s}
+  .home-v2 .hero .m-more[aria-expanded="true"]::after{transform:rotate(-135deg) translateY(-2px)}
+  .home-v2 .hero .m-more:focus-visible{outline:2px solid #f3efe9;outline-offset:3px;border-radius:4px}
+
+  /* proof points: one swipeable chip row */
+  .home-v2 .hero-foot .wrap{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:14px 20px 16px;scrollbar-width:none}
+  .home-v2 .hero-foot .wrap::-webkit-scrollbar{display:none}
+  .home-v2 .hero-foot .wrap>div{flex:0 0 74%;scroll-snap-align:start;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:12px 14px;font-size:13.5px}
+  .home-v2 .hero-foot strong{font-size:16px}
+}
+@media (max-width: 359px){
+  body.tv2.home-v2 .tv2-tel{padding:0 9px;font-size:13px}
+  .home-v2 .hero h1{font-size:36px}
+  .home-v2 .hero .actions .btn{font-size:14px;padding:0 8px}
+}
