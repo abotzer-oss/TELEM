@@ -311,8 +311,9 @@
     @media(min-width:880px){.m-cta{display:none}}
     @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
   </style>
+<link rel="stylesheet" href="/assets/telem-v2.css">
 </head>
-<body>
+<body class="tv2">
   <a class="skip" href="#main">דילוג לתוכן</a>
 
   <div class="demo-bar" role="note">
@@ -320,21 +321,79 @@
     דף ניסיון – לא ניתן לבצע הזמנה אמיתית
   </div>
 
-  <header class="site-head">
-    <div class="wrap">
-      <a href="/" aria-label="תלם – ניהול סביבה ופסולת, לדף הבית"><img src="img/logo.svg" alt="תלם – ניהול סביבה ופסולת" width="111" height="44"></a>
-      <a class="head-link" href="#order">להזמנת דוח</a>
+  <header class="tv2-head" role="banner">
+        <div class="tv2-head-in">
+            <a href="/" class="tv2-logo" title="תלם ניהול סביבה - דף הבית"><img src="/logo.png" alt="לוגו תלם ניהול סביבה" width="1586" height="659"></a>
+            <nav class="tv2-nav" aria-label="תפריט ראשי">
+                <div class="tv2-dd">
+                    <button type="button" class="tv2-dd-btn" aria-expanded="false" aria-controls="tv2Services">שירותים<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+                    <div class="tv2-dd-panel" id="tv2Services">
+                    <a href="/waste/">נספח אצירת אשפה</a>
+                    <a href="/env/">נספח סביבתי</a>
+                    <a href="/history/">סקר היסטורי <bdi>Phase I</bdi></a>
+                    <a href="/solar/">סולארי ואגירה</a>
+                    <a href="/landscape-appendix/">נספח נופי-סביבתי</a>
+                    <a href="/construction-waste/">נספח פסולת בניין</a>
+                    <a href="/environmental-management/">ניהול סביבה <bdi>ONSITE</bdi></a>
+                    <a href="/toxins-permit/">היתר רעלים</a>
+                    <a href="/recycling/">יועץ מיחזור פסולת</a>
+                    <a href="/urban-renewal/">ליווי סביבתי להתחדשות עירונית</a>
+                    <a href="/rural/">ייעוץ סביבתי למרחב הכפרי</a>
+                    <a href="/consulting/">ייעוץ סביבתי לעסקים</a>
+                    <a href="#order">להזמנת דוח</a>
+                    </div>
+                </div>
+                <a href="/guides/">מרכז הידע</a>
+                <a href="/in-the-news/">סביבה בכותרות</a>
+                <a href="/lectures/">הרצאות</a>
+                <a href="/podcast/">פודקאסט</a>
+                <a href="/about.html">אודות</a>
+            </nav>
+            <div class="tv2-acts">
+                <a href="https://www.linkedin.com/in/aviram-botzer-01782aa5/" target="_blank" rel="noopener noreferrer" class="tv2-li" title="LinkedIn" aria-label="פרופיל LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                <a href="tel:0506890650" class="tv2-tel">050-6890650</a>
+                <button type="button" id="tv2MenuBtn" class="tv2-menu-btn" aria-label="פתח תפריט" aria-expanded="false" aria-controls="tv2Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+        </div>
+    </header>
+    <div id="tv2Menu" class="tv2-menu" hidden>
+      <nav aria-label="תפריט נייד">
+        <a href="/">דף הבית</a>
+        <span class="tv2-menu-label">שירותים</span>
+        <a href="/waste/" class="sub">נספח אצירת אשפה</a>
+        <a href="/env/" class="sub">נספח סביבתי</a>
+        <a href="/history/" class="sub">סקר היסטורי <bdi>Phase I</bdi></a>
+        <a href="/solar/" class="sub">סולארי ואגירה</a>
+        <a href="/landscape-appendix/" class="sub">נספח נופי-סביבתי</a>
+        <a href="/construction-waste/" class="sub">נספח פסולת בניין</a>
+        <a href="/environmental-management/" class="sub">ניהול סביבה <bdi>ONSITE</bdi></a>
+        <a href="/toxins-permit/" class="sub">היתר רעלים</a>
+        <a href="/recycling/" class="sub">יועץ מיחזור פסולת</a>
+        <a href="/urban-renewal/" class="sub">ליווי סביבתי להתחדשות עירונית</a>
+        <a href="/rural/" class="sub">ייעוץ סביבתי למרחב הכפרי</a>
+        <a href="/consulting/" class="sub">ייעוץ סביבתי לעסקים</a>
+        <a href="/guides/">מרכז הידע</a>
+        <a href="/in-the-news/">סביבה בכותרות</a>
+        <a href="/lectures/">הרצאות</a>
+        <a href="/podcast/">פודקאסט</a>
+        <a href="/about.html">אודות</a>
+        <a href="#order">להזמנת דוח</a>
+        <a href="https://www.linkedin.com/in/aviram-botzer-01782aa5/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </nav>
     </div>
-  </header>
 
-  <main id="main">
+  <main id="main" class="tv2-main">
+<div class="tv2-hero tv2-hero-x"><div class="tv2-hero-in"><div class="tv2-hero-text"><span class="eyebrow">לפני שקונים או שוכרים דירה</span>
+<h1 id="hero-title">דוח סביבה אישי לנכס</h1>
+<p class="hero-lead">מזינים כתובת, ומקבלים במייל דוח ברור על מה שיש סביב הבית: קרינה, רעש, תוכניות בנייה, קרקע, פסולת, אוויר והצפות.</p></div><div class="tv2-furrows" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div></div>
+
     <!-- ===== hero ===== -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap">
         <div>
-          <span class="eyebrow">לפני שקונים או שוכרים דירה</span>
-          <h1 id="hero-title">דוח סביבה אישי לנכס</h1>
-          <p class="hero-lead">מזינים כתובת, ומקבלים במייל דוח ברור על מה שיש סביב הבית: קרינה, רעש, תוכניות בנייה, קרקע, פסולת, אוויר והצפות.</p>
+          
+          
+          
           <div class="price-row">
             <div class="price"><span class="nowrap">837 ₪</span> <small>+ מע"מ</small></div>
             <a class="btn btn-primary" href="#order">להזמנת דוח</a>
@@ -611,13 +670,40 @@
     </div>
   </main>
 
-  <footer class="site-foot">
-    <div class="wrap">
-      <img src="img/logo_white.svg" alt="תלם – ניהול סביבה ופסולת" width="101" height="40">
-      <div>טלפון: <a href="tel:0506890650"><bdi>050-6890650</bdi></a> · מייל: <a href="mailto:aviram@telemenv.co.il">aviram@telemenv.co.il</a></div>
-      <div><a href="/">לאתר תלם</a></div>
-    </div>
-  </footer>
+  <footer class="tv2-foot" role="contentinfo">
+        <div class="tv2-wrap tv2-foot-in">
+            <address>
+                <img src="/logo.png" alt="לוגו תלם" width="1586" height="659" loading="lazy">
+                <p>אבירם בוצר - מביאים את הניסיון מהצד של הרשות לקידום הפרויקט שלכם.</p>
+                <a href="tel:0506890650">050-6890650</a>
+            </address>
+            <div class="tv2-foot-links">
+                <h3>דפים נוספים באתר</h3>
+                <a href="/waste/">נספח אצירת אשפה</a>
+                <a href="/env/">נספח סביבתי</a>
+                <a href="/history/">סקר היסטורי <bdi>Phase I</bdi></a>
+                <a href="/landscape-appendix/">נספח נופי-סביבתי</a>
+                <a href="/solar/">סולארי ואגירה</a>
+                <a href="/recycling/">יועץ מיחזור פסולת</a>
+                <a href="/environmental-management/">ניהול סביבה <bdi>ONSITE</bdi></a>
+                <a href="/construction-waste/">נספח פסולת בניין</a>
+                <a href="/urban-renewal/">ליווי סביבתי להתחדשות עירונית</a>
+                <a href="/rural/">ייעוץ סביבתי למרחב הכפרי</a>
+                <a href="/toxins-permit/">היתר רעלים</a>
+                <a href="/consulting/">ייעוץ סביבתי לעסקים</a>
+                <a href="/guides/">מרכז הידע</a>
+                <a href="/in-the-news/">סביבה בכותרות</a>
+                <a href="/lectures/">הרצאות וסדנאות</a>
+                <a href="/podcast/">פודקאסט חבר זבל</a>
+                <a href="/about.html">אודות תלם</a>
+            </div>
+            <div class="tv2-foot-side">
+                <a href="mailto:aviram@telemenv.co.il">aviram@telemenv.co.il</a>
+                <a href="https://www.linkedin.com/in/aviram-botzer-01782aa5/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <p class="tv2-copy">© 2026 תלם ניהול סביבה. כל הזכויות שמורות.</p>
+            </div>
+        </div>
+    </footer>
 
   <div class="m-cta" id="m-cta">
     <div class="p"><span class="nowrap">837 ₪</span> + מע"מ<small>דוח במייל תוך 7 ימים</small></div>
@@ -803,5 +889,6 @@
     }
   })();
   </script>
+<script src="/assets/telem-v2.js" defer></script>
 </body>
 </html>

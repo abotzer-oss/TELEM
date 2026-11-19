@@ -282,12 +282,73 @@
 .ep-chapters ol{grid-template-columns:minmax(0,1fr)}
 }
 </style>
+<link rel="stylesheet" href="/assets/telem-v2.css">
 </head>
-<body style="font-size: 100%;">
-    <div id="root"><div class="min-h-screen"><header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 border-b border-telem-khaki/10"><div class="max-w-7xl mx-auto px-4 h-24 flex justify-between items-center"><a href="/" class="hover:opacity-80 transition-all flex items-center"><div class="flex items-center min-w-[150px] "><img src="../logo.png" alt="תלם ניהול סביבה" class="h-16 md:h-20 w-auto object-contain block"></div></a><nav class="hidden lg:flex gap-8"><a href="/" class="text-sm font-bold transition-colors text-telem-forest hover:text-telem-moss">דף הבית</a><a href="/waste/" class="text-sm font-bold transition-colors text-telem-forest hover:text-telem-moss">נספח אצירת אשפה</a><a href="/solar/" class="text-sm font-bold transition-colors text-telem-forest hover:text-telem-moss">פרויקטים סולאריים</a><a href="/env/" class="text-sm font-bold transition-colors text-telem-forest hover:text-telem-moss">נספח סביבתי</a><a href="/history/" class="text-sm font-bold transition-colors text-telem-forest hover:text-telem-moss">סקר היסטורי</a><a href="/lectures/" class="text-sm font-bold transition-colors text-telem-forest hover:text-telem-moss">הרצאות</a><a href="/podcast/" class="text-sm font-bold transition-colors text-telem-forest hover:text-telem-moss">פודקאסט</a><a href="/about.html" class="text-sm font-bold transition-colors text-telem-forest hover:text-telem-moss">אודות</a></nav><div class="hidden md:flex items-center gap-4"><a href="https://www.linkedin.com/in/aviram-botzer-01782aa5/" target="_blank" rel="noopener noreferrer" class="text-telem-dark hover:text-telem-moss transition-colors" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide lucide-linkedin" style="width: 24px; height: 24px;"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a><a href="tel:0506890650" class="bg-telem-dark text-white px-6 py-2.5 rounded-xl font-bold hover:bg-telem-forest transition-all shadow-md">050-6890650</a></div><button id="histMenuBtn" aria-label="פתח תפריט" aria-expanded="false" aria-controls="histMobileMenu" class="lg:hidden text-telem-dark"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="menu" aria-hidden="true" class="lucide lucide-menu" style="width: 28px; height: 28px;"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></button></div></header><div id="histMobileMenu" class="lg:hidden bg-white shadow-2xl border-t border-telem-khaki/20 p-6" style="display:none;position:fixed;top:96px;left:0;right:0;z-index:95;"><nav class="flex flex-col gap-4 text-right"><a href="/" class="text-telem-dark font-bold hover:text-telem-forest">דף הבית</a><a href="/waste/" class="text-telem-dark font-bold hover:text-telem-forest">נספח אצירת אשפה</a><a href="/solar/" class="text-telem-dark font-bold hover:text-telem-forest">פרויקטים סולאריים</a><a href="/env/" class="text-telem-dark font-bold hover:text-telem-forest">נספח סביבתי</a><a href="/history/" class="text-telem-dark font-bold hover:text-telem-forest">סקר היסטורי</a><a href="/lectures/" class="text-telem-dark font-bold hover:text-telem-forest">הרצאות</a><a href="/podcast/" class="text-telem-dark font-bold hover:text-telem-forest">פודקאסט</a><a href="/about.html" class="text-telem-dark font-bold hover:text-telem-forest">אודות</a></nav></div><div id="accessibilityPanel" class="hidden bg-white shadow-2xl rounded-2xl border border-telem-khaki/20 p-6 text-right" style="position:fixed;bottom:88px;left:24px;z-index:9999;width:240px;" role="dialog" aria-label="תפריט נגישות"><div class="text-xl font-black text-telem-dark mb-4">תפריט נגישות</div><div class="flex flex-col gap-3"><button type="button" onclick="changeFontSize(1)" class="bg-telem-dark text-white py-3 px-4 rounded-xl font-bold">הגדלת טקסט</button><button type="button" onclick="changeFontSize(-1)" class="bg-telem-forest text-white py-3 px-4 rounded-xl font-bold">הקטנת טקסט</button><button type="button" onclick="toggleHighContrast()" class="bg-telem-moss text-white py-3 px-4 rounded-xl font-bold">ניגודיות גבוהה</button><button type="button" onclick="toggleUnderlineLinks()" class="bg-telem-khaki text-telem-dark py-3 px-4 rounded-xl font-bold">קו תחתון לקישורים</button><button type="button" onclick="resetAccessibility()" class="border border-telem-khaki text-telem-dark py-3 px-4 rounded-xl font-bold">איפוס</button></div></div><div class="fixed bottom-6 left-6 z-[9999]"><button id="accessibilityToggle" onclick="toggleElement('accessibilityPanel')" aria-controls="accessibilityPanel" aria-expanded="false" aria-label="פתח תפריט נגישות" class="w-14 h-14 bg-telem-dark text-white rounded-full shadow-2xl flex items-center justify-center hover:bg-telem-forest transition-all border-2 border-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="accessibility" aria-hidden="true" class="lucide lucide-accessibility" style="width: 30px; height: 30px;"><circle cx="16" cy="4" r="1"></circle><path d="m18 19 1-7-6 1"></path><path d="m5 8 3-3 5.5 3-2.36 3.5"></path><path d="M4.24 14.5a5 5 0 0 0 6.88 6"></path><path d="M13.76 17.5a5 5 0 0 0-6.88-6"></path></svg></button></div><div id="cookieBanner" class="fixed bottom-0 left-0 w-full bg-telem-black text-white p-6 z-[9998] backdrop-blur-md border-t border-telem-moss shadow-2xl animate-fade-in"><div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-right"><div class="flex-1"><div class="text-xl font-black text-telem-khaki mb-2 italic">אוהבים עוגיות? גם אנחנו!</div><p class="text-gray-300 text-sm md:text-base font-medium">האתר של תלם משתמש בעוגיות (Cookies) על מנת להבטיח לך את חווית הגלישה הטובה ביותר בהתאם לחוק הגנת הפרטיות.</p></div><button class="bg-telem-forest text-white px-10 py-3 rounded-xl font-black hover:bg-telem-moss transition-all">הבנתי, תודה!</button></div></div><main class="podcast-main pt-40 pb-24 animate-fade-in mx-auto px-4"><a href="/" class="inline-flex items-center gap-2 text-telem-forest font-bold mb-8 hover:text-telem-dark transition-colors"> חזרה לדף הבית</a>
-<section class="pod-hero" aria-label="על הפודקאסט"><div><h1 class="text-4xl md:text-6xl font-black text-telem-black mb-6 leading-tight italic">חבר זבל</h1>
+<body style="font-size: 100%;" class="tv2">
+    <div id="root"><div class="min-h-screen"><header class="tv2-head" role="banner">
+        <div class="tv2-head-in">
+            <a href="/" class="tv2-logo" title="תלם ניהול סביבה - דף הבית"><img src="/logo.png" alt="לוגו תלם ניהול סביבה" width="1586" height="659"></a>
+            <nav class="tv2-nav" aria-label="תפריט ראשי">
+                <div class="tv2-dd">
+                    <button type="button" class="tv2-dd-btn" aria-expanded="false" aria-controls="tv2Services">שירותים<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+                    <div class="tv2-dd-panel" id="tv2Services">
+                    <a href="/waste/">נספח אצירת אשפה</a>
+                    <a href="/env/">נספח סביבתי</a>
+                    <a href="/history/">סקר היסטורי <bdi>Phase I</bdi></a>
+                    <a href="/solar/">סולארי ואגירה</a>
+                    <a href="/landscape-appendix/">נספח נופי-סביבתי</a>
+                    <a href="/construction-waste/">נספח פסולת בניין</a>
+                    <a href="/environmental-management/">ניהול סביבה <bdi>ONSITE</bdi></a>
+                    <a href="/toxins-permit/">היתר רעלים</a>
+                    <a href="/recycling/">יועץ מיחזור פסולת</a>
+                    <a href="/urban-renewal/">ליווי סביבתי להתחדשות עירונית</a>
+                    <a href="/rural/">ייעוץ סביבתי למרחב הכפרי</a>
+                    <a href="/consulting/">ייעוץ סביבתי לעסקים</a>
+                    </div>
+                </div>
+                <a href="/guides/">מרכז הידע</a>
+                <a href="/in-the-news/">סביבה בכותרות</a>
+                <a href="/lectures/">הרצאות</a>
+                <a href="/podcast/" aria-current="page">פודקאסט</a>
+                <a href="/about.html">אודות</a>
+            </nav>
+            <div class="tv2-acts">
+                <a href="https://www.linkedin.com/in/aviram-botzer-01782aa5/" target="_blank" rel="noopener noreferrer" class="tv2-li" title="LinkedIn" aria-label="פרופיל LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                <a href="tel:0506890650" class="tv2-tel">050-6890650</a>
+                <button type="button" id="tv2MenuBtn" class="tv2-menu-btn" aria-label="פתח תפריט" aria-expanded="false" aria-controls="tv2Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+        </div>
+    </header>
+    <div id="tv2Menu" class="tv2-menu" hidden>
+      <nav aria-label="תפריט נייד">
+        <a href="/">דף הבית</a>
+        <span class="tv2-menu-label">שירותים</span>
+        <a href="/waste/" class="sub">נספח אצירת אשפה</a>
+        <a href="/env/" class="sub">נספח סביבתי</a>
+        <a href="/history/" class="sub">סקר היסטורי <bdi>Phase I</bdi></a>
+        <a href="/solar/" class="sub">סולארי ואגירה</a>
+        <a href="/landscape-appendix/" class="sub">נספח נופי-סביבתי</a>
+        <a href="/construction-waste/" class="sub">נספח פסולת בניין</a>
+        <a href="/environmental-management/" class="sub">ניהול סביבה <bdi>ONSITE</bdi></a>
+        <a href="/toxins-permit/" class="sub">היתר רעלים</a>
+        <a href="/recycling/" class="sub">יועץ מיחזור פסולת</a>
+        <a href="/urban-renewal/" class="sub">ליווי סביבתי להתחדשות עירונית</a>
+        <a href="/rural/" class="sub">ייעוץ סביבתי למרחב הכפרי</a>
+        <a href="/consulting/" class="sub">ייעוץ סביבתי לעסקים</a>
+        <a href="/guides/">מרכז הידע</a>
+        <a href="/in-the-news/">סביבה בכותרות</a>
+        <a href="/lectures/">הרצאות</a>
+        <a href="/podcast/" aria-current="page">פודקאסט</a>
+        <a href="/about.html">אודות</a>
+        <a href="https://www.linkedin.com/in/aviram-botzer-01782aa5/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </nav>
+    </div><div id="accessibilityPanel" class="hidden bg-white shadow-2xl rounded-2xl border border-telem-khaki/20 p-6 text-right" style="position:fixed;bottom:88px;left:24px;z-index:9999;width:240px;" role="dialog" aria-label="תפריט נגישות"><div class="text-xl font-black text-telem-dark mb-4">תפריט נגישות</div><div class="flex flex-col gap-3"><button type="button" onclick="changeFontSize(1)" class="bg-telem-dark text-white py-3 px-4 rounded-xl font-bold">הגדלת טקסט</button><button type="button" onclick="changeFontSize(-1)" class="bg-telem-forest text-white py-3 px-4 rounded-xl font-bold">הקטנת טקסט</button><button type="button" onclick="toggleHighContrast()" class="bg-telem-moss text-white py-3 px-4 rounded-xl font-bold">ניגודיות גבוהה</button><button type="button" onclick="toggleUnderlineLinks()" class="bg-telem-khaki text-telem-dark py-3 px-4 rounded-xl font-bold">קו תחתון לקישורים</button><button type="button" onclick="resetAccessibility()" class="border border-telem-khaki text-telem-dark py-3 px-4 rounded-xl font-bold">איפוס</button></div></div><div class="fixed bottom-6 left-6 z-[9999]"><button id="accessibilityToggle" onclick="toggleElement('accessibilityPanel')" aria-controls="accessibilityPanel" aria-expanded="false" aria-label="פתח תפריט נגישות" class="w-14 h-14 bg-telem-dark text-white rounded-full shadow-2xl flex items-center justify-center hover:bg-telem-forest transition-all border-2 border-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="accessibility" aria-hidden="true" class="lucide lucide-accessibility" style="width: 30px; height: 30px;"><circle cx="16" cy="4" r="1"></circle><path d="m18 19 1-7-6 1"></path><path d="m5 8 3-3 5.5 3-2.36 3.5"></path><path d="M4.24 14.5a5 5 0 0 0 6.88 6"></path><path d="M13.76 17.5a5 5 0 0 0-6.88-6"></path></svg></button></div><div id="cookieBanner" class="fixed bottom-0 left-0 w-full bg-telem-black text-white p-6 z-[9998] backdrop-blur-md border-t border-telem-moss shadow-2xl animate-fade-in"><div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-right"><div class="flex-1"><div class="text-xl font-black text-telem-khaki mb-2 italic">אוהבים עוגיות? גם אנחנו!</div><p class="text-gray-300 text-sm md:text-base font-medium">האתר של תלם משתמש בעוגיות (Cookies) על מנת להבטיח לך את חווית הגלישה הטובה ביותר בהתאם לחוק הגנת הפרטיות.</p></div><button class="bg-telem-forest text-white px-10 py-3 rounded-xl font-black hover:bg-telem-moss transition-all">הבנתי, תודה!</button></div></div><main class="tv2-main podcast-main pt-40 pb-24 animate-fade-in mx-auto px-4">
+<div class="tv2-hero tv2-hero-x"><div class="tv2-hero-in"><div class="tv2-hero-text"><a href="/" class="inline-flex items-center gap-2 text-telem-forest font-bold mb-8 hover:text-telem-dark transition-colors"> חזרה לדף הבית</a>
+<h1 class="text-4xl md:text-6xl font-black text-telem-black mb-6 leading-tight italic">חבר זבל</h1></div><div class="tv2-furrows" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div></div>
+
+<section class="pod-hero" aria-label="על הפודקאסט"><div>
 <p class="text-xl text-telem-dark font-bold leading-relaxed">חבר זבל הוא הפודקאסט של אבירם בוצר מתלם ניהול סביבה ופסולת. בכל פרק אבירם מארח חברים ואנשי מקצוע לשיחה פתוחה על מה שקורה באמת בשטח: פסולת, תכנון, סביבה ומה שביניהם. בלי סיסמאות, עם הרבה ניסיון ולא מעט הומור.</p>
-<div class="pod-links"><a href="https://open.spotify.com/show/54Xp9g5ghhgo4EZGfGz6p6" target="_blank" rel="noopener noreferrer">לתוכנית בספוטיפיי</a></div></div>
+<div class="pod-links"><a href="https://open.spotify.com/show/54Xp9g5ghhgo4EZGfGz6p6" target="_blank" rel="noopener noreferrer" style="color:#f8f4f1">לתוכנית בספוטיפיי</a></div></div>
 <img src="/assets/podcast-cover.jpg" width="1400" height="1400" alt="הכיסוי של הפודקאסט חבר זבל: הלוגו של תלם ניהול סביבה ופסולת"></section>
 <section aria-labelledby="episodes-h2"><h2 id="episodes-h2" class="pod-label">הפרקים</h2>
 <article class="episode" id="episode-2"><div class="ep-top"><span class="ep-no">פרק <bdi>2</bdi></span><span class="ep-dur"><bdi>56</bdi> דקות</span></div>
@@ -310,41 +371,76 @@
 <ul class="ep-points"><li>מה זו יוקרה בבניין, ומה זה "מסע הפסולת"</li><li>למה תכנון שנצמד לתקן לא מספיק</li><li>למה יועץ הפסולת צריך להיכנס כבר בשלב התכנון</li><li>שוטים בקומות, הפרדה במקור ומדידת פסולת בזמן אמת</li><li>מה תוקע פרויקטים, ומה יזם צריך לבדוק לפני היתר</li><li>איך ייראה חדר הפסולת בעוד עשר שנים</li></ul>
 <details class="ep-chapters"><summary>פרקי זמן</summary><ol><li><time>00:00</time>פתיחה והיכרות</li><li><time>03:00</time>מכוסות רב-פעמיות לניהול פסולת בבניינים</li><li><time>04:40</time>מה זו בעצם יוקרה בבניין</li><li><time>06:20</time>לובי של מיליון דולר וחדר פסולת ענק</li><li><time>08:10</time>למה נצמדים לתקן</li><li><time>10:00</time>הבקבוק שכל הבניין שומע</li><li><time>12:15</time>למה להיכנס כבר בשלב התכנון</li><li><time>14:40</time>אזורי השירות שאין להם אבא ואמא</li><li><time>16:20</time>שוטים בקומות והפרדה</li><li><time>18:40</time>מדידת פסולת בזמן אמת</li><li><time>21:10</time>תשלום לפי כמות הפסולת</li><li><time>23:20</time>פחים טמוני קרקע וחיישנים</li><li><time>25:20</time>איך רותמים יזמים</li><li><time>29:50</time>חדר דחסנית בגודל הדחסנית</li><li><time>31:00</time>עיצוב הוא גם שימושיות</li><li><time>34:40</time>סיפור זוועות מחדר הפסולת</li><li><time>37:30</time>הריח והוואטסאפ של הבניין</li><li><time>38:40</time>למה פרויקטים נתקעים על שטויות</li><li><time>40:50</time>מה לבדוק לפני היתר</li><li><time>43:40</time>מעליות ורכבות פסולת</li><li><time>44:50</time>נגישות: דלתות, גבהים וילדים</li><li><time>49:20</time>מה דורשות חברות בינלאומיות</li><li><time>51:45</time>חדר הפסולת בעוד עשר שנים</li><li><time>53:50</time>טכנולוגיה אחת שהיינו רוצים</li><li><time>55:00</time>טיפ אחרון: היגיינה</li></ol></details>
 <p class="mt-4"><a class="ep-more" href="/waste/">עוד על נספח אצירת אשפה ותכנון חדרי פסולת</a></p></article></section>
-<section class="mt-20 bg-telem-dark text-white rounded-[40px] p-8 text-center shadow-2xl text-telem-cream"><h2 class="text-3xl font-black mb-6 italic tracking-tight">רוצים לדבר על הפסולת בפרויקט שלכם?</h2><div class="contact-row"><a href="https://wa.me/972506890650" target="_blank" rel="noopener noreferrer"><bdi>WhatsApp</bdi></a><a href="tel:0506890650">התקשרו: <bdi>050-6890650</bdi></a></div></section></main><footer class="bg-telem-dark text-white py-20 px-4 text-right border-t border-telem-forest/30"><div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-16"><div><div class="flex items-center min-w-[150px] mb-8"><img src="../logo.png" alt="תלם ניהול סביבה" class="h-16 md:h-20 w-auto object-contain block"></div><p class="text-telem-cream/60 text-xl max-w-md font-medium italic">אבירם בוצר — יועץ סביבתי: נספחים סביבתיים ונופיים, סקרי קרקע היסטוריים, תכנון פסולת ומיחזור וליווי פרויקטי אנרגיה.</p></div><div class="flex flex-col md:items-end gap-6 text-telem-cream font-bold text-lg"><div class="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20"><span>aviram@telemenv.co.il</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="mail" aria-hidden="true" class="lucide lucide-mail text-telem-khaki" style="width: 24px; height: 24px;"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg></div><div class="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20"><span>050-6890650</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="phone" aria-hidden="true" class="lucide lucide-phone text-telem-khaki" style="width: 24px; height: 24px;"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg></div><a href="https://www.linkedin.com/in/aviram-botzer-01782aa5/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 bg-telem-forest/10 p-4 rounded-xl border border-telem-forest/20 hover:text-white transition-all"><span>פרופיל LinkedIn</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide lucide-linkedin text-telem-khaki" style="width: 24px; height: 24px;"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a><div class="flex gap-4 mt-8 text-sm font-bold text-telem-khaki"><button class="hover:underline italic">הצהרת נגישות</button><span class="opacity-30">|</span><button class="hover:underline italic">מדיניות פרטיות</button></div><p class="mt-4 text-sm font-normal opacity-30 italic">© 2026 תלם ניהול סביבה. כל הזכויות שמורות.</p></div></div></footer></div></div>
-
-    
-
-
-<section style="background:#f8f4f1;font-family:'Assistant',sans-serif;color:#243e38;padding:2rem;border-top:1px solid #94937f;direction:rtl;text-align:right;" aria-label="דפים נוספים באתר">
-      <div style="max-width:1200px;margin:0 auto;">
-        <h2 style="font-size:1rem;font-weight:800;color:#475d4b;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #94937f;">דפים נוספים באתר</h2>
-        <div style="display:flex;flex-wrap:wrap;gap:40px;">
+<section class="mt-20 bg-telem-dark text-white rounded-[40px] p-8 text-center shadow-2xl text-telem-cream"><h2 class="text-3xl font-black mb-6 italic tracking-tight">רוצים לדבר על הפסולת בפרויקט שלכם?</h2><div class="contact-row"><a href="https://wa.me/972506890650" target="_blank" rel="noopener noreferrer" style="color:#f8f4f1"><bdi>WhatsApp</bdi></a><a href="tel:0506890650" style="color:#f8f4f1">התקשרו: <bdi>050-6890650</bdi></a></div></section></main><section class="tv2-sources" aria-label="דפים נוספים באתר">
+      <div>
+        <h2>דפים נוספים באתר</h2>
+        <div>
           
-          <div style="flex:1;min-width:260px;">
+          <div>
             
-            <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px 32px;">
-              <li><a href="/waste/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">נספח אצירת אשפה</a></li>
-              <li><a href="/env/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">נספח סביבתי</a></li>
-              <li><a href="/history/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">סקר היסטורי <bdi>Phase I</bdi></a></li>
-              <li><a href="/landscape-appendix/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">נספח נופי-סביבתי</a></li>
-              <li><a href="/solar/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">סולארי ואגירה</a></li>
-              <li><a href="/recycling/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">יועץ מיחזור פסולת</a></li>
-              <li><a href="/environmental-management/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">ניהול סביבה <bdi>ONSITE</bdi></a></li>
-              <li><a href="/construction-waste/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">נספח פסולת בניין</a></li>
-              <li><a href="/urban-renewal/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">ליווי סביבתי להתחדשות עירונית</a></li>
-              <li><a href="/rural/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">ייעוץ סביבתי למרחב הכפרי</a></li>
-              <li><a href="/toxins-permit/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">היתר רעלים</a></li>
-              <li><a href="/consulting/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">ייעוץ סביבתי לעסקים</a></li>
-              <li><a href="/guides/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">מרכז הידע</a></li>
-              <li><a href="/in-the-news/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">סביבה בכותרות</a></li>
-              <li><a href="/lectures/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">הרצאות וסדנאות</a></li>
-              <li><a href="/podcast/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">פודקאסט חבר זבל</a></li>
-              <li><a href="/about.html" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">אודות תלם</a></li>
+            <ul>
+              <li><a href="/waste/">נספח אצירת אשפה</a></li>
+              <li><a href="/env/">נספח סביבתי</a></li>
+              <li><a href="/history/">סקר היסטורי <bdi>Phase I</bdi></a></li>
+              <li><a href="/landscape-appendix/">נספח נופי-סביבתי</a></li>
+              <li><a href="/solar/">סולארי ואגירה</a></li>
+              <li><a href="/recycling/">יועץ מיחזור פסולת</a></li>
+              <li><a href="/environmental-management/">ניהול סביבה <bdi>ONSITE</bdi></a></li>
+              <li><a href="/construction-waste/">נספח פסולת בניין</a></li>
+              <li><a href="/urban-renewal/">ליווי סביבתי להתחדשות עירונית</a></li>
+              <li><a href="/rural/">ייעוץ סביבתי למרחב הכפרי</a></li>
+              <li><a href="/toxins-permit/">היתר רעלים</a></li>
+              <li><a href="/consulting/">ייעוץ סביבתי לעסקים</a></li>
+              <li><a href="/guides/">מרכז הידע</a></li>
+              <li><a href="/in-the-news/">סביבה בכותרות</a></li>
+              <li><a href="/lectures/">הרצאות וסדנאות</a></li>
+              <li><a href="/podcast/">פודקאסט חבר זבל</a></li>
+              <li><a href="/about.html">אודות תלם</a></li>
             </ul>
           </div>
         </div>
       </div>
     </section>
+    <footer class="tv2-foot" role="contentinfo">
+        <div class="tv2-wrap tv2-foot-in">
+            <address>
+                <img src="/logo.png" alt="לוגו תלם" width="1586" height="659" loading="lazy">
+                <p>אבירם בוצר - מביאים את הניסיון מהצד של הרשות לקידום הפרויקט שלכם.</p>
+                <p class="tv2-foot-note">אבירם בוצר — יועץ סביבתי: נספחים סביבתיים ונופיים, סקרי קרקע היסטוריים, תכנון פסולת ומיחזור וליווי פרויקטי אנרגיה.</p>
+                <a href="tel:0506890650">050-6890650</a>
+            </address>
+            <div class="tv2-foot-links">
+                <h3>דפים נוספים באתר</h3>
+                <a href="/waste/">נספח אצירת אשפה</a>
+                <a href="/env/">נספח סביבתי</a>
+                <a href="/history/">סקר היסטורי <bdi>Phase I</bdi></a>
+                <a href="/landscape-appendix/">נספח נופי-סביבתי</a>
+                <a href="/solar/">סולארי ואגירה</a>
+                <a href="/recycling/">יועץ מיחזור פסולת</a>
+                <a href="/environmental-management/">ניהול סביבה <bdi>ONSITE</bdi></a>
+                <a href="/construction-waste/">נספח פסולת בניין</a>
+                <a href="/urban-renewal/">ליווי סביבתי להתחדשות עירונית</a>
+                <a href="/rural/">ייעוץ סביבתי למרחב הכפרי</a>
+                <a href="/toxins-permit/">היתר רעלים</a>
+                <a href="/consulting/">ייעוץ סביבתי לעסקים</a>
+                <a href="/guides/">מרכז הידע</a>
+                <a href="/in-the-news/">סביבה בכותרות</a>
+                <a href="/lectures/">הרצאות וסדנאות</a>
+                <a href="/podcast/">פודקאסט חבר זבל</a>
+                <a href="/about.html">אודות תלם</a>
+            </div>
+            <div class="tv2-foot-side">
+                <a href="mailto:aviram@telemenv.co.il">aviram@telemenv.co.il</a>
+                <a href="https://www.linkedin.com/in/aviram-botzer-01782aa5/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <p class="tv2-copy">© 2026 תלם ניהול סביבה. כל הזכויות שמורות.</p>
+            </div>
+        </div>
+    </footer></div></div>
+
+    
+
+
+
 
 <div id="mobile-cta-banner" role="navigation" aria-label="צרו קשר מהיר">
   <a href="https://wa.me/972506890650" target="_blank" rel="noopener noreferrer" aria-label="שלחו הודעה ב-WhatsApp">
@@ -380,4 +476,5 @@ if(mb&&mm){var mclose=function(){mm.style.display="none";mb.setAttribute("aria-e
 });
 })();
 </script>
+<script src="/assets/telem-v2.js" defer></script>
 </body></html>

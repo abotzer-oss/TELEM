@@ -444,8 +444,10 @@
 }
 </style>
 <script async src="https://static.opinly.ai/p.js" data-key="pk-M1qFOhEDsS7oQjhfZELBy84_SMHHbM5QnVB0tGG"></script><script>/* Opinly: לחיצה על וואטסאפ/טלפון נספרת כליד */document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[href]");if(!a)return;var h=a.getAttribute("href")||"";var m=/^tel:/i.test(h)?"phone":/wa\.me|whatsapp\.com/i.test(h)?"whatsapp":null;if(m&&window.opinly&&window.opinly.track){try{window.opinly.track("generate_lead",{method:m,page:location.pathname})}catch(_){}}},true);</script>
+<link rel="stylesheet" href="/assets/home-v2.css">
+<link rel="stylesheet" href="/assets/telem-v2.css">
 </head>
-<body class="animate-fade-in">
+<body class="tv2 animate-fade-in home-v2">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K9WX697C" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
@@ -467,79 +469,147 @@
         </div>
     </div>
 
-    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-[100] border-b border-telem-khaki/10 h-24 flex items-center" role="banner">
-        <div class="max-w-7xl mx-auto px-4 w-full flex justify-between items-center gap-6 text-right">
-            <a href="/" title="תלם ניהול סביבה - דף הבית" class="flex items-center gap-3">
-                <img src="logo.png" alt="לוגו תלם ניהול סביבה" class="h-14 md:h-20 w-auto">
-            </a>
-            <nav class="hidden xl:flex gap-4 2xl:gap-6 items-center whitespace-nowrap" role="navigation" aria-label="תפריט ראשי">
-                <a href="/" class="text-[14px] font-extrabold text-telem-forest hover:text-telem-moss transition-colors uppercase tracking-tighter">דף הבית</a>
-                <a href="/environmental-management/" class="text-[14px] font-extrabold text-telem-forest hover:text-telem-moss transition-colors uppercase tracking-tighter">ניהול סביבה</a>
-                <a href="/waste/" class="text-[14px] font-extrabold text-telem-forest hover:text-telem-moss transition-colors uppercase tracking-tighter">נספח אצירת אשפה</a>
-                <a href="#guides" class="text-[14px] font-extrabold text-telem-forest hover:text-telem-moss transition-colors uppercase tracking-tighter">מרכז ידע ורגולציה</a>
-                <a href="/in-the-news/" class="text-[14px] font-extrabold text-telem-forest hover:text-telem-moss transition-colors uppercase tracking-tighter">סביבה בכותרות</a>
-                <a href="/solar/" class="text-[14px] font-extrabold text-telem-forest hover:text-telem-moss transition-colors uppercase tracking-tighter">סולארי ואגירה</a>
-                <a href="/env/" class="text-[14px] font-extrabold text-telem-forest hover:text-telem-moss transition-colors uppercase tracking-tighter">נספח סביבתי</a>
-                <a href="/history/" class="text-[14px] font-extrabold text-telem-forest hover:text-telem-moss transition-colors uppercase tracking-tighter">סקר היסטורי</a>
-                <a href="/lectures/" class="text-[14px] font-extrabold text-telem-forest hover:text-telem-moss transition-colors uppercase tracking-tighter">הרצאות</a><a href="/podcast/" class="text-[14px] font-extrabold text-telem-forest hover:text-telem-moss transition-colors uppercase tracking-tighter">פודקאסט</a>
-                            <a href="/about.html" class="text-[14px] font-extrabold text-telem-forest hover:text-telem-moss transition-colors uppercase tracking-tighter">אודות</a>
+    <header class="tv2-head" role="banner">
+        <div class="tv2-head-in">
+            <a href="/" class="tv2-logo" title="תלם ניהול סביבה - דף הבית"><img src="/logo.png" alt="לוגו תלם ניהול סביבה" width="1586" height="659"></a>
+            <nav class="tv2-nav" aria-label="תפריט ראשי">
+                <div class="tv2-dd">
+                    <button type="button" class="tv2-dd-btn" aria-expanded="false" aria-controls="tv2Services">שירותים<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+                    <div class="tv2-dd-panel" id="tv2Services">
+                    <a href="/waste/">נספח אצירת אשפה</a>
+                    <a href="/env/">נספח סביבתי</a>
+                    <a href="/history/">סקר היסטורי <bdi>Phase I</bdi></a>
+                    <a href="/solar/">סולארי ואגירה</a>
+                    <a href="/landscape-appendix/">נספח נופי-סביבתי</a>
+                    <a href="/construction-waste/">נספח פסולת בניין</a>
+                    <a href="/environmental-management/">ניהול סביבה <bdi>ONSITE</bdi></a>
+                    <a href="/toxins-permit/">היתר רעלים</a>
+                    <a href="/recycling/">יועץ מיחזור פסולת</a>
+                    <a href="/urban-renewal/">ליווי סביבתי להתחדשות עירונית</a>
+                    <a href="/rural/">ייעוץ סביבתי למרחב הכפרי</a>
+                    <a href="/consulting/">ייעוץ סביבתי לעסקים</a>
+                    <a href="#guides">מרכז ידע ורגולציה</a>
+                    </div>
+                </div>
+                <a href="/guides/">מרכז הידע</a>
+                <a href="/in-the-news/">סביבה בכותרות</a>
+                <a href="/lectures/">הרצאות</a>
+                <a href="/podcast/">פודקאסט</a>
+                <a href="/about.html">אודות</a>
             </nav>
-            <div class="hidden md:flex items-center gap-4 shrink-0 whitespace-nowrap">
-                <a href="https://www.linkedin.com/in/aviram-botzer-01782aa5/" target="_blank" rel="noopener noreferrer" class="text-telem-dark hover:text-telem-moss transition-colors" title="LinkedIn" aria-label="פרופיל LinkedIn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                </a>
-                <a href="tel:0506890650" class="bg-telem-dark text-white px-6 py-2.5 rounded-xl font-black flex items-center gap-2 hover:bg-telem-forest shadow-lg tracking-tighter uppercase font-sans">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="phone" aria-hidden="true" class="lucide lucide-phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>
-                    <span>050-6890650</span>
-                </a>
+            <div class="tv2-acts">
+                <a href="https://www.linkedin.com/in/aviram-botzer-01782aa5/" target="_blank" rel="noopener noreferrer" class="tv2-li" title="LinkedIn" aria-label="פרופיל LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                <a href="tel:0506890650" class="tv2-tel">050-6890650</a>
+                <button type="button" id="tv2MenuBtn" class="tv2-menu-btn" aria-label="פתח תפריט" aria-expanded="false" aria-controls="tv2Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
             </div>
-            <button onclick="toggleElement('mobileMenu')" class="xl:hidden text-telem-dark p-2" aria-label="פתח תפריט נייד">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="menu" aria-hidden="true" style="width: 32px; height: 32px;" class="lucide lucide-menu"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
-            </button>
         </div>
     </header>
-
-    <div id="mobileMenu" class="fixed top-24 w-full bg-white z-[90] shadow-2xl hidden p-8 border-b-8 border-telem-dark text-right animate-fade-in">
-        <nav class="flex flex-col gap-6 font-black uppercase">
-            <a href="/" class="text-2xl border-b pb-2">דף הבית</a>
-            <a href="/environmental-management/" class="text-2xl border-b pb-2">ניהול סביבה</a>
-            <a href="/waste/" class="text-2xl border-b pb-2">נספח אצירת אשפה</a>
-            <a href="#guides" class="text-2xl border-b pb-2" onclick="closeElement('mobileMenu')">מרכז ידע ורגולציה</a>
-            <a href="/in-the-news/" class="text-2xl border-b pb-2">סביבה בכותרות</a>
-            <a href="/solar/" class="text-2xl border-b pb-2">סולארי ואגירה</a>
-            <a href="/env/" class="text-2xl border-b pb-2">נספח סביבתי</a>
-            <a href="/history/" class="text-2xl border-b pb-2">סקר היסטורי</a>
-            <a href="/lectures/" class="text-2xl border-b pb-2">הרצאות</a><a href="/podcast/" class="text-2xl border-b pb-2">פודקאסט</a>
-                        <a href="/about.html" class="text-2xl border-b pb-2">אודות</a>
-            <a href="https://www.linkedin.com/in/aviram-botzer-01782aa5/" target="_blank" rel="noopener noreferrer" class="text-2xl border-b pb-2 flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                LinkedIn
-            </a>
-        </nav>
+    <div id="tv2Menu" class="tv2-menu" hidden>
+      <nav aria-label="תפריט נייד">
+        <a href="/" aria-current="page">דף הבית</a>
+        <span class="tv2-menu-label">שירותים</span>
+        <a href="/waste/" class="sub">נספח אצירת אשפה</a>
+        <a href="/env/" class="sub">נספח סביבתי</a>
+        <a href="/history/" class="sub">סקר היסטורי <bdi>Phase I</bdi></a>
+        <a href="/solar/" class="sub">סולארי ואגירה</a>
+        <a href="/landscape-appendix/" class="sub">נספח נופי-סביבתי</a>
+        <a href="/construction-waste/" class="sub">נספח פסולת בניין</a>
+        <a href="/environmental-management/" class="sub">ניהול סביבה <bdi>ONSITE</bdi></a>
+        <a href="/toxins-permit/" class="sub">היתר רעלים</a>
+        <a href="/recycling/" class="sub">יועץ מיחזור פסולת</a>
+        <a href="/urban-renewal/" class="sub">ליווי סביבתי להתחדשות עירונית</a>
+        <a href="/rural/" class="sub">ייעוץ סביבתי למרחב הכפרי</a>
+        <a href="/consulting/" class="sub">ייעוץ סביבתי לעסקים</a>
+        <a href="/guides/">מרכז הידע</a>
+        <a href="/in-the-news/">סביבה בכותרות</a>
+        <a href="/lectures/">הרצאות</a>
+        <a href="/podcast/">פודקאסט</a>
+        <a href="/about.html">אודות</a>
+        <a href="#guides">מרכז ידע ורגולציה</a>
+        <a href="https://www.linkedin.com/in/aviram-botzer-01782aa5/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </nav>
     </div>
 
-<main id="mainContent" class="pt-24">
-        <section class="pt-8 pb-14 bg-telem-moss/5 relative text-right overflow-hidden">
-            <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                <article class="home-hero-article">
-                    <span class="inline-block px-4 py-1.5 bg-telem-dark text-white rounded-full text-sm font-bold mb-5 tracking-tighter uppercase">מומחיות במגזר הציבורי והתשתיות</span>
-                    <h1 class="home-hero-h1 font-black text-telem-black mb-6 uppercase">
-                        <span class="home-hero-kicker text-telem-forest">יועץ סביבתי לנדל״ן, סולארי ועסקים</span>
-                        הדרך המהירה ל<span class="text-telem-forest">אישור סביבתי</span>
-                    </h1>
-                    <p class="home-hero-entity text-lg text-telem-black font-bold mb-4 leading-relaxed">תלם ניהול סביבה היא חברת ייעוץ סביבתי המכינה נספחים סביבתיים, נספחי אצירת אשפה וסקרי קרקע היסטוריים (Phase I) ומלווה פרויקטי סולארי ואגירה (BESS) — ליזמים, אדריכלים וקבלנים בישראל. החברה נוסדה ב-2026 בידי <a href="/about.html" class="underline">אבירם בוצר</a>, יועץ סביבתי ויועץ פסולת עם 15 שנות ניסיון מקצועי.</p>
-                    <p class="home-hero-desc text-xl text-telem-forest font-semibold mb-6 leading-relaxed">
-                        ליווי ופיקוח סביבתי בשטח בפרויקטי בנייה ותשתיות. מומחיות בנספחי אצירת אשפה וסביבה מתוך הבנה עמוקה של שיקולי הרשות המאשרת.
-                    </p>
-                    <div class="flex flex-wrap gap-4 home-hero-btn-wrap">
-                        <button onclick="window.open('https://wa.me/972506890650')" class="bg-telem-forest text-white px-10 py-4 rounded-2xl font-black text-xl hover:bg-telem-dark shadow-xl transition-all tracking-tight uppercase">התייעצות מקצועית</button>
+    
+
+<main id="mainContent">
+    <section class="hero" aria-label="תלם ניהול סביבה">
+        <div class="hero-body">
+            <div class="wrap">
+                <div class="hero-text" data-enter>
+                    <h1><span class="kicker">יועץ סביבתי לנדל״ן, סולארי ועסקים</span> הדרך המהירה <b>לאישור סביבתי</b></h1>
+                    <p class="desc">ליווי ופיקוח סביבתי בשטח בפרויקטי בנייה ותשתיות. מומחיות בנספחי אצירת אשפה וסביבה מתוך הבנה עמוקה של שיקולי הרשות המאשרת.</p>
+                    <div class="actions">
+                        <a href="https://wa.me/972506890650" target="_blank" rel="noopener noreferrer" class="btn btn-light"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.6 0l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>התייעצות מקצועית</a>
+                        <a href="#contact" class="btn btn-line">צרו קשר דרך האתר</a>
                     </div>
-                </article>
+                    <p class="entity">תלם ניהול סביבה היא חברת ייעוץ סביבתי המכינה נספחים סביבתיים, נספחי אצירת אשפה וסקרי קרקע היסטוריים (<bdi>Phase I</bdi>) ומלווה פרויקטי סולארי ואגירה (<bdi>BESS</bdi>) — ליזמים, אדריכלים וקבלנים בישראל. החברה נוסדה ב-2026 בידי <a href="/about.html">אבירם בוצר</a>, יועץ סביבתי ויועץ פסולת עם 15 שנות ניסיון מקצועי.</p>
+                </div>
+                <div class="furrows" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+            </div>
+        </div>
+        <div class="hero-foot">
+            <div class="wrap">
+                <div><strong>15 שנות ניסיון</strong>בפסולת וסביבה, בשטח ומול הרשויות</div>
+                <div><strong>יועץ אחד לכל הנספחים</strong>אשפה, סביבה, פסולת בניין וקרקע</div>
+                <div><strong>מומחיות במגזר הציבורי והתשתיות</strong>רשויות, תשתיות, יזמים ועסקים</div>
+            </div>
+        </div>
+    </section>
 
-                <aside class="bg-white p-8 rounded-[50px] shadow-2xl border border-telem-khaki/20">
-                    <h2 class="text-3xl font-black mb-4 text-telem-dark border-r-4 border-telem-khaki pr-4 uppercase tracking-tighter leading-none">צרו קשר דרך האתר</h2>
+    <section id="services" class="block" aria-labelledby="services-h2">
+        <div class="wrap">
+            <div class="idx-head">
+                <div><span class="label">שירותי ייעוץ סביבתי מקצועי</span><h2 id="services-h2" class="h2">יועץ פסולת וסביבה <b>לפרויקטי בנייה ותשתיות</b></h2></div>
+                <p>כל שורה היא שירות עם עמוד משלו: מה הרשות דורשת, מה כולל המסמך ואיך מתחילים.</p>
+            </div>
+            <ol class="index">
+          <li><a href="/waste/"><span class="n">01</span><h3>נספח אצירת אשפה להיתר בנייה</h3><p>תכנון אצירה ופינוי לפי דרישות הרשות המקומית</p><span class="ar" aria-hidden="true">←</span></a></li>
+          <li><a href="/env/"><span class="n">02</span><h3>נספח סביבתי לועדת תכנון</h3><p>המסמך הסביבתי שהוועדה דורשת לתכנית או להיתר</p><span class="ar" aria-hidden="true">←</span></a></li>
+          <li><a href="/history/"><span class="n">03</span><h3>סקר היסטורי <bdi>Phase I</bdi> לקרקע</h3><p>בדיקת היסטוריית השימושים וחשש לזיהום קרקע</p><span class="ar" aria-hidden="true">←</span></a></li>
+          <li><a href="/solar/"><span class="n">04</span><h3>ניהול סביבתי לפרויקטים סולאריים</h3><p>רישוי וליווי סביבתי לפרויקטי סולארי ואגירה (<bdi>BESS</bdi>)</p><span class="ar" aria-hidden="true">←</span></a></li>
+          <li><a href="/landscape-appendix/"><span class="n">05</span><h3>נספח נופי-סביבתי לתכנית</h3><p>נספח סביבה ונוף לתכנית, כולל תשריטים</p><span class="ar" aria-hidden="true">←</span></a></li>
+          <li><a href="/recycling/"><span class="n">06</span><h3>יועץ מיחזור פסולת</h3><p>הפרדה, מיחזור והפחתת פסולת בעסקים ובפרויקטים</p><span class="ar" aria-hidden="true">←</span></a></li>
+          <li><a href="/construction-waste/"><span class="n">07</span><h3>נספח פסולת בניין</h3><p>חישוב כמויות פסולת בניין ועודפי עפר</p><span class="ar" aria-hidden="true">←</span></a></li>
+          <li><a href="/toxins-permit/"><span class="n">08</span><h3>היתר רעלים</h3><p>לעסקים ולמפעלים שמחזיקים חומרים מסוכנים</p><span class="ar" aria-hidden="true">←</span></a></li>
+          <li><a href="/environmental-management/"><span class="n">09</span><h3>ניהול סביבה <bdi>ONSITE</bdi></h3><p>ליווי ופיקוח סביבתי בשטח בפרויקטי בנייה ותשתיות</p><span class="ar" aria-hidden="true">←</span></a></li>
+          <li><a href="/consulting/"><span class="n">10</span><h3>ייעוץ סביבתי לעסקים</h3><p>רגולציה סביבתית לעסקים ולתעשייה</p><span class="ar" aria-hidden="true">←</span></a></li>
+            </ol>
+        </div>
+    </section>
 
-                    <form id="contactForm" data-attr-capture action="https://api.web3forms.com/submit" method="POST" class="flex flex-col gap-3">
+    <section id="testimonials-section" class="block quotes" aria-labelledby="ts-h2">
+        <div class="wrap">
+            <div class="top">
+                <h2 id="ts-h2">עבדנו יחד – וזה מה שקרה</h2>
+                <figure class="q-big" style="margin:0">
+                    <blockquote>"לקח אחריות, ניהל צוותים תחת לחץ אדיר — <b>ושמר על מקצועיות לאורך כל הדרך"</b></blockquote>
+                    <figcaption class="q-by"><span class="lg"><img src="/assets/logo_calcalithefer.png" alt="לוגו הכלכלית עמק חפר" loading="lazy"></span><span><strong>שגיא בן-יואב</strong>מנכ"ל · הכלכלית עמק חפר<br><span class="q-tag">ניהול אירוע סביבתי חריג</span></span></figcaption>
+                </figure>
+            </div>
+            <div class="q-more">
+                <figure><span class="lg"><img src="/assets/logo_galil.svg" alt="לוגו אשכול גליל מערבי" loading="lazy"></span><blockquote>"יכולת מרשימה בפרויקטים רב-תחומיים — במיוחד מול רשויות מקומיות וגופים ציבוריים"</blockquote><figcaption><b>ארז אליסאי</b>מנהל אגף איכות סביבה · אשכול רשויות גליל מערבי · ניהול פסולת ורגולציה</figcaption></figure>
+                <figure><span class="lg"><img src="/assets/LOGO_ACKERSTEIN.png" alt="לוגו הקו הירוק" loading="lazy"></span><blockquote>"שליטה מלאה בדרישות הסביבתיות ופתרון מצבים מורכבים בזמן אמת"</blockquote><figcaption><b>דן יעקובי</b>מנהל פרויקט · הקו הירוק – רכבת קלה · פיקוח סביבתי בתשתיות</figcaption></figure>
+                <figure><span class="lg"><img src="/assets/LOGO_ESHKOL.jpg" alt="לוגו פרויקט ביאליק 158" loading="lazy"></span><blockquote>"קידם נושאים במהירות וביעילות גם תחת לוחות זמנים צפופים"</blockquote><figcaption><b>קרן בכר צבי</b>חברת אשכול · פרויקט ביאליק 158, חולון · ייעוץ סביבתי בנדל"ן</figcaption></figure>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="block close" aria-labelledby="contact-h2">
+        <div class="wrap">
+            <div>
+                <span class="label">יצירת קשר</span>
+                <h2 id="contact-h2" class="h2">יש לכם פרויקט? <b>בואו נדבר.</b></h2>
+                <p class="lead">אבירם בוצר - מביאים את הניסיון מהצד של הרשות לקידום הפרויקט שלכם.</p>
+                <a class="big" href="tel:0506890650">050-6890650</a>
+                <ul class="links">
+                    <li><a href="https://wa.me/972506890650" target="_blank" rel="noopener noreferrer">וואטסאפ <span>050-6890650</span></a></li>
+                    <li><a href="mailto:aviram@telemenv.co.il">מייל <span>aviram@telemenv.co.il</span></a></li>
+                </ul>
+            </div>
+            <aside class="form-card">
+                <h3>צרו קשר דרך האתר</h3>
+                <form id="contactForm" data-attr-capture action="https://api.web3forms.com/submit" method="POST">
                         <input type="hidden" name="access_key" value="37580c60-8dcb-458b-9ab2-95b78a450c31">
                         <input type="hidden" name="subject" value="פנייה חדשה מהאתר - תלם">
                         <input type="hidden" name="redirect" value="false">
@@ -548,607 +618,136 @@
                         <input type="hidden" name="referrer" value=""><input type="hidden" name="landing_url" value="">
                         <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
 
-                        <input id="name" name="name" type="text" placeholder="שם" class="p-4 bg-gray-50 rounded-xl outline-none focus:ring-2 ring-telem-khaki text-right font-bold" required="">
+                        <label>שם<input id="name" name="name" type="text" placeholder="שם" required=""></label>
 
-                        <input id="reason" name="reason" type="text" placeholder="סיבת הפנייה" class="p-4 bg-gray-50 rounded-xl outline-none focus:ring-2 ring-telem-khaki text-right font-bold" required="">
+                        <label>סיבת הפנייה<input id="reason" name="reason" type="text" placeholder="סיבת הפנייה" required=""></label>
 
-                        <input id="email" name="email" type="email" placeholder="מייל" class="p-4 bg-gray-50 rounded-xl outline-none focus:ring-2 ring-telem-khaki text-right font-bold" required="">
+                        <label>מייל<input id="email" name="email" type="email" placeholder="מייל" required=""></label>
 
-                        <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="טלפון" pattern="[0-9+() -]{9,20}" title="מספר טלפון ישראלי, לדוגמה 050-1234567" class="p-4 bg-gray-50 rounded-xl outline-none focus:ring-2 ring-telem-khaki text-right font-bold" required="">
+                        <label>טלפון<input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="טלפון" pattern="[0-9+() -]{9,20}" title="מספר טלפון ישראלי, לדוגמה 050-1234567" required=""></label>
 
-                        <button type="submit" id="submitBtn" class="bg-telem-dark text-white py-5 rounded-xl font-black text-2xl hover:bg-telem-forest transition-all shadow-xl uppercase">שלח פנייה</button>
+                        <button type="submit" id="submitBtn" class="btn btn-dark">שלח פנייה</button>
                     </form>
 
-                    <div id="successMessage" role="alert" aria-hidden="true">
-                        <div class="text-5xl mb-4">✅</div>
-                        <h3 class="text-2xl font-black text-telem-dark mb-2">פנייתך התקבלה!</h3>
-                        <p class="text-telem-forest font-semibold text-lg">נחזור אליך בהקדם האפשרי.</p>
+                <div id="successMessage" role="alert" aria-hidden="true">
+                        <div>✅</div>
+                        <h3>פנייתך התקבלה!</h3>
+                        <p>נחזור אליך בהקדם האפשרי.</p>
                     </div>
-                </aside>
-            </div>
-        </section>
-
-        <section id="guides" class="py-16 bg-telem-dark text-white text-right rounded-t-[80px]">
-            <div class="max-w-7xl mx-auto px-4">
-                <header class="mb-10 home-section-header">
-                    <h2 class="home-section-h2 font-black mb-8 uppercase">מרכז הידע <span class="text-telem-khaki">והרגולציה</span></h2>
-                    <p class="home-section-desc text-xl text-telem-khaki font-bold">
-                        מדריכים מקצועיים, כלי עזר ודרישות מעודכנות המבוססים על ניסיון מעשי מול הרשויות ואיגודי הערים.
-                    </p>
-                </header>
-
-                <div class="home-guides-grid">
-                    <a href="/guides/when-to-consult.html" class="guide-card group bg-white/5 p-6 rounded-[30px] border border-white/10 hover:bg-white/10" aria-label="מתי לפנות ליועץ סביבתי">
-                        <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark mb-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="briefcase-business" aria-hidden="true" class="lucide lucide-briefcase-business"><path d="M12 12h.01"></path><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path><path d="M22 13a18.15 18.15 0 0 1-20 0"></path><rect width="20" height="14" x="2" y="6" rx="2"></rect></svg></div>
-                        <h3 class="text-2xl font-black text-white mb-4 leading-tight">מתי לפנות ליועץ סביבתי?</h3>
-                        <p class="text-base text-gray-300 mb-6 leading-relaxed">באילו שלבים נכון לערב ייעוץ סביבתי כדי לחסוך עיכובים, תיקונים ודרישות נוספות.</p>
-                        <div class="mt-auto text-telem-khaki font-black text-sm">למדריך המלא ←</div>
-                    </a>
-
-                    <a href="/guides/price.html" class="guide-card group bg-white/5 p-6 rounded-[30px] border border-white/10 hover:bg-white/10" aria-label="כמה עולה נספח סביבתי">
-                        <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark mb-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="banknote" aria-hidden="true" class="lucide lucide-banknote"><rect width="20" height="12" x="2" y="6" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg></div>
-                        <h3 class="text-2xl font-black text-white mb-4 leading-tight">כמה עולה נספח סביבתי?</h3>
-                        <p class="text-base text-gray-300 mb-6 leading-relaxed">המחיר האמיתי לנספח סביבתי, מה משפיע עליו בפועל ואיך לא ליפול בהצעת מחיר זולה מדי.</p>
-                        <div class="mt-auto text-telem-khaki font-black text-sm">למדריך המלא ←</div>
-                    </a>
-
-                    <a href="/guides/soil-testing.html" class="guide-card group bg-white/5 p-6 rounded-[30px] border border-white/10 hover:bg-white/10" aria-label="בדיקות קרקע">
-                        <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark mb-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="flask-conical" aria-hidden="true" class="lucide lucide-flask-conical"><path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"></path><path d="M6.453 15h11.094"></path><path d="M8.5 2h7"></path></svg></div>
-                        <h3 class="text-2xl font-black text-white mb-4 leading-tight">בדיקות קרקע</h3>
-                        <p class="text-base text-gray-300 mb-6 leading-relaxed">מידע על בדיקות קרקע, צורך רגולטורי ושיקולים מקצועיים לפני קידום פרויקט.</p>
-                        <div class="mt-auto text-telem-khaki font-black text-sm">למדריך המלא ←</div>
-                    </a>
-
-                    <a href="/guides/cities-waste.html" class="guide-card group bg-white/5 p-6 rounded-[30px] border border-white/10 hover:bg-white/10" aria-label="דרישות רשויות בנושא פסולת">
-                        <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark mb-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="building-2" aria-hidden="true" class="lucide lucide-building-2"><path d="M10 12h4"></path><path d="M10 8h4"></path><path d="M14 21v-3a2 2 0 0 0-4 0v3"></path><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path></svg></div>
-                        <h3 class="text-2xl font-black text-white mb-4 leading-tight">דרישות רשויות בנושא פסולת</h3>
-                        <p class="text-base text-gray-300 mb-6 leading-relaxed">סקירה ממוקדת של דרישות תפעול ותכנון מול רשויות מקומיות ואיגודי ערים.</p>
-                        <div class="mt-auto text-telem-khaki font-black text-sm">למדריך המלא ←</div>
-                    </a>
-
-                    <a href="/guides/history-when.html" class="guide-card group bg-white/5 p-6 rounded-[30px] border border-white/10 hover:bg-white/10" aria-label="מתי נדרש סקר היסטורי">
-                        <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark mb-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="history" aria-hidden="true" class="lucide lucide-history"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path><path d="M12 7v5l4 2"></path></svg></div>
-                        <h3 class="text-2xl font-black text-white mb-4 leading-tight">מתי נדרש סקר היסטורי?</h3>
-                        <p class="text-base text-gray-300 mb-6 leading-relaxed">הבנת המצבים שבהם עולה דרישה לבדיקת היסטוריית שימושים ולבחינת חשש לזיהום.</p>
-                        <div class="mt-auto text-telem-khaki font-black text-sm">למדריך המלא ←</div>
-                    </a>
-
-                    <a href="/guides/soil-survey-cost.html" class="guide-card group bg-white/5 p-6 rounded-[30px] border border-white/10 hover:bg-white/10" aria-label="כמה עולה סקר קרקע">
-                        <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark mb-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="coins" aria-hidden="true" class="lucide lucide-coins"><path d="M13.744 17.736a6 6 0 1 1-7.48-7.48"></path><path d="M15 6h1v4"></path><path d="m6.134 14.768.866-.5 2 3.464"></path><circle cx="16" cy="8" r="6"></circle></svg></div>
-                        <h3 class="text-2xl font-black text-white mb-4 leading-tight">כמה עולה סקר קרקע?</h3>
-                        <p class="text-base text-gray-300 mb-6 leading-relaxed">פירוט גורמים שמשפיעים על עלות סקר קרקע, קידוחים, דיגומים ודוחות נלווים.</p>
-                        <div class="mt-auto text-telem-khaki font-black text-sm">למדריך המלא ←</div>
-                    </a>
-
-                    <a href="/guides/timeline.html" class="guide-card group bg-white/5 p-6 rounded-[30px] border border-white/10 hover:bg-white/10" aria-label="כמה זמן זה לוקח">
-                        <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark mb-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="clock-3" aria-hidden="true" class="lucide lucide-clock-3"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6h4"></path></svg></div>
-                        <h3 class="text-2xl font-black text-white mb-4 leading-tight">כמה זמן זה לוקח?</h3>
-                        <p class="text-base text-gray-300 mb-6 leading-relaxed">לוחות זמנים טיפוסיים לנספחים, בדיקות, אישורים ותיאומים מול הרשויות.</p>
-                        <div class="mt-auto text-telem-khaki font-black text-sm">למדריך המלא ←</div>
-                    </a>
-
-                    <a href="/urban-renewal/" class="guide-card group bg-white/5 p-6 rounded-[30px] border border-white/10 hover:bg-white/10" aria-label="ליווי סביבתי להתחדשות עירונית">
-                        <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark mb-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="building" aria-hidden="true" class="lucide lucide-building"><path d="M12 10h.01"></path><path d="M12 14h.01"></path><path d="M12 6h.01"></path><path d="M16 10h.01"></path><path d="M16 14h.01"></path><path d="M16 6h.01"></path><path d="M8 10h.01"></path><path d="M8 14h.01"></path><path d="M8 6h.01"></path><path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"></path><rect x="4" y="2" width="16" height="20" rx="2"></rect></svg></div>
-                        <h3 class="text-2xl font-black text-white mb-4 leading-tight">ליווי סביבתי להתחדשות עירונית</h3>
-                        <p class="text-base text-gray-300 mb-6 leading-relaxed">נספח סביבתי, נספח אצירה, נספח פסולת בניין וסקר אסבסט לפני הריסה — מיועץ אחד, בפינוי בינוי ותמ"א 38.</p>
-                        <div class="mt-auto text-telem-khaki font-black text-sm">לעמוד השירות ←</div>
-                    </a>
-
-                    <a href="/guides/waste-quantities.html" class="guide-card group bg-white/5 p-6 rounded-[30px] border border-white/10 hover:bg-white/10" aria-label="חישוב כמויות פסולת">
-                        <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark mb-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="clipboard-list" aria-hidden="true" class="lucide lucide-clipboard-list"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="M12 11h4"></path><path d="M12 16h4"></path><path d="M8 11h.01"></path><path d="M8 16h.01"></path></svg></div>
-                        <h3 class="text-2xl font-black text-white mb-4 leading-tight">מחשבון וחישוב כמויות פסולת</h3>
-                        <p class="text-base text-gray-300 mb-6 leading-relaxed">מחשבון כמויות, טבלת המקדמים הרשמית ודוגמת חישוב מלאה לפסולת בניין ועודפי עפר.</p>
-                        <div class="mt-auto text-telem-khaki font-black text-sm">למדריך המלא ←</div>
-                    </a>
-
-                    <a href="/guides/solar-bess.html" class="guide-card group bg-white/5 p-6 rounded-[30px] border border-white/10 hover:bg-white/10" aria-label="רישוי סביבתי לפרויקט סולארי ואגירה">
-                        <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark mb-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></div>
-                        <h3 class="text-2xl font-black text-white mb-4 leading-tight">רישוי סביבתי לפרויקט סולארי ואגירה</h3>
-                        <p class="text-base text-gray-300 mb-6 leading-relaxed">דרישות רגולטוריות, גורמים מאשרים ולוחות זמנים לנספח הסביבתי בפרויקטי אנרגיה מתחדשת.</p>
-                        <div class="mt-auto text-telem-khaki font-black text-sm">למדריך המלא ←</div>
-                    </a>
-
-                    <a href="/in-the-news/" class="guide-card group bg-white/5 p-6 rounded-[30px] border border-white/10 hover:bg-white/10" aria-label="סביבה בכותרות — סקירה ופרשנות מקצועית">
-                        <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark mb-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg></div>
-                        <h3 class="text-2xl font-black text-white mb-4 leading-tight">סביבה בכותרות</h3>
-                        <p class="text-base text-gray-300 mb-6 leading-relaxed">סקירה ופרשנות מקצועית של אבירם בוצר על התפתחויות, רגולציה וידיעות מהתחום הסביבתי.</p>
-                        <div class="mt-auto text-telem-khaki font-black text-sm">למדור ←</div>
-                    </a>
-
-                    <a href="/guides/regulations.html" class="guide-card group bg-white/5 p-6 rounded-[30px] border border-white/10 hover:bg-white/10" aria-label="חוקי הסביבה המרכזיים בישראל">
-                        <div class="w-12 h-12 bg-telem-khaki rounded-2xl flex items-center justify-center text-telem-dark mb-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
-                        <h3 class="text-2xl font-black text-white mb-4 leading-tight">חוקי הסביבה המרכזיים בישראל</h3>
-                        <p class="text-base text-gray-300 mb-6 leading-relaxed">ריכוז כל החוקים והתקנות הסביבתיות הרלוונטיות לפרויקטי בנייה ותכנון – עם קישורים לנוסח המלא.</p>
-                        <div class="mt-auto text-telem-khaki font-black text-sm">למדריך המלא ←</div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-<section id="lectures" class="py-16 bg-white text-right" aria-labelledby="lectures-h2">
-            <div class="max-w-7xl mx-auto px-4">
-                <h2 id="lectures-h2" class="text-3xl font-black mb-4 text-telem-dark">הרצאות וסדנאות</h2>
-                <p class="text-xl font-medium text-telem-black mb-6 max-w-2xl">הרצאות מעשיות לרשויות, ליזמים ולעסקים: פסולת, קרקע מזוהמת, אגירה, אקלים ובינה מלאכותית בניהול סביבתי. כל הרצאה <bdi>45</bdi> דקות ועוד זמן לשאלות, פרונטלית או בזום.</p>
-                <a href="/lectures/" class="inline-flex bg-telem-dark text-white px-8 py-3 rounded-xl font-black hover:bg-telem-forest transition-all">לכל ההרצאות והסדנאות ←</a>
-            </div>
-        </section>
-
-<!-- ============================================================
-     TESTIMONIALS SLIDER — self-contained, all styles scoped to #testimonials-section
-     ============================================================ -->
-<section id="testimonials-section" aria-label="המלצות לקוחות">
-<style>
-#testimonials-section {
-  background: #1d1d1b;
-  direction: rtl;
-  text-align: right;
-  font-family: 'Assistant', 'Google Sans', sans-serif;
-  padding: 80px 16px 72px;
-  overflow: hidden;
-}
-#testimonials-section .ts-inner {
-  max-width: 760px;
-  margin: 0 auto;
-}
-#testimonials-section .ts-heading {
-  text-align: center;
-  margin-bottom: 48px;
-}
-#testimonials-section .ts-heading h2 {
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
-  font-weight: 900;
-  color: #ffffff;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  margin: 0;
-}
-#testimonials-section .ts-heading::after {
-  content: '';
-  display: block;
-  width: 48px;
-  height: 3px;
-  background: #475d4b;
-  margin: 16px auto 0;
-  border-radius: 2px;
-}
-
-/* Slider track */
-#testimonials-section .ts-slider-wrap {
-  position: relative;
-}
-#testimonials-section .ts-track {
-  overflow: hidden;
-  border-radius: 20px;
-}
-#testimonials-section .ts-slides {
-  display: flex;
-  transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: transform;
-}
-
-/* Card */
-#testimonials-section .ts-card {
-  flex: 0 0 100%;
-  background: #262624;
-  border-radius: 20px;
-  padding: 36px 32px 32px;
-  box-sizing: border-box;
-  position: relative;
-  border: 1px solid rgba(255,255,255,0.07);
-}
-@media (max-width: 480px) {
-  #testimonials-section .ts-card { padding: 28px 20px 24px; }
-}
-
-/* Logo container */
-#testimonials-section .ts-logo {
-  position: absolute;
-  top: 24px;
-  left: 24px;
-  width: 48px;
-  height: 48px;
-  border-radius: 10px;
-  background: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px;
-  box-sizing: border-box;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-#testimonials-section .ts-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-#testimonials-section .ts-logo-fallback {
-  width: 100%;
-  height: 100%;
-  border-radius: 6px;
-  background: #475d4b;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  font-weight: 900;
-  color: #ffffff;
-  letter-spacing: 0;
-  user-select: none;
-}
-
-/* Quote */
-#testimonials-section .ts-quote {
-  font-size: clamp(17px, 2.5vw, 21px);
-  font-weight: 700;
-  color: #ffffff;
-  line-height: 1.55;
-  margin: 0 0 22px;
-  padding-left: 64px; /* room for logo badge */
-}
-
-/* Divider */
-#testimonials-section .ts-divider {
-  width: 40px;
-  height: 2px;
-  background: #475d4b;
-  border-radius: 2px;
-  margin-bottom: 18px;
-}
-
-/* Attribution */
-#testimonials-section .ts-name {
-  font-size: 15px;
-  font-weight: 500;
-  color: #ffffff;
-  margin: 0 0 4px;
-}
-#testimonials-section .ts-meta {
-  font-size: 13px;
-  color: rgba(255,255,255,0.60);
-  margin: 0 0 14px;
-  line-height: 1.5;
-}
-
-/* Context tag */
-#testimonials-section .ts-tag {
-  display: inline-block;
-  background: #475d4b;
-  color: #ffffff;
-  font-size: 11px;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 20px;
-  letter-spacing: 0.02em;
-}
-
-/* Arrow buttons */
-#testimonials-section .ts-arrows {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 28px;
-}
-#testimonials-section .ts-btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.18);
-  background: transparent;
-  color: #ffffff;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.18s, border-color 0.18s;
-  flex-shrink: 0;
-}
-#testimonials-section .ts-btn:hover {
-  background: #475d4b;
-  border-color: #475d4b;
-}
-#testimonials-section .ts-btn:focus-visible {
-  outline: 2px solid #475d4b;
-  outline-offset: 3px;
-}
-#testimonials-section .ts-btn svg {
-  width: 18px;
-  height: 18px;
-  stroke: currentColor;
-  fill: none;
-  stroke-width: 2.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  display: block;
-}
-
-/* Dots */
-#testimonials-section .ts-dots {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 20px;
-}
-#testimonials-section .ts-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.22);
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
-}
-#testimonials-section .ts-dot.ts-active {
-  background: #475d4b;
-  transform: scale(1.35);
-}
-#testimonials-section .ts-dot:focus-visible {
-  outline: 2px solid #475d4b;
-  outline-offset: 3px;
-}
-
-/* CTA */
-#testimonials-section .ts-cta {
-  text-align: center;
-  margin-top: 56px;
-}
-#testimonials-section .ts-cta p {
-  font-size: 18px;
-  font-weight: 600;
-  color: rgba(255,255,255,0.75);
-  margin: 0 0 18px;
-}
-#testimonials-section .ts-cta a {
-  display: inline-block;
-  background: #475d4b;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 900;
-  padding: 14px 36px;
-  border-radius: 50px;
-  text-decoration: none;
-  letter-spacing: -0.01em;
-  transition: background 0.18s;
-}
-#testimonials-section .ts-cta a:hover {
-  background: #243e38;
-}
-#testimonials-section .ts-cta a:focus-visible {
-  outline: 2px solid #475d4b;
-  outline-offset: 3px;
-}
-</style>
-
-<div class="ts-inner">
-  <div class="ts-heading">
-    <h2>עבדנו יחד – וזה מה שקרה</h2>
-  </div>
-
-  <div class="ts-slider-wrap">
-    <div class="ts-track" id="ts-track">
-      <div class="ts-slides" id="ts-slides" role="list">
-
-        <!-- Card 1 -->
-        <div class="ts-card" role="listitem" aria-label="המלצה 1 מתוך 4">
-          <div class="ts-logo" aria-hidden="true">
-            <img src="/assets/logo_galil.svg" alt="לוגו אשכול גליל מערבי"
-              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-            <div class="ts-logo-fallback" style="display:none">גמ</div>
-          </div>
-          <p class="ts-quote">"יכולת מרשימה בפרויקטים רב-תחומיים — במיוחד מול רשויות מקומיות וגופים ציבוריים"</p>
-          <div class="ts-divider"></div>
-          <p class="ts-name">ארז אליסאי</p>
-          <p class="ts-meta">מנהל אגף איכות סביבה · אשכול רשויות גליל מערבי</p>
-          <span class="ts-tag">ניהול פסולת ורגולציה</span>
+            </aside>
         </div>
-
-        <!-- Card 2 -->
-        <div class="ts-card" role="listitem" aria-label="המלצה 2 מתוך 4">
-          <div class="ts-logo" aria-hidden="true">
-            <img src="/assets/LOGO_ACKERSTEIN.png" alt="לוגו הקו הירוק"
-              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-            <div class="ts-logo-fallback" style="display:none">רק</div>
-          </div>
-          <p class="ts-quote">"שליטה מלאה בדרישות הסביבתיות ופתרון מצבים מורכבים בזמן אמת"</p>
-          <div class="ts-divider"></div>
-          <p class="ts-name">דן יעקובי</p>
-          <p class="ts-meta">מנהל פרויקט · הקו הירוק – רכבת קלה</p>
-          <span class="ts-tag">פיקוח סביבתי בתשתיות</span>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="ts-card" role="listitem" aria-label="המלצה 3 מתוך 4">
-          <div class="ts-logo" aria-hidden="true">
-            <img src="/assets/LOGO_ESHKOL.jpg" alt="לוגו פרויקט ביאליק 158"
-              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-            <div class="ts-logo-fallback" style="display:none">ב158</div>
-          </div>
-          <p class="ts-quote">"קידם נושאים במהירות וביעילות גם תחת לוחות זמנים צפופים"</p>
-          <div class="ts-divider"></div>
-          <p class="ts-name">קרן בכר צבי</p>
-          <p class="ts-meta">חברת אשכול · פרויקט ביאליק 158, חולון</p>
-          <span class="ts-tag">ייעוץ סביבתי בנדל"ן</span>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="ts-card" role="listitem" aria-label="המלצה 4 מתוך 4">
-          <div class="ts-logo" aria-hidden="true">
-            <img src="/assets/logo_calcalithefer.png" alt="לוגו הכלכלית עמק חפר"
-              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-            <div class="ts-logo-fallback" style="display:none">כע</div>
-          </div>
-          <p class="ts-quote">"לקח אחריות, ניהל צוותים תחת לחץ אדיר — ושמר על מקצועיות לאורך כל הדרך"</p>
-          <div class="ts-divider"></div>
-          <p class="ts-name">שגיא בן-יואב</p>
-          <p class="ts-meta">מנכ"ל · הכלכלית עמק חפר</p>
-          <span class="ts-tag">ניהול אירוע סביבתי חריג</span>
-        </div>
-
-      </div><!-- /ts-slides -->
-    </div><!-- /ts-track -->
-
-    <!-- Arrows -->
-    <div class="ts-arrows" role="group" aria-label="ניווט המלצות">
-      <button class="ts-btn" id="ts-prev" aria-label="המלצה הבאה">
-        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
-      <button class="ts-btn" id="ts-next" aria-label="המלצה הקודמת">
-        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-    </div>
-
-    <!-- Dots -->
-    <div class="ts-dots" role="tablist" aria-label="בחר המלצה">
-      <button class="ts-dot ts-active" role="tab" aria-selected="true"  aria-label="המלצה 1" data-idx="0"></button>
-      <button class="ts-dot"          role="tab" aria-selected="false" aria-label="המלצה 2" data-idx="1"></button>
-      <button class="ts-dot"          role="tab" aria-selected="false" aria-label="המלצה 3" data-idx="2"></button>
-      <button class="ts-dot"          role="tab" aria-selected="false" aria-label="המלצה 4" data-idx="3"></button>
-    </div>
-  </div><!-- /ts-slider-wrap -->
-
-  <!-- CTA -->
-  <div class="ts-cta">
-    <p>יש לכם פרויקט? בואו נדבר.</p>
-    <a href="#contactForm">יצירת קשר</a>
-  </div>
-</div><!-- /ts-inner -->
-
-<script>
-(function(){
-  var slides = document.getElementById('ts-slides');
-  var dots   = document.querySelectorAll('#testimonials-section .ts-dot');
-  var total  = dots.length;
-  var cur    = 0;
-
-  function goTo(n) {
-    cur = (n + total) % total;
-    slides.style.transform = 'translateX(' + (cur * 100) + '%)';
-    dots.forEach(function(d, i) {
-      d.classList.toggle('ts-active', i === cur);
-      d.setAttribute('aria-selected', i === cur ? 'true' : 'false');
-    });
-  }
-
-  document.getElementById('ts-prev').addEventListener('click', function(){ goTo(cur - 1); });
-  document.getElementById('ts-next').addEventListener('click', function(){ goTo(cur + 1); });
-
-  dots.forEach(function(d) {
-    d.addEventListener('click', function(){ goTo(parseInt(d.getAttribute('data-idx'), 10)); });
-  });
-
-  /* Keyboard */
-  document.getElementById('testimonials-section').addEventListener('keydown', function(e) {
-    if (e.key === 'ArrowRight') goTo(cur - 1);
-    if (e.key === 'ArrowLeft')  goTo(cur + 1);
-  });
-
-  /* Touch swipe */
-  var touchStartX = null;
-  var track = document.getElementById('ts-track');
-  track.addEventListener('touchstart', function(e){ touchStartX = e.touches[0].clientX; }, {passive:true});
-  track.addEventListener('touchend', function(e){
-    if (touchStartX === null) return;
-    var dx = e.changedTouches[0].clientX - touchStartX;
-    if (Math.abs(dx) > 40) goTo(dx > 0 ? cur - 1 : cur + 1);
-    touchStartX = null;
-  }, {passive:true});
-})();
-</script>
-</section>
-<!-- ============================================================ -->
-
-    <section style="background:#f8f4f1;font-family:'Assistant',sans-serif;color:#243e38;padding:2rem;border-top:1px solid #94937f;direction:rtl;text-align:right;" aria-label="מקורות ומידע רשמי">
-      <div style="max-width:1200px;margin:0 auto;">
-        <h2 style="font-size:1rem;font-weight:800;color:#475d4b;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #94937f;">מקורות ומידע רשמי</h2>
-        <p style="font-size:1rem;line-height:1.8;margin-bottom:28px;max-width:800px;">קבלת היתר בנייה בישראל מחייבת עמידה בדרישות סביבתיות של גורמים רבים — ועדות תכנון, המשרד להגנת הסביבה, ורשויות מקומיות. ייעוץ סביבתי מקצועי מקצר את הליכי הרישוי ומונע עיכובים יקרים בפרויקטים. אצלנו בתלם, ניסיון של שנים מהצד של הרשות מאפשר לנו לספק מענה ממוקד ואפקטיבי.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:40px;">
-          <div style="flex:1;min-width:260px;">
-            <h3 style="font-size:0.875rem;font-weight:700;color:#475d4b;margin-bottom:12px;">קישורים חיצוניים</h3>
-            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
-              <li><a href="https://www.gov.il/he/departments/ministry_of_environmental_protection" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">המשרד להגנת הסביבה</a></li>
-              <li><a href="https://www.gov.il/he/departments/national_planning_committee" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">מינהל התכנון הלאומי</a></li>
-              <li><a href="https://www.gov.il/he/Departments/israel_land_authority/govil-landing-page" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">רשות מקרקעי ישראל</a></li>
-              <li><a href="https://mavat.iplan.gov.il" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">מרכז מידע לתכנון (מרמ"ת)</a></li>
-              <li><a href="https://www.sii.org.il" target="_blank" rel="noopener noreferrer" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">מכון התקנים הישראלי</a></li>
-            </ul>
-          </div>
-          <div style="flex:1;min-width:260px;">
-            <h3 style="font-size:0.875rem;font-weight:700;color:#475d4b;margin-bottom:12px;">דפים נוספים באתר</h3>
-            <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px 32px;">
-              <li><a href="/waste/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">נספח אצירת אשפה</a></li>
-              <li><a href="/env/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">נספח סביבתי</a></li>
-              <li><a href="/history/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">סקר היסטורי <bdi>Phase I</bdi></a></li>
-              <li><a href="/landscape-appendix/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">נספח נופי-סביבתי</a></li>
-              <li><a href="/solar/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">סולארי ואגירה</a></li>
-              <li><a href="/recycling/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">יועץ מיחזור פסולת</a></li>
-              <li><a href="/environmental-management/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">ניהול סביבה <bdi>ONSITE</bdi></a></li>
-              <li><a href="/construction-waste/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">נספח פסולת בניין</a></li>
-              <li><a href="/urban-renewal/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">ליווי סביבתי להתחדשות עירונית</a></li>
-              <li><a href="/rural/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">ייעוץ סביבתי למרחב הכפרי</a></li>
-              <li><a href="/toxins-permit/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">היתר רעלים</a></li>
-              <li><a href="/consulting/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">ייעוץ סביבתי לעסקים</a></li>
-              <li><a href="/guides/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">מרכז הידע</a></li>
-              <li><a href="/in-the-news/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">סביבה בכותרות</a></li>
-              <li><a href="/lectures/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">הרצאות וסדנאות</a></li>
-              <li><a href="/podcast/" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">פודקאסט חבר זבל</a></li>
-              <li><a href="/about.html" style="color:#475d4b;text-decoration:underline;font-size:0.9rem;">אודות תלם</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <section style="background:#f8f4f1;padding:2rem;border-top:1px solid #94937f;direction:rtl;text-align:right;font-family:'Assistant',sans-serif;color:#243e38;">
-      <div style="max-width:1200px;margin:0 auto;">
-        <h2 style="font-size:1.4rem;font-weight:800;color:#243e38;margin-bottom:1rem;">יועץ פסולת וסביבה לפרויקטי בנייה ותשתיות</h2>
-        <h2 style="font-size:1.2rem;font-weight:700;color:#475d4b;margin-bottom:1.5rem;">שירותי ייעוץ סביבתי מקצועי</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;">
-          <a href="/waste/" class="service-link"><h3 style="font-size:1rem;font-weight:700;color:#475d4b;font-style:italic;">נספח אצירת אשפה להיתר בנייה</h3></a>
-          <a href="/env/" class="service-link"><h3 style="font-size:1rem;font-weight:700;color:#475d4b;font-style:italic;">נספח סביבתי לועדת תכנון</h3></a>
-          <a href="/history/" class="service-link"><h3 style="font-size:1rem;font-weight:700;color:#475d4b;font-style:italic;">סקר היסטורי Phase I לקרקע</h3></a>
-          <a href="/solar/" class="service-link"><h3 style="font-size:1rem;font-weight:700;color:#475d4b;font-style:italic;">ניהול סביבתי לפרויקטים סולאריים</h3></a>
-          <a href="/landscape-appendix/" class="service-link"><h3 style="font-size:1rem;font-weight:700;color:#475d4b;font-style:italic;">נספח נופי-סביבתי לתכנית</h3></a>
-          <a href="/recycling/" class="service-link"><h3 style="font-size:1rem;font-weight:700;color:#475d4b;font-style:italic;">יועץ מיחזור פסולת</h3></a>
+    <section id="guides" class="block" aria-labelledby="guides-h2">
+        <div class="wrap">
+            <header class="guides-head">
+                <div><span class="label">מדריכים וכלים</span><h2 id="guides-h2" class="h2">מרכז הידע <b>והרגולציה</b></h2></div>
+                <p>מדריכים מקצועיים, כלי עזר ודרישות מעודכנות המבוססים על ניסיון מעשי מול הרשויות ואיגודי הערים.</p>
+            </header>
+            <div class="g-grid">
+                <a href="/guides/when-to-consult.html" class="g-card" aria-label="מתי לפנות ליועץ סביבתי"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="briefcase-business" aria-hidden="true" class="lucide lucide-briefcase-business"><path d="M12 12h.01"></path><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path><path d="M22 13a18.15 18.15 0 0 1-20 0"></path><rect width="20" height="14" x="2" y="6" rx="2"></rect></svg></span><h3>מתי לפנות ליועץ סביבתי?</h3><p>באילו שלבים נכון לערב ייעוץ סביבתי כדי לחסוך עיכובים, תיקונים ודרישות נוספות.</p><span class="go">למדריך המלא ←</span></a>
+                <a href="/guides/price.html" class="g-card" aria-label="כמה עולה נספח סביבתי"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="banknote" aria-hidden="true" class="lucide lucide-banknote"><rect width="20" height="12" x="2" y="6" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg></span><h3>כמה עולה נספח סביבתי?</h3><p>המחיר האמיתי לנספח סביבתי, מה משפיע עליו בפועל ואיך לא ליפול בהצעת מחיר זולה מדי.</p><span class="go">למדריך המלא ←</span></a>
+                <a href="/guides/soil-testing.html" class="g-card" aria-label="בדיקות קרקע"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="flask-conical" aria-hidden="true" class="lucide lucide-flask-conical"><path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"></path><path d="M6.453 15h11.094"></path><path d="M8.5 2h7"></path></svg></span><h3>בדיקות קרקע</h3><p>מידע על בדיקות קרקע, צורך רגולטורי ושיקולים מקצועיים לפני קידום פרויקט.</p><span class="go">למדריך המלא ←</span></a>
+                <a href="/guides/cities-waste.html" class="g-card" aria-label="דרישות רשויות בנושא פסולת"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="building-2" aria-hidden="true" class="lucide lucide-building-2"><path d="M10 12h4"></path><path d="M10 8h4"></path><path d="M14 21v-3a2 2 0 0 0-4 0v3"></path><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path></svg></span><h3>דרישות רשויות בנושא פסולת</h3><p>סקירה ממוקדת של דרישות תפעול ותכנון מול רשויות מקומיות ואיגודי ערים.</p><span class="go">למדריך המלא ←</span></a>
+                <a href="/guides/history-when.html" class="g-card" aria-label="מתי נדרש סקר היסטורי"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="history" aria-hidden="true" class="lucide lucide-history"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path><path d="M12 7v5l4 2"></path></svg></span><h3>מתי נדרש סקר היסטורי?</h3><p>הבנת המצבים שבהם עולה דרישה לבדיקת היסטוריית שימושים ולבחינת חשש לזיהום.</p><span class="go">למדריך המלא ←</span></a>
+                <a href="/guides/soil-survey-cost.html" class="g-card" aria-label="כמה עולה סקר קרקע"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="coins" aria-hidden="true" class="lucide lucide-coins"><path d="M13.744 17.736a6 6 0 1 1-7.48-7.48"></path><path d="M15 6h1v4"></path><path d="m6.134 14.768.866-.5 2 3.464"></path><circle cx="16" cy="8" r="6"></circle></svg></span><h3>כמה עולה סקר קרקע?</h3><p>פירוט גורמים שמשפיעים על עלות סקר קרקע, קידוחים, דיגומים ודוחות נלווים.</p><span class="go">למדריך המלא ←</span></a>
+                <a href="/guides/timeline.html" class="g-card" aria-label="כמה זמן זה לוקח"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="clock-3" aria-hidden="true" class="lucide lucide-clock-3"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6h4"></path></svg></span><h3>כמה זמן זה לוקח?</h3><p>לוחות זמנים טיפוסיים לנספחים, בדיקות, אישורים ותיאומים מול הרשויות.</p><span class="go">למדריך המלא ←</span></a>
+                <a href="/urban-renewal/" class="g-card" aria-label="ליווי סביבתי להתחדשות עירונית"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="building" aria-hidden="true" class="lucide lucide-building"><path d="M12 10h.01"></path><path d="M12 14h.01"></path><path d="M12 6h.01"></path><path d="M16 10h.01"></path><path d="M16 14h.01"></path><path d="M16 6h.01"></path><path d="M8 10h.01"></path><path d="M8 14h.01"></path><path d="M8 6h.01"></path><path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"></path><rect x="4" y="2" width="16" height="20" rx="2"></rect></svg></span><h3>ליווי סביבתי להתחדשות עירונית</h3><p>נספח סביבתי, נספח אצירה, נספח פסולת בניין וסקר אסבסט לפני הריסה — מיועץ אחד, בפינוי בינוי ותמ"א 38.</p><span class="go">לעמוד השירות ←</span></a>
+                <a href="/guides/waste-quantities.html" class="g-card" aria-label="חישוב כמויות פסולת"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="clipboard-list" aria-hidden="true" class="lucide lucide-clipboard-list"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="M12 11h4"></path><path d="M12 16h4"></path><path d="M8 11h.01"></path><path d="M8 16h.01"></path></svg></span><h3>מחשבון וחישוב כמויות פסולת</h3><p>מחשבון כמויות, טבלת המקדמים הרשמית ודוגמת חישוב מלאה לפסולת בניין ועודפי עפר.</p><span class="go">למדריך המלא ←</span></a>
+                <a href="/guides/solar-bess.html" class="g-card" aria-label="רישוי סביבתי לפרויקט סולארי ואגירה"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span><h3>רישוי סביבתי לפרויקט סולארי ואגירה</h3><p>דרישות רגולטוריות, גורמים מאשרים ולוחות זמנים לנספח הסביבתי בפרויקטי אנרגיה מתחדשת.</p><span class="go">למדריך המלא ←</span></a>
+                <a href="/in-the-news/" class="g-card" aria-label="סביבה בכותרות — סקירה ופרשנות מקצועית"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg></span><h3>סביבה בכותרות</h3><p>סקירה ופרשנות מקצועית של אבירם בוצר על התפתחויות, רגולציה וידיעות מהתחום הסביבתי.</p><span class="go">למדור ←</span></a>
+                <a href="/guides/regulations.html" class="g-card" aria-label="חוקי הסביבה המרכזיים בישראל"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><h3>חוקי הסביבה המרכזיים בישראל</h3><p>ריכוז כל החוקים והתקנות הסביבתיות הרלוונטיות לפרויקטי בנייה ותכנון – עם קישורים לנוסח המלא.</p><span class="go">למדריך המלא ←</span></a>
+            </div>
         </div>
-      </div>
+    </section>
+
+    <section id="lectures" class="lectures" aria-labelledby="lectures-h2">
+        <div class="wrap">
+            <div>
+                <h2 id="lectures-h2">הרצאות וסדנאות</h2>
+                <p>הרצאות מעשיות לרשויות, ליזמים ולעסקים: פסולת, קרקע מזוהמת, אגירה, אקלים ובינה מלאכותית בניהול סביבתי. כל הרצאה <bdi>45</bdi> דקות ועוד זמן לשאלות, פרונטלית או בזום.</p>
+            </div>
+            <a href="/lectures/" class="btn btn-light">לכל ההרצאות והסדנאות ←</a>
+        </div>
+    </section>
+
+    <section class="sources" aria-label="מקורות ומידע רשמי">
+        <div class="wrap">
+            <h2>מקורות ומידע רשמי</h2>
+            <p class="intro">קבלת היתר בנייה בישראל מחייבת עמידה בדרישות סביבתיות של גורמים רבים — ועדות תכנון, המשרד להגנת הסביבה, ורשויות מקומיות. ייעוץ סביבתי מקצועי מקצר את הליכי הרישוי ומונע עיכובים יקרים בפרויקטים. אצלנו בתלם, ניסיון של שנים מהצד של הרשות מאפשר לנו לספק מענה ממוקד ואפקטיבי.</p>
+            <div class="cols">
+                <div>
+                    <h3>קישורים חיצוניים</h3>
+                    <ul>
+              <li><a href="https://www.gov.il/he/departments/ministry_of_environmental_protection" target="_blank" rel="noopener noreferrer">המשרד להגנת הסביבה</a></li>
+              <li><a href="https://www.gov.il/he/departments/national_planning_committee" target="_blank" rel="noopener noreferrer">מינהל התכנון הלאומי</a></li>
+              <li><a href="https://www.gov.il/he/Departments/israel_land_authority/govil-landing-page" target="_blank" rel="noopener noreferrer">רשות מקרקעי ישראל</a></li>
+              <li><a href="https://mavat.iplan.gov.il" target="_blank" rel="noopener noreferrer">מרכז מידע לתכנון (מרמ"ת)</a></li>
+              <li><a href="https://www.sii.org.il" target="_blank" rel="noopener noreferrer">מכון התקנים הישראלי</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>דפים נוספים באתר</h3>
+                    <ul class="site-links">
+              <li><a href="/waste/">נספח אצירת אשפה</a></li>
+              <li><a href="/env/">נספח סביבתי</a></li>
+              <li><a href="/history/">סקר היסטורי <bdi>Phase I</bdi></a></li>
+              <li><a href="/landscape-appendix/">נספח נופי-סביבתי</a></li>
+              <li><a href="/solar/">סולארי ואגירה</a></li>
+              <li><a href="/recycling/">יועץ מיחזור פסולת</a></li>
+              <li><a href="/environmental-management/">ניהול סביבה <bdi>ONSITE</bdi></a></li>
+              <li><a href="/construction-waste/">נספח פסולת בניין</a></li>
+              <li><a href="/urban-renewal/">ליווי סביבתי להתחדשות עירונית</a></li>
+              <li><a href="/rural/">ייעוץ סביבתי למרחב הכפרי</a></li>
+              <li><a href="/toxins-permit/">היתר רעלים</a></li>
+              <li><a href="/consulting/">ייעוץ סביבתי לעסקים</a></li>
+              <li><a href="/guides/">מרכז הידע</a></li>
+              <li><a href="/in-the-news/">סביבה בכותרות</a></li>
+              <li><a href="/lectures/">הרצאות וסדנאות</a></li>
+              <li><a href="/podcast/">פודקאסט חבר זבל</a></li>
+              <li><a href="/about.html">אודות תלם</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
     </main>
 
-    <footer class="bg-telem-black text-white py-16 px-4 text-right" role="contentinfo">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-10">
-            <address class="not-italic">
-                <img src="logo.png" class="h-20 mb-8 opacity-80" alt="לוגו תלם">
-                <p class="text-telem-cream/40 text-2xl max-w-md font-medium mb-4">אבירם בוצר - מביאים את הניסיון מהצד של הרשות לקידום הפרויקט שלכם.</p>
-                <p class="text-telem-khaki font-bold"><a href="tel:0506890650" class="hover:text-white">050-6890650</a></p>
+    <footer class="tv2-foot" role="contentinfo">
+        <div class="tv2-wrap tv2-foot-in">
+            <address>
+                <img src="/logo.png" alt="לוגו תלם" width="1586" height="659" loading="lazy">
+                <p>אבירם בוצר - מביאים את הניסיון מהצד של הרשות לקידום הפרויקט שלכם.</p>
+                <a href="tel:0506890650">050-6890650</a>
             </address>
-            <div class="flex flex-col gap-3 text-telem-khaki font-bold text-sm not-italic font-sans">
-                <h4 class="text-telem-cream/50 text-xs uppercase tracking-widest font-black mb-1">דפים נוספים באתר</h4>
-                <a href="/waste/" class="hover:text-white transition-all">נספח אצירת אשפה</a>
-                <a href="/env/" class="hover:text-white transition-all">נספח סביבתי</a>
-                <a href="/history/" class="hover:text-white transition-all">סקר היסטורי <bdi>Phase I</bdi></a>
-                <a href="/landscape-appendix/" class="hover:text-white transition-all">נספח נופי-סביבתי</a>
-                <a href="/solar/" class="hover:text-white transition-all">סולארי ואגירה</a>
-                <a href="/recycling/" class="hover:text-white transition-all">יועץ מיחזור פסולת</a>
-                <a href="/environmental-management/" class="hover:text-white transition-all">ניהול סביבה <bdi>ONSITE</bdi></a>
-                <a href="/construction-waste/" class="hover:text-white transition-all">נספח פסולת בניין</a>
-                <a href="/urban-renewal/" class="hover:text-white transition-all">ליווי סביבתי להתחדשות עירונית</a>
-                <a href="/rural/" class="hover:text-white transition-all">ייעוץ סביבתי למרחב הכפרי</a>
-                <a href="/toxins-permit/" class="hover:text-white transition-all">היתר רעלים</a>
-                <a href="/consulting/" class="hover:text-white transition-all">ייעוץ סביבתי לעסקים</a>
-                <a href="/guides/" class="hover:text-white transition-all">מרכז הידע</a>
-                <a href="/in-the-news/" class="hover:text-white transition-all">סביבה בכותרות</a>
-                <a href="/lectures/" class="hover:text-white transition-all">הרצאות וסדנאות</a>
-                <a href="/podcast/" class="hover:text-white transition-all">פודקאסט חבר זבל</a>
-                <a href="/about.html" class="hover:text-white transition-all">אודות תלם</a>
+            <div class="tv2-foot-links">
+                <h3>דפים נוספים באתר</h3>
+                <a href="/waste/">נספח אצירת אשפה</a>
+                <a href="/env/">נספח סביבתי</a>
+                <a href="/history/">סקר היסטורי <bdi>Phase I</bdi></a>
+                <a href="/landscape-appendix/">נספח נופי-סביבתי</a>
+                <a href="/solar/">סולארי ואגירה</a>
+                <a href="/recycling/">יועץ מיחזור פסולת</a>
+                <a href="/environmental-management/">ניהול סביבה <bdi>ONSITE</bdi></a>
+                <a href="/construction-waste/">נספח פסולת בניין</a>
+                <a href="/urban-renewal/">ליווי סביבתי להתחדשות עירונית</a>
+                <a href="/rural/">ייעוץ סביבתי למרחב הכפרי</a>
+                <a href="/toxins-permit/">היתר רעלים</a>
+                <a href="/consulting/">ייעוץ סביבתי לעסקים</a>
+                <a href="/guides/">מרכז הידע</a>
+                <a href="/in-the-news/">סביבה בכותרות</a>
+                <a href="/lectures/">הרצאות וסדנאות</a>
+                <a href="/podcast/">פודקאסט חבר זבל</a>
+                <a href="/about.html">אודות תלם</a>
             </div>
-            <div class="flex flex-col md:items-end gap-6 text-telem-khaki font-bold text-xl not-italic uppercase tracking-widest">
-                <a href="mailto:aviram@telemenv.co.il" class="hover:text-white transition-all">aviram@telemenv.co.il</a>
-                <p class="mt-8 text-sm opacity-20 font-sans">© 2026 תלם ניהול סביבה.</p>
+            <div class="tv2-foot-side">
+                <a href="mailto:aviram@telemenv.co.il">aviram@telemenv.co.il</a>
+                <a href="https://www.linkedin.com/in/aviram-botzer-01782aa5/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <p class="tv2-copy">© 2026 תלם ניהול סביבה. כל הזכויות שמורות.</p>
             </div>
         </div>
     </footer>
+
 
     <a href="https://wa.me/972506890650" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="צרו קשר ב-WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="message-circle" style="width: 32px; height: 32px;" aria-hidden="true" class="lucide lucide-message-circle"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"></path></svg>
@@ -1329,4 +928,5 @@
     <span>חייגו אלינו</span>
   </a>
 </div>
+<script src="/assets/telem-v2.js" defer></script>
 </body></html>

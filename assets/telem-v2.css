@@ -1,0 +1,238 @@
+/* ==========================================================================
+   תלם v2 — מערכת עיצוב משותפת ("התלם")
+   נטען בכל עמוד שה-body שלו נושא class="tv2".
+
+   שתי רמות ספציפיות, בכוונה:
+   1. כרום (כותרת, תפריט, פוטר, hero, מקורות) — .tv2 .tv2-xxx: גובר על
+      Tailwind ועל ה-<style> הפנימי של כל עמוד.
+   2. טיפוגרפיה של תוכן — html :where(.tv2 …) el = ספציפיות (0,0,2):
+      גוברת על ה-preflight של Tailwind (0,0,1) אבל נכנעת לכל class של
+      Tailwind (0,1,0), כך שעמוד שכבר מעוצב ב-utilities שומר על הפריסה שלו.
+   ========================================================================== */
+.tv2{
+  --deep:#1b2f2a; --forest:#243e38; --forest-2:#475d4b; --moss:#78836a; --khaki:#94937f;
+  --cream:#f8f4f1; --paper:#f1ebe4; --ink:#1d1d1b; --muted:#5f6359; --line:#d9d1c6;
+  --wrap:1240px; --gutter:40px; --hdr:80px; --radius:18px;
+  font-family:"Assistant",system-ui,sans-serif!important;
+  background:var(--cream);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:clip;
+}
+html:has(body.tv2){overflow-x:clip}
+.tv2 .font-serif,.tv2 .font-sans{font-family:"Assistant",system-ui,sans-serif}
+.tv2 .italic,.tv2 main h1,.tv2 main h2,.tv2 main h3,.tv2 main h4{font-style:normal}
+.tv2 bdi{unicode-bidi:isolate;white-space:nowrap}
+.tv2-wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+
+/* ---------- buttons ---------- */
+.tv2 .tv2-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border-radius:999px;font-weight:700;font-size:17px;line-height:1;text-decoration:none;cursor:pointer;transition:transform .15s,background-color .2s,color .2s}
+.tv2 .tv2-btn:hover{transform:translateY(-2px)}
+.tv2 .tv2-btn:active{transform:scale(.98)}
+.tv2 .tv2-btn-dark{background:var(--forest);color:#fff}
+.tv2 .tv2-btn-dark:hover{background:var(--deep)}
+.tv2 .tv2-btn-light{background:#f3efe9;color:var(--deep)}
+.tv2 main a.bg-telem-dark,.tv2 main a.bg-telem-forest,.tv2 main button.bg-telem-dark,.tv2 main button.bg-telem-forest,
+.tv2 main a[class*="border-telem-khaki"][class*="px-"]{border-radius:999px;transition:transform .15s,background-color .2s}
+.tv2 main a.bg-telem-dark:hover,.tv2 main a.bg-telem-forest:hover{transform:translateY(-2px)}
+.tv2 a:focus-visible,.tv2 button:focus-visible,.tv2 input:focus-visible,.tv2 summary:focus-visible{outline:3px solid #b9c4a6;outline-offset:3px}
+
+/* ---------- header ---------- */
+.tv2 .tv2-head{position:fixed;top:0;inset-inline:0;z-index:100;height:var(--hdr);background:rgba(27,47,42,.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08);font-family:"Assistant",system-ui,sans-serif}
+.tv2 .tv2-head-in{max-width:1360px;height:100%;margin:0 auto;padding:0 var(--gutter);display:flex;align-items:center;justify-content:space-between;gap:28px}
+.tv2 .tv2-logo{display:block;flex:none}
+.tv2 .tv2-logo img{height:46px;width:auto;filter:brightness(0) invert(1)}
+.tv2 .tv2-nav{display:flex;align-items:center;gap:26px;font-size:16px;color:#c9cbbf;white-space:nowrap;margin-inline-start:auto}
+.tv2 .tv2-nav>a,.tv2 .tv2-dd-btn{position:relative;display:inline-flex;align-items:center;gap:6px;min-height:44px;color:#c9cbbf;font:inherit;font-weight:500;background:none;border:0;cursor:pointer;transition:color .2s}
+.tv2 .tv2-nav>a::after,.tv2 .tv2-dd-btn::after{content:"";position:absolute;inset-inline:0;bottom:8px;height:1px;background:var(--moss);transform:scaleX(0);transition:transform .25s}
+.tv2 .tv2-nav>a:hover,.tv2 .tv2-dd-btn:hover,.tv2 .tv2-nav>a[aria-current="page"]{color:#fff}
+.tv2 .tv2-nav>a:hover::after,.tv2 .tv2-dd-btn:hover::after,.tv2 .tv2-nav>a[aria-current="page"]::after{transform:scaleX(1)}
+.tv2 .tv2-dd-btn svg{width:14px;height:14px;transition:transform .2s}
+.tv2 .tv2-dd{position:relative}
+.tv2 .tv2-dd-panel{position:absolute;top:calc(100% + 8px);inset-inline-start:-24px;min-width:520px;display:none;grid-template-columns:1fr 1fr;gap:2px 24px;padding:18px 24px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 30px 60px -24px rgba(0,0,0,.35)}
+.tv2 .tv2-dd-panel::before{content:"";position:absolute;inset:-12px 0 auto;height:12px}
+.tv2 .tv2-dd:hover .tv2-dd-panel,.tv2 .tv2-dd.open .tv2-dd-panel{display:grid}
+.tv2 .tv2-dd:hover .tv2-dd-btn svg,.tv2 .tv2-dd.open .tv2-dd-btn svg{transform:rotate(180deg)}
+.tv2 .tv2-dd-panel a{display:block;padding:9px 0;border-bottom:1px solid #eee7dd;color:var(--forest);font-weight:600;font-size:15.5px;white-space:normal;transition:color .2s,padding .2s}
+.tv2 .tv2-dd-panel a:hover{color:var(--moss);padding-inline-start:6px}
+.tv2 .tv2-dd-panel a[aria-current="page"]{color:var(--moss)}
+.tv2 .tv2-acts{display:flex;align-items:center;gap:12px;flex:none}
+.tv2 .tv2-li{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;color:#c9cbbf;transition:color .2s,background .2s}
+.tv2 .tv2-li:hover{color:#fff;background:rgba(255,255,255,.08)}
+.tv2 .tv2-li svg{width:21px;height:21px}
+.tv2 .tv2-tel{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border:1px solid rgba(255,255,255,.3);border-radius:999px;color:#fff;font-weight:700;letter-spacing:.04em;direction:ltr;white-space:nowrap;transition:background .2s,transform .15s}
+.tv2 .tv2-tel:hover{background:rgba(255,255,255,.1);transform:translateY(-1px)}
+.tv2 .tv2-menu-btn{display:none;width:48px;height:48px;align-items:center;justify-content:center;color:#fff;background:none;border:0;cursor:pointer}
+.tv2 .tv2-menu-btn svg{width:30px;height:30px}
+.tv2 .tv2-menu{position:fixed;top:var(--hdr);inset-inline:0;z-index:99;max-height:calc(100vh - var(--hdr));overflow:auto;background:var(--deep);padding:8px var(--gutter) 32px;border-top:1px solid rgba(255,255,255,.08);font-family:"Assistant",system-ui,sans-serif}
+.tv2 .tv2-menu[hidden]{display:none}
+.tv2 .tv2-menu nav{display:flex;flex-direction:column}
+.tv2 .tv2-menu a{display:block;padding:13px 0;font-size:20px;font-weight:700;color:#f3efe9;border-bottom:1px solid rgba(255,255,255,.1)}
+.tv2 .tv2-menu a.sub{font-size:17px;font-weight:500;color:#c9cbbf;padding-inline-start:16px}
+.tv2 .tv2-menu .tv2-menu-label{font-size:13px;letter-spacing:.14em;color:var(--khaki);font-weight:700;padding:18px 0 4px}
+
+/* ---------- page hero ---------- */
+.tv2 .tv2-hero{position:relative;overflow:hidden;background:var(--deep)!important;color:#f3efe9;text-align:right}
+.tv2 .tv2-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 70% at 10% 100%,rgba(120,131,106,.24),transparent 60%);pointer-events:none}
+.tv2 .tv2-hero-x{margin-inline:calc(50% - 50vw);padding-inline:calc(50vw - 50%)}
+.tv2 .tv2-hero-in{position:relative;z-index:1;max-width:var(--wrap);margin:0 auto;padding:56px var(--gutter) 60px;display:grid;grid-template-columns:1fr 150px;gap:40px;align-items:end}
+.tv2 .tv2-hero-x .tv2-hero-in{padding-inline:0}
+.tv2 .tv2-hero-text{min-width:0}
+.tv2 .tv2-hero h1{font-family:"Assistant",system-ui,sans-serif;font-size:clamp(36px,4.6vw,68px);line-height:1.06;font-weight:800;letter-spacing:-.02em;color:#fff;margin:0;max-width:22em;text-transform:none;font-style:normal}
+.tv2 .tv2-hero h1 span{color:var(--khaki)}
+.tv2 .tv2-hero p{color:#c9cbbf;font-size:19px;line-height:1.6;max-width:44em;margin:18px 0 0;font-weight:400}
+.tv2 .tv2-hero p a,.tv2 .tv2-hero time{color:#f3efe9}
+.tv2 .tv2-hero .tv2-crumbs,.tv2 .tv2-hero nav,.tv2 .tv2-hero>.tv2-hero-in>.tv2-hero-text>a:first-child{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 22px;font-size:15px;font-weight:600;color:var(--khaki)}
+.tv2 .tv2-hero .tv2-crumbs a,.tv2 .tv2-hero nav a,.tv2 .tv2-hero>.tv2-hero-in>.tv2-hero-text>a:first-child{color:#c9cbbf;text-decoration:none}
+.tv2 .tv2-hero .tv2-crumbs a:hover,.tv2 .tv2-hero nav a:hover{color:#fff;text-decoration:underline}
+.tv2 .tv2-hero nav span{color:#e8e4dc;text-decoration:none}
+.tv2 .tv2-hero [class*="rounded-full"],.tv2 .tv2-hero .hero-badge{display:inline-block;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:var(--khaki);font-size:14px;font-weight:700;letter-spacing:.06em;padding:6px 14px;border-radius:999px;margin-bottom:20px}
+.tv2 .tv2-furrows{display:flex;gap:12px;height:170px;align-self:center}
+.tv2 .tv2-furrows i{display:block;flex:1;background:var(--moss);clip-path:polygon(8% 0,100% 0,88% 100%,0 100%);opacity:.9;transform-origin:bottom;animation:tv2-rise 1s cubic-bezier(.2,.7,.2,1) both}
+.tv2 .tv2-furrows i:nth-child(2){clip-path:polygon(0 0,92% 0,100% 100%,12% 100%);opacity:.72;animation-delay:.07s}
+.tv2 .tv2-furrows i:nth-child(3){opacity:.55;animation-delay:.14s}
+.tv2 .tv2-furrows i:nth-child(4){clip-path:polygon(0 0,92% 0,100% 100%,12% 100%);opacity:.4;animation-delay:.21s}
+@keyframes tv2-rise{from{transform:scaleY(0)}}
+/* a page whose first section already was a hero (guides index, news): recolour it */
+.tv2 section.tv2-hero{padding-top:56px;padding-bottom:56px}
+.tv2 section.tv2-hero h1{display:block}
+.tv2 section.tv2-hero .home-section-header,.tv2 section.tv2-hero header{text-align:right}
+.tv2 section.tv2-hero .home-section-h2{margin-inline:0}
+.tv2 section.tv2-hero p{margin-inline:0}
+.tv2 main.tv2-main{padding-top:var(--hdr)!important}
+.tv2 main.tv2-main>.tv2-hero-x:first-child,.tv2 main.tv2-main>section.tv2-hero:first-child{margin-top:0}
+
+/* ---------- content typography (low specificity) ---------- */
+html :where(.tv2 main) h2:not([class]){font-size:clamp(26px,2.6vw,36px);line-height:1.2;font-weight:800;color:var(--forest);margin:2.2em 0 .6em;letter-spacing:-.01em}
+html :where(.tv2 main) h3:not([class]){font-size:clamp(20px,1.8vw,24px);line-height:1.3;font-weight:800;color:var(--forest);margin:1.6em 0 .5em}
+html :where(.tv2 main) h4:not([class]){font-size:19px;font-weight:800;color:var(--forest);margin:1.4em 0 .4em}
+html :where(.tv2 main) p:not([class]){margin:0 0 1em}
+html :where(.tv2 main) ul:not([class]),html :where(.tv2 main) ol:not([class]){margin:0 0 1.2em;padding-inline-start:1.4em}
+html :where(.tv2 main) ul:not([class]){list-style:disc}
+html :where(.tv2 main) ol:not([class]){list-style:decimal}
+html :where(.tv2 main) :where(ul:not([class]),ol:not([class]))>li{margin:.35em 0}
+html :where(.tv2 main) :where(ul:not([class]),ol:not([class]))>li::marker{color:var(--moss)}
+html :where(.tv2 main) a:not([class]){color:var(--forest-2);text-decoration:underline;text-decoration-color:#c2b9ab;text-underline-offset:3px}
+html :where(.tv2 main) a:not([class]):hover{color:var(--forest);text-decoration-color:var(--moss)}
+html :where(.tv2 main) strong{font-weight:800}
+html :where(.tv2 main) blockquote:not([class]){margin:1.6em 0;padding:4px 22px;border-inline-start:3px solid var(--moss);font-size:1.12em;color:var(--forest)}
+html :where(.tv2 main) table:not([class]){display:block;width:100%;max-width:100%;overflow-x:auto;border-collapse:collapse;margin:1.4em 0;font-size:16px;-webkit-overflow-scrolling:touch}
+html :where(.tv2 main) th,html :where(.tv2 main) td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:right;vertical-align:top;min-width:120px}
+html :where(.tv2 main) th{background:var(--paper);color:var(--forest);font-weight:800}
+html :where(.tv2 main) details{border-bottom:1px solid var(--line);padding:0}
+html :where(.tv2 main) summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:800;color:var(--forest);font-size:19px;display:flex;justify-content:space-between;gap:16px}
+html :where(.tv2 main) summary::-webkit-details-marker{display:none}
+html :where(.tv2 main) summary::after{content:"+";color:var(--moss);font-size:24px;line-height:1;transition:transform .2s}
+html :where(.tv2 main) details[open] summary::after{transform:rotate(45deg)}
+html :where(.tv2 main) details>*:not(summary){margin-bottom:18px}
+/* the long-read column used by service pages and guides */
+.tv2 .tv2-prose{font-size:18px;line-height:1.75;color:var(--ink)}
+.tv2 .tv2-prose>*{max-width:46em}
+.tv2 .tv2-prose>h2:first-child{margin-top:0}
+
+/* ---------- utility skins for existing Tailwind content ---------- */
+.tv2 main [class*="rounded-["]{border-radius:var(--radius)}
+.tv2 main .rounded-3xl,.tv2 main .rounded-2xl{border-radius:16px}
+.tv2 main [class*="rounded-["].bg-white,.tv2 main .shadow-xl.bg-white{box-shadow:0 1px 0 rgba(0,0,0,.02);border:1px solid var(--line)}
+.tv2 main .shadow-xl,.tv2 main .shadow-2xl{box-shadow:0 24px 50px -32px rgba(36,62,56,.4)}
+.tv2 main .tracking-tighter{letter-spacing:-.01em}
+.tv2 main .uppercase{text-transform:none}
+.tv2 main .font-black{font-weight:800}
+.tv2 main .bg-telem-dark{background-color:var(--forest)}
+.tv2 main .guide-card,.tv2 main .article-card,.tv2 main .project-card{transition:transform .2s,box-shadow .2s,border-color .2s}
+.tv2 main a.guide-card:hover,.tv2 main .article-card:hover{transform:translateY(-2px)}
+
+/* a card grid that used to sit on the dark hero section */
+.tv2 main section.tv2-light{background:var(--cream)!important;color:var(--ink)}
+.tv2 main section.tv2-light .guide-card{background:#fff;border:1px solid var(--line);box-shadow:none}
+.tv2 main section.tv2-light .guide-card:hover{border-color:#c5bcae;box-shadow:0 22px 40px -28px rgba(36,62,56,.5)}
+.tv2 main section.tv2-light .guide-card h3{color:var(--forest)}
+.tv2 main section.tv2-light .guide-card p{color:var(--muted)}
+.tv2 main section.tv2-light .guide-card>div:first-child{background:var(--paper);color:var(--forest)}
+.tv2 main section.tv2-light .guide-card .text-telem-khaki,.tv2 main section.tv2-light .guide-card>div:last-child{color:var(--forest-2)}
+
+/* about.html: its list items were flex rows, which split each line into columns */
+.tv2 .bullet-list li{display:block;position:relative;padding-inline-start:2.4rem}
+.tv2 .bullet-list li::before{position:absolute;inset-inline-start:1.1rem;top:1.2rem}
+
+/* ---------- author box ---------- */
+.tv2 .author-note,.tv2 .tv2-author{margin:2.4rem 0 0!important;padding:18px 22px!important;background:var(--paper)!important;border:0!important;border-inline-start:3px solid var(--moss)!important;border-radius:0 14px 14px 0!important;font-size:15.5px!important;color:var(--muted)!important;line-height:1.7!important}
+.tv2 .author-note a{color:var(--forest)!important}
+
+/* ---------- sources block (shared across pages) ---------- */
+.tv2 .tv2-sources{background:var(--cream);border-top:1px solid var(--line);padding:72px 0;color:var(--forest)}
+.tv2 .tv2-sources>div{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+.tv2 .tv2-sources h2{font-size:14px;letter-spacing:.14em;color:var(--moss);font-weight:700;margin:0 0 16px}
+.tv2 .tv2-sources>div>p{font-size:18px;line-height:1.75;max-width:52em;margin:0 0 36px}
+.tv2 .tv2-sources>div>div{display:grid;grid-template-columns:1fr 2fr;gap:48px}
+.tv2 .tv2-sources h3{font-size:16px;font-weight:800;color:var(--forest);margin:0 0 12px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.tv2 .tv2-sources ul{list-style:none;margin:0;padding:0;display:grid;gap:0 32px}
+.tv2 .tv2-sources>div>div>div:last-child ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+.tv2 .tv2-sources li{margin:0}
+.tv2 .tv2-sources li a{display:inline-block;padding:8px 0;line-height:1.5;color:var(--forest-2);font-size:16px;text-decoration:underline;text-decoration-color:#c9c1b4;text-underline-offset:4px}
+.tv2 .tv2-sources li a:hover{color:var(--forest);text-decoration-color:var(--moss)}
+
+/* ---------- lead forms (any Web3Forms form) ---------- */
+.tv2 main form[action*="web3forms"] input:not([type=hidden]):not([type=checkbox]),.tv2 main form[action*="web3forms"] textarea,.tv2 main form[action*="web3forms"] select{font-family:inherit;font-size:17px;min-height:52px;border:1px solid var(--line);border-radius:12px;background:var(--cream);color:var(--ink)}
+.tv2 main form[action*="web3forms"] button[type=submit]{border-radius:999px;min-height:56px}
+
+/* ---------- footer ---------- */
+.tv2 .tv2-foot{background:var(--deep);color:#a9ad9f;padding:72px 0 40px;font-family:"Assistant",system-ui,sans-serif;text-align:right}
+.tv2 .tv2-foot-in{display:grid;grid-template-columns:1.1fr 1.4fr .9fr;gap:48px}
+.tv2 .tv2-foot address{font-style:normal}
+.tv2 .tv2-foot address img{height:62px;width:auto;filter:brightness(0) invert(1);opacity:.85;margin-bottom:24px}
+.tv2 .tv2-foot address p{font-size:20px;line-height:1.45;color:#d3d6cb;max-width:20em;margin:0 0 14px}
+.tv2 .tv2-foot address p.tv2-foot-note{font-size:15px;color:#a9ad9f;line-height:1.6}
+.tv2 .tv2-foot address a{color:#fff;font-weight:700;direction:ltr;display:inline-block}
+.tv2 .tv2-foot-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px;align-content:start}
+.tv2 .tv2-foot-links h3,.tv2 .tv2-foot-links h4{grid-column:1/-1;font-size:13px;letter-spacing:.14em;color:#8a8f82;font-weight:700;margin:0 0 10px}
+.tv2 .tv2-foot-links a{display:block;padding:7px 0;line-height:1.5;font-size:15px;color:#c9cbbf;transition:color .2s}
+.tv2 .tv2-foot-links a:hover{color:#fff}
+.tv2 .tv2-foot-side{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.tv2 .tv2-foot-side a{color:#fff;font-weight:600}
+.tv2 .tv2-foot-side a:hover{text-decoration:underline}
+.tv2 .tv2-copy{font-size:14px;color:#8a8f82;margin:auto 0 0}
+
+/* ---------- floating controls ---------- */
+@media (max-width:768px){
+  .tv2 #cookieBanner{left:0!important;right:0!important;transform:none!important;width:auto!important;bottom:56px!important;border-radius:16px 16px 0 0!important;padding:12px 16px!important;box-shadow:0 -10px 30px rgba(0,0,0,.25)!important}
+  .tv2 #cookieBanner>div{flex-direction:row!important;align-items:center!important;gap:12px!important}
+  .tv2 #cookieBanner p.text-lg,.tv2 #cookieBanner .text-xl{font-size:15px!important;line-height:1.3!important;margin:0!important}
+  .tv2 #cookieBanner p.text-sm,.tv2 #cookieBanner .text-gray-300{display:none!important}
+  .tv2 #cookieBanner .flex-wrap{flex-wrap:nowrap!important;gap:8px!important;flex:none}
+  .tv2 #cookieBanner button{padding:10px 14px!important;font-size:14px!important;min-height:44px}
+  .tv2 .accessibility-btn{bottom:72px!important;left:12px!important;width:48px!important;height:48px!important}
+  .tv2 .fixed.bottom-6.left-6{bottom:72px!important;left:12px!important}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .tv2 *,.tv2 *::before,.tv2 *::after{animation:none!important;transition:none!important}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:1180px){
+  .tv2 .tv2-nav{display:none}
+  .tv2 .tv2-menu-btn{display:inline-flex}
+}
+@media (max-width:1100px){
+  .tv2 .tv2-foot-in{grid-template-columns:1fr 1fr}
+  .tv2 .tv2-foot-side{grid-column:1/-1}
+}
+@media (max-width:900px){
+  .tv2{--gutter:20px;--hdr:68px}
+  .tv2 .tv2-logo img{height:38px}
+  .tv2 .tv2-li{display:none}
+  .tv2 .tv2-tel{padding:0 14px;font-size:15px}
+  .tv2 .tv2-hero-in{grid-template-columns:1fr;gap:20px;padding-top:32px;padding-bottom:40px}
+  .tv2 .tv2-furrows{order:-1;height:64px;width:92px;gap:6px}
+  .tv2 .tv2-hero p{font-size:17px}
+  .tv2 section.tv2-hero{padding-top:36px;padding-bottom:40px}
+  .tv2 .tv2-sources{padding:52px 0}
+  .tv2 .tv2-sources>div>div{grid-template-columns:1fr;gap:28px}
+  .tv2 .tv2-foot{padding:56px 0 32px}
+  .tv2 .tv2-foot-in{grid-template-columns:1fr;gap:36px}
+  .tv2 .tv2-prose{font-size:17px}
+}
+@media (max-width:560px){
+  .tv2 .tv2-sources>div>div>div:last-child ul{grid-template-columns:1fr}
+}
