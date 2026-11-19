@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>הצהרת נגישות | תלם ניהול סביבה</title>
+  <meta name="description" content="הצהרת הנגישות של אתר תלם ניהול סביבה: רמת ההנגשה, ההתאמות שבוצעו, מגבלות ידועות ופרטי רכז הנגישות לפניות.">
+  <link rel="canonical" href="https://telemenv.co.il/accessibility/">
+  <link rel="alternate" hreflang="he-IL" href="https://telemenv.co.il/about.html">
+  <link rel="alternate" hreflang="x-default" href="https://telemenv.co.il/about.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "הצהרת נגישות",
+  "url": "https://telemenv.co.il/accessibility/",
+  "inLanguage": "he-IL",
+  "description": "הצהרת הנגישות של אתר תלם ניהול סביבה: רמת ההנגשה, ההתאמות שבוצעו, מגבלות ידועות ופרטי רכז הנגישות לפניות.",
+  "dateModified": "2026-11-19",
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://telemenv.co.il/#website",
+    "url": "https://telemenv.co.il/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "תלם ניהול סביבה",
+    "url": "https://telemenv.co.il/"
+  }
+}
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="הצהרת נגישות | תלם ניהול סביבה">
+  <meta property="og:description" content="הצהרת הנגישות של אתר תלם ניהול סביבה: רמת ההנגשה, ההתאמות שבוצעו, מגבלות ידועות ופרטי רכז הנגישות לפניות.">
+  <meta property="og:url" content="https://telemenv.co.il/accessibility/">
+  <meta property="og:site_name" content="תלם - ניהול סביבה">
+  <meta property="og:image" content="https://telemenv.co.il/logo.png">
+  <meta property="og:image:secure_url" content="https://telemenv.co.il/logo.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1586">
+  <meta property="og:image:height" content="659">
+  <meta property="og:image:alt" content="תלם ניהול סביבה">
+  <meta property="og:locale" content="he_IL">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="הצהרת נגישות | תלם ניהול סביבה">
+  <meta name="twitter:description" content="הצהרת הנגישות של אתר תלם ניהול סביבה: רמת ההנגשה, ההתאמות שבוצעו, מגבלות ידועות ופרטי רכז הנגישות לפניות.">
+  <meta name="twitter:image" content="https://telemenv.co.il/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:   #243e38;
+      --forest: #475d4b;
+      --moss:   #78836a;
+      --khaki:  #94937f;
+      --black:  #1d1d1b;
+      --cream:  #f8f4f1;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Assistant', sans-serif;
+      background: var(--cream);
+      color: var(--black);
+      direction: rtl;
+      text-align: right;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── Header ─────────────────────────────────── */
+    .site-header {
+      position: fixed; top: 0; right: 0; left: 0; z-index: 100;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(4px);
+      border-bottom: 1px solid rgba(148,147,127,0.15);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .header-inner {
+      max-width: 1280px; margin: 0 auto;
+      padding: 0 1.25rem;
+      height: 96px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .header-logo img { height: 64px; width: auto; }
+    .header-nav { display: flex; gap: 1.5rem; align-items: center; }
+    .header-nav a {
+      font-size: 0.8rem; font-weight: 700;
+      color: var(--forest);
+      transition: color .15s;
+      white-space: nowrap;
+    }
+    .header-nav a:hover, .header-nav a.active { color: var(--dark); }
+    .header-phone {
+      background: var(--dark); color: #fff;
+      padding: 0.55rem 1.25rem; border-radius: 12px;
+      font-weight: 700; font-size: 0.85rem;
+      white-space: nowrap;
+      transition: background .15s;
+    }
+    .header-phone:hover { background: var(--forest); }
+    .hamburger {
+      display: none; background: none; border: none;
+      cursor: pointer; color: var(--dark); padding: 4px;
+    }
+    .hamburger svg { width: 28px; height: 28px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
+    .mobile-menu {
+      display: none; flex-direction: column; gap: 0;
+      background: #fff; border-top: 1px solid rgba(148,147,127,0.15);
+      padding: 0.5rem 1.25rem 1rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-weight: 700; color: var(--forest);
+      padding: 0.7rem 0; border-bottom: 1px solid rgba(148,147,127,0.1);
+      font-size: 0.9rem;
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu .m-phone {
+      background: var(--dark); color: #fff; text-align: center;
+      padding: 0.7rem; border-radius: 12px; font-weight: 700;
+      margin-top: 0.75rem; border-bottom: none;
+    }
+
+    /* ── Quick nav ──────────────────────────────── */
+    .quick-nav {
+      position: fixed; top: 96px; right: 0; left: 0; z-index: 60;
+      background: var(--dark);
+      border-bottom: 1px solid rgba(148,147,127,0.25);
+    }
+    .quick-nav-inner {
+      max-width: 1280px; margin: 0 auto;
+      padding: 0 1rem;
+      display: flex; flex-wrap: wrap; gap: 0 2px;
+      justify-content: center; align-items: center;
+      min-height: 40px;
+    }
+    .quick-nav a {
+      color: rgba(248,244,241,0.8); font-size: 0.78rem; font-weight: 700;
+      padding: 5px 10px; border-radius: 6px; white-space: nowrap;
+      transition: background .15s, color .15s;
+    }
+    .quick-nav a:hover, .quick-nav a.active {
+      background: rgba(255,255,255,0.13); color: #f8f4f1;
+    }
+    @media (max-width: 767px) { .quick-nav { display: none; } }
+
+    /* ── Main layout ───────────────────────────── */
+    .page-main {
+      max-width: 900px; margin: 0 auto;
+      padding: 10rem 1.25rem 4rem;
+    }
+    @media (min-width: 768px) { .page-main { padding-top: 11rem; } }
+
+    /* ── Hero ───────────────────────────────────── */
+    .hero-badge {
+      display: inline-block;
+      background: var(--dark); color: #fff;
+      font-size: 0.75rem; font-weight: 700;
+      padding: 5px 14px; border-radius: 20px;
+      margin-bottom: 1.25rem; letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    .hero-h1 {
+      font-size: clamp(1.9rem, 5vw, 3.4rem);
+      font-weight: 900; color: var(--black);
+      line-height: 1.1; letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+    }
+    .hero-lead {
+      font-size: 1.15rem; color: var(--dark);
+      font-weight: 600; line-height: 1.65;
+      max-width: 720px;
+      border-right: 4px solid var(--khaki);
+      padding-right: 1.25rem;
+    }
+
+    /* ── Section generic ────────────────────────── */
+    .section { margin-top: 3.5rem; }
+    .section-title {
+      font-size: 1.6rem; font-weight: 900; color: var(--dark);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 3px solid var(--khaki);
+    }
+
+    /* ── Bullets (section 1) ───────────────────── */
+    .bullet-list { list-style: none; display: flex; flex-direction: column; gap: 1.1rem; }
+    .bullet-list li {
+      display: flex; gap: 0.9rem; align-items: flex-start;
+      background: #fff; border-radius: 16px;
+      padding: 1.1rem 1.25rem;
+      border: 1px solid rgba(148,147,127,0.18);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      font-size: 1rem; line-height: 1.65; font-weight: 500;
+    }
+    .bullet-list li::before {
+      content: '✦';
+      color: var(--forest); font-size: 0.8rem;
+      flex-shrink: 0; margin-top: 3px;
+    }
+
+    /* ── Project cards (section 2) ─────────────── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.25rem;
+    }
+    .project-card {
+      background: #fff; border-radius: 20px;
+      padding: 1.5rem; border: 1px solid rgba(148,147,127,0.18);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .card-badge {
+      display: inline-block;
+      background: var(--forest); color: #fff;
+      font-size: 0.7rem; font-weight: 800;
+      padding: 3px 10px; border-radius: 20px;
+      letter-spacing: 0.02em; align-self: flex-start;
+    }
+    .card-title {
+      font-size: 1.05rem; font-weight: 900; color: var(--dark);
+    }
+    .card-body {
+      font-size: 0.9rem; line-height: 1.65; color: #444;
+      font-weight: 500; flex: 1;
+    }
+    .card-links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.25rem; }
+    .card-link {
+      font-size: 0.8rem; font-weight: 700; color: var(--forest);
+      text-decoration: underline; text-underline-offset: 3px;
+    }
+    .card-link:hover { color: var(--dark); }
+
+    /* ── Partners row (section 3) ──────────────── */
+    .partners-row {
+      display: flex; flex-wrap: wrap; gap: 1rem;
+      justify-content: center; align-items: stretch;
+    }
+    .partner-item {
+      background: #fff; border-radius: 14px;
+      border: 1px solid rgba(148,147,127,0.18);
+      padding: 0.9rem 1.4rem;
+      font-size: 0.85rem; font-weight: 700; color: var(--dark);
+      text-align: center;
+      transition: box-shadow .15s, border-color .15s;
+      display: flex; align-items: center;
+    }
+    .partner-item:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border-color: var(--forest);
+    }
+
+    /* ── Why cards (section 4) ─────────────────── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .why-card {
+      background: var(--dark); color: #fff;
+      border-radius: 18px; padding: 1.4rem 1.25rem;
+      font-size: 1rem; font-weight: 700; line-height: 1.55;
+    }
+    .why-card::before {
+      content: '✓';
+      display: block; font-size: 1.3rem;
+      color: var(--moss); margin-bottom: 0.6rem;
+    }
+
+    /* ── Internal links (section 5) ────────────── */
+    .internal-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .internal-link {
+      background: #fff; border-radius: 10px;
+      border: 1px solid rgba(148,147,127,0.2);
+      padding: 0.6rem 1.1rem;
+      font-size: 0.9rem; font-weight: 700; color: var(--forest);
+      transition: background .15s, border-color .15s;
+    }
+    .internal-link:hover {
+      background: var(--forest); color: #fff;
+      border-color: var(--forest);
+    }
+
+    /* ── External links (section 6) ────────────── */
+    .external-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .external-list li {
+      display: flex; align-items: baseline; gap: 0.5rem;
+      font-size: 0.9rem;
+    }
+    .external-list li::before { content: '↗'; color: var(--forest); flex-shrink: 0; }
+    .external-list a {
+      color: var(--forest); text-decoration: underline;
+      text-underline-offset: 3px; font-weight: 600;
+    }
+    .external-list a:hover { color: var(--dark); }
+
+    /* ── CTA banner ─────────────────────────────── */
+    .cta-banner {
+      margin-top: 3.5rem;
+      background: var(--dark); color: #fff;
+      border-radius: 32px; padding: 3rem 2rem;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    .cta-banner h2 {
+      font-size: 1.8rem; font-weight: 900; margin-bottom: 1rem;
+    }
+    .cta-banner p {
+      font-size: 1.05rem; color: rgba(248,244,241,0.8);
+      margin-bottom: 1.75rem; max-width: 520px; margin-inline: auto;
+      line-height: 1.6;
+    }
+    .cta-btns { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+    .btn-wa {
+      background: var(--forest); color: #fff;
+      padding: 0.85rem 2rem; border-radius: 50px;
+      font-weight: 900; font-size: 1rem;
+      transition: background .15s;
+    }
+    .btn-wa:hover { background: var(--moss); }
+    .btn-tel {
+      border: 2px solid rgba(148,147,127,0.5); color: #fff;
+      padding: 0.85rem 2rem; border-radius: 50px;
+      font-weight: 900; font-size: 1rem;
+      transition: background .15s;
+    }
+    .btn-tel:hover { background: rgba(255,255,255,0.08); }
+
+    /* ── Footer ─────────────────────────────────── */
+    .site-footer {
+      background: var(--black); color: #fff;
+      padding: 5rem 1.25rem;
+      margin-top: 5rem;
+    }
+    .footer-inner {
+      max-width: 1280px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; gap: 3rem;
+      justify-content: space-between; align-items: flex-start;
+    }
+    .footer-brand img { height: 72px; width: auto; margin-bottom: 1.25rem; opacity: 0.85; }
+    .footer-tagline {
+      font-size: 1.1rem; color: rgba(248,244,241,0.45);
+      max-width: 320px; line-height: 1.6; font-weight: 500;
+    }
+    .footer-contact { display: flex; flex-direction: column; gap: 0.7rem; }
+    .footer-contact a {
+      background: rgba(71,93,75,0.12); color: rgba(248,244,241,0.85);
+      border: 1px solid rgba(71,93,75,0.25);
+      border-radius: 12px; padding: 0.75rem 1rem;
+      font-weight: 700; font-size: 0.9rem;
+      transition: background .15s;
+    }
+    .footer-contact a:hover { background: rgba(71,93,75,0.25); }
+    .footer-nav { display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-nav a {
+      font-size: 0.85rem; font-weight: 700;
+      color: rgba(148,147,127,0.85);
+      transition: color .15s;
+    }
+    .footer-nav a:hover { color: #fff; }
+    .footer-legal {
+      width: 100%; margin-top: 2.5rem; padding-top: 1.5rem;
+      border-top: 1px solid rgba(71,93,75,0.2);
+      font-size: 0.78rem; color: rgba(148,147,127,0.5);
+      text-align: center;
+    }
+
+    /* ── Sticky mobile CTA ──────────────────────── */
+    #mobile-cta {
+      display: none;
+      position: fixed; bottom: 0; left: 0; right: 0;
+      height: 56px; z-index: 9999;
+      background: var(--dark);
+      border-top: 3px solid var(--moss);
+    }
+    @media (max-width: 768px) {
+      #mobile-cta { display: flex; align-items: stretch; }
+      body { padding-bottom: 56px; }
+      .header-nav, .header-phone { display: none; }
+      .hamburger { display: block; }
+    }
+    #mobile-cta a {
+      display: flex; align-items: center; justify-content: center;
+      gap: 8px; width: 50%; height: 100%;
+      color: #f8f4f1; font-weight: 800; font-size: 15px;
+      background: var(--dark);
+      transition: background .15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    #mobile-cta a:hover, #mobile-cta a:active { background: var(--forest); }
+    #mobile-cta .divider {
+      width: 1px; height: 60%; align-self: center;
+      background: var(--forest); flex-shrink: 0;
+    }
+    #mobile-cta svg { width: 20px; height: 20px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* ── Divider util ───────────────────────────── */
+    .sep { height: 1px; background: rgba(148,147,127,0.2); margin: 2.5rem 0; }
+  </style>
+<script async src="https://static.opinly.ai/p.js" data-key="pk-M1qFOhEDsS7oQjhfZELBy84_SMHHbM5QnVB0tGG"></script><script>/* Opinly: לחיצה על וואטסאפ/טלפון נספרת כליד */document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[href]");if(!a)return;var h=a.getAttribute("href")||"";var m=/^tel:/i.test(h)?"phone":/wa\.me|whatsapp\.com/i.test(h)?"whatsapp":null;if(m&&window.opinly&&window.opinly.track){try{window.opinly.track("generate_lead",{method:m,page:location.pathname})}catch(_){}}},true);</script>
+<link rel="stylesheet" href="/assets/telem-v2.css">
+</head>
+<body class="tv2">
+
+<!-- ── Header ──────────────────────────────────── -->
+<header class="tv2-head" role="banner">
+        <div class="tv2-head-in">
+            <a href="/" class="tv2-logo" title="תלם ניהול סביבה - דף הבית"><img src="/logo.png" alt="לוגו תלם ניהול סביבה" width="1586" height="659"></a>
+            <nav class="tv2-nav" aria-label="תפריט ראשי">
+                <div class="tv2-dd">
+                    <button type="button" class="tv2-dd-btn" aria-expanded="false" aria-controls="tv2Services">שירותים<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+                    <div class="tv2-dd-panel" id="tv2Services">
+                    <a href="/waste/">נספח אצירת אשפה</a>
+                    <a href="/env/">נספח סביבתי</a>
+                    <a href="/history/">סקר היסטורי <bdi>Phase I</bdi></a>
+                    <a href="/solar/">סולארי ואגירה</a>
+                    <a href="/landscape-appendix/">נספח נופי-סביבתי</a>
+                    <a href="/construction-waste/">נספח פסולת בניין</a>
+                    <a href="/environmental-management/">ניהול סביבה <bdi>ONSITE</bdi></a>
+                    <a href="/toxins-permit/">היתר רעלים</a>
+                    <a href="/recycling/">יועץ מיחזור פסולת</a>
+                    <a href="/urban-renewal/">ליווי סביבתי להתחדשות עירונית</a>
+                    <a href="/rural/">ייעוץ סביבתי למרחב הכפרי</a>
+                    <a href="/consulting/">ייעוץ סביבתי לעסקים</a>
+                    </div>
+                </div>
+                <a href="/guides/">מרכז הידע</a>
+                <a href="/in-the-news/">סביבה בכותרות</a>
+                <a href="/lectures/">הרצאות</a>
+                <a href="/podcast/">פודקאסט</a>
+                <a href="/about.html" aria-current="page">אודות</a>
+            </nav>
+            <div class="tv2-acts">
+                <a href="https://www.linkedin.com/in/aviram-botzer-01782aa5/" target="_blank" rel="noopener noreferrer" class="tv2-li" title="LinkedIn" aria-label="פרופיל LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                <a href="tel:0506890650" class="tv2-tel">050-6890650</a>
+                <button type="button" id="tv2MenuBtn" class="tv2-menu-btn" aria-label="פתח תפריט" aria-expanded="false" aria-controls="tv2Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+        </div>
+    </header>
+    <div id="tv2Menu" class="tv2-menu" hidden>
+      <nav aria-label="תפריט נייד">
+        <a href="/">דף הבית</a>
+        <span class="tv2-menu-label">שירותים</span>
+        <a href="/waste/" class="sub">נספח אצירת אשפה</a>
+        <a href="/env/" class="sub">נספח סביבתי</a>
+        <a href="/history/" class="sub">סקר היסטורי <bdi>Phase I</bdi></a>
+        <a href="/solar/" class="sub">סולארי ואגירה</a>
+        <a href="/landscape-appendix/" class="sub">נספח נופי-סביבתי</a>
+        <a href="/construction-waste/" class="sub">נספח פסולת בניין</a>
+        <a href="/environmental-management/" class="sub">ניהול סביבה <bdi>ONSITE</bdi></a>
+        <a href="/toxins-permit/" class="sub">היתר רעלים</a>
+        <a href="/recycling/" class="sub">יועץ מיחזור פסולת</a>
+        <a href="/urban-renewal/" class="sub">ליווי סביבתי להתחדשות עירונית</a>
+        <a href="/rural/" class="sub">ייעוץ סביבתי למרחב הכפרי</a>
+        <a href="/consulting/" class="sub">ייעוץ סביבתי לעסקים</a>
+        <a href="/guides/">מרכז הידע</a>
+        <a href="/in-the-news/">סביבה בכותרות</a>
+        <a href="/lectures/">הרצאות</a>
+        <a href="/podcast/">פודקאסט</a>
+        <a href="/about.html" aria-current="page">אודות</a>
+        <a href="https://www.linkedin.com/in/aviram-botzer-01782aa5/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </nav>
+    </div>
+
+<!-- ── Quick nav bar ────────────────────────────── -->
+
+
+<!-- ── Main ─────────────────────────────────────── -->
+<main class="tv2-main page-main">
+<div class="tv2-hero tv2-hero-x"><div class="tv2-hero-in"><div class="tv2-hero-text"><span class="hero-badge">נגישות</span>
+<h1 class="hero-h1">הצהרת נגישות</h1>
+<p class="hero-lead">תלם ניהול סביבה רואה חשיבות במתן שירות שוויוני לכל הגולשים, כולל אנשים עם מוגבלות. האתר נבנה ומתוחזק כך שיהיה נוח ופשוט לשימוש עבור כולם.</p></div><div class="tv2-furrows" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div></div>
+<article class="tv2-legal">
+<h2>רמת ההנגשה</h2>
+<p>האתר הותאם לפי תקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג-2013, ולפי התקן הישראלי ת"י 5568, המבוסס על הנחיות WCAG 2.0 ברמה AA. אנחנו ממשיכים לשפר את הנגישות ולתקן ליקויים שמתגלים.</p>
+
+<h2>התאמות שבוצעו באתר</h2>
+<ul>
+<li>מבנה עמודים קבוע ועקבי: כותרת עליונה, תפריט ניווט, תוכן ופוטר זהים בכל העמודים.</li>
+<li>היררכיית כותרות תקינה, כותרת ראשית אחת בכל עמוד ושימוש באלמנטים סמנטיים (header, nav, main, footer).</li>
+<li>ניווט מלא במקלדת, כולל התפריט הנפתח "שירותים" ותפריט הנייד. מקש Escape סוגר את התפריטים.</li>
+<li>תפריט נגישות בכל עמוד: הגדלת הטקסט, מצב ניגודיות גבוהה והדגשת קישורים בקו תחתון. ההגדרות נשמרות לביקור הבא.</li>
+<li>טקסט חלופי לתמונות וללוגואים, ותיאורים קוליים (aria) לכפתורים ולקישורים שאין להם טקסט גלוי.</li>
+<li>כיוון קריאה מימין לשמאל, גופן קריא וניגודיות צבעים מספקת בין טקסט לרקע.</li>
+<li>תצוגה מותאמת לטלפון, לטאבלט ולמחשב, בלי גלילה אופקית.</li>
+<li>טפסי יצירת קשר עם תוויות לשדות, סימון שדות חובה והודעה כשחסר מידע.</li>
+</ul>
+
+<h2>מגבלות ידועות</h2>
+<p>למרות המאמצים, ייתכן שחלקים מסוימים באתר אינם נגישים במלואם:</p>
+<ul>
+<li>תכנים של צד שלישי המוטמעים באתר, כמו נגן הפודקאסט (Spotify), סרטונים ומפות, אינם בשליטתנו המלאה.</li>
+<li>מסמכים מצורפים (PDF) ואתרים חיצוניים שאנחנו מקשרים אליהם, כולל אתרי ממשלה ורשויות, עשויים שלא לעמוד בדרישות הנגישות.</li>
+<li>תכנים ותיקים באתר עשויים לכלול ליקויי נגישות שטרם אותרו.</li>
+</ul>
+<p>אם נתקלתם בקושי, נשמח לתת את המידע בדרך אחרת, למשל בטלפון או בדואר אלקטרוני.</p>
+
+<h2>הסדרי נגישות בשירות</h2>
+<p>תלם נותנת שירותי ייעוץ בשטח, אצל הלקוח ובשיחות מרחוק. אין במשרד קבלת קהל, ופגישות נקבעות מראש במקום נגיש שמתאים לפונה.</p>
+
+<h2>רכז הנגישות ופניות</h2>
+<p>נתקלתם בבעיית נגישות או שיש לכם הצעה לשיפור? נשמח לשמוע ולטפל בהקדם.</p>
+<ul>
+<li>רכז הנגישות: אבירם בוצר</li>
+<li>טלפון: <a href="tel:0506890650">050-6890650</a></li>
+<li>דואר אלקטרוני: <a href="mailto:aviram@telemenv.co.il">aviram@telemenv.co.il</a></li>
+</ul>
+<p>כדי שנוכל לטפל בפנייה, ציינו בבקשה את כתובת העמוד ואת תיאור הבעיה, ואם אפשר גם את הדפדפן והטכנולוגיה המסייעת שבהם השתמשתם.</p>
+
+<p><strong>ההצהרה עודכנה לאחרונה: 19 בנובמבר 2026.</strong></p>
+<p>מידע נוסף: <a href="/privacy/">מדיניות פרטיות</a> · <a href="/terms/">תנאי שימוש</a></p>
+
+</article>
+</main>
+
+<!-- ── Footer ────────────────────────────────────── -->
+<footer class="tv2-foot" role="contentinfo">
+        <div class="tv2-wrap tv2-foot-in">
+            <address>
+                <img src="/logo.png" alt="לוגו תלם" width="1586" height="659" loading="lazy">
+                <p>אבירם בוצר - מביאים את הניסיון מהצד של הרשות לקידום הפרויקט שלכם.</p>
+                <a href="tel:0506890650">050-6890650</a>
+            </address>
+            <div class="tv2-foot-links">
+                <h3>דפים נוספים באתר</h3>
+                <a href="/waste/">נספח אצירת אשפה</a>
+                <a href="/env/">נספח סביבתי</a>
+                <a href="/history/">סקר היסטורי <bdi>Phase I</bdi></a>
+                <a href="/landscape-appendix/">נספח נופי-סביבתי</a>
+                <a href="/solar/">סולארי ואגירה</a>
+                <a href="/recycling/">יועץ מיחזור פסולת</a>
+                <a href="/environmental-management/">ניהול סביבה <bdi>ONSITE</bdi></a>
+                <a href="/construction-waste/">נספח פסולת בניין</a>
+                <a href="/urban-renewal/">ליווי סביבתי להתחדשות עירונית</a>
+                <a href="/rural/">ייעוץ סביבתי למרחב הכפרי</a>
+                <a href="/toxins-permit/">היתר רעלים</a>
+                <a href="/consulting/">ייעוץ סביבתי לעסקים</a>
+                <a href="/guides/">מרכז הידע</a>
+                <a href="/in-the-news/">סביבה בכותרות</a>
+                <a href="/lectures/">הרצאות וסדנאות</a>
+                <a href="/podcast/">פודקאסט חבר זבל</a>
+                <a href="/about.html">אודות תלם</a>
+            </div>
+            <div class="tv2-foot-side">
+                <a href="mailto:aviram@telemenv.co.il">aviram@telemenv.co.il</a>
+                <a href="https://www.linkedin.com/in/aviram-botzer-01782aa5/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <p class="tv2-foot-legal"><a href="/accessibility/">הצהרת נגישות</a><a href="/privacy/">מדיניות פרטיות</a><a href="/terms/">תנאי שימוש</a></p>
+                <p class="tv2-copy">© 2026 תלם ניהול סביבה. כל הזכויות שמורות.</p>
+            </div>
+        </div>
+    </footer>
+
+<!-- ── Sticky mobile CTA ─────────────────────────── -->
+<div id="mobile-cta" role="navigation" aria-label="צרו קשר מהיר">
+  <a href="https://wa.me/972506890650" target="_blank" rel="noopener noreferrer" aria-label="שלחו הודעה ב-WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+    <span>וואטסאפ</span>
+  </a>
+  <div class="divider" aria-hidden="true"></div>
+  <a href="tel:0506890650" aria-label="חייגו אלינו">
+    <svg viewBox="0 0 24 24"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+    <span>חייגו אלינו</span>
+  </a>
+</div>
+
+<script src="/assets/telem-v2.js" defer></script>
+</body>
+</html>
