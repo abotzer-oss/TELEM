@@ -236,3 +236,9 @@ html :where(.tv2 main) details>*:not(summary){margin-bottom:18px}
 @media (max-width:560px){
   .tv2 .tv2-sources>div>div>div:last-child ul{grid-template-columns:1fr}
 }
+
+/* legal pages */
+.tv2 .tv2-legal{max-width:780px;margin:0 auto;padding:56px 20px 88px}
+.tv2 .tv2-foot-legal{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px}
+.tv2 .tv2-foot-legal a{color:#b9bdb0}
+.tv2 .tv2-foot-legal a:hover{color:#fff}
