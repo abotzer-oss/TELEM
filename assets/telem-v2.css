@@ -242,3 +242,140 @@ html :where(.tv2 main) details>*:not(summary){margin-bottom:18px}
 .tv2 .tv2-foot-legal{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px}
 .tv2 .tv2-foot-legal a{color:#b9bdb0}
 .tv2 .tv2-foot-legal a:hover{color:#fff}
+
+/* ==========================================================================
+   QA fixes (round 1) — אחרי בדיקה אסתטית. כל כלל כאן מתקן את כל המופעים.
+   ========================================================================== */
+
+/* hero CTA row on service pages (same look as the home hero buttons) */
+.tv2 .tv2-hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.tv2 .tv2-hero-cta .tv2-btn{min-height:54px;padding:0 28px}
+.tv2 .tv2-hero-cta svg{width:20px;height:20px;flex:none}
+.tv2 .tv2-btn-light:hover{background:#fff}
+.tv2 .tv2-btn-line{border:1px solid rgba(255,255,255,.4);color:#fff}
+.tv2 .tv2-btn-line:hover{background:rgba(255,255,255,.1)}
+.tv2 .tv2-hero .tv2-hero-cta a{text-decoration:none}
+@media (max-width:640px){.tv2 .tv2-hero-cta .tv2-btn{flex:1 1 100%}}
+
+/* B2 — the hero never touches the screen edge (pages whose <main> has no side padding) */
+.tv2 .tv2-hero-x{padding-inline:max(16px,calc(50vw - 50%))}
+
+/* B3 — a centred (mx-auto) <main> inside a flex column sized itself to min-content */
+.tv2 main.tv2-main.mx-auto{width:100%;min-width:0}
+
+/* B1 — headings and buttons inside dark boxes */
+.tv2 .cta-banner h2,.tv2 .cta-box h2,.tv2 aside.summary :is(h2,h3),
+.tv2 main [class*="bg-telem-dark"]:not(.tv2-light) :is(h2,h3,h4):not([class*="text-telem"]):not(:is(.bg-white,.tv2-light) *),
+.tv2 main [class*="bg-telem-forest"] :is(h2,h3,h4):not([class*="text-telem"]):not(:is(.bg-white,.tv2-light) *){color:#fff}
+.tv2 .cta-banner .btn-wa{background:#f3efe9;color:var(--deep)}
+.tv2 .cta-banner .btn-wa:hover{background:#fff}
+
+/* B4 — tables: fit the narrow phone column instead of a hidden side-scroll */
+@media (max-width:640px){
+  html :where(.tv2 main) th,html :where(.tv2 main) td{min-width:0;padding:10px 8px;font-size:15px;line-height:1.5}
+  html :where(.tv2 main) table:not([class]){font-size:15px}
+}
+
+/* B5 — property-check: header/menu/footer links never underlined; demo bar sits under the header; eyebrow readable */
+.tv2 .tv2-head a,.tv2 .tv2-menu a,.tv2 .tv2-dd-panel a,.tv2 .tv2-foot-links a,.tv2 .tv2-foot address a{text-decoration:none}
+body.tv2:has(>.demo-bar){padding-top:0!important}
+.tv2 .demo-bar{position:relative!important;top:auto!important;z-index:1!important;margin-top:var(--hdr);height:auto!important;min-height:40px;padding:8px 16px!important;background:var(--paper)!important;color:var(--forest)!important;border-bottom:1px solid var(--line);font-size:14px!important}
+body.tv2:has(>.demo-bar) main.tv2-main{padding-top:0!important}
+.tv2 .tv2-hero .eyebrow{color:var(--khaki)!important;letter-spacing:0}
+.tv2 .tv2-hero-x+section.hero{padding-block:48px 56px}
+@media (min-width:880px){
+  .tv2 .tv2-hero-x+section.hero .wrap{grid-template-columns:1fr auto;align-items:center}
+  .tv2 .tv2-hero-x+section.hero .hero-visual{max-width:320px}
+}
+
+/* I1 — space between the hero and the first content block */
+.tv2 main.tv2-main>.tv2-hero-x:first-child+:is(.tv2-prose,p,section.mb-24){margin-top:clamp(40px,5vw,64px)}
+
+/* I2 — guide article card: off the hero, and wider reading column on phones */
+.tv2 main.tv2-main>.tv2-hero-x:first-child+article[class*="rounded-"]{margin-top:clamp(28px,4vw,48px)}
+@media (max-width:640px){
+  .tv2 main.tv2-main>.tv2-hero-x+article.bg-white[class*="rounded-"]{padding:28px 18px!important;border-radius:16px!important;margin-inline:-4px}
+}
+
+/* I3 — breadcrumb / byline inside the hero; news hero aligned with the article column */
+.tv2 .tv2-hero nav li,.tv2 .tv2-hero ol li{color:#e8e4dc}
+.tv2 .tv2-hero nav li a{color:#c9cbbf}
+.tv2 .tv2-hero p.page-updated,.tv2 .tv2-hero p.page-updated a{color:#c9cbbf!important}
+.tv2 main.tv2-main:has(>article>.max-w-4xl)>.tv2-hero-x .tv2-hero-in{max-width:864px}
+
+/* I4 — environmental-management (and the same leftovers on other service pages) */
+.tv2 main h2.underline{text-decoration:none}
+.tv2 main section.mb-24>.inline-flex.rounded-full:first-child{background:none;color:#5f6a52;padding:0;font-size:15px;letter-spacing:0}
+.tv2 main .absolute.-top-4.-right-4.rounded-full{position:static;display:inline-block;background:none;color:var(--khaki);padding:0;margin-bottom:14px;letter-spacing:0;font-size:14px}
+.tv2 main [class*="bg-telem-dark"] a[class*="rounded-full"],.tv2 .cta-btns a{white-space:nowrap}
+@media (max-width:640px){
+  .tv2 main [class*="bg-telem-dark"] .flex>a[class*="rounded-full"]{width:100%;justify-content:center}
+}
+
+/* I5 — floating controls: no overlap with the cookie bar, the mobile drawer or the CTA bar */
+body.tv2:has(#cookieBanner.fixed:not(.hidden):not([style*="none"])) #cookieBanner.fixed{padding-left:104px!important}
+body.tv2:has(#tv2Menu:not([hidden])) :is(.accessibility-btn,.fixed.bottom-6.left-6,.whatsapp-float){display:none!important}
+@media (max-width:768px){
+  .tv2 .accessibility-btn,.tv2 .fixed.bottom-6.left-6{bottom:66px!important;left:10px!important}
+  .tv2 .accessibility-btn,.tv2 .fixed.bottom-6.left-6>button{width:40px!important;height:40px!important;border-width:1px!important;box-shadow:0 4px 12px rgba(0,0,0,.25)!important}
+  .tv2 .accessibility-btn svg,.tv2 .fixed.bottom-6.left-6>button svg{width:20px;height:20px}
+  body.tv2:has(#cookieBanner:not(.hidden):not([style*="none"])) :is(.accessibility-btn,.fixed.bottom-6.left-6){bottom:146px!important}
+}
+
+/* I6 — guides index: 3 columns, no generic icons */
+.tv2 main section.tv2-light .home-guides-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.tv2 main section.tv2-light .guide-card>div:first-child:has(svg){display:none}
+@media (max-width:1000px){.tv2 main section.tv2-light .home-guides-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media (max-width:640px){.tv2 main section.tv2-light .home-guides-grid{grid-template-columns:1fr!important}}
+
+/* I7 — mobile drawer: no inner scrollbar strip, X icon when open */
+.tv2 .tv2-menu{scrollbar-width:none}
+.tv2 .tv2-menu::-webkit-scrollbar{display:none}
+.tv2 .tv2-menu-btn{position:relative}
+.tv2 .tv2-menu-btn[aria-expanded="true"] svg{visibility:hidden}
+.tv2 .tv2-menu-btn[aria-expanded="true"]::before,.tv2 .tv2-menu-btn[aria-expanded="true"]::after{content:"";position:absolute;top:50%;left:50%;width:24px;height:2px;margin:-1px 0 0 -12px;background:currentColor;border-radius:2px;transform:rotate(45deg)}
+.tv2 .tv2-menu-btn[aria-expanded="true"]::after{transform:rotate(-45deg)}
+.tv2 .tv2-menu .tv2-menu-label{letter-spacing:0}
+.tv2 .tv2-dd-panel a[aria-current="page"]{color:#5f6a52}
+
+/* I8 — spacing between stacked service-page blocks, list markers, testimonial grid */
+.tv2 main.tv2-main>*+section:not([class*="mt-"]):not([class*="my-"]){margin-top:40px}
+.tv2 main.tv2-main>section>ul.pr-4>li.flex::before{content:"";flex:none;width:6px;height:6px;margin-top:.75em;border-radius:50%;background:var(--moss)}
+.tv2 main.tv2-main>section>ul.pr-4{padding-inline-start:0}
+@media (min-width:768px){
+  .tv2 #testimonials>.grid:has(>:nth-child(4):last-child){grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* C1 — skip links stay fully off-screen until focused */
+.tv2 :is(.skip-link,.skip):not(:focus){top:-200px!important}
+
+/* C2 — readable small grey text (moss/khaki on light, muted on dark) */
+.tv2 main :is(.text-telem-moss,.lecture-no,.ep-no):not(:is(.tv2-hero,[class*="bg-telem-dark"],[class*="bg-telem-forest"],[class*="bg-telem-black"],.cta-box,.cta-banner) *){color:#5f6a52}
+.tv2 main .text-telem-khaki:not(:is(.tv2-hero,[class*="bg-telem-dark"],[class*="bg-telem-forest"],[class*="bg-telem-black"],.cta-box,.cta-banner) *){color:#6b6a58}
+.tv2 main footer.byline p{color:#5f6a52}
+.tv2 .tv2-sources h2,.tv2 .label:not(:is(.close,.hero,.tv2-hero,[class*="bg-telem-dark"]) *),.tv2 .quotes h2,.tv2 .sources h2{color:#5f6a52}
+/* home contact block: its links are white on dark (the generic content-link colour made them dark-on-dark) */
+.tv2 section.close .links a{color:#fff;text-decoration:none}
+.tv2 .index a>span.n{color:#6b6a58}
+.tv2 .tv2-foot-links h3,.tv2 .tv2-foot-links h4,.tv2 .tv2-copy{color:#a3a796}
+.tv2 .cta-box .cta-link-tertiary{color:#c9cbbf}
+
+/* C3 — no letter-spacing on Hebrew labels */
+.tv2 :is(.tv2-sources h2,.tv2-foot-links h3,.tv2-foot-links h4,.tv2-hero .hero-badge,.tv2-hero [class*="rounded-full"],.label,.kicker,.quotes h2,.sources h2,.eyebrow,[class*="tracking-wide"],[class*="tracking-widest"],[class*="tracking-wider"]){letter-spacing:0!important}
+
+/* C6 — leftover amber/red Tailwind boxes */
+.tv2 main [class*="bg-amber-50"],.tv2 main [class*="bg-red-50"]{background:var(--paper)!important;border-color:var(--line)!important}
+.tv2 main [class*="bg-amber-50"],.tv2 main [class*="bg-amber-50"] *,.tv2 main [class*="bg-red-50"] *{color:var(--ink)!important}
+.tv2 main [class*="bg-amber-50"],.tv2 main [class*="bg-amber-50"] *{font-size:max(14px,1em)!important}
+
+.tv2 main .red-flag{background:var(--paper)!important;border:0!important;border-inline-start:4px solid var(--forest)!important;border-radius:16px!important;padding:28px 32px!important}
+.tv2 main [class*="bg-red-50"]{border-inline-start-color:var(--forest)!important}
+.tv2 main :is(.text-red-800,.text-red-900,.text-red-950){color:var(--forest)!important}
+.tv2 main .text-red-950{color:var(--ink)!important}
+@media (max-width:640px){.tv2 main .red-flag{padding:22px 18px!important}}
+
+/* C7 — guides whose lists already draw an arrow marker */
+.tv2 main .content-area ul:not([class]){list-style:none}
+
+/* C8 — full-bleed hero measured without the scrollbar (--sbw is set by telem-v2.js) */
+.tv2 .tv2-hero-x{margin-inline:calc(50% - 50vw + var(--sbw,0px) / 2);padding-inline:max(16px,calc(50vw - var(--sbw,0px) / 2 - 50%))}

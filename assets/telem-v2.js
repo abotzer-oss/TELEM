@@ -54,3 +54,14 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
 })();
+
+/* scrollbar width -> --sbw, so the full-bleed hero (100vw) lines up with the page */
+(function () {
+  'use strict';
+  function sbw() {
+    var w = window.innerWidth - document.documentElement.clientWidth;
+    document.documentElement.style.setProperty('--sbw', (w > 0 ? w : 0) + 'px');
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', sbw); else sbw();
+  window.addEventListener('resize', sbw);
+})();
