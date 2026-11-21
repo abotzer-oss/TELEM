@@ -41,7 +41,7 @@ html:has(body.tv2){overflow-x:clip}
 .tv2 .tv2-head{position:fixed;top:0;inset-inline:0;z-index:100;height:var(--hdr);background:rgba(27,47,42,.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08);font-family:"Assistant",system-ui,sans-serif}
 .tv2 .tv2-head-in{max-width:1360px;height:100%;margin:0 auto;padding:0 var(--gutter);display:flex;align-items:center;justify-content:space-between;gap:28px}
 .tv2 .tv2-logo{display:block;flex:none}
-.tv2 .tv2-logo img{height:46px;width:auto;filter:brightness(0) invert(1)}
+.tv2 .tv2-logo img{height:46px;width:auto}
 .tv2 .tv2-nav{display:flex;align-items:center;gap:26px;font-size:16px;color:#c9cbbf;white-space:nowrap;margin-inline-start:auto}
 .tv2 .tv2-nav>a,.tv2 .tv2-dd-btn{position:relative;display:inline-flex;align-items:center;gap:6px;min-height:44px;color:#c9cbbf;font:inherit;font-weight:500;background:none;border:0;cursor:pointer;transition:color .2s}
 .tv2 .tv2-nav>a::after,.tv2 .tv2-dd-btn::after{content:"";position:absolute;inset-inline:0;bottom:8px;height:1px;background:var(--moss);transform:scaleX(0);transition:transform .25s}
@@ -180,7 +180,7 @@ html :where(.tv2 main) details>*:not(summary){margin-bottom:18px}
 .tv2 .tv2-foot{background:var(--deep);color:#a9ad9f;padding:72px 0 40px;font-family:"Assistant",system-ui,sans-serif;text-align:right}
 .tv2 .tv2-foot-in{display:grid;grid-template-columns:1.1fr 1.4fr .9fr;gap:48px}
 .tv2 .tv2-foot address{font-style:normal}
-.tv2 .tv2-foot address img{height:62px;width:auto;filter:brightness(0) invert(1);opacity:.85;margin-bottom:24px}
+.tv2 .tv2-foot address img{height:62px;width:auto;margin-bottom:24px}
 .tv2 .tv2-foot address p{font-size:20px;line-height:1.45;color:#d3d6cb;max-width:20em;margin:0 0 14px}
 .tv2 .tv2-foot address p.tv2-foot-note{font-size:15px;color:#a9ad9f;line-height:1.6}
 .tv2 .tv2-foot address a{color:#fff;font-weight:700;direction:ltr;display:inline-block}
