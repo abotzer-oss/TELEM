@@ -425,3 +425,5 @@ body{padding-bottom:74px}
   .trust-logos .logos-row img{height:36px}
   .trust-logos{align-items:flex-end}
 }
+.lp-footer .legal a{color:rgba(244,243,237,.7);text-decoration:underline;text-underline-offset:3px}
+.lp-footer .legal a:hover{color:#f4f3ed}
