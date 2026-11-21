@@ -41,5 +41,6 @@
 @media (max-width: 359px){
   body.tv2.home-v2 .tv2-tel{padding:0 9px;font-size:13px}
   .home-v2 .hero h1{font-size:36px}
-  .home-v2 .hero .actions .btn{font-size:14px;padding:0 8px}
+  .home-v2 .hero .actions .btn{font-size:13px;padding:0 6px;gap:5px;white-space:nowrap}
+  .home-v2 .hero .actions .btn svg{width:16px;height:16px}
 }
