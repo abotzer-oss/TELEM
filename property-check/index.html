@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- דף ניסיון: לא לאינדוקס, לא לקשר מהאתר, לא ל-sitemap/ledger -->
   <meta name="robots" content="noindex,nofollow">
-  <title>בדיקה סביבתית לפני שכירות או קניית דירה | תלם</title>
-  <meta name="description" content="דוח סביבה אישי לנכס: קרינה, רעש, תכנון ובנייה, קרקע ומפעלים, פסולת, אוויר והצפות, עם רמזור, 2 מפות והמלצות מה לבדוק לפני שחותמים. נשלח במייל תוך 7 ימים, בכל הארץ.">
+  <title>בדיקה סביבתית לדירה לפני קנייה או שכירות | תלם</title>
+  <meta name="description" content="בדיקת דירה לפני קנייה או שכירות, מה יש סביב הבית: אנטנות סלולר וקווי מתח, רעש, תכנון ובנייה, זיהום קרקע ומפעלים, פסולת, אוויר וסכנת הצפה. דוח אישי ברמזור, ממאגרים פתוחים, בלי מדידות. נשלח במייל תוך 7 ימים.">
   <link rel="canonical" href="https://telemenv.co.il/property-check/">
   <link rel="icon" type="image/png" href="/favicon.png">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="בדיקה סביבתית לפני שכירות או קניית דירה | תלם">
+  <meta property="og:title" content="בדיקה סביבתית לדירה לפני קנייה או שכירות | תלם">
   <meta property="og:description" content="דוח סביבה אישי לנכס, מבוסס מאגרים פתוחים: 7 נושאים ברמזור, 2 מפות והמלצות מה לבדוק לפני שחותמים.">
   <meta property="og:url" content="https://telemenv.co.il/property-check/">
   <meta property="og:site_name" content="תלם - ניהול סביבה">
@@ -56,6 +56,9 @@
   "mainEntity": [
     {"@type": "Question", "name": "למי הדוח מתאים?", "acceptedAnswer": {"@type": "Answer", "text": "למי שעומד לקנות או לשכור דירה ורוצה לדעת מה יש סביבה לפני שהוא חותם."}},
     {"@type": "Question", "name": "מישהו מגיע לדירה?", "acceptedAnswer": {"@type": "Answer", "text": "לא. זו עבודה משרדית בלבד. אין ביקור בנכס ואין מדידות. הדוח מבוסס על מאגרים פתוחים ועל מפות."}},
+    {"@type": "Question", "name": "אתם מודדים קרינה בדירה?", "acceptedAnswer": {"@type": "Answer", "text": "לא. אנחנו לא עושים מדידות קרינה. הדוח מראה אילו אנטנות סלולר וקווי מתח יש סביב הבית, ומה הנתונים הרשמיים עליהם. מי שרוצה מדידה בתוך הדירה צריך לפנות לבודק קרינה מוסמך."}},
+    {"@type": "Question", "name": "מה לבדוק לפני קניית דירה?", "acceptedAnswer": {"@type": "Answer", "text": "מלבד הדירה עצמה (בדק בית) והצד המשפטי (עורך דין), כדאי לבדוק מה יש מסביב: אנטנות וקווי מתח, רעש מכבישים ומטוסים, תוכניות בנייה בשכונה, זיהום קרקע ומפעלים, פסולת, אוויר וסכנת הצפה. את זה בודק הדוח."}},
+    {"@type": "Question", "name": "מה ההבדל בין בדק בית לבדיקה סביבתית?", "acceptedAnswer": {"@type": "Answer", "text": "בדק בית בודק את הדירה עצמה: רטיבות, סדקים, חשמל ואינסטלציה. הבדיקה הסביבתית בודקת מה יש סביב הבית. הן משלימות זו את זו. אנחנו לא עושים בדק בית."}},
     {"@type": "Question", "name": "תוך כמה זמן מקבלים את הדוח?", "acceptedAnswer": {"@type": "Answer", "text": "הדוח נשלח במייל כקובץ PDF תוך 7 ימים מהתשלום."}},
     {"@type": "Question", "name": "מאיפה המידע בדוח?", "acceptedAnswer": {"@type": "Answer", "text": "ממאגרים פתוחים של משרדי ממשלה ורשויות, ומ-OpenStreetMap, כפי שהיו זמינים ביום הכנת הדוח. ליד כל ממצא כתוב מאיפה הוא."}},
     {"@type": "Question", "name": "באיזה רדיוס בודקים?", "acceptedAnswer": {"@type": "Answer", "text": "500 מטר סביב הבית, ומקורות גדולים, כמו מפעלים ומתקני פסולת, עד 6 ק\"מ."}},
@@ -312,6 +315,30 @@
     @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
   </style>
 <link rel="stylesheet" href="/assets/telem-v2.css">
+
+  <!-- מדידה: GA4 + Google Ads + פיקסל OpenAI Ads, כמו בדפי הנחיתה. אירועים בלבד, בלי פרטי הלקוח. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3F8H2J4D7F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3F8H2J4D7F');
+    gtag('config', 'AW-18033946221');
+  </script>
+  <script>
+    (function (w, d, s, u) {
+      if (w.oaiq) return;
+      var q = function () { q.q.push(arguments); };
+      q.q = [];
+      w.oaiq = q;
+      var js = d.createElement(s);
+      js.async = true;
+      js.src = u;
+      var f = d.getElementsByTagName(s)[0];
+      f.parentNode.insertBefore(js, f);
+    })(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
+    oaiq("init", { pixelId: "48v8aBSZQ979GGDx243wsc" });
+  </script>
 </head>
 <body class="tv2">
   <a class="skip" href="#main">דילוג לתוכן</a>
@@ -351,7 +378,7 @@
             </nav>
             <div class="tv2-acts">
                 <a href="https://www.linkedin.com/in/aviram-botzer-01782aa5/" target="_blank" rel="noopener noreferrer" class="tv2-li" title="LinkedIn" aria-label="פרופיל LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-                <a href="tel:0506890650" class="tv2-tel">050-6890650</a>
+                <a href="tel:0506890650" class="tv2-tel" data-track="call">050-6890650</a>
                 <button type="button" id="tv2MenuBtn" class="tv2-menu-btn" aria-label="פתח תפריט" aria-expanded="false" aria-controls="tv2Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
             </div>
         </div>
@@ -383,9 +410,9 @@
     </div>
 
   <main id="main" class="tv2-main">
-<div class="tv2-hero tv2-hero-x"><div class="tv2-hero-in"><div class="tv2-hero-text"><span class="eyebrow">לפני שקונים או שוכרים דירה</span>
-<h1 id="hero-title">דוח סביבה אישי לנכס</h1>
-<p class="hero-lead">מזינים כתובת, ומקבלים במייל דוח ברור על מה שיש סביב הבית: קרינה, רעש, תוכניות בנייה, קרקע, פסולת, אוויר והצפות.</p></div><div class="tv2-furrows" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div></div>
+<div class="tv2-hero tv2-hero-x"><div class="tv2-hero-in"><div class="tv2-hero-text"><span class="eyebrow">בדיקת דירה או בית לפני קנייה</span>
+<h1 id="hero-title">בדיקה סביבתית לדירה לפני קנייה או שכירות</h1>
+<p class="hero-lead">דוח סביבה אישי לנכס: מזינים כתובת, ומקבלים במייל דוח ברור על מה שיש סביב הבית: אנטנות וקווי מתח, רעש, תוכניות בנייה, זיהום קרקע, פסולת, אוויר וסכנת הצפה. מתאים לדירה ולבית צמוד קרקע. זו בדיקה משרדית במאגרים פתוחים: <strong>אנחנו לא מודדים קרינה</strong> ולא מגיעים לנכס.</p></div><div class="tv2-furrows" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div></div>
 
     <!-- ===== hero ===== -->
     <section class="hero" aria-labelledby="hero-title">
@@ -429,8 +456,8 @@
         </div>
         <div class="topic-grid">
           <article class="topic">
-            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 12v10M8 22h8"/><circle cx="12" cy="10" r="2"/><path d="M7.8 5.8a6 6 0 0 0 0 8.4M16.2 5.8a6 6 0 0 1 0 8.4M5 3a10 10 0 0 0 0 14M19 3a10 10 0 0 1 0 14"/></svg>קרינה</h3>
-            <p>אנטנות סלולר ליד הבית והמדידה הרשמית האחרונה שלהן. קווי מתח עליון ותחנות משנה.</p>
+            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 12v10M8 22h8"/><circle cx="12" cy="10" r="2"/><path d="M7.8 5.8a6 6 0 0 0 0 8.4M16.2 5.8a6 6 0 0 1 0 8.4M5 3a10 10 0 0 0 0 14M19 3a10 10 0 0 1 0 14"/></svg>אנטנות סלולר וקווי מתח ליד הבית</h3>
+            <p>אנטנות סלולר ליד הבית והנתונים הרשמיים עליהן, קווי מתח עליון ותחנות משנה. אנחנו לא מודדים קרינה בבית.</p>
           </article>
           <article class="topic">
             <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>רעש</h3>
@@ -441,7 +468,7 @@
             <p>תוכניות בהליך ליד הבית ומה מתוכנן בהן, ותשתיות כמו רכבת, כביש וקו גז.</p>
           </article>
           <article class="topic">
-            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 20h20M4 20V10l5 3V10l5 3V6h4v14"/></svg>קרקע ומפעלים</h3>
+            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 20h20M4 20V10l5 3V10l5 3V6h4v14"/></svg>זיהום קרקע ומפעלים</h3>
             <p>קרקעות מזוהמות או חשודות, תחנות דלק ומפעלים בפיקוח סביבתי.</p>
           </article>
           <article class="topic">
@@ -453,7 +480,7 @@
             <p>תחנת הניטור הקרובה לבית, והאם נמדדו בה חריגות.</p>
           </article>
           <article class="topic">
-            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 12c2-2 4-2 6 0s4 2 6 0 4-2 6 0M2 18c2-2 4-2 6 0s4 2 6 0 4-2 6 0M12 3v5"/></svg>הצפות וחוף</h3>
+            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 12c2-2 4-2 6 0s4 2 6 0 4-2 6 0M2 18c2-2 4-2 6 0s4 2 6 0 4-2 6 0M12 3v5"/></svg>סכנת הצפה וקרבה לחוף</h3>
             <p>האם הבית בשטח הצפה, והקרבה לחוף ולמצוק.</p>
           </article>
         </div>
@@ -527,7 +554,7 @@
             <h3>לא כלול</h3>
             <ul>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>ביקור בנכס</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>מדידות (קרינה, רעש, אוויר או אחרות)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span><strong>מדידת קרינה</strong>, וגם לא מדידות רעש, אוויר או אחרות</span></li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>חוות דעת שמאית</li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>בדיקה הנדסית של הבניין או הדירה</li>
             </ul>
@@ -546,6 +573,9 @@
         <div class="faq-list">
           <details><summary>למי הדוח מתאים?</summary><p>למי שעומד לקנות או לשכור דירה ורוצה לדעת מה יש סביבה לפני שהוא חותם.</p></details>
           <details><summary>מישהו מגיע לדירה?</summary><p>לא. זו עבודה משרדית בלבד. אין ביקור בנכס ואין מדידות. הדוח מבוסס על מאגרים פתוחים ועל מפות.</p></details>
+          <details><summary>אתם מודדים קרינה בדירה?</summary><p>לא. אנחנו לא עושים מדידות קרינה. הדוח מראה אילו אנטנות סלולר וקווי מתח יש סביב הבית, ומה הנתונים הרשמיים עליהם. מי שרוצה מדידה בתוך הדירה צריך לפנות לבודק קרינה מוסמך.</p></details>
+          <details><summary>מה לבדוק לפני קניית דירה?</summary><p>מלבד הדירה עצמה (בדק בית) והצד המשפטי (עורך דין), כדאי לבדוק מה יש מסביב: אנטנות וקווי מתח, רעש מכבישים ומטוסים, תוכניות בנייה בשכונה, זיהום קרקע ומפעלים, פסולת, אוויר וסכנת הצפה. את זה בודק הדוח.</p></details>
+          <details><summary>מה ההבדל בין בדק בית לבדיקה סביבתית?</summary><p>בדק בית בודק את הדירה עצמה: רטיבות, סדקים, חשמל ואינסטלציה. הבדיקה הסביבתית בודקת מה יש סביב הבית. הן משלימות זו את זו. אנחנו לא עושים בדק בית.</p></details>
           <details><summary>תוך כמה זמן מקבלים את הדוח?</summary><p>הדוח נשלח במייל כקובץ PDF תוך 7 ימים מהתשלום.</p></details>
           <details><summary>מאיפה המידע בדוח?</summary><p>ממאגרים פתוחים של משרדי ממשלה ורשויות, ומ-OpenStreetMap, כפי שהיו זמינים ביום הכנת הדוח. ליד כל ממצא כתוב מאיפה הוא.</p></details>
           <details><summary>באיזה רדיוס בודקים?</summary><p>500 מטר סביב הבית, ומקורות גדולים, כמו מפעלים ומתקני פסולת, עד 6 ק"מ.</p></details>
@@ -565,7 +595,8 @@
           <p>ממלאים פעם אחת, וזהו. אין שאלות נוספות.</p>
         </div>
 
-        <form id="order-form" novalidate>
+        <form id="order-form" novalidate data-attr-capture>
+          <input type="hidden" name="page_id" value="property_check">
           <div class="form-alert" id="form-alert" role="alert" tabindex="-1"></div>
 
           <fieldset>
@@ -668,7 +699,7 @@
             <address>
                 <img src="/assets/logo-dark-bg.png" alt="לוגו תלם" width="793" height="330" loading="lazy">
                 <p>אבירם בוצר - מביאים את הניסיון מהצד של הרשות לקידום הפרויקט שלכם.</p>
-                <a href="tel:0506890650">050-6890650</a>
+                <a href="tel:0506890650" data-track="call">050-6890650</a>
             </address>
             <div class="tv2-foot-links">
                 <h3>דפים נוספים באתר</h3>
@@ -736,7 +767,7 @@
   </dialog>
 
   <script>
-  /* דף ניסיון: אין fetch, אין localStorage, אין עוגיות. שום נתון לא יוצא מהדפדפן. */
+  /* דף ניסיון: פרטי הטופס לא נשלחים לשום מקום. נמדדים רק אירועים (GA4 / Google Ads / OpenAI), בלי פרטים אישיים. */
   (function () {
     'use strict';
 
@@ -788,6 +819,18 @@
       // RTL: חץ שמאלה = הבא
       if (e.key === 'ArrowLeft') { show(cur + 1); e.preventDefault(); }
       if (e.key === 'ArrowRight') { show(cur - 1); e.preventDefault(); }
+    });
+
+    // ---- מדידה ----
+    function track(name, params) { try { if (window.gtag) window.gtag('event', name, params || {}); } catch (e) {} }
+    document.querySelectorAll('[data-track="call"]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        track('click_call', { page_id: 'property_check' });
+        try { if (window.oaiq) oaiq('measure', 'custom', { type: 'custom' }, { custom_event_name: 'contact_click' }); } catch (e) {}
+      });
+    });
+    document.querySelectorAll('a[href="#order"]').forEach(function (el) {
+      el.addEventListener('click', function () { track('order_cta_click', { page_id: 'property_check' }); });
     });
 
     // ---- form ----
@@ -844,6 +887,7 @@
         return;
       }
       alert.classList.remove('show');
+      track('begin_checkout', { page_id: 'property_check', currency: 'ILS', value: PRICE });
       // כאן, בגרסה האמיתית, יהיה מעבר לדף הסליקה. בדף הניסיון רק נפתח חלון.
       openDlg('dlg-demo');
     });
@@ -883,6 +927,7 @@
     }
   })();
   </script>
+<script src="/assets/attribution-capture.js" defer></script>
 <script src="/assets/telem-v2.js" defer></script>
 </body>
 </html>
