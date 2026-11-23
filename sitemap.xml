@@ -3,7 +3,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://telemenv.co.il/about.html</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
   <url>
     <loc>https://telemenv.co.il/accessibility/</loc>
@@ -11,7 +11,7 @@
   </url>
   <url>
     <loc>https://telemenv.co.il/construction-waste/</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
   <url>
     <loc>https://telemenv.co.il/consulting/</loc>
@@ -19,11 +19,15 @@
   </url>
   <url>
     <loc>https://telemenv.co.il/env/</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
   <url>
     <loc>https://telemenv.co.il/environmental-management/</loc>
-    <lastmod>2026-11-21</lastmod>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://telemenv.co.il/environmental-support/</loc>
+    <lastmod>2026-11-23</lastmod>
   </url>
   <url>
     <loc>https://telemenv.co.il/guides/agrivoltaics-environmental-site-tests.html</loc>
@@ -39,7 +43,7 @@
   </url>
   <url>
     <loc>https://telemenv.co.il/guides/cities-waste.html</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
   <url>
     <loc>https://telemenv.co.il/guides/construction-environmental-budget-allocation.html</loc>
@@ -67,11 +71,11 @@
   </url>
   <url>
     <loc>https://telemenv.co.il/guides/history-when.html</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
   <url>
     <loc>https://telemenv.co.il/guides/</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
   <url>
     <loc>https://telemenv.co.il/guides/industrial-land-historical-survey-before-signing.html</loc>
@@ -95,7 +99,7 @@
   </url>
   <url>
     <loc>https://telemenv.co.il/guides/price.html</loc>
-    <lastmod>2026-11-21</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
   <url>
     <loc>https://telemenv.co.il/guides/regulations.html</loc>
@@ -111,7 +115,7 @@
   </url>
   <url>
     <loc>https://telemenv.co.il/guides/soil-survey-cost.html</loc>
-    <lastmod>2026-11-21</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
   <url>
     <loc>https://telemenv.co.il/guides/soil-survey-file-management-submission-guide.html</loc>
@@ -119,7 +123,7 @@
   </url>
   <url>
     <loc>https://telemenv.co.il/guides/soil-testing.html</loc>
-    <lastmod>2026-11-21</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
   <url>
     <loc>https://telemenv.co.il/guides/solar-bess.html</loc>
@@ -135,7 +139,7 @@
   </url>
   <url>
     <loc>https://telemenv.co.il/guides/waste-quantities.html</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
   <url>
     <loc>https://telemenv.co.il/guides/waste-room-planning-new-residential-building.html</loc>
@@ -151,7 +155,7 @@
   </url>
   <url>
     <loc>https://telemenv.co.il/history/</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
   <url>
     <loc>https://telemenv.co.il/in-the-news/construction-waste-law.html</loc>
@@ -171,11 +175,11 @@
   </url>
   <url>
     <loc>https://telemenv.co.il/in-the-news/</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
   <url>
     <loc>https://telemenv.co.il/in-the-news/muezzin-noise-law-2026.html</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
   <url>
     <loc>https://telemenv.co.il/in-the-news/recycling-award-2021.html</loc>
@@ -187,11 +191,11 @@
   </url>
   <url>
     <loc>https://telemenv.co.il/landscape-appendix/</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
   <url>
     <loc>https://telemenv.co.il/lectures/</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
   <url>
     <loc>https://telemenv.co.il/podcast/</loc>
@@ -203,7 +207,7 @@
   </url>
   <url>
     <loc>https://telemenv.co.il/recycling/</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
   <url>
     <loc>https://telemenv.co.il/rural/</loc>
@@ -227,6 +231,6 @@
   </url>
   <url>
     <loc>https://telemenv.co.il/waste/</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
 </urlset>
