@@ -618,10 +618,15 @@
           <fieldset>
             <legend>פרטים ליצירת קשר</legend>
             <div class="fields">
-              <div class="full">
-                <label for="f-name">שם מלא <span class="req" aria-hidden="true">*</span></label>
-                <input type="text" id="f-name" name="name" autocomplete="name" required aria-describedby="e-name">
-                <div class="err" id="e-name">נא למלא שם מלא</div>
+              <div class="half-m">
+                <label for="f-fname">שם פרטי <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="f-fname" name="name" autocomplete="given-name" required aria-describedby="e-fname">
+                <div class="err" id="e-fname">נא למלא שם פרטי</div>
+              </div>
+              <div class="half-m">
+                <label for="f-lname">שם משפחה <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="f-lname" name="last_name" autocomplete="family-name" required aria-describedby="e-lname">
+                <div class="err" id="e-lname">נא למלא שם משפחה</div>
               </div>
               <div class="half-m">
                 <label for="f-phone">טלפון <span class="req" aria-hidden="true">*</span></label>
@@ -629,6 +634,12 @@
                 <div class="err" id="e-phone">נא למלא מספר טלפון תקין, למשל 050-1234567</div>
               </div>
               <div class="half-m">
+                <label for="f-country">מדינה <span class="req" aria-hidden="true">*</span></label>
+                <select id="f-country" name="country" autocomplete="country-name" required>
+                  <option value="ישראל" selected>ישראל</option>
+                </select>
+              </div>
+              <div class="full">
                 <label for="f-email">מייל <span class="hint">(לשם יישלח הדוח)</span> <span class="req" aria-hidden="true">*</span></label>
                 <input type="email" id="f-email" name="email" autocomplete="email" dir="ltr" required aria-describedby="e-email">
                 <div class="err" id="e-email">נא למלא כתובת מייל תקינה</div>
@@ -681,9 +692,9 @@
 
           <div class="check">
             <input type="checkbox" id="f-terms" name="terms" required aria-describedby="e-terms">
-            <label for="f-terms">קראתי ואני מסכים/ה ל<a href="/terms/#property-check-terms" target="_blank" rel="noopener">תנאי השימוש והשירות</a>, ועיינתי ב<a href="/privacy/" target="_blank" rel="noopener">מדיניות הפרטיות</a> <span class="req" aria-hidden="true">*</span></label>
+            <label for="f-terms">קראתי ואני מסכים/ה ל<a href="/terms/#property-check-terms" target="_blank" rel="noopener">תקנון האתר ותנאי השירות</a>, ועיינתי ב<a href="/privacy/" target="_blank" rel="noopener">מדיניות הפרטיות</a> <span class="req" aria-hidden="true">*</span></label>
           </div>
-          <div class="err" id="e-terms">יש לאשר את תנאי השימוש והשירות ואת העיון במדיניות הפרטיות</div>
+          <div class="err" id="e-terms">יש לאשר את התקנון ותנאי השירות ואת העיון במדיניות הפרטיות</div>
           <p class="submit-note terms-note"><strong>חשוב לדעת:</strong> הדוח הוא בדיקה משרדית של סביבת הנכס, על בסיס מאגרי מידע פתוחים, נכון ליום הכנתו. אין ביקור בנכס ואין מדידות. הדוח אינו חוות דעת שמאית, הנדסית או משפטית, ואינו המלצה לקנות או לא לקנות. רמזור ירוק פירושו שלא נמצא ממצא במאגרים שנבדקו, ולא אישור שאין מפגע.</p>
 
           <div class="submit-row">
@@ -717,6 +728,7 @@
                 <img src="/assets/logo-dark-bg.png" alt="לוגו תלם" width="793" height="330" loading="lazy">
                 <p>אבירם בוצר - מביאים את הניסיון מהצד של הרשות לקידום הפרויקט שלכם.</p>
                 <a href="tel:0506890650" data-track="call">050-6890650</a>
+                <p class="tv2-foot-note tv2-foot-addr">כתובת העסק: תלם ניהול סביבה (אבירם בוצר), קיבוץ העוגן 4288000</p>
             </address>
             <div class="tv2-foot-links">
                 <h3>דפים נוספים באתר</h3>
@@ -859,7 +871,8 @@
     function emailOk(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
 
     var rules = [
-      ['f-name', function (v) { return v.trim().length >= 2; }],
+      ['f-fname', function (v) { return v.trim().length >= 1; }],
+      ['f-lname', function (v) { return v.trim().length >= 1; }],
       ['f-phone', function (v) { return phoneOk(v.trim()); }],
       ['f-email', function (v) { return emailOk(v.trim()); }],
       ['f-city', function (v) { return v.trim() !== ''; }],
@@ -928,6 +941,8 @@
         ' · דירה ' + $('f-apt').value.trim() + ' · קומה ' + $('f-floor').value.trim() + ' · חזית: ' + $('f-facing').value;
       var fd = new FormData(form);
       fd.delete('terms');
+      // השדה name נשלח כשם מלא (שם פרטי + שם משפחה)
+      addHidden(fd, 'name', $('f-fname').value.trim() + ' ' + $('f-lname').value.trim());
       addHidden(fd, 'subject', 'תחילת תהליך: הזמנת דוח סביבה לנכס – ' + addr);
       addHidden(fd, 'property_address', addr);
       addHidden(fd, 'price', fmt(PRICE) + ' לפני מע"מ · ' + fmt(total) + ' כולל מע"מ');
